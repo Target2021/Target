@@ -17,23 +17,18 @@ namespace Target2021
             InitializeComponent();
         }
 
-        private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void anaMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.commesseBindingSource.EndEdit();
+            this.anaMagazziniBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
-            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-        }
-
-        private void commesseBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.commesseBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AnaMagazzini'. È possibile spostarla o rimuoverla se necessario.
+            this.anaMagazziniTableAdapter.Fill(this.target2021DataSet.AnaMagazzini);
 
         }
     }
