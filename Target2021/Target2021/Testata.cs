@@ -36,16 +36,37 @@ namespace Target2021
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;Persist Security Info=True;User ID=Amministratore;Password=Barilla23";
-            using (SqlConnection con = new SqlConnection(stringa))
+          
+        }
+        public void Search_Filter(string query)
+        {
+             String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
+            SqlConnection con = new SqlConnection(stringa);
+            string variabile = textBox1.Text;
+            SqlCommand cmd = new SqlCommand(query, con);
+            try
             {
-                string variabile = textBox1.Text;
-                string query = "SELECT * FROM testata_ordini_multiriga WHERE numero_ordine LIKE '" + variabile+ "'";
-                SqlCommand cmd = new SqlCommand(query, con);
-                con.Open();
-                cmd.ExecuteScalar();
-                con.Close();
+                SqlDataAdapter sda = new SqlDataAdapter();
+                sda.SelectCommand = cmd;
+                DataTable dataTable = new DataTable();
+                sda.Fill(dataTable);
+                BindingSource source = new BindingSource();
+                source.DataSource = dataTable;
+                testata_ordini_multirigaDataGridView.DataSource = source;
+                sda.Update(dataTable);
             }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (Filter.Text == "Numero_ordine")
+            {
+                Search_Filter("SELECT * FROM testata_ordini_multiriga WHERE numero_ordine LIKE '%" + textBox1.Text + "%'");
+            }
+            else { MessageBox.Show("Controllare il filtro di ricerca"); }
         }
     }
 }
