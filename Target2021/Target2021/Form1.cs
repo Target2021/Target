@@ -16,5 +16,20 @@ namespace Target2021
         {
             InitializeComponent();
         }
+
+        private void anaMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.anaMagazziniBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AnaMagazzini'. È possibile spostarla o rimuoverla se necessario.
+            this.anaMagazziniTableAdapter.Fill(this.target2021DataSet.AnaMagazzini);
+
+        }
     }
 }
