@@ -31,5 +31,12 @@ namespace Target2021
             this.anaMagazziniTableAdapter.Fill(this.target2021DataSet.AnaMagazzini);
 
         }
+
+        private void testataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Testata testata = new Testata();
+            testata.MdiParent = this;
+            testata.Show();
+        }
     }
 }
