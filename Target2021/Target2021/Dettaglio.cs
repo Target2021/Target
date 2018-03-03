@@ -12,47 +12,45 @@ using System.Data.SqlClient;
 
 namespace Target2021
 {
-    public partial class Testata : Form
+    public partial class Dettaglio : Form
     {
-        public Testata()
+        public Dettaglio()
         {
             InitializeComponent();
-           
         }
 
-        private void testata_ordini_multirigaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void dettaglio_ordini_multirigaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.testata_ordini_multirigaBindingSource.EndEdit();
+            this.dettaglio_ordini_multirigaBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
 
         }
 
-        private void Testata_Load(object sender, EventArgs e)
+        private void Dettaglio_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.testata_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
-            this.testata_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.testata_ordini_multiriga);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
+            this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
 
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             if (Filter.Text == "Numero_ordine")
             {
-                Search_Filter("SELECT * FROM testata_ordini_multiriga WHERE numero_ordine LIKE '%" + textBox1.Text + "%'");
+                Search_Filter("SELECT * FROM dettaglio_ordini_multiriga WHERE numero_ordine LIKE '%" + textBox1.Text + "%'");
             }
             if (Filter.Text == "Data")
             {
-                Search_Filter("SELECT * FROM testata_ordini_multiriga WHERE data_ordine LIKE '%" + textBox1.Text + "%'");
+                Search_Filter("SELECT * FROM dettaglio_ordini_multiriga WHERE data_ordine LIKE '%" + textBox1.Text + "%'");
             }
             if (Filter.Text == "codice_cliente")
             {
-                Search_Filter("SELECT * FROM testata_ordini_multiriga WHERE codice_cliente LIKE '%" + textBox1.Text + "%'");
+                Search_Filter("SELECT * FROM dettaglio_ordini_multiriga WHERE codice_cliente LIKE '%" + textBox1.Text + "%'");
             }
         }
         public void Search_Filter(string query)
         {
-             String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
+            String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
             SqlConnection con = new SqlConnection(stringa);
             string variabile = textBox1.Text;
             SqlCommand cmd = new SqlCommand(query, con);
@@ -64,17 +62,18 @@ namespace Target2021
                 sda.Fill(dataTable);
                 BindingSource source = new BindingSource();
                 source.DataSource = dataTable;
-                testata_ordini_multirigaDataGridView.DataSource = source;
+                dettaglio_ordini_multirigaDataGridView.DataSource = source;
                 sda.Update(dataTable);
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void dettaglio_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-   
+            MessageBox.Show("ciao");
         }
     }
 }

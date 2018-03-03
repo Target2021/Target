@@ -1,6 +1,6 @@
 ﻿namespace Target2021
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
@@ -118,7 +118,7 @@
             this.impostazioniToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(788, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1004, 28);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -159,12 +159,14 @@
             this.dettaglioToolStripMenuItem.Name = "dettaglioToolStripMenuItem";
             this.dettaglioToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.dettaglioToolStripMenuItem.Text = "Dettaglio";
+            this.dettaglioToolStripMenuItem.Click += new System.EventHandler(this.dettaglioToolStripMenuItem_Click);
             // 
             // clientiToolStripMenuItem
             // 
             this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
             this.clientiToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.clientiToolStripMenuItem.Text = "Clienti";
+            this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
             // 
             // fornitoriToolStripMenuItem
             // 
@@ -306,18 +308,18 @@
             this.impostazioniToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.impostazioniToolStripMenuItem.Text = "Impostazioni";
             // 
-            // Form1
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(788, 517);
+            this.ClientSize = new System.Drawing.Size(1004, 571);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Home";
+            this.Text = "Target2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).EndInit();

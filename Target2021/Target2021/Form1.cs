@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Target2021
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
+            
         }
 
         private void anaMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -37,6 +38,20 @@ namespace Target2021
             Testata testata = new Testata();
             testata.MdiParent = this;
             testata.Show();
+        }
+
+        private void dettaglioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dettaglio dettaglio = new Dettaglio();
+            dettaglio.MdiParent = this;
+            dettaglio.Show();
+        }
+
+        private void clientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clienti clienti = new Clienti();
+            clienti.MdiParent = this;
+            clienti.Show();
         }
     }
 }
