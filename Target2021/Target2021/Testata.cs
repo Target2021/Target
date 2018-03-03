@@ -30,6 +30,8 @@ namespace Target2021
 
         private void Testata_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.ArticoliBC'. È possibile spostarla o rimuoverla se necessario.
+            this.articoliBCTableAdapter.Fill(this.target2021DataSet.ArticoliBC);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.testata_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
             this.testata_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.testata_ordini_multiriga);
 
@@ -37,17 +39,14 @@ namespace Target2021
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (Filter.Text == "Numero_ordine")
+            if (Filter.Text == "Progressivo")
             {
-                Search_Filter("SELECT * FROM testata_ordini_multiriga WHERE numero_ordine LIKE '%" + textBox1.Text + "%'");
+                ControlLetters(textBox1.Text);
+                Search_Filter("SELECT * FROM DettArticoli WHERE progressivo LIKE '%" + textBox1.Text + "%'");
             }
-            if (Filter.Text == "Data")
+            if (Filter.Text == "Codice_articolo")
             {
-                Search_Filter("SELECT * FROM testata_ordini_multiriga WHERE data_ordine LIKE '%" + textBox1.Text + "%'");
-            }
-            if (Filter.Text == "codice_cliente")
-            {
-                Search_Filter("SELECT * FROM testata_ordini_multiriga WHERE codice_cliente LIKE '%" + textBox1.Text + "%'");
+                Search_Filter("SELECT * FROM DettArticoli WHERE codice_articolo LIKE '%" + textBox1.Text + "%'");
             }
         }
         public void Search_Filter(string query)
@@ -64,17 +63,43 @@ namespace Target2021
                 sda.Fill(dataTable);
                 BindingSource source = new BindingSource();
                 source.DataSource = dataTable;
-                testata_ordini_multirigaDataGridView.DataSource = source;
+                articoliBCDataGridView.DataSource = source;
                 sda.Update(dataTable);
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
         }
-
+        public int ControlLetters(string frase)
+        {
+            int parsedValue;
+            if (!int.TryParse(frase, out parsedValue))
+            {
+                MessageBox.Show("non sono ammesse lettere");
+                textBox1.Text = "";
+                return 0;
+            }
+            return 0;
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
    
+        }
+
+        private void ArticoliBCDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewRow row in articoliBCDataGridView.Rows)
+            {
+                if (row.Index == articoliBCDataGridView.CurrentRow.Index)
+                {
+                    String id;
+                    id = articoliBCDataGridView.CurrentCell.Value.ToString();
+                    RigaCompleta rigaCompleta = new RigaCompleta();
+                    rigaCompleta.MdiParent = this.MdiParent;
+                    rigaCompleta.Show();
+                    rigaCompleta.LoadRow(id, this.Text);
+                }
+            }
         }
     }
 }

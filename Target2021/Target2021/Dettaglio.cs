@@ -91,10 +91,8 @@ namespace Target2021
             {
                 if (row.Index== dettArticoliDataGridView.CurrentRow.Index )
                 {
-                    MessageBox.Show("ostia");
                     String id;
                     id = dettArticoliDataGridView.CurrentCell.Value.ToString();
-                    MessageBox.Show(id);
                     RigaCompleta rigaCompleta = new RigaCompleta();
                     rigaCompleta.MdiParent = this.MdiParent;
                     rigaCompleta.Show();
