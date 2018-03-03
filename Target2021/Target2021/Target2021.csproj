@@ -74,6 +74,12 @@
     <Compile Include="Resources\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RigaCompleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RigaCompleta.Designer.cs">
+      <DependentUpon>RigaCompleta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +110,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RigaCompleta.resx">
+      <DependentUpon>RigaCompleta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Testata.resx">
       <DependentUpon>Testata.cs</DependentUpon>
     </EmbeddedResource>

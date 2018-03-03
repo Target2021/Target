@@ -87,7 +87,20 @@ namespace Target2021
 
         private void dettaglio_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            MessageBox.Show("ciao");
+            foreach (DataGridViewRow row in dettArticoliDataGridView.Rows)
+            {
+                if (row.Index== dettArticoliDataGridView.CurrentRow.Index )
+                {
+                    MessageBox.Show("ostia");
+                    String id;
+                    id = dettArticoliDataGridView.CurrentCell.Value.ToString();
+                    MessageBox.Show(id);
+                    RigaCompleta rigaCompleta = new RigaCompleta();
+                    rigaCompleta.MdiParent = this.MdiParent;
+                    rigaCompleta.Show();
+                    rigaCompleta.LoadRow(id,this.Text);
+                }
+            }
         }
     }
 }
