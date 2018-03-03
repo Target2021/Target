@@ -22,31 +22,33 @@ namespace Target2021
         private void dettaglio_ordini_multirigaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.dettaglio_ordini_multirigaBindingSource.EndEdit();
+            this.dettArticoliBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
 
         }
 
         private void Dettaglio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
-            this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
 
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (Filter.Text == "Numero_ordine")
+            if (Filter.Text == "IDArticolo")
             {
-                Search_Filter("SELECT * FROM dettaglio_ordini_multiriga WHERE numero_ordine LIKE '%" + textBox1.Text + "%'");
+                Search_Filter("SELECT * FROM DettArticoli WHERE IDDettaglioArticolo LIKE '%" + textBox1.Text + "%'");
             }
-            if (Filter.Text == "Data")
+            if (Filter.Text == "Progressivo")
             {
                 backgroundWorker1.RunWorkerAsync( ControlLetters(textBox1.Text));
-                Search_Filter("SELECT * FROM dettaglio_ordini_multiriga WHERE data_ordine LIKE '%" + textBox1.Text + "%'");
+                Search_Filter("SELECT * FROM DettArticoli WHERE progressivo LIKE '%" + textBox1.Text + "%'");
             }
-            if (Filter.Text == "codice_cliente")
+            if (Filter.Text == "Codice_articolo")
             {
-                Search_Filter("SELECT * FROM dettaglio_ordini_multiriga WHERE codice_cliente LIKE '%" + textBox1.Text + "%'");
+                Search_Filter("SELECT * FROM DettArticoli WHERE codice_articolo LIKE '%" + textBox1.Text + "%'");
             }
         }
         public int ControlLetters(string frase)
@@ -74,7 +76,7 @@ namespace Target2021
                 sda.Fill(dataTable);
                 BindingSource source = new BindingSource();
                 source.DataSource = dataTable;
-                dettaglio_ordini_multirigaDataGridView.DataSource = source;
+                dettArticoliDataGridView.DataSource = source;
                 sda.Update(dataTable);
             }
             catch (Exception ex)
