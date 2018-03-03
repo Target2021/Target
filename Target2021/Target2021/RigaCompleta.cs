@@ -27,7 +27,8 @@ namespace Target2021
         }
         public static DataTable GetData(string query)
         {
-
+            DataTable dataTable = new DataTable();
+            return dataTable;
         }
     }
 }
