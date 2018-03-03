@@ -95,6 +95,7 @@
             this.CERCA = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Filter = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingNavigator)).BeginInit();
@@ -713,5 +714,6 @@
         private System.Windows.Forms.Button CERCA;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox Filter;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -41,12 +41,24 @@ namespace Target2021
             }
             if (Filter.Text == "Data")
             {
+                backgroundWorker1.RunWorkerAsync( ControlLetters(textBox1.Text));
                 Search_Filter("SELECT * FROM dettaglio_ordini_multiriga WHERE data_ordine LIKE '%" + textBox1.Text + "%'");
             }
             if (Filter.Text == "codice_cliente")
             {
                 Search_Filter("SELECT * FROM dettaglio_ordini_multiriga WHERE codice_cliente LIKE '%" + textBox1.Text + "%'");
             }
+        }
+        public int ControlLetters(string frase)
+        {
+            int parsedValue;
+            if (!int.TryParse(frase, out parsedValue))
+            {
+                MessageBox.Show("non sono ammesse lettere");
+                textBox1.Text = "";
+                return 0;
+            }
+            return 0;
         }
         public void Search_Filter(string query)
         {

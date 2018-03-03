@@ -44,7 +44,22 @@ namespace Target2021
             }
             if (Filter.Text == "Località")
             {
+                ControlNumber(textBox1.Text);       
                 Search_Filter("SELECT * FROM clienti WHERE localita LIKE '%" + textBox1.Text + "%'");
+            }
+        }
+        public void ControlNumber(string frase)
+        {
+            string words = frase;
+            int parsedvalue;
+            foreach (char word in words)
+            {
+                if (int.TryParse(Convert.ToString(word), out parsedvalue))
+                {
+                    MessageBox.Show("non sono ammessi valori numerici");
+                    textBox1.Text = "";
+                    return;
+                }
             }
         }
         public void Search_Filter(string query)
