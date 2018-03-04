@@ -54,7 +54,7 @@ namespace Target2021
         public int ControlLetters(string frase)
         {
             int parsedValue;
-            if (!int.TryParse(frase, out parsedValue))
+            if (!int.TryParse(frase, out parsedValue)) //se restituisce falso vuol dire che nella stringa ci sono lettere
             {
                 MessageBox.Show("non sono ammesse lettere");
                 textBox1.Text = "";
@@ -62,7 +62,7 @@ namespace Target2021
             }
             return 0;
         }
-        public void Search_Filter(string query)
+        public void Search_Filter(string query) //metodo di connessione al db
         {
             String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
             SqlConnection con = new SqlConnection(stringa);
@@ -92,11 +92,12 @@ namespace Target2021
                 if (row.Index== dettArticoliDataGridView.CurrentRow.Index )
                 {
                     String id;
-                    id = dettArticoliDataGridView.CurrentCell.Value.ToString();
+                    id = dettArticoliDataGridView.CurrentCell.Value.ToString(); //prendo l'ID contenuto nella prima cella della gridview
                     RigaCompleta rigaCompleta = new RigaCompleta();
                     rigaCompleta.MdiParent = this.MdiParent;
                     rigaCompleta.Show();
-                    rigaCompleta.LoadRow(id,this.Text);
+                    rigaCompleta.LoadRow(id,this.Text); //passo l'id in modo da caricare nell'altro form solo la riga interessata
+                    //la condizione è che  la proprietà Text che gli passiamo deve essere uguale a quello di questo form così da identificare i vari form
                 }
             }
         }

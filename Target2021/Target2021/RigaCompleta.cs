@@ -23,7 +23,7 @@ namespace Target2021
             MessageBox.Show(ID,form);
             if (form == "Dettaglio_Articolo")
             {
-                bindingSource.DataSource = GetData("SELECT * FROM DettArticoli WHERE IDDettaglioArticolo='"+ID+"'");
+                bindingSource.DataSource = GetData("SELECT * FROM DettArticoli WHERE IDDettaglioArticolo='"+ID+"'"); //ottengo i dati in base all'ID ottenuto dal form
                 dataGridView1.DataSource = bindingSource;
             }
             if(form=="Testata")
@@ -31,7 +31,7 @@ namespace Target2021
                 bindingSource.DataSource = GetData("SELECT  * FROM ArticoliBC WHERE codice_articolo='" + ID + "'");
                 dataGridView1.DataSource = bindingSource;
             }
-             DataTable GetData(string query)
+             DataTable GetData(string query) //metodo interno a LoadRow per ottenere i dati dal db
             {
                 string stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;Persist Security Info=True;User ID=Amministratore;Password=Barilla23";
                 SqlConnection sqlConnection = new SqlConnection(stringa);
