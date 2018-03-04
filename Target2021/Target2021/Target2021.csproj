@@ -91,6 +91,12 @@
     <Compile Include="Testata.Designer.cs">
       <DependentUpon>Testata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Testata_Ordini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testata_Ordini.Designer.cs">
+      <DependentUpon>Testata_Ordini.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Clienti.resx">
       <DependentUpon>Clienti.cs</DependentUpon>
     </EmbeddedResource>
