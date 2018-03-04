@@ -122,6 +122,9 @@
     <EmbeddedResource Include="Testata.resx">
       <DependentUpon>Testata.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Testata_Ordini.resx">
+      <DependentUpon>Testata_Ordini.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
