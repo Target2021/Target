@@ -48,9 +48,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.clientiBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.clientiDataGridView = new System.Windows.Forms.DataGridView();
-            this.Filter = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.CERCA = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -163,6 +160,11 @@
             this.dataGridViewTextBoxColumn110 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn111 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn112 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Filter = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CERCA = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingNavigator)).BeginInit();
@@ -239,7 +241,7 @@
             this.clientiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clientiBindingNavigator.Name = "clientiBindingNavigator";
             this.clientiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clientiBindingNavigator.Size = new System.Drawing.Size(1043, 27);
+            this.clientiBindingNavigator.Size = new System.Drawing.Size(1113, 27);
             this.clientiBindingNavigator.TabIndex = 0;
             this.clientiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -461,36 +463,6 @@
             this.clientiDataGridView.RowTemplate.Height = 24;
             this.clientiDataGridView.Size = new System.Drawing.Size(837, 527);
             this.clientiDataGridView.TabIndex = 1;
-            // 
-            // Filter
-            // 
-            this.Filter.FormattingEnabled = true;
-            this.Filter.Items.AddRange(new object[] {
-            "Codice",
-            "Ragione_sociale",
-            "Località"});
-            this.Filter.Location = new System.Drawing.Point(883, 97);
-            this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(140, 24);
-            this.Filter.TabIndex = 10;
-            this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(883, 226);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 22);
-            this.textBox1.TabIndex = 9;
-            // 
-            // CERCA
-            // 
-            this.CERCA.Location = new System.Drawing.Point(891, 317);
-            this.CERCA.Name = "CERCA";
-            this.CERCA.Size = new System.Drawing.Size(132, 34);
-            this.CERCA.TabIndex = 8;
-            this.CERCA.Text = "CERCA";
-            this.CERCA.UseVisualStyleBackColor = true;
-            this.CERCA.Click += new System.EventHandler(this.Button2_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1243,12 +1215,63 @@
             this.dataGridViewTextBoxColumn112.Name = "dataGridViewTextBoxColumn112";
             this.dataGridViewTextBoxColumn112.Visible = false;
             // 
+            // Filter
+            // 
+            this.Filter.FormattingEnabled = true;
+            this.Filter.Items.AddRange(new object[] {
+            "Codice",
+            "Ragione_sociale",
+            "Località"});
+            this.Filter.Location = new System.Drawing.Point(961, 182);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(140, 24);
+            this.Filter.TabIndex = 10;
+            this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(961, 259);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(140, 22);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // CERCA
+            // 
+            this.CERCA.Location = new System.Drawing.Point(969, 329);
+            this.CERCA.Name = "CERCA";
+            this.CERCA.Size = new System.Drawing.Size(132, 34);
+            this.CERCA.TabIndex = 8;
+            this.CERCA.Text = "CERCA";
+            this.CERCA.UseVisualStyleBackColor = true;
+            this.CERCA.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(884, 185);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Filtra per";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(896, 264);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Campo";
+            // 
             // Clienti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1043, 592);
+            this.ClientSize = new System.Drawing.Size(1113, 596);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CERCA);
@@ -1403,5 +1426,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn110;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn111;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn112;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -78,5 +78,13 @@ namespace Target2021
                 }
             }
         }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+
+        }
     }
 }
