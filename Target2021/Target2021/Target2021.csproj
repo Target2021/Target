@@ -151,6 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Immagini\Immagine1.png" />
+    <Content Include="Immagini\static1.squarespace.com.png" />
+    <None Include="Resources\linea-tratteggiata.png" />
+    <None Include="Resources\static1.squarespace.com.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

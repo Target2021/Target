@@ -53,5 +53,12 @@ namespace Target2021
             clienti.MdiParent = this;
             clienti.Show();
         }
+
+        private void testataOrdiniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Testata_Ordini TestataOrdini = new Testata_Ordini();
+            TestataOrdini.MdiParent = this;
+            TestataOrdini.Show();
+        }
     }
 }
