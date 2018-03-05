@@ -35,19 +35,22 @@
             this.clientiTableAdapter = new Target2021.Target2021DataSetTableAdapters.clientiTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.clientiBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.clientiBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.clientiDataGridView = new System.Windows.Forms.DataGridView();
+            this.Filter = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CERCA = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -160,9 +163,6 @@
             this.dataGridViewTextBoxColumn110 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn111 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn112 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Filter = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.CERCA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingNavigator)).BeginInit();
@@ -239,9 +239,34 @@
             this.clientiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clientiBindingNavigator.Name = "clientiBindingNavigator";
             this.clientiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clientiBindingNavigator.Size = new System.Drawing.Size(927, 27);
+            this.clientiBindingNavigator.Size = new System.Drawing.Size(1043, 27);
             this.clientiBindingNavigator.TabIndex = 0;
             this.clientiBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Text = "di {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -275,16 +300,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
-            this.bindingNavigatorCountItem.Text = "di {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -307,26 +325,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // clientiBindingNavigatorSaveItem
             // 
@@ -459,8 +459,38 @@
             this.clientiDataGridView.Location = new System.Drawing.Point(12, 53);
             this.clientiDataGridView.Name = "clientiDataGridView";
             this.clientiDataGridView.RowTemplate.Height = 24;
-            this.clientiDataGridView.Size = new System.Drawing.Size(548, 523);
+            this.clientiDataGridView.Size = new System.Drawing.Size(837, 527);
             this.clientiDataGridView.TabIndex = 1;
+            // 
+            // Filter
+            // 
+            this.Filter.FormattingEnabled = true;
+            this.Filter.Items.AddRange(new object[] {
+            "Codice",
+            "Ragione_sociale",
+            "Località"});
+            this.Filter.Location = new System.Drawing.Point(883, 97);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(140, 24);
+            this.Filter.TabIndex = 10;
+            this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(883, 226);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(140, 22);
+            this.textBox1.TabIndex = 9;
+            // 
+            // CERCA
+            // 
+            this.CERCA.Location = new System.Drawing.Point(891, 317);
+            this.CERCA.Name = "CERCA";
+            this.CERCA.Size = new System.Drawing.Size(132, 34);
+            this.CERCA.TabIndex = 8;
+            this.CERCA.Text = "CERCA";
+            this.CERCA.UseVisualStyleBackColor = true;
+            this.CERCA.Click += new System.EventHandler(this.Button2_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -575,96 +605,112 @@
             this.dataGridViewTextBoxColumn19.DataPropertyName = "indirizzo_dest_2";
             this.dataGridViewTextBoxColumn19.HeaderText = "indirizzo_dest_2";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Visible = false;
             // 
             // dataGridViewTextBoxColumn20
             // 
             this.dataGridViewTextBoxColumn20.DataPropertyName = "cap_dest_2";
             this.dataGridViewTextBoxColumn20.HeaderText = "cap_dest_2";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.Visible = false;
             // 
             // dataGridViewTextBoxColumn21
             // 
             this.dataGridViewTextBoxColumn21.DataPropertyName = "localita_dest_2";
             this.dataGridViewTextBoxColumn21.HeaderText = "localita_dest_2";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.Visible = false;
             // 
             // dataGridViewTextBoxColumn22
             // 
             this.dataGridViewTextBoxColumn22.DataPropertyName = "codice_provincia_dest_2";
             this.dataGridViewTextBoxColumn22.HeaderText = "codice_provincia_dest_2";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Visible = false;
             // 
             // dataGridViewTextBoxColumn23
             // 
             this.dataGridViewTextBoxColumn23.DataPropertyName = "indirizzo_dest_3";
             this.dataGridViewTextBoxColumn23.HeaderText = "indirizzo_dest_3";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.Visible = false;
             // 
             // dataGridViewTextBoxColumn24
             // 
             this.dataGridViewTextBoxColumn24.DataPropertyName = "cap_dest_3";
             this.dataGridViewTextBoxColumn24.HeaderText = "cap_dest_3";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.Visible = false;
             // 
             // dataGridViewTextBoxColumn25
             // 
             this.dataGridViewTextBoxColumn25.DataPropertyName = "localita_dest_3";
             this.dataGridViewTextBoxColumn25.HeaderText = "localita_dest_3";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.Visible = false;
             // 
             // dataGridViewTextBoxColumn26
             // 
             this.dataGridViewTextBoxColumn26.DataPropertyName = "codice_provincia_dest_3";
             this.dataGridViewTextBoxColumn26.HeaderText = "codice_provincia_dest_3";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.Visible = false;
             // 
             // dataGridViewTextBoxColumn27
             // 
             this.dataGridViewTextBoxColumn27.DataPropertyName = "indirizzo_dest_4";
             this.dataGridViewTextBoxColumn27.HeaderText = "indirizzo_dest_4";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.Visible = false;
             // 
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.DataPropertyName = "cap_dest_4";
             this.dataGridViewTextBoxColumn28.HeaderText = "cap_dest_4";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.Visible = false;
             // 
             // dataGridViewTextBoxColumn29
             // 
             this.dataGridViewTextBoxColumn29.DataPropertyName = "localita_dest_4";
             this.dataGridViewTextBoxColumn29.HeaderText = "localita_dest_4";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.Visible = false;
             // 
             // dataGridViewTextBoxColumn30
             // 
             this.dataGridViewTextBoxColumn30.DataPropertyName = "codice_provincia_dest_4";
             this.dataGridViewTextBoxColumn30.HeaderText = "codice_provincia_dest_4";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.Visible = false;
             // 
             // dataGridViewTextBoxColumn31
             // 
             this.dataGridViewTextBoxColumn31.DataPropertyName = "scad_1";
             this.dataGridViewTextBoxColumn31.HeaderText = "scad_1";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.Visible = false;
             // 
             // dataGridViewTextBoxColumn32
             // 
             this.dataGridViewTextBoxColumn32.DataPropertyName = "scad_2";
             this.dataGridViewTextBoxColumn32.HeaderText = "scad_2";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.Visible = false;
             // 
             // dataGridViewTextBoxColumn33
             // 
             this.dataGridViewTextBoxColumn33.DataPropertyName = "scad_3";
             this.dataGridViewTextBoxColumn33.HeaderText = "scad_3";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.Visible = false;
             // 
             // dataGridViewTextBoxColumn34
             // 
             this.dataGridViewTextBoxColumn34.DataPropertyName = "scad_4";
             this.dataGridViewTextBoxColumn34.HeaderText = "scad_4";
             this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.Visible = false;
             // 
             // dataGridViewTextBoxColumn35
             // 
@@ -707,24 +753,28 @@
             this.dataGridViewTextBoxColumn41.DataPropertyName = "listino";
             this.dataGridViewTextBoxColumn41.HeaderText = "listino";
             this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.dataGridViewTextBoxColumn41.Visible = false;
             // 
             // dataGridViewTextBoxColumn42
             // 
             this.dataGridViewTextBoxColumn42.DataPropertyName = "saldo_iniziale";
             this.dataGridViewTextBoxColumn42.HeaderText = "saldo_iniziale";
             this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            this.dataGridViewTextBoxColumn42.Visible = false;
             // 
             // dataGridViewTextBoxColumn43
             // 
             this.dataGridViewTextBoxColumn43.DataPropertyName = "note2";
             this.dataGridViewTextBoxColumn43.HeaderText = "note2";
             this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.Visible = false;
             // 
             // dataGridViewTextBoxColumn44
             // 
             this.dataGridViewTextBoxColumn44.DataPropertyName = "note_2";
             this.dataGridViewTextBoxColumn44.HeaderText = "note_2";
             this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            this.dataGridViewTextBoxColumn44.Visible = false;
             // 
             // dataGridViewTextBoxColumn45
             // 
@@ -761,18 +811,21 @@
             this.dataGridViewTextBoxColumn50.DataPropertyName = "sconto_cli";
             this.dataGridViewTextBoxColumn50.HeaderText = "sconto_cli";
             this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.Visible = false;
             // 
             // dataGridViewTextBoxColumn51
             // 
             this.dataGridViewTextBoxColumn51.DataPropertyName = "codice_fiscale_2";
             this.dataGridViewTextBoxColumn51.HeaderText = "codice_fiscale_2";
             this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            this.dataGridViewTextBoxColumn51.Visible = false;
             // 
             // dataGridViewTextBoxColumn52
             // 
             this.dataGridViewTextBoxColumn52.DataPropertyName = "codice_fiscale_3";
             this.dataGridViewTextBoxColumn52.HeaderText = "codice_fiscale_3";
             this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            this.dataGridViewTextBoxColumn52.Visible = false;
             // 
             // dataGridViewTextBoxColumn53
             // 
@@ -791,90 +844,105 @@
             this.dataGridViewTextBoxColumn55.DataPropertyName = "banca_appoggio_2";
             this.dataGridViewTextBoxColumn55.HeaderText = "banca_appoggio_2";
             this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            this.dataGridViewTextBoxColumn55.Visible = false;
             // 
             // dataGridViewTextBoxColumn56
             // 
             this.dataGridViewTextBoxColumn56.DataPropertyName = "abi_2";
             this.dataGridViewTextBoxColumn56.HeaderText = "abi_2";
             this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            this.dataGridViewTextBoxColumn56.Visible = false;
             // 
             // dataGridViewTextBoxColumn57
             // 
             this.dataGridViewTextBoxColumn57.DataPropertyName = "cab_2";
             this.dataGridViewTextBoxColumn57.HeaderText = "cab_2";
             this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+            this.dataGridViewTextBoxColumn57.Visible = false;
             // 
             // dataGridViewTextBoxColumn58
             // 
             this.dataGridViewTextBoxColumn58.DataPropertyName = "sw_cambia_banca";
             this.dataGridViewTextBoxColumn58.HeaderText = "sw_cambia_banca";
             this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            this.dataGridViewTextBoxColumn58.Visible = false;
             // 
             // dataGridViewTextBoxColumn59
             // 
             this.dataGridViewTextBoxColumn59.DataPropertyName = "gg_cambia_banca";
             this.dataGridViewTextBoxColumn59.HeaderText = "gg_cambia_banca";
             this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            this.dataGridViewTextBoxColumn59.Visible = false;
             // 
             // dataGridViewTextBoxColumn60
             // 
             this.dataGridViewTextBoxColumn60.DataPropertyName = "sw_manutenzione_periodica";
             this.dataGridViewTextBoxColumn60.HeaderText = "sw_manutenzione_periodica";
             this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+            this.dataGridViewTextBoxColumn60.Visible = false;
             // 
             // dataGridViewTextBoxColumn61
             // 
             this.dataGridViewTextBoxColumn61.DataPropertyName = "sw_stampa_scad_pag_fatt";
             this.dataGridViewTextBoxColumn61.HeaderText = "sw_stampa_scad_pag_fatt";
             this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            this.dataGridViewTextBoxColumn61.Visible = false;
             // 
             // dataGridViewTextBoxColumn62
             // 
             this.dataGridViewTextBoxColumn62.DataPropertyName = "sw_proponi_articoli";
             this.dataGridViewTextBoxColumn62.HeaderText = "sw_proponi_articoli";
             this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            this.dataGridViewTextBoxColumn62.Visible = false;
             // 
             // dataGridViewTextBoxColumn63
             // 
             this.dataGridViewTextBoxColumn63.DataPropertyName = "sw_tipo_ricerca";
             this.dataGridViewTextBoxColumn63.HeaderText = "sw_tipo_ricerca";
             this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.dataGridViewTextBoxColumn63.Visible = false;
             // 
             // dataGridViewTextBoxColumn64
             // 
             this.dataGridViewTextBoxColumn64.DataPropertyName = "nazione";
             this.dataGridViewTextBoxColumn64.HeaderText = "nazione";
             this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
+            this.dataGridViewTextBoxColumn64.Visible = false;
             // 
             // dataGridViewTextBoxColumn65
             // 
             this.dataGridViewTextBoxColumn65.DataPropertyName = "sw_importa_listino";
             this.dataGridViewTextBoxColumn65.HeaderText = "sw_importa_listino";
             this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
+            this.dataGridViewTextBoxColumn65.Visible = false;
             // 
             // dataGridViewTextBoxColumn66
             // 
             this.dataGridViewTextBoxColumn66.DataPropertyName = "banca_ditta";
             this.dataGridViewTextBoxColumn66.HeaderText = "banca_ditta";
             this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
+            this.dataGridViewTextBoxColumn66.Visible = false;
             // 
             // dataGridViewTextBoxColumn67
             // 
             this.dataGridViewTextBoxColumn67.DataPropertyName = "sw_non_attivo";
             this.dataGridViewTextBoxColumn67.HeaderText = "sw_non_attivo";
             this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
+            this.dataGridViewTextBoxColumn67.Visible = false;
             // 
             // dataGridViewTextBoxColumn68
             // 
             this.dataGridViewTextBoxColumn68.DataPropertyName = "note_esenzione";
             this.dataGridViewTextBoxColumn68.HeaderText = "note_esenzione";
             this.dataGridViewTextBoxColumn68.Name = "dataGridViewTextBoxColumn68";
+            this.dataGridViewTextBoxColumn68.Visible = false;
             // 
             // dataGridViewTextBoxColumn69
             // 
             this.dataGridViewTextBoxColumn69.DataPropertyName = "sw_fornitore";
             this.dataGridViewTextBoxColumn69.HeaderText = "sw_fornitore";
             this.dataGridViewTextBoxColumn69.Name = "dataGridViewTextBoxColumn69";
+            this.dataGridViewTextBoxColumn69.Visible = false;
             // 
             // dataGridViewTextBoxColumn70
             // 
@@ -887,72 +955,84 @@
             this.dataGridViewTextBoxColumn71.DataPropertyName = "iban_2";
             this.dataGridViewTextBoxColumn71.HeaderText = "iban_2";
             this.dataGridViewTextBoxColumn71.Name = "dataGridViewTextBoxColumn71";
+            this.dataGridViewTextBoxColumn71.Visible = false;
             // 
             // dataGridViewTextBoxColumn72
             // 
             this.dataGridViewTextBoxColumn72.DataPropertyName = "sw_rit_acc";
             this.dataGridViewTextBoxColumn72.HeaderText = "sw_rit_acc";
             this.dataGridViewTextBoxColumn72.Name = "dataGridViewTextBoxColumn72";
+            this.dataGridViewTextBoxColumn72.Visible = false;
             // 
             // dataGridViewTextBoxColumn73
             // 
             this.dataGridViewTextBoxColumn73.DataPropertyName = "sw_visualizza_in_commesse";
             this.dataGridViewTextBoxColumn73.HeaderText = "sw_visualizza_in_commesse";
             this.dataGridViewTextBoxColumn73.Name = "dataGridViewTextBoxColumn73";
+            this.dataGridViewTextBoxColumn73.Visible = false;
             // 
             // dataGridViewTextBoxColumn74
             // 
             this.dataGridViewTextBoxColumn74.DataPropertyName = "tipo_attivita";
             this.dataGridViewTextBoxColumn74.HeaderText = "tipo_attivita";
             this.dataGridViewTextBoxColumn74.Name = "dataGridViewTextBoxColumn74";
+            this.dataGridViewTextBoxColumn74.Visible = false;
             // 
             // dataGridViewTextBoxColumn75
             // 
             this.dataGridViewTextBoxColumn75.DataPropertyName = "fascia_fatturato";
             this.dataGridViewTextBoxColumn75.HeaderText = "fascia_fatturato";
             this.dataGridViewTextBoxColumn75.Name = "dataGridViewTextBoxColumn75";
+            this.dataGridViewTextBoxColumn75.Visible = false;
             // 
             // dataGridViewTextBoxColumn76
             // 
             this.dataGridViewTextBoxColumn76.DataPropertyName = "fascia_dipendenti";
             this.dataGridViewTextBoxColumn76.HeaderText = "fascia_dipendenti";
             this.dataGridViewTextBoxColumn76.Name = "dataGridViewTextBoxColumn76";
+            this.dataGridViewTextBoxColumn76.Visible = false;
             // 
             // dataGridViewTextBoxColumn77
             // 
             this.dataGridViewTextBoxColumn77.DataPropertyName = "servizi_richiesti";
             this.dataGridViewTextBoxColumn77.HeaderText = "servizi_richiesti";
             this.dataGridViewTextBoxColumn77.Name = "dataGridViewTextBoxColumn77";
+            this.dataGridViewTextBoxColumn77.Visible = false;
             // 
             // dataGridViewTextBoxColumn78
             // 
             this.dataGridViewTextBoxColumn78.DataPropertyName = "anno_inizio_rapporto";
             this.dataGridViewTextBoxColumn78.HeaderText = "anno_inizio_rapporto";
             this.dataGridViewTextBoxColumn78.Name = "dataGridViewTextBoxColumn78";
+            this.dataGridViewTextBoxColumn78.Visible = false;
             // 
             // dataGridViewTextBoxColumn79
             // 
             this.dataGridViewTextBoxColumn79.DataPropertyName = "sw_tipo_manutenzione_periodica";
             this.dataGridViewTextBoxColumn79.HeaderText = "sw_tipo_manutenzione_periodica";
             this.dataGridViewTextBoxColumn79.Name = "dataGridViewTextBoxColumn79";
+            this.dataGridViewTextBoxColumn79.Visible = false;
             // 
             // dataGridViewTextBoxColumn80
             // 
             this.dataGridViewTextBoxColumn80.DataPropertyName = "amministratore";
             this.dataGridViewTextBoxColumn80.HeaderText = "amministratore";
             this.dataGridViewTextBoxColumn80.Name = "dataGridViewTextBoxColumn80";
+            this.dataGridViewTextBoxColumn80.Visible = false;
             // 
             // dataGridViewTextBoxColumn81
             // 
             this.dataGridViewTextBoxColumn81.DataPropertyName = "stampa_riferimenti";
             this.dataGridViewTextBoxColumn81.HeaderText = "stampa_riferimenti";
             this.dataGridViewTextBoxColumn81.Name = "dataGridViewTextBoxColumn81";
+            this.dataGridViewTextBoxColumn81.Visible = false;
             // 
             // dataGridViewTextBoxColumn82
             // 
             this.dataGridViewTextBoxColumn82.DataPropertyName = "sw_conto_dedicato";
             this.dataGridViewTextBoxColumn82.HeaderText = "sw_conto_dedicato";
             this.dataGridViewTextBoxColumn82.Name = "dataGridViewTextBoxColumn82";
+            this.dataGridViewTextBoxColumn82.Visible = false;
             // 
             // dataGridViewTextBoxColumn83
             // 
@@ -965,210 +1045,210 @@
             this.dataGridViewTextBoxColumn84.DataPropertyName = "ragione_sociale_dest_2";
             this.dataGridViewTextBoxColumn84.HeaderText = "ragione_sociale_dest_2";
             this.dataGridViewTextBoxColumn84.Name = "dataGridViewTextBoxColumn84";
+            this.dataGridViewTextBoxColumn84.Visible = false;
             // 
             // dataGridViewTextBoxColumn85
             // 
             this.dataGridViewTextBoxColumn85.DataPropertyName = "ragione_sociale_dest_3";
             this.dataGridViewTextBoxColumn85.HeaderText = "ragione_sociale_dest_3";
             this.dataGridViewTextBoxColumn85.Name = "dataGridViewTextBoxColumn85";
+            this.dataGridViewTextBoxColumn85.Visible = false;
             // 
             // dataGridViewTextBoxColumn86
             // 
             this.dataGridViewTextBoxColumn86.DataPropertyName = "ragione_sociale_dest_4";
             this.dataGridViewTextBoxColumn86.HeaderText = "ragione_sociale_dest_4";
             this.dataGridViewTextBoxColumn86.Name = "dataGridViewTextBoxColumn86";
+            this.dataGridViewTextBoxColumn86.Visible = false;
             // 
             // dataGridViewTextBoxColumn87
             // 
             this.dataGridViewTextBoxColumn87.DataPropertyName = "sw_cliente_esente_iva";
             this.dataGridViewTextBoxColumn87.HeaderText = "sw_cliente_esente_iva";
             this.dataGridViewTextBoxColumn87.Name = "dataGridViewTextBoxColumn87";
+            this.dataGridViewTextBoxColumn87.Visible = false;
             // 
             // dataGridViewTextBoxColumn88
             // 
             this.dataGridViewTextBoxColumn88.DataPropertyName = "sw_proponi_logo_alternativo_1";
             this.dataGridViewTextBoxColumn88.HeaderText = "sw_proponi_logo_alternativo_1";
             this.dataGridViewTextBoxColumn88.Name = "dataGridViewTextBoxColumn88";
+            this.dataGridViewTextBoxColumn88.Visible = false;
             // 
             // dataGridViewTextBoxColumn89
             // 
             this.dataGridViewTextBoxColumn89.DataPropertyName = "codice_univoco_ente_PA";
             this.dataGridViewTextBoxColumn89.HeaderText = "codice_univoco_ente_PA";
             this.dataGridViewTextBoxColumn89.Name = "dataGridViewTextBoxColumn89";
+            this.dataGridViewTextBoxColumn89.Visible = false;
             // 
             // dataGridViewTextBoxColumn90
             // 
             this.dataGridViewTextBoxColumn90.DataPropertyName = "numero_civico";
             this.dataGridViewTextBoxColumn90.HeaderText = "numero_civico";
             this.dataGridViewTextBoxColumn90.Name = "dataGridViewTextBoxColumn90";
+            this.dataGridViewTextBoxColumn90.Visible = false;
             // 
             // dataGridViewTextBoxColumn91
             // 
             this.dataGridViewTextBoxColumn91.DataPropertyName = "proponi_esporta_ddt";
             this.dataGridViewTextBoxColumn91.HeaderText = "proponi_esporta_ddt";
             this.dataGridViewTextBoxColumn91.Name = "dataGridViewTextBoxColumn91";
+            this.dataGridViewTextBoxColumn91.Visible = false;
             // 
             // dataGridViewTextBoxColumn92
             // 
             this.dataGridViewTextBoxColumn92.DataPropertyName = "invia_file_ftp";
             this.dataGridViewTextBoxColumn92.HeaderText = "invia_file_ftp";
             this.dataGridViewTextBoxColumn92.Name = "dataGridViewTextBoxColumn92";
+            this.dataGridViewTextBoxColumn92.Visible = false;
             // 
             // dataGridViewTextBoxColumn93
             // 
             this.dataGridViewTextBoxColumn93.DataPropertyName = "cod_pag_PA";
             this.dataGridViewTextBoxColumn93.HeaderText = "cod_pag_PA";
             this.dataGridViewTextBoxColumn93.Name = "dataGridViewTextBoxColumn93";
+            this.dataGridViewTextBoxColumn93.Visible = false;
             // 
             // dataGridViewTextBoxColumn94
             // 
             this.dataGridViewTextBoxColumn94.DataPropertyName = "note_4";
             this.dataGridViewTextBoxColumn94.HeaderText = "note_4";
             this.dataGridViewTextBoxColumn94.Name = "dataGridViewTextBoxColumn94";
+            this.dataGridViewTextBoxColumn94.Visible = false;
             // 
             // dataGridViewTextBoxColumn95
             // 
             this.dataGridViewTextBoxColumn95.DataPropertyName = "stampa_in_lingua";
             this.dataGridViewTextBoxColumn95.HeaderText = "stampa_in_lingua";
             this.dataGridViewTextBoxColumn95.Name = "dataGridViewTextBoxColumn95";
+            this.dataGridViewTextBoxColumn95.Visible = false;
             // 
             // dataGridViewTextBoxColumn96
             // 
             this.dataGridViewTextBoxColumn96.DataPropertyName = "proponi_spese_bolli";
             this.dataGridViewTextBoxColumn96.HeaderText = "proponi_spese_bolli";
             this.dataGridViewTextBoxColumn96.Name = "dataGridViewTextBoxColumn96";
+            this.dataGridViewTextBoxColumn96.Visible = false;
             // 
             // dataGridViewTextBoxColumn97
             // 
             this.dataGridViewTextBoxColumn97.DataPropertyName = "codice_PA_dest";
             this.dataGridViewTextBoxColumn97.HeaderText = "codice_PA_dest";
             this.dataGridViewTextBoxColumn97.Name = "dataGridViewTextBoxColumn97";
+            this.dataGridViewTextBoxColumn97.Visible = false;
             // 
             // dataGridViewTextBoxColumn98
             // 
             this.dataGridViewTextBoxColumn98.DataPropertyName = "codice_PA_dest_2";
             this.dataGridViewTextBoxColumn98.HeaderText = "codice_PA_dest_2";
             this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
+            this.dataGridViewTextBoxColumn98.Visible = false;
             // 
             // dataGridViewTextBoxColumn99
             // 
             this.dataGridViewTextBoxColumn99.DataPropertyName = "codice_PA_dest_3";
             this.dataGridViewTextBoxColumn99.HeaderText = "codice_PA_dest_3";
             this.dataGridViewTextBoxColumn99.Name = "dataGridViewTextBoxColumn99";
+            this.dataGridViewTextBoxColumn99.Visible = false;
             // 
             // dataGridViewTextBoxColumn100
             // 
             this.dataGridViewTextBoxColumn100.DataPropertyName = "codice_PA_dest_4";
             this.dataGridViewTextBoxColumn100.HeaderText = "codice_PA_dest_4";
             this.dataGridViewTextBoxColumn100.Name = "dataGridViewTextBoxColumn100";
+            this.dataGridViewTextBoxColumn100.Visible = false;
             // 
             // dataGridViewTextBoxColumn101
             // 
             this.dataGridViewTextBoxColumn101.DataPropertyName = "prop_note_cliente_in_fatt";
             this.dataGridViewTextBoxColumn101.HeaderText = "prop_note_cliente_in_fatt";
             this.dataGridViewTextBoxColumn101.Name = "dataGridViewTextBoxColumn101";
+            this.dataGridViewTextBoxColumn101.Visible = false;
             // 
             // dataGridViewTextBoxColumn102
             // 
             this.dataGridViewTextBoxColumn102.DataPropertyName = "porto";
             this.dataGridViewTextBoxColumn102.HeaderText = "porto";
             this.dataGridViewTextBoxColumn102.Name = "dataGridViewTextBoxColumn102";
+            this.dataGridViewTextBoxColumn102.Visible = false;
             // 
             // dataGridViewTextBoxColumn103
             // 
             this.dataGridViewTextBoxColumn103.DataPropertyName = "riferimento_amministrazione";
             this.dataGridViewTextBoxColumn103.HeaderText = "riferimento_amministrazione";
             this.dataGridViewTextBoxColumn103.Name = "dataGridViewTextBoxColumn103";
+            this.dataGridViewTextBoxColumn103.Visible = false;
             // 
             // dataGridViewTextBoxColumn104
             // 
             this.dataGridViewTextBoxColumn104.DataPropertyName = "tipo_destinatario_e_mail_1";
             this.dataGridViewTextBoxColumn104.HeaderText = "tipo_destinatario_e_mail_1";
             this.dataGridViewTextBoxColumn104.Name = "dataGridViewTextBoxColumn104";
+            this.dataGridViewTextBoxColumn104.Visible = false;
             // 
             // dataGridViewTextBoxColumn105
             // 
             this.dataGridViewTextBoxColumn105.DataPropertyName = "e_mail_aggiuntiva_1";
             this.dataGridViewTextBoxColumn105.HeaderText = "e_mail_aggiuntiva_1";
             this.dataGridViewTextBoxColumn105.Name = "dataGridViewTextBoxColumn105";
+            this.dataGridViewTextBoxColumn105.Visible = false;
             // 
             // dataGridViewTextBoxColumn106
             // 
             this.dataGridViewTextBoxColumn106.DataPropertyName = "tipo_destinatario_e_mail_2";
             this.dataGridViewTextBoxColumn106.HeaderText = "tipo_destinatario_e_mail_2";
             this.dataGridViewTextBoxColumn106.Name = "dataGridViewTextBoxColumn106";
+            this.dataGridViewTextBoxColumn106.Visible = false;
             // 
             // dataGridViewTextBoxColumn107
             // 
             this.dataGridViewTextBoxColumn107.DataPropertyName = "e_mail_aggiuntiva_2";
             this.dataGridViewTextBoxColumn107.HeaderText = "e_mail_aggiuntiva_2";
             this.dataGridViewTextBoxColumn107.Name = "dataGridViewTextBoxColumn107";
+            this.dataGridViewTextBoxColumn107.Visible = false;
             // 
             // dataGridViewTextBoxColumn108
             // 
             this.dataGridViewTextBoxColumn108.DataPropertyName = "tipo_destinatario_e_mail_3";
             this.dataGridViewTextBoxColumn108.HeaderText = "tipo_destinatario_e_mail_3";
             this.dataGridViewTextBoxColumn108.Name = "dataGridViewTextBoxColumn108";
+            this.dataGridViewTextBoxColumn108.Visible = false;
             // 
             // dataGridViewTextBoxColumn109
             // 
             this.dataGridViewTextBoxColumn109.DataPropertyName = "e_mail_aggiuntiva_3";
             this.dataGridViewTextBoxColumn109.HeaderText = "e_mail_aggiuntiva_3";
             this.dataGridViewTextBoxColumn109.Name = "dataGridViewTextBoxColumn109";
+            this.dataGridViewTextBoxColumn109.Visible = false;
             // 
             // dataGridViewTextBoxColumn110
             // 
             this.dataGridViewTextBoxColumn110.DataPropertyName = "tipo_destinatario_e_mail_4";
             this.dataGridViewTextBoxColumn110.HeaderText = "tipo_destinatario_e_mail_4";
             this.dataGridViewTextBoxColumn110.Name = "dataGridViewTextBoxColumn110";
+            this.dataGridViewTextBoxColumn110.Visible = false;
             // 
             // dataGridViewTextBoxColumn111
             // 
             this.dataGridViewTextBoxColumn111.DataPropertyName = "e_mail_aggiuntiva_4";
             this.dataGridViewTextBoxColumn111.HeaderText = "e_mail_aggiuntiva_4";
             this.dataGridViewTextBoxColumn111.Name = "dataGridViewTextBoxColumn111";
+            this.dataGridViewTextBoxColumn111.Visible = false;
             // 
             // dataGridViewTextBoxColumn112
             // 
             this.dataGridViewTextBoxColumn112.DataPropertyName = "sw_scrivi_p_iva_PA";
             this.dataGridViewTextBoxColumn112.HeaderText = "sw_scrivi_p_iva_PA";
             this.dataGridViewTextBoxColumn112.Name = "dataGridViewTextBoxColumn112";
-            // 
-            // Filter
-            // 
-            this.Filter.FormattingEnabled = true;
-            this.Filter.Items.AddRange(new object[] {
-            "Codice",
-            "Ragione_sociale",
-            "Località"});
-            this.Filter.Location = new System.Drawing.Point(685, 104);
-            this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(140, 24);
-            this.Filter.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(685, 194);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 22);
-            this.textBox1.TabIndex = 9;
-            // 
-            // CERCA
-            // 
-            this.CERCA.Location = new System.Drawing.Point(693, 258);
-            this.CERCA.Name = "CERCA";
-            this.CERCA.Size = new System.Drawing.Size(132, 34);
-            this.CERCA.TabIndex = 8;
-            this.CERCA.Text = "CERCA";
-            this.CERCA.UseVisualStyleBackColor = true;
-            this.CERCA.Click += new System.EventHandler(this.Button2_Click);
+            this.dataGridViewTextBoxColumn112.Visible = false;
             // 
             // Clienti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(927, 576);
+            this.ClientSize = new System.Drawing.Size(1043, 592);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CERCA);
@@ -1208,6 +1288,9 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton clientiBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView clientiDataGridView;
+        private System.Windows.Forms.ComboBox Filter;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button CERCA;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1320,8 +1403,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn110;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn111;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn112;
-        private System.Windows.Forms.ComboBox Filter;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button CERCA;
     }
 }

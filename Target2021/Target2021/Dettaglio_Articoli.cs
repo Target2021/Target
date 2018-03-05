@@ -12,9 +12,9 @@ using System.Data.SqlClient;
 
 namespace Target2021
 {
-    public partial class Dettaglio : Form
+    public partial class Dettaglio_Articoli : Form
     {
-        public Dettaglio()
+        public Dettaglio_Articoli()
         {
             InitializeComponent();
         }

@@ -84,5 +84,10 @@ namespace Target2021
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

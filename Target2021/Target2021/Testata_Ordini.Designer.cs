@@ -39,13 +39,13 @@
             this.testata_ordini_multirigaTableAdapter = new Target2021.Target2021DataSetTableAdapters.testata_ordini_multirigaTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.testata_ordini_multirigaDataGridView = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testata_ordini_multirigaBindingSource)).BeginInit();
@@ -55,18 +55,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 15);
+            this.label1.Location = new System.Drawing.Point(249, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo Di Ricerca";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(178, 43);
+            this.label2.Location = new System.Drawing.Point(237, 53);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.Size = new System.Drawing.Size(128, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Campo Da Cercare";
             // 
@@ -77,18 +79,20 @@
             "Numero Ordine",
             "Data Ordine",
             "Codice Cliente"});
-            this.Filtro.Location = new System.Drawing.Point(281, 12);
+            this.Filtro.Location = new System.Drawing.Point(375, 15);
+            this.Filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Filtro.Name = "Filtro";
-            this.Filtro.Size = new System.Drawing.Size(141, 21);
+            this.Filtro.Size = new System.Drawing.Size(187, 24);
             this.Filtro.TabIndex = 2;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(281, 43);
+            this.textBox1.Location = new System.Drawing.Point(375, 53);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 13);
+            this.textBox1.Size = new System.Drawing.Size(188, 15);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -96,9 +100,10 @@
             // 
             this.pictureBox1.BackgroundImage = global::Target2021.Properties.Resources.linea_tratteggiata;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(281, 52);
+            this.pictureBox1.Location = new System.Drawing.Point(375, 64);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 14);
+            this.pictureBox1.Size = new System.Drawing.Size(188, 17);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -156,10 +161,23 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
             this.testata_ordini_multirigaDataGridView.DataSource = this.testata_ordini_multirigaBindingSource;
-            this.testata_ordini_multirigaDataGridView.Location = new System.Drawing.Point(2, 115);
+            this.testata_ordini_multirigaDataGridView.Location = new System.Drawing.Point(95, 158);
+            this.testata_ordini_multirigaDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.testata_ordini_multirigaDataGridView.Name = "testata_ordini_multirigaDataGridView";
-            this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(643, 443);
+            this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(669, 517);
             this.testata_ordini_multirigaDataGridView.TabIndex = 6;
+            this.testata_ordini_multirigaDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.testata_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(387, 97);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Cerca";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -184,35 +202,28 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "numero_ordine_cliente";
             this.dataGridViewTextBoxColumn4.HeaderText = "numero_ordine_cliente";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "data_ordine_cliente";
             this.dataGridViewTextBoxColumn5.HeaderText = "data_ordine_cliente";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "data_consegna";
             this.dataGridViewTextBoxColumn7.HeaderText = "data_consegna";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(290, 79);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Cerca";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dataGridViewTextBoxColumn7.Visible = false;
             // 
             // Testata_Ordini
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(650, 559);
+            this.ClientSize = new System.Drawing.Size(867, 688);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.testata_ordini_multirigaDataGridView);
             this.Controls.Add(this.textBox1);
@@ -220,6 +231,7 @@
             this.Controls.Add(this.Filtro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Testata_Ordini";
             this.Text = "Testata_Ordini";
             this.Load += new System.EventHandler(this.Testata_Ordini_Load);
@@ -244,12 +256,12 @@
         private Target2021DataSetTableAdapters.testata_ordini_multirigaTableAdapter testata_ordini_multirigaTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView testata_ordini_multirigaDataGridView;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.Button button1;
     }
 }
