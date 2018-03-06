@@ -1,6 +1,6 @@
 ﻿namespace Target2021
 {
-    partial class Testata
+    partial class Testata_articoli
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Testata));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Testata_articoli));
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.testata_ordini_multirigaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.testata_ordini_multirigaTableAdapter = new Target2021.Target2021DataSetTableAdapters.testata_ordini_multirigaTableAdapter();
@@ -241,18 +241,18 @@
             this.textBox1.Size = new System.Drawing.Size(140, 22);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // Filter
             // 
             this.Filter.FormattingEnabled = true;
             this.Filter.Items.AddRange(new object[] {
-            "codice_articolo",
-            "progressivo"});
+            "Codice_articolo",
+            "Progressivo"});
             this.Filter.Location = new System.Drawing.Point(822, 56);
             this.Filter.Name = "Filter";
             this.Filter.Size = new System.Drawing.Size(140, 24);
             this.Filter.TabIndex = 6;
-            this.Filter.Text = "Testata";
             // 
             // Cerca
             // 
@@ -330,7 +330,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "codice_articolo_outout";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // Testata
+            // Testata_articoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -341,7 +341,7 @@
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.testata_ordini_multirigaBindingNavigator);
-            this.Name = "Testata";
+            this.Name = "Testata_articoli";
             this.Text = "Testata";
             this.Load += new System.EventHandler(this.Testata_Load);
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();

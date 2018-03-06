@@ -35,14 +35,14 @@ namespace Target2021
 
         private void testataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Testata testata = new Testata();
+            Testata_articoli testata = new Testata_articoli();
             testata.MdiParent = this;
             testata.Show();
         }
 
         private void dettaglioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Dettaglio dettaglio = new Dettaglio();
+            Dettaglio_Articoli dettaglio = new Dettaglio_Articoli();
             dettaglio.MdiParent = this;
             dettaglio.Show();
         }

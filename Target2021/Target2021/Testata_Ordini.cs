@@ -60,5 +60,31 @@ namespace Target2021
             adapter.Fill(dataTable);
             testata_ordini_multirigaDataGridView.DataSource = dataTable;
         }
+
+        private void testata_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            foreach (DataGridViewRow row in testata_ordini_multirigaDataGridView.Rows)
+            {
+                if (row.Index == testata_ordini_multirigaDataGridView.CurrentRow.Index)
+                {
+                    String id;
+                    id = row.Cells[1].Value.ToString();
+                    MessageBox.Show(id);
+                    RigaCompleta rigaCompleta = new RigaCompleta();
+                    rigaCompleta.MdiParent = this.MdiParent;
+                    rigaCompleta.Show();
+                    rigaCompleta.LoadRow(id, this.Text); //passo l'id in modo da caricare nell'altro form solo la riga interessata
+                    //la condizione è che  la proprietà Text che gli passiamo deve essere uguale a quello di questo form così da identificare i vari form
+                }
+            }
+        }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+
+        }
     }
 }

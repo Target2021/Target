@@ -12,9 +12,9 @@ using System.Data.SqlClient;
 
 namespace Target2021
 {
-    public partial class Dettaglio : Form
+    public partial class Dettaglio_Articoli : Form
     {
-        public Dettaglio()
+        public Dettaglio_Articoli()
         {
             InitializeComponent();
         }
@@ -84,7 +84,14 @@ namespace Target2021
                 MessageBox.Show(ex.Message);
             }
         }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Button2_Click(sender, e);
+            }
 
+        }
         private void dettaglio_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             foreach (DataGridViewRow row in dettArticoliDataGridView.Rows)

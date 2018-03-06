@@ -12,9 +12,9 @@ using System.Data.SqlClient;
 
 namespace Target2021
 {
-    public partial class Testata : Form
+    public partial class Testata_articoli : Form
     {
-        public Testata()
+        public Testata_articoli()
         {
             InitializeComponent();
            
@@ -100,6 +100,15 @@ namespace Target2021
                     rigaCompleta.LoadRow(id, this.Text);
                 }
             }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar==(char)Keys.Enter)
+            {
+                Button2_Click(sender, e);
+            }
+           
         }
     }
 }
