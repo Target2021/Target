@@ -57,9 +57,11 @@
     <Compile Include="Clienti.Designer.cs">
       <DependentUpon>Clienti.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dettaglio.cs" />
-    <Compile Include="Dettaglio.Designer.cs">
-      <DependentUpon>Dettaglio.cs</DependentUpon>
+    <Compile Include="Dettaglio_Articoli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dettaglio_Articoli.Designer.cs">
+      <DependentUpon>Dettaglio_Articoli.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -83,9 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Target2021DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Testata.cs" />
-    <Compile Include="Testata.Designer.cs">
-      <DependentUpon>Testata.cs</DependentUpon>
+    <Compile Include="Testata_articoli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testata_articoli.Designer.cs">
+      <DependentUpon>Testata_articoli.cs</DependentUpon>
     </Compile>
     <Compile Include="Testata_Ordini.cs">
       <SubType>Form</SubType>
@@ -96,8 +100,8 @@
     <EmbeddedResource Include="Clienti.resx">
       <DependentUpon>Clienti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dettaglio.resx">
-      <DependentUpon>Dettaglio.cs</DependentUpon>
+    <EmbeddedResource Include="Dettaglio_Articoli.resx">
+      <DependentUpon>Dettaglio_Articoli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -115,8 +119,8 @@
     <EmbeddedResource Include="RigaCompleta.resx">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Testata.resx">
-      <DependentUpon>Testata.cs</DependentUpon>
+    <EmbeddedResource Include="Testata_articoli.resx">
+      <DependentUpon>Testata_articoli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Testata_Ordini.resx">
       <DependentUpon>Testata_Ordini.cs</DependentUpon>
