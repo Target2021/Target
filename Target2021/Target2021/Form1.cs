@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace Target2021
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
+            
         }
 
         private void anaMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -30,6 +31,34 @@ namespace Target2021
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AnaMagazzini'. È possibile spostarla o rimuoverla se necessario.
             this.anaMagazziniTableAdapter.Fill(this.target2021DataSet.AnaMagazzini);
 
+        }
+
+        private void testataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Testata_articoli testata = new Testata_articoli();
+            testata.MdiParent = this;
+            testata.Show();
+        }
+
+        private void dettaglioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dettaglio_Articoli dettaglio = new Dettaglio_Articoli();
+            dettaglio.MdiParent = this;
+            dettaglio.Show();
+        }
+
+        private void clientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clienti clienti = new Clienti();
+            clienti.MdiParent = this;
+            clienti.Show();
+        }
+
+        private void testataOrdiniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Testata_Ordini TestataOrdini = new Testata_Ordini();
+            TestataOrdini.MdiParent = this;
+            TestataOrdini.Show();
         }
     }
 }

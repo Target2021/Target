@@ -1,6 +1,6 @@
 ﻿namespace Target2021
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -29,55 +29,42 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.anaMagazziniBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.anaMagazziniBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.anaMagazziniDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.anagraficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.articoloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dettaglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornitoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.macchinariToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.strumentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiePrimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stampiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minuterieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipiCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fasiLavorazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compatibilitàStampiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compatibilitàDimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testataOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dettaglioOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.commesseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.magazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anagraficheMagazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.interrogazioneGiacenzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.interrogazioneMovimentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingNavigator)).BeginInit();
-            this.anaMagazziniBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniDataGridView)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(44, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(158, 57);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Benvenuti";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(44, 158);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 19);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // target2021DataSet
             // 
@@ -121,217 +108,262 @@
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // anaMagazziniBindingNavigator
+            // menuStrip1
             // 
-            this.anaMagazziniBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.anaMagazziniBindingNavigator.BindingSource = this.anaMagazziniBindingSource;
-            this.anaMagazziniBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.anaMagazziniBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.anaMagazziniBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.anaMagazziniBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.anaMagazziniBindingNavigatorSaveItem});
-            this.anaMagazziniBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.anaMagazziniBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.anaMagazziniBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.anaMagazziniBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.anaMagazziniBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.anaMagazziniBindingNavigator.Name = "anaMagazziniBindingNavigator";
-            this.anaMagazziniBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.anaMagazziniBindingNavigator.Size = new System.Drawing.Size(591, 27);
-            this.anaMagazziniBindingNavigator.TabIndex = 2;
-            this.anaMagazziniBindingNavigator.Text = "bindingNavigator1";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.anagraficeToolStripMenuItem,
+            this.ordiniToolStripMenuItem,
+            this.magazziniToolStripMenuItem,
+            this.impostazioniToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(753, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // bindingNavigatorAddNewItem
+            // anagraficeToolStripMenuItem
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
+            this.anagraficeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.articoloToolStripMenuItem,
+            this.clientiToolStripMenuItem,
+            this.fornitoriToolStripMenuItem,
+            this.macchinariToolStripMenuItem,
+            this.strumentiToolStripMenuItem,
+            this.tipiCommesseToolStripMenuItem,
+            this.fasiLavorazioneToolStripMenuItem,
+            this.compatibilitàStampiToolStripMenuItem,
+            this.compatibilitàDimeToolStripMenuItem});
+            this.anagraficeToolStripMenuItem.Name = "anagraficeToolStripMenuItem";
+            this.anagraficeToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.anagraficeToolStripMenuItem.Text = "Anagrafiche";
             // 
-            // bindingNavigatorCountItem
+            // articoloToolStripMenuItem
             // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
-            this.bindingNavigatorCountItem.Text = "di {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
+            this.articoloToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testataToolStripMenuItem,
+            this.dettaglioToolStripMenuItem});
+            this.articoloToolStripMenuItem.Name = "articoloToolStripMenuItem";
+            this.articoloToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.articoloToolStripMenuItem.Text = "Articolo";
             // 
-            // bindingNavigatorDeleteItem
+            // testataToolStripMenuItem
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Elimina";
+            this.testataToolStripMenuItem.Name = "testataToolStripMenuItem";
+            this.testataToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testataToolStripMenuItem.Text = "Testata ";
+            this.testataToolStripMenuItem.Click += new System.EventHandler(this.testataToolStripMenuItem_Click);
             // 
-            // bindingNavigatorMoveFirstItem
+            // dettaglioToolStripMenuItem
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
+            this.dettaglioToolStripMenuItem.Name = "dettaglioToolStripMenuItem";
+            this.dettaglioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dettaglioToolStripMenuItem.Text = "Dettaglio";
+            this.dettaglioToolStripMenuItem.Click += new System.EventHandler(this.dettaglioToolStripMenuItem_Click);
             // 
-            // bindingNavigatorMovePreviousItem
+            // clientiToolStripMenuItem
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
+            this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
+            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.clientiToolStripMenuItem.Text = "Clienti";
+            this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
             // 
-            // bindingNavigatorSeparator
+            // fornitoriToolStripMenuItem
             // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.fornitoriToolStripMenuItem.Name = "fornitoriToolStripMenuItem";
+            this.fornitoriToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.fornitoriToolStripMenuItem.Text = "Fornitori";
             // 
-            // bindingNavigatorPositionItem
+            // macchinariToolStripMenuItem
             // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
+            this.macchinariToolStripMenuItem.Name = "macchinariToolStripMenuItem";
+            this.macchinariToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.macchinariToolStripMenuItem.Text = "Macchinari";
             // 
-            // bindingNavigatorSeparator1
+            // strumentiToolStripMenuItem
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.strumentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.materiePrimeToolStripMenuItem,
+            this.stampiToolStripMenuItem,
+            this.dimeToolStripMenuItem,
+            this.minuterieToolStripMenuItem});
+            this.strumentiToolStripMenuItem.Name = "strumentiToolStripMenuItem";
+            this.strumentiToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.strumentiToolStripMenuItem.Text = "Strumenti";
             // 
-            // bindingNavigatorMoveNextItem
+            // materiePrimeToolStripMenuItem
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
+            this.materiePrimeToolStripMenuItem.Name = "materiePrimeToolStripMenuItem";
+            this.materiePrimeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.materiePrimeToolStripMenuItem.Text = "Materie prime";
             // 
-            // bindingNavigatorMoveLastItem
+            // stampiToolStripMenuItem
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
+            this.stampiToolStripMenuItem.Name = "stampiToolStripMenuItem";
+            this.stampiToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.stampiToolStripMenuItem.Text = "Stampi";
             // 
-            // bindingNavigatorSeparator2
+            // dimeToolStripMenuItem
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.dimeToolStripMenuItem.Name = "dimeToolStripMenuItem";
+            this.dimeToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.dimeToolStripMenuItem.Text = "Dime";
             // 
-            // anaMagazziniBindingNavigatorSaveItem
+            // minuterieToolStripMenuItem
             // 
-            this.anaMagazziniBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.anaMagazziniBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("anaMagazziniBindingNavigatorSaveItem.Image")));
-            this.anaMagazziniBindingNavigatorSaveItem.Name = "anaMagazziniBindingNavigatorSaveItem";
-            this.anaMagazziniBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
-            this.anaMagazziniBindingNavigatorSaveItem.Text = "Salva dati";
-            this.anaMagazziniBindingNavigatorSaveItem.Click += new System.EventHandler(this.anaMagazziniBindingNavigatorSaveItem_Click);
+            this.minuterieToolStripMenuItem.Name = "minuterieToolStripMenuItem";
+            this.minuterieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.minuterieToolStripMenuItem.Text = "Minuterie";
             // 
-            // anaMagazziniDataGridView
+            // tipiCommesseToolStripMenuItem
             // 
-            this.anaMagazziniDataGridView.AutoGenerateColumns = false;
-            this.anaMagazziniDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.anaMagazziniDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.anaMagazziniDataGridView.DataSource = this.anaMagazziniBindingSource;
-            this.anaMagazziniDataGridView.Location = new System.Drawing.Point(226, 59);
-            this.anaMagazziniDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.anaMagazziniDataGridView.Name = "anaMagazziniDataGridView";
-            this.anaMagazziniDataGridView.RowTemplate.Height = 24;
-            this.anaMagazziniDataGridView.Size = new System.Drawing.Size(225, 179);
-            this.anaMagazziniDataGridView.TabIndex = 3;
+            this.tipiCommesseToolStripMenuItem.Name = "tipiCommesseToolStripMenuItem";
+            this.tipiCommesseToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.tipiCommesseToolStripMenuItem.Text = "Tipi commesse";
             // 
-            // dataGridViewTextBoxColumn1
+            // fasiLavorazioneToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDMagazzino";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IDMagazzino";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.fasiLavorazioneToolStripMenuItem.Name = "fasiLavorazioneToolStripMenuItem";
+            this.fasiLavorazioneToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.fasiLavorazioneToolStripMenuItem.Text = "Fasi lavorazione";
             // 
-            // dataGridViewTextBoxColumn2
+            // compatibilitàStampiToolStripMenuItem
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descrizione";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descrizione";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.compatibilitàStampiToolStripMenuItem.Name = "compatibilitàStampiToolStripMenuItem";
+            this.compatibilitàStampiToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.compatibilitàStampiToolStripMenuItem.Text = "Compatibilità Stampi";
             // 
-            // button3
+            // compatibilitàDimeToolStripMenuItem
             // 
-            this.button3.Location = new System.Drawing.Point(209, 243);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(270, 36);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Ciao Ciao";
-            this.button3.UseVisualStyleBackColor = true;
+            this.compatibilitàDimeToolStripMenuItem.Name = "compatibilitàDimeToolStripMenuItem";
+            this.compatibilitàDimeToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.compatibilitàDimeToolStripMenuItem.Text = "Compatibilità Dime";
             // 
-            // Form1
+            // ordiniToolStripMenuItem
+            // 
+            this.ordiniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testataOrdiniToolStripMenuItem,
+            this.dettaglioOrdiniToolStripMenuItem,
+            this.commesseToolStripMenuItem1});
+            this.ordiniToolStripMenuItem.Name = "ordiniToolStripMenuItem";
+            this.ordiniToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.ordiniToolStripMenuItem.Text = "Ordini";
+            // 
+            // testataOrdiniToolStripMenuItem
+            // 
+            this.testataOrdiniToolStripMenuItem.Name = "testataOrdiniToolStripMenuItem";
+            this.testataOrdiniToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.testataOrdiniToolStripMenuItem.Text = "Testata ordini";
+            this.testataOrdiniToolStripMenuItem.Click += new System.EventHandler(this.testataOrdiniToolStripMenuItem_Click);
+            // 
+            // dettaglioOrdiniToolStripMenuItem
+            // 
+            this.dettaglioOrdiniToolStripMenuItem.Name = "dettaglioOrdiniToolStripMenuItem";
+            this.dettaglioOrdiniToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.dettaglioOrdiniToolStripMenuItem.Text = "Dettaglio ordini";
+            // 
+            // commesseToolStripMenuItem1
+            // 
+            this.commesseToolStripMenuItem1.Name = "commesseToolStripMenuItem1";
+            this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.commesseToolStripMenuItem1.Text = "Commesse";
+            // 
+            // magazziniToolStripMenuItem
+            // 
+            this.magazziniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.anagraficheMagazziniToolStripMenuItem,
+            this.interrogazioneGiacenzeToolStripMenuItem,
+            this.interrogazioneMovimentiToolStripMenuItem,
+            this.caricoscaricoToolStripMenuItem});
+            this.magazziniToolStripMenuItem.Name = "magazziniToolStripMenuItem";
+            this.magazziniToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.magazziniToolStripMenuItem.Text = "Magazzini";
+            // 
+            // anagraficheMagazziniToolStripMenuItem
+            // 
+            this.anagraficheMagazziniToolStripMenuItem.Name = "anagraficheMagazziniToolStripMenuItem";
+            this.anagraficheMagazziniToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.anagraficheMagazziniToolStripMenuItem.Text = "Anagrafiche magazzini";
+            // 
+            // interrogazioneGiacenzeToolStripMenuItem
+            // 
+            this.interrogazioneGiacenzeToolStripMenuItem.Name = "interrogazioneGiacenzeToolStripMenuItem";
+            this.interrogazioneGiacenzeToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.interrogazioneGiacenzeToolStripMenuItem.Text = "Interrogazione giacenze";
+            // 
+            // interrogazioneMovimentiToolStripMenuItem
+            // 
+            this.interrogazioneMovimentiToolStripMenuItem.Name = "interrogazioneMovimentiToolStripMenuItem";
+            this.interrogazioneMovimentiToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.interrogazioneMovimentiToolStripMenuItem.Text = "Interrogazione movimenti";
+            // 
+            // caricoscaricoToolStripMenuItem
+            // 
+            this.caricoscaricoToolStripMenuItem.Name = "caricoscaricoToolStripMenuItem";
+            this.caricoscaricoToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.caricoscaricoToolStripMenuItem.Text = "Carico/scarico manuale";
+            // 
+            // impostazioniToolStripMenuItem
+            // 
+            this.impostazioniToolStripMenuItem.Name = "impostazioniToolStripMenuItem";
+            this.impostazioniToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.impostazioniToolStripMenuItem.Text = "Impostazioni";
+            // 
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(591, 420);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.anaMagazziniDataGridView);
-            this.Controls.Add(this.anaMagazziniBindingNavigator);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(753, 464);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Home";
+            this.Text = "Target2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingNavigator)).EndInit();
-            this.anaMagazziniBindingNavigator.ResumeLayout(false);
-            this.anaMagazziniBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniDataGridView)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private Target2021DataSet target2021DataSet;
         private System.Windows.Forms.BindingSource anaMagazziniBindingSource;
         private Target2021DataSetTableAdapters.AnaMagazziniTableAdapter anaMagazziniTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator anaMagazziniBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton anaMagazziniBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView anaMagazziniDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem anagraficeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem articoloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dettaglioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fornitoriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem macchinariToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem strumentiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materiePrimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stampiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minuterieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipiCommesseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fasiLavorazioneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem compatibilitàStampiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem compatibilitàDimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordiniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testataOrdiniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dettaglioOrdiniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem commesseToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem magazziniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem impostazioniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anagraficheMagazziniToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem interrogazioneGiacenzeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem interrogazioneMovimentiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caricoscaricoToolStripMenuItem;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
 
