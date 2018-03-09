@@ -36,6 +36,11 @@ namespace Target2021
                 bindingSource.DataSource = GetData("SELECT * FROM testata_ordini_multiriga WHERE numero_ordine='" + ID + "'");
                 dataGridView1.DataSource = bindingSource;
             }
+            if(form=="Clienti")
+            {
+                bindingSource.DataSource = GetData("SELECT * FROM clienti WHERE codice='" + ID + "'");
+                dataGridView1.DataSource = bindingSource;
+            }
              DataTable GetData(string query) //metodo interno a LoadRow per ottenere i dati dal db
             {
                 string stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;Persist Security Info=True;User ID=Amministratore;Password=Barilla23";

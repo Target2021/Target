@@ -463,6 +463,7 @@
             this.clientiDataGridView.RowTemplate.Height = 24;
             this.clientiDataGridView.Size = new System.Drawing.Size(837, 527);
             this.clientiDataGridView.TabIndex = 1;
+            this.clientiDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.clientiDataGridView_RowHeaderMouseDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
