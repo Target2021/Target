@@ -79,5 +79,14 @@ namespace Target2021.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Data Source=target2021.database.windows.net;Initial Catalog=Target2021;Persist Security Info=True;User ID=Amministratore;Password=Barilla23.
+        /// </summary>
+        internal static string StringaConnessione {
+            get {
+                return ResourceManager.GetString("StringaConnessione", resourceCulture);
+            }
+        }
     }
 }

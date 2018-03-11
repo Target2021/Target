@@ -38,6 +38,7 @@
       <HintPath>D:\Desktop2\Scuola\Visual studio progetti\Progetto Target - Copia\Target\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +58,12 @@
     <Compile Include="Clienti.Designer.cs">
       <DependentUpon>Clienti.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contatori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contatori.Designer.cs">
+      <DependentUpon>Contatori.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dettaglio_Articoli.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +76,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewOrderCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewOrderCheck.Designer.cs">
+      <DependentUpon>NewOrderCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\RoundButton.cs">
@@ -80,6 +93,7 @@
     <Compile Include="RigaCompleta.Designer.cs">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,11 +114,17 @@
     <EmbeddedResource Include="Clienti.resx">
       <DependentUpon>Clienti.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Contatori.resx">
+      <DependentUpon>Contatori.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dettaglio_Articoli.resx">
       <DependentUpon>Dettaglio_Articoli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewOrderCheck.resx">
+      <DependentUpon>NewOrderCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -152,6 +172,7 @@
   <ItemGroup>
     <Content Include="Immagini\Immagine1.png" />
     <Content Include="Immagini\static1.squarespace.com.png" />
+    <None Include="Resources\StringaConnessione.bmp" />
     <None Include="Resources\linea-tratteggiata.png" />
     <None Include="Resources\static1.squarespace.com.png" />
   </ItemGroup>

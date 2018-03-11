@@ -60,5 +60,24 @@ namespace Target2021
             TestataOrdini.MdiParent = this;
             TestataOrdini.Show();
         }
+
+        private void contatoriAziendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Contatori ContaForm = new Contatori();
+            ContaForm.MdiParent = this;
+            ContaForm.Show();
+        }
+
+        private void controllaNuoviOrdiniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewOrderCheck ControllaNuoviOrdini = new NewOrderCheck();
+            ControllaNuoviOrdini.MdiParent = this;
+            ControllaNuoviOrdini.Show();
+        }
+
+        private void esciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
