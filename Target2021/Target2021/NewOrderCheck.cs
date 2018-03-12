@@ -25,14 +25,22 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int NumOrd, NumTest, NumDet;
+            int NumOrd, NumTest, NumDet, neworder=0;
             NumOrd = RecuperaUltimoOrdine();
             textBox1.Text = NumOrd.ToString();
             NumTest = RecuperaUltimoTestata();
             textBox2.Text = NumTest.ToString();
             NumDet = RecuperaUltimoDettaglio();
             textBox3.Text = NumDet.ToString();
-
+            neworder = NumTest - NumOrd;
+            label4.Visible = true;
+            if (neworder == 0) label4.Text = "Non ci sono nuovi ordini!";
+            else
+            {
+                label4.Text = "Ci sono " + neworder.ToString() + " nuovi ordini!";
+                button2.Enabled = true;
+            }
+                
         }
 
         private int RecuperaUltimoOrdine()

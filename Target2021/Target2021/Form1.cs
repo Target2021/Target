@@ -28,8 +28,6 @@ namespace Target2021
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AnaMagazzini'. È possibile spostarla o rimuoverla se necessario.
-            this.anaMagazziniTableAdapter.Fill(this.target2021DataSet.AnaMagazzini);
 
         }
 
