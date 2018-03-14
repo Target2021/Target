@@ -100,6 +100,7 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
@@ -110,6 +111,7 @@
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // menuStrip1
             // 
@@ -171,13 +173,14 @@
             this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
             this.clientiToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.clientiToolStripMenuItem.Text = "Clienti";
-            this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
+            this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click_1);
             // 
             // fornitoriToolStripMenuItem
             // 
             this.fornitoriToolStripMenuItem.Name = "fornitoriToolStripMenuItem";
             this.fornitoriToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.fornitoriToolStripMenuItem.Text = "Fornitori";
+            this.fornitoriToolStripMenuItem.Click += new System.EventHandler(this.fornitoriToolStripMenuItem_Click);
             // 
             // macchinariToolStripMenuItem
             // 
@@ -348,7 +351,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";
             this.Text = "Target2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -393,7 +396,6 @@
         private System.Windows.Forms.ToolStripMenuItem interrogazioneGiacenzeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem interrogazioneMovimentiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caricoscaricoToolStripMenuItem;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.ToolStripMenuItem contatoriAziendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem controllaNuoviOrdiniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem esciToolStripMenuItem;

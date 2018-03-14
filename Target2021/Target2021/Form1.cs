@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,37 @@ namespace Target2021
 {
     public partial class Home : Form
     {
-        public Home()
+        public string user, pass;
+        public Home(string user,string pass)
         {
-            InitializeComponent();
+            InitializeComponent();          
             menuStrip1.Renderer = new MyRenderer();
-
+            this.user =user;
         }
         private class MyRenderer : ToolStripProfessionalRenderer
         {
             public MyRenderer() : base(new MyColors()) { }
+        }      
+        private void CheckPrivilege(string livello)
+        {
+            livello =livello.Replace(" ", string.Empty);
+            if(livello=="Amministratore")
+            {
+
+            }
+            if(livello=="Dirigente")
+            {
+
+            }
+            if (livello == "Segretaria")
+            {
+
+            }
+            if (livello == "Operaio")
+            {
+                MessageBox.Show("osti");
+                clientiToolStripMenuItem.Enabled = false;
+            }
         }
         private class MyColors : ProfessionalColorTable
         {
@@ -51,9 +74,19 @@ namespace Target2021
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            login.Dispose();
+            string strconn = Properties.Resources.StringaConnessione;
+            SqlConnection con = new SqlConnection(strconn);
+            string query = "SELECT Livello FROM Utenti WHERE Nome='" + user + "'";
+            SqlCommand sqlCommand = new SqlCommand(query, con);
+            con.Open();
+            object Livello = sqlCommand.ExecuteScalar();
+            MessageBox.Show(Livello.ToString());
+            con.Close();
+            CheckPrivilege(Livello.ToString());
         }
-
+       
         private void testataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Testata_articoli testata = new Testata_articoli();
@@ -96,6 +129,17 @@ namespace Target2021
             ControllaNuoviOrdini.Show();
         }
 
+        private void fornitoriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientiToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Clienti clienti = new Clienti();
+            clienti.MdiParent = this;
+            clienti.Show();
+        }  
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
