@@ -15,9 +15,32 @@ namespace Target2021
         public Home()
         {
             InitializeComponent();
-            
-        }
+            menuStrip1.Renderer = new MyRenderer();
 
+        }
+        private class MyRenderer : ToolStripProfessionalRenderer
+        {
+            public MyRenderer() : base(new MyColors()) { }
+        }
+        private class MyColors : ProfessionalColorTable
+        {
+            public override Color MenuItemSelected
+            {
+                get { return Color.DeepSkyBlue; }
+            }
+            public override Color MenuItemSelectedGradientBegin
+            {
+                get { return Color.Aqua; }
+            }
+            public override Color MenuItemSelectedGradientEnd
+            {
+                get { return Color.CadetBlue; }
+            }
+            public override Color MenuItemPressedGradientMiddle
+            {
+                get { return Color.Aquamarine; }
+            }
+        }
         private void anaMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
