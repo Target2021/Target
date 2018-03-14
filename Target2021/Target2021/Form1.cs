@@ -74,15 +74,16 @@ namespace Target2021
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Dispose();
+            //Login login = new Login();
+            //login.Dispose();
             string strconn = Properties.Resources.StringaConnessione;
             SqlConnection con = new SqlConnection(strconn);
             string query = "SELECT Livello FROM Utenti WHERE Nome='" + user + "'";
             SqlCommand sqlCommand = new SqlCommand(query, con);
             con.Open();
             object Livello = sqlCommand.ExecuteScalar();
-            MessageBox.Show(Livello.ToString());
+            //MessageBox.Show(Livello.ToString());
+            this.Text = "Target 2.0 - Utente: " + user + " - Livello: " + Livello.ToString();
             con.Close();
             CheckPrivilege(Livello.ToString());
         }
