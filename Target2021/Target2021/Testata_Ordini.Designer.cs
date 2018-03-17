@@ -138,6 +138,7 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
@@ -148,6 +149,7 @@
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = this.testata_ordini_multirigaTableAdapter;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // testata_ordini_multirigaDataGridView
             // 
@@ -161,10 +163,10 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
             this.testata_ordini_multirigaDataGridView.DataSource = this.testata_ordini_multirigaBindingSource;
-            this.testata_ordini_multirigaDataGridView.Location = new System.Drawing.Point(95, 158);
+            this.testata_ordini_multirigaDataGridView.Location = new System.Drawing.Point(147, 158);
             this.testata_ordini_multirigaDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.testata_ordini_multirigaDataGridView.Name = "testata_ordini_multirigaDataGridView";
-            this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(669, 517);
+            this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(499, 517);
             this.testata_ordini_multirigaDataGridView.TabIndex = 6;
             this.testata_ordini_multirigaDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.testata_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick);
             // 

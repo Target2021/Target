@@ -39,7 +39,7 @@ namespace Target2021
             switch (Filtro.SelectedIndex)
             {
                 case 0:
-                    Filtro_Dati("SELECT * FROM testata_ordini_multiriga WHERE numero_ordine LIKE '%" + textBox1.Text + "%'");
+                    Filtro_Dati("SELECT * FROM testata_ordini_multiriga WHERE numero_ordine LIKE '" + textBox1.Text + "'");
                     break;
                 case 1:
                     Filtro_Dati("SELECT * FROM testata_ordini_multiriga WHERE data_ordine LIKE '%" + textBox1.Text + "%'");

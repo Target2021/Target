@@ -39,7 +39,7 @@ namespace Target2021
         {
             if (Filter.Text == "IDArticolo")
             {
-                Search_Filter("SELECT * FROM DettArticoli WHERE IDDettaglioArticolo LIKE '%" + textBox1.Text + "%'");
+                Search_Filter("SELECT * FROM DettArticoli WHERE IDDettaglioArticolo LIKE '" + textBox1.Text + "'");
             }
             if (Filter.Text == "Progressivo")
             {
