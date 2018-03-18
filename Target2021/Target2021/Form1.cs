@@ -146,6 +146,13 @@ namespace Target2021
             this.Close();
         }
 
+        private void registraUtentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistraUtenti registraUtenti = new RegistraUtenti();
+            registraUtenti.MdiParent = this;
+            registraUtenti.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();

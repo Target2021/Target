@@ -32,7 +32,6 @@ namespace Target2021
                 sqlDataAdapter.Fill(dt);
                 if (dt.Rows.Count == 1)
                 {
-                    //MessageBox.Show("Benvenuto");
                     string NomeUtente = textBox1.Text;
                     string Password = textBox2.Text;
                     Home home = new Home(NomeUtente, Password);
