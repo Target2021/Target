@@ -63,9 +63,13 @@
             this.caricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ruoliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impiegataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stampaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -123,6 +127,7 @@
             this.ordiniToolStripMenuItem,
             this.magazziniToolStripMenuItem,
             this.impostazioniToolStripMenuItem,
+            this.ruoliToolStripMenuItem,
             this.disconnettiUtenteToolStripMenuItem,
             this.esciToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -342,6 +347,21 @@
             this.contatoriAziendaToolStripMenuItem.Text = "Contatori azienda";
             this.contatoriAziendaToolStripMenuItem.Click += new System.EventHandler(this.contatoriAziendaToolStripMenuItem_Click);
             // 
+            // registraUtentiToolStripMenuItem
+            // 
+            this.registraUtentiToolStripMenuItem.Name = "registraUtentiToolStripMenuItem";
+            this.registraUtentiToolStripMenuItem.Size = new System.Drawing.Size(256, 40);
+            this.registraUtentiToolStripMenuItem.Text = "Registra utenti";
+            this.registraUtentiToolStripMenuItem.Click += new System.EventHandler(this.registraUtentiToolStripMenuItem_Click);
+            // 
+            // disconnettiUtenteToolStripMenuItem
+            // 
+            this.disconnettiUtenteToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.disconnettiUtenteToolStripMenuItem.Name = "disconnettiUtenteToolStripMenuItem";
+            this.disconnettiUtenteToolStripMenuItem.Size = new System.Drawing.Size(194, 39);
+            this.disconnettiUtenteToolStripMenuItem.Text = "Disconnetti utente";
+            this.disconnettiUtenteToolStripMenuItem.Click += new System.EventHandler(this.disconnettiUtenteToolStripMenuItem_Click);
+            // 
             // esciToolStripMenuItem
             // 
             this.esciToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,20 +370,34 @@
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
-            // disconnettiUtenteToolStripMenuItem
+            // ruoliToolStripMenuItem
             // 
-            this.disconnettiUtenteToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disconnettiUtenteToolStripMenuItem.Name = "disconnettiUtenteToolStripMenuItem";
-            this.disconnettiUtenteToolStripMenuItem.Size = new System.Drawing.Size(191, 39);
-            this.disconnettiUtenteToolStripMenuItem.Text = "disconnetti utente";
-            this.disconnettiUtenteToolStripMenuItem.Click += new System.EventHandler(this.disconnettiUtenteToolStripMenuItem_Click);
+            this.ruoliToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.impiegataToolStripMenuItem,
+            this.stampaggioToolStripMenuItem,
+            this.taglioToolStripMenuItem});
+            this.ruoliToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F);
+            this.ruoliToolStripMenuItem.Name = "ruoliToolStripMenuItem";
+            this.ruoliToolStripMenuItem.Size = new System.Drawing.Size(76, 39);
+            this.ruoliToolStripMenuItem.Text = "Ruoli";
             // 
-            // registraUtentiToolStripMenuItem
+            // impiegataToolStripMenuItem
             // 
-            this.registraUtentiToolStripMenuItem.Name = "registraUtentiToolStripMenuItem";
-            this.registraUtentiToolStripMenuItem.Size = new System.Drawing.Size(256, 40);
-            this.registraUtentiToolStripMenuItem.Text = "Registra utenti";
-            this.registraUtentiToolStripMenuItem.Click += new System.EventHandler(this.registraUtentiToolStripMenuItem_Click);
+            this.impiegataToolStripMenuItem.Name = "impiegataToolStripMenuItem";
+            this.impiegataToolStripMenuItem.Size = new System.Drawing.Size(216, 40);
+            this.impiegataToolStripMenuItem.Text = "Impiegata";
+            // 
+            // stampaggioToolStripMenuItem
+            // 
+            this.stampaggioToolStripMenuItem.Name = "stampaggioToolStripMenuItem";
+            this.stampaggioToolStripMenuItem.Size = new System.Drawing.Size(216, 40);
+            this.stampaggioToolStripMenuItem.Text = "Stampaggio";
+            // 
+            // taglioToolStripMenuItem
+            // 
+            this.taglioToolStripMenuItem.Name = "taglioToolStripMenuItem";
+            this.taglioToolStripMenuItem.Size = new System.Drawing.Size(216, 40);
+            this.taglioToolStripMenuItem.Text = "Taglio";
             // 
             // Home
             // 
@@ -425,6 +459,10 @@
         private System.Windows.Forms.ToolStripMenuItem esciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disconnettiUtenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registraUtentiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ruoliToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem impiegataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stampaggioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem taglioToolStripMenuItem;
     }
 }
 
