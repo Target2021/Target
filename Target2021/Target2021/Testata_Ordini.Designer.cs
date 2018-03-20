@@ -55,20 +55,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(209, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtra per";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(237, 53);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(178, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 17);
+            this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Campo Da Cercare";
             // 
@@ -79,31 +77,29 @@
             "Numero Ordine",
             "Data Ordine",
             "Codice Cliente"});
-            this.Filtro.Location = new System.Drawing.Point(375, 15);
-            this.Filtro.Margin = new System.Windows.Forms.Padding(4);
+            this.Filtro.Location = new System.Drawing.Point(281, 12);
             this.Filtro.Name = "Filtro";
-            this.Filtro.Size = new System.Drawing.Size(187, 24);
+            this.Filtro.Size = new System.Drawing.Size(141, 21);
             this.Filtro.TabIndex = 2;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(375, 55);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(281, 45);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 15);
+            this.textBox1.Size = new System.Drawing.Size(141, 13);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::Target2021.Properties.Resources.linea_tratteggiata;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(375, 64);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(281, 56);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 17);
+            this.pictureBox1.Size = new System.Drawing.Size(141, 10);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -161,10 +157,9 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
             this.testata_ordini_multirigaDataGridView.DataSource = this.testata_ordini_multirigaBindingSource;
-            this.testata_ordini_multirigaDataGridView.Location = new System.Drawing.Point(95, 158);
-            this.testata_ordini_multirigaDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.testata_ordini_multirigaDataGridView.Location = new System.Drawing.Point(71, 128);
             this.testata_ordini_multirigaDataGridView.Name = "testata_ordini_multirigaDataGridView";
-            this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(669, 517);
+            this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(502, 420);
             this.testata_ordini_multirigaDataGridView.TabIndex = 6;
             this.testata_ordini_multirigaDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.testata_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick);
             // 
@@ -209,10 +204,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(387, 97);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(290, 79);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Cerca";
             this.button1.UseVisualStyleBackColor = true;
@@ -221,10 +215,10 @@
             // 
             // Testata_Ordini
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(867, 688);
+            this.ClientSize = new System.Drawing.Size(650, 559);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.testata_ordini_multirigaDataGridView);
             this.Controls.Add(this.textBox1);
@@ -232,7 +226,6 @@
             this.Controls.Add(this.Filtro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Testata_Ordini";
             this.Text = "Testata_Ordini";
             this.Load += new System.EventHandler(this.Testata_Ordini_Load);
