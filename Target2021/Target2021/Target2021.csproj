@@ -159,9 +159,6 @@
     <Compile Include="RegistraUtenti.Designer.cs">
       <DependentUpon>RegistraUtenti.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CheckStampaggio.resx">
-      <DependentUpon>CheckStampaggio.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Clienti.resx">
       <DependentUpon>Clienti.cs</DependentUpon>
     </EmbeddedResource>

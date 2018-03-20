@@ -159,13 +159,16 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
             this.testata_ordini_multirigaDataGridView.DataSource = this.testata_ordini_multirigaBindingSource;
+<<<<<<< HEAD
             this.testata_ordini_multirigaDataGridView.Location = new System.Drawing.Point(71, 128);
             this.testata_ordini_multirigaDataGridView.Name = "testata_ordini_multirigaDataGridView";
             this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(502, 420);
+=======
             this.testata_ordini_multirigaDataGridView.Location = new System.Drawing.Point(147, 158);
             this.testata_ordini_multirigaDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.testata_ordini_multirigaDataGridView.Name = "testata_ordini_multirigaDataGridView";
             this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(499, 517);
+>>>>>>> f36ebf65ff5c86d98a3c67f02596cbcbe82ddbab
             this.testata_ordini_multirigaDataGridView.TabIndex = 6;
             this.testata_ordini_multirigaDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.testata_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick);
             // 
