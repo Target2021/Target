@@ -64,12 +64,12 @@
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ruoliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impiegataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stampaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -354,22 +354,6 @@
             this.registraUtentiToolStripMenuItem.Text = "Registra utenti";
             this.registraUtentiToolStripMenuItem.Click += new System.EventHandler(this.registraUtentiToolStripMenuItem_Click);
             // 
-            // disconnettiUtenteToolStripMenuItem
-            // 
-            this.disconnettiUtenteToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.disconnettiUtenteToolStripMenuItem.Name = "disconnettiUtenteToolStripMenuItem";
-            this.disconnettiUtenteToolStripMenuItem.Size = new System.Drawing.Size(194, 39);
-            this.disconnettiUtenteToolStripMenuItem.Text = "Disconnetti utente";
-            this.disconnettiUtenteToolStripMenuItem.Click += new System.EventHandler(this.disconnettiUtenteToolStripMenuItem_Click);
-            // 
-            // esciToolStripMenuItem
-            // 
-            this.esciToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.esciToolStripMenuItem.Name = "esciToolStripMenuItem";
-            this.esciToolStripMenuItem.Size = new System.Drawing.Size(64, 39);
-            this.esciToolStripMenuItem.Text = "Esci";
-            this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
-            // 
             // ruoliToolStripMenuItem
             // 
             this.ruoliToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -392,12 +376,29 @@
             this.stampaggioToolStripMenuItem.Name = "stampaggioToolStripMenuItem";
             this.stampaggioToolStripMenuItem.Size = new System.Drawing.Size(216, 40);
             this.stampaggioToolStripMenuItem.Text = "Stampaggio";
+            this.stampaggioToolStripMenuItem.Click += new System.EventHandler(this.stampaggioToolStripMenuItem_Click);
             // 
             // taglioToolStripMenuItem
             // 
             this.taglioToolStripMenuItem.Name = "taglioToolStripMenuItem";
             this.taglioToolStripMenuItem.Size = new System.Drawing.Size(216, 40);
             this.taglioToolStripMenuItem.Text = "Taglio";
+            // 
+            // disconnettiUtenteToolStripMenuItem
+            // 
+            this.disconnettiUtenteToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.disconnettiUtenteToolStripMenuItem.Name = "disconnettiUtenteToolStripMenuItem";
+            this.disconnettiUtenteToolStripMenuItem.Size = new System.Drawing.Size(194, 39);
+            this.disconnettiUtenteToolStripMenuItem.Text = "Disconnetti utente";
+            this.disconnettiUtenteToolStripMenuItem.Click += new System.EventHandler(this.disconnettiUtenteToolStripMenuItem_Click);
+            // 
+            // esciToolStripMenuItem
+            // 
+            this.esciToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.esciToolStripMenuItem.Name = "esciToolStripMenuItem";
+            this.esciToolStripMenuItem.Size = new System.Drawing.Size(64, 39);
+            this.esciToolStripMenuItem.Text = "Esci";
+            this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
             // Home
             // 

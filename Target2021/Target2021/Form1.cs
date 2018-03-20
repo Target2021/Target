@@ -153,6 +153,13 @@ namespace Target2021
             registraUtenti.Show();
         }
 
+        private void stampaggioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckStampaggio checkStampaggio = new CheckStampaggio();
+            checkStampaggio.MdiParent = this;
+            checkStampaggio.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
