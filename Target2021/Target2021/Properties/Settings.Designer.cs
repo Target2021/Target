@@ -26,17 +26,6 @@ namespace Target2021.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql6004.site4now.net;Initial Catalog=DB_A35212_target;Persist Securit" +
-            "y Info=True;User ID=DB_A35212_target_admin;Password=Barilla23")]
-        public string DB_A35212_targetConnectionString {
-            get {
-                return ((string)(this["DB_A35212_targetConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=target2021.database.windows.net;Initial Catalog=Target2021;Persist Se" +
             "curity Info=True;User ID=Amministratore;Password=Barilla23")]
         public string Target2021ConnectionString {
