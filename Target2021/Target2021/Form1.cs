@@ -41,7 +41,6 @@ namespace Target2021
             }
             if (livello == "Operaio")
             {
-                MessageBox.Show("osti");
                 clientiToolStripMenuItem.Enabled = false;
             }
         }
@@ -74,15 +73,12 @@ namespace Target2021
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Login login = new Login();
-            //login.Dispose();
             string strconn = Properties.Resources.StringaConnessione;
             SqlConnection con = new SqlConnection(strconn);
             string query = "SELECT Livello FROM Utenti WHERE Nome='" + user + "'";
             SqlCommand sqlCommand = new SqlCommand(query, con);
             con.Open();
             object Livello = sqlCommand.ExecuteScalar();
-            //MessageBox.Show(Livello.ToString());
             this.Text = "Target 2.0 - Utente: " + user + " - Livello: " + Livello.ToString();
             con.Close();
             CheckPrivilege(Livello.ToString());
@@ -140,7 +136,23 @@ namespace Target2021
             Clienti clienti = new Clienti();
             clienti.MdiParent = this;
             clienti.Show();
-        }  
+        }
+
+        private void disconnettiUtenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
+            this.Close();
+        }
+
+        private void registraUtentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistraUtenti registraUtenti = new RegistraUtenti();
+            registraUtenti.MdiParent = this;
+            registraUtenti.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
