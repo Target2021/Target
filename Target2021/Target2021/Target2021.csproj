@@ -70,6 +70,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckImpiegato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckImpiegato.Designer.cs">
+      <DependentUpon>CheckImpiegato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckStampaggio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckStampaggio.Designer.cs">
+      <DependentUpon>CheckStampaggio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckTaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckTaglio.Designer.cs">
+      <DependentUpon>CheckTaglio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clienti.cs">
       <SubType>Form</SubType>
     </Compile>
