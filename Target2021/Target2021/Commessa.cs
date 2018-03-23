@@ -46,9 +46,9 @@ namespace Target2021
         public int MinutiAttrezzaggio { get; set; }
         public int Stato { get; set; }
 
-        public Commessa(int ID)
+        public Commessa(int id)
         {
-            IDCommessa = ID;
+            NrCommessa = id;
         }
 
     }
