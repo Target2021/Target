@@ -16,12 +16,15 @@ namespace Target2021
         public RegistraUtenti()
         {
             InitializeComponent();
+            Login login = new Login();
+            login.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
+                
                 string stringaconnessione = Properties.Resources.StringaConnessione;
                 SqlConnection con = new SqlConnection(stringaconnessione);
                 string query = "SELECT * FROM Utenti WHERE Nome ='" + textBox1.Text + "' AND Cognome='"+textBox3.Text+"'";

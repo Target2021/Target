@@ -38,6 +38,7 @@ namespace Target2021
                     this.Hide();
                     home.ShowDialog();
                     con.Close();
+                    this.Close();
                 }
                 else
                 {
@@ -47,6 +48,31 @@ namespace Target2021
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
+
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            RegistraUtenti registraUtenti = new RegistraUtenti();
+            this.Hide();
+            registraUtenti.ShowDialog();
+            this.Close();
         }
     }
 }
