@@ -65,7 +65,7 @@ namespace Target2021
                     }
                     if (Enumerable.Range(1, 10).Contains(diff))
                     {
-                        MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.YesNo);
+                        MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.OK);
                         button1.Enabled = true;
                         button1.BackColor = Color.Yellow;
                     }

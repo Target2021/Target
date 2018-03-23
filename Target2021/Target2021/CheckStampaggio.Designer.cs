@@ -41,29 +41,29 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(789, 187);
+            this.button1.Location = new System.Drawing.Point(860, 111);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(129, 44);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "LAVORA";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(789, 367);
+            this.button2.Location = new System.Drawing.Point(860, 361);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(129, 44);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
+            this.button2.Text = "AGGIORNA";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(719, 512);
+            this.dataGridView1.Size = new System.Drawing.Size(808, 512);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
@@ -85,7 +85,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckStampaggio";
             this.Text = "CheckStampaggio";
             this.Load += new System.EventHandler(this.CheckStampaggio_Load);
