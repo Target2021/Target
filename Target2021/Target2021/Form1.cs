@@ -162,7 +162,7 @@ namespace Target2021
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
     }
 }
