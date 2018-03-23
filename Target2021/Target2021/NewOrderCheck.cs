@@ -13,6 +13,8 @@ namespace Target2021
 {
     public partial class NewOrderCheck : Form
     {
+        private int NumOrd, NumTest;
+
         public NewOrderCheck()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int NumOrd, NumTest, NumDet, neworder=0;
+            int NumDet, neworder=0;
             NumOrd = RecuperaUltimoOrdine();
             textBox1.Text = NumOrd.ToString();
             NumTest = RecuperaUltimoTestata();
@@ -81,5 +83,17 @@ namespace Target2021
             connessione.Close();
             return NrUltOrd;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int i, IDOrdine, UltimoID;
+            do { 
+                IDOrdine = RecuperaUltimoOrdine();
+                UltimoID = RecuperaUltimoTestata();
+                
+
+            } while (IDOrdine + 1 < UltimoID);
+        }
+
     }
 }
