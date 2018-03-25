@@ -104,7 +104,8 @@ namespace Target2021
             SqlDataReader fasi;
             BindingSource SorgenteDati = new BindingSource();
 
-            do { 
+            do {
+                progressivo = 0;
                 IDOrdine = RecuperaUltimoOrdine();
                 UltimoID = RecuperaUltimoTestata();
                 IDOrdine++;
@@ -125,33 +126,63 @@ namespace Target2021
                     {
                         com.CodCommessa = "OF" + IDOrdine;
                         com.TipoCommessa = 1;
+                        com.NrCommessa = IDOrdine;
+                        DataOrdine = RecuperaDataOrdine(IDOrdine);
+                        com.DataCommessa = DataOrdine;
+                        textBox4.Text = textBox4.Text + "CodCommessa: " + com.CodCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "NrCommessa: " + com.NrCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "Data Commessa: " + com.DataCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "Tipo Commessa: " + com.TipoCommessa + "\r\n";
+                        IDCliente = RecuperaIDCliente(IDOrdine);
+                        com.IDCliente = IDCliente;
+                        OrdineCliente = RecuperaOrdineCliente(IDOrdine);
+                        com.OrdCliente = OrdineCliente;
+                        InserisciCommessa(com);
+                        AggiornaUltimoOrdine(IDOrdine, DataOrdine);
                     }
 
                     if (progressivo == 2)
                     {
                         com.CodCommessa = "S" + IDOrdine;
                         com.TipoCommessa = 2;
+                        com.NrCommessa = IDOrdine;
+                        DataOrdine = RecuperaDataOrdine(IDOrdine);
+                        com.DataCommessa = DataOrdine;
+                        textBox4.Text = textBox4.Text + "CodCommessa: " + com.CodCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "NrCommessa: " + com.NrCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "Data Commessa: " + com.DataCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "Tipo Commessa: " + com.TipoCommessa + "\r\n";
+                        IDCliente = RecuperaIDCliente(IDOrdine);
+                        com.IDCliente = IDCliente;
+                        OrdineCliente = RecuperaOrdineCliente(IDOrdine);
+                        com.OrdCliente = OrdineCliente;
+                        InserisciCommessa(com);
+                        AggiornaUltimoOrdine(IDOrdine, DataOrdine);
                     }
 
                     if (progressivo == 3)
                     {
                         com.CodCommessa = "T" + IDOrdine;
                         com.TipoCommessa = 3;
-                    }
-                    com.NrCommessa = IDOrdine;
-                    DataOrdine = RecuperaDataOrdine(IDOrdine);
-                    com.DataCommessa = DataOrdine;
-                    textBox4.Text = textBox4.Text + "CodCommessa: " + com.CodCommessa + "\r\n";
-                    textBox4.Text = textBox4.Text + "NrCommessa: " + com.NrCommessa  + "\r\n";
-                    textBox4.Text = textBox4.Text + "Data Commessa: " + com.DataCommessa + "\r\n";
-                    textBox4.Text = textBox4.Text + "Tipo Commessa: " + com.TipoCommessa + "\r\n";
-                    IDCliente = RecuperaIDCliente(IDOrdine);
-                    com.IDCliente = IDCliente;
-                    OrdineCliente = RecuperaOrdineCliente(IDOrdine);
-                    com.OrdCliente = OrdineCliente;
-                    InserisciCommessa(com);
+                        com.NrCommessa = IDOrdine;
+                        DataOrdine = RecuperaDataOrdine(IDOrdine);
+                        com.DataCommessa = DataOrdine;
+                        textBox4.Text = textBox4.Text + "CodCommessa: " + com.CodCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "NrCommessa: " + com.NrCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "Data Commessa: " + com.DataCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "Tipo Commessa: " + com.TipoCommessa + "\r\n";
+                        IDCliente = RecuperaIDCliente(IDOrdine);
+                        com.IDCliente = IDCliente;
+                        OrdineCliente = RecuperaOrdineCliente(IDOrdine);
+                        com.OrdCliente = OrdineCliente;
+                        InserisciCommessa(com);
+                        AggiornaUltimoOrdine(IDOrdine, DataOrdine);
+                    }                  
                 }
-                AggiornaUltimoOrdine(IDOrdine, DataOrdine);
+                if (progressivo == 4)
+                {
+                    MessageBox.Show("la commessa e' gia' presenta nella base dati");
+                }
             } while (IDOrdine + 1 < IDOrdine+1);  //UltimoID
         }
 
