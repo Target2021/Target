@@ -136,6 +136,7 @@ namespace Target2021
                         IDCliente = RecuperaIDCliente(IDOrdine);
                         com.IDCliente = IDCliente;
                         OrdineCliente = RecuperaOrdineCliente(IDOrdine);
+                        com.CodArticolo = RecuperaCodArticolo(NumOrd);
                         com.OrdCliente = OrdineCliente;
                         InserisciCommessa(com);
                         AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -156,6 +157,7 @@ namespace Target2021
                         com.IDCliente = IDCliente;
                         OrdineCliente = RecuperaOrdineCliente(IDOrdine);
                         com.OrdCliente = OrdineCliente;
+                        com.CodArticolo = RecuperaCodArticolo(NumOrd);
                         InserisciCommessa(com);
                         AggiornaUltimoOrdine(IDOrdine, DataOrdine);
                     }
@@ -175,6 +177,7 @@ namespace Target2021
                         com.IDCliente = IDCliente;
                         OrdineCliente = RecuperaOrdineCliente(IDOrdine);
                         com.OrdCliente = OrdineCliente;
+                        com.CodArticolo = RecuperaCodArticolo(NumOrd);
                         InserisciCommessa(com);
                         AggiornaUltimoOrdine(IDOrdine, DataOrdine);
                     }                  
@@ -275,7 +278,18 @@ namespace Target2021
             connessione.Close();
             return idc;
         }
-
+        private string RecuperaCodArticolo(int numord)
+        {
+            string codArt, stringaconnessione, sql;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT codice_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20180000";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            codArt = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            return codArt;
+        }
         private string RecuperaOrdineCliente(int numord)
         {
             string stringaconnessione, sql, noc;
@@ -293,7 +307,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente) VALUES (@cod,@nr,@data,@tipo,@idc,@oc)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente,CodArticolo) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@codArt)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -301,6 +315,7 @@ namespace Target2021
             comando.Parameters.AddWithValue("@tipo", com.TipoCommessa);
             comando.Parameters.AddWithValue("@idc", com.IDCliente);
             comando.Parameters.AddWithValue("@oc", com.OrdCliente);
+            comando.Parameters.AddWithValue("@codArt", com.CodArticolo);
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();
