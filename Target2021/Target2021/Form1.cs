@@ -13,6 +13,7 @@ namespace Target2021
 {
     public partial class Home : Form
     {
+        public object Livello;
         public string user, pass;
         public Home(string user,string pass)
         {
@@ -29,10 +30,11 @@ namespace Target2021
             livello =livello.Replace(" ", string.Empty);
             if(livello=="Amministratore")
             {
-
+                registraUtenteToolStripMenuItem.Enabled = true;
             }
             if(livello=="Dirigente")
             {
+                registraUtenteToolStripMenuItem.Enabled = true;
 
             }
             if (livello == "Segretaria")
@@ -42,6 +44,8 @@ namespace Target2021
             if (livello == "Operaio")
             {
                 clientiToolStripMenuItem.Enabled = false;
+                registraUtenteToolStripMenuItem.Enabled = false;
+
             }
         }
         private class MyColors : ProfessionalColorTable
@@ -78,7 +82,7 @@ namespace Target2021
             string query = "SELECT Livello FROM Utenti WHERE Nome='" + user + "'";
             SqlCommand sqlCommand = new SqlCommand(query, con);
             con.Open();
-            object Livello = sqlCommand.ExecuteScalar();
+            Livello = sqlCommand.ExecuteScalar();
             this.Text = "Target 2.0 - Utente: " + user + " - Livello: " + Livello.ToString();
             con.Close();
             CheckPrivilege(Livello.ToString());
@@ -141,9 +145,8 @@ namespace Target2021
         private void disconnettiUtenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login login = new Login();
-            this.Hide();
             login.Show();
-            this.Close();
+            this.Enabled = false;
         }
 
         private void registraUtentiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -158,6 +161,13 @@ namespace Target2021
             CheckStampaggio checkStampaggio = new CheckStampaggio();
             checkStampaggio.MdiParent = this;
             checkStampaggio.Show();
+        }
+
+        private void registraUtenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistraUtenti registraUtenti = new RegistraUtenti();
+            registraUtenti.MdiParent = this;
+            registraUtenti.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

@@ -37,6 +37,7 @@ namespace Target2021
                     Home home = new Home(NomeUtente, Password);
                     this.Hide();
                     home.ShowDialog();
+                    home.Enabled = true;
                     con.Close();
                     this.Close();
                 }

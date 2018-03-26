@@ -13,6 +13,7 @@ namespace Target2021
 {
     public partial class CheckStampaggio : Form
     {
+        public int idcommessa;
         public CheckStampaggio()
         {
             InitializeComponent();
@@ -47,32 +48,43 @@ namespace Target2021
             {
                 if (row.Index == index)
                 {
-                    button1.Enabled = true;
-                    int quantita = Convert.ToInt32(row.Cells[8].Value);
-                    String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
-                    string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(row.Cells[9].Value) + "'";
-                    SqlConnection con = new SqlConnection(stringa);
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    con.Open();
-                    int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
-                    con.Close();
-                    int diff = Giacenza - quantita;
-                    if (diff < 0)
+                    try
                     {
-                        MessageBox.Show("giacenza non sufficiente, si prega di effettuare il riordino");
-                        button1.Enabled = false;
-                        button1.BackColor = Color.Red;
-                    }
-                    if (Enumerable.Range(1, 10).Contains(diff))
-                    {
-                        MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.OK);
+                        idcommessa = Convert.ToInt32(row.Cells[0].Value);
+                        MessageBox.Show(idcommessa.ToString());
                         button1.Enabled = true;
-                        button1.BackColor = Color.Yellow;
+                        int quantita = Convert.ToInt32(row.Cells[8].Value);
+                        String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
+                        string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(row.Cells[9].Value) + "'";
+                        SqlConnection con = new SqlConnection(stringa);
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        con.Open();
+                        int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
+                        con.Close();
+                        int diff = Giacenza - quantita;
+                        if (diff < 0)
+                        {
+                            MessageBox.Show("giacenza non sufficiente, si prega di effettuare il riordino");
+                            button1.Enabled = false;
+                            button1.BackColor = Color.Red;
+                        }
+                        if (Enumerable.Range(1, 10).Contains(diff))
+                        {
+                            MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.OK);
+                            button1.Enabled = true;
+                            button1.BackColor = Color.Yellow;
+                        }
+                        if (diff > 10)
+                        {
+                            button1.Enabled = true;
+                            button1.BackColor = Color.Green;
+                            LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
+                            lavoraStampaggio.Show();
+                       
+                        }
                     }
-                    if (diff > 10)
-                    {
-                        button1.Enabled = true;
-                        button1.BackColor = Color.Green;
+                    catch(Exception ex) {
+                        MessageBox.Show(ex.Message);
                     }
                 }
             }
@@ -81,6 +93,18 @@ namespace Target2021
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             CheckGiacenza(e.RowIndex);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.commesseBindingSource.EndEdit();
+            this.dataGridView1.Update();
         }
     }
 }

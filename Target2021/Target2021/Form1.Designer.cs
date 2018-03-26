@@ -70,6 +70,7 @@
             this.taglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registraUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -129,7 +130,8 @@
             this.impostazioniToolStripMenuItem,
             this.ruoliToolStripMenuItem,
             this.disconnettiUtenteToolStripMenuItem,
-            this.esciToolStripMenuItem});
+            this.esciToolStripMenuItem,
+            this.registraUtenteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -400,6 +402,13 @@
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
+            // registraUtenteToolStripMenuItem
+            // 
+            this.registraUtenteToolStripMenuItem.Name = "registraUtenteToolStripMenuItem";
+            this.registraUtenteToolStripMenuItem.Size = new System.Drawing.Size(123, 39);
+            this.registraUtenteToolStripMenuItem.Text = "Registra Utente";
+            this.registraUtenteToolStripMenuItem.Click += new System.EventHandler(this.registraUtenteToolStripMenuItem_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -464,6 +473,7 @@
         private System.Windows.Forms.ToolStripMenuItem impiegataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stampaggioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem taglioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registraUtenteToolStripMenuItem;
     }
 }
 
