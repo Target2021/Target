@@ -99,7 +99,7 @@ namespace Target2021
         private void button2_Click(object sender, EventArgs e)
         {
             int i, IDOrdine, UltimoID, NumFasi, fase = 0, progressivo;
-            DateTime DataOrdine = DateTime.Now;
+            DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
             string CodiceArticolo, IDCliente, OrdineCliente;
             SqlDataReader fasi;
             BindingSource SorgenteDati = new BindingSource();
@@ -149,6 +149,8 @@ namespace Target2021
                     com.IDCliente = IDCliente;
                     OrdineCliente = RecuperaOrdineCliente(IDOrdine);
                     com.OrdCliente = OrdineCliente;
+                    DataConsegna = RecuperaDataConsegna(IDOrdine);
+                    com.DataConsegna = DataConsegna;
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -258,11 +260,25 @@ namespace Target2021
             return noc;
         }
 
+        private DateTime RecuperaDataConsegna(int numord)
+        {
+            string stringaconnessione, sql;
+            DateTime dtc;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT data_consegna FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20180000";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            dtc = DateTime.ParseExact(comando.ExecuteScalar().ToString(), "yyyyMMdd", null);
+            connessione.Close();
+            return dtc;
+        }
+
         private void InserisciCommessa(Commessa com)
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente) VALUES (@cod,@nr,@data,@tipo,@idc,@oc)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -270,6 +286,7 @@ namespace Target2021
             comando.Parameters.AddWithValue("@tipo", com.TipoCommessa);
             comando.Parameters.AddWithValue("@idc", com.IDCliente);
             comando.Parameters.AddWithValue("@oc", com.OrdCliente);
+            comando.Parameters.AddWithValue("@dtc", com.DataConsegna);
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();

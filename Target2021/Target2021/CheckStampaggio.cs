@@ -27,8 +27,8 @@ namespace Target2021
 
         private void LoadStampaggio()
         {
-            String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
-            string query = "SELECT IDCommessa,CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,NrPezziOrdinati,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND Stato IN (SELECT Stato FROM Commesse WHERE Stato=1 OR Stato=0)";
+            String stringa = Properties.Resources.StringaConnessione;
+            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,NrPezziOrdinati,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1)";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -41,21 +41,22 @@ namespace Target2021
             dataGridView1.DataSource = source;
             sda.Update(dataTable);
             con.Close();
+            CheckGiacenza();
         }
-        private void CheckGiacenza(int index)
+
+        private void CheckGiacenza()
         {
+            dataGridView1.ClearSelection();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Index == index)
-                {
                     try
                     {
-                        idcommessa = Convert.ToInt32(row.Cells[0].Value);
-                        MessageBox.Show(idcommessa.ToString());
+                        //idcommessa = Convert.ToInt32(row.Cells[0].Value);
+                        //MessageBox.Show(idcommessa.ToString());
                         button1.Enabled = true;
-                        int quantita = Convert.ToInt32(row.Cells[8].Value);
-                        String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
-                        string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(row.Cells[9].Value) + "'";
+                        int quantita = Convert.ToInt32(row.Cells[7].Value);
+                        String stringa = Properties.Resources.StringaConnessione;
+                        string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(row.Cells[8].Value) + "'";
                         SqlConnection con = new SqlConnection(stringa);
                         SqlCommand cmd = new SqlCommand(query, con);
                         con.Open();
@@ -64,35 +65,35 @@ namespace Target2021
                         int diff = Giacenza - quantita;
                         if (diff < 0)
                         {
-                            MessageBox.Show("giacenza non sufficiente, si prega di effettuare il riordino");
+                            //MessageBox.Show("giacenza non sufficiente, si prega di effettuare il riordino");
                             button1.Enabled = false;
                             button1.BackColor = Color.Red;
+                            row.DefaultCellStyle.BackColor = Color.Red;
                         }
                         if (Enumerable.Range(1, 10).Contains(diff))
                         {
-                            MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.OK);
+                            //MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.OK);
                             button1.Enabled = true;
                             button1.BackColor = Color.Yellow;
+                            row.DefaultCellStyle.BackColor = Color.Yellow;
                         }
                         if (diff > 10)
                         {
                             button1.Enabled = true;
                             button1.BackColor = Color.Green;
-                            LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
-                            lavoraStampaggio.Show();
+                            dataGridView1.Rows[row.Index].DefaultCellStyle.BackColor = Color.Green;
+                        
+                            //LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
+                            //lavoraStampaggio.Show();
                        
                         }
+                        dataGridView1.Refresh();
                     }
                     catch(Exception ex) {
                         MessageBox.Show(ex.Message);
                     }
-                }
+                
             }
-        }
-
-        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            CheckGiacenza(e.RowIndex);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -105,6 +106,12 @@ namespace Target2021
             this.Validate();
             this.commesseBindingSource.EndEdit();
             this.dataGridView1.Update();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows[0].DefaultCellStyle.BackColor = Color.Green;
+            dataGridView1.Rows[1].DefaultCellStyle.BackColor = Color.Yellow;
         }
     }
 }
