@@ -102,7 +102,7 @@ namespace Target2021
         {
             int i, IDOrdine, UltimoID, NumFasi, fase = 0, progressivo, NrPezzi;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
-            string CodiceArticolo, IDCliente, OrdineCliente;
+            string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo;
             SqlDataReader fasi;
             BindingSource SorgenteDati = new BindingSource();
 
@@ -156,7 +156,9 @@ namespace Target2021
                     NrPezzi = RecuperaNrPezzi(IDOrdine);
                     com.NrPezziDaLavorare=NrPezzi;
                     com.NrPezziOrdinati=NrPezzi;
-
+                    com.CodArticolo = CodiceArticolo;
+                    DescrArticolo = RecuperaDescrizioneArticolo(IDOrdine);
+                    com.DescrArticolo = DescrArticolo;
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -175,6 +177,19 @@ namespace Target2021
             CodArticolo = comando.ExecuteScalar().ToString();
             connessione.Close();
             return CodArticolo;
+        }
+
+        private string RecuperaDescrizioneArticolo(int numord)
+        {
+            string stringaconnessione, sql, DesArticolo;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT descrizione_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20180000";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            DesArticolo = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            return DesArticolo;
         }
 
         private int NumeroFasi(string codart)
@@ -307,7 +322,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, NrPezziOrdinati) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@npo)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, NrPezziOrdinati) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@npo)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -317,6 +332,8 @@ namespace Target2021
             comando.Parameters.AddWithValue("@oc", com.OrdCliente);
             comando.Parameters.AddWithValue("@dtc", com.DataConsegna);
             comando.Parameters.AddWithValue("@npdl", com.NrPezziDaLavorare);
+            comando.Parameters.AddWithValue("@codart", com.CodArticolo);
+            comando.Parameters.AddWithValue("@desart", com.DescrArticolo);
             comando.Parameters.AddWithValue("@npo", com.NrPezziOrdinati);
             connessione.Open();
             comando.ExecuteNonQuery();

@@ -4320,6 +4320,8 @@ namespace Target2021 {
             
             private global::System.Data.DataColumn columnMinutiAttrezzaggio;
             
+            private global::System.Data.DataColumn columnStato;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CommesseDataTable() {
@@ -4619,6 +4621,14 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn StatoColumn {
+                get {
+                    return this.columnStato;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4687,7 +4697,8 @@ namespace Target2021 {
                         System.DateTime OraInizioStampo, 
                         System.DateTime OraFineStampo, 
                         int SecondiCicloTaglio, 
-                        int MinutiAttrezzaggio) {
+                        int MinutiAttrezzaggio, 
+                        int Stato) {
                 CommesseRow rowCommesseRow = ((CommesseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IDCommessa,
@@ -4722,10 +4733,18 @@ namespace Target2021 {
                         OraInizioStampo,
                         OraFineStampo,
                         SecondiCicloTaglio,
-                        MinutiAttrezzaggio};
+                        MinutiAttrezzaggio,
+                        Stato};
                 rowCommesseRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCommesseRow);
                 return rowCommesseRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CommesseRow FindByIDCommessa(int IDCommessa) {
+                return ((CommesseRow)(this.Rows.Find(new object[] {
+                            IDCommessa})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4778,6 +4797,7 @@ namespace Target2021 {
                 this.columnOraFineStampo = base.Columns["OraFineStampo"];
                 this.columnSecondiCicloTaglio = base.Columns["SecondiCicloTaglio"];
                 this.columnMinutiAttrezzaggio = base.Columns["MinutiAttrezzaggio"];
+                this.columnStato = base.Columns["Stato"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4849,7 +4869,12 @@ namespace Target2021 {
                 base.Columns.Add(this.columnSecondiCicloTaglio);
                 this.columnMinutiAttrezzaggio = new global::System.Data.DataColumn("MinutiAttrezzaggio", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMinutiAttrezzaggio);
+                this.columnStato = new global::System.Data.DataColumn("Stato", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStato);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIDCommessa}, true));
                 this.columnIDCommessa.AllowDBNull = false;
+                this.columnIDCommessa.Unique = true;
                 this.columnCodCommessa.AllowDBNull = false;
                 this.columnCodCommessa.MaxLength = 10;
                 this.columnNrCommessa.AllowDBNull = false;
@@ -17102,6 +17127,22 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int Stato {
+                get {
+                    try {
+                        return ((int)(this[this.tableCommesse.StatoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'Stato\' nella tabella \'Commesse\' è DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCommesse.StatoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDataCommessaNull() {
                 return this.IsNull(this.tableCommesse.DataCommessaColumn);
             }
@@ -17446,6 +17487,18 @@ namespace Target2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetMinutiAttrezzaggioNull() {
                 this[this.tableCommesse.MinutiAttrezzaggioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsStatoNull() {
+                return this.IsNull(this.tableCommesse.StatoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetStatoNull() {
+                this[this.tableCommesse.StatoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -26142,12 +26195,140 @@ namespace Target2021.Target2021DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("OraFineStampo", "OraFineStampo");
             tableMapping.ColumnMappings.Add("SecondiCicloTaglio", "SecondiCicloTaglio");
             tableMapping.ColumnMappings.Add("MinutiAttrezzaggio", "MinutiAttrezzaggio");
+            tableMapping.ColumnMappings.Add("Stato", "Stato");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Commesse] WHERE (([IDCommessa] = @Original_IDCommessa) AND ([CodComm" +
+                "essa] = @Original_CodCommessa) AND ([NrCommessa] = @Original_NrCommessa) AND ((@" +
+                "IsNull_DataCommessa = 1 AND [DataCommessa] IS NULL) OR ([DataCommessa] = @Origin" +
+                "al_DataCommessa)) AND ([TipoCommessa] = @Original_TipoCommessa) AND ((@IsNull_ID" +
+                "Cliente = 1 AND [IDCliente] IS NULL) OR ([IDCliente] = @Original_IDCliente)) AND" +
+                " ((@IsNull_OrdCliente = 1 AND [OrdCliente] IS NULL) OR ([OrdCliente] = @Original" +
+                "_OrdCliente)) AND ((@IsNull_DataConsegna = 1 AND [DataConsegna] IS NULL) OR ([Da" +
+                "taConsegna] = @Original_DataConsegna)) AND ((@IsNull_NrPezziDaLavorare = 1 AND [" +
+                "NrPezziDaLavorare] IS NULL) OR ([NrPezziDaLavorare] = @Original_NrPezziDaLavorar" +
+                "e)) AND ((@IsNull_CodArticolo = 1 AND [CodArticolo] IS NULL) OR ([CodArticolo] =" +
+                " @Original_CodArticolo)) AND ((@IsNull_DescrArticolo = 1 AND [DescrArticolo] IS " +
+                "NULL) OR ([DescrArticolo] = @Original_DescrArticolo)) AND ((@IsNull_Note = 1 AND" +
+                " [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_Foto = 1 AND [Foto]" +
+                " IS NULL) OR ([Foto] = @Original_Foto)) AND ((@IsNull_IDFornitore = 1 AND [IDFor" +
+                "nitore] IS NULL) OR ([IDFornitore] = @Original_IDFornitore)) AND ((@IsNull_IDMac" +
+                "hStampa = 1 AND [IDMachStampa] IS NULL) OR ([IDMachStampa] = @Original_IDMachSta" +
+                "mpa)) AND ((@IsNull_IDStampo = 1 AND [IDStampo] IS NULL) OR ([IDStampo] = @Origi" +
+                "nal_IDStampo)) AND ((@IsNull_CodArtiDopoStampo = 1 AND [CodArtiDopoStampo] IS NU" +
+                "LL) OR ([CodArtiDopoStampo] = @Original_CodArtiDopoStampo)) AND ((@IsNull_IDMach" +
+                "Taglio = 1 AND [IDMachTaglio] IS NULL) OR ([IDMachTaglio] = @Original_IDMachTagl" +
+                "io)) AND ((@IsNull_IDDima = 1 AND [IDDima] IS NULL) OR ([IDDima] = @Original_IDD" +
+                "ima)) AND ((@IsNull_CodArtiDopoTaglio = 1 AND [CodArtiDopoTaglio] IS NULL) OR ([" +
+                "CodArtiDopoTaglio] = @Original_CodArtiDopoTaglio)) AND ((@IsNull_IDMateriaPrima " +
+                "= 1 AND [IDMateriaPrima] IS NULL) OR ([IDMateriaPrima] = @Original_IDMateriaPrim" +
+                "a)) AND ((@IsNull_IDMinuteria = 1 AND [IDMinuteria] IS NULL) OR ([IDMinuteria] =" +
+                " @Original_IDMinuteria)) AND ((@IsNull_Qtaminuteria = 1 AND [Qtaminuteria] IS NU" +
+                "LL) OR ([Qtaminuteria] = @Original_Qtaminuteria)) AND ((@IsNull_NrPezziOrdinati " +
+                "= 1 AND [NrPezziOrdinati] IS NULL) OR ([NrPezziOrdinati] = @Original_NrPezziOrdi" +
+                "nati)) AND ((@IsNull_NrOrdine = 1 AND [NrOrdine] IS NULL) OR ([NrOrdine] = @Orig" +
+                "inal_NrOrdine)) AND ((@IsNull_LottoAcquisto = 1 AND [LottoAcquisto] IS NULL) OR " +
+                "([LottoAcquisto] = @Original_LottoAcquisto)) AND ((@IsNull_DataTermine = 1 AND [" +
+                "DataTermine] IS NULL) OR ([DataTermine] = @Original_DataTermine)) AND ((@IsNull_" +
+                "NrPezziCorretti = 1 AND [NrPezziCorretti] IS NULL) OR ([NrPezziCorretti] = @Orig" +
+                "inal_NrPezziCorretti)) AND ((@IsNull_NrPezziScartati = 1 AND [NrPezziScartati] I" +
+                "S NULL) OR ([NrPezziScartati] = @Original_NrPezziScartati)) AND ((@IsNull_OraIni" +
+                "zioStampo = 1 AND [OraInizioStampo] IS NULL) OR ([OraInizioStampo] = @Original_O" +
+                "raInizioStampo)) AND ((@IsNull_OraFineStampo = 1 AND [OraFineStampo] IS NULL) OR" +
+                " ([OraFineStampo] = @Original_OraFineStampo)) AND ((@IsNull_SecondiCicloTaglio =" +
+                " 1 AND [SecondiCicloTaglio] IS NULL) OR ([SecondiCicloTaglio] = @Original_Second" +
+                "iCicloTaglio)) AND ((@IsNull_MinutiAttrezzaggio = 1 AND [MinutiAttrezzaggio] IS " +
+                "NULL) OR ([MinutiAttrezzaggio] = @Original_MinutiAttrezzaggio)) AND ((@IsNull_St" +
+                "ato = 1 AND [Stato] IS NULL) OR ([Stato] = @Original_Stato)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodCommessa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataCommessa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataCommessa", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDCliente", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrdCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrdCliente", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrdCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataConsegna", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataConsegna", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataConsegna", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataConsegna", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziDaLavorare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziDaLavorare", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziDaLavorare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziDaLavorare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodArticolo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArticolo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodArticolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArticolo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DescrArticolo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescrArticolo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescrArticolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescrArticolo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Note", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Note", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Note", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Note", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Foto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Foto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Foto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Foto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDFornitore", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDFornitore", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDFornitore", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDFornitore", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodArtiDopoStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodArtiDopoStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMachTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachTaglio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMachTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachTaglio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDDima", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDima", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDDima", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDima", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodArtiDopoTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoTaglio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodArtiDopoTaglio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoTaglio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMateriaPrima", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMateriaPrima", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMateriaPrima", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMateriaPrima", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMinuteria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMinuteria", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMinuteria", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMinuteria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Qtaminuteria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Qtaminuteria", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Qtaminuteria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Qtaminuteria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziOrdinati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziOrdinati", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziOrdinati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziOrdinati", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrOrdine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrOrdine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrOrdine", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrOrdine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LottoAcquisto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LottoAcquisto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LottoAcquisto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LottoAcquisto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataTermine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataTermine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataTermine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataTermine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OraInizioStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraInizioStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OraInizioStampo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraInizioStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OraFineStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraFineStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OraFineStampo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraFineStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SecondiCicloTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SecondiCicloTaglio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SecondiCicloTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SecondiCicloTaglio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MinutiAttrezzaggio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MinutiAttrezzaggio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MinutiAttrezzaggio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MinutiAttrezzaggio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Stato", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stato", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stato", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stato", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Commesse] ([IDCommessa], [CodCommessa], [NrCommessa], [DataCommessa], [TipoCommessa], [IDCliente], [OrdCliente], [DataConsegna], [NrPezziDaLavorare], [CodArticolo], [DescrArticolo], [Note], [Foto], [IDFornitore], [IDMachStampa], [IDStampo], [CodArtiDopoStampo], [IDMachTaglio], [IDDima], [CodArtiDopoTaglio], [IDMateriaPrima], [IDMinuteria], [Qtaminuteria], [NrPezziOrdinati], [NrOrdine], [LottoAcquisto], [DataTermine], [NrPezziCorretti], [NrPezziScartati], [OraInizioStampo], [OraFineStampo], [SecondiCicloTaglio], [MinutiAttrezzaggio]) VALUES (@IDCommessa, @CodCommessa, @NrCommessa, @DataCommessa, @TipoCommessa, @IDCliente, @OrdCliente, @DataConsegna, @NrPezziDaLavorare, @CodArticolo, @DescrArticolo, @Note, @Foto, @IDFornitore, @IDMachStampa, @IDStampo, @CodArtiDopoStampo, @IDMachTaglio, @IDDima, @CodArtiDopoTaglio, @IDMateriaPrima, @IDMinuteria, @Qtaminuteria, @NrPezziOrdinati, @NrOrdine, @LottoAcquisto, @DataTermine, @NrPezziCorretti, @NrPezziScartati, @OraInizioStampo, @OraFineStampo, @SecondiCicloTaglio, @MinutiAttrezzaggio)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Commesse] ([CodCommessa], [NrCommessa], [DataCommessa], [TipoCommess" +
+                "a], [IDCliente], [OrdCliente], [DataConsegna], [NrPezziDaLavorare], [CodArticolo" +
+                "], [DescrArticolo], [Note], [Foto], [IDFornitore], [IDMachStampa], [IDStampo], [" +
+                "CodArtiDopoStampo], [IDMachTaglio], [IDDima], [CodArtiDopoTaglio], [IDMateriaPri" +
+                "ma], [IDMinuteria], [Qtaminuteria], [NrPezziOrdinati], [NrOrdine], [LottoAcquist" +
+                "o], [DataTermine], [NrPezziCorretti], [NrPezziScartati], [OraInizioStampo], [Ora" +
+                "FineStampo], [SecondiCicloTaglio], [MinutiAttrezzaggio], [Stato]) VALUES (@CodCo" +
+                "mmessa, @NrCommessa, @DataCommessa, @TipoCommessa, @IDCliente, @OrdCliente, @Dat" +
+                "aConsegna, @NrPezziDaLavorare, @CodArticolo, @DescrArticolo, @Note, @Foto, @IDFo" +
+                "rnitore, @IDMachStampa, @IDStampo, @CodArtiDopoStampo, @IDMachTaglio, @IDDima, @" +
+                "CodArtiDopoTaglio, @IDMateriaPrima, @IDMinuteria, @Qtaminuteria, @NrPezziOrdinat" +
+                "i, @NrOrdine, @LottoAcquisto, @DataTermine, @NrPezziCorretti, @NrPezziScartati, " +
+                "@OraInizioStampo, @OraFineStampo, @SecondiCicloTaglio, @MinutiAttrezzaggio, @Sta" +
+                "to);\r\nSELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, ID" +
+                "Cliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo" +
+                ", Note, Foto, IDFornitore, IDMachStampa, IDStampo, CodArtiDopoStampo, IDMachTagl" +
+                "io, IDDima, CodArtiDopoTaglio, IDMateriaPrima, IDMinuteria, Qtaminuteria, NrPezz" +
+                "iOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartat" +
+                "i, OraInizioStampo, OraFineStampo, SecondiCicloTaglio, MinutiAttrezzaggio, Stato" +
+                " FROM Commesse WHERE (IDCommessa = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodCommessa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataCommessa", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26169,7 +26350,7 @@ namespace Target2021.Target2021DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodArtiDopoTaglio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMateriaPrima", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMateriaPrima", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMinuteria", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMinuteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Qtaminuteria", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Qtaminuteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Qtaminuteria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Qtaminuteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziOrdinati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziOrdinati", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrOrdine", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrOrdine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LottoAcquisto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LottoAcquisto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -26180,6 +26361,170 @@ namespace Target2021.Target2021DataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OraFineStampo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraFineStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SecondiCicloTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SecondiCicloTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MinutiAttrezzaggio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MinutiAttrezzaggio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stato", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Commesse] SET [CodCommessa] = @CodCommessa, [NrCommessa] = @NrCommessa, [" +
+                "DataCommessa] = @DataCommessa, [TipoCommessa] = @TipoCommessa, [IDCliente] = @ID" +
+                "Cliente, [OrdCliente] = @OrdCliente, [DataConsegna] = @DataConsegna, [NrPezziDaL" +
+                "avorare] = @NrPezziDaLavorare, [CodArticolo] = @CodArticolo, [DescrArticolo] = @" +
+                "DescrArticolo, [Note] = @Note, [Foto] = @Foto, [IDFornitore] = @IDFornitore, [ID" +
+                "MachStampa] = @IDMachStampa, [IDStampo] = @IDStampo, [CodArtiDopoStampo] = @CodA" +
+                "rtiDopoStampo, [IDMachTaglio] = @IDMachTaglio, [IDDima] = @IDDima, [CodArtiDopoT" +
+                "aglio] = @CodArtiDopoTaglio, [IDMateriaPrima] = @IDMateriaPrima, [IDMinuteria] =" +
+                " @IDMinuteria, [Qtaminuteria] = @Qtaminuteria, [NrPezziOrdinati] = @NrPezziOrdin" +
+                "ati, [NrOrdine] = @NrOrdine, [LottoAcquisto] = @LottoAcquisto, [DataTermine] = @" +
+                "DataTermine, [NrPezziCorretti] = @NrPezziCorretti, [NrPezziScartati] = @NrPezziS" +
+                "cartati, [OraInizioStampo] = @OraInizioStampo, [OraFineStampo] = @OraFineStampo," +
+                " [SecondiCicloTaglio] = @SecondiCicloTaglio, [MinutiAttrezzaggio] = @MinutiAttre" +
+                "zzaggio, [Stato] = @Stato WHERE (([IDCommessa] = @Original_IDCommessa) AND ([Cod" +
+                "Commessa] = @Original_CodCommessa) AND ([NrCommessa] = @Original_NrCommessa) AND" +
+                " ((@IsNull_DataCommessa = 1 AND [DataCommessa] IS NULL) OR ([DataCommessa] = @Or" +
+                "iginal_DataCommessa)) AND ([TipoCommessa] = @Original_TipoCommessa) AND ((@IsNul" +
+                "l_IDCliente = 1 AND [IDCliente] IS NULL) OR ([IDCliente] = @Original_IDCliente))" +
+                " AND ((@IsNull_OrdCliente = 1 AND [OrdCliente] IS NULL) OR ([OrdCliente] = @Orig" +
+                "inal_OrdCliente)) AND ((@IsNull_DataConsegna = 1 AND [DataConsegna] IS NULL) OR " +
+                "([DataConsegna] = @Original_DataConsegna)) AND ((@IsNull_NrPezziDaLavorare = 1 A" +
+                "ND [NrPezziDaLavorare] IS NULL) OR ([NrPezziDaLavorare] = @Original_NrPezziDaLav" +
+                "orare)) AND ((@IsNull_CodArticolo = 1 AND [CodArticolo] IS NULL) OR ([CodArticol" +
+                "o] = @Original_CodArticolo)) AND ((@IsNull_DescrArticolo = 1 AND [DescrArticolo]" +
+                " IS NULL) OR ([DescrArticolo] = @Original_DescrArticolo)) AND ((@IsNull_Note = 1" +
+                " AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_Foto = 1 AND [F" +
+                "oto] IS NULL) OR ([Foto] = @Original_Foto)) AND ((@IsNull_IDFornitore = 1 AND [I" +
+                "DFornitore] IS NULL) OR ([IDFornitore] = @Original_IDFornitore)) AND ((@IsNull_I" +
+                "DMachStampa = 1 AND [IDMachStampa] IS NULL) OR ([IDMachStampa] = @Original_IDMac" +
+                "hStampa)) AND ((@IsNull_IDStampo = 1 AND [IDStampo] IS NULL) OR ([IDStampo] = @O" +
+                "riginal_IDStampo)) AND ((@IsNull_CodArtiDopoStampo = 1 AND [CodArtiDopoStampo] I" +
+                "S NULL) OR ([CodArtiDopoStampo] = @Original_CodArtiDopoStampo)) AND ((@IsNull_ID" +
+                "MachTaglio = 1 AND [IDMachTaglio] IS NULL) OR ([IDMachTaglio] = @Original_IDMach" +
+                "Taglio)) AND ((@IsNull_IDDima = 1 AND [IDDima] IS NULL) OR ([IDDima] = @Original" +
+                "_IDDima)) AND ((@IsNull_CodArtiDopoTaglio = 1 AND [CodArtiDopoTaglio] IS NULL) O" +
+                "R ([CodArtiDopoTaglio] = @Original_CodArtiDopoTaglio)) AND ((@IsNull_IDMateriaPr" +
+                "ima = 1 AND [IDMateriaPrima] IS NULL) OR ([IDMateriaPrima] = @Original_IDMateria" +
+                "Prima)) AND ((@IsNull_IDMinuteria = 1 AND [IDMinuteria] IS NULL) OR ([IDMinuteri" +
+                "a] = @Original_IDMinuteria)) AND ((@IsNull_Qtaminuteria = 1 AND [Qtaminuteria] I" +
+                "S NULL) OR ([Qtaminuteria] = @Original_Qtaminuteria)) AND ((@IsNull_NrPezziOrdin" +
+                "ati = 1 AND [NrPezziOrdinati] IS NULL) OR ([NrPezziOrdinati] = @Original_NrPezzi" +
+                "Ordinati)) AND ((@IsNull_NrOrdine = 1 AND [NrOrdine] IS NULL) OR ([NrOrdine] = @" +
+                "Original_NrOrdine)) AND ((@IsNull_LottoAcquisto = 1 AND [LottoAcquisto] IS NULL)" +
+                " OR ([LottoAcquisto] = @Original_LottoAcquisto)) AND ((@IsNull_DataTermine = 1 A" +
+                "ND [DataTermine] IS NULL) OR ([DataTermine] = @Original_DataTermine)) AND ((@IsN" +
+                "ull_NrPezziCorretti = 1 AND [NrPezziCorretti] IS NULL) OR ([NrPezziCorretti] = @" +
+                "Original_NrPezziCorretti)) AND ((@IsNull_NrPezziScartati = 1 AND [NrPezziScartat" +
+                "i] IS NULL) OR ([NrPezziScartati] = @Original_NrPezziScartati)) AND ((@IsNull_Or" +
+                "aInizioStampo = 1 AND [OraInizioStampo] IS NULL) OR ([OraInizioStampo] = @Origin" +
+                "al_OraInizioStampo)) AND ((@IsNull_OraFineStampo = 1 AND [OraFineStampo] IS NULL" +
+                ") OR ([OraFineStampo] = @Original_OraFineStampo)) AND ((@IsNull_SecondiCicloTagl" +
+                "io = 1 AND [SecondiCicloTaglio] IS NULL) OR ([SecondiCicloTaglio] = @Original_Se" +
+                "condiCicloTaglio)) AND ((@IsNull_MinutiAttrezzaggio = 1 AND [MinutiAttrezzaggio]" +
+                " IS NULL) OR ([MinutiAttrezzaggio] = @Original_MinutiAttrezzaggio)) AND ((@IsNul" +
+                "l_Stato = 1 AND [Stato] IS NULL) OR ([Stato] = @Original_Stato)));\r\nSELECT IDCom" +
+                "messa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdClient" +
+                "e, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFo" +
+                "rnitore, IDMachStampa, IDStampo, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArt" +
+                "iDopoTaglio, IDMateriaPrima, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdin" +
+                "e, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, OraInizioStampo" +
+                ", OraFineStampo, SecondiCicloTaglio, MinutiAttrezzaggio, Stato FROM Commesse WHE" +
+                "RE (IDCommessa = @IDCommessa)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodCommessa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataCommessa", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TipoCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDCliente", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrdCliente", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrdCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataConsegna", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataConsegna", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziDaLavorare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziDaLavorare", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodArticolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArticolo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescrArticolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescrArticolo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Note", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Note", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Foto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Foto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDFornitore", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDFornitore", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodArtiDopoStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMachTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDDima", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDima", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodArtiDopoTaglio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMateriaPrima", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMateriaPrima", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMinuteria", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMinuteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Qtaminuteria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Qtaminuteria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziOrdinati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziOrdinati", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrOrdine", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrOrdine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LottoAcquisto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LottoAcquisto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataTermine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataTermine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OraInizioStampo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraInizioStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OraFineStampo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraFineStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SecondiCicloTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SecondiCicloTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MinutiAttrezzaggio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MinutiAttrezzaggio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stato", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stato", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodCommessa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataCommessa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataCommessa", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TipoCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TipoCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDCliente", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OrdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrdCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrdCliente", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrdCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataConsegna", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataConsegna", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataConsegna", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataConsegna", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziDaLavorare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziDaLavorare", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziDaLavorare", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziDaLavorare", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodArticolo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArticolo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodArticolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArticolo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DescrArticolo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescrArticolo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescrArticolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescrArticolo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Note", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Note", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Note", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Note", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Foto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Foto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Foto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Foto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDFornitore", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDFornitore", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDFornitore", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDFornitore", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodArtiDopoStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodArtiDopoStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMachTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachTaglio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMachTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachTaglio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDDima", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDima", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDDima", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDDima", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodArtiDopoTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoTaglio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodArtiDopoTaglio", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoTaglio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMateriaPrima", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMateriaPrima", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMateriaPrima", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMateriaPrima", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMinuteria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMinuteria", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMinuteria", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMinuteria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Qtaminuteria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Qtaminuteria", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Qtaminuteria", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Qtaminuteria", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziOrdinati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziOrdinati", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziOrdinati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziOrdinati", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrOrdine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrOrdine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrOrdine", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrOrdine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_LottoAcquisto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LottoAcquisto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LottoAcquisto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LottoAcquisto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataTermine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataTermine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataTermine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataTermine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OraInizioStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraInizioStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OraInizioStampo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraInizioStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OraFineStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraFineStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OraFineStampo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OraFineStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SecondiCicloTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SecondiCicloTaglio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SecondiCicloTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SecondiCicloTaglio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MinutiAttrezzaggio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MinutiAttrezzaggio", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MinutiAttrezzaggio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MinutiAttrezzaggio", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Stato", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stato", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stato", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stato", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDCommessa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26195,15 +26540,11 @@ namespace Target2021.Target2021DataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, OraInizioStampo, OraFineStampo, SecondiCicloTaglio, MinutiAttrezzaggio FROM dbo.Commesse";
+            this._commandCollection[0].CommandText = @"SELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, OraInizioStampo, OraFineStampo, SecondiCicloTaglio, MinutiAttrezzaggio, Stato FROM Commesse";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, 
-                         CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, OraInizioStampo, 
-                         OraFineStampo, SecondiCicloTaglio, MinutiAttrezzaggio
-FROM            Commesse
-WHERE        (CodCommessa = @CC)";
+            this._commandCollection[1].CommandText = @"SELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, OraInizioStampo, OraFineStampo, SecondiCicloTaglio, MinutiAttrezzaggio, Stato FROM Commesse WHERE (CodCommessa = @CC)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CC", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -26283,9 +26624,312 @@ WHERE        (CodCommessa = @CC)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(
+                    int Original_IDCommessa, 
+                    string Original_CodCommessa, 
+                    int Original_NrCommessa, 
+                    global::System.Nullable<global::System.DateTime> Original_DataCommessa, 
+                    int Original_TipoCommessa, 
+                    string Original_IDCliente, 
+                    string Original_OrdCliente, 
+                    global::System.Nullable<global::System.DateTime> Original_DataConsegna, 
+                    global::System.Nullable<int> Original_NrPezziDaLavorare, 
+                    string Original_CodArticolo, 
+                    string Original_DescrArticolo, 
+                    string Original_Note, 
+                    string Original_Foto, 
+                    string Original_IDFornitore, 
+                    global::System.Nullable<int> Original_IDMachStampa, 
+                    string Original_IDStampo, 
+                    string Original_CodArtiDopoStampo, 
+                    global::System.Nullable<int> Original_IDMachTaglio, 
+                    string Original_IDDima, 
+                    string Original_CodArtiDopoTaglio, 
+                    string Original_IDMateriaPrima, 
+                    string Original_IDMinuteria, 
+                    global::System.Nullable<int> Original_Qtaminuteria, 
+                    global::System.Nullable<int> Original_NrPezziOrdinati, 
+                    string Original_NrOrdine, 
+                    string Original_LottoAcquisto, 
+                    global::System.Nullable<global::System.DateTime> Original_DataTermine, 
+                    global::System.Nullable<int> Original_NrPezziCorretti, 
+                    global::System.Nullable<int> Original_NrPezziScartati, 
+                    global::System.Nullable<global::System.DateTime> Original_OraInizioStampo, 
+                    global::System.Nullable<global::System.DateTime> Original_OraFineStampo, 
+                    global::System.Nullable<int> Original_SecondiCicloTaglio, 
+                    global::System.Nullable<int> Original_MinutiAttrezzaggio, 
+                    global::System.Nullable<int> Original_Stato) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IDCommessa));
+            if ((Original_CodCommessa == null)) {
+                throw new global::System.ArgumentNullException("Original_CodCommessa");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_CodCommessa));
+            }
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_NrCommessa));
+            if ((Original_DataCommessa.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DataCommessa.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_TipoCommessa));
+            if ((Original_IDCliente == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_IDCliente));
+            }
+            if ((Original_OrdCliente == null)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_OrdCliente));
+            }
+            if ((Original_DataConsegna.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_DataConsegna.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrPezziDaLavorare.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_NrPezziDaLavorare.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CodArticolo == null)) {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((string)(Original_CodArticolo));
+            }
+            if ((Original_DescrArticolo == null)) {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((string)(Original_DescrArticolo));
+            }
+            if ((Original_Note == null)) {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((string)(Original_Note));
+            }
+            if ((Original_Foto == null)) {
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((string)(Original_Foto));
+            }
+            if ((Original_IDFornitore == null)) {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((string)(Original_IDFornitore));
+            }
+            if ((Original_IDMachStampa.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((int)(Original_IDMachStampa.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IDStampo == null)) {
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((string)(Original_IDStampo));
+            }
+            if ((Original_CodArtiDopoStampo == null)) {
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[29].Value = ((string)(Original_CodArtiDopoStampo));
+            }
+            if ((Original_IDMachTaglio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((int)(Original_IDMachTaglio.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IDDima == null)) {
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((string)(Original_IDDima));
+            }
+            if ((Original_CodArtiDopoTaglio == null)) {
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((string)(Original_CodArtiDopoTaglio));
+            }
+            if ((Original_IDMateriaPrima == null)) {
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[37].Value = ((string)(Original_IDMateriaPrima));
+            }
+            if ((Original_IDMinuteria == null)) {
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[39].Value = ((string)(Original_IDMinuteria));
+            }
+            if ((Original_Qtaminuteria.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[41].Value = ((int)(Original_Qtaminuteria.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrPezziOrdinati.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((int)(Original_NrPezziOrdinati.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrOrdine == null)) {
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((string)(Original_NrOrdine));
+            }
+            if ((Original_LottoAcquisto == null)) {
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[47].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((string)(Original_LottoAcquisto));
+            }
+            if ((Original_DataTermine.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((System.DateTime)(Original_DataTermine.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[49].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrPezziCorretti.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[51].Value = ((int)(Original_NrPezziCorretti.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[51].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrPezziScartati.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[53].Value = ((int)(Original_NrPezziScartati.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[53].Value = global::System.DBNull.Value;
+            }
+            if ((Original_OraInizioStampo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[55].Value = ((System.DateTime)(Original_OraInizioStampo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[55].Value = global::System.DBNull.Value;
+            }
+            if ((Original_OraFineStampo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[57].Value = ((System.DateTime)(Original_OraFineStampo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[57].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SecondiCicloTaglio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((int)(Original_SecondiCicloTaglio.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[59].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MinutiAttrezzaggio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[61].Value = ((int)(Original_MinutiAttrezzaggio.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[61].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Stato.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[62].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[63].Value = ((int)(Original_Stato.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[62].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[63].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
-                    int IDCommessa, 
                     string CodCommessa, 
                     int NrCommessa, 
                     global::System.Nullable<global::System.DateTime> DataCommessa, 
@@ -26307,7 +26951,7 @@ WHERE        (CodCommessa = @CC)";
                     string CodArtiDopoTaglio, 
                     string IDMateriaPrima, 
                     string IDMinuteria, 
-                    string Qtaminuteria, 
+                    global::System.Nullable<int> Qtaminuteria, 
                     global::System.Nullable<int> NrPezziOrdinati, 
                     string NrOrdine, 
                     string LottoAcquisto, 
@@ -26317,186 +26961,192 @@ WHERE        (CodCommessa = @CC)";
                     global::System.Nullable<global::System.DateTime> OraInizioStampo, 
                     global::System.Nullable<global::System.DateTime> OraFineStampo, 
                     global::System.Nullable<int> SecondiCicloTaglio, 
-                    global::System.Nullable<int> MinutiAttrezzaggio) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDCommessa));
+                    global::System.Nullable<int> MinutiAttrezzaggio, 
+                    global::System.Nullable<int> Stato) {
             if ((CodCommessa == null)) {
                 throw new global::System.ArgumentNullException("CodCommessa");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(CodCommessa));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CodCommessa));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(NrCommessa));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(NrCommessa));
             if ((DataCommessa.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(DataCommessa.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DataCommessa.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(TipoCommessa));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(TipoCommessa));
             if ((IDCliente == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(IDCliente));
+            }
+            if ((OrdCliente == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(IDCliente));
-            }
-            if ((OrdCliente == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(OrdCliente));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(OrdCliente));
             }
             if ((DataConsegna.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(DataConsegna.Value));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(DataConsegna.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((NrPezziDaLavorare.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(NrPezziDaLavorare.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((NrPezziDaLavorare.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(NrPezziDaLavorare.Value));
-            }
-            else {
+            if ((CodArticolo == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((CodArticolo == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(CodArticolo));
+            }
+            if ((DescrArticolo == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CodArticolo));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(DescrArticolo));
             }
-            if ((DescrArticolo == null)) {
+            if ((Note == null)) {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(DescrArticolo));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Note));
             }
-            if ((Note == null)) {
+            if ((Foto == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Note));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Foto));
             }
-            if ((Foto == null)) {
+            if ((IDFornitore == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Foto));
-            }
-            if ((IDFornitore == null)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(IDFornitore));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(IDFornitore));
             }
             if ((IDMachStampa.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((int)(IDMachStampa.Value));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((int)(IDMachStampa.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((IDStampo == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(IDStampo));
+            }
+            if ((CodArtiDopoStampo == null)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(IDStampo));
-            }
-            if ((CodArtiDopoStampo == null)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(CodArtiDopoStampo));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(CodArtiDopoStampo));
             }
             if ((IDMachTaglio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(IDMachTaglio.Value));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((int)(IDMachTaglio.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((IDDima == null)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(IDDima));
+            }
+            if ((CodArtiDopoTaglio == null)) {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(IDDima));
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(CodArtiDopoTaglio));
             }
-            if ((CodArtiDopoTaglio == null)) {
+            if ((IDMateriaPrima == null)) {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(CodArtiDopoTaglio));
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(IDMateriaPrima));
             }
-            if ((IDMateriaPrima == null)) {
+            if ((IDMinuteria == null)) {
                 this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(IDMateriaPrima));
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(IDMinuteria));
             }
-            if ((IDMinuteria == null)) {
+            if ((Qtaminuteria.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((int)(Qtaminuteria.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(IDMinuteria));
+            if ((NrPezziOrdinati.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((int)(NrPezziOrdinati.Value));
             }
-            if ((Qtaminuteria == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(Qtaminuteria));
-            }
-            if ((NrPezziOrdinati.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((int)(NrPezziOrdinati.Value));
-            }
-            else {
+            if ((NrOrdine == null)) {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            if ((NrOrdine == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(NrOrdine));
+            }
+            if ((LottoAcquisto == null)) {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(NrOrdine));
-            }
-            if ((LottoAcquisto == null)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(LottoAcquisto));
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(LottoAcquisto));
             }
             if ((DataTermine.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((System.DateTime)(DataTermine.Value));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((System.DateTime)(DataTermine.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((NrPezziCorretti.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((int)(NrPezziCorretti.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((NrPezziCorretti.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((int)(NrPezziCorretti.Value));
+            if ((NrPezziScartati.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((int)(NrPezziScartati.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
-            if ((NrPezziScartati.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((int)(NrPezziScartati.Value));
+            if ((OraInizioStampo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((System.DateTime)(OraInizioStampo.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((OraInizioStampo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((System.DateTime)(OraInizioStampo.Value));
+            if ((OraFineStampo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((System.DateTime)(OraFineStampo.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            if ((OraFineStampo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((System.DateTime)(OraFineStampo.Value));
+            if ((SecondiCicloTaglio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[30].Value = ((int)(SecondiCicloTaglio.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((SecondiCicloTaglio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((int)(SecondiCicloTaglio.Value));
+            if ((MinutiAttrezzaggio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((int)(MinutiAttrezzaggio.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            if ((MinutiAttrezzaggio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[32].Value = ((int)(MinutiAttrezzaggio.Value));
+            if ((Stato.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((int)(Stato.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
@@ -26515,6 +27165,608 @@ WHERE        (CodCommessa = @CC)";
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string CodCommessa, 
+                    int NrCommessa, 
+                    global::System.Nullable<global::System.DateTime> DataCommessa, 
+                    int TipoCommessa, 
+                    string IDCliente, 
+                    string OrdCliente, 
+                    global::System.Nullable<global::System.DateTime> DataConsegna, 
+                    global::System.Nullable<int> NrPezziDaLavorare, 
+                    string CodArticolo, 
+                    string DescrArticolo, 
+                    string Note, 
+                    string Foto, 
+                    string IDFornitore, 
+                    global::System.Nullable<int> IDMachStampa, 
+                    string IDStampo, 
+                    string CodArtiDopoStampo, 
+                    global::System.Nullable<int> IDMachTaglio, 
+                    string IDDima, 
+                    string CodArtiDopoTaglio, 
+                    string IDMateriaPrima, 
+                    string IDMinuteria, 
+                    global::System.Nullable<int> Qtaminuteria, 
+                    global::System.Nullable<int> NrPezziOrdinati, 
+                    string NrOrdine, 
+                    string LottoAcquisto, 
+                    global::System.Nullable<global::System.DateTime> DataTermine, 
+                    global::System.Nullable<int> NrPezziCorretti, 
+                    global::System.Nullable<int> NrPezziScartati, 
+                    global::System.Nullable<global::System.DateTime> OraInizioStampo, 
+                    global::System.Nullable<global::System.DateTime> OraFineStampo, 
+                    global::System.Nullable<int> SecondiCicloTaglio, 
+                    global::System.Nullable<int> MinutiAttrezzaggio, 
+                    global::System.Nullable<int> Stato, 
+                    int Original_IDCommessa, 
+                    string Original_CodCommessa, 
+                    int Original_NrCommessa, 
+                    global::System.Nullable<global::System.DateTime> Original_DataCommessa, 
+                    int Original_TipoCommessa, 
+                    string Original_IDCliente, 
+                    string Original_OrdCliente, 
+                    global::System.Nullable<global::System.DateTime> Original_DataConsegna, 
+                    global::System.Nullable<int> Original_NrPezziDaLavorare, 
+                    string Original_CodArticolo, 
+                    string Original_DescrArticolo, 
+                    string Original_Note, 
+                    string Original_Foto, 
+                    string Original_IDFornitore, 
+                    global::System.Nullable<int> Original_IDMachStampa, 
+                    string Original_IDStampo, 
+                    string Original_CodArtiDopoStampo, 
+                    global::System.Nullable<int> Original_IDMachTaglio, 
+                    string Original_IDDima, 
+                    string Original_CodArtiDopoTaglio, 
+                    string Original_IDMateriaPrima, 
+                    string Original_IDMinuteria, 
+                    global::System.Nullable<int> Original_Qtaminuteria, 
+                    global::System.Nullable<int> Original_NrPezziOrdinati, 
+                    string Original_NrOrdine, 
+                    string Original_LottoAcquisto, 
+                    global::System.Nullable<global::System.DateTime> Original_DataTermine, 
+                    global::System.Nullable<int> Original_NrPezziCorretti, 
+                    global::System.Nullable<int> Original_NrPezziScartati, 
+                    global::System.Nullable<global::System.DateTime> Original_OraInizioStampo, 
+                    global::System.Nullable<global::System.DateTime> Original_OraFineStampo, 
+                    global::System.Nullable<int> Original_SecondiCicloTaglio, 
+                    global::System.Nullable<int> Original_MinutiAttrezzaggio, 
+                    global::System.Nullable<int> Original_Stato, 
+                    int IDCommessa) {
+            if ((CodCommessa == null)) {
+                throw new global::System.ArgumentNullException("CodCommessa");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CodCommessa));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(NrCommessa));
+            if ((DataCommessa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DataCommessa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(TipoCommessa));
+            if ((IDCliente == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(IDCliente));
+            }
+            if ((OrdCliente == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(OrdCliente));
+            }
+            if ((DataConsegna.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(DataConsegna.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((NrPezziDaLavorare.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(NrPezziDaLavorare.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((CodArticolo == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(CodArticolo));
+            }
+            if ((DescrArticolo == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(DescrArticolo));
+            }
+            if ((Note == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Note));
+            }
+            if ((Foto == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Foto));
+            }
+            if ((IDFornitore == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(IDFornitore));
+            }
+            if ((IDMachStampa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(IDMachStampa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((IDStampo == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(IDStampo));
+            }
+            if ((CodArtiDopoStampo == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(CodArtiDopoStampo));
+            }
+            if ((IDMachTaglio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(IDMachTaglio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((IDDima == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(IDDima));
+            }
+            if ((CodArtiDopoTaglio == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(CodArtiDopoTaglio));
+            }
+            if ((IDMateriaPrima == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(IDMateriaPrima));
+            }
+            if ((IDMinuteria == null)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(IDMinuteria));
+            }
+            if ((Qtaminuteria.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Qtaminuteria.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((NrPezziOrdinati.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(NrPezziOrdinati.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((NrOrdine == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(NrOrdine));
+            }
+            if ((LottoAcquisto == null)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(LottoAcquisto));
+            }
+            if ((DataTermine.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(DataTermine.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            if ((NrPezziCorretti.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(NrPezziCorretti.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            if ((NrPezziScartati.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(NrPezziScartati.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            if ((OraInizioStampo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(OraInizioStampo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            if ((OraFineStampo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(OraFineStampo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((SecondiCicloTaglio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(SecondiCicloTaglio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((MinutiAttrezzaggio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(MinutiAttrezzaggio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((Stato.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Stato.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_IDCommessa));
+            if ((Original_CodCommessa == null)) {
+                throw new global::System.ArgumentNullException("Original_CodCommessa");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_CodCommessa));
+            }
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_NrCommessa));
+            if ((Original_DataCommessa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_DataCommessa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_TipoCommessa));
+            if ((Original_IDCliente == null)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_IDCliente));
+            }
+            if ((Original_OrdCliente == null)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_OrdCliente));
+            }
+            if ((Original_DataConsegna.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((System.DateTime)(Original_DataConsegna.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrPezziDaLavorare.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(Original_NrPezziDaLavorare.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CodArticolo == null)) {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_CodArticolo));
+            }
+            if ((Original_DescrArticolo == null)) {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_DescrArticolo));
+            }
+            if ((Original_Note == null)) {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_Note));
+            }
+            if ((Original_Foto == null)) {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_Foto));
+            }
+            if ((Original_IDFornitore == null)) {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_IDFornitore));
+            }
+            if ((Original_IDMachStampa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((int)(Original_IDMachStampa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IDStampo == null)) {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(Original_IDStampo));
+            }
+            if ((Original_CodArtiDopoStampo == null)) {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(Original_CodArtiDopoStampo));
+            }
+            if ((Original_IDMachTaglio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((int)(Original_IDMachTaglio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+            }
+            if ((Original_IDDima == null)) {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_IDDima));
+            }
+            if ((Original_CodArtiDopoTaglio == null)) {
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_CodArtiDopoTaglio));
+            }
+            if ((Original_IDMateriaPrima == null)) {
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_IDMateriaPrima));
+            }
+            if ((Original_IDMinuteria == null)) {
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_IDMinuteria));
+            }
+            if ((Original_Qtaminuteria.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((int)(Original_Qtaminuteria.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrPezziOrdinati.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((int)(Original_NrPezziOrdinati.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrOrdine == null)) {
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(Original_NrOrdine));
+            }
+            if ((Original_LottoAcquisto == null)) {
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_LottoAcquisto));
+            }
+            if ((Original_DataTermine.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((System.DateTime)(Original_DataTermine.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrPezziCorretti.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((int)(Original_NrPezziCorretti.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
+            }
+            if ((Original_NrPezziScartati.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((int)(Original_NrPezziScartati.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
+            }
+            if ((Original_OraInizioStampo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((System.DateTime)(Original_OraInizioStampo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
+            }
+            if ((Original_OraFineStampo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((System.DateTime)(Original_OraFineStampo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SecondiCicloTaglio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((int)(Original_SecondiCicloTaglio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MinutiAttrezzaggio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((int)(Original_MinutiAttrezzaggio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Stato.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[96].Value = ((int)(Original_Stato.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[96].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[97].Value = ((int)(IDCommessa));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string CodCommessa, 
+                    int NrCommessa, 
+                    global::System.Nullable<global::System.DateTime> DataCommessa, 
+                    int TipoCommessa, 
+                    string IDCliente, 
+                    string OrdCliente, 
+                    global::System.Nullable<global::System.DateTime> DataConsegna, 
+                    global::System.Nullable<int> NrPezziDaLavorare, 
+                    string CodArticolo, 
+                    string DescrArticolo, 
+                    string Note, 
+                    string Foto, 
+                    string IDFornitore, 
+                    global::System.Nullable<int> IDMachStampa, 
+                    string IDStampo, 
+                    string CodArtiDopoStampo, 
+                    global::System.Nullable<int> IDMachTaglio, 
+                    string IDDima, 
+                    string CodArtiDopoTaglio, 
+                    string IDMateriaPrima, 
+                    string IDMinuteria, 
+                    global::System.Nullable<int> Qtaminuteria, 
+                    global::System.Nullable<int> NrPezziOrdinati, 
+                    string NrOrdine, 
+                    string LottoAcquisto, 
+                    global::System.Nullable<global::System.DateTime> DataTermine, 
+                    global::System.Nullable<int> NrPezziCorretti, 
+                    global::System.Nullable<int> NrPezziScartati, 
+                    global::System.Nullable<global::System.DateTime> OraInizioStampo, 
+                    global::System.Nullable<global::System.DateTime> OraFineStampo, 
+                    global::System.Nullable<int> SecondiCicloTaglio, 
+                    global::System.Nullable<int> MinutiAttrezzaggio, 
+                    global::System.Nullable<int> Stato, 
+                    int Original_IDCommessa, 
+                    string Original_CodCommessa, 
+                    int Original_NrCommessa, 
+                    global::System.Nullable<global::System.DateTime> Original_DataCommessa, 
+                    int Original_TipoCommessa, 
+                    string Original_IDCliente, 
+                    string Original_OrdCliente, 
+                    global::System.Nullable<global::System.DateTime> Original_DataConsegna, 
+                    global::System.Nullable<int> Original_NrPezziDaLavorare, 
+                    string Original_CodArticolo, 
+                    string Original_DescrArticolo, 
+                    string Original_Note, 
+                    string Original_Foto, 
+                    string Original_IDFornitore, 
+                    global::System.Nullable<int> Original_IDMachStampa, 
+                    string Original_IDStampo, 
+                    string Original_CodArtiDopoStampo, 
+                    global::System.Nullable<int> Original_IDMachTaglio, 
+                    string Original_IDDima, 
+                    string Original_CodArtiDopoTaglio, 
+                    string Original_IDMateriaPrima, 
+                    string Original_IDMinuteria, 
+                    global::System.Nullable<int> Original_Qtaminuteria, 
+                    global::System.Nullable<int> Original_NrPezziOrdinati, 
+                    string Original_NrOrdine, 
+                    string Original_LottoAcquisto, 
+                    global::System.Nullable<global::System.DateTime> Original_DataTermine, 
+                    global::System.Nullable<int> Original_NrPezziCorretti, 
+                    global::System.Nullable<int> Original_NrPezziScartati, 
+                    global::System.Nullable<global::System.DateTime> Original_OraInizioStampo, 
+                    global::System.Nullable<global::System.DateTime> Original_OraFineStampo, 
+                    global::System.Nullable<int> Original_SecondiCicloTaglio, 
+                    global::System.Nullable<int> Original_MinutiAttrezzaggio, 
+                    global::System.Nullable<int> Original_Stato) {
+            return this.Update(CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, OraInizioStampo, OraFineStampo, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, Original_IDCommessa, Original_CodCommessa, Original_NrCommessa, Original_DataCommessa, Original_TipoCommessa, Original_IDCliente, Original_OrdCliente, Original_DataConsegna, Original_NrPezziDaLavorare, Original_CodArticolo, Original_DescrArticolo, Original_Note, Original_Foto, Original_IDFornitore, Original_IDMachStampa, Original_IDStampo, Original_CodArtiDopoStampo, Original_IDMachTaglio, Original_IDDima, Original_CodArtiDopoTaglio, Original_IDMateriaPrima, Original_IDMinuteria, Original_Qtaminuteria, Original_NrPezziOrdinati, Original_NrOrdine, Original_LottoAcquisto, Original_DataTermine, Original_NrPezziCorretti, Original_NrPezziScartati, Original_OraInizioStampo, Original_OraFineStampo, Original_SecondiCicloTaglio, Original_MinutiAttrezzaggio, Original_Stato, Original_IDCommessa);
         }
     }
     
@@ -28134,7 +29386,8 @@ SELECT IDAzienda, DataUltimoOrdine, NrUltimoOrdineLetto FROM Configurazione WHER
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IDDettaglioArticolo, codice_articolo, progressivo, codice_articolo_bc, des" +
                 "crizione_articolo_bc, codice_fornitore, lavorazione, PercentualeLastra, LottoMin" +
-                "imoRiordino, MacPredefStampo, MacPredefTaglio, CostoBase FROM dbo.DettArticoli";
+                "imoRiordino, MacPredefStampo, MacPredefTaglio, CostoBase, NrPezziDaLastra FROM D" +
+                "ettArticoli";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
