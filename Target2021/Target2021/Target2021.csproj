@@ -143,6 +143,9 @@
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Target2021DataSet.cs">
+      <DependentUpon>Target2021DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
