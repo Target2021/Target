@@ -28,9 +28,10 @@ namespace Target2021
             foreach(DataGridViewRow row in dataGridView1.Rows)
             {
                 index[i] = row.Index;
-                CheckGiacenza(index[i]);
+                CheckGiacenza(index[i],false);
                 i++;
             }
+            button1.BackColor = Color.Gray;
         }
 
         private void LoadStampaggio()
@@ -51,7 +52,7 @@ namespace Target2021
             con.Close();
         }
 
-        private void CheckGiacenza(int index)
+        private void CheckGiacenza(int index,bool lavora)
         {
             try
             {
@@ -85,10 +86,11 @@ namespace Target2021
                     button1.Enabled = true;
                     button1.BackColor = Color.Green;
                     dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Green;
-                        
-                    LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
-                    lavoraStampaggio.Show();
-                       
+                    if (lavora)
+                    {
+                        LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
+                        lavoraStampaggio.Show();
+                    }                      
                 }
             }
             catch(Exception ex) {
@@ -101,6 +103,7 @@ namespace Target2021
             {
                 try
                 {
+                    button1.Enabled = false;
                     int quantita = Convert.ToInt32(row.Cells[7].Value);
                     String stringa = Properties.Resources.StringaConnessione;
                     string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(row.Cells[8].Value) + "'";
@@ -113,22 +116,18 @@ namespace Target2021
                     if (diff < 0)
                     {
                         row.DefaultCellStyle.BackColor = Color.Red;
-                        button1.BackColor = Color.Red;
                     }
                     if (Enumerable.Range(1, 10).Contains(diff))
                     {
                         MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.OK);
-                        button1.Enabled = true;
-                        button1.BackColor = Color.Yellow;
+                        button1.Enabled = true;;
                         row.DefaultCellStyle.BackColor = Color.Yellow;
                     }
                     if (diff > 10)
                     {
                         button1.Enabled = true;
-                        button1.BackColor = Color.Green;
                         row.DefaultCellStyle.BackColor = Color.Green;
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -160,12 +159,12 @@ namespace Target2021
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            CheckGiacenzaTotale();
+            CheckGiacenza(e.RowIndex,false);
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            CheckGiacenza(e.RowIndex);
+            CheckGiacenza(e.RowIndex,true);
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
