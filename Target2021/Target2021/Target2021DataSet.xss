@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:articoli_semplici" ZOrder="27" X="366" Y="70" Height="305" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:ArticoliBC" ZOrder="26" X="673" Y="70" Height="191" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:clienti" ZOrder="25" X="945" Y="70" Height="305" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:Commesse" ZOrder="24" X="1218" Y="70" Height="305" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Commesse" ZOrder="24" X="1218" Y="70" Height="324" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:CompatibStampa" ZOrder="23" X="1494" Y="70" Height="134" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:CompatibTaglio" ZOrder="22" X="1809" Y="70" Height="134" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Configurazione" ZOrder="21" X="2116" Y="70" Height="134" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />

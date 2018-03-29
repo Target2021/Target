@@ -29,57 +29,248 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label iDCommessaLabel;
+            System.Windows.Forms.Label codCommessaLabel;
+            System.Windows.Forms.Label nrCommessaLabel;
+            System.Windows.Forms.Label dataCommessaLabel;
+            System.Windows.Forms.Label iDClienteLabel;
+            System.Windows.Forms.Label dataConsegnaLabel;
+            System.Windows.Forms.Label nrPezziDaLavorareLabel;
+            System.Windows.Forms.Label codArticoloLabel;
+            System.Windows.Forms.Label descrArticoloLabel;
+            System.Windows.Forms.Label iDStampoLabel;
+            System.Windows.Forms.Label codArtiDopoStampoLabel;
+            System.Windows.Forms.Label nrPezziOrdinatiLabel;
+            System.Windows.Forms.Label dataTermineLabel;
+            System.Windows.Forms.Label nrPezziCorrettiLabel;
+            System.Windows.Forms.Label nrPezziScartatiLabel;
+            System.Windows.Forms.Label oraInizioStampoLabel;
+            System.Windows.Forms.Label oraFineStampoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LavoraStampaggio));
             this.label1 = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.commesseDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commesseBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.commesseBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.iDCommessaTextBox = new System.Windows.Forms.TextBox();
+            this.codCommessaTextBox = new System.Windows.Forms.TextBox();
+            this.nrCommessaTextBox = new System.Windows.Forms.TextBox();
+            this.dataCommessaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.iDClienteTextBox = new System.Windows.Forms.TextBox();
+            this.dataConsegnaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.nrPezziDaLavorareTextBox = new System.Windows.Forms.TextBox();
+            this.codArticoloTextBox = new System.Windows.Forms.TextBox();
+            this.descrArticoloTextBox = new System.Windows.Forms.TextBox();
+            this.iDStampoTextBox = new System.Windows.Forms.TextBox();
+            this.codArtiDopoStampoTextBox = new System.Windows.Forms.TextBox();
+            this.nrPezziOrdinatiTextBox = new System.Windows.Forms.TextBox();
+            this.dataTermineDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.nrPezziCorrettiTextBox = new System.Windows.Forms.TextBox();
+            this.nrPezziScartatiTextBox = new System.Windows.Forms.TextBox();
+            this.oraInizioStampoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.oraFineStampoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.cCToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.cCToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            iDCommessaLabel = new System.Windows.Forms.Label();
+            codCommessaLabel = new System.Windows.Forms.Label();
+            nrCommessaLabel = new System.Windows.Forms.Label();
+            dataCommessaLabel = new System.Windows.Forms.Label();
+            iDClienteLabel = new System.Windows.Forms.Label();
+            dataConsegnaLabel = new System.Windows.Forms.Label();
+            nrPezziDaLavorareLabel = new System.Windows.Forms.Label();
+            codArticoloLabel = new System.Windows.Forms.Label();
+            descrArticoloLabel = new System.Windows.Forms.Label();
+            iDStampoLabel = new System.Windows.Forms.Label();
+            codArtiDopoStampoLabel = new System.Windows.Forms.Label();
+            nrPezziOrdinatiLabel = new System.Windows.Forms.Label();
+            dataTermineLabel = new System.Windows.Forms.Label();
+            nrPezziCorrettiLabel = new System.Windows.Forms.Label();
+            nrPezziScartatiLabel = new System.Windows.Forms.Label();
+            oraInizioStampoLabel = new System.Windows.Forms.Label();
+            oraFineStampoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).BeginInit();
+            this.commesseBindingNavigator.SuspendLayout();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // iDCommessaLabel
+            // 
+            iDCommessaLabel.AutoSize = true;
+            iDCommessaLabel.Location = new System.Drawing.Point(62, 110);
+            iDCommessaLabel.Name = "iDCommessaLabel";
+            iDCommessaLabel.Size = new System.Drawing.Size(72, 13);
+            iDCommessaLabel.TabIndex = 2;
+            iDCommessaLabel.Text = "IDCommessa:";
+            // 
+            // codCommessaLabel
+            // 
+            codCommessaLabel.AutoSize = true;
+            codCommessaLabel.Location = new System.Drawing.Point(51, 136);
+            codCommessaLabel.Name = "codCommessaLabel";
+            codCommessaLabel.Size = new System.Drawing.Size(83, 13);
+            codCommessaLabel.TabIndex = 4;
+            codCommessaLabel.Text = "Cod Commessa:";
+            // 
+            // nrCommessaLabel
+            // 
+            nrCommessaLabel.AutoSize = true;
+            nrCommessaLabel.Location = new System.Drawing.Point(59, 162);
+            nrCommessaLabel.Name = "nrCommessaLabel";
+            nrCommessaLabel.Size = new System.Drawing.Size(75, 13);
+            nrCommessaLabel.TabIndex = 6;
+            nrCommessaLabel.Text = "Nr Commessa:";
+            // 
+            // dataCommessaLabel
+            // 
+            dataCommessaLabel.AutoSize = true;
+            dataCommessaLabel.Location = new System.Drawing.Point(47, 189);
+            dataCommessaLabel.Name = "dataCommessaLabel";
+            dataCommessaLabel.Size = new System.Drawing.Size(87, 13);
+            dataCommessaLabel.TabIndex = 8;
+            dataCommessaLabel.Text = "Data Commessa:";
+            // 
+            // iDClienteLabel
+            // 
+            iDClienteLabel.AutoSize = true;
+            iDClienteLabel.Location = new System.Drawing.Point(81, 214);
+            iDClienteLabel.Name = "iDClienteLabel";
+            iDClienteLabel.Size = new System.Drawing.Size(53, 13);
+            iDClienteLabel.TabIndex = 10;
+            iDClienteLabel.Text = "IDCliente:";
+            // 
+            // dataConsegnaLabel
+            // 
+            dataConsegnaLabel.AutoSize = true;
+            dataConsegnaLabel.Location = new System.Drawing.Point(50, 241);
+            dataConsegnaLabel.Name = "dataConsegnaLabel";
+            dataConsegnaLabel.Size = new System.Drawing.Size(84, 13);
+            dataConsegnaLabel.TabIndex = 12;
+            dataConsegnaLabel.Text = "Data Consegna:";
+            // 
+            // nrPezziDaLavorareLabel
+            // 
+            nrPezziDaLavorareLabel.AutoSize = true;
+            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(23, 266);
+            nrPezziDaLavorareLabel.Name = "nrPezziDaLavorareLabel";
+            nrPezziDaLavorareLabel.Size = new System.Drawing.Size(111, 13);
+            nrPezziDaLavorareLabel.TabIndex = 14;
+            nrPezziDaLavorareLabel.Text = "Nr Pezzi Da Lavorare:";
+            // 
+            // codArticoloLabel
+            // 
+            codArticoloLabel.AutoSize = true;
+            codArticoloLabel.Location = new System.Drawing.Point(67, 318);
+            codArticoloLabel.Name = "codArticoloLabel";
+            codArticoloLabel.Size = new System.Drawing.Size(67, 13);
+            codArticoloLabel.TabIndex = 16;
+            codArticoloLabel.Text = "Cod Articolo:";
+            // 
+            // descrArticoloLabel
+            // 
+            descrArticoloLabel.AutoSize = true;
+            descrArticoloLabel.Location = new System.Drawing.Point(58, 344);
+            descrArticoloLabel.Name = "descrArticoloLabel";
+            descrArticoloLabel.Size = new System.Drawing.Size(76, 13);
+            descrArticoloLabel.TabIndex = 18;
+            descrArticoloLabel.Text = "Descr Articolo:";
+            // 
+            // iDStampoLabel
+            // 
+            iDStampoLabel.AutoSize = true;
+            iDStampoLabel.Location = new System.Drawing.Point(414, 110);
+            iDStampoLabel.Name = "iDStampoLabel";
+            iDStampoLabel.Size = new System.Drawing.Size(57, 13);
+            iDStampoLabel.TabIndex = 20;
+            iDStampoLabel.Text = "IDStampo:";
+            // 
+            // codArtiDopoStampoLabel
+            // 
+            codArtiDopoStampoLabel.AutoSize = true;
+            codArtiDopoStampoLabel.Location = new System.Drawing.Point(356, 136);
+            codArtiDopoStampoLabel.Name = "codArtiDopoStampoLabel";
+            codArtiDopoStampoLabel.Size = new System.Drawing.Size(115, 13);
+            codArtiDopoStampoLabel.TabIndex = 22;
+            codArtiDopoStampoLabel.Text = "Cod Arti Dopo Stampo:";
+            // 
+            // nrPezziOrdinatiLabel
+            // 
+            nrPezziOrdinatiLabel.AutoSize = true;
+            nrPezziOrdinatiLabel.Location = new System.Drawing.Point(46, 292);
+            nrPezziOrdinatiLabel.Name = "nrPezziOrdinatiLabel";
+            nrPezziOrdinatiLabel.Size = new System.Drawing.Size(88, 13);
+            nrPezziOrdinatiLabel.TabIndex = 24;
+            nrPezziOrdinatiLabel.Text = "Nr Pezzi Ordinati:";
+            // 
+            // dataTermineLabel
+            // 
+            dataTermineLabel.AutoSize = true;
+            dataTermineLabel.Location = new System.Drawing.Point(397, 163);
+            dataTermineLabel.Name = "dataTermineLabel";
+            dataTermineLabel.Size = new System.Drawing.Size(74, 13);
+            dataTermineLabel.TabIndex = 26;
+            dataTermineLabel.Text = "Data Termine:";
+            // 
+            // nrPezziCorrettiLabel
+            // 
+            nrPezziCorrettiLabel.AutoSize = true;
+            nrPezziCorrettiLabel.Location = new System.Drawing.Point(386, 189);
+            nrPezziCorrettiLabel.Name = "nrPezziCorrettiLabel";
+            nrPezziCorrettiLabel.Size = new System.Drawing.Size(85, 13);
+            nrPezziCorrettiLabel.TabIndex = 28;
+            nrPezziCorrettiLabel.Text = "Nr Pezzi Corretti:";
+            // 
+            // nrPezziScartatiLabel
+            // 
+            nrPezziScartatiLabel.AutoSize = true;
+            nrPezziScartatiLabel.Location = new System.Drawing.Point(383, 214);
+            nrPezziScartatiLabel.Name = "nrPezziScartatiLabel";
+            nrPezziScartatiLabel.Size = new System.Drawing.Size(88, 13);
+            nrPezziScartatiLabel.TabIndex = 30;
+            nrPezziScartatiLabel.Text = "Nr Pezzi Scartati:";
+            // 
+            // oraInizioStampoLabel
+            // 
+            oraInizioStampoLabel.AutoSize = true;
+            oraInizioStampoLabel.Location = new System.Drawing.Point(378, 241);
+            oraInizioStampoLabel.Name = "oraInizioStampoLabel";
+            oraInizioStampoLabel.Size = new System.Drawing.Size(93, 13);
+            oraInizioStampoLabel.TabIndex = 32;
+            oraInizioStampoLabel.Text = "Ora Inizio Stampo:";
+            // 
+            // oraFineStampoLabel
+            // 
+            oraFineStampoLabel.AutoSize = true;
+            oraFineStampoLabel.Location = new System.Drawing.Point(382, 267);
+            oraFineStampoLabel.Name = "oraFineStampoLabel";
+            oraFineStampoLabel.Size = new System.Drawing.Size(89, 13);
+            oraFineStampoLabel.TabIndex = 34;
+            oraFineStampoLabel.Text = "Ora Fine Stampo:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(216, 33);
+            this.label1.Location = new System.Drawing.Point(259, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 50);
+            this.label1.Size = new System.Drawing.Size(264, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "STAMPAGGIO";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -128,284 +319,352 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // commesseDataGridView
-            // 
-            this.commesseDataGridView.AutoGenerateColumns = false;
-            this.commesseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.commesseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33});
-            this.commesseDataGridView.DataSource = this.commesseBindingSource;
-            this.commesseDataGridView.Location = new System.Drawing.Point(12, 112);
-            this.commesseDataGridView.Name = "commesseDataGridView";
-            this.commesseDataGridView.RowTemplate.Height = 24;
-            this.commesseDataGridView.Size = new System.Drawing.Size(1245, 519);
-            this.commesseDataGridView.TabIndex = 2;
-            this.commesseDataGridView.CellValuePushed += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.commesseDataGridView_CellValuePushed);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDCommessa";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IDCommessa";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CodCommessa";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CodCommessa";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NrCommessa";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NrCommessa";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataCommessa";
-            this.dataGridViewTextBoxColumn4.HeaderText = "DataCommessa";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "TipoCommessa";
-            this.dataGridViewTextBoxColumn5.HeaderText = "TipoCommessa";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "IDCliente";
-            this.dataGridViewTextBoxColumn6.HeaderText = "IDCliente";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "OrdCliente";
-            this.dataGridViewTextBoxColumn7.HeaderText = "OrdCliente";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DataConsegna";
-            this.dataGridViewTextBoxColumn8.HeaderText = "DataConsegna";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "NrPezziDaLavorare";
-            this.dataGridViewTextBoxColumn9.HeaderText = "NrPezziDaLavorare";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // commesseBindingNavigator
+            // 
+            this.commesseBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.commesseBindingNavigator.BindingSource = this.commesseBindingSource;
+            this.commesseBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.commesseBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.commesseBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.commesseBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.commesseBindingNavigatorSaveItem});
+            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 497);
+            this.commesseBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.commesseBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.commesseBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.commesseBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.commesseBindingNavigator.Name = "commesseBindingNavigator";
+            this.commesseBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.commesseBindingNavigator.Size = new System.Drawing.Size(1028, 25);
+            this.commesseBindingNavigator.TabIndex = 1;
+            this.commesseBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Text = "di {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Elimina";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
             // 
-            // dataGridViewTextBoxColumn10
+            // bindingNavigatorMoveLastItem
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "CodArticolo";
-            this.dataGridViewTextBoxColumn10.HeaderText = "CodArticolo";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
             // 
-            // dataGridViewTextBoxColumn11
+            // bindingNavigatorSeparator2
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "DescrArticolo";
-            this.dataGridViewTextBoxColumn11.HeaderText = "DescrArticolo";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Visible = false;
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // dataGridViewTextBoxColumn12
+            // commesseBindingNavigatorSaveItem
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Note";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Note";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Visible = false;
+            this.commesseBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.commesseBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("commesseBindingNavigatorSaveItem.Image")));
+            this.commesseBindingNavigatorSaveItem.Name = "commesseBindingNavigatorSaveItem";
+            this.commesseBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.commesseBindingNavigatorSaveItem.Text = "Salva dati";
+            this.commesseBindingNavigatorSaveItem.Click += new System.EventHandler(this.commesseBindingNavigatorSaveItem_Click_1);
             // 
-            // dataGridViewTextBoxColumn13
+            // iDCommessaTextBox
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Foto";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Foto";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Visible = false;
+            this.iDCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCommessa", true));
+            this.iDCommessaTextBox.Location = new System.Drawing.Point(140, 107);
+            this.iDCommessaTextBox.Name = "iDCommessaTextBox";
+            this.iDCommessaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDCommessaTextBox.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn14
+            // codCommessaTextBox
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "IDFornitore";
-            this.dataGridViewTextBoxColumn14.HeaderText = "IDFornitore";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Visible = false;
+            this.codCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodCommessa", true));
+            this.codCommessaTextBox.Location = new System.Drawing.Point(140, 133);
+            this.codCommessaTextBox.Name = "codCommessaTextBox";
+            this.codCommessaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codCommessaTextBox.TabIndex = 5;
             // 
-            // dataGridViewTextBoxColumn15
+            // nrCommessaTextBox
             // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "IDMachStampa";
-            this.dataGridViewTextBoxColumn15.HeaderText = "IDMachStampa";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Visible = false;
+            this.nrCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrCommessa", true));
+            this.nrCommessaTextBox.Location = new System.Drawing.Point(140, 159);
+            this.nrCommessaTextBox.Name = "nrCommessaTextBox";
+            this.nrCommessaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrCommessaTextBox.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn16
+            // dataCommessaDateTimePicker
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "IDStampo";
-            this.dataGridViewTextBoxColumn16.HeaderText = "IDStampo";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Visible = false;
+            this.dataCommessaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataCommessa", true));
+            this.dataCommessaDateTimePicker.Location = new System.Drawing.Point(140, 185);
+            this.dataCommessaDateTimePicker.Name = "dataCommessaDateTimePicker";
+            this.dataCommessaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dataCommessaDateTimePicker.TabIndex = 9;
             // 
-            // dataGridViewTextBoxColumn17
+            // iDClienteTextBox
             // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "CodArtiDopoStampo";
-            this.dataGridViewTextBoxColumn17.HeaderText = "CodArtiDopoStampo";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Visible = false;
+            this.iDClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCliente", true));
+            this.iDClienteTextBox.Location = new System.Drawing.Point(140, 211);
+            this.iDClienteTextBox.Name = "iDClienteTextBox";
+            this.iDClienteTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDClienteTextBox.TabIndex = 11;
             // 
-            // dataGridViewTextBoxColumn18
+            // dataConsegnaDateTimePicker
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "IDMachTaglio";
-            this.dataGridViewTextBoxColumn18.HeaderText = "IDMachTaglio";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Visible = false;
+            this.dataConsegnaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataConsegna", true));
+            this.dataConsegnaDateTimePicker.Location = new System.Drawing.Point(140, 237);
+            this.dataConsegnaDateTimePicker.Name = "dataConsegnaDateTimePicker";
+            this.dataConsegnaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dataConsegnaDateTimePicker.TabIndex = 13;
+            // 
+            // nrPezziDaLavorareTextBox
+            // 
+            this.nrPezziDaLavorareTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziDaLavorare", true));
+            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(140, 263);
+            this.nrPezziDaLavorareTextBox.Name = "nrPezziDaLavorareTextBox";
+            this.nrPezziDaLavorareTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrPezziDaLavorareTextBox.TabIndex = 15;
             // 
-            // dataGridViewTextBoxColumn19
+            // codArticoloTextBox
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "IDDima";
-            this.dataGridViewTextBoxColumn19.HeaderText = "IDDima";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Visible = false;
+            this.codArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArticolo", true));
+            this.codArticoloTextBox.Location = new System.Drawing.Point(140, 315);
+            this.codArticoloTextBox.Name = "codArticoloTextBox";
+            this.codArticoloTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codArticoloTextBox.TabIndex = 17;
             // 
-            // dataGridViewTextBoxColumn20
+            // descrArticoloTextBox
             // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "CodArtiDopoTaglio";
-            this.dataGridViewTextBoxColumn20.HeaderText = "CodArtiDopoTaglio";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Visible = false;
+            this.descrArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "DescrArticolo", true));
+            this.descrArticoloTextBox.Location = new System.Drawing.Point(140, 341);
+            this.descrArticoloTextBox.Name = "descrArticoloTextBox";
+            this.descrArticoloTextBox.Size = new System.Drawing.Size(200, 20);
+            this.descrArticoloTextBox.TabIndex = 19;
             // 
-            // dataGridViewTextBoxColumn21
+            // iDStampoTextBox
             // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "IDMateriaPrima";
-            this.dataGridViewTextBoxColumn21.HeaderText = "IDMateriaPrima";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Visible = false;
+            this.iDStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDStampo", true));
+            this.iDStampoTextBox.Location = new System.Drawing.Point(477, 107);
+            this.iDStampoTextBox.Name = "iDStampoTextBox";
+            this.iDStampoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDStampoTextBox.TabIndex = 21;
             // 
-            // dataGridViewTextBoxColumn22
+            // codArtiDopoStampoTextBox
             // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "IDMinuteria";
-            this.dataGridViewTextBoxColumn22.HeaderText = "IDMinuteria";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Visible = false;
+            this.codArtiDopoStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
+            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(477, 133);
+            this.codArtiDopoStampoTextBox.Name = "codArtiDopoStampoTextBox";
+            this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codArtiDopoStampoTextBox.TabIndex = 23;
             // 
-            // dataGridViewTextBoxColumn23
+            // nrPezziOrdinatiTextBox
             // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Qtaminuteria";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Qtaminuteria";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.Visible = false;
+            this.nrPezziOrdinatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziOrdinati", true));
+            this.nrPezziOrdinatiTextBox.Location = new System.Drawing.Point(140, 289);
+            this.nrPezziOrdinatiTextBox.Name = "nrPezziOrdinatiTextBox";
+            this.nrPezziOrdinatiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrPezziOrdinatiTextBox.TabIndex = 25;
             // 
-            // dataGridViewTextBoxColumn24
+            // dataTermineDateTimePicker
             // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "NrPezziOrdinati";
-            this.dataGridViewTextBoxColumn24.HeaderText = "NrPezziOrdinati";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataTermineDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataTermine", true));
+            this.dataTermineDateTimePicker.Location = new System.Drawing.Point(477, 159);
+            this.dataTermineDateTimePicker.Name = "dataTermineDateTimePicker";
+            this.dataTermineDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dataTermineDateTimePicker.TabIndex = 27;
             // 
-            // dataGridViewTextBoxColumn25
+            // nrPezziCorrettiTextBox
             // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "NrOrdine";
-            this.dataGridViewTextBoxColumn25.HeaderText = "NrOrdine";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Visible = false;
+            this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
+            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(477, 186);
+            this.nrPezziCorrettiTextBox.Name = "nrPezziCorrettiTextBox";
+            this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrPezziCorrettiTextBox.TabIndex = 29;
             // 
-            // dataGridViewTextBoxColumn26
+            // nrPezziScartatiTextBox
             // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "LottoAcquisto";
-            this.dataGridViewTextBoxColumn26.HeaderText = "LottoAcquisto";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.Visible = false;
+            this.nrPezziScartatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziScartati", true));
+            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(477, 211);
+            this.nrPezziScartatiTextBox.Name = "nrPezziScartatiTextBox";
+            this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrPezziScartatiTextBox.TabIndex = 31;
             // 
-            // dataGridViewTextBoxColumn27
+            // oraInizioStampoDateTimePicker
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "DataTermine";
-            this.dataGridViewTextBoxColumn27.HeaderText = "DataTermine";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.oraInizioStampoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OraInizioStampo", true));
+            this.oraInizioStampoDateTimePicker.Location = new System.Drawing.Point(477, 237);
+            this.oraInizioStampoDateTimePicker.Name = "oraInizioStampoDateTimePicker";
+            this.oraInizioStampoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.oraInizioStampoDateTimePicker.TabIndex = 33;
             // 
-            // dataGridViewTextBoxColumn28
+            // oraFineStampoDateTimePicker
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "NrPezziCorretti";
-            this.dataGridViewTextBoxColumn28.HeaderText = "NrPezziCorretti";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.oraFineStampoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OraFineStampo", true));
+            this.oraFineStampoDateTimePicker.Location = new System.Drawing.Point(477, 263);
+            this.oraFineStampoDateTimePicker.Name = "oraFineStampoDateTimePicker";
+            this.oraFineStampoDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.oraFineStampoDateTimePicker.TabIndex = 35;
             // 
-            // dataGridViewTextBoxColumn29
+            // fillByToolStrip
             // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "NrPezziScartati";
-            this.dataGridViewTextBoxColumn29.HeaderText = "NrPezziScartati";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cCToolStripLabel,
+            this.cCToolStripTextBox,
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1028, 25);
+            this.fillByToolStrip.TabIndex = 36;
+            this.fillByToolStrip.Text = "fillByToolStrip";
             // 
-            // dataGridViewTextBoxColumn30
+            // cCToolStripLabel
             // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "OraInizioStampo";
-            this.dataGridViewTextBoxColumn30.HeaderText = "OraInizioStampo";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.cCToolStripLabel.Name = "cCToolStripLabel";
+            this.cCToolStripLabel.Size = new System.Drawing.Size(26, 22);
+            this.cCToolStripLabel.Text = "CC:";
             // 
-            // dataGridViewTextBoxColumn31
+            // cCToolStripTextBox
             // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "OraFineStampo";
-            this.dataGridViewTextBoxColumn31.HeaderText = "OraFineStampo";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.cCToolStripTextBox.Name = "cCToolStripTextBox";
+            this.cCToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.cCToolStripTextBox.TextChanged += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
-            // dataGridViewTextBoxColumn32
+            // fillByToolStripButton
             // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "SecondiCicloTaglio";
-            this.dataGridViewTextBoxColumn32.HeaderText = "SecondiCicloTaglio";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "MinutiAttrezzaggio";
-            this.dataGridViewTextBoxColumn33.HeaderText = "MinutiAttrezzaggio";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // LavoraStampaggio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1373, 643);
-            this.Controls.Add(this.commesseDataGridView);
+            this.ClientSize = new System.Drawing.Size(1028, 522);
+            this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(oraFineStampoLabel);
+            this.Controls.Add(this.oraFineStampoDateTimePicker);
+            this.Controls.Add(oraInizioStampoLabel);
+            this.Controls.Add(this.oraInizioStampoDateTimePicker);
+            this.Controls.Add(nrPezziScartatiLabel);
+            this.Controls.Add(this.nrPezziScartatiTextBox);
+            this.Controls.Add(nrPezziCorrettiLabel);
+            this.Controls.Add(this.nrPezziCorrettiTextBox);
+            this.Controls.Add(dataTermineLabel);
+            this.Controls.Add(this.dataTermineDateTimePicker);
+            this.Controls.Add(nrPezziOrdinatiLabel);
+            this.Controls.Add(this.nrPezziOrdinatiTextBox);
+            this.Controls.Add(codArtiDopoStampoLabel);
+            this.Controls.Add(this.codArtiDopoStampoTextBox);
+            this.Controls.Add(iDStampoLabel);
+            this.Controls.Add(this.iDStampoTextBox);
+            this.Controls.Add(descrArticoloLabel);
+            this.Controls.Add(this.descrArticoloTextBox);
+            this.Controls.Add(codArticoloLabel);
+            this.Controls.Add(this.codArticoloTextBox);
+            this.Controls.Add(nrPezziDaLavorareLabel);
+            this.Controls.Add(this.nrPezziDaLavorareTextBox);
+            this.Controls.Add(dataConsegnaLabel);
+            this.Controls.Add(this.dataConsegnaDateTimePicker);
+            this.Controls.Add(iDClienteLabel);
+            this.Controls.Add(this.iDClienteTextBox);
+            this.Controls.Add(dataCommessaLabel);
+            this.Controls.Add(this.dataCommessaDateTimePicker);
+            this.Controls.Add(nrCommessaLabel);
+            this.Controls.Add(this.nrCommessaTextBox);
+            this.Controls.Add(codCommessaLabel);
+            this.Controls.Add(this.codCommessaTextBox);
+            this.Controls.Add(iDCommessaLabel);
+            this.Controls.Add(this.iDCommessaTextBox);
+            this.Controls.Add(this.commesseBindingNavigator);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LavoraStampaggio";
             this.Text = "LavoraStampaggio";
             this.Load += new System.EventHandler(this.LavoraStampaggio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).EndInit();
+            this.commesseBindingNavigator.ResumeLayout(false);
+            this.commesseBindingNavigator.PerformLayout();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,39 +677,39 @@
         private System.Windows.Forms.BindingSource commesseBindingSource;
         private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView commesseDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.BindingNavigator commesseBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton commesseBindingNavigatorSaveItem;
+        private System.Windows.Forms.TextBox iDCommessaTextBox;
+        private System.Windows.Forms.TextBox codCommessaTextBox;
+        private System.Windows.Forms.TextBox nrCommessaTextBox;
+        private System.Windows.Forms.DateTimePicker dataCommessaDateTimePicker;
+        private System.Windows.Forms.TextBox iDClienteTextBox;
+        private System.Windows.Forms.DateTimePicker dataConsegnaDateTimePicker;
+        private System.Windows.Forms.TextBox nrPezziDaLavorareTextBox;
+        private System.Windows.Forms.TextBox codArticoloTextBox;
+        private System.Windows.Forms.TextBox descrArticoloTextBox;
+        private System.Windows.Forms.TextBox iDStampoTextBox;
+        private System.Windows.Forms.TextBox codArtiDopoStampoTextBox;
+        private System.Windows.Forms.TextBox nrPezziOrdinatiTextBox;
+        private System.Windows.Forms.DateTimePicker dataTermineDateTimePicker;
+        private System.Windows.Forms.TextBox nrPezziCorrettiTextBox;
+        private System.Windows.Forms.TextBox nrPezziScartatiTextBox;
+        private System.Windows.Forms.DateTimePicker oraInizioStampoDateTimePicker;
+        private System.Windows.Forms.DateTimePicker oraFineStampoDateTimePicker;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripLabel cCToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox cCToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }

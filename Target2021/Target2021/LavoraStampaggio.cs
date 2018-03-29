@@ -29,21 +29,7 @@ namespace Target2021
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-            String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
-            string query = "SELECT IDCommessa,DataCommessa,DataConsegna,NRPezziDaLavorare,NrPezziOrdinati,DataTermine,NrPezziCorretti,NrPezziScartati,OraInizioStampo,OraFineStampo,SecondiCicloTaglio,MinutiAttrezzaggio,Stato FROM Commesse WHERE CODCommessa='"+IDCommessa+"'";
-            SqlConnection con = new SqlConnection(stringa);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter();
-            sda.SelectCommand = cmd;
-            DataTable dataTable = new DataTable();
-            sda.Fill(dataTable);
-            BindingSource source = new BindingSource();
-            source.DataSource = dataTable;
-            commesseDataGridView.DataSource = source;
-            sda.Update(dataTable);
-            con.Close();
-
+            cCToolStripTextBox.Text = IDCommessa;
         }
 
         private void commesseDataGridView_CellValuePushed(object sender, DataGridViewCellValueEventArgs e)
@@ -53,6 +39,27 @@ namespace Target2021
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void commesseBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.commesseBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.commesseTableAdapter.FillBy(this.target2021DataSet.Commesse, cCToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }

@@ -171,5 +171,10 @@ namespace Target2021
         {
             CheckGiacenzaTotale();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
