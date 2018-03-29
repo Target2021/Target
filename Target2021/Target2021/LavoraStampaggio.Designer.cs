@@ -590,6 +590,7 @@
             // 
             // cCToolStripTextBox
             // 
+            this.cCToolStripTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cCToolStripTextBox.Name = "cCToolStripTextBox";
             this.cCToolStripTextBox.Size = new System.Drawing.Size(132, 27);
             this.cCToolStripTextBox.TextChanged += new System.EventHandler(this.fillByToolStripButton_Click);

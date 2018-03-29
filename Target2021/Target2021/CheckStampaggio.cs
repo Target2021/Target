@@ -76,10 +76,13 @@ namespace Target2021
                 }
                 if (Enumerable.Range(1, 10).Contains(diff))
                 {
-                    MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.OK);
-                    button1.Enabled = true;
                     button1.BackColor = Color.Yellow;
                     dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
+                    if (lavora)
+                    {
+                        LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
+                        lavoraStampaggio.Show();
+                    }
                 }
                 if (diff > 10)
                 {
@@ -119,7 +122,6 @@ namespace Target2021
                     }
                     if (Enumerable.Range(1, 10).Contains(diff))
                     {
-                        MessageBox.Show("materia prima in esaurimento, si prega di effettuare il riordino ", "Giacenza", MessageBoxButtons.OK);
                         button1.Enabled = true;;
                         row.DefaultCellStyle.BackColor = Color.Yellow;
                     }
@@ -149,7 +151,20 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            String stringa = Properties.Resources.StringaConnessione;
+            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,NrPezziOrdinati,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1)";
+            SqlConnection con = new SqlConnection(stringa);
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter();
+            sda.SelectCommand = cmd;
+            DataTable dataTable = new DataTable();
+            sda.Fill(dataTable);
+            BindingSource source = new BindingSource();
+            source.DataSource = dataTable;
+            dataGridView1.DataSource = source;
+            sda.Update(dataTable);
+            con.Close();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
