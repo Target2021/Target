@@ -22,10 +22,7 @@ namespace Target2021
 
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.commesseBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
+            
         }
 
         private void LavoraStampaggio_Load(object sender, EventArgs e)
@@ -46,6 +43,16 @@ namespace Target2021
             commesseDataGridView.DataSource = source;
             sda.Update(dataTable);
             con.Close();
+
+        }
+
+        private void commesseDataGridView_CellValuePushed(object sender, DataGridViewCellValueEventArgs e)
+        {
+          
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
