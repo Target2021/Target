@@ -22,6 +22,8 @@ namespace Target2021
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
+            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
 
         }
 
@@ -98,7 +100,7 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int i, IDOrdine, UltimoID, NumFasi, fase = 0, progressivo;
+            int i, IDOrdine, UltimoID, NumFasi, fase = 0, progressivo, NrPezzi;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
             string CodiceArticolo, IDCliente, OrdineCliente;
             SqlDataReader fasi;
@@ -151,10 +153,15 @@ namespace Target2021
                     com.OrdCliente = OrdineCliente;
                     DataConsegna = RecuperaDataConsegna(IDOrdine);
                     com.DataConsegna = DataConsegna;
+                    NrPezzi = RecuperaNrPezzi(IDOrdine);
+                    com.NrPezziDaLavorare=NrPezzi;
+                    com.NrPezziOrdinati=NrPezzi;
+
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
             } while (IDOrdine + 1 < IDOrdine+1);  //UltimoID
+            commesseDataGridView.Update();
         }
 
         private string CodiceArt(int numord)
@@ -274,11 +281,33 @@ namespace Target2021
             return dtc;
         }
 
+        private int RecuperaNrPezzi(int numord)
+        {
+            string stringaconnessione, sql;
+            int NumeroPezzi;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT numero_pezzi FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20180000";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            NumeroPezzi = Convert.ToInt32(comando.ExecuteScalar());    
+            connessione.Close();
+            return NumeroPezzi;
+        }
+
+        private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.commesseBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
+        }
+
         private void InserisciCommessa(Commessa com)
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, NrPezziOrdinati) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@npo)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -287,6 +316,8 @@ namespace Target2021
             comando.Parameters.AddWithValue("@idc", com.IDCliente);
             comando.Parameters.AddWithValue("@oc", com.OrdCliente);
             comando.Parameters.AddWithValue("@dtc", com.DataConsegna);
+            comando.Parameters.AddWithValue("@npdl", com.NrPezziDaLavorare);
+            comando.Parameters.AddWithValue("@npo", com.NrPezziOrdinati);
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();
