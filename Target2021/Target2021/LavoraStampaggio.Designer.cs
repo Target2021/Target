@@ -604,10 +604,12 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CustomFormat = "yy-MM-dd";
             this.dateTimePicker1.Location = new System.Drawing.Point(189, 234);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(263, 22);
             this.dateTimePicker1.TabIndex = 37;
+            this.dateTimePicker1.Value = new System.DateTime(2018, 3, 29, 0, 0, 0, 0);
             // 
             // dateTimePicker2
             // 

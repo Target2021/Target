@@ -30,8 +30,49 @@ namespace Target2021
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             cCToolStripTextBox.Text = IDCommessa;
+            int i =0;
+            RecuperoDate("SELECT DataCommessa FROM Commesse WHERE CODCommessa='" + IDCommessa + "'",i);
         }
+        public void RecuperoDate(string query,int i)
+        {
+            for (i = 0; i < 3; i++)
+            {
+                String stringa = Properties.Resources.StringaConnessione;
+                if(i==0)
+                {
+                    SqlConnection con = new SqlConnection(stringa);
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+                    string dateTime = cmd.ExecuteScalar().ToString();
+                    DateTime dt = Convert.ToDateTime(dateTime);
+                    dateTimePicker1.Value = dt;
+                    con.Close();
+                }
+                if(i==1)
+                {
+                    query = "SELECT DataConsegna FROM Commesse WHERE CODCommessa='" + IDCommessa + "'";
+                    SqlConnection con = new SqlConnection(stringa);
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+                    string dateTime = cmd.ExecuteScalar().ToString();
+                    DateTime dt = Convert.ToDateTime(dateTime);
+                    dateTimePicker2.Value = dt;
+                    con.Close();
+                }
+                if(i==2)
+                {
+                    query = "SELECT DataTermine FROM Commesse WHERE CODCommessa='" + IDCommessa + "'";
+                    SqlConnection con = new SqlConnection(stringa);
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+                    string dateTime = cmd.ExecuteScalar().ToString();
+                    DateTime dt = Convert.ToDateTime(dateTime);
+                    dateTimePicker3.Value = dt;
+                    con.Close();
 
+                }
+            }
+        }
         private void commesseDataGridView_CellValuePushed(object sender, DataGridViewCellValueEventArgs e)
         {
           
@@ -44,9 +85,13 @@ namespace Target2021
 
         private void commesseBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.commesseBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            String stringa = Properties.Resources.StringaConnessione;
+            string query = " UPDATE Commesse SET DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "',OraInizioStampo='"+dateTimePicker4.Value.ToString("yyyy-MM-dd") + " "+ dateTimePicker5.Value.ToLongTimeString() +  "',OraFineStampo='"+dateTimePicker5.Value.ToString("yyyy-MM-dd") + " "+dateTimePicker5.Value.ToLongTimeString()+"' WHERE CODCommessa='"+IDCommessa+"'";
+            SqlConnection con = new SqlConnection(stringa);
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
 
         }
 
