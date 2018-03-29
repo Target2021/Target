@@ -13,8 +13,8 @@ namespace Target2021
 {
     public partial class LavoraStampaggio : Form
     {
-        public int IDCommessa;
-        public LavoraStampaggio(int id)
+        public string IDCommessa;
+        public LavoraStampaggio(string id)
         {
             InitializeComponent();
             IDCommessa = id;
@@ -22,10 +22,7 @@ namespace Target2021
 
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.commesseBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
+            
         }
 
         private void LavoraStampaggio_Load(object sender, EventArgs e)
@@ -33,7 +30,7 @@ namespace Target2021
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
-            string query = "SELECT IDCommessa,DataCommessa,DataConsegna,NRPezziDaLavorare,NrPezziOrdinati,DataTermine,NrPezziCorretti,NrPezziScartati,OraInizioStampo,OraFineStampo,SecondiCicloTaglio,MinutiAttrezzaggio,Stato FROM Commesse WHERE IDCommessa='"+IDCommessa+"'";
+            string query = "SELECT IDCommessa,DataCommessa,DataConsegna,NRPezziDaLavorare,NrPezziOrdinati,DataTermine,NrPezziCorretti,NrPezziScartati,OraInizioStampo,OraFineStampo,SecondiCicloTaglio,MinutiAttrezzaggio,Stato FROM Commesse WHERE CODCommessa='"+IDCommessa+"'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -46,6 +43,16 @@ namespace Target2021
             commesseDataGridView.DataSource = source;
             sda.Update(dataTable);
             con.Close();
+
+        }
+
+        private void commesseDataGridView_CellValuePushed(object sender, DataGridViewCellValueEventArgs e)
+        {
+          
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
