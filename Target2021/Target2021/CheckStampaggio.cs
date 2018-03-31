@@ -30,7 +30,7 @@ namespace Target2021
         private void LoadStampaggio()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,NrPezziOrdinati,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1)";
+            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1)";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -52,7 +52,7 @@ namespace Target2021
                 try
                 {
                     button1.Enabled = false;
-                    int quantita = Convert.ToInt32(row.Cells[7].Value);
+                    int quantita = Convert.ToInt32(row.Cells[4].Value);
                     String stringa = Properties.Resources.StringaConnessione;
                     string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(row.Cells[8].Value) + "'";
                     SqlConnection con = new SqlConnection(stringa);

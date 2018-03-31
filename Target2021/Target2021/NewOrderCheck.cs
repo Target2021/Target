@@ -102,7 +102,7 @@ namespace Target2021
         {
             int i, IDOrdine, UltimoID, NumFasi, fase = 0, progressivo, NrPezzi;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
-            string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo;
+            string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo, IdFornitore, IDMatPrima;
             SqlDataReader fasi;
             BindingSource SorgenteDati = new BindingSource();
 
@@ -155,10 +155,14 @@ namespace Target2021
                     com.DataConsegna = DataConsegna;
                     NrPezzi = RecuperaNrPezzi(IDOrdine);
                     com.NrPezziDaLavorare=NrPezzi;
-                    com.NrPezziOrdinati=NrPezzi;
                     com.CodArticolo = CodiceArticolo;
                     DescrArticolo = RecuperaDescrizioneArticolo(IDOrdine);
                     com.DescrArticolo = DescrArticolo;
+                    IdFornitore = RecuperaIdFornitore(CodiceArticolo, i);
+                    com.IDFornitore = IdFornitore;
+                    IDMatPrima = RecuperaIDMatPri(CodiceArticolo, i);
+                    com.IDMateriaPrima = IDMatPrima;
+
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -310,6 +314,34 @@ namespace Target2021
             return NumeroPezzi;
         }
 
+        private string RecuperaIdFornitore(string codart, int i)
+        {
+            string stringaconnessione, sql;
+            string idf;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT codice_fornitore FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND progressivo=" + i;
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            idf = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            return idf;
+        }
+
+        private string RecuperaIDMatPri(string codart, int i)
+        {
+            string stringaconnessione, sql;
+            string idmp;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT codice_articolo_bc FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND progressivo=" + i;
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            idmp = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            return idmp;
+        }
+
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -322,7 +354,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, NrPezziOrdinati) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@npo)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrPezziOrdinati, NrOrdine, Stato) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@npo,@no,@stato)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -334,7 +366,11 @@ namespace Target2021
             comando.Parameters.AddWithValue("@npdl", com.NrPezziDaLavorare);
             comando.Parameters.AddWithValue("@codart", com.CodArticolo);
             comando.Parameters.AddWithValue("@desart", com.DescrArticolo);
-            comando.Parameters.AddWithValue("@npo", com.NrPezziOrdinati);
+            comando.Parameters.AddWithValue("@idf", com.IDFornitore);
+            comando.Parameters.AddWithValue("@idmp", com.IDMateriaPrima);
+            comando.Parameters.AddWithValue("@npo", 0);
+            comando.Parameters.AddWithValue("@no", 'N');
+            comando.Parameters.AddWithValue("@stato", 0);
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();

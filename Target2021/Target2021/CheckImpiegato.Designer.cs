@@ -43,7 +43,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(734, 12);
+            this.button1.Location = new System.Drawing.Point(12, 326);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 46);
             this.button1.TabIndex = 0;
@@ -97,19 +97,22 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(705, 79);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 378);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(219, 492);
+            this.richTextBox1.Size = new System.Drawing.Size(968, 209);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(687, 569);
+            this.dataGridView1.Size = new System.Drawing.Size(995, 308);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
@@ -117,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 593);
+            this.ClientSize = new System.Drawing.Size(1019, 593);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
