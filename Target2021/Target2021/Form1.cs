@@ -171,6 +171,13 @@ namespace Target2021
             registraUtenti.Show();
         }
 
+        private void impiegataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckImpiegato checkImpiegato = new CheckImpiegato();
+            checkImpiegato.MdiParent = this;
+            checkImpiegato.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

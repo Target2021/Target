@@ -372,6 +372,7 @@
             this.impiegataToolStripMenuItem.Name = "impiegataToolStripMenuItem";
             this.impiegataToolStripMenuItem.Size = new System.Drawing.Size(171, 32);
             this.impiegataToolStripMenuItem.Text = "Impiegata";
+            this.impiegataToolStripMenuItem.Click += new System.EventHandler(this.impiegataToolStripMenuItem_Click);
             // 
             // stampaggioToolStripMenuItem
             // 
