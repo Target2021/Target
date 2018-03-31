@@ -25,7 +25,7 @@ namespace Target2021
         {
             public MyRenderer() : base(new MyColors()) { }
         }      
-        private void CheckPrivilege(string livello)
+        public  void CheckPrivilege(string livello)
         {
             livello =livello.Replace(" ", string.Empty);
             if(livello=="Amministratore")
