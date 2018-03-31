@@ -82,6 +82,47 @@ namespace Target2021
                 }
             }
         }
+        private void CheckGiacenzaRow(int index)
+        {
+            try
+            {
+                idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells[0].Value);
+                idcommessa.Replace("  ", string.Empty);
+                button1.Enabled = false;
+                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[7].Value);
+                String stringa = Properties.Resources.StringaConnessione;
+                string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(dataGridView1.Rows[index].Cells[8].Value) + "'";
+                SqlConnection con = new SqlConnection(stringa);
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Close();
+                int diff = Giacenza - quantita;
+                if (diff < 0)
+                {
+                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Red;
+                    MessageBox.Show("Giacenza insufficiente, si prega di effettuare il riordino");
+                }
+                if (Enumerable.Range(1, 10).Contains(diff))
+                {
+                    button1.Enabled = true; ;
+                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
+                    LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
+                    lavoraStampaggio.Show();
+                }
+                if (diff > 10)
+                {
+                    button1.Enabled = true;
+                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Green;
+                    LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
+                    lavoraStampaggio.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -95,10 +136,7 @@ namespace Target2021
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            idcommessa = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-            idcommessa.Replace("  ", string.Empty);
-            LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
-            lavoraStampaggio.Show();
+            CheckGiacenzaRow(e.RowIndex);
         }
     }
 }
