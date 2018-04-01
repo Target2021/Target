@@ -25,8 +25,6 @@ namespace Target2021
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             LoadStampaggio();
-            button1.Enabled = false;
-            button1.BackColor = Color.Gray;
         }
 
         private void LoadStampaggio()
@@ -53,7 +51,6 @@ namespace Target2021
             {
                 try
                 {
-                    button1.Enabled = false;
                     int quantita =(int) row.Cells[4].Value;
                     String stringa = Properties.Resources.StringaConnessione;
                     string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + row.Cells[7].Value+ "'";
@@ -69,12 +66,10 @@ namespace Target2021
                     }
                     if (Enumerable.Range(1, 10).Contains(diff))
                     {
-                        button1.Enabled = true;;
                         row.DefaultCellStyle.BackColor = Color.Yellow;
                     }
                     if (diff > 10)
                     {
-                        button1.Enabled = true;
                         row.DefaultCellStyle.BackColor = Color.Green;
                     }
                 }
@@ -90,7 +85,6 @@ namespace Target2021
             {
                 idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells[0].Value);
                 idcommessa.Replace("  ", string.Empty);
-                button1.Enabled = false;
                 int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[4].Value);
                 String stringa = Properties.Resources.StringaConnessione;
                 string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[7].Value  + "'";
@@ -107,14 +101,12 @@ namespace Target2021
                 }
                 if (Enumerable.Range(1, 10).Contains(diff))
                 {
-                    button1.Enabled = true; ;
                     dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
                     LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
                     lavoraStampaggio.Show();
                 }
                 if (diff > 10)
                 {
-                    button1.Enabled = true;
                     dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Green;
                     LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
                     lavoraStampaggio.Show();
@@ -162,6 +154,11 @@ namespace Target2021
         private void button1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, DataGridViewSelectedRowCollection e)
+        {
+
         }
     }
 }

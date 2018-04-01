@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.target2021DataSet = new Target2021.Target2021DataSet();
@@ -45,20 +44,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(639, 33);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 44);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "LAVORA";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(504, 33);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Location = new System.Drawing.Point(38, 23);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 44);
@@ -146,7 +135,6 @@
             this.ClientSize = new System.Drawing.Size(1188, 644);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckStampaggio";
             this.Text = "CheckStampaggio";
@@ -161,8 +149,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource target2021DataSetBindingSource;
         private Target2021DataSet target2021DataSet;

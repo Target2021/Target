@@ -61,6 +61,15 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a .
+        /// </summary>
+        internal static string Aggiorna {
+            get {
+                return ResourceManager.GetString("Aggiorna", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap linea_tratteggiata {
@@ -86,6 +95,16 @@ namespace Target2021.Properties {
         internal static string StringaConnessione {
             get {
                 return ResourceManager.GetString("StringaConnessione", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_arrows {
+            get {
+                object obj = ResourceManager.GetObject("update_arrows", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

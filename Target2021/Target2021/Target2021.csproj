@@ -243,6 +243,7 @@
   <ItemGroup>
     <Content Include="Immagini\Immagine1.png" />
     <Content Include="Immagini\static1.squarespace.com.png" />
+    <Content Include="Resources\update-arrows.png" />
     <None Include="Resources\StringaConnessione.bmp" />
     <None Include="Resources\linea-tratteggiata.png" />
     <None Include="Resources\static1.squarespace.com.png" />
