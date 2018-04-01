@@ -103,5 +103,14 @@ namespace Target2021
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           DialogResult dialogResult= MessageBox.Show("Sicuro di apportare le seguenti modifiche?","Modifiche",MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                commesseBindingNavigatorSaveItem_Click_1(sender,e);
+            }
+        }
     }
 }

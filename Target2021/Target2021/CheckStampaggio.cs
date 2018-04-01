@@ -32,7 +32,7 @@ namespace Target2021
         private void LoadStampaggio()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1)";
+            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1) AND CodCommessa LIKE 'S%'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -139,6 +139,29 @@ namespace Target2021
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             CheckGiacenzaRow(e.RowIndex);
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            CheckGiacenzaTotale();
+            String stringa = Properties.Resources.StringaConnessione;
+            string query = " UPDATE Commesse SET CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[0].Value + "', DataCommessa='" + dataGridView1.Rows[e.RowIndex].Cells[1].Value + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells[2].Value + "',DataConsegna='" + dataGridView1.Rows[e.RowIndex].Cells[3].Value + "',NRPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells[4].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells[5].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells[6].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells[7].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[0].Value+"'";
+            SqlConnection con = new SqlConnection(stringa);
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            CheckGiacenzaRow(e.RowIndex);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
