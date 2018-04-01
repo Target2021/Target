@@ -22,6 +22,8 @@ namespace Target2021
 
         private void CheckStampaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
+            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             LoadStampaggio();
             button1.Enabled = false;
             button1.BackColor = Color.Gray;
@@ -52,9 +54,9 @@ namespace Target2021
                 try
                 {
                     button1.Enabled = false;
-                    int quantita = Convert.ToInt32(row.Cells[4].Value);
+                    int quantita =(int) row.Cells[4].Value;
                     String stringa = Properties.Resources.StringaConnessione;
-                    string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(row.Cells[8].Value) + "'";
+                    string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + row.Cells[7].Value+ "'";
                     SqlConnection con = new SqlConnection(stringa);
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
@@ -89,9 +91,9 @@ namespace Target2021
                 idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells[0].Value);
                 idcommessa.Replace("  ", string.Empty);
                 button1.Enabled = false;
-                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[7].Value);
+                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[4].Value);
                 String stringa = Properties.Resources.StringaConnessione;
-                string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(dataGridView1.Rows[index].Cells[8].Value) + "'";
+                string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[7].Value  + "'";
                 SqlConnection con = new SqlConnection(stringa);
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();

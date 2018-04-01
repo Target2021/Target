@@ -36,10 +36,13 @@
             this.target2021DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager1 = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.commesseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -124,6 +127,15 @@
             this.tableAdapterManager1.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.UtentiTableAdapter = null;
             // 
+            // commesseBindingSource1
+            // 
+            this.commesseBindingSource1.DataMember = "Commesse";
+            this.commesseBindingSource1.DataSource = this.target2021DataSetBindingSource;
+            // 
+            // commesseTableAdapter
+            // 
+            this.commesseTableAdapter.ClearBeforeFill = true;
+            // 
             // CheckStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -133,7 +145,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckStampaggio";
             this.Text = "CheckStampaggio";
             this.Load += new System.EventHandler(this.CheckStampaggio_Load);
@@ -141,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,5 +167,7 @@
         private System.Windows.Forms.BindingSource commesseBindingSource;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource commesseBindingSource1;
+        private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
     }
 }
