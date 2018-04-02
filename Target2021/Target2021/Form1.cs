@@ -171,6 +171,19 @@ namespace Target2021
             registraUtenti.Show();
         }
 
+        private void impiegataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void taglioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckTaglio taglio = new CheckTaglio();
+            taglio.MdiParent = this;
+            taglio.Show();
+
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

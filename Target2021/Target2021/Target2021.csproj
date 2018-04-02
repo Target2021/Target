@@ -175,6 +175,9 @@
     <EmbeddedResource Include="CheckStampaggio.resx">
       <DependentUpon>CheckStampaggio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CheckTaglio.resx">
+      <DependentUpon>CheckTaglio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clienti.resx">
       <DependentUpon>Clienti.cs</DependentUpon>
     </EmbeddedResource>
