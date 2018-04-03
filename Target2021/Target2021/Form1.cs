@@ -173,15 +173,9 @@ namespace Target2021
 
         private void impiegataToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void taglioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CheckTaglio taglio = new CheckTaglio();
-            taglio.MdiParent = this;
-            taglio.Show();
-
+            CheckImpiegato checkImpiegato = new CheckImpiegato();
+            checkImpiegato.MdiParent = this;
+            checkImpiegato.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

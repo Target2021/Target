@@ -103,5 +103,21 @@ namespace Target2021
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           DialogResult dialogResult= MessageBox.Show("Sicuro di apportare le seguenti modifiche?","Modifiche",MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                String stringa = Properties.Resources.StringaConnessione;
+                string query = " UPDATE Commesse SET  CodCommessa='" + codCommessaTextBox.Text + "', NrCommessa='" + nrCommessaTextBox.Text + "',IDCliente='" + iDClienteTextBox.Text + "',NrPezziDaLavorare='" + nrPezziDaLavorareTextBox.Text + "',CodArticolo='" + codArticoloTextBox.Text + "',DescrArticolo='" + descrArticoloTextBox.Text + "', IDStampo='" + iDStampoTextBox.Text + "',CodArtiDopoStampo='" + codArtiDopoStampoTextBox.Text + "',NrPezziCorretti='" + nrPezziCorrettiTextBox.Text + "',NrPezziScartati='" + nrPezziScartatiTextBox.Text + "', DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "',OraInizioStampo='" + dateTimePicker4.Value.ToString("yyyy-MM-dd") + " " + dateTimePicker5.Value.ToLongTimeString() + "',OraFineStampo='" + dateTimePicker5.Value.ToString("yyyy-MM-dd") + " " + dateTimePicker5.Value.ToLongTimeString() + "',Stato='"+3+"' WHERE CODCommessa='" + IDCommessa + "'";
+                SqlConnection con = new SqlConnection(stringa);
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                this.Close();
+            }
+        }
     }
 }

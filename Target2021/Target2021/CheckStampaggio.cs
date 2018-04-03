@@ -22,15 +22,15 @@ namespace Target2021
 
         private void CheckStampaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
+            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             LoadStampaggio();
-            button1.Enabled = false;
-            button1.BackColor = Color.Gray;
         }
 
         private void LoadStampaggio()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,NrPezziOrdinati,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1)";
+            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1) AND CodCommessa LIKE 'S%'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -51,10 +51,9 @@ namespace Target2021
             {
                 try
                 {
-                    button1.Enabled = false;
-                    int quantita = Convert.ToInt32(row.Cells[7].Value);
+                    int quantita =(int) row.Cells[4].Value;
                     String stringa = Properties.Resources.StringaConnessione;
-                    string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(row.Cells[8].Value) + "'";
+                    string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + row.Cells[7].Value+ "'";
                     SqlConnection con = new SqlConnection(stringa);
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
@@ -67,12 +66,10 @@ namespace Target2021
                     }
                     if (Enumerable.Range(1, 10).Contains(diff))
                     {
-                        button1.Enabled = true;;
                         row.DefaultCellStyle.BackColor = Color.Yellow;
                     }
                     if (diff > 10)
                     {
-                        button1.Enabled = true;
                         row.DefaultCellStyle.BackColor = Color.Green;
                     }
                 }
@@ -88,10 +85,9 @@ namespace Target2021
             {
                 idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells[0].Value);
                 idcommessa.Replace("  ", string.Empty);
-                button1.Enabled = false;
-                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[7].Value);
+                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[4].Value);
                 String stringa = Properties.Resources.StringaConnessione;
-                string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + Convert.ToString(dataGridView1.Rows[index].Cells[8].Value) + "'";
+                string query = "SELECT Giacenza FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[7].Value  + "'";
                 SqlConnection con = new SqlConnection(stringa);
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
@@ -105,14 +101,12 @@ namespace Target2021
                 }
                 if (Enumerable.Range(1, 10).Contains(diff))
                 {
-                    button1.Enabled = true; ;
                     dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
                     LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
                     lavoraStampaggio.Show();
                 }
                 if (diff > 10)
                 {
-                    button1.Enabled = true;
                     dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Green;
                     LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
                     lavoraStampaggio.Show();
@@ -137,6 +131,34 @@ namespace Target2021
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             CheckGiacenzaRow(e.RowIndex);
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            CheckGiacenzaTotale();
+            String stringa = Properties.Resources.StringaConnessione;
+            string query = " UPDATE Commesse SET CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[0].Value + "', DataCommessa='" + dataGridView1.Rows[e.RowIndex].Cells[1].Value + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells[2].Value + "',DataConsegna='" + dataGridView1.Rows[e.RowIndex].Cells[3].Value + "',NRPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells[4].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells[5].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells[6].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells[7].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[0].Value+"'";
+            SqlConnection con = new SqlConnection(stringa);
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            CheckGiacenzaRow(e.RowIndex);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, DataGridViewSelectedRowCollection e)
+        {
+
         }
     }
 }
