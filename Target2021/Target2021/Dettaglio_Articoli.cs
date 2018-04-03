@@ -31,8 +31,9 @@ namespace Target2021
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
+
 
         }
         private void Button2_Click(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace Target2021
             }
             if (Filter.Text == "Progressivo")
             {
-                backgroundWorker1.RunWorkerAsync( ControlLetters(textBox1.Text));
+                //backgroundWorker1.RunWorkerAsync( ControlLetters(textBox1.Text));
                 Search_Filter("SELECT * FROM DettArticoli WHERE progressivo LIKE '%" + textBox1.Text + "%'");
             }
             if (Filter.Text == "Codice_articolo")
@@ -107,6 +108,32 @@ namespace Target2021
                     //la condizione è che  la proprietà Text che gli passiamo deve essere uguale a quello di questo form così da identificare i vari form
                 }
             }
+        }
+
+        private void dettArticoliBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.dettArticoliBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
+        }
+
+        private void dettArticoliBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dettArticoliBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dettArticoliBindingNavigatorSaveItem_Click_3(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.dettArticoliBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
         }
     }
 }

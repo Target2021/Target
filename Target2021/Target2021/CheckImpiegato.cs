@@ -26,7 +26,6 @@ namespace Target2021
             this.Validate();
             this.commesseBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
         }
 
         private void CheckImpiegato_Load(object sender, EventArgs e)
@@ -35,27 +34,17 @@ namespace Target2021
             verifica_commesse();
         }
 
-        
-        private void commesseDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void commesseDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            
-        }
-
         public void inserimento_iniziale()
         {
-            string query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,DescrArticolo,IDMateriaPrima,IDFornitore FROM Commesse WHERE TipoCommessa=1 AND (Stato=0 OR Stato=1)";
+            string query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMateriaPrima,IDFornitore FROM Commesse WHERE TipoCommessa=1 AND (Stato=0 OR Stato=1)";
             SqlConnection connessione = new SqlConnection(stringa_connessione);
             SqlCommand comando = new SqlCommand(query, connessione);
             connessione.Open();
             SqlDataAdapter SDA = new SqlDataAdapter();
             SDA.SelectCommand = comando;
             SDA.Fill(dataTable);
-            dataTable.Columns.Add("Disponibilità", typeof(Int32));
+            dataTable.Columns.Add("Disponibilità Lastre", typeof(Int32));
+            dataTable.Columns.Add("Disponibilità Pezzi", typeof(Int32));
             BindingSource source = new BindingSource();
             source.DataSource = dataTable;
             dataGridView1.DataSource = source;
@@ -68,35 +57,37 @@ namespace Target2021
             SqlConnection conn = new SqlConnection(stringa_connessione);
             BindingSource source = new BindingSource();
             DataGridViewRow riga;
-            int PezziMagazzino = 0, PezziOrdinati = 0, nriga = 0, nrighe;
+            int Pezzi = 0, PezziLiberi = 0, nriga = 0, nrighe;
             nrighe=dataGridView1.RowCount;
             for (nriga=0;nriga<nrighe;nriga++)
-            //foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
                 riga = dataGridView1.Rows[nriga];
-                string query = "Select lavorazione From DettArticoli Where codice_articolo_bc='" + Convert.ToString(riga.Cells[7].Value) + "'";
+                string query = "Select PercentualeLastra From DettArticoli Where codice_articolo='" + Convert.ToString(riga.Cells[5].Value) + "' AND lavorazione=1";
                 SqlCommand comando = new SqlCommand(query, conn);
-                string query1 = "Select Giacenza From GiacenzeMagazzini Where idPrime='" + Convert.ToString(riga.Cells[7].Value) + "'";
+                string query1 = "Select GiacenzaDisponibili From GiacenzeMagazzini Where idPrime='" + Convert.ToString(riga.Cells[6].Value) + "'";
                 SqlCommand comando1 = new SqlCommand(query1, conn);
                 conn.Open();
-                int divisione_pezzo = Convert.ToInt32(comando.ExecuteScalar());
+                int percentuale = Convert.ToInt32(comando.ExecuteScalar());
                 int giacenza = Convert.ToInt32(comando1.ExecuteScalar());
                 try
                 {
-                    PezziMagazzino = giacenza / divisione_pezzo;
+                    double n = 100 / percentuale;
+                    int npezzi = (int) Math.Floor(n);
+                    Pezzi = giacenza * npezzi;
                 }
                 catch (DivideByZeroException e)
                 {
                     MessageBox.Show(e.Message);
                 }
-                dataTable.Rows[nriga]["Disponibilità"]=PezziMagazzino;
-                PezziOrdinati = Convert.ToInt32(riga.Cells[4].Value);
-                if (PezziMagazzino < PezziOrdinati)
+                dataTable.Rows[nriga]["Disponibilità Lastre"]=giacenza;
+                dataTable.Rows[nriga]["Disponibilità Pezzi"] = Pezzi;
+                PezziLiberi = Convert.ToInt32(riga.Cells[4].Value);
+                if (Pezzi < PezziLiberi)
                 {
                     richTextBox1.Text = richTextBox1.Text + "PROPOSTA DI ORDINE A FORNITORE";
-                    richTextBox1.Text = richTextBox1.Text + "\r" + "Ordinare materia prima codice: " + Convert.ToString(riga.Cells[7].Value);
-                    richTextBox1.Text = richTextBox1.Text + "\r" + "Fornitore: " + riga.Cells[8].Value;
-                    richTextBox1.Text = richTextBox1.Text + "\r" + "Quantità da ordinare: " + (PezziOrdinati - PezziMagazzino).ToString();
+                    richTextBox1.Text = richTextBox1.Text + "\r" + "Ordinare materia prima codice: " + Convert.ToString(riga.Cells[6].Value);
+                    richTextBox1.Text = richTextBox1.Text + "\r" + "Fornitore: " + riga.Cells[7].Value;
+                    richTextBox1.Text = richTextBox1.Text + "\r" + "Quantità da ordinare: " + (Pezzi - PezziLiberi).ToString();
                     richTextBox1.Text = richTextBox1.Text + "\r";
                 }
                 conn.Close();

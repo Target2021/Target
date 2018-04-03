@@ -36,6 +36,7 @@
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -116,11 +117,21 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(200, 326);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 46);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Genera PDF ordine";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // CheckImpiegato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 593);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button1);
@@ -144,5 +155,6 @@
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button2;
     }
 }

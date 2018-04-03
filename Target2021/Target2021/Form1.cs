@@ -185,6 +185,11 @@ namespace Target2021
             checkTaglio.Show();
         }
 
+        private void caricoscaricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Generare etichetta da attaccare sul bancale vedi foglio etichetta file di XLS
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

@@ -95,7 +95,7 @@ namespace Target2021
         {
             try
             {
-                this.commesseTableAdapter.FillBy(this.target2021DataSet.Commesse, cCToolStripTextBox.Text);
+                this.commesseTableAdapter.FillBy(this.target2021DataSet.Commesse, Convert.ToInt32(cCToolStripTextBox.Text));
             }
             catch (System.Exception ex)
             {

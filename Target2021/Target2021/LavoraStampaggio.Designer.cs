@@ -47,6 +47,8 @@
             System.Windows.Forms.Label oraInizioStampoLabel;
             System.Windows.Forms.Label oraFineStampoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LavoraStampaggio));
+            System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             this.label1 = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -87,6 +89,10 @@
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -104,190 +110,179 @@
             nrPezziScartatiLabel = new System.Windows.Forms.Label();
             oraInizioStampoLabel = new System.Windows.Forms.Label();
             oraFineStampoLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).BeginInit();
             this.commesseBindingNavigator.SuspendLayout();
             this.fillByToolStrip.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // iDCommessaLabel
             // 
             iDCommessaLabel.AutoSize = true;
-            iDCommessaLabel.Location = new System.Drawing.Point(83, 135);
-            iDCommessaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            iDCommessaLabel.Location = new System.Drawing.Point(62, 110);
             iDCommessaLabel.Name = "iDCommessaLabel";
-            iDCommessaLabel.Size = new System.Drawing.Size(94, 17);
+            iDCommessaLabel.Size = new System.Drawing.Size(72, 13);
             iDCommessaLabel.TabIndex = 2;
             iDCommessaLabel.Text = "IDCommessa:";
             // 
             // codCommessaLabel
             // 
             codCommessaLabel.AutoSize = true;
-            codCommessaLabel.Location = new System.Drawing.Point(68, 167);
-            codCommessaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            codCommessaLabel.Location = new System.Drawing.Point(51, 136);
             codCommessaLabel.Name = "codCommessaLabel";
-            codCommessaLabel.Size = new System.Drawing.Size(110, 17);
+            codCommessaLabel.Size = new System.Drawing.Size(83, 13);
             codCommessaLabel.TabIndex = 4;
             codCommessaLabel.Text = "Cod Commessa:";
             // 
             // nrCommessaLabel
             // 
             nrCommessaLabel.AutoSize = true;
-            nrCommessaLabel.Location = new System.Drawing.Point(79, 199);
-            nrCommessaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nrCommessaLabel.Location = new System.Drawing.Point(59, 162);
             nrCommessaLabel.Name = "nrCommessaLabel";
-            nrCommessaLabel.Size = new System.Drawing.Size(100, 17);
+            nrCommessaLabel.Size = new System.Drawing.Size(75, 13);
             nrCommessaLabel.TabIndex = 6;
             nrCommessaLabel.Text = "Nr Commessa:";
             // 
             // dataCommessaLabel
             // 
             dataCommessaLabel.AutoSize = true;
-            dataCommessaLabel.Location = new System.Drawing.Point(63, 233);
-            dataCommessaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dataCommessaLabel.Location = new System.Drawing.Point(47, 189);
             dataCommessaLabel.Name = "dataCommessaLabel";
-            dataCommessaLabel.Size = new System.Drawing.Size(115, 17);
+            dataCommessaLabel.Size = new System.Drawing.Size(87, 13);
             dataCommessaLabel.TabIndex = 8;
             dataCommessaLabel.Text = "Data Commessa:";
             // 
             // iDClienteLabel
             // 
             iDClienteLabel.AutoSize = true;
-            iDClienteLabel.Location = new System.Drawing.Point(108, 263);
-            iDClienteLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            iDClienteLabel.Location = new System.Drawing.Point(81, 214);
             iDClienteLabel.Name = "iDClienteLabel";
-            iDClienteLabel.Size = new System.Drawing.Size(68, 17);
+            iDClienteLabel.Size = new System.Drawing.Size(53, 13);
             iDClienteLabel.TabIndex = 10;
             iDClienteLabel.Text = "IDCliente:";
             // 
             // dataConsegnaLabel
             // 
             dataConsegnaLabel.AutoSize = true;
-            dataConsegnaLabel.Location = new System.Drawing.Point(67, 297);
-            dataConsegnaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dataConsegnaLabel.Location = new System.Drawing.Point(50, 241);
             dataConsegnaLabel.Name = "dataConsegnaLabel";
-            dataConsegnaLabel.Size = new System.Drawing.Size(110, 17);
+            dataConsegnaLabel.Size = new System.Drawing.Size(84, 13);
             dataConsegnaLabel.TabIndex = 12;
             dataConsegnaLabel.Text = "Data Consegna:";
             // 
             // nrPezziDaLavorareLabel
             // 
             nrPezziDaLavorareLabel.AutoSize = true;
-            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(31, 327);
-            nrPezziDaLavorareLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(23, 266);
             nrPezziDaLavorareLabel.Name = "nrPezziDaLavorareLabel";
-            nrPezziDaLavorareLabel.Size = new System.Drawing.Size(148, 17);
+            nrPezziDaLavorareLabel.Size = new System.Drawing.Size(111, 13);
             nrPezziDaLavorareLabel.TabIndex = 14;
             nrPezziDaLavorareLabel.Text = "Nr Pezzi Da Lavorare:";
             // 
             // codArticoloLabel
             // 
             codArticoloLabel.AutoSize = true;
-            codArticoloLabel.Location = new System.Drawing.Point(89, 391);
-            codArticoloLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            codArticoloLabel.Location = new System.Drawing.Point(67, 318);
             codArticoloLabel.Name = "codArticoloLabel";
-            codArticoloLabel.Size = new System.Drawing.Size(88, 17);
+            codArticoloLabel.Size = new System.Drawing.Size(67, 13);
             codArticoloLabel.TabIndex = 16;
             codArticoloLabel.Text = "Cod Articolo:";
             // 
             // descrArticoloLabel
             // 
             descrArticoloLabel.AutoSize = true;
-            descrArticoloLabel.Location = new System.Drawing.Point(77, 423);
-            descrArticoloLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            descrArticoloLabel.Location = new System.Drawing.Point(58, 344);
             descrArticoloLabel.Name = "descrArticoloLabel";
-            descrArticoloLabel.Size = new System.Drawing.Size(100, 17);
+            descrArticoloLabel.Size = new System.Drawing.Size(76, 13);
             descrArticoloLabel.TabIndex = 18;
             descrArticoloLabel.Text = "Descr Articolo:";
             // 
             // iDStampoLabel
             // 
             iDStampoLabel.AutoSize = true;
-            iDStampoLabel.Location = new System.Drawing.Point(552, 135);
-            iDStampoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            iDStampoLabel.Location = new System.Drawing.Point(414, 110);
             iDStampoLabel.Name = "iDStampoLabel";
-            iDStampoLabel.Size = new System.Drawing.Size(73, 17);
+            iDStampoLabel.Size = new System.Drawing.Size(57, 13);
             iDStampoLabel.TabIndex = 20;
             iDStampoLabel.Text = "IDStampo:";
             // 
             // codArtiDopoStampoLabel
             // 
             codArtiDopoStampoLabel.AutoSize = true;
-            codArtiDopoStampoLabel.Location = new System.Drawing.Point(475, 167);
-            codArtiDopoStampoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            codArtiDopoStampoLabel.Location = new System.Drawing.Point(356, 136);
             codArtiDopoStampoLabel.Name = "codArtiDopoStampoLabel";
-            codArtiDopoStampoLabel.Size = new System.Drawing.Size(152, 17);
+            codArtiDopoStampoLabel.Size = new System.Drawing.Size(115, 13);
             codArtiDopoStampoLabel.TabIndex = 22;
             codArtiDopoStampoLabel.Text = "Cod Arti Dopo Stampo:";
             // 
             // nrPezziOrdinatiLabel
             // 
             nrPezziOrdinatiLabel.AutoSize = true;
-            nrPezziOrdinatiLabel.Location = new System.Drawing.Point(61, 359);
-            nrPezziOrdinatiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nrPezziOrdinatiLabel.Location = new System.Drawing.Point(46, 292);
             nrPezziOrdinatiLabel.Name = "nrPezziOrdinatiLabel";
-            nrPezziOrdinatiLabel.Size = new System.Drawing.Size(119, 17);
+            nrPezziOrdinatiLabel.Size = new System.Drawing.Size(88, 13);
             nrPezziOrdinatiLabel.TabIndex = 24;
             nrPezziOrdinatiLabel.Text = "Nr Pezzi Ordinati:";
+            nrPezziOrdinatiLabel.Visible = false;
             // 
             // dataTermineLabel
             // 
             dataTermineLabel.AutoSize = true;
-            dataTermineLabel.Location = new System.Drawing.Point(529, 201);
-            dataTermineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dataTermineLabel.Location = new System.Drawing.Point(396, 194);
             dataTermineLabel.Name = "dataTermineLabel";
-            dataTermineLabel.Size = new System.Drawing.Size(98, 17);
+            dataTermineLabel.Size = new System.Drawing.Size(74, 13);
             dataTermineLabel.TabIndex = 26;
             dataTermineLabel.Text = "Data Termine:";
             // 
             // nrPezziCorrettiLabel
             // 
             nrPezziCorrettiLabel.AutoSize = true;
-            nrPezziCorrettiLabel.Location = new System.Drawing.Point(515, 233);
-            nrPezziCorrettiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nrPezziCorrettiLabel.Location = new System.Drawing.Point(385, 220);
             nrPezziCorrettiLabel.Name = "nrPezziCorrettiLabel";
-            nrPezziCorrettiLabel.Size = new System.Drawing.Size(115, 17);
+            nrPezziCorrettiLabel.Size = new System.Drawing.Size(85, 13);
             nrPezziCorrettiLabel.TabIndex = 28;
             nrPezziCorrettiLabel.Text = "Nr Pezzi Corretti:";
             // 
             // nrPezziScartatiLabel
             // 
             nrPezziScartatiLabel.AutoSize = true;
-            nrPezziScartatiLabel.Location = new System.Drawing.Point(511, 263);
-            nrPezziScartatiLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nrPezziScartatiLabel.Location = new System.Drawing.Point(382, 245);
             nrPezziScartatiLabel.Name = "nrPezziScartatiLabel";
-            nrPezziScartatiLabel.Size = new System.Drawing.Size(117, 17);
+            nrPezziScartatiLabel.Size = new System.Drawing.Size(88, 13);
             nrPezziScartatiLabel.TabIndex = 30;
             nrPezziScartatiLabel.Text = "Nr Pezzi Scartati:";
             // 
             // oraInizioStampoLabel
             // 
             oraInizioStampoLabel.AutoSize = true;
-            oraInizioStampoLabel.Location = new System.Drawing.Point(504, 297);
-            oraInizioStampoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            oraInizioStampoLabel.Location = new System.Drawing.Point(57, 17);
             oraInizioStampoLabel.Name = "oraInizioStampoLabel";
-            oraInizioStampoLabel.Size = new System.Drawing.Size(124, 17);
+            oraInizioStampoLabel.Size = new System.Drawing.Size(54, 13);
             oraInizioStampoLabel.TabIndex = 32;
-            oraInizioStampoLabel.Text = "Ora Inizio Stampo:";
+            oraInizioStampoLabel.Text = "Ora Inizio:";
             // 
             // oraFineStampoLabel
             // 
             oraFineStampoLabel.AutoSize = true;
-            oraFineStampoLabel.Location = new System.Drawing.Point(509, 329);
-            oraFineStampoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            oraFineStampoLabel.Location = new System.Drawing.Point(334, 17);
             oraFineStampoLabel.Name = "oraFineStampoLabel";
-            oraFineStampoLabel.Size = new System.Drawing.Size(119, 17);
+            oraFineStampoLabel.Size = new System.Drawing.Size(50, 13);
             oraFineStampoLabel.TabIndex = 34;
-            oraFineStampoLabel.Text = "Ora Fine Stampo:";
+            oraFineStampoLabel.Text = "Ora Fine:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 31);
+            this.label1.Location = new System.Drawing.Point(259, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 50);
+            this.label1.Size = new System.Drawing.Size(264, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "STAMPAGGIO";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -357,14 +352,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.commesseBindingNavigatorSaveItem});
-            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 615);
+            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 495);
             this.commesseBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.commesseBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.commesseBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.commesseBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.commesseBindingNavigator.Name = "commesseBindingNavigator";
             this.commesseBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.commesseBindingNavigator.Size = new System.Drawing.Size(1371, 27);
+            this.commesseBindingNavigator.Size = new System.Drawing.Size(1028, 27);
             this.commesseBindingNavigator.TabIndex = 1;
             this.commesseBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -380,7 +375,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -421,7 +416,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -465,109 +460,98 @@
             // iDCommessaTextBox
             // 
             this.iDCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCommessa", true));
-            this.iDCommessaTextBox.Location = new System.Drawing.Point(187, 132);
-            this.iDCommessaTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.iDCommessaTextBox.Location = new System.Drawing.Point(140, 107);
             this.iDCommessaTextBox.Name = "iDCommessaTextBox";
-            this.iDCommessaTextBox.Size = new System.Drawing.Size(132, 22);
+            this.iDCommessaTextBox.Size = new System.Drawing.Size(100, 20);
             this.iDCommessaTextBox.TabIndex = 3;
             // 
             // codCommessaTextBox
             // 
             this.codCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodCommessa", true));
-            this.codCommessaTextBox.Location = new System.Drawing.Point(187, 164);
-            this.codCommessaTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.codCommessaTextBox.Location = new System.Drawing.Point(140, 133);
             this.codCommessaTextBox.Name = "codCommessaTextBox";
-            this.codCommessaTextBox.Size = new System.Drawing.Size(132, 22);
+            this.codCommessaTextBox.Size = new System.Drawing.Size(100, 20);
             this.codCommessaTextBox.TabIndex = 5;
             // 
             // nrCommessaTextBox
             // 
             this.nrCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrCommessa", true));
-            this.nrCommessaTextBox.Location = new System.Drawing.Point(187, 196);
-            this.nrCommessaTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nrCommessaTextBox.Location = new System.Drawing.Point(140, 159);
             this.nrCommessaTextBox.Name = "nrCommessaTextBox";
-            this.nrCommessaTextBox.Size = new System.Drawing.Size(132, 22);
+            this.nrCommessaTextBox.Size = new System.Drawing.Size(100, 20);
             this.nrCommessaTextBox.TabIndex = 7;
             // 
             // iDClienteTextBox
             // 
             this.iDClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCliente", true));
-            this.iDClienteTextBox.Location = new System.Drawing.Point(187, 260);
-            this.iDClienteTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.iDClienteTextBox.Location = new System.Drawing.Point(140, 211);
             this.iDClienteTextBox.Name = "iDClienteTextBox";
-            this.iDClienteTextBox.Size = new System.Drawing.Size(132, 22);
+            this.iDClienteTextBox.Size = new System.Drawing.Size(100, 20);
             this.iDClienteTextBox.TabIndex = 11;
             // 
             // nrPezziDaLavorareTextBox
             // 
             this.nrPezziDaLavorareTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziDaLavorare", true));
-            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(187, 324);
-            this.nrPezziDaLavorareTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(140, 263);
             this.nrPezziDaLavorareTextBox.Name = "nrPezziDaLavorareTextBox";
-            this.nrPezziDaLavorareTextBox.Size = new System.Drawing.Size(132, 22);
+            this.nrPezziDaLavorareTextBox.Size = new System.Drawing.Size(100, 20);
             this.nrPezziDaLavorareTextBox.TabIndex = 15;
             // 
             // codArticoloTextBox
             // 
             this.codArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArticolo", true));
-            this.codArticoloTextBox.Location = new System.Drawing.Point(187, 388);
-            this.codArticoloTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.codArticoloTextBox.Location = new System.Drawing.Point(140, 315);
             this.codArticoloTextBox.Name = "codArticoloTextBox";
-            this.codArticoloTextBox.Size = new System.Drawing.Size(132, 22);
+            this.codArticoloTextBox.Size = new System.Drawing.Size(100, 20);
             this.codArticoloTextBox.TabIndex = 17;
             // 
             // descrArticoloTextBox
             // 
             this.descrArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "DescrArticolo", true));
-            this.descrArticoloTextBox.Location = new System.Drawing.Point(187, 420);
-            this.descrArticoloTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.descrArticoloTextBox.Location = new System.Drawing.Point(140, 341);
             this.descrArticoloTextBox.Name = "descrArticoloTextBox";
-            this.descrArticoloTextBox.Size = new System.Drawing.Size(265, 22);
+            this.descrArticoloTextBox.Size = new System.Drawing.Size(200, 20);
             this.descrArticoloTextBox.TabIndex = 19;
             // 
             // iDStampoTextBox
             // 
             this.iDStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDStampo", true));
-            this.iDStampoTextBox.Location = new System.Drawing.Point(636, 132);
-            this.iDStampoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.iDStampoTextBox.Location = new System.Drawing.Point(477, 107);
             this.iDStampoTextBox.Name = "iDStampoTextBox";
-            this.iDStampoTextBox.Size = new System.Drawing.Size(132, 22);
+            this.iDStampoTextBox.Size = new System.Drawing.Size(100, 20);
             this.iDStampoTextBox.TabIndex = 21;
             // 
             // codArtiDopoStampoTextBox
             // 
             this.codArtiDopoStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
-            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(636, 164);
-            this.codArtiDopoStampoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(477, 133);
             this.codArtiDopoStampoTextBox.Name = "codArtiDopoStampoTextBox";
-            this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(132, 22);
+            this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codArtiDopoStampoTextBox.TabIndex = 23;
             // 
             // nrPezziOrdinatiTextBox
             // 
             this.nrPezziOrdinatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziOrdinati", true));
-            this.nrPezziOrdinatiTextBox.Location = new System.Drawing.Point(187, 356);
-            this.nrPezziOrdinatiTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nrPezziOrdinatiTextBox.Location = new System.Drawing.Point(140, 289);
             this.nrPezziOrdinatiTextBox.Name = "nrPezziOrdinatiTextBox";
-            this.nrPezziOrdinatiTextBox.Size = new System.Drawing.Size(132, 22);
+            this.nrPezziOrdinatiTextBox.Size = new System.Drawing.Size(100, 20);
             this.nrPezziOrdinatiTextBox.TabIndex = 25;
+            this.nrPezziOrdinatiTextBox.Visible = false;
             // 
             // nrPezziCorrettiTextBox
             // 
             this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
-            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(636, 229);
-            this.nrPezziCorrettiTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(476, 217);
             this.nrPezziCorrettiTextBox.Name = "nrPezziCorrettiTextBox";
-            this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(132, 22);
+            this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(100, 20);
             this.nrPezziCorrettiTextBox.TabIndex = 29;
             // 
             // nrPezziScartatiTextBox
             // 
             this.nrPezziScartatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziScartati", true));
-            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(636, 260);
-            this.nrPezziScartatiTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(476, 242);
             this.nrPezziScartatiTextBox.Name = "nrPezziScartatiTextBox";
-            this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(132, 22);
+            this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(100, 20);
             this.nrPezziScartatiTextBox.TabIndex = 31;
             // 
             // fillByToolStrip
@@ -579,92 +563,156 @@
             this.fillByToolStripButton});
             this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(1371, 27);
+            this.fillByToolStrip.Size = new System.Drawing.Size(1028, 25);
             this.fillByToolStrip.TabIndex = 36;
             this.fillByToolStrip.Text = "fillByToolStrip";
             // 
             // cCToolStripLabel
             // 
             this.cCToolStripLabel.Name = "cCToolStripLabel";
-            this.cCToolStripLabel.Size = new System.Drawing.Size(30, 24);
+            this.cCToolStripLabel.Size = new System.Drawing.Size(26, 22);
             this.cCToolStripLabel.Text = "CC:";
             // 
             // cCToolStripTextBox
             // 
             this.cCToolStripTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cCToolStripTextBox.Name = "cCToolStripTextBox";
-            this.cCToolStripTextBox.Size = new System.Drawing.Size(132, 27);
+            this.cCToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             this.cCToolStripTextBox.TextChanged += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // fillByToolStripButton
             // 
             this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(48, 24);
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
             this.fillByToolStripButton.Text = "FillBy";
             this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yy-MM-dd";
-            this.dateTimePicker1.Location = new System.Drawing.Point(189, 234);
+            this.dateTimePicker1.Location = new System.Drawing.Point(142, 190);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(263, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(198, 20);
             this.dateTimePicker1.TabIndex = 37;
             this.dateTimePicker1.Value = new System.DateTime(2018, 3, 29, 0, 0, 0, 0);
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(184, 292);
+            this.dateTimePicker2.Location = new System.Drawing.Point(138, 237);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(263, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(198, 20);
             this.dateTimePicker2.TabIndex = 38;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(638, 196);
+            this.dateTimePicker3.Location = new System.Drawing.Point(477, 190);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(263, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(198, 20);
             this.dateTimePicker3.TabIndex = 39;
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(638, 292);
+            this.dateTimePicker4.Location = new System.Drawing.Point(119, 14);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(263, 22);
+            this.dateTimePicker4.Size = new System.Drawing.Size(198, 20);
             this.dateTimePicker4.TabIndex = 40;
             // 
             // dateTimePicker5
             // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(638, 329);
+            this.dateTimePicker5.Location = new System.Drawing.Point(389, 14);
+            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(263, 22);
+            this.dateTimePicker5.Size = new System.Drawing.Size(198, 20);
             this.dateTimePicker5.TabIndex = 41;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(395, 485);
+            this.button1.Location = new System.Drawing.Point(295, 439);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(285, 55);
+            this.button1.Size = new System.Drawing.Size(214, 45);
             this.button1.TabIndex = 42;
             this.button1.Text = "CONFERMA";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dateTimePicker5);
+            this.groupBox1.Controls.Add(oraInizioStampoLabel);
+            this.groupBox1.Controls.Add(oraFineStampoLabel);
+            this.groupBox1.Controls.Add(this.dateTimePicker4);
+            this.groupBox1.Location = new System.Drawing.Point(379, 265);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(614, 39);
+            this.groupBox1.TabIndex = 43;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Giorno 1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dateTimePicker6);
+            this.groupBox2.Controls.Add(label2);
+            this.groupBox2.Controls.Add(label3);
+            this.groupBox2.Controls.Add(this.dateTimePicker7);
+            this.groupBox2.Location = new System.Drawing.Point(379, 310);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(614, 39);
+            this.groupBox2.TabIndex = 44;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Giorno 2";
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Location = new System.Drawing.Point(389, 14);
+            this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker6.TabIndex = 41;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(57, 17);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(54, 13);
+            label2.TabIndex = 32;
+            label2.Text = "Ora Inizio:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(334, 17);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(50, 13);
+            label3.TabIndex = 34;
+            label3.Text = "Ora Fine:";
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.Location = new System.Drawing.Point(119, 14);
+            this.dateTimePicker7.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker7.TabIndex = 40;
+            // 
             // LavoraStampaggio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 642);
+            this.ClientSize = new System.Drawing.Size(1028, 522);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker5);
-            this.Controls.Add(this.dateTimePicker4);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.fillByToolStrip);
-            this.Controls.Add(oraFineStampoLabel);
-            this.Controls.Add(oraInizioStampoLabel);
             this.Controls.Add(nrPezziScartatiLabel);
             this.Controls.Add(this.nrPezziScartatiTextBox);
             this.Controls.Add(nrPezziCorrettiLabel);
@@ -694,7 +742,7 @@
             this.Controls.Add(this.iDCommessaTextBox);
             this.Controls.Add(this.commesseBindingNavigator);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LavoraStampaggio";
             this.Text = "LavoraStampaggio";
             this.Load += new System.EventHandler(this.LavoraStampaggio_Load);
@@ -705,6 +753,10 @@
             this.commesseBindingNavigator.PerformLayout();
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -752,5 +804,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker7;
     }
 }
