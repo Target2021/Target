@@ -106,7 +106,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-           DialogResult dialogResult= MessageBox.Show("Sicuro di apportare le seguenti modifiche?","Modifiche",MessageBoxButtons.YesNo);
+           DialogResult dialogResult= MessageBox.Show("Sicuro di voler apportare le seguenti modifiche?","Modifiche",MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
                 String stringa = Properties.Resources.StringaConnessione;

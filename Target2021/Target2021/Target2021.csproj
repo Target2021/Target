@@ -133,7 +133,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\RoundButton.cs" />
     <Compile Include="RigaCompleta.cs">
       <SubType>Form</SubType>
     </Compile>
