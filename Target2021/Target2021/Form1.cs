@@ -178,6 +178,13 @@ namespace Target2021
             checkImpiegato.Show();
         }
 
+        private void taglioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckTaglio checkTaglio = new CheckTaglio();
+            checkTaglio.MdiParent = this;
+            checkTaglio.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
