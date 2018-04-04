@@ -19,23 +19,12 @@ namespace Target2021
             InitializeComponent();
         }
 
-        private void dettaglio_ordini_multirigaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.dettArticoliBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
-        }
-
         private void Dettaglio_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
-            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
-
-
         }
+
         private void Button2_Click(object sender, EventArgs e)
         {
             if (Filter.Text == "IDArticolo")
@@ -52,6 +41,7 @@ namespace Target2021
                 Search_Filter("SELECT * FROM DettArticoli WHERE codice_articolo LIKE '%" + textBox1.Text + "%'");
             }
         }
+
         public int ControlLetters(string frase)
         {
             int parsedValue;
@@ -63,6 +53,7 @@ namespace Target2021
             }
             return 0;
         }
+
         public void Search_Filter(string query) //metodo di connessione al db
         {
             String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
@@ -85,6 +76,7 @@ namespace Target2021
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -93,47 +85,26 @@ namespace Target2021
             }
 
         }
-        private void dettaglio_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            foreach (DataGridViewRow row in dettArticoliDataGridView.Rows)
-            {
-                if (row.Index== dettArticoliDataGridView.CurrentRow.Index )
-                {
-                    String id;
-                    id = dettArticoliDataGridView.CurrentCell.Value.ToString(); //prendo l'ID contenuto nella prima cella della gridview
-                    RigaCompleta rigaCompleta = new RigaCompleta();
-                    rigaCompleta.MdiParent = this.MdiParent;
-                    rigaCompleta.Show();
-                    rigaCompleta.LoadRow(id,this.Text); //passo l'id in modo da caricare nell'altro form solo la riga interessata
-                    //la condizione è che  la proprietà Text che gli passiamo deve essere uguale a quello di questo form così da identificare i vari form
-                }
-            }
-        }
-
-        private void dettArticoliBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.dettArticoliBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
-        }
-
-        private void dettArticoliBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dettArticoliBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
-        {
-
-        }
 
         private void dettArticoliBindingNavigatorSaveItem_Click_3(object sender, EventArgs e)
         {
             this.Validate();
             this.dettArticoliBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+        }
 
+        private void Ordina(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            this.dettArticoliDataGridView.Sort(this.dettArticoliDataGridView.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void SelezionaRiga(object sender, DataGridViewCellEventArgs e)
+        {
+            int id;
+            id = Convert.ToInt32(dettArticoliDataGridView.Rows[dettArticoliDataGridView.SelectedCells[0].RowIndex].Cells["IDDettaglioArticolo"].Value);
+            RigaCompleta rigaCompleta = new RigaCompleta(id);
+            rigaCompleta.MdiParent = this.MdiParent;
+            rigaCompleta.Show();
         }
     }
 }

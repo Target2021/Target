@@ -86,22 +86,6 @@ namespace Target2021
    
         }
 
-        private void ArticoliBCDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            foreach (DataGridViewRow row in articoliBCDataGridView.Rows)
-            {
-                if (row.Index == articoliBCDataGridView.CurrentRow.Index)
-                {
-                    String id;
-                    id = articoliBCDataGridView.CurrentCell.Value.ToString();
-                    RigaCompleta rigaCompleta = new RigaCompleta();
-                    rigaCompleta.MdiParent = this.MdiParent;
-                    rigaCompleta.Show();
-                    rigaCompleta.LoadRow(id, this.Text);
-                }
-            }
-        }
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar==(char)Keys.Enter)

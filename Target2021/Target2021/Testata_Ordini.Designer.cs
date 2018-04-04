@@ -168,9 +168,7 @@
             this.testata_ordini_multirigaDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.testata_ordini_multirigaDataGridView.Name = "testata_ordini_multirigaDataGridView";
             this.testata_ordini_multirigaDataGridView.Size = new System.Drawing.Size(499, 517);
-
             this.testata_ordini_multirigaDataGridView.TabIndex = 6;
-            this.testata_ordini_multirigaDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.testata_ordini_multirigaDataGridView_RowHeaderMouseDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

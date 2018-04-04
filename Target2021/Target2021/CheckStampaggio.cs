@@ -128,11 +128,6 @@ namespace Target2021
             CheckGiacenzaTotale();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            CheckGiacenzaRow(e.RowIndex);
-        }
-
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             CheckGiacenzaTotale();
@@ -143,7 +138,6 @@ namespace Target2021
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-
         }
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -151,14 +145,9 @@ namespace Target2021
             CheckGiacenzaRow(e.RowIndex);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
-        }
-
-        private void dataGridView1_SelectionChanged(object sender, DataGridViewSelectedRowCollection e)
-        {
-
+            CheckGiacenzaRow(e.RowIndex);
         }
     }
 }

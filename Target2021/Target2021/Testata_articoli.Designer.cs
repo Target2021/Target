@@ -292,7 +292,6 @@
             this.articoliBCDataGridView.RowTemplate.Height = 24;
             this.articoliBCDataGridView.Size = new System.Drawing.Size(665, 406);
             this.articoliBCDataGridView.TabIndex = 7;
-            this.articoliBCDataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ArticoliBCDataGridView_RowHeaderMouseDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

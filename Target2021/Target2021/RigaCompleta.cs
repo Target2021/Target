@@ -13,47 +13,26 @@ namespace Target2021
 {
     public partial class RigaCompleta : Form
     {
-        public RigaCompleta()
+        public int ID;
+
+        public RigaCompleta(int idArt)
         {
             InitializeComponent();
-        }
-        internal void LoadRow(String ID,String form)
-        {
-            BindingSource bindingSource = new BindingSource();
-            MessageBox.Show(ID,form);
-            if (form == "Dettaglio_Articolo")
-            {
-                bindingSource.DataSource = GetData("SELECT * FROM DettArticoli WHERE IDDettaglioArticolo='"+ID+"'"); //ottengo i dati in base all'ID ottenuto dal form
-                dataGridView1.DataSource = bindingSource;
-            }
-            if(form=="Testata")
-            {
-                bindingSource.DataSource = GetData("SELECT  * FROM ArticoliBC WHERE codice_articolo='" + ID + "'");
-                dataGridView1.DataSource = bindingSource;
-            }
-            if(form=="Testata_Ordini")
-            {
-                bindingSource.DataSource = GetData("SELECT * FROM testata_ordini_multiriga WHERE numero_ordine='" + ID + "'");
-                dataGridView1.DataSource = bindingSource;
-            }
-            if(form=="Clienti")
-            {
-                bindingSource.DataSource = GetData("SELECT * FROM clienti WHERE codice='" + ID + "'");
-                dataGridView1.DataSource = bindingSource;
-            }
-             DataTable GetData(string query) //metodo interno a LoadRow per ottenere i dati dal db
-            {
-                string stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;Persist Security Info=True;User ID=Amministratore;Password=Barilla23";
-                SqlConnection sqlConnection = new SqlConnection(stringa);
-                SqlCommand cmd = new SqlCommand(query, sqlConnection);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
-                sqlDataAdapter.SelectCommand = cmd;
-                DataTable dataTable = new DataTable();
-                dataTable.Locale = System.Globalization.CultureInfo.InvariantCulture;
-                sqlDataAdapter.Fill(dataTable);
-                return dataTable;
-            }
+            ID = idArt;
         }
 
+        private void dettArticoliBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.dettArticoliBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+        }
+
+        private void RigaCompleta_Load(object sender, EventArgs e)
+        {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
+            dettArticoliBindingSource.Position = ID;
+        }
     }
 }

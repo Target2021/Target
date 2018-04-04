@@ -28,37 +28,603 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RigaCompleta));
+            System.Windows.Forms.Label iDDettaglioArticoloLabel;
+            System.Windows.Forms.Label codice_articoloLabel;
+            System.Windows.Forms.Label progressivoLabel;
+            System.Windows.Forms.Label codicePrimaStampoDimaLabel;
+            System.Windows.Forms.Label descrizionePrimaStampoDimaLabel;
+            System.Windows.Forms.Label codiceInputLabel;
+            System.Windows.Forms.Label codiceOutputLabel;
+            System.Windows.Forms.Label codice_fornitoreLabel;
+            System.Windows.Forms.Label lavorazioneLabel;
+            System.Windows.Forms.Label percentualeLastraLabel;
+            System.Windows.Forms.Label lottoMinimoRiordinoLabel;
+            System.Windows.Forms.Label macPredefStampoLabel;
+            System.Windows.Forms.Label macPredefTaglioLabel;
+            System.Windows.Forms.Label costoBaseLabel;
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.dettArticoliBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.dettArticoliBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.iDDettaglioArticoloTextBox = new System.Windows.Forms.TextBox();
+            this.codice_articoloTextBox = new System.Windows.Forms.TextBox();
+            this.progressivoTextBox = new System.Windows.Forms.TextBox();
+            this.codicePrimaStampoDimaTextBox = new System.Windows.Forms.TextBox();
+            this.descrizionePrimaStampoDimaTextBox = new System.Windows.Forms.TextBox();
+            this.codiceInputTextBox = new System.Windows.Forms.TextBox();
+            this.codiceOutputTextBox = new System.Windows.Forms.TextBox();
+            this.codice_fornitoreTextBox = new System.Windows.Forms.TextBox();
+            this.lavorazioneTextBox = new System.Windows.Forms.TextBox();
+            this.percentualeLastraTextBox = new System.Windows.Forms.TextBox();
+            this.lottoMinimoRiordinoTextBox = new System.Windows.Forms.TextBox();
+            this.macPredefStampoTextBox = new System.Windows.Forms.TextBox();
+            this.macPredefTaglioTextBox = new System.Windows.Forms.TextBox();
+            this.costoBaseTextBox = new System.Windows.Forms.TextBox();
+            iDDettaglioArticoloLabel = new System.Windows.Forms.Label();
+            codice_articoloLabel = new System.Windows.Forms.Label();
+            progressivoLabel = new System.Windows.Forms.Label();
+            codicePrimaStampoDimaLabel = new System.Windows.Forms.Label();
+            descrizionePrimaStampoDimaLabel = new System.Windows.Forms.Label();
+            codiceInputLabel = new System.Windows.Forms.Label();
+            codiceOutputLabel = new System.Windows.Forms.Label();
+            codice_fornitoreLabel = new System.Windows.Forms.Label();
+            lavorazioneLabel = new System.Windows.Forms.Label();
+            percentualeLastraLabel = new System.Windows.Forms.Label();
+            lottoMinimoRiordinoLabel = new System.Windows.Forms.Label();
+            macPredefStampoLabel = new System.Windows.Forms.Label();
+            macPredefTaglioLabel = new System.Windows.Forms.Label();
+            costoBaseLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingNavigator)).BeginInit();
+            this.dettArticoliBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // target2021DataSet
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(819, 573);
-            this.dataGridView1.TabIndex = 0;
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dettArticoliBindingSource
+            // 
+            this.dettArticoliBindingSource.DataMember = "DettArticoli";
+            this.dettArticoliBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // dettArticoliTableAdapter
+            // 
+            this.dettArticoliTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
+            this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CommesseTableAdapter = null;
+            this.tableAdapterManager.CompatibStampaTableAdapter = null;
+            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
+            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.DettArticoliTableAdapter = this.dettArticoliTableAdapter;
+            this.tableAdapterManager.DimeTableAdapter = null;
+            this.tableAdapterManager.FasiTableAdapter = null;
+            this.tableAdapterManager.FornitoriTableAdapter = null;
+            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
+            this.tableAdapterManager.MacchineStampoTableAdapter = null;
+            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
+            this.tableAdapterManager.MinuterieTableAdapter = null;
+            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.TipoCommessaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
+            // 
+            // dettArticoliBindingNavigator
+            // 
+            this.dettArticoliBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.dettArticoliBindingNavigator.BindingSource = this.dettArticoliBindingSource;
+            this.dettArticoliBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.dettArticoliBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.dettArticoliBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.dettArticoliBindingNavigatorSaveItem});
+            this.dettArticoliBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.dettArticoliBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.dettArticoliBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.dettArticoliBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.dettArticoliBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.dettArticoliBindingNavigator.Name = "dettArticoliBindingNavigator";
+            this.dettArticoliBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(768, 25);
+            this.dettArticoliBindingNavigator.TabIndex = 0;
+            this.dettArticoliBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Text = "di {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Elimina";
+            // 
+            // dettArticoliBindingNavigatorSaveItem
+            // 
+            this.dettArticoliBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.dettArticoliBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("dettArticoliBindingNavigatorSaveItem.Image")));
+            this.dettArticoliBindingNavigatorSaveItem.Name = "dettArticoliBindingNavigatorSaveItem";
+            this.dettArticoliBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.dettArticoliBindingNavigatorSaveItem.Text = "Salva dati";
+            this.dettArticoliBindingNavigatorSaveItem.Click += new System.EventHandler(this.dettArticoliBindingNavigatorSaveItem_Click);
+            // 
+            // iDDettaglioArticoloLabel
+            // 
+            iDDettaglioArticoloLabel.AutoSize = true;
+            iDDettaglioArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            iDDettaglioArticoloLabel.Location = new System.Drawing.Point(47, 58);
+            iDDettaglioArticoloLabel.Name = "iDDettaglioArticoloLabel";
+            iDDettaglioArticoloLabel.Size = new System.Drawing.Size(138, 18);
+            iDDettaglioArticoloLabel.TabIndex = 1;
+            iDDettaglioArticoloLabel.Text = "IDDettaglio Articolo:";
+            // 
+            // iDDettaglioArticoloTextBox
+            // 
+            this.iDDettaglioArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "IDDettaglioArticolo", true));
+            this.iDDettaglioArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iDDettaglioArticoloTextBox.Location = new System.Drawing.Point(236, 55);
+            this.iDDettaglioArticoloTextBox.Name = "iDDettaglioArticoloTextBox";
+            this.iDDettaglioArticoloTextBox.Size = new System.Drawing.Size(153, 24);
+            this.iDDettaglioArticoloTextBox.TabIndex = 2;
+            this.iDDettaglioArticoloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // codice_articoloLabel
+            // 
+            codice_articoloLabel.AutoSize = true;
+            codice_articoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codice_articoloLabel.Location = new System.Drawing.Point(69, 84);
+            codice_articoloLabel.Name = "codice_articoloLabel";
+            codice_articoloLabel.Size = new System.Drawing.Size(109, 18);
+            codice_articoloLabel.TabIndex = 3;
+            codice_articoloLabel.Text = "codice articolo:";
+            // 
+            // codice_articoloTextBox
+            // 
+            this.codice_articoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codice_articolo", true));
+            this.codice_articoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codice_articoloTextBox.Location = new System.Drawing.Point(236, 81);
+            this.codice_articoloTextBox.Name = "codice_articoloTextBox";
+            this.codice_articoloTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codice_articoloTextBox.TabIndex = 4;
+            this.codice_articoloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // progressivoLabel
+            // 
+            progressivoLabel.AutoSize = true;
+            progressivoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progressivoLabel.Location = new System.Drawing.Point(84, 110);
+            progressivoLabel.Name = "progressivoLabel";
+            progressivoLabel.Size = new System.Drawing.Size(90, 18);
+            progressivoLabel.TabIndex = 5;
+            progressivoLabel.Text = "progressivo:";
+            // 
+            // progressivoTextBox
+            // 
+            this.progressivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "progressivo", true));
+            this.progressivoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progressivoTextBox.Location = new System.Drawing.Point(236, 107);
+            this.progressivoTextBox.Name = "progressivoTextBox";
+            this.progressivoTextBox.Size = new System.Drawing.Size(153, 24);
+            this.progressivoTextBox.TabIndex = 6;
+            this.progressivoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // codicePrimaStampoDimaLabel
+            // 
+            codicePrimaStampoDimaLabel.AutoSize = true;
+            codicePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(11, 136);
+            codicePrimaStampoDimaLabel.Name = "codicePrimaStampoDimaLabel";
+            codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(194, 18);
+            codicePrimaStampoDimaLabel.TabIndex = 7;
+            codicePrimaStampoDimaLabel.Text = "codice Prima Stampo Dima:";
+            // 
+            // codicePrimaStampoDimaTextBox
+            // 
+            this.codicePrimaStampoDimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codicePrimaStampoDima", true));
+            this.codicePrimaStampoDimaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codicePrimaStampoDimaTextBox.Location = new System.Drawing.Point(236, 133);
+            this.codicePrimaStampoDimaTextBox.Name = "codicePrimaStampoDimaTextBox";
+            this.codicePrimaStampoDimaTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codicePrimaStampoDimaTextBox.TabIndex = 8;
+            this.codicePrimaStampoDimaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // descrizionePrimaStampoDimaLabel
+            // 
+            descrizionePrimaStampoDimaLabel.AutoSize = true;
+            descrizionePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descrizionePrimaStampoDimaLabel.Location = new System.Drawing.Point(2, 162);
+            descrizionePrimaStampoDimaLabel.Name = "descrizionePrimaStampoDimaLabel";
+            descrizionePrimaStampoDimaLabel.Size = new System.Drawing.Size(226, 18);
+            descrizionePrimaStampoDimaLabel.TabIndex = 9;
+            descrizionePrimaStampoDimaLabel.Text = "descrizione Prima Stampo Dima:";
+            // 
+            // descrizionePrimaStampoDimaTextBox
+            // 
+            this.descrizionePrimaStampoDimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "descrizionePrimaStampoDima", true));
+            this.descrizionePrimaStampoDimaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descrizionePrimaStampoDimaTextBox.Location = new System.Drawing.Point(236, 159);
+            this.descrizionePrimaStampoDimaTextBox.Name = "descrizionePrimaStampoDimaTextBox";
+            this.descrizionePrimaStampoDimaTextBox.Size = new System.Drawing.Size(343, 24);
+            this.descrizionePrimaStampoDimaTextBox.TabIndex = 10;
+            this.descrizionePrimaStampoDimaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // codiceInputLabel
+            // 
+            codiceInputLabel.AutoSize = true;
+            codiceInputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codiceInputLabel.Location = new System.Drawing.Point(78, 188);
+            codiceInputLabel.Name = "codiceInputLabel";
+            codiceInputLabel.Size = new System.Drawing.Size(94, 18);
+            codiceInputLabel.TabIndex = 11;
+            codiceInputLabel.Text = "Codice Input:";
+            // 
+            // codiceInputTextBox
+            // 
+            this.codiceInputTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "CodiceInput", true));
+            this.codiceInputTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceInputTextBox.Location = new System.Drawing.Point(236, 185);
+            this.codiceInputTextBox.Name = "codiceInputTextBox";
+            this.codiceInputTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codiceInputTextBox.TabIndex = 12;
+            this.codiceInputTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // codiceOutputLabel
+            // 
+            codiceOutputLabel.AutoSize = true;
+            codiceOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codiceOutputLabel.Location = new System.Drawing.Point(70, 214);
+            codiceOutputLabel.Name = "codiceOutputLabel";
+            codiceOutputLabel.Size = new System.Drawing.Size(107, 18);
+            codiceOutputLabel.TabIndex = 13;
+            codiceOutputLabel.Text = "Codice Output:";
+            // 
+            // codiceOutputTextBox
+            // 
+            this.codiceOutputTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "CodiceOutput", true));
+            this.codiceOutputTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceOutputTextBox.Location = new System.Drawing.Point(236, 211);
+            this.codiceOutputTextBox.Name = "codiceOutputTextBox";
+            this.codiceOutputTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codiceOutputTextBox.TabIndex = 14;
+            this.codiceOutputTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // codice_fornitoreLabel
+            // 
+            codice_fornitoreLabel.AutoSize = true;
+            codice_fornitoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codice_fornitoreLabel.Location = new System.Drawing.Point(65, 240);
+            codice_fornitoreLabel.Name = "codice_fornitoreLabel";
+            codice_fornitoreLabel.Size = new System.Drawing.Size(115, 18);
+            codice_fornitoreLabel.TabIndex = 15;
+            codice_fornitoreLabel.Text = "codice fornitore:";
+            // 
+            // codice_fornitoreTextBox
+            // 
+            this.codice_fornitoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codice_fornitore", true));
+            this.codice_fornitoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codice_fornitoreTextBox.Location = new System.Drawing.Point(236, 237);
+            this.codice_fornitoreTextBox.Name = "codice_fornitoreTextBox";
+            this.codice_fornitoreTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codice_fornitoreTextBox.TabIndex = 16;
+            this.codice_fornitoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lavorazioneLabel
+            // 
+            lavorazioneLabel.AutoSize = true;
+            lavorazioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lavorazioneLabel.Location = new System.Drawing.Point(84, 266);
+            lavorazioneLabel.Name = "lavorazioneLabel";
+            lavorazioneLabel.Size = new System.Drawing.Size(88, 18);
+            lavorazioneLabel.TabIndex = 17;
+            lavorazioneLabel.Text = "lavorazione:";
+            // 
+            // lavorazioneTextBox
+            // 
+            this.lavorazioneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "lavorazione", true));
+            this.lavorazioneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lavorazioneTextBox.Location = new System.Drawing.Point(236, 263);
+            this.lavorazioneTextBox.Name = "lavorazioneTextBox";
+            this.lavorazioneTextBox.Size = new System.Drawing.Size(153, 24);
+            this.lavorazioneTextBox.TabIndex = 18;
+            this.lavorazioneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // percentualeLastraLabel
+            // 
+            percentualeLastraLabel.AutoSize = true;
+            percentualeLastraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            percentualeLastraLabel.Location = new System.Drawing.Point(49, 292);
+            percentualeLastraLabel.Name = "percentualeLastraLabel";
+            percentualeLastraLabel.Size = new System.Drawing.Size(135, 18);
+            percentualeLastraLabel.TabIndex = 19;
+            percentualeLastraLabel.Text = "Percentuale Lastra:";
+            // 
+            // percentualeLastraTextBox
+            // 
+            this.percentualeLastraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "PercentualeLastra", true));
+            this.percentualeLastraTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentualeLastraTextBox.Location = new System.Drawing.Point(236, 289);
+            this.percentualeLastraTextBox.Name = "percentualeLastraTextBox";
+            this.percentualeLastraTextBox.Size = new System.Drawing.Size(153, 24);
+            this.percentualeLastraTextBox.TabIndex = 20;
+            this.percentualeLastraTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lottoMinimoRiordinoLabel
+            // 
+            lottoMinimoRiordinoLabel.AutoSize = true;
+            lottoMinimoRiordinoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lottoMinimoRiordinoLabel.Location = new System.Drawing.Point(410, 58);
+            lottoMinimoRiordinoLabel.Name = "lottoMinimoRiordinoLabel";
+            lottoMinimoRiordinoLabel.Size = new System.Drawing.Size(159, 18);
+            lottoMinimoRiordinoLabel.TabIndex = 21;
+            lottoMinimoRiordinoLabel.Text = "Lotto Minimo Riordino:";
+            // 
+            // lottoMinimoRiordinoTextBox
+            // 
+            this.lottoMinimoRiordinoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "LottoMinimoRiordino", true));
+            this.lottoMinimoRiordinoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lottoMinimoRiordinoTextBox.Location = new System.Drawing.Point(575, 55);
+            this.lottoMinimoRiordinoTextBox.Name = "lottoMinimoRiordinoTextBox";
+            this.lottoMinimoRiordinoTextBox.Size = new System.Drawing.Size(181, 24);
+            this.lottoMinimoRiordinoTextBox.TabIndex = 22;
+            this.lottoMinimoRiordinoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // macPredefStampoLabel
+            // 
+            macPredefStampoLabel.AutoSize = true;
+            macPredefStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            macPredefStampoLabel.Location = new System.Drawing.Point(418, 84);
+            macPredefStampoLabel.Name = "macPredefStampoLabel";
+            macPredefStampoLabel.Size = new System.Drawing.Size(144, 18);
+            macPredefStampoLabel.TabIndex = 23;
+            macPredefStampoLabel.Text = "Mac Predef Stampo:";
+            // 
+            // macPredefStampoTextBox
+            // 
+            this.macPredefStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "MacPredefStampo", true));
+            this.macPredefStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macPredefStampoTextBox.Location = new System.Drawing.Point(575, 81);
+            this.macPredefStampoTextBox.Name = "macPredefStampoTextBox";
+            this.macPredefStampoTextBox.Size = new System.Drawing.Size(181, 24);
+            this.macPredefStampoTextBox.TabIndex = 24;
+            this.macPredefStampoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // macPredefTaglioLabel
+            // 
+            macPredefTaglioLabel.AutoSize = true;
+            macPredefTaglioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            macPredefTaglioLabel.Location = new System.Drawing.Point(425, 110);
+            macPredefTaglioLabel.Name = "macPredefTaglioLabel";
+            macPredefTaglioLabel.Size = new System.Drawing.Size(132, 18);
+            macPredefTaglioLabel.TabIndex = 25;
+            macPredefTaglioLabel.Text = "Mac Predef Taglio:";
+            // 
+            // macPredefTaglioTextBox
+            // 
+            this.macPredefTaglioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "MacPredefTaglio", true));
+            this.macPredefTaglioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macPredefTaglioTextBox.Location = new System.Drawing.Point(575, 107);
+            this.macPredefTaglioTextBox.Name = "macPredefTaglioTextBox";
+            this.macPredefTaglioTextBox.Size = new System.Drawing.Size(181, 24);
+            this.macPredefTaglioTextBox.TabIndex = 26;
+            this.macPredefTaglioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // costoBaseLabel
+            // 
+            costoBaseLabel.AutoSize = true;
+            costoBaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            costoBaseLabel.Location = new System.Drawing.Point(458, 136);
+            costoBaseLabel.Name = "costoBaseLabel";
+            costoBaseLabel.Size = new System.Drawing.Size(91, 18);
+            costoBaseLabel.TabIndex = 27;
+            costoBaseLabel.Text = "Costo Base:";
+            // 
+            // costoBaseTextBox
+            // 
+            this.costoBaseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "CostoBase", true));
+            this.costoBaseTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.costoBaseTextBox.Location = new System.Drawing.Point(575, 133);
+            this.costoBaseTextBox.Name = "costoBaseTextBox";
+            this.costoBaseTextBox.Size = new System.Drawing.Size(181, 24);
+            this.costoBaseTextBox.TabIndex = 28;
+            this.costoBaseTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RigaCompleta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(961, 634);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(768, 515);
+            this.Controls.Add(costoBaseLabel);
+            this.Controls.Add(this.costoBaseTextBox);
+            this.Controls.Add(macPredefTaglioLabel);
+            this.Controls.Add(this.macPredefTaglioTextBox);
+            this.Controls.Add(macPredefStampoLabel);
+            this.Controls.Add(this.macPredefStampoTextBox);
+            this.Controls.Add(lottoMinimoRiordinoLabel);
+            this.Controls.Add(this.lottoMinimoRiordinoTextBox);
+            this.Controls.Add(percentualeLastraLabel);
+            this.Controls.Add(this.percentualeLastraTextBox);
+            this.Controls.Add(lavorazioneLabel);
+            this.Controls.Add(this.lavorazioneTextBox);
+            this.Controls.Add(codice_fornitoreLabel);
+            this.Controls.Add(this.codice_fornitoreTextBox);
+            this.Controls.Add(codiceOutputLabel);
+            this.Controls.Add(this.codiceOutputTextBox);
+            this.Controls.Add(codiceInputLabel);
+            this.Controls.Add(this.codiceInputTextBox);
+            this.Controls.Add(descrizionePrimaStampoDimaLabel);
+            this.Controls.Add(this.descrizionePrimaStampoDimaTextBox);
+            this.Controls.Add(codicePrimaStampoDimaLabel);
+            this.Controls.Add(this.codicePrimaStampoDimaTextBox);
+            this.Controls.Add(progressivoLabel);
+            this.Controls.Add(this.progressivoTextBox);
+            this.Controls.Add(codice_articoloLabel);
+            this.Controls.Add(this.codice_articoloTextBox);
+            this.Controls.Add(iDDettaglioArticoloLabel);
+            this.Controls.Add(this.iDDettaglioArticoloTextBox);
+            this.Controls.Add(this.dettArticoliBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RigaCompleta";
             this.Text = "RigaCompleta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.RigaCompleta_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingNavigator)).EndInit();
+            this.dettArticoliBindingNavigator.ResumeLayout(false);
+            this.dettArticoliBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private Target2021DataSet target2021DataSet;
+        private System.Windows.Forms.BindingSource dettArticoliBindingSource;
+        private Target2021DataSetTableAdapters.DettArticoliTableAdapter dettArticoliTableAdapter;
+        private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator dettArticoliBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton dettArticoliBindingNavigatorSaveItem;
+        private System.Windows.Forms.TextBox iDDettaglioArticoloTextBox;
+        private System.Windows.Forms.TextBox codice_articoloTextBox;
+        private System.Windows.Forms.TextBox progressivoTextBox;
+        private System.Windows.Forms.TextBox codicePrimaStampoDimaTextBox;
+        private System.Windows.Forms.TextBox descrizionePrimaStampoDimaTextBox;
+        private System.Windows.Forms.TextBox codiceInputTextBox;
+        private System.Windows.Forms.TextBox codiceOutputTextBox;
+        private System.Windows.Forms.TextBox codice_fornitoreTextBox;
+        private System.Windows.Forms.TextBox lavorazioneTextBox;
+        private System.Windows.Forms.TextBox percentualeLastraTextBox;
+        private System.Windows.Forms.TextBox lottoMinimoRiordinoTextBox;
+        private System.Windows.Forms.TextBox macPredefStampoTextBox;
+        private System.Windows.Forms.TextBox macPredefTaglioTextBox;
+        private System.Windows.Forms.TextBox costoBaseTextBox;
     }
 }

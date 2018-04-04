@@ -97,22 +97,5 @@ namespace Target2021
             }
 
         }
-
-        private void clientiDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            foreach (DataGridViewRow row in clientiDataGridView.Rows)
-            {
-                if (row.Index == clientiDataGridView.CurrentRow.Index)
-                {
-                    String id;
-                    id = clientiDataGridView.CurrentCell.Value.ToString(); //prendo l'ID contenuto nella prima cella della gridview
-                    RigaCompleta rigaCompleta = new RigaCompleta();
-                    rigaCompleta.MdiParent = this.MdiParent;
-                    rigaCompleta.Show();
-                    rigaCompleta.LoadRow(id, this.Text); //passo l'id in modo da caricare nell'altro form solo la riga interessata
-                    //la condizione è che  la proprietà Text che gli passiamo deve essere uguale a quello di questo form così da identificare i vari form
-                }
-            }
-        }
     }
 }
