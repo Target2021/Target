@@ -23,7 +23,6 @@ namespace Target2021
         private void CheckStampaggio_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
-            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             LoadStampaggio();
         }
 
