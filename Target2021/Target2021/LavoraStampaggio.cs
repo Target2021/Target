@@ -31,7 +31,7 @@ namespace Target2021
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             cCToolStripTextBox.Text = IDCommessa;
             int i =0;
-            RecuperoDate("SELECT DataCommessa FROM Commesse WHERE CODCommessa='" + IDCommessa + "'",i);
+            RecuperoDate("SELECT DataCommessa FROM Commesse WHERE IDCommessa='" + IDCommessa + "'",i);
         }
         public void RecuperoDate(string query,int i)
         {
@@ -50,7 +50,7 @@ namespace Target2021
                 }
                 if(i==1)
                 {
-                    query = "SELECT DataConsegna FROM Commesse WHERE CODCommessa='" + IDCommessa + "'";
+                    query = "SELECT DataConsegna FROM Commesse WHERE IDCommessa='" + IDCommessa + "'";
                     SqlConnection con = new SqlConnection(stringa);
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();

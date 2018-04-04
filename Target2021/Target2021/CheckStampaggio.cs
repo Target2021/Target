@@ -87,9 +87,9 @@ namespace Target2021
             {
                 idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells[0].Value);
                 idcommessa.Replace("  ", string.Empty);
-                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[4].Value);
+                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[5].Value);
                 String stringa = Properties.Resources.StringaConnessione;
-                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[7].Value + "'";
+                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[8].Value + "'";
                 SqlConnection con = new SqlConnection(stringa);
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
