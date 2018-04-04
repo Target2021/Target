@@ -30,7 +30,7 @@ namespace Target2021
         private void LoadStampaggio()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1) AND CodCommessa LIKE 'S%'";
+            string query = "SELECT IDCommessa, CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1) AND CodCommessa LIKE 'S%'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -51,9 +51,11 @@ namespace Target2021
             {
                 try
                 {
-                    int quantita =(int) row.Cells[4].Value;
+                    int quantita =(int) row.Cells["NRPezziDaLavorare"].Value;
+                    string IDMateriaPrima;
                     String stringa = Properties.Resources.StringaConnessione;
-                    string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + row.Cells[7].Value+ "'";
+                    IDMateriaPrima = row.Cells["IDMateriaPrima"].Value.ToString();
+                    string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + IDMateriaPrima+ "'";
                     SqlConnection con = new SqlConnection(stringa);
                     SqlCommand cmd = new SqlCommand(query, con);
                     con.Open();
@@ -64,7 +66,7 @@ namespace Target2021
                     {
                         row.DefaultCellStyle.BackColor = Color.Red;
                     }
-                    if (Enumerable.Range(1, 10).Contains(diff))
+                    if (Enumerable.Range(0, 10).Contains(diff))
                     {
                         row.DefaultCellStyle.BackColor = Color.Yellow;
                     }
@@ -79,6 +81,7 @@ namespace Target2021
                 }
             }
         }
+
         private void CheckGiacenzaRow(int index)
         {
             try
@@ -87,7 +90,7 @@ namespace Target2021
                 idcommessa.Replace("  ", string.Empty);
                 int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[4].Value);
                 String stringa = Properties.Resources.StringaConnessione;
-                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[7].Value  + "'";
+                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[7].Value + "'";
                 SqlConnection con = new SqlConnection(stringa);
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
@@ -96,18 +99,18 @@ namespace Target2021
                 int diff = Giacenza - quantita;
                 if (diff < 0)
                 {
-                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Red;
+                    //dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Red;
                     MessageBox.Show("Giacenza insufficiente, si prega di effettuare il riordino");
                 }
-                if (Enumerable.Range(1, 10).Contains(diff))
+                if (Enumerable.Range(0, 10).Contains(diff))
                 {
-                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
+                    //dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
                     LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
                     lavoraStampaggio.Show();
                 }
                 if (diff > 10)
                 {
-                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Green;
+                    //dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Green;
                     LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
                     lavoraStampaggio.Show();
                 }
@@ -125,6 +128,7 @@ namespace Target2021
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            dataGridView1.CurrentCell.Selected = false;
             CheckGiacenzaTotale();
         }
 
@@ -132,7 +136,7 @@ namespace Target2021
         {
             CheckGiacenzaTotale();
             String stringa = Properties.Resources.StringaConnessione;
-            string query = " UPDATE Commesse SET CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[0].Value + "', DataCommessa='" + dataGridView1.Rows[e.RowIndex].Cells[1].Value + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells[2].Value + "',DataConsegna='" + dataGridView1.Rows[e.RowIndex].Cells[3].Value + "',NRPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells[4].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells[5].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells[6].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells[7].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[0].Value+"'";
+            string query = "UPDATE Commesse SET CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[0].Value + "', DataCommessa='" + dataGridView1.Rows[e.RowIndex].Cells[1].Value + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells[2].Value + "',DataConsegna='" + dataGridView1.Rows[e.RowIndex].Cells[3].Value + "',NRPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells[4].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells[5].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells[6].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells[7].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[0].Value+"'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();

@@ -31,24 +31,24 @@
             this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.commesseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.target2021DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager1 = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.commesseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Location = new System.Drawing.Point(28, 19);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 36);
             this.button2.TabIndex = 1;
@@ -60,28 +60,36 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(20, 66);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(862, 439);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(897, 439);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
-            // target2021DataSet
+            // commesseBindingSource1
             // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.commesseBindingSource1.DataMember = "Commesse";
+            this.commesseBindingSource1.DataSource = this.target2021DataSetBindingSource;
             // 
             // target2021DataSetBindingSource
             // 
             this.target2021DataSetBindingSource.DataSource = this.target2021DataSet;
             this.target2021DataSetBindingSource.Position = 0;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // commesseBindingSource
             // 
@@ -120,11 +128,6 @@
             this.tableAdapterManager1.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.UtentiTableAdapter = null;
             // 
-            // commesseBindingSource1
-            // 
-            this.commesseBindingSource1.DataMember = "Commesse";
-            this.commesseBindingSource1.DataSource = this.target2021DataSetBindingSource;
-            // 
             // commesseTableAdapter
             // 
             this.commesseTableAdapter.ClearBeforeFill = true;
@@ -134,17 +137,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(891, 523);
+            this.ClientSize = new System.Drawing.Size(928, 523);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Name = "CheckStampaggio";
             this.Text = "CheckStampaggio";
             this.Load += new System.EventHandler(this.CheckStampaggio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

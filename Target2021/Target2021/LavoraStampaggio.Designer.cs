@@ -46,9 +46,15 @@
             System.Windows.Forms.Label nrPezziScartatiLabel;
             System.Windows.Forms.Label oraInizioStampoLabel;
             System.Windows.Forms.Label oraFineStampoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LavoraStampaggio));
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LavoraStampaggio));
+            System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label label5;
+            System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label7;
+            System.Windows.Forms.Label label8;
+            System.Windows.Forms.Label label9;
             this.label1 = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -93,6 +99,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker11 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker12 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker13 = new System.Windows.Forms.DateTimePicker();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -112,6 +127,12 @@
             oraFineStampoLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).BeginInit();
@@ -119,113 +140,128 @@
             this.fillByToolStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // iDCommessaLabel
             // 
             iDCommessaLabel.AutoSize = true;
-            iDCommessaLabel.Location = new System.Drawing.Point(62, 110);
+            iDCommessaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            iDCommessaLabel.Location = new System.Drawing.Point(12, 110);
             iDCommessaLabel.Name = "iDCommessaLabel";
-            iDCommessaLabel.Size = new System.Drawing.Size(72, 13);
+            iDCommessaLabel.Size = new System.Drawing.Size(93, 16);
             iDCommessaLabel.TabIndex = 2;
             iDCommessaLabel.Text = "IDCommessa:";
             // 
             // codCommessaLabel
             // 
             codCommessaLabel.AutoSize = true;
-            codCommessaLabel.Location = new System.Drawing.Point(51, 136);
+            codCommessaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codCommessaLabel.Location = new System.Drawing.Point(12, 136);
             codCommessaLabel.Name = "codCommessaLabel";
-            codCommessaLabel.Size = new System.Drawing.Size(83, 13);
+            codCommessaLabel.Size = new System.Drawing.Size(108, 16);
             codCommessaLabel.TabIndex = 4;
             codCommessaLabel.Text = "Cod Commessa:";
             // 
             // nrCommessaLabel
             // 
             nrCommessaLabel.AutoSize = true;
-            nrCommessaLabel.Location = new System.Drawing.Point(59, 162);
+            nrCommessaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrCommessaLabel.Location = new System.Drawing.Point(12, 162);
             nrCommessaLabel.Name = "nrCommessaLabel";
-            nrCommessaLabel.Size = new System.Drawing.Size(75, 13);
+            nrCommessaLabel.Size = new System.Drawing.Size(97, 16);
             nrCommessaLabel.TabIndex = 6;
             nrCommessaLabel.Text = "Nr Commessa:";
             // 
             // dataCommessaLabel
             // 
             dataCommessaLabel.AutoSize = true;
-            dataCommessaLabel.Location = new System.Drawing.Point(47, 189);
+            dataCommessaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataCommessaLabel.Location = new System.Drawing.Point(12, 192);
             dataCommessaLabel.Name = "dataCommessaLabel";
-            dataCommessaLabel.Size = new System.Drawing.Size(87, 13);
+            dataCommessaLabel.Size = new System.Drawing.Size(112, 16);
             dataCommessaLabel.TabIndex = 8;
             dataCommessaLabel.Text = "Data Commessa:";
             // 
             // iDClienteLabel
             // 
             iDClienteLabel.AutoSize = true;
-            iDClienteLabel.Location = new System.Drawing.Point(81, 214);
+            iDClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            iDClienteLabel.Location = new System.Drawing.Point(12, 214);
             iDClienteLabel.Name = "iDClienteLabel";
-            iDClienteLabel.Size = new System.Drawing.Size(53, 13);
+            iDClienteLabel.Size = new System.Drawing.Size(65, 16);
             iDClienteLabel.TabIndex = 10;
             iDClienteLabel.Text = "IDCliente:";
             // 
             // dataConsegnaLabel
             // 
             dataConsegnaLabel.AutoSize = true;
-            dataConsegnaLabel.Location = new System.Drawing.Point(50, 241);
+            dataConsegnaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataConsegnaLabel.Location = new System.Drawing.Point(12, 237);
             dataConsegnaLabel.Name = "dataConsegnaLabel";
-            dataConsegnaLabel.Size = new System.Drawing.Size(84, 13);
+            dataConsegnaLabel.Size = new System.Drawing.Size(105, 16);
             dataConsegnaLabel.TabIndex = 12;
             dataConsegnaLabel.Text = "Data Consegna:";
             // 
             // nrPezziDaLavorareLabel
             // 
             nrPezziDaLavorareLabel.AutoSize = true;
-            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(23, 266);
+            nrPezziDaLavorareLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(12, 265);
             nrPezziDaLavorareLabel.Name = "nrPezziDaLavorareLabel";
-            nrPezziDaLavorareLabel.Size = new System.Drawing.Size(111, 13);
+            nrPezziDaLavorareLabel.Size = new System.Drawing.Size(138, 16);
             nrPezziDaLavorareLabel.TabIndex = 14;
             nrPezziDaLavorareLabel.Text = "Nr Pezzi Da Lavorare:";
             // 
             // codArticoloLabel
             // 
             codArticoloLabel.AutoSize = true;
-            codArticoloLabel.Location = new System.Drawing.Point(67, 318);
+            codArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codArticoloLabel.Location = new System.Drawing.Point(15, 318);
             codArticoloLabel.Name = "codArticoloLabel";
-            codArticoloLabel.Size = new System.Drawing.Size(67, 13);
+            codArticoloLabel.Size = new System.Drawing.Size(84, 16);
             codArticoloLabel.TabIndex = 16;
             codArticoloLabel.Text = "Cod Articolo:";
             // 
             // descrArticoloLabel
             // 
             descrArticoloLabel.AutoSize = true;
-            descrArticoloLabel.Location = new System.Drawing.Point(58, 344);
+            descrArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descrArticoloLabel.Location = new System.Drawing.Point(14, 344);
             descrArticoloLabel.Name = "descrArticoloLabel";
-            descrArticoloLabel.Size = new System.Drawing.Size(76, 13);
+            descrArticoloLabel.Size = new System.Drawing.Size(95, 16);
             descrArticoloLabel.TabIndex = 18;
             descrArticoloLabel.Text = "Descr Articolo:";
             // 
             // iDStampoLabel
             // 
             iDStampoLabel.AutoSize = true;
+            iDStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             iDStampoLabel.Location = new System.Drawing.Point(414, 110);
             iDStampoLabel.Name = "iDStampoLabel";
-            iDStampoLabel.Size = new System.Drawing.Size(57, 13);
+            iDStampoLabel.Size = new System.Drawing.Size(71, 16);
             iDStampoLabel.TabIndex = 20;
             iDStampoLabel.Text = "IDStampo:";
             // 
             // codArtiDopoStampoLabel
             // 
             codArtiDopoStampoLabel.AutoSize = true;
+            codArtiDopoStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             codArtiDopoStampoLabel.Location = new System.Drawing.Point(356, 136);
             codArtiDopoStampoLabel.Name = "codArtiDopoStampoLabel";
-            codArtiDopoStampoLabel.Size = new System.Drawing.Size(115, 13);
+            codArtiDopoStampoLabel.Size = new System.Drawing.Size(145, 16);
             codArtiDopoStampoLabel.TabIndex = 22;
             codArtiDopoStampoLabel.Text = "Cod Arti Dopo Stampo:";
             // 
             // nrPezziOrdinatiLabel
             // 
             nrPezziOrdinatiLabel.AutoSize = true;
-            nrPezziOrdinatiLabel.Location = new System.Drawing.Point(46, 292);
+            nrPezziOrdinatiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrPezziOrdinatiLabel.Location = new System.Drawing.Point(11, 292);
             nrPezziOrdinatiLabel.Name = "nrPezziOrdinatiLabel";
-            nrPezziOrdinatiLabel.Size = new System.Drawing.Size(88, 13);
+            nrPezziOrdinatiLabel.Size = new System.Drawing.Size(109, 16);
             nrPezziOrdinatiLabel.TabIndex = 24;
             nrPezziOrdinatiLabel.Text = "Nr Pezzi Ordinati:";
             nrPezziOrdinatiLabel.Visible = false;
@@ -233,47 +269,68 @@
             // dataTermineLabel
             // 
             dataTermineLabel.AutoSize = true;
-            dataTermineLabel.Location = new System.Drawing.Point(396, 194);
+            dataTermineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataTermineLabel.Location = new System.Drawing.Point(397, 166);
             dataTermineLabel.Name = "dataTermineLabel";
-            dataTermineLabel.Size = new System.Drawing.Size(74, 13);
+            dataTermineLabel.Size = new System.Drawing.Size(93, 16);
             dataTermineLabel.TabIndex = 26;
             dataTermineLabel.Text = "Data Termine:";
             // 
             // nrPezziCorrettiLabel
             // 
             nrPezziCorrettiLabel.AutoSize = true;
-            nrPezziCorrettiLabel.Location = new System.Drawing.Point(385, 220);
+            nrPezziCorrettiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrPezziCorrettiLabel.Location = new System.Drawing.Point(386, 192);
             nrPezziCorrettiLabel.Name = "nrPezziCorrettiLabel";
-            nrPezziCorrettiLabel.Size = new System.Drawing.Size(85, 13);
+            nrPezziCorrettiLabel.Size = new System.Drawing.Size(105, 16);
             nrPezziCorrettiLabel.TabIndex = 28;
             nrPezziCorrettiLabel.Text = "Nr Pezzi Corretti:";
             // 
             // nrPezziScartatiLabel
             // 
             nrPezziScartatiLabel.AutoSize = true;
-            nrPezziScartatiLabel.Location = new System.Drawing.Point(382, 245);
+            nrPezziScartatiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrPezziScartatiLabel.Location = new System.Drawing.Point(383, 217);
             nrPezziScartatiLabel.Name = "nrPezziScartatiLabel";
-            nrPezziScartatiLabel.Size = new System.Drawing.Size(88, 13);
+            nrPezziScartatiLabel.Size = new System.Drawing.Size(108, 16);
             nrPezziScartatiLabel.TabIndex = 30;
             nrPezziScartatiLabel.Text = "Nr Pezzi Scartati:";
             // 
             // oraInizioStampoLabel
             // 
             oraInizioStampoLabel.AutoSize = true;
-            oraInizioStampoLabel.Location = new System.Drawing.Point(57, 17);
+            oraInizioStampoLabel.Location = new System.Drawing.Point(35, 18);
             oraInizioStampoLabel.Name = "oraInizioStampoLabel";
-            oraInizioStampoLabel.Size = new System.Drawing.Size(54, 13);
+            oraInizioStampoLabel.Size = new System.Drawing.Size(66, 16);
             oraInizioStampoLabel.TabIndex = 32;
             oraInizioStampoLabel.Text = "Ora Inizio:";
             // 
             // oraFineStampoLabel
             // 
             oraFineStampoLabel.AutoSize = true;
-            oraFineStampoLabel.Location = new System.Drawing.Point(334, 17);
+            oraFineStampoLabel.Location = new System.Drawing.Point(322, 18);
             oraFineStampoLabel.Name = "oraFineStampoLabel";
-            oraFineStampoLabel.Size = new System.Drawing.Size(50, 13);
+            oraFineStampoLabel.Size = new System.Drawing.Size(62, 16);
             oraFineStampoLabel.TabIndex = 34;
             oraFineStampoLabel.Text = "Ora Fine:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(35, 18);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(66, 16);
+            label2.TabIndex = 32;
+            label2.Text = "Ora Inizio:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(322, 18);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(62, 16);
+            label3.TabIndex = 34;
+            label3.Text = "Ora Fine:";
             // 
             // label1
             // 
@@ -318,6 +375,7 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
@@ -460,98 +518,110 @@
             // iDCommessaTextBox
             // 
             this.iDCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCommessa", true));
+            this.iDCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iDCommessaTextBox.Location = new System.Drawing.Point(140, 107);
             this.iDCommessaTextBox.Name = "iDCommessaTextBox";
-            this.iDCommessaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDCommessaTextBox.Size = new System.Drawing.Size(100, 22);
             this.iDCommessaTextBox.TabIndex = 3;
             // 
             // codCommessaTextBox
             // 
             this.codCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodCommessa", true));
+            this.codCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codCommessaTextBox.Location = new System.Drawing.Point(140, 133);
             this.codCommessaTextBox.Name = "codCommessaTextBox";
-            this.codCommessaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codCommessaTextBox.Size = new System.Drawing.Size(100, 22);
             this.codCommessaTextBox.TabIndex = 5;
             // 
             // nrCommessaTextBox
             // 
             this.nrCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrCommessa", true));
+            this.nrCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrCommessaTextBox.Location = new System.Drawing.Point(140, 159);
             this.nrCommessaTextBox.Name = "nrCommessaTextBox";
-            this.nrCommessaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrCommessaTextBox.Size = new System.Drawing.Size(100, 22);
             this.nrCommessaTextBox.TabIndex = 7;
             // 
             // iDClienteTextBox
             // 
             this.iDClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCliente", true));
+            this.iDClienteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iDClienteTextBox.Location = new System.Drawing.Point(140, 211);
             this.iDClienteTextBox.Name = "iDClienteTextBox";
-            this.iDClienteTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDClienteTextBox.Size = new System.Drawing.Size(100, 22);
             this.iDClienteTextBox.TabIndex = 11;
             // 
             // nrPezziDaLavorareTextBox
             // 
             this.nrPezziDaLavorareTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziDaLavorare", true));
-            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(140, 263);
+            this.nrPezziDaLavorareTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(156, 262);
             this.nrPezziDaLavorareTextBox.Name = "nrPezziDaLavorareTextBox";
-            this.nrPezziDaLavorareTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrPezziDaLavorareTextBox.Size = new System.Drawing.Size(100, 22);
             this.nrPezziDaLavorareTextBox.TabIndex = 15;
             // 
             // codArticoloTextBox
             // 
             this.codArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArticolo", true));
+            this.codArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codArticoloTextBox.Location = new System.Drawing.Point(140, 315);
             this.codArticoloTextBox.Name = "codArticoloTextBox";
-            this.codArticoloTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codArticoloTextBox.Size = new System.Drawing.Size(100, 22);
             this.codArticoloTextBox.TabIndex = 17;
             // 
             // descrArticoloTextBox
             // 
             this.descrArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "DescrArticolo", true));
+            this.descrArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descrArticoloTextBox.Location = new System.Drawing.Point(140, 341);
             this.descrArticoloTextBox.Name = "descrArticoloTextBox";
-            this.descrArticoloTextBox.Size = new System.Drawing.Size(200, 20);
+            this.descrArticoloTextBox.Size = new System.Drawing.Size(200, 22);
             this.descrArticoloTextBox.TabIndex = 19;
             // 
             // iDStampoTextBox
             // 
             this.iDStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDStampo", true));
-            this.iDStampoTextBox.Location = new System.Drawing.Point(477, 107);
+            this.iDStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iDStampoTextBox.Location = new System.Drawing.Point(509, 107);
             this.iDStampoTextBox.Name = "iDStampoTextBox";
-            this.iDStampoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.iDStampoTextBox.Size = new System.Drawing.Size(100, 22);
             this.iDStampoTextBox.TabIndex = 21;
             // 
             // codArtiDopoStampoTextBox
             // 
             this.codArtiDopoStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
-            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(477, 133);
+            this.codArtiDopoStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(509, 133);
             this.codArtiDopoStampoTextBox.Name = "codArtiDopoStampoTextBox";
-            this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(100, 22);
             this.codArtiDopoStampoTextBox.TabIndex = 23;
             // 
             // nrPezziOrdinatiTextBox
             // 
             this.nrPezziOrdinatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziOrdinati", true));
+            this.nrPezziOrdinatiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrPezziOrdinatiTextBox.Location = new System.Drawing.Point(140, 289);
             this.nrPezziOrdinatiTextBox.Name = "nrPezziOrdinatiTextBox";
-            this.nrPezziOrdinatiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrPezziOrdinatiTextBox.Size = new System.Drawing.Size(100, 22);
             this.nrPezziOrdinatiTextBox.TabIndex = 25;
             this.nrPezziOrdinatiTextBox.Visible = false;
             // 
             // nrPezziCorrettiTextBox
             // 
             this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
-            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(476, 217);
+            this.nrPezziCorrettiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(509, 189);
             this.nrPezziCorrettiTextBox.Name = "nrPezziCorrettiTextBox";
-            this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(100, 22);
             this.nrPezziCorrettiTextBox.TabIndex = 29;
             // 
             // nrPezziScartatiTextBox
             // 
             this.nrPezziScartatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziScartati", true));
-            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(476, 242);
+            this.nrPezziScartatiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(509, 214);
             this.nrPezziScartatiTextBox.Name = "nrPezziScartatiTextBox";
-            this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(100, 22);
             this.nrPezziScartatiTextBox.TabIndex = 31;
             // 
             // fillByToolStrip
@@ -591,51 +661,55 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yy-MM-dd";
-            this.dateTimePicker1.Location = new System.Drawing.Point(142, 190);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(140, 187);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(212, 22);
             this.dateTimePicker1.TabIndex = 37;
             this.dateTimePicker1.Value = new System.DateTime(2018, 3, 29, 0, 0, 0, 0);
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(138, 237);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Location = new System.Drawing.Point(140, 237);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(212, 22);
             this.dateTimePicker2.TabIndex = 38;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(477, 190);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Location = new System.Drawing.Point(509, 162);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker3.Size = new System.Drawing.Size(214, 22);
             this.dateTimePicker3.TabIndex = 39;
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(119, 14);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker4.Location = new System.Drawing.Point(106, 14);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker4.Size = new System.Drawing.Size(211, 22);
             this.dateTimePicker4.TabIndex = 40;
             // 
             // dateTimePicker5
             // 
             this.dateTimePicker5.Location = new System.Drawing.Point(389, 14);
-            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker5.Size = new System.Drawing.Size(220, 22);
             this.dateTimePicker5.TabIndex = 41;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(295, 439);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(140, 387);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 45);
+            this.button1.Size = new System.Drawing.Size(200, 45);
             this.button1.TabIndex = 42;
             this.button1.Text = "CONFERMA";
             this.button1.UseVisualStyleBackColor = true;
@@ -647,6 +721,7 @@
             this.groupBox1.Controls.Add(oraInizioStampoLabel);
             this.groupBox1.Controls.Add(oraFineStampoLabel);
             this.groupBox1.Controls.Add(this.dateTimePicker4);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(379, 265);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(614, 39);
@@ -660,6 +735,8 @@
             this.groupBox2.Controls.Add(label2);
             this.groupBox2.Controls.Add(label3);
             this.groupBox2.Controls.Add(this.dateTimePicker7);
+            this.groupBox2.Enabled = false;
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(379, 310);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(614, 39);
@@ -672,40 +749,172 @@
             this.dateTimePicker6.Location = new System.Drawing.Point(389, 14);
             this.dateTimePicker6.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker6.Size = new System.Drawing.Size(220, 22);
             this.dateTimePicker6.TabIndex = 41;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(57, 17);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(54, 13);
-            label2.TabIndex = 32;
-            label2.Text = "Ora Inizio:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(334, 17);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(50, 13);
-            label3.TabIndex = 34;
-            label3.Text = "Ora Fine:";
             // 
             // dateTimePicker7
             // 
-            this.dateTimePicker7.Location = new System.Drawing.Point(119, 14);
+            this.dateTimePicker7.Location = new System.Drawing.Point(106, 14);
             this.dateTimePicker7.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.Size = new System.Drawing.Size(198, 20);
+            this.dateTimePicker7.Size = new System.Drawing.Size(211, 22);
             this.dateTimePicker7.TabIndex = 40;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dateTimePicker8);
+            this.groupBox3.Controls.Add(label4);
+            this.groupBox3.Controls.Add(label5);
+            this.groupBox3.Controls.Add(this.dateTimePicker9);
+            this.groupBox3.Enabled = false;
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(379, 355);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(614, 39);
+            this.groupBox3.TabIndex = 45;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Giorno 3";
+            // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.Location = new System.Drawing.Point(389, 14);
+            this.dateTimePicker8.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.Size = new System.Drawing.Size(220, 22);
+            this.dateTimePicker8.TabIndex = 41;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(35, 18);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(66, 16);
+            label4.TabIndex = 32;
+            label4.Text = "Ora Inizio:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(322, 18);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(62, 16);
+            label5.TabIndex = 34;
+            label5.Text = "Ora Fine:";
+            // 
+            // dateTimePicker9
+            // 
+            this.dateTimePicker9.Location = new System.Drawing.Point(106, 14);
+            this.dateTimePicker9.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker9.Name = "dateTimePicker9";
+            this.dateTimePicker9.Size = new System.Drawing.Size(211, 22);
+            this.dateTimePicker9.TabIndex = 40;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dateTimePicker10);
+            this.groupBox4.Controls.Add(label6);
+            this.groupBox4.Controls.Add(label7);
+            this.groupBox4.Controls.Add(this.dateTimePicker11);
+            this.groupBox4.Enabled = false;
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(379, 400);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(614, 39);
+            this.groupBox4.TabIndex = 46;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Giorno 4";
+            // 
+            // dateTimePicker10
+            // 
+            this.dateTimePicker10.Location = new System.Drawing.Point(389, 14);
+            this.dateTimePicker10.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker10.Name = "dateTimePicker10";
+            this.dateTimePicker10.Size = new System.Drawing.Size(220, 22);
+            this.dateTimePicker10.TabIndex = 41;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(35, 18);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(66, 16);
+            label6.TabIndex = 32;
+            label6.Text = "Ora Inizio:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(322, 18);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(62, 16);
+            label7.TabIndex = 34;
+            label7.Text = "Ora Fine:";
+            // 
+            // dateTimePicker11
+            // 
+            this.dateTimePicker11.Location = new System.Drawing.Point(106, 14);
+            this.dateTimePicker11.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker11.Name = "dateTimePicker11";
+            this.dateTimePicker11.Size = new System.Drawing.Size(211, 22);
+            this.dateTimePicker11.TabIndex = 40;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dateTimePicker12);
+            this.groupBox5.Controls.Add(label8);
+            this.groupBox5.Controls.Add(label9);
+            this.groupBox5.Controls.Add(this.dateTimePicker13);
+            this.groupBox5.Enabled = false;
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(379, 445);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(614, 39);
+            this.groupBox5.TabIndex = 47;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Giorno 5";
+            // 
+            // dateTimePicker12
+            // 
+            this.dateTimePicker12.Location = new System.Drawing.Point(389, 14);
+            this.dateTimePicker12.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker12.Name = "dateTimePicker12";
+            this.dateTimePicker12.Size = new System.Drawing.Size(220, 22);
+            this.dateTimePicker12.TabIndex = 41;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(35, 18);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(66, 16);
+            label8.TabIndex = 32;
+            label8.Text = "Ora Inizio:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(322, 18);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(62, 16);
+            label9.TabIndex = 34;
+            label9.Text = "Ora Fine:";
+            // 
+            // dateTimePicker13
+            // 
+            this.dateTimePicker13.Location = new System.Drawing.Point(106, 14);
+            this.dateTimePicker13.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker13.Name = "dateTimePicker13";
+            this.dateTimePicker13.Size = new System.Drawing.Size(211, 22);
+            this.dateTimePicker13.TabIndex = 40;
             // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 522);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -742,7 +951,7 @@
             this.Controls.Add(this.iDCommessaTextBox);
             this.Controls.Add(this.commesseBindingNavigator);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LavoraStampaggio";
             this.Text = "LavoraStampaggio";
             this.Load += new System.EventHandler(this.LavoraStampaggio_Load);
@@ -757,6 +966,12 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -808,5 +1023,14 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.DateTimePicker dateTimePicker7;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker9;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker10;
+        private System.Windows.Forms.DateTimePicker dateTimePicker11;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker12;
+        private System.Windows.Forms.DateTimePicker dateTimePicker13;
     }
 }

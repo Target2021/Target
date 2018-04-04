@@ -51,7 +51,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.dettArticoliBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dettArticoliDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.IDDettaglioArticolo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +58,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingNavigator)).BeginInit();
@@ -296,16 +296,6 @@
             this.dettArticoliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelezionaRiga);
             this.dettArticoliDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.Ordina);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(124, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 18);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Campo da filtrare:";
-            // 
             // IDDettaglioArticolo
             // 
             this.IDDettaglioArticolo.DataPropertyName = "IDDettaglioArticolo";
@@ -349,6 +339,16 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "lavorazione";
             this.dataGridViewTextBoxColumn9.HeaderText = "lavorazione";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(124, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 18);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Campo da filtrare:";
             // 
             // Dettaglio_Articoli
             // 

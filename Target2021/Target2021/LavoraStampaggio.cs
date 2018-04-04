@@ -59,17 +59,17 @@ namespace Target2021
                     dateTimePicker2.Value = dt;
                     con.Close();
                 }
-                if(i==2)
-                {
-                    query = "SELECT DataTermine FROM Commesse WHERE CODCommessa='" + IDCommessa + "'";
-                    SqlConnection con = new SqlConnection(stringa);
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    con.Open();
-                    string dateTime = cmd.ExecuteScalar().ToString();
-                    DateTime dt = Convert.ToDateTime(dateTime);
-                    dateTimePicker3.Value = dt;
-                    con.Close();
-                }
+                //if(i==2)
+                //{
+                //    query = "SELECT DataTermine FROM Commesse WHERE CODCommessa='" + IDCommessa + "'";
+                //    SqlConnection con = new SqlConnection(stringa);
+                //    SqlCommand cmd = new SqlCommand(query, con);
+                //    con.Open();
+                //    string dateTime = cmd.ExecuteScalar().ToString();
+                //    DateTime dt = Convert.ToDateTime(dateTime);
+                //    dateTimePicker3.Value = dt;
+                //    con.Close();
+                //}
             }
         }
         private void commesseDataGridView_CellValuePushed(object sender, DataGridViewCellValueEventArgs e)
