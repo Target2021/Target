@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RigaCompleta));
             System.Windows.Forms.Label iDDettaglioArticoloLabel;
             System.Windows.Forms.Label codice_articoloLabel;
             System.Windows.Forms.Label progressivoLabel;
@@ -44,22 +43,23 @@
             System.Windows.Forms.Label macPredefStampoLabel;
             System.Windows.Forms.Label macPredefTaglioLabel;
             System.Windows.Forms.Label costoBaseLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RigaCompleta));
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.dettArticoliBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.dettArticoliBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.iDDettaglioArticoloTextBox = new System.Windows.Forms.TextBox();
             this.codice_articoloTextBox = new System.Windows.Forms.TextBox();
@@ -75,6 +75,10 @@
             this.macPredefStampoTextBox = new System.Windows.Forms.TextBox();
             this.macPredefTaglioTextBox = new System.Windows.Forms.TextBox();
             this.costoBaseTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             iDDettaglioArticoloLabel = new System.Windows.Forms.Label();
             codice_articoloLabel = new System.Windows.Forms.Label();
             progressivoLabel = new System.Windows.Forms.Label();
@@ -94,6 +98,146 @@
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingNavigator)).BeginInit();
             this.dettArticoliBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // iDDettaglioArticoloLabel
+            // 
+            iDDettaglioArticoloLabel.AutoSize = true;
+            iDDettaglioArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            iDDettaglioArticoloLabel.Location = new System.Drawing.Point(47, 58);
+            iDDettaglioArticoloLabel.Name = "iDDettaglioArticoloLabel";
+            iDDettaglioArticoloLabel.Size = new System.Drawing.Size(142, 18);
+            iDDettaglioArticoloLabel.TabIndex = 1;
+            iDDettaglioArticoloLabel.Text = "ID Dettaglio Articolo:";
+            // 
+            // codice_articoloLabel
+            // 
+            codice_articoloLabel.AutoSize = true;
+            codice_articoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codice_articoloLabel.Location = new System.Drawing.Point(69, 84);
+            codice_articoloLabel.Name = "codice_articoloLabel";
+            codice_articoloLabel.Size = new System.Drawing.Size(113, 18);
+            codice_articoloLabel.TabIndex = 3;
+            codice_articoloLabel.Text = "Codice Articolo:";
+            // 
+            // progressivoLabel
+            // 
+            progressivoLabel.AutoSize = true;
+            progressivoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progressivoLabel.Location = new System.Drawing.Point(84, 110);
+            progressivoLabel.Name = "progressivoLabel";
+            progressivoLabel.Size = new System.Drawing.Size(92, 18);
+            progressivoLabel.TabIndex = 5;
+            progressivoLabel.Text = "Progressivo:";
+            // 
+            // codicePrimaStampoDimaLabel
+            // 
+            codicePrimaStampoDimaLabel.AutoSize = true;
+            codicePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(11, 136);
+            codicePrimaStampoDimaLabel.Name = "codicePrimaStampoDimaLabel";
+            codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(194, 18);
+            codicePrimaStampoDimaLabel.TabIndex = 7;
+            codicePrimaStampoDimaLabel.Text = "codice Prima Stampo Dima:";
+            // 
+            // descrizionePrimaStampoDimaLabel
+            // 
+            descrizionePrimaStampoDimaLabel.AutoSize = true;
+            descrizionePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descrizionePrimaStampoDimaLabel.Location = new System.Drawing.Point(2, 162);
+            descrizionePrimaStampoDimaLabel.Name = "descrizionePrimaStampoDimaLabel";
+            descrizionePrimaStampoDimaLabel.Size = new System.Drawing.Size(226, 18);
+            descrizionePrimaStampoDimaLabel.TabIndex = 9;
+            descrizionePrimaStampoDimaLabel.Text = "descrizione Prima Stampo Dima:";
+            // 
+            // codiceInputLabel
+            // 
+            codiceInputLabel.AutoSize = true;
+            codiceInputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codiceInputLabel.Location = new System.Drawing.Point(78, 188);
+            codiceInputLabel.Name = "codiceInputLabel";
+            codiceInputLabel.Size = new System.Drawing.Size(94, 18);
+            codiceInputLabel.TabIndex = 11;
+            codiceInputLabel.Text = "Codice Input:";
+            // 
+            // codiceOutputLabel
+            // 
+            codiceOutputLabel.AutoSize = true;
+            codiceOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codiceOutputLabel.Location = new System.Drawing.Point(70, 214);
+            codiceOutputLabel.Name = "codiceOutputLabel";
+            codiceOutputLabel.Size = new System.Drawing.Size(107, 18);
+            codiceOutputLabel.TabIndex = 13;
+            codiceOutputLabel.Text = "Codice Output:";
+            // 
+            // codice_fornitoreLabel
+            // 
+            codice_fornitoreLabel.AutoSize = true;
+            codice_fornitoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codice_fornitoreLabel.Location = new System.Drawing.Point(78, 240);
+            codice_fornitoreLabel.Name = "codice_fornitoreLabel";
+            codice_fornitoreLabel.Size = new System.Drawing.Size(72, 18);
+            codice_fornitoreLabel.TabIndex = 15;
+            codice_fornitoreLabel.Text = "Fornitore:";
+            // 
+            // lavorazioneLabel
+            // 
+            lavorazioneLabel.AutoSize = true;
+            lavorazioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lavorazioneLabel.Location = new System.Drawing.Point(84, 266);
+            lavorazioneLabel.Name = "lavorazioneLabel";
+            lavorazioneLabel.Size = new System.Drawing.Size(88, 18);
+            lavorazioneLabel.TabIndex = 17;
+            lavorazioneLabel.Text = "lavorazione:";
+            // 
+            // percentualeLastraLabel
+            // 
+            percentualeLastraLabel.AutoSize = true;
+            percentualeLastraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            percentualeLastraLabel.Location = new System.Drawing.Point(49, 292);
+            percentualeLastraLabel.Name = "percentualeLastraLabel";
+            percentualeLastraLabel.Size = new System.Drawing.Size(135, 18);
+            percentualeLastraLabel.TabIndex = 19;
+            percentualeLastraLabel.Text = "Percentuale Lastra:";
+            // 
+            // lottoMinimoRiordinoLabel
+            // 
+            lottoMinimoRiordinoLabel.AutoSize = true;
+            lottoMinimoRiordinoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lottoMinimoRiordinoLabel.Location = new System.Drawing.Point(410, 58);
+            lottoMinimoRiordinoLabel.Name = "lottoMinimoRiordinoLabel";
+            lottoMinimoRiordinoLabel.Size = new System.Drawing.Size(159, 18);
+            lottoMinimoRiordinoLabel.TabIndex = 21;
+            lottoMinimoRiordinoLabel.Text = "Lotto Minimo Riordino:";
+            // 
+            // macPredefStampoLabel
+            // 
+            macPredefStampoLabel.AutoSize = true;
+            macPredefStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            macPredefStampoLabel.Location = new System.Drawing.Point(418, 84);
+            macPredefStampoLabel.Name = "macPredefStampoLabel";
+            macPredefStampoLabel.Size = new System.Drawing.Size(144, 18);
+            macPredefStampoLabel.TabIndex = 23;
+            macPredefStampoLabel.Text = "Mac Predef Stampo:";
+            // 
+            // macPredefTaglioLabel
+            // 
+            macPredefTaglioLabel.AutoSize = true;
+            macPredefTaglioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            macPredefTaglioLabel.Location = new System.Drawing.Point(425, 110);
+            macPredefTaglioLabel.Name = "macPredefTaglioLabel";
+            macPredefTaglioLabel.Size = new System.Drawing.Size(132, 18);
+            macPredefTaglioLabel.TabIndex = 25;
+            macPredefTaglioLabel.Text = "Mac Predef Taglio:";
+            // 
+            // costoBaseLabel
+            // 
+            costoBaseLabel.AutoSize = true;
+            costoBaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            costoBaseLabel.Location = new System.Drawing.Point(458, 136);
+            costoBaseLabel.Name = "costoBaseLabel";
+            costoBaseLabel.Size = new System.Drawing.Size(91, 18);
+            costoBaseLabel.TabIndex = 27;
+            costoBaseLabel.Text = "Costo Base:";
             // 
             // target2021DataSet
             // 
@@ -166,9 +310,34 @@
             this.dettArticoliBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.dettArticoliBindingNavigator.Name = "dettArticoliBindingNavigator";
             this.dettArticoliBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(768, 25);
+            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(803, 25);
             this.dettArticoliBindingNavigator.TabIndex = 0;
             this.dettArticoliBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Text = "di {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -202,16 +371,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
-            this.bindingNavigatorCountItem.Text = "di {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -234,26 +396,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // dettArticoliBindingNavigatorSaveItem
             // 
@@ -263,16 +407,6 @@
             this.dettArticoliBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.dettArticoliBindingNavigatorSaveItem.Text = "Salva dati";
             this.dettArticoliBindingNavigatorSaveItem.Click += new System.EventHandler(this.dettArticoliBindingNavigatorSaveItem_Click);
-            // 
-            // iDDettaglioArticoloLabel
-            // 
-            iDDettaglioArticoloLabel.AutoSize = true;
-            iDDettaglioArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            iDDettaglioArticoloLabel.Location = new System.Drawing.Point(47, 58);
-            iDDettaglioArticoloLabel.Name = "iDDettaglioArticoloLabel";
-            iDDettaglioArticoloLabel.Size = new System.Drawing.Size(138, 18);
-            iDDettaglioArticoloLabel.TabIndex = 1;
-            iDDettaglioArticoloLabel.Text = "IDDettaglio Articolo:";
             // 
             // iDDettaglioArticoloTextBox
             // 
@@ -284,16 +418,6 @@
             this.iDDettaglioArticoloTextBox.TabIndex = 2;
             this.iDDettaglioArticoloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // codice_articoloLabel
-            // 
-            codice_articoloLabel.AutoSize = true;
-            codice_articoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codice_articoloLabel.Location = new System.Drawing.Point(69, 84);
-            codice_articoloLabel.Name = "codice_articoloLabel";
-            codice_articoloLabel.Size = new System.Drawing.Size(109, 18);
-            codice_articoloLabel.TabIndex = 3;
-            codice_articoloLabel.Text = "codice articolo:";
-            // 
             // codice_articoloTextBox
             // 
             this.codice_articoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codice_articolo", true));
@@ -303,16 +427,6 @@
             this.codice_articoloTextBox.Size = new System.Drawing.Size(153, 24);
             this.codice_articoloTextBox.TabIndex = 4;
             this.codice_articoloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // progressivoLabel
-            // 
-            progressivoLabel.AutoSize = true;
-            progressivoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            progressivoLabel.Location = new System.Drawing.Point(84, 110);
-            progressivoLabel.Name = "progressivoLabel";
-            progressivoLabel.Size = new System.Drawing.Size(90, 18);
-            progressivoLabel.TabIndex = 5;
-            progressivoLabel.Text = "progressivo:";
             // 
             // progressivoTextBox
             // 
@@ -324,16 +438,6 @@
             this.progressivoTextBox.TabIndex = 6;
             this.progressivoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // codicePrimaStampoDimaLabel
-            // 
-            codicePrimaStampoDimaLabel.AutoSize = true;
-            codicePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(11, 136);
-            codicePrimaStampoDimaLabel.Name = "codicePrimaStampoDimaLabel";
-            codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(194, 18);
-            codicePrimaStampoDimaLabel.TabIndex = 7;
-            codicePrimaStampoDimaLabel.Text = "codice Prima Stampo Dima:";
-            // 
             // codicePrimaStampoDimaTextBox
             // 
             this.codicePrimaStampoDimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codicePrimaStampoDima", true));
@@ -343,16 +447,6 @@
             this.codicePrimaStampoDimaTextBox.Size = new System.Drawing.Size(153, 24);
             this.codicePrimaStampoDimaTextBox.TabIndex = 8;
             this.codicePrimaStampoDimaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // descrizionePrimaStampoDimaLabel
-            // 
-            descrizionePrimaStampoDimaLabel.AutoSize = true;
-            descrizionePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descrizionePrimaStampoDimaLabel.Location = new System.Drawing.Point(2, 162);
-            descrizionePrimaStampoDimaLabel.Name = "descrizionePrimaStampoDimaLabel";
-            descrizionePrimaStampoDimaLabel.Size = new System.Drawing.Size(226, 18);
-            descrizionePrimaStampoDimaLabel.TabIndex = 9;
-            descrizionePrimaStampoDimaLabel.Text = "descrizione Prima Stampo Dima:";
             // 
             // descrizionePrimaStampoDimaTextBox
             // 
@@ -364,16 +458,6 @@
             this.descrizionePrimaStampoDimaTextBox.TabIndex = 10;
             this.descrizionePrimaStampoDimaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // codiceInputLabel
-            // 
-            codiceInputLabel.AutoSize = true;
-            codiceInputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codiceInputLabel.Location = new System.Drawing.Point(78, 188);
-            codiceInputLabel.Name = "codiceInputLabel";
-            codiceInputLabel.Size = new System.Drawing.Size(94, 18);
-            codiceInputLabel.TabIndex = 11;
-            codiceInputLabel.Text = "Codice Input:";
-            // 
             // codiceInputTextBox
             // 
             this.codiceInputTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "CodiceInput", true));
@@ -383,16 +467,6 @@
             this.codiceInputTextBox.Size = new System.Drawing.Size(153, 24);
             this.codiceInputTextBox.TabIndex = 12;
             this.codiceInputTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // codiceOutputLabel
-            // 
-            codiceOutputLabel.AutoSize = true;
-            codiceOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codiceOutputLabel.Location = new System.Drawing.Point(70, 214);
-            codiceOutputLabel.Name = "codiceOutputLabel";
-            codiceOutputLabel.Size = new System.Drawing.Size(107, 18);
-            codiceOutputLabel.TabIndex = 13;
-            codiceOutputLabel.Text = "Codice Output:";
             // 
             // codiceOutputTextBox
             // 
@@ -404,16 +478,6 @@
             this.codiceOutputTextBox.TabIndex = 14;
             this.codiceOutputTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // codice_fornitoreLabel
-            // 
-            codice_fornitoreLabel.AutoSize = true;
-            codice_fornitoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codice_fornitoreLabel.Location = new System.Drawing.Point(65, 240);
-            codice_fornitoreLabel.Name = "codice_fornitoreLabel";
-            codice_fornitoreLabel.Size = new System.Drawing.Size(115, 18);
-            codice_fornitoreLabel.TabIndex = 15;
-            codice_fornitoreLabel.Text = "codice fornitore:";
-            // 
             // codice_fornitoreTextBox
             // 
             this.codice_fornitoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codice_fornitore", true));
@@ -423,16 +487,6 @@
             this.codice_fornitoreTextBox.Size = new System.Drawing.Size(153, 24);
             this.codice_fornitoreTextBox.TabIndex = 16;
             this.codice_fornitoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lavorazioneLabel
-            // 
-            lavorazioneLabel.AutoSize = true;
-            lavorazioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lavorazioneLabel.Location = new System.Drawing.Point(84, 266);
-            lavorazioneLabel.Name = "lavorazioneLabel";
-            lavorazioneLabel.Size = new System.Drawing.Size(88, 18);
-            lavorazioneLabel.TabIndex = 17;
-            lavorazioneLabel.Text = "lavorazione:";
             // 
             // lavorazioneTextBox
             // 
@@ -444,16 +498,6 @@
             this.lavorazioneTextBox.TabIndex = 18;
             this.lavorazioneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // percentualeLastraLabel
-            // 
-            percentualeLastraLabel.AutoSize = true;
-            percentualeLastraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            percentualeLastraLabel.Location = new System.Drawing.Point(49, 292);
-            percentualeLastraLabel.Name = "percentualeLastraLabel";
-            percentualeLastraLabel.Size = new System.Drawing.Size(135, 18);
-            percentualeLastraLabel.TabIndex = 19;
-            percentualeLastraLabel.Text = "Percentuale Lastra:";
-            // 
             // percentualeLastraTextBox
             // 
             this.percentualeLastraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "PercentualeLastra", true));
@@ -464,35 +508,15 @@
             this.percentualeLastraTextBox.TabIndex = 20;
             this.percentualeLastraTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lottoMinimoRiordinoLabel
-            // 
-            lottoMinimoRiordinoLabel.AutoSize = true;
-            lottoMinimoRiordinoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lottoMinimoRiordinoLabel.Location = new System.Drawing.Point(410, 58);
-            lottoMinimoRiordinoLabel.Name = "lottoMinimoRiordinoLabel";
-            lottoMinimoRiordinoLabel.Size = new System.Drawing.Size(159, 18);
-            lottoMinimoRiordinoLabel.TabIndex = 21;
-            lottoMinimoRiordinoLabel.Text = "Lotto Minimo Riordino:";
-            // 
             // lottoMinimoRiordinoTextBox
             // 
             this.lottoMinimoRiordinoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "LottoMinimoRiordino", true));
             this.lottoMinimoRiordinoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lottoMinimoRiordinoTextBox.Location = new System.Drawing.Point(575, 55);
             this.lottoMinimoRiordinoTextBox.Name = "lottoMinimoRiordinoTextBox";
-            this.lottoMinimoRiordinoTextBox.Size = new System.Drawing.Size(181, 24);
+            this.lottoMinimoRiordinoTextBox.Size = new System.Drawing.Size(84, 24);
             this.lottoMinimoRiordinoTextBox.TabIndex = 22;
             this.lottoMinimoRiordinoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // macPredefStampoLabel
-            // 
-            macPredefStampoLabel.AutoSize = true;
-            macPredefStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            macPredefStampoLabel.Location = new System.Drawing.Point(418, 84);
-            macPredefStampoLabel.Name = "macPredefStampoLabel";
-            macPredefStampoLabel.Size = new System.Drawing.Size(144, 18);
-            macPredefStampoLabel.TabIndex = 23;
-            macPredefStampoLabel.Text = "Mac Predef Stampo:";
             // 
             // macPredefStampoTextBox
             // 
@@ -500,19 +524,9 @@
             this.macPredefStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.macPredefStampoTextBox.Location = new System.Drawing.Point(575, 81);
             this.macPredefStampoTextBox.Name = "macPredefStampoTextBox";
-            this.macPredefStampoTextBox.Size = new System.Drawing.Size(181, 24);
+            this.macPredefStampoTextBox.Size = new System.Drawing.Size(84, 24);
             this.macPredefStampoTextBox.TabIndex = 24;
             this.macPredefStampoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // macPredefTaglioLabel
-            // 
-            macPredefTaglioLabel.AutoSize = true;
-            macPredefTaglioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            macPredefTaglioLabel.Location = new System.Drawing.Point(425, 110);
-            macPredefTaglioLabel.Name = "macPredefTaglioLabel";
-            macPredefTaglioLabel.Size = new System.Drawing.Size(132, 18);
-            macPredefTaglioLabel.TabIndex = 25;
-            macPredefTaglioLabel.Text = "Mac Predef Taglio:";
             // 
             // macPredefTaglioTextBox
             // 
@@ -520,19 +534,9 @@
             this.macPredefTaglioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.macPredefTaglioTextBox.Location = new System.Drawing.Point(575, 107);
             this.macPredefTaglioTextBox.Name = "macPredefTaglioTextBox";
-            this.macPredefTaglioTextBox.Size = new System.Drawing.Size(181, 24);
+            this.macPredefTaglioTextBox.Size = new System.Drawing.Size(84, 24);
             this.macPredefTaglioTextBox.TabIndex = 26;
             this.macPredefTaglioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // costoBaseLabel
-            // 
-            costoBaseLabel.AutoSize = true;
-            costoBaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            costoBaseLabel.Location = new System.Drawing.Point(458, 136);
-            costoBaseLabel.Name = "costoBaseLabel";
-            costoBaseLabel.Size = new System.Drawing.Size(91, 18);
-            costoBaseLabel.TabIndex = 27;
-            costoBaseLabel.Text = "Costo Base:";
             // 
             // costoBaseTextBox
             // 
@@ -540,16 +544,60 @@
             this.costoBaseTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.costoBaseTextBox.Location = new System.Drawing.Point(575, 133);
             this.costoBaseTextBox.Name = "costoBaseTextBox";
-            this.costoBaseTextBox.Size = new System.Drawing.Size(181, 24);
+            this.costoBaseTextBox.Size = new System.Drawing.Size(84, 24);
             this.costoBaseTextBox.TabIndex = 28;
             this.costoBaseTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(410, 240);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 18);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(410, 266);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 18);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(665, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 18);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(665, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 18);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "label4";
             // 
             // RigaCompleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(768, 515);
+            this.ClientSize = new System.Drawing.Size(803, 515);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(costoBaseLabel);
             this.Controls.Add(this.costoBaseTextBox);
             this.Controls.Add(macPredefTaglioLabel);
@@ -579,7 +627,7 @@
             this.Controls.Add(iDDettaglioArticoloLabel);
             this.Controls.Add(this.iDDettaglioArticoloTextBox);
             this.Controls.Add(this.dettArticoliBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RigaCompleta";
             this.Text = "RigaCompleta";
             this.Load += new System.EventHandler(this.RigaCompleta_Load);
@@ -626,5 +674,9 @@
         private System.Windows.Forms.TextBox macPredefStampoTextBox;
         private System.Windows.Forms.TextBox macPredefTaglioTextBox;
         private System.Windows.Forms.TextBox costoBaseTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
