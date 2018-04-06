@@ -12,9 +12,10 @@ namespace Target2021.SelezAna
 {
     public partial class SelForn : Form
     {
-        public SelForn()
+        public SelForn(string codice)
         {
             InitializeComponent();
+            CodFornitore = codice;
         }
 
         public string CodFornitore { get; set; }
@@ -31,7 +32,6 @@ namespace Target2021.SelezAna
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
             this.fornitoriTableAdapter.Fill(this.target2021DataSet.Fornitori);
-
         }
 
         private void fornitoriDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

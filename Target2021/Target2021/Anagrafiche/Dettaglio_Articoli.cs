@@ -95,7 +95,7 @@ namespace Target2021
 
         private void Ordina(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            this.dettArticoliDataGridView.Sort(this.dettArticoliDataGridView.Columns[0], ListSortDirection.Ascending);
+            //this.dettArticoliDataGridView.Sort(this.dettArticoliDataGridView.Columns[0], ListSortDirection.Ascending);
         }
 
         private void SelezionaRiga(object sender, DataGridViewCellEventArgs e)

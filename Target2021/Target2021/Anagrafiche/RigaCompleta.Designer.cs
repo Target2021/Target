@@ -103,7 +103,7 @@
             // 
             iDDettaglioArticoloLabel.AutoSize = true;
             iDDettaglioArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            iDDettaglioArticoloLabel.Location = new System.Drawing.Point(47, 58);
+            iDDettaglioArticoloLabel.Location = new System.Drawing.Point(70, 58);
             iDDettaglioArticoloLabel.Name = "iDDettaglioArticoloLabel";
             iDDettaglioArticoloLabel.Size = new System.Drawing.Size(142, 18);
             iDDettaglioArticoloLabel.TabIndex = 1;
@@ -113,7 +113,7 @@
             // 
             codice_articoloLabel.AutoSize = true;
             codice_articoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codice_articoloLabel.Location = new System.Drawing.Point(69, 84);
+            codice_articoloLabel.Location = new System.Drawing.Point(70, 84);
             codice_articoloLabel.Name = "codice_articoloLabel";
             codice_articoloLabel.Size = new System.Drawing.Size(113, 18);
             codice_articoloLabel.TabIndex = 3;
@@ -123,7 +123,7 @@
             // 
             progressivoLabel.AutoSize = true;
             progressivoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            progressivoLabel.Location = new System.Drawing.Point(84, 110);
+            progressivoLabel.Location = new System.Drawing.Point(70, 110);
             progressivoLabel.Name = "progressivoLabel";
             progressivoLabel.Size = new System.Drawing.Size(92, 18);
             progressivoLabel.TabIndex = 5;
@@ -133,27 +133,27 @@
             // 
             codicePrimaStampoDimaLabel.AutoSize = true;
             codicePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(11, 136);
+            codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(70, 136);
             codicePrimaStampoDimaLabel.Name = "codicePrimaStampoDimaLabel";
-            codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(194, 18);
+            codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(59, 18);
             codicePrimaStampoDimaLabel.TabIndex = 7;
-            codicePrimaStampoDimaLabel.Text = "codice Prima Stampo Dima:";
+            codicePrimaStampoDimaLabel.Text = "Codice:";
             // 
             // descrizionePrimaStampoDimaLabel
             // 
             descrizionePrimaStampoDimaLabel.AutoSize = true;
             descrizionePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descrizionePrimaStampoDimaLabel.Location = new System.Drawing.Point(2, 162);
+            descrizionePrimaStampoDimaLabel.Location = new System.Drawing.Point(70, 162);
             descrizionePrimaStampoDimaLabel.Name = "descrizionePrimaStampoDimaLabel";
-            descrizionePrimaStampoDimaLabel.Size = new System.Drawing.Size(226, 18);
+            descrizionePrimaStampoDimaLabel.Size = new System.Drawing.Size(91, 18);
             descrizionePrimaStampoDimaLabel.TabIndex = 9;
-            descrizionePrimaStampoDimaLabel.Text = "descrizione Prima Stampo Dima:";
+            descrizionePrimaStampoDimaLabel.Text = "Descrizione:";
             // 
             // codiceInputLabel
             // 
             codiceInputLabel.AutoSize = true;
             codiceInputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codiceInputLabel.Location = new System.Drawing.Point(78, 188);
+            codiceInputLabel.Location = new System.Drawing.Point(70, 188);
             codiceInputLabel.Name = "codiceInputLabel";
             codiceInputLabel.Size = new System.Drawing.Size(94, 18);
             codiceInputLabel.TabIndex = 11;
@@ -173,7 +173,7 @@
             // 
             codice_fornitoreLabel.AutoSize = true;
             codice_fornitoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codice_fornitoreLabel.Location = new System.Drawing.Point(78, 240);
+            codice_fornitoreLabel.Location = new System.Drawing.Point(70, 240);
             codice_fornitoreLabel.Name = "codice_fornitoreLabel";
             codice_fornitoreLabel.Size = new System.Drawing.Size(72, 18);
             codice_fornitoreLabel.TabIndex = 15;
@@ -183,7 +183,7 @@
             // 
             lavorazioneLabel.AutoSize = true;
             lavorazioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lavorazioneLabel.Location = new System.Drawing.Point(78, 266);
+            lavorazioneLabel.Location = new System.Drawing.Point(70, 266);
             lavorazioneLabel.Name = "lavorazioneLabel";
             lavorazioneLabel.Size = new System.Drawing.Size(93, 18);
             lavorazioneLabel.TabIndex = 17;
@@ -193,7 +193,7 @@
             // 
             percentualeLastraLabel.AutoSize = true;
             percentualeLastraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            percentualeLastraLabel.Location = new System.Drawing.Point(49, 292);
+            percentualeLastraLabel.Location = new System.Drawing.Point(70, 292);
             percentualeLastraLabel.Name = "percentualeLastraLabel";
             percentualeLastraLabel.Size = new System.Drawing.Size(135, 18);
             percentualeLastraLabel.TabIndex = 19;
@@ -203,7 +203,7 @@
             // 
             lottoMinimoRiordinoLabel.AutoSize = true;
             lottoMinimoRiordinoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lottoMinimoRiordinoLabel.Location = new System.Drawing.Point(410, 58);
+            lottoMinimoRiordinoLabel.Location = new System.Drawing.Point(70, 318);
             lottoMinimoRiordinoLabel.Name = "lottoMinimoRiordinoLabel";
             lottoMinimoRiordinoLabel.Size = new System.Drawing.Size(159, 18);
             lottoMinimoRiordinoLabel.TabIndex = 21;
@@ -213,7 +213,7 @@
             // 
             macPredefStampoLabel.AutoSize = true;
             macPredefStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            macPredefStampoLabel.Location = new System.Drawing.Point(418, 84);
+            macPredefStampoLabel.Location = new System.Drawing.Point(70, 344);
             macPredefStampoLabel.Name = "macPredefStampoLabel";
             macPredefStampoLabel.Size = new System.Drawing.Size(144, 18);
             macPredefStampoLabel.TabIndex = 23;
@@ -223,7 +223,7 @@
             // 
             macPredefTaglioLabel.AutoSize = true;
             macPredefTaglioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            macPredefTaglioLabel.Location = new System.Drawing.Point(425, 110);
+            macPredefTaglioLabel.Location = new System.Drawing.Point(70, 370);
             macPredefTaglioLabel.Name = "macPredefTaglioLabel";
             macPredefTaglioLabel.Size = new System.Drawing.Size(132, 18);
             macPredefTaglioLabel.TabIndex = 25;
@@ -233,7 +233,7 @@
             // 
             costoBaseLabel.AutoSize = true;
             costoBaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            costoBaseLabel.Location = new System.Drawing.Point(458, 136);
+            costoBaseLabel.Location = new System.Drawing.Point(70, 397);
             costoBaseLabel.Name = "costoBaseLabel";
             costoBaseLabel.Size = new System.Drawing.Size(91, 18);
             costoBaseLabel.TabIndex = 27;
@@ -454,7 +454,7 @@
             this.descrizionePrimaStampoDimaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descrizionePrimaStampoDimaTextBox.Location = new System.Drawing.Point(236, 159);
             this.descrizionePrimaStampoDimaTextBox.Name = "descrizionePrimaStampoDimaTextBox";
-            this.descrizionePrimaStampoDimaTextBox.Size = new System.Drawing.Size(343, 24);
+            this.descrizionePrimaStampoDimaTextBox.Size = new System.Drawing.Size(423, 24);
             this.descrizionePrimaStampoDimaTextBox.TabIndex = 10;
             this.descrizionePrimaStampoDimaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -515,7 +515,7 @@
             // 
             this.lottoMinimoRiordinoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "LottoMinimoRiordino", true));
             this.lottoMinimoRiordinoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lottoMinimoRiordinoTextBox.Location = new System.Drawing.Point(575, 55);
+            this.lottoMinimoRiordinoTextBox.Location = new System.Drawing.Point(236, 315);
             this.lottoMinimoRiordinoTextBox.Name = "lottoMinimoRiordinoTextBox";
             this.lottoMinimoRiordinoTextBox.Size = new System.Drawing.Size(84, 24);
             this.lottoMinimoRiordinoTextBox.TabIndex = 22;
@@ -525,17 +525,18 @@
             // 
             this.macPredefStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "MacPredefStampo", true));
             this.macPredefStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macPredefStampoTextBox.Location = new System.Drawing.Point(575, 81);
+            this.macPredefStampoTextBox.Location = new System.Drawing.Point(236, 341);
             this.macPredefStampoTextBox.Name = "macPredefStampoTextBox";
             this.macPredefStampoTextBox.Size = new System.Drawing.Size(84, 24);
             this.macPredefStampoTextBox.TabIndex = 24;
             this.macPredefStampoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.macPredefStampoTextBox.TextChanged += new System.EventHandler(this.AggMachStampPredef);
             // 
             // macPredefTaglioTextBox
             // 
             this.macPredefTaglioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "MacPredefTaglio", true));
             this.macPredefTaglioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macPredefTaglioTextBox.Location = new System.Drawing.Point(575, 107);
+            this.macPredefTaglioTextBox.Location = new System.Drawing.Point(236, 367);
             this.macPredefTaglioTextBox.Name = "macPredefTaglioTextBox";
             this.macPredefTaglioTextBox.Size = new System.Drawing.Size(84, 24);
             this.macPredefTaglioTextBox.TabIndex = 26;
@@ -545,7 +546,7 @@
             // 
             this.costoBaseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "CostoBase", true));
             this.costoBaseTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costoBaseTextBox.Location = new System.Drawing.Point(575, 133);
+            this.costoBaseTextBox.Location = new System.Drawing.Point(236, 394);
             this.costoBaseTextBox.Name = "costoBaseTextBox";
             this.costoBaseTextBox.Size = new System.Drawing.Size(84, 24);
             this.costoBaseTextBox.TabIndex = 28;
@@ -555,7 +556,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(410, 240);
+            this.label1.Location = new System.Drawing.Point(395, 240);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 29;
@@ -565,7 +566,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(410, 266);
+            this.label2.Location = new System.Drawing.Point(395, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 18);
             this.label2.TabIndex = 30;
@@ -575,17 +576,18 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(665, 84);
+            this.label3.Location = new System.Drawing.Point(326, 344);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 18);
             this.label3.TabIndex = 31;
             this.label3.Text = "label3";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(665, 110);
+            this.label4.Location = new System.Drawing.Point(326, 370);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 18);
             this.label4.TabIndex = 32;
@@ -596,7 +598,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(803, 515);
+            this.ClientSize = new System.Drawing.Size(803, 426);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

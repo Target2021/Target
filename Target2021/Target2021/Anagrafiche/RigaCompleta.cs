@@ -40,13 +40,21 @@ namespace Target2021
         private void AggiornaFornitore(object sender, EventArgs e)
         {
             string CodFor,stringaconnessione, sql, NomeFornitore;
+            NomeFornitore = label1.Text;
             CodFor = codice_fornitoreTextBox.Text;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
             sql = "SELECT ragione_sociale FROM Fornitori WHERE codice='"+CodFor+"'";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            NomeFornitore = comando.ExecuteScalar().ToString();
+            try
+            {
+                NomeFornitore = comando.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
             connessione.Close();
             label1.Text = NomeFornitore;
         }
@@ -67,7 +75,7 @@ namespace Target2021
 
         private void CambiaFornitore(object sender, EventArgs e)
         {
-            SelForn selezionafornitore = new SelForn();
+            SelForn selezionafornitore = new SelForn(codice_fornitoreTextBox.Text);
             selezionafornitore.FormClosed += new FormClosedEventHandler(ChiudiSelezionaFornitore);
             selezionafornitore.Show();
         }
@@ -77,6 +85,20 @@ namespace Target2021
             SelForn sf = (SelForn) sender;
             string codfor = sf.CodFornitore;
             codice_fornitoreTextBox.Text = codfor;
+        }
+
+        private void AggMachStampPredef(object sender, EventArgs e)
+        {
+            string CodLav, stringaconnessione, sql, NomeLavorazione;
+            CodLav = lavorazioneTextBox.Text;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT Descrizione FROM Fasi WHERE IDFase=" + CodLav;
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            NomeLavorazione = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            label2.Text = NomeLavorazione;
         }
     }
 }
