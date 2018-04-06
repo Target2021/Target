@@ -71,6 +71,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Anagrafiche\AnaDime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaDime.Designer.cs">
+      <DependentUpon>AnaDime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaFasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaFasi.Designer.cs">
+      <DependentUpon>AnaFasi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMateriePrime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMateriePrime.Designer.cs">
+      <DependentUpon>AnaMateriePrime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMStampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMStampo.Designer.cs">
+      <DependentUpon>AnaMStampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaStampi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaStampi.Designer.cs">
+      <DependentUpon>AnaStampi.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckImpiegato.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,10 +119,10 @@
     <Compile Include="CheckTaglio.Designer.cs">
       <DependentUpon>CheckTaglio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clienti.cs">
+    <Compile Include="Anagrafiche\Clienti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clienti.Designer.cs">
+    <Compile Include="Anagrafiche\Clienti.Designer.cs">
       <DependentUpon>Clienti.cs</DependentUpon>
     </Compile>
     <Compile Include="Commessa.cs" />
@@ -102,10 +132,10 @@
     <Compile Include="Contatori.Designer.cs">
       <DependentUpon>Contatori.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dettaglio_Articoli.cs">
+    <Compile Include="Anagrafiche\Dettaglio_Articoli.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dettaglio_Articoli.Designer.cs">
+    <Compile Include="Anagrafiche\Dettaglio_Articoli.Designer.cs">
       <DependentUpon>Dettaglio_Articoli.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -134,11 +164,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RigaCompleta.cs">
+    <Compile Include="Anagrafiche\RigaCompleta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RigaCompleta.Designer.cs">
+    <Compile Include="Anagrafiche\RigaCompleta.Designer.cs">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelezAna\SelForn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelezAna\SelForn.Designer.cs">
+      <DependentUpon>SelForn.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Target2021DataSet.Designer.cs">
@@ -146,24 +182,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Target2021DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Testata_articoli.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Testata_articoli.Designer.cs">
-      <DependentUpon>Testata_articoli.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Testata_Ordini.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Testata_Ordini.Designer.cs">
-      <DependentUpon>Testata_Ordini.cs</DependentUpon>
-    </Compile>
     <Compile Include="RegistraUtenti.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistraUtenti.Designer.cs">
       <DependentUpon>RegistraUtenti.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Anagrafiche\AnaDime.resx">
+      <DependentUpon>AnaDime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaFasi.resx">
+      <DependentUpon>AnaFasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaMateriePrime.resx">
+      <DependentUpon>AnaMateriePrime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaMStampo.resx">
+      <DependentUpon>AnaMStampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaStampi.resx">
+      <DependentUpon>AnaStampi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckImpiegato.resx">
       <DependentUpon>CheckImpiegato.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,13 +212,13 @@
     <EmbeddedResource Include="CheckTaglio.resx">
       <DependentUpon>CheckTaglio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clienti.resx">
+    <EmbeddedResource Include="Anagrafiche\Clienti.resx">
       <DependentUpon>Clienti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contatori.resx">
       <DependentUpon>Contatori.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dettaglio_Articoli.resx">
+    <EmbeddedResource Include="Anagrafiche\Dettaglio_Articoli.resx">
       <DependentUpon>Dettaglio_Articoli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -207,14 +246,11 @@
     <EmbeddedResource Include="RegistraUtenti.resx">
       <DependentUpon>RegistraUtenti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RigaCompleta.resx">
+    <EmbeddedResource Include="Anagrafiche\RigaCompleta.resx">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Testata_articoli.resx">
-      <DependentUpon>Testata_articoli.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Testata_Ordini.resx">
-      <DependentUpon>Testata_Ordini.cs</DependentUpon>
+    <EmbeddedResource Include="SelezAna\SelForn.resx">
+      <DependentUpon>SelForn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

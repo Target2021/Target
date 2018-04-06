@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Target2021.Anagrafiche;
 
 namespace Target2021
 {
@@ -67,13 +68,6 @@ namespace Target2021
                 get { return Color.Aquamarine; }
             }
         }
-        private void anaMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.anaMagazziniBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -89,32 +83,11 @@ namespace Target2021
             this.WindowState = FormWindowState.Maximized;
         }
        
-        private void testataToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Testata_articoli testata = new Testata_articoli();
-            testata.MdiParent = this;
-            testata.Show();
-        }
-
         private void dettaglioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dettaglio_Articoli dettaglio = new Dettaglio_Articoli();
             dettaglio.MdiParent = this;
             dettaglio.Show();
-        }
-
-        private void clientiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Clienti clienti = new Clienti();
-            clienti.MdiParent = this;
-            clienti.Show();
-        }
-
-        private void testataOrdiniToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Testata_Ordini TestataOrdini = new Testata_Ordini();
-            TestataOrdini.MdiParent = this;
-            TestataOrdini.Show();
         }
 
         private void contatoriAziendaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -129,11 +102,6 @@ namespace Target2021
             NewOrderCheck ControllaNuoviOrdini = new NewOrderCheck();
             ControllaNuoviOrdini.MdiParent = this;
             ControllaNuoviOrdini.Show();
-        }
-
-        private void fornitoriToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void clientiToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -188,6 +156,41 @@ namespace Target2021
         private void caricoscaricoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Generare etichetta da attaccare sul bancale vedi foglio etichetta file di XLS
+        }
+
+        private void materiePrimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaMateriePrime AnaPrime = new AnaMateriePrime();
+            AnaPrime.MdiParent = this;
+            AnaPrime.Show();
+        }
+
+        private void stampiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaStampi AS = new AnaStampi();
+            AS.MdiParent = this;
+            AS.Show();
+        }
+
+        private void dimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaDime AD = new AnaDime();
+            AD.MdiParent = this;
+            AD.Show();
+        }
+
+        private void macchineDiStampoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaMStampo AMS = new AnaMStampo();
+            AMS.MdiParent = this;
+            AMS.Show();
+        }
+
+        private void fasiLavorazioneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaFasi AF = new AnaFasi();
+            AF.MdiParent = this;
+            AF.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

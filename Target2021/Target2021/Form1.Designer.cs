@@ -41,6 +41,8 @@
             this.clientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornitoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macchinariToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.macchineDiStampoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.macchineDiTaglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.strumentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiePrimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stampiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -163,12 +165,12 @@
             this.dettaglioToolStripMenuItem});
             this.articoloToolStripMenuItem.Name = "articoloToolStripMenuItem";
             this.articoloToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.articoloToolStripMenuItem.Text = "Articolo";
+            this.articoloToolStripMenuItem.Text = "Articoli";
             // 
             // dettaglioToolStripMenuItem
             // 
             this.dettaglioToolStripMenuItem.Name = "dettaglioToolStripMenuItem";
-            this.dettaglioToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.dettaglioToolStripMenuItem.Size = new System.Drawing.Size(151, 32);
             this.dettaglioToolStripMenuItem.Text = "Dettaglio";
             this.dettaglioToolStripMenuItem.Click += new System.EventHandler(this.dettaglioToolStripMenuItem_Click);
             // 
@@ -184,13 +186,28 @@
             this.fornitoriToolStripMenuItem.Name = "fornitoriToolStripMenuItem";
             this.fornitoriToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.fornitoriToolStripMenuItem.Text = "Fornitori";
-            this.fornitoriToolStripMenuItem.Click += new System.EventHandler(this.fornitoriToolStripMenuItem_Click);
             // 
             // macchinariToolStripMenuItem
             // 
+            this.macchinariToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.macchineDiStampoToolStripMenuItem,
+            this.macchineDiTaglioToolStripMenuItem});
             this.macchinariToolStripMenuItem.Name = "macchinariToolStripMenuItem";
             this.macchinariToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.macchinariToolStripMenuItem.Text = "Macchinari";
+            // 
+            // macchineDiStampoToolStripMenuItem
+            // 
+            this.macchineDiStampoToolStripMenuItem.Name = "macchineDiStampoToolStripMenuItem";
+            this.macchineDiStampoToolStripMenuItem.Size = new System.Drawing.Size(229, 32);
+            this.macchineDiStampoToolStripMenuItem.Text = "Macchine di stampo";
+            this.macchineDiStampoToolStripMenuItem.Click += new System.EventHandler(this.macchineDiStampoToolStripMenuItem_Click);
+            // 
+            // macchineDiTaglioToolStripMenuItem
+            // 
+            this.macchineDiTaglioToolStripMenuItem.Name = "macchineDiTaglioToolStripMenuItem";
+            this.macchineDiTaglioToolStripMenuItem.Size = new System.Drawing.Size(229, 32);
+            this.macchineDiTaglioToolStripMenuItem.Text = "Macchine di taglio";
             // 
             // strumentiToolStripMenuItem
             // 
@@ -208,18 +225,21 @@
             this.materiePrimeToolStripMenuItem.Name = "materiePrimeToolStripMenuItem";
             this.materiePrimeToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
             this.materiePrimeToolStripMenuItem.Text = "Materie prime";
+            this.materiePrimeToolStripMenuItem.Click += new System.EventHandler(this.materiePrimeToolStripMenuItem_Click);
             // 
             // stampiToolStripMenuItem
             // 
             this.stampiToolStripMenuItem.Name = "stampiToolStripMenuItem";
             this.stampiToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
             this.stampiToolStripMenuItem.Text = "Stampi";
+            this.stampiToolStripMenuItem.Click += new System.EventHandler(this.stampiToolStripMenuItem_Click);
             // 
             // dimeToolStripMenuItem
             // 
             this.dimeToolStripMenuItem.Name = "dimeToolStripMenuItem";
             this.dimeToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
             this.dimeToolStripMenuItem.Text = "Dime";
+            this.dimeToolStripMenuItem.Click += new System.EventHandler(this.dimeToolStripMenuItem_Click);
             // 
             // minuterieToolStripMenuItem
             // 
@@ -238,6 +258,7 @@
             this.fasiLavorazioneToolStripMenuItem.Name = "fasiLavorazioneToolStripMenuItem";
             this.fasiLavorazioneToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.fasiLavorazioneToolStripMenuItem.Text = "Fasi lavorazione";
+            this.fasiLavorazioneToolStripMenuItem.Click += new System.EventHandler(this.fasiLavorazioneToolStripMenuItem_Click);
             // 
             // compatibilitàStampiToolStripMenuItem
             // 
@@ -268,7 +289,6 @@
             this.testataOrdiniToolStripMenuItem.Name = "testataOrdiniToolStripMenuItem";
             this.testataOrdiniToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
             this.testataOrdiniToolStripMenuItem.Text = "Testata ordini";
-            this.testataOrdiniToolStripMenuItem.Click += new System.EventHandler(this.testataOrdiniToolStripMenuItem_Click);
             // 
             // dettaglioOrdiniToolStripMenuItem
             // 
@@ -477,6 +497,8 @@
         private System.Windows.Forms.ToolStripMenuItem taglioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registraUtenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pianificazioneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem macchineDiStampoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem macchineDiTaglioToolStripMenuItem;
     }
 }
 
