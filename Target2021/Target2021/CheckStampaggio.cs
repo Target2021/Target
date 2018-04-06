@@ -58,24 +58,20 @@ namespace Target2021
                 giornirim = DateTime.Now.Day - giorniconsegna;
                 diffmese = DateTime.Now.Month - dataconsegna.Month;
                 diffanno = DateTime.Now.Year - dataconsegna.Year;
-                if(giornirim>0&&giornirim<=1&&diffmese==0&&diffanno==0|| diffmese>=1)
+                DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+                imageColumn.Name = "Disponibilità";
+                if (giornirim>0&&giornirim<=1&&diffmese==0&&diffanno==0|| diffmese>=1)
                 {
-                    DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-                    imageColumn.Name = "emoticon";
                     imageColumn.Image = Properties.Resources.arrabiato;
                     this.dataGridView1.Columns.Add(imageColumn);
                 }
                 if(giornirim>1&&giornirim<=5&&diffmese==0&&diffanno==0)
                 {
-                    DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-                    imageColumn.Name = "emoticon";
                     imageColumn.Image = Properties.Resources.preoccupato;
                     this.dataGridView1.Columns.Add(imageColumn);
                 }
                 if(giornirim>5&&diffmese==0&&diffanno==0||diffmese<=-1||giornirim<=-1)
                 {
-                    DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-                    imageColumn.Name = "emoticon";
                     imageColumn.Image = Properties.Resources.felice;
                     this.dataGridView1.Columns.Add(imageColumn);
                 }
