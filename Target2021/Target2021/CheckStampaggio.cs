@@ -128,7 +128,7 @@ namespace Target2021
             {
                 idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells[1].Value);
                 idcommessa.Replace("  ", string.Empty);
-                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells[6].Value);
+                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells["NRPezziDaLavorare"].Value);
                 String stringa = Properties.Resources.StringaConnessione;
                 string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[9].Value + "'";
                 SqlConnection con = new SqlConnection(stringa);
@@ -195,7 +195,7 @@ namespace Target2021
             CheckGiacenzaRow(e.RowIndex);
         }
 
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void clikka(object sender, DataGridViewCellEventArgs e)
         {
             CheckGiacenzaRow(e.RowIndex);
         }

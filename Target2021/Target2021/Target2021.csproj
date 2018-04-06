@@ -278,7 +278,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Immagini\Immagine1.png" />
-    <Content Include="Immagini\static1.squarespace.com.png" />
     <None Include="Resources\felice.png" />
     <None Include="Resources\preoccupato.jpg" />
     <None Include="Resources\arrabiato.jpg" />
