@@ -133,4 +133,13 @@
   <data name="update_arrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\update-arrows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="arrabiato" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrabiato.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="felice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\felice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="preoccupato" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preoccupato.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

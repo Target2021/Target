@@ -119,5 +119,15 @@ namespace Target2021
                 this.Close();
             }
         }
+
+        private void iDCommessaLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iDCommessaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

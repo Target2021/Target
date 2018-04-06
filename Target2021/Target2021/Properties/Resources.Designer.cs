@@ -72,9 +72,39 @@ namespace Target2021.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrabiato {
+            get {
+                object obj = ResourceManager.GetObject("arrabiato", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap felice {
+            get {
+                object obj = ResourceManager.GetObject("felice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap linea_tratteggiata {
             get {
                 object obj = ResourceManager.GetObject("linea-tratteggiata", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap preoccupato {
+            get {
+                object obj = ResourceManager.GetObject("preoccupato", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

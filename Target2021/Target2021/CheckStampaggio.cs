@@ -24,6 +24,7 @@ namespace Target2021
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             LoadStampaggio();
+            CheckConsegna();
         }
 
         private void LoadStampaggio()
@@ -43,7 +44,41 @@ namespace Target2021
             sda.Update(dataTable);
             con.Close();
         }
-
+        private void CheckConsegna()
+        {
+            int giorniconsegna = 0;
+            int diffmese = 0;
+            int giornirim = 0;
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                String stringa = Properties.Resources.StringaConnessione;
+                DateTime dataconsegna = Convert.ToDateTime(dataGridView1.Rows[row.Index].Cells[4].Value);
+                giorniconsegna = dataconsegna.Day;
+                giornirim = DateTime.Now.Day - giorniconsegna;
+                diffmese = DateTime.Now.Month - dataconsegna.Month;
+                if(giornirim<=1&& diffmese==0)
+                {
+                    DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+                    imageColumn.Name = "emoticon";
+                    imageColumn.Image = Properties.Resources.arrabiato;
+                    this.dataGridView1.Columns.Add(imageColumn);
+                }
+                if(Enumerable.Range(2,5).Contains(giornirim))
+                {
+                    DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+                    imageColumn.Name = "emoticon";
+                    imageColumn.Image = Properties.Resources.preoccupato;
+                    this.dataGridView1.Columns.Add(imageColumn);
+                }
+                if(giornirim>5)
+                {
+                    DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+                    imageColumn.Name = "emoticon";
+                    imageColumn.Image = Properties.Resources.felice;
+                    this.dataGridView1.Columns.Add(imageColumn);
+                }
+            }          
+        }
         private void CheckGiacenzaTotale()
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
