@@ -89,16 +89,16 @@ namespace Target2021
 
         private void AggMachStampPredef(object sender, EventArgs e)
         {
-            string CodLav, stringaconnessione, sql, NomeLavorazione;
-            CodLav = lavorazioneTextBox.Text;
+            string CodMSP, stringaconnessione, sql, NomeMachS;
+            CodMSP = macPredefStampoTextBox.Text;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT Descrizione FROM Fasi WHERE IDFase=" + CodLav;
+            sql = "SELECT Descrizione FROM MacchineStampo WHERE IdStampa=" + CodMSP;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            NomeLavorazione = comando.ExecuteScalar().ToString();
+            NomeMachS = comando.ExecuteScalar().ToString();
             connessione.Close();
-            label2.Text = NomeLavorazione;
+            label3.Text = NomeMachS;
         }
     }
 }

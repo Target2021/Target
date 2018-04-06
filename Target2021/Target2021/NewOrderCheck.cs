@@ -100,7 +100,7 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int i, IDOrdine, UltimoID, NumFasi, fase = 0, progressivo, NrPezzi;
+            int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
             string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo, IdFornitore, IDMatPrima;
             SqlDataReader fasi;
