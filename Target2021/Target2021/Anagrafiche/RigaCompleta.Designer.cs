@@ -183,11 +183,11 @@
             // 
             lavorazioneLabel.AutoSize = true;
             lavorazioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lavorazioneLabel.Location = new System.Drawing.Point(84, 266);
+            lavorazioneLabel.Location = new System.Drawing.Point(78, 266);
             lavorazioneLabel.Name = "lavorazioneLabel";
-            lavorazioneLabel.Size = new System.Drawing.Size(88, 18);
+            lavorazioneLabel.Size = new System.Drawing.Size(93, 18);
             lavorazioneLabel.TabIndex = 17;
-            lavorazioneLabel.Text = "lavorazione:";
+            lavorazioneLabel.Text = "Lavorazione:";
             // 
             // percentualeLastraLabel
             // 
@@ -487,6 +487,8 @@
             this.codice_fornitoreTextBox.Size = new System.Drawing.Size(153, 24);
             this.codice_fornitoreTextBox.TabIndex = 16;
             this.codice_fornitoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.codice_fornitoreTextBox.Click += new System.EventHandler(this.CambiaFornitore);
+            this.codice_fornitoreTextBox.TextChanged += new System.EventHandler(this.AggiornaFornitore);
             // 
             // lavorazioneTextBox
             // 
@@ -497,6 +499,7 @@
             this.lavorazioneTextBox.Size = new System.Drawing.Size(153, 24);
             this.lavorazioneTextBox.TabIndex = 18;
             this.lavorazioneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lavorazioneTextBox.TextChanged += new System.EventHandler(this.AggiornaLavorazione);
             // 
             // percentualeLastraTextBox
             // 

@@ -170,6 +170,12 @@
     <Compile Include="Anagrafiche\RigaCompleta.Designer.cs">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelezAna\SelForn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelezAna\SelForn.Designer.cs">
+      <DependentUpon>SelForn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\RigaCompleta.resx">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelezAna\SelForn.resx">
+      <DependentUpon>SelForn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
