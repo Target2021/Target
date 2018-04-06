@@ -16,11 +16,14 @@ namespace Target2021
     public partial class RigaCompleta : Form
     {
         public int ID;
+        public string c, v;
 
-        public RigaCompleta(int idArt)
+        public RigaCompleta(int idArt, string campo, string valore)
         {
             InitializeComponent();
             ID = idArt;
+            c = campo;
+            v = valore;
         }
 
         private void dettArticoliBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -34,6 +37,8 @@ namespace Target2021
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
+            if (c == "Codice articolo") dettArticoliBindingSource.Filter = "codice_articolo='" + v + "'";
+            if (c == "Descrizione") dettArticoliBindingSource.Filter = "descrizionePrimaStampoDima LIKE '*" + v + "*'";
             dettArticoliBindingSource.Position = ID;
         }
 
@@ -99,6 +104,20 @@ namespace Target2021
             NomeMachS = comando.ExecuteScalar().ToString();
             connessione.Close();
             label3.Text = NomeMachS;
+        }
+
+        private void AggMachTaglPredef(object sender, EventArgs e)
+        {
+            string CodMTP, stringaconnessione, sql, NomeMachT;
+            CodMTP = macPredefTaglioTextBox.Text;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT Descrizione FROM MacchineTaglio WHERE IdTaglio=" + CodMTP;
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            NomeMachT = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            label4.Text = NomeMachT;
         }
     }
 }

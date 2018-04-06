@@ -411,6 +411,7 @@
             // iDDettaglioArticoloTextBox
             // 
             this.iDDettaglioArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "IDDettaglioArticolo", true));
+            this.iDDettaglioArticoloTextBox.Enabled = false;
             this.iDDettaglioArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iDDettaglioArticoloTextBox.Location = new System.Drawing.Point(236, 55);
             this.iDDettaglioArticoloTextBox.Name = "iDDettaglioArticoloTextBox";
@@ -541,6 +542,7 @@
             this.macPredefTaglioTextBox.Size = new System.Drawing.Size(84, 24);
             this.macPredefTaglioTextBox.TabIndex = 26;
             this.macPredefTaglioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.macPredefTaglioTextBox.TextChanged += new System.EventHandler(this.AggMachTaglPredef);
             // 
             // costoBaseTextBox
             // 

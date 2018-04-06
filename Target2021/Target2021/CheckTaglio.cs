@@ -22,7 +22,7 @@ namespace Target2021
         private void CheckTaglio_Load(object sender, EventArgs e)
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "Select CodCommessa,DataCommessa,IDCliente,DescrArticolo,IDMachTaglio, IDDima,CodArtiDopoTaglio, SecondiCicloTaglio,Stato from Commesse where TipoCommessa=3 AND Stato IN (3,2,1)";
+            string query = "Select CodCommessa,DataCommessa,IDCliente,DescrArticolo,IDMachTaglio, IDDima,CodArtiDopoTaglio, SecondiCicloTaglio,Stato from Commesse where TipoCommessa=3 AND Stato IN (0,1)";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -41,15 +41,15 @@ namespace Target2021
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 int stato = Convert.ToInt32(dataGridView1.Rows[i].Cells[8].Value);
+                if (stato == 0)
+                {
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
                 if (stato == 1)
                 {
                     dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                 }
                 if (stato == 2)
-                {
-                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                }
-                if (stato == 3)
                 {
                     dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Green;
                 }

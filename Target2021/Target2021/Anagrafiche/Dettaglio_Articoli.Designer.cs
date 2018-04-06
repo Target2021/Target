@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dettaglio_Articoli));
-            this.CERCA = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Filter = new System.Windows.Forms.ComboBox();
             this.target2021DataSet = new Target2021.Target2021DataSet();
@@ -59,25 +58,13 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingNavigator)).BeginInit();
             this.dettArticoliBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CERCA
-            // 
-            this.CERCA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CERCA.Location = new System.Drawing.Point(540, 35);
-            this.CERCA.Margin = new System.Windows.Forms.Padding(2);
-            this.CERCA.Name = "CERCA";
-            this.CERCA.Size = new System.Drawing.Size(99, 28);
-            this.CERCA.TabIndex = 2;
-            this.CERCA.Text = "CERCA";
-            this.CERCA.UseVisualStyleBackColor = true;
-            this.CERCA.Click += new System.EventHandler(this.Button2_Click);
-            this.CERCA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox1
             // 
@@ -87,20 +74,20 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(149, 24);
             this.textBox1.TabIndex = 3;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // Filter
             // 
             this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filter.FormattingEnabled = true;
             this.Filter.Items.AddRange(new object[] {
-            "IDArticolo",
-            "Codice_articolo",
-            "Progressivo"});
-            this.Filter.Location = new System.Drawing.Point(254, 39);
+            "Codice articolo",
+            "Descrizione",
+            "Codice Input",
+            "Codice Output"});
+            this.Filter.Location = new System.Drawing.Point(227, 39);
             this.Filter.Margin = new System.Windows.Forms.Padding(2);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(117, 26);
+            this.Filter.Size = new System.Drawing.Size(144, 26);
             this.Filter.TabIndex = 7;
             // 
             // target2021DataSet
@@ -296,7 +283,6 @@
             this.dettArticoliDataGridView.Size = new System.Drawing.Size(875, 387);
             this.dettArticoliDataGridView.TabIndex = 8;
             this.dettArticoliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelezionaRiga);
-            this.dettArticoliDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.Ordina);
             // 
             // IDDettaglioArticolo
             // 
@@ -353,11 +339,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(124, 42);
+            this.label1.Location = new System.Drawing.Point(97, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 18);
             this.label1.TabIndex = 9;
             this.label1.Text = "Campo da filtrare:";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(529, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 24);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "CERCA";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Dettaglio_Articoli
             // 
@@ -365,12 +362,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(877, 464);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dettArticoliDataGridView);
             this.Controls.Add(this.dettArticoliBindingNavigator);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.CERCA);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dettaglio_Articoli";
             this.Text = "Dettaglio_Articolo";
@@ -387,7 +384,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button CERCA;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox Filter;
         private Target2021DataSet target2021DataSet;
@@ -416,5 +412,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Button button1;
     }
 }

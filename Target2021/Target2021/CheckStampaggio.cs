@@ -161,6 +161,7 @@ namespace Target2021
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {            
             CheckGiacenzaTotale();
+            dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)

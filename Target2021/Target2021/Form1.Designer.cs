@@ -73,6 +73,7 @@
             this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assemblaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -376,7 +377,8 @@
             this.impiegataToolStripMenuItem,
             this.pianificazioneToolStripMenuItem,
             this.stampaggioToolStripMenuItem,
-            this.taglioToolStripMenuItem});
+            this.taglioToolStripMenuItem,
+            this.assemblaggioToolStripMenuItem});
             this.ruoliToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F);
             this.ruoliToolStripMenuItem.Name = "ruoliToolStripMenuItem";
             this.ruoliToolStripMenuItem.Size = new System.Drawing.Size(62, 32);
@@ -432,6 +434,12 @@
             this.esciToolStripMenuItem.Size = new System.Drawing.Size(53, 32);
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
+            // 
+            // assemblaggioToolStripMenuItem
+            // 
+            this.assemblaggioToolStripMenuItem.Name = "assemblaggioToolStripMenuItem";
+            this.assemblaggioToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.assemblaggioToolStripMenuItem.Text = "Assemblaggio";
             // 
             // Home
             // 
@@ -499,6 +507,7 @@
         private System.Windows.Forms.ToolStripMenuItem pianificazioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macchineDiStampoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macchineDiTaglioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem assemblaggioToolStripMenuItem;
     }
 }
 

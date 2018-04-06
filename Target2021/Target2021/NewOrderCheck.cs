@@ -128,17 +128,20 @@ namespace Target2021
                         com.CodCommessa = "OF" + IDOrdine;
                         com.TipoCommessa = 1;
                     }
-
                     if (progressivo == 2)
                     {
                         com.CodCommessa = "S" + IDOrdine;
                         com.TipoCommessa = 2;
                     }
-
                     if (progressivo == 3)
                     {
                         com.CodCommessa = "T" + IDOrdine;
                         com.TipoCommessa = 3;
+                    }
+                    if (progressivo == 4)
+                    {
+                        com.CodCommessa = "ASS" + IDOrdine;
+                        com.TipoCommessa = 4;
                     }
                     com.NrCommessa = IDOrdine;
                     DataOrdine = RecuperaDataOrdine(IDOrdine);
@@ -334,7 +337,7 @@ namespace Target2021
             string idmp;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT codice_articolo_bc FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND progressivo=" + i;
+            sql = "SELECT codicePrimaStampoDima FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND progressivo=" + i;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             idmp = comando.ExecuteScalar().ToString();
