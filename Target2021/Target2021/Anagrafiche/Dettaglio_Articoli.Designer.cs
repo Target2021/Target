@@ -274,7 +274,8 @@
             // 
             // dettArticoliDataGridView
             // 
-            this.dettArticoliDataGridView.AllowUserToOrderColumns = true;
+            this.dettArticoliDataGridView.AllowUserToAddRows = false;
+            this.dettArticoliDataGridView.AllowUserToDeleteRows = false;
             this.dettArticoliDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dettArticoliDataGridView.AutoGenerateColumns = false;
@@ -290,6 +291,7 @@
             this.dettArticoliDataGridView.DataSource = this.dettArticoliBindingSource;
             this.dettArticoliDataGridView.Location = new System.Drawing.Point(0, 76);
             this.dettArticoliDataGridView.Name = "dettArticoliDataGridView";
+            this.dettArticoliDataGridView.ReadOnly = true;
             this.dettArticoliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dettArticoliDataGridView.Size = new System.Drawing.Size(875, 387);
             this.dettArticoliDataGridView.TabIndex = 8;
@@ -301,6 +303,7 @@
             this.IDDettaglioArticolo.DataPropertyName = "IDDettaglioArticolo";
             this.IDDettaglioArticolo.HeaderText = "IDDettaglioArticolo";
             this.IDDettaglioArticolo.Name = "IDDettaglioArticolo";
+            this.IDDettaglioArticolo.ReadOnly = true;
             this.IDDettaglioArticolo.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
@@ -308,18 +311,21 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "codice_articolo";
             this.dataGridViewTextBoxColumn2.HeaderText = "codice_articolo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "codicePrimaStampoDima";
             this.dataGridViewTextBoxColumn4.HeaderText = "codicePrimaStampoDima";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "descrizionePrimaStampoDima";
             this.dataGridViewTextBoxColumn5.HeaderText = "descrizionePrimaStampoDima";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 300;
             // 
             // dataGridViewTextBoxColumn6
@@ -327,18 +333,21 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "CodiceInput";
             this.dataGridViewTextBoxColumn6.HeaderText = "CodiceInput";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "CodiceOutput";
             this.dataGridViewTextBoxColumn7.HeaderText = "CodiceOutput";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "lavorazione";
             this.dataGridViewTextBoxColumn9.HeaderText = "lavorazione";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // label1
             // 
