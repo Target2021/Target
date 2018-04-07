@@ -277,7 +277,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="arrabiato.jpg" />
+    <Content Include="felice.png" />
     <Content Include="Immagini\Immagine1.png" />
+    <Content Include="preoccupato.jpg" />
     <None Include="Resources\felice.png" />
     <None Include="Resources\preoccupato.jpg" />
     <None Include="Resources\arrabiato.jpg" />

@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,30 +52,34 @@ namespace Target2021
             int diffmese = 0;
             int diffanno = 0;
             int giornirim = 0;
-            foreach(DataGridViewRow row in dataGridView1.Rows)
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            imageColumn.Name = "Disponibilità";
+            imageColumn.HeaderText = "Disponibilità";           
+            this.dataGridView1.Columns.Add(imageColumn);
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 String stringa = Properties.Resources.StringaConnessione;
-                DateTime dataconsegna = Convert.ToDateTime(dataGridView1.Rows[row.Index].Cells[4].Value);
+                DateTime dataconsegna = Convert.ToDateTime(dataGridView1.Rows[row.Index].Cells["DataConsegna"].Value);
                 giorniconsegna = dataconsegna.Day;
+                string path=AppDomain.CurrentDomain.BaseDirectory;
                 giornirim = DateTime.Now.Day - giorniconsegna;
                 diffmese = DateTime.Now.Month - dataconsegna.Month;
                 diffanno = DateTime.Now.Year - dataconsegna.Year;
-                DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-                imageColumn.Name = "Disponibilità";
                 if (giornirim>0&&giornirim<=1&&diffmese==0&&diffanno==0|| diffmese>=1)
                 {
-                    imageColumn.Image = Properties.Resources.arrabiato;
-                    this.dataGridView1.Columns.Add(imageColumn);
+                    MemoryStream memoryStream = new MemoryStream();
+                    Image img = Properties.Resources.arrabiato;
+                    dataGridView1.Rows[row.Index].Cells["Disponibilità"].Value = Properties.Resources.arrabiato;
                 }
-                if(giornirim>1&&giornirim<=5&&diffmese==0&&diffanno==0)
+                if (giornirim>1&&giornirim<5&&diffmese==0&&diffanno==0)
                 {
-                    imageColumn.Image = Properties.Resources.preoccupato;
-                    this.dataGridView1.Columns.Add(imageColumn);
+                    Image img = Properties.Resources.preoccupato;
+                    dataGridView1.Rows[row.Index].Cells["Disponibilità"].Value = Properties.Resources.preoccupato;
                 }
-                if(giornirim>5&&diffmese==0&&diffanno==0||diffmese<=-1||giornirim<=-1)
+                if (giornirim<=-1&&diffmese==0&&diffanno==0||diffmese<=-1)
                 {
-                    imageColumn.Image = Properties.Resources.felice;
-                    this.dataGridView1.Columns.Add(imageColumn);
+                    Image img = Properties.Resources.felice;
+                    dataGridView1.Rows[row.Index].Cells["Disponibilità"].Value = Properties.Resources.felice;
                 }
             }          
         }
@@ -118,11 +124,11 @@ namespace Target2021
         {
             try
             {
-                idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells[1].Value);
+                idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells["IDCommessa"].Value);
                 idcommessa.Replace("  ", string.Empty);
                 int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells["NRPezziDaLavorare"].Value);
                 String stringa = Properties.Resources.StringaConnessione;
-                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells[9].Value + "'";
+                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells["IDMateriaPrima"].Value + "'";
                 SqlConnection con = new SqlConnection(stringa);
                 SqlCommand cmd = new SqlCommand(query, con);
                 con.Open();
@@ -171,10 +177,10 @@ namespace Target2021
                 CheckConsegna();
             }           
             CheckGiacenzaTotale();
-            DateTime DataCommessa =Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
-            DateTime DataConsegna = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+            DateTime DataCommessa =Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataCommessa"].Value);
+            DateTime DataConsegna = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataConsegna"].Value);
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "UPDATE Commesse SET CodCommessa='" + dataGridView1.Rows[e.RowIndex].Cells[2].Value + "', DataCommessa='" + DataCommessa.ToShortDateString() + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells[4].Value + "',DataConsegna='" +DataConsegna.ToShortDateString() + "',NRPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells[6].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells[7].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells[8].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells[9].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells[2].Value+"'";
+            string query = "UPDATE Commesse SET CodCommessa='" + dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value + "', DataCommessa='" + DataCommessa.ToShortDateString() + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells["IDCliente"].Value + "',DataConsegna='" +DataConsegna.ToShortDateString() + "',NRPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells["NRPezziDaLavorare"].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells["DescrArticolo"].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells["IDStampo"].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells["IDMateriaPrima"].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value+"'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
