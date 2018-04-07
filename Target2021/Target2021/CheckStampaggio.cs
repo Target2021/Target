@@ -51,11 +51,7 @@ namespace Target2021
             int giorniconsegna = 0;
             int diffmese = 0;
             int diffanno = 0;
-            int giornirim = 0;
-            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-            imageColumn.Name = "Disponibilità";
-            imageColumn.HeaderText = "Disponibilità";           
-            this.dataGridView1.Columns.Add(imageColumn);
+            int giornirim = 0;          
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 String stringa = Properties.Resources.StringaConnessione;
@@ -65,21 +61,24 @@ namespace Target2021
                 giornirim = DateTime.Now.Day - giorniconsegna;
                 diffmese = DateTime.Now.Month - dataconsegna.Month;
                 diffanno = DateTime.Now.Year - dataconsegna.Year;
+                DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+                imageColumn.Name = "col";
+                imageColumn.Image = null;
+                this.dataGridView1.Columns.Add(imageColumn);
                 if (giornirim>0&&giornirim<=1&&diffmese==0&&diffanno==0|| diffmese>=1)
                 {
-                    MemoryStream memoryStream = new MemoryStream();
-                    Image img = Properties.Resources.arrabiato;
-                    dataGridView1.Rows[row.Index].Cells["Disponibilità"].Value = Properties.Resources.arrabiato;
+                    dataGridView1["col", row.Index].Value = Properties.Resources.arrabiato;
                 }
                 if (giornirim>1&&giornirim<5&&diffmese==0&&diffanno==0)
                 {
-                    Image img = Properties.Resources.preoccupato;
-                    dataGridView1.Rows[row.Index].Cells["Disponibilità"].Value = Properties.Resources.preoccupato;
+                    Bitmap bitmap = new Bitmap("C:\\Users\\krist\\Source\\Repos\\Target4\\Target2021\\Target2021\\Resources\\preoccupato.jpg");
+                    DataGridViewImageCell cell = new DataGridViewImageCell();
+                    cell.Value = bitmap;
+                    dataGridView1.Rows[row.Index].Cells[9].Value = cell;
                 }
                 if (giornirim<=-1&&diffmese==0&&diffanno==0||diffmese<=-1)
                 {
-                    Image img = Properties.Resources.felice;
-                    dataGridView1.Rows[row.Index].Cells["Disponibilità"].Value = Properties.Resources.felice;
+                    dataGridView1["col", row.Index].Value = Properties.Resources.felice;
                 }
             }          
         }
