@@ -32,7 +32,6 @@
             System.Windows.Forms.Label iDDettaglioArticoloLabel;
             System.Windows.Forms.Label codice_articoloLabel;
             System.Windows.Forms.Label progressivoLabel;
-            System.Windows.Forms.Label codicePrimaStampoDimaLabel;
             System.Windows.Forms.Label descrizionePrimaStampoDimaLabel;
             System.Windows.Forms.Label codiceInputLabel;
             System.Windows.Forms.Label codiceOutputLabel;
@@ -44,6 +43,7 @@
             System.Windows.Forms.Label macPredefTaglioLabel;
             System.Windows.Forms.Label costoBaseLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RigaCompleta));
+            this.codicePrimaStampoDimaLabel = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
@@ -82,7 +82,6 @@
             iDDettaglioArticoloLabel = new System.Windows.Forms.Label();
             codice_articoloLabel = new System.Windows.Forms.Label();
             progressivoLabel = new System.Windows.Forms.Label();
-            codicePrimaStampoDimaLabel = new System.Windows.Forms.Label();
             descrizionePrimaStampoDimaLabel = new System.Windows.Forms.Label();
             codiceInputLabel = new System.Windows.Forms.Label();
             codiceOutputLabel = new System.Windows.Forms.Label();
@@ -128,16 +127,6 @@
             progressivoLabel.Size = new System.Drawing.Size(92, 18);
             progressivoLabel.TabIndex = 5;
             progressivoLabel.Text = "Progressivo:";
-            // 
-            // codicePrimaStampoDimaLabel
-            // 
-            codicePrimaStampoDimaLabel.AutoSize = true;
-            codicePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(70, 136);
-            codicePrimaStampoDimaLabel.Name = "codicePrimaStampoDimaLabel";
-            codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(59, 18);
-            codicePrimaStampoDimaLabel.TabIndex = 7;
-            codicePrimaStampoDimaLabel.Text = "Codice:";
             // 
             // descrizionePrimaStampoDimaLabel
             // 
@@ -238,6 +227,16 @@
             costoBaseLabel.Size = new System.Drawing.Size(91, 18);
             costoBaseLabel.TabIndex = 27;
             costoBaseLabel.Text = "Costo Base:";
+            // 
+            // codicePrimaStampoDimaLabel
+            // 
+            this.codicePrimaStampoDimaLabel.AutoSize = true;
+            this.codicePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(70, 136);
+            this.codicePrimaStampoDimaLabel.Name = "codicePrimaStampoDimaLabel";
+            this.codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(59, 18);
+            this.codicePrimaStampoDimaLabel.TabIndex = 7;
+            this.codicePrimaStampoDimaLabel.Text = "Codice:";
             // 
             // target2021DataSet
             // 
@@ -500,6 +499,7 @@
             this.lavorazioneTextBox.Size = new System.Drawing.Size(153, 24);
             this.lavorazioneTextBox.TabIndex = 18;
             this.lavorazioneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lavorazioneTextBox.Click += new System.EventHandler(this.CambiaFase);
             this.lavorazioneTextBox.TextChanged += new System.EventHandler(this.AggiornaLavorazione);
             // 
             // percentualeLastraTextBox
@@ -624,7 +624,7 @@
             this.Controls.Add(this.codiceInputTextBox);
             this.Controls.Add(descrizionePrimaStampoDimaLabel);
             this.Controls.Add(this.descrizionePrimaStampoDimaTextBox);
-            this.Controls.Add(codicePrimaStampoDimaLabel);
+            this.Controls.Add(this.codicePrimaStampoDimaLabel);
             this.Controls.Add(this.codicePrimaStampoDimaTextBox);
             this.Controls.Add(progressivoLabel);
             this.Controls.Add(this.progressivoTextBox);
@@ -684,5 +684,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label codicePrimaStampoDimaLabel;
     }
 }

@@ -75,7 +75,10 @@ namespace Target2021
             connessione.Open();
             NomeLavorazione  = comando.ExecuteScalar().ToString();
             connessione.Close();
-            label2.Text = NomeLavorazione ;
+            label2.Text = NomeLavorazione;
+            if (Convert.ToInt32(CodLav) == 1) codicePrimaStampoDimaLabel.Text = "Codice materia prima:";
+            if (Convert.ToInt32(CodLav) == 2) codicePrimaStampoDimaLabel.Text = "Codice stampo:";
+            if (Convert.ToInt32(CodLav) == 3) codicePrimaStampoDimaLabel.Text = "Codice dima:";
         }
 
         private void CambiaFornitore(object sender, EventArgs e)
@@ -92,6 +95,13 @@ namespace Target2021
             codice_fornitoreTextBox.Text = codfor;
         }
 
+        private void ChiudiSelezionaFase(object sender, FormClosedEventArgs e)
+        {
+            SelLav sl = (SelLav)sender;
+            string codfor = sl.CodFase;
+            lavorazioneTextBox.Text = codfor;
+        }
+
         private void AggMachStampPredef(object sender, EventArgs e)
         {
             string CodMSP, stringaconnessione, sql, NomeMachS;
@@ -104,6 +114,13 @@ namespace Target2021
             NomeMachS = comando.ExecuteScalar().ToString();
             connessione.Close();
             label3.Text = NomeMachS;
+        }
+
+        private void CambiaFase(object sender, EventArgs e)
+        {
+            SelLav selezionaFase = new SelLav(codice_fornitoreTextBox.Text);
+            selezionaFase.FormClosed += new FormClosedEventHandler(ChiudiSelezionaFase);
+            selezionaFase.Show();
         }
 
         private void AggMachTaglPredef(object sender, EventArgs e)

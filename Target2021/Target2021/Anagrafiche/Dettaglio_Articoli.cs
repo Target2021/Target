@@ -42,7 +42,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Filter.Text == "Codice articolo") dettArticoliBindingSource.Filter = "codice_articolo='" + textBox1.Text+"'";
+            if (Filter.Text == "Codice articolo") dettArticoliBindingSource.Filter = "codice_articolo LIKE '*" + textBox1.Text+"*'";
             if (Filter.Text == "Descrizione") dettArticoliBindingSource.Filter = "descrizionePrimaStampoDima LIKE '*" + textBox1.Text + "*'";
         }
     }
