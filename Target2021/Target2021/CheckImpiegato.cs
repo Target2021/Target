@@ -106,5 +106,10 @@ namespace Target2021
             inserimento_iniziale();
             verifica_commesse();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
