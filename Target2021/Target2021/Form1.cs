@@ -193,6 +193,13 @@ namespace Target2021
             AF.Show();
         }
 
+        private void assemblaggioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckAssemblaggio checkassemblaggio = new CheckAssemblaggio();
+            checkassemblaggio.MdiParent = this;
+            checkassemblaggio.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

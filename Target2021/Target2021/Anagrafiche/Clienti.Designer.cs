@@ -164,7 +164,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.CERCA = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingNavigator)).BeginInit();
@@ -203,6 +202,8 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
@@ -213,6 +214,7 @@
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // clientiBindingNavigator
             // 
@@ -241,7 +243,7 @@
             this.clientiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clientiBindingNavigator.Name = "clientiBindingNavigator";
             this.clientiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clientiBindingNavigator.Size = new System.Drawing.Size(1113, 27);
+            this.clientiBindingNavigator.Size = new System.Drawing.Size(835, 27);
             this.clientiBindingNavigator.TabIndex = 0;
             this.clientiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -257,7 +259,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -298,7 +300,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -458,10 +460,11 @@
             this.dataGridViewTextBoxColumn111,
             this.dataGridViewTextBoxColumn112});
             this.clientiDataGridView.DataSource = this.clientiBindingSource;
-            this.clientiDataGridView.Location = new System.Drawing.Point(12, 53);
+            this.clientiDataGridView.Location = new System.Drawing.Point(9, 126);
+            this.clientiDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.clientiDataGridView.Name = "clientiDataGridView";
             this.clientiDataGridView.RowTemplate.Height = 24;
-            this.clientiDataGridView.Size = new System.Drawing.Size(837, 527);
+            this.clientiDataGridView.Size = new System.Drawing.Size(815, 345);
             this.clientiDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -1222,25 +1225,28 @@
             "Codice",
             "Ragione_sociale",
             "Località"});
-            this.Filter.Location = new System.Drawing.Point(961, 182);
+            this.Filter.Location = new System.Drawing.Point(331, 68);
+            this.Filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(140, 24);
+            this.Filter.Size = new System.Drawing.Size(116, 21);
             this.Filter.TabIndex = 10;
             this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(961, 259);
+            this.textBox1.Location = new System.Drawing.Point(451, 68);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 22);
+            this.textBox1.Size = new System.Drawing.Size(118, 20);
             this.textBox1.TabIndex = 9;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // CERCA
             // 
-            this.CERCA.Location = new System.Drawing.Point(969, 329);
+            this.CERCA.Location = new System.Drawing.Point(573, 63);
+            this.CERCA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CERCA.Name = "CERCA";
-            this.CERCA.Size = new System.Drawing.Size(132, 34);
+            this.CERCA.Size = new System.Drawing.Size(99, 28);
             this.CERCA.TabIndex = 8;
             this.CERCA.Text = "CERCA";
             this.CERCA.UseVisualStyleBackColor = true;
@@ -1249,34 +1255,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(884, 185);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(201, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(125, 18);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Filtra per";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(896, 264);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Campo";
+            this.label1.Text = "Campo da filtrare:";
             // 
             // Clienti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1113, 596);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(835, 484);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CERCA);
             this.Controls.Add(this.clientiDataGridView);
             this.Controls.Add(this.clientiBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Clienti";
             this.Text = "Clienti";
             this.Load += new System.EventHandler(this.Clienti_Load);
@@ -1427,6 +1425,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn111;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn112;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }

@@ -70,10 +70,10 @@
             this.pianificazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stampaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.assemblaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assemblaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -411,6 +411,13 @@
             this.taglioToolStripMenuItem.Text = "Taglio";
             this.taglioToolStripMenuItem.Click += new System.EventHandler(this.taglioToolStripMenuItem_Click);
             // 
+            // assemblaggioToolStripMenuItem
+            // 
+            this.assemblaggioToolStripMenuItem.Name = "assemblaggioToolStripMenuItem";
+            this.assemblaggioToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.assemblaggioToolStripMenuItem.Text = "Assemblaggio";
+            this.assemblaggioToolStripMenuItem.Click += new System.EventHandler(this.assemblaggioToolStripMenuItem_Click);
+            // 
             // disconnettiUtenteToolStripMenuItem
             // 
             this.disconnettiUtenteToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -434,12 +441,6 @@
             this.esciToolStripMenuItem.Size = new System.Drawing.Size(53, 32);
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
-            // 
-            // assemblaggioToolStripMenuItem
-            // 
-            this.assemblaggioToolStripMenuItem.Name = "assemblaggioToolStripMenuItem";
-            this.assemblaggioToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
-            this.assemblaggioToolStripMenuItem.Text = "Assemblaggio";
             // 
             // Home
             // 
