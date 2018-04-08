@@ -31,7 +31,27 @@ namespace Target2021
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             cCToolStripTextBox.Text = IDCommessa;
             int i =0;
+            RecuperoDati();
             RecuperoDate("SELECT DataCommessa FROM Commesse WHERE IDCommessa='" + IDCommessa + "'",i);
+        }
+        private void RecuperoDati()
+        {
+             SqlConnection con = new SqlConnection(Properties.Resources.StringaConnessione);
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT * FROM Commesse WHERE IDCommessa='"+cCToolStripTextBox.Text+"'", con);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Commesse");
+            txt1.DataBindings.Add("text", ds, "Commesse.IDCommessa");
+            codCommessaTextBox.DataBindings.Add("text", ds, "Commesse.CodCommessa");
+            nrCommessaTextBox.DataBindings.Add("text", ds, "Commesse.NRCommessa");
+            iDClienteTextBox.DataBindings.Add("text", ds, "Commesse.IDCliente");
+            nrPezziDaLavorareTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziDaLavorare");
+            codArticoloTextBox.DataBindings.Add("text", ds, "Commesse.CodArticolo");
+            descrArticoloTextBox.DataBindings.Add("text", ds, "Commesse.DescrArticolo");
+            nrPezziOrdinatiTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziOrdinati");
+            iDStampoTextBox.DataBindings.Add("text", ds, "Commesse.IDStampo");
+            codArtiDopoStampoTextBox.DataBindings.Add("text", ds, "Commesse.CodArtiDopoStampo");
+            nrPezziCorrettiTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziCorretti");
+            nrPezziScartatiTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziScartati");
         }
         public void RecuperoDate(string query,int i)
         {
