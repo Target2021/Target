@@ -85,6 +85,9 @@ namespace Target2021.Anagrafiche
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataTable.Columns.Remove("Stato");
+            dataTable.Clear();
+            datatable1.Clear();
             inizializzazione_tabella();
             popolazione_datagridview();
         }

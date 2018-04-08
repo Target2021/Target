@@ -103,6 +103,10 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataTable.Columns.Remove("Disponibilità Lastre");
+            dataTable.Columns.Remove("Disponibilità Pezzi");
+            dataTable.Clear();
+            richTextBox1.Text = "";
             inserimento_iniziale();
             verifica_commesse();
         }
