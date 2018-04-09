@@ -24,14 +24,32 @@ namespace Target2021
         {
             
         }
-
+        private void CheckGiacenza(int id)
+        {
+            String stringa = Properties.Resources.StringaConnessione;
+            string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime=(SELECT IDMateriaPrima FROM Commesse WHERE IDCommessa='" + id + "')";
+            string query2="SELECT NrPezziDaLavorare FROM Commesse WHERE IDCommessa='"+id+"'";
+            SqlConnection con = new SqlConnection(stringa);
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd = new SqlCommand(query2,con);
+            int quantita = Convert.ToInt32(cmd.ExecuteScalar());
+            con.Close();
+            int diff = Giacenza - quantita;
+            if(diff<=0)
+            {
+                MessageBox.Show("Giacenza insufficiente,impossibile caricare la commessa");
+                cCToolStripTextBox.Text = "";
+            }
+        }
         private void LavoraStampaggio_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             cCToolStripTextBox.Text = IDCommessa;
             int i =0;
-            RecuperoDati();
+           // RecuperoDati();
             RecuperoDate("SELECT DataCommessa FROM Commesse WHERE IDCommessa='" + IDCommessa + "'",i);
         }
         private void RecuperoDati()
@@ -64,6 +82,7 @@ namespace Target2021
             nrPezziCorrettiTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziCorretti");
             nrPezziScartatiTextBox.DataBindings.Clear();
             nrPezziScartatiTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziScartati");
+           
         }
         public void RecuperoDate(string query,int i)
         {
@@ -115,7 +134,7 @@ namespace Target2021
         private void commesseBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = " UPDATE Commesse SET  CodCommessa='"+codCommessaTextBox.Text+"', NrCommessa='"+nrCommessaTextBox.Text+"',IDCliente='"+iDClienteTextBox.Text+"',NrPezziDaLavorare='"+nrPezziDaLavorareTextBox.Text+"',CodArticolo='"+codArticoloTextBox.Text+"',DescrArticolo='"+descrArticoloTextBox.Text+"', IDStampo='"+iDStampoTextBox.Text+"',CodArtiDopoStampo='"+codArtiDopoStampoTextBox.Text+"',NrPezziCorretti='"+nrPezziCorrettiTextBox.Text+"',NrPezziScartati='"+nrPezziScartatiTextBox.Text+"', DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "',OraInizioStampo='"+dateTimePicker4.Value.ToString("yyyy-MM-dd") + " "+ dateTimePicker5.Value.ToLongTimeString() +  "',OraFineStampo='"+dateTimePicker5.Value.ToString("yyyy-MM-dd") + " "+dateTimePicker5.Value.ToLongTimeString()+"' WHERE IDCommessa='"+IDCommessa+"'";
+            string query = " UPDATE Commesse SET  CodCommessa='"+codCommessaTextBox.Text+"', NrCommessa='"+nrCommessaTextBox.Text+"',IDCliente='"+iDClienteTextBox.Text+"',NrPezziDaLavorare='"+nrPezziDaLavorareTextBox.Text+"',CodArticolo='"+codArticoloTextBox.Text+"',DescrArticolo='"+descrArticoloTextBox.Text+"', IDStampo='"+iDStampoTextBox.Text+"',CodArtiDopoStampo='"+codArtiDopoStampoTextBox.Text+"',NrPezziCorretti='"+nrPezziCorrettiTextBox.Text+"',NrPezziScartati='"+nrPezziScartatiTextBox.Text+"', DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "' WHERE IDCommessa='"+IDCommessa+"'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -127,7 +146,7 @@ namespace Target2021
         {
             try
             {
-                RecuperoDati();
+               RecuperoDati();
             }
             catch (System.Exception ex)
             {
@@ -160,6 +179,37 @@ namespace Target2021
         private void iDCommessaTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cCToolStripTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void cCToolStripTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                try
+                {
+                    CheckGiacenza(Int32.Parse(cCToolStripTextBox.Text));
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Controllare ID commessa");
+                }
+            }
+        }
+
+        private void cCToolStripTextBox_Leave(object sender, EventArgs e)
+        {
+            try {
+                CheckGiacenza(Int32.Parse(cCToolStripTextBox.Text));
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show("Controllare ID commessa");
+            }
         }
     }
 }

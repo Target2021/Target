@@ -51,7 +51,7 @@ namespace Target2021
         private void carico(string oggetto)
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = null, queryup = null, queryins = null;
+            string query = null, queryup = null, queryins = null,querydiff=null;
             int quantità = 0;
             if (oggetto == "Materia Prima")
             {
@@ -81,31 +81,41 @@ namespace Target2021
             {
                 queryup = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva='" + quantità + "' WHERE idPrime='" + textBox3.Text + "'";
                 queryins = "INSERT INTO MovimentiMagazzino (idMovimento,idMagazzino,idPrime,CarScar,Quantita,NrOrdine,DataOraMovimento) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','C','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now + "')";
+                querydiff = "UPDATE GiacenzeMagazzini SET GiacenzaDisponibili=GiacenzaComplessiva-GiacenzaImpegnati WHERE idPrime='"+textBox3.Text+"'";
             }
             if(oggetto=="Stampo")
             {
                 queryup = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva='" + quantità + "' WHERE idStampi='" + textBox3.Text + "'";
                 queryins = "INSERT INTO MovimentiMagazzino (idMovimento,idMagazzino,idStampi,CarScar,Quantita,NrOrdine,DataOraMovimento) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','C','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now + "')";
+                querydiff = "UPDATE GiacenzeMagazzini SET GiacenzaDisponibili=GiacenzaComplessiva-GiacenzaImpegnati WHERE idStampi='" + textBox3.Text + "'";
+
             }
             if (oggetto == "Dima")
             {
                 queryup = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva='" + quantità + "' WHERE idDime='" + textBox3.Text + "'";
                 queryins = "INSERT INTO MovimentiMagazzino (idMovimento,idMagazzino,idDime,CarScar,Quantita,NrOrdine,DataOraMovimento) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','C','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now + "')";
+                querydiff = "UPDATE GiacenzeMagazzini SET GiacenzaDisponibili=GiacenzaComplessiva-GiacenzaImpegnati WHERE idDime='" + textBox3.Text + "'";
+
             }
             if (oggetto == "Semi lavorato")
             {
                 queryup = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva='" + quantità + "' WHERE idSemilavorati='" + textBox3.Text + "'";
                 queryins = "INSERT INTO MovimentiMagazzino (idMovimento,idMagazzino,idSemilavorati,CarScar,Quantita,NrOrdine,DataOraMovimento) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','C','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now + "')";
+                querydiff = "UPDATE GiacenzeMagazzini SET GiacenzaDisponibili=GiacenzaComplessiva-GiacenzaImpegnati WHERE idSemilavorati='" + textBox3.Text + "'";
             }
             if (oggetto == "Articolo")
             {
                 queryup = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva='" + quantità + "' WHERE idArticoli='" + textBox3.Text + "'";
                 queryins = "INSERT INTO MovimentiMagazzino (idMovimento,idMagazzino,idArticoli,CarScar,Quantita,NrOrdine,DataOraMovimento) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','C','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now + "')";
+                querydiff = "UPDATE GiacenzeMagazzini SET GiacenzaDisponibili=GiacenzaComplessiva-GiacenzaImpegnati WHERE idArticoli='" + textBox3.Text + "'";
+
             }
             cmd = new SqlCommand(queryup, con);
             cmd.ExecuteNonQuery();
             cmd = new SqlCommand(queryins, con);
             int count= cmd.ExecuteNonQuery();
+            cmd = new SqlCommand(querydiff, con);
+            cmd.ExecuteNonQuery();
             if(count>0)
             {
                 MessageBox.Show("Operazione effettuata con successo");

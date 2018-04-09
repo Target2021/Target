@@ -120,6 +120,7 @@
             // movimentiMagazzinoBindingNavigator
             // 
             this.movimentiMagazzinoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.movimentiMagazzinoBindingNavigator.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.movimentiMagazzinoBindingNavigator.BindingSource = this.movimentiMagazzinoBindingSource;
             this.movimentiMagazzinoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.movimentiMagazzinoBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -245,6 +246,7 @@
             // movimentiMagazzinoDataGridView
             // 
             this.movimentiMagazzinoDataGridView.AutoGenerateColumns = false;
+            this.movimentiMagazzinoDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.movimentiMagazzinoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.movimentiMagazzinoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -391,6 +393,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1482, 668);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);

@@ -35,12 +35,12 @@ namespace Target2021
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (this.Filter.GetItemText(this.Filter.SelectedItem) == "ID") movimentiMagazzinoBindingSource.Filter = "idMovimento='" +Int32.Parse(textBox1.Text) + "'";
-            if (Filter.Text == "Magazzino") movimentiMagazzinoBindingSource.Filter = "idMagazzino LIKE '*" + textBox1.Text + "*'";
+            if (Filter.Text == "Magazzino") movimentiMagazzinoBindingSource.Filter = "idMagazzino='" + textBox1.Text + "'";
             if (Filter.Text == "Materia prima") movimentiMagazzinoBindingSource.Filter = "idPrime LIKE '*" + textBox1.Text + "*'";
-            if (Filter.Text == "Stampi") movimentiMagazzinoBindingSource.Filter = "idStampi LIKE '*" + textBox1.Text + "*'";
-            if (Filter.Text == "Dime") movimentiMagazzinoBindingSource.Filter = "idDime LIKE '*" + textBox1.Text + "*'";
-            if (Filter.Text == "Semilavorati") movimentiMagazzinoBindingSource.Filter = "idSemilavoratiLIKE '*" + textBox1.Text + "*'";
-            if (Filter.Text == "Articoli") movimentiMagazzinoBindingSource.Filter = "idSemilavorati LIKE '*" + textBox1.Text + "*'";
+            if (Filter.Text == "Stampi") movimentiMagazzinoBindingSource.Filter = "idStampi ='" + textBox1.Text + "'";
+            if (Filter.Text == "Dime") movimentiMagazzinoBindingSource.Filter = "idDime ='" + textBox1.Text + "'";
+            if (Filter.Text == "Semilavorati") movimentiMagazzinoBindingSource.Filter = "idSemilavorati LIKE ='" + textBox1.Text + "'";
+            if (Filter.Text == "Articoli") movimentiMagazzinoBindingSource.Filter = "idArticoli LIKE '*" + textBox1.Text + "*'";
 
         }
     }

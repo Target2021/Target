@@ -706,6 +706,7 @@
             // 
             // fillByToolStrip
             // 
+            this.fillByToolStrip.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.fillByToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cCToolStripLabel,
@@ -725,9 +726,12 @@
             // 
             // cCToolStripTextBox
             // 
-            this.cCToolStripTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cCToolStripTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cCToolStripTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.cCToolStripTextBox.Name = "cCToolStripTextBox";
             this.cCToolStripTextBox.Size = new System.Drawing.Size(132, 27);
+            this.cCToolStripTextBox.Leave += new System.EventHandler(this.cCToolStripTextBox_Leave);
+            this.cCToolStripTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cCToolStripTextBox_KeyDown);
             this.cCToolStripTextBox.TextChanged += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // fillByToolStripButton
@@ -956,6 +960,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1371, 643);
             this.Controls.Add(this.txt1);
             this.Controls.Add(this.groupBox5);
