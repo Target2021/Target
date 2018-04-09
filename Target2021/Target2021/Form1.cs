@@ -200,6 +200,12 @@ namespace Target2021
             checkassemblaggio.Show();
         }
 
+        private void inserisciNuovoCaricoscaricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ScaricoCaricoMagazzini scaricoCarico = new ScaricoCaricoMagazzini();
+            scaricoCarico.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
