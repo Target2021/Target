@@ -16,7 +16,7 @@ namespace Target2021
     public partial class CheckStampaggio : Form
     {
         private string idcommessa;
-
+        DataTable dataTable = new DataTable();
         public CheckStampaggio()
         {
             InitializeComponent();
@@ -38,47 +38,34 @@ namespace Target2021
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter();
             sda.SelectCommand = cmd;
-            DataTable dataTable = new DataTable();
             sda.Fill(dataTable);
             BindingSource source = new BindingSource();
             source.DataSource = dataTable;
             dataGridView1.DataSource = source;
             sda.Update(dataTable);
+            dataTable.Columns.Add("Stato", typeof(Image));
             con.Close();
         }
         private void CheckConsegna()
-        {
-            int giorniconsegna = 0;
-            int diffmese = 0;
-            int diffanno = 0;
-            int giornirim = 0;          
+        {          
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 String stringa = Properties.Resources.StringaConnessione;
                 DateTime dataconsegna = Convert.ToDateTime(dataGridView1.Rows[row.Index].Cells["DataConsegna"].Value);
-                giorniconsegna = dataconsegna.Day;
-                string path=AppDomain.CurrentDomain.BaseDirectory;
-                giornirim = DateTime.Now.Day - giorniconsegna;
-                diffmese = DateTime.Now.Month - dataconsegna.Month;
-                diffanno = DateTime.Now.Year - dataconsegna.Year;
-                DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-                imageColumn.Name = "col";
-                imageColumn.Image = null;
-                this.dataGridView1.Columns.Add(imageColumn);
-                if (giornirim>0&&giornirim<=1&&diffmese==0&&diffanno==0|| diffmese>=1)
+                DateTime giorni = DateTime.Now;
+                int totalDays = Convert.ToInt32((giorni.Date - dataconsegna.Date).TotalDays);
+                if (totalDays>1)
                 {
-                    dataGridView1["col", row.Index].Value = Properties.Resources.arrabiato;
+                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.arrabiato;
                 }
-                if (giornirim>1&&giornirim<5&&diffmese==0&&diffanno==0)
+                if (totalDays<=-1&totalDays>-5)
                 {
-                    Bitmap bitmap = new Bitmap("C:\\Users\\krist\\Source\\Repos\\Target4\\Target2021\\Target2021\\Resources\\preoccupato.jpg");
-                    DataGridViewImageCell cell = new DataGridViewImageCell();
-                    cell.Value = bitmap;
-                    dataGridView1.Rows[row.Index].Cells[9].Value = cell;
+                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.preoccupato;
+
                 }
-                if (giornirim<=-1&&diffmese==0&&diffanno==0||diffmese<=-1)
+                if (totalDays<-5)
                 {
-                    dataGridView1["col", row.Index].Value = Properties.Resources.felice;
+                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.felice;
                 }
             }          
         }
