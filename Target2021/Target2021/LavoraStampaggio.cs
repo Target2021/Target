@@ -40,17 +40,29 @@ namespace Target2021
             SqlDataAdapter da = new SqlDataAdapter(@"SELECT * FROM Commesse WHERE IDCommessa='"+cCToolStripTextBox.Text+"'", con);
             DataSet ds = new DataSet();
             da.Fill(ds, "Commesse");
+            txt1.DataBindings.Clear();
             txt1.DataBindings.Add("text", ds, "Commesse.IDCommessa");
+            codCommessaTextBox.DataBindings.Clear();
             codCommessaTextBox.DataBindings.Add("text", ds, "Commesse.CodCommessa");
+            nrCommessaTextBox.DataBindings.Clear();
             nrCommessaTextBox.DataBindings.Add("text", ds, "Commesse.NRCommessa");
+            iDClienteTextBox.DataBindings.Clear();
             iDClienteTextBox.DataBindings.Add("text", ds, "Commesse.IDCliente");
+            nrPezziDaLavorareTextBox.DataBindings.Clear();
             nrPezziDaLavorareTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziDaLavorare");
+            codArticoloTextBox.DataBindings.Clear();
             codArticoloTextBox.DataBindings.Add("text", ds, "Commesse.CodArticolo");
+            descrArticoloTextBox.DataBindings.Clear();
             descrArticoloTextBox.DataBindings.Add("text", ds, "Commesse.DescrArticolo");
+            nrPezziOrdinatiTextBox.DataBindings.Clear();
             nrPezziOrdinatiTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziOrdinati");
+            iDStampoTextBox.DataBindings.Clear();
             iDStampoTextBox.DataBindings.Add("text", ds, "Commesse.IDStampo");
+            codArtiDopoStampoTextBox.DataBindings.Clear();
             codArtiDopoStampoTextBox.DataBindings.Add("text", ds, "Commesse.CodArtiDopoStampo");
+            nrPezziCorrettiTextBox.DataBindings.Clear();
             nrPezziCorrettiTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziCorretti");
+            nrPezziScartatiTextBox.DataBindings.Clear();
             nrPezziScartatiTextBox.DataBindings.Add("text", ds, "Commesse.NRPezziScartati");
         }
         public void RecuperoDate(string query,int i)
@@ -115,7 +127,7 @@ namespace Target2021
         {
             try
             {
-                this.commesseTableAdapter.FillBy(this.target2021DataSet.Commesse, Convert.ToInt32(cCToolStripTextBox.Text));
+                RecuperoDati();
             }
             catch (System.Exception ex)
             {
