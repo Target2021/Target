@@ -203,7 +203,15 @@ namespace Target2021
         private void inserisciNuovoCaricoscaricoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ScaricoCaricoMagazzini scaricoCarico = new ScaricoCaricoMagazzini();
+            scaricoCarico.MdiParent = this;
             scaricoCarico.Show();
+        }
+
+        private void interrogazioneMovimentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RiepilogoMovimenti riepilogoMovimenti = new RiepilogoMovimenti();
+            riepilogoMovimenti.MdiParent = this;
+            riepilogoMovimenti.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

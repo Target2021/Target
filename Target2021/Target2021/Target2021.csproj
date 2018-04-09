@@ -182,6 +182,12 @@
     <Compile Include="ScaricoCaricoMagazzini.Designer.cs">
       <DependentUpon>ScaricoCaricoMagazzini.cs</DependentUpon>
     </Compile>
+    <Compile Include="RiepilogoMovimenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiepilogoMovimenti.Designer.cs">
+      <DependentUpon>RiepilogoMovimenti.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelezAna\SelForn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScaricoCaricoMagazzini.resx">
       <DependentUpon>ScaricoCaricoMagazzini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RiepilogoMovimenti.resx">
+      <DependentUpon>RiepilogoMovimenti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelezAna\SelForn.resx">
       <DependentUpon>SelForn.cs</DependentUpon>

@@ -62,6 +62,7 @@
             this.interrogazioneGiacenzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interrogazioneMovimentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,8 +75,6 @@
             this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.riepilogoMovimentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inserisciNuovoCaricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -341,16 +340,23 @@
             this.interrogazioneMovimentiToolStripMenuItem.Name = "interrogazioneMovimentiToolStripMenuItem";
             this.interrogazioneMovimentiToolStripMenuItem.Size = new System.Drawing.Size(336, 40);
             this.interrogazioneMovimentiToolStripMenuItem.Text = "Interrogazione movimenti";
+            this.interrogazioneMovimentiToolStripMenuItem.Click += new System.EventHandler(this.interrogazioneMovimentiToolStripMenuItem_Click);
             // 
             // caricoscaricoToolStripMenuItem
             // 
             this.caricoscaricoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.riepilogoMovimentiToolStripMenuItem,
             this.inserisciNuovoCaricoscaricoToolStripMenuItem});
             this.caricoscaricoToolStripMenuItem.Name = "caricoscaricoToolStripMenuItem";
             this.caricoscaricoToolStripMenuItem.Size = new System.Drawing.Size(336, 40);
             this.caricoscaricoToolStripMenuItem.Text = "Carico/scarico manuale";
             this.caricoscaricoToolStripMenuItem.Click += new System.EventHandler(this.caricoscaricoToolStripMenuItem_Click);
+            // 
+            // inserisciNuovoCaricoscaricoToolStripMenuItem
+            // 
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Name = "inserisciNuovoCaricoscaricoToolStripMenuItem";
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Size = new System.Drawing.Size(367, 40);
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Text = "Inserisci nuovo carico/scarico";
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Click += new System.EventHandler(this.inserisciNuovoCaricoscaricoToolStripMenuItem_Click);
             // 
             // impostazioniToolStripMenuItem
             // 
@@ -447,19 +453,6 @@
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
-            // riepilogoMovimentiToolStripMenuItem
-            // 
-            this.riepilogoMovimentiToolStripMenuItem.Name = "riepilogoMovimentiToolStripMenuItem";
-            this.riepilogoMovimentiToolStripMenuItem.Size = new System.Drawing.Size(367, 40);
-            this.riepilogoMovimentiToolStripMenuItem.Text = "Riepilogo movimenti";
-            // 
-            // inserisciNuovoCaricoscaricoToolStripMenuItem
-            // 
-            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Name = "inserisciNuovoCaricoscaricoToolStripMenuItem";
-            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Size = new System.Drawing.Size(367, 40);
-            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Text = "Inserisci nuovo carico/scarico";
-            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Click += new System.EventHandler(this.inserisciNuovoCaricoscaricoToolStripMenuItem_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -470,7 +463,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Home";
             this.Text = "Target2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -528,7 +521,6 @@
         private System.Windows.Forms.ToolStripMenuItem macchineDiStampoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macchineDiTaglioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assemblaggioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem riepilogoMovimentiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inserisciNuovoCaricoscaricoToolStripMenuItem;
     }
 }
