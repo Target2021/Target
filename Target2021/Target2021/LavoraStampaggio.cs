@@ -37,7 +37,7 @@ namespace Target2021
         private void RecuperoDati()
         {
              SqlConnection con = new SqlConnection(Properties.Resources.StringaConnessione);
-            SqlDataAdapter da = new SqlDataAdapter(@"SELECT * FROM Commesse WHERE IDCommessa='"+cCToolStripTextBox.Text+"'", con);
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT * FROM Commesse WHERE IDCommessa='"+cCToolStripTextBox.Text+"' AND CodCommessa LIKE 'S%'", con);
             DataSet ds = new DataSet();
             da.Fill(ds, "Commesse");
             txt1.DataBindings.Clear();
