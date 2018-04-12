@@ -211,6 +211,7 @@
             this.macchineDiTaglioToolStripMenuItem.Name = "macchineDiTaglioToolStripMenuItem";
             this.macchineDiTaglioToolStripMenuItem.Size = new System.Drawing.Size(229, 32);
             this.macchineDiTaglioToolStripMenuItem.Text = "Macchine di taglio";
+            this.macchineDiTaglioToolStripMenuItem.Click += new System.EventHandler(this.macchineDiTaglioToolStripMenuItem_Click);
             // 
             // strumentiToolStripMenuItem
             // 

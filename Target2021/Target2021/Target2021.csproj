@@ -113,6 +113,12 @@
     <Compile Include="Anagrafiche\AnaMStampo.Designer.cs">
       <DependentUpon>AnaMStampo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\AnaMTaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMTaglio.Designer.cs">
+      <DependentUpon>AnaMTaglio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anagrafiche\AnaStampi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaMStampo.resx">
       <DependentUpon>AnaMStampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaMTaglio.resx">
+      <DependentUpon>AnaMTaglio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaStampi.resx">
       <DependentUpon>AnaStampi.cs</DependentUpon>

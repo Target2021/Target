@@ -235,6 +235,13 @@ namespace Target2021
             AnaForn.Show();
         }
 
+        private void macchineDiTaglioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaMTaglio AMT = new AnaMTaglio();
+            AMT.MdiParent = this;
+            AMT.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
