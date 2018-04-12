@@ -62,6 +62,7 @@
             this.interrogazioneGiacenzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interrogazioneMovimentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -327,25 +328,37 @@
             this.anagraficheMagazziniToolStripMenuItem.Name = "anagraficheMagazziniToolStripMenuItem";
             this.anagraficheMagazziniToolStripMenuItem.Size = new System.Drawing.Size(277, 32);
             this.anagraficheMagazziniToolStripMenuItem.Text = "Anagrafiche magazzini";
+            this.anagraficheMagazziniToolStripMenuItem.Click += new System.EventHandler(this.anagraficheMagazziniToolStripMenuItem_Click);
             // 
             // interrogazioneGiacenzeToolStripMenuItem
             // 
             this.interrogazioneGiacenzeToolStripMenuItem.Name = "interrogazioneGiacenzeToolStripMenuItem";
             this.interrogazioneGiacenzeToolStripMenuItem.Size = new System.Drawing.Size(277, 32);
             this.interrogazioneGiacenzeToolStripMenuItem.Text = "Interrogazione giacenze";
+            this.interrogazioneGiacenzeToolStripMenuItem.Click += new System.EventHandler(this.interrogazioneGiacenzeToolStripMenuItem_Click);
             // 
             // interrogazioneMovimentiToolStripMenuItem
             // 
             this.interrogazioneMovimentiToolStripMenuItem.Name = "interrogazioneMovimentiToolStripMenuItem";
             this.interrogazioneMovimentiToolStripMenuItem.Size = new System.Drawing.Size(277, 32);
             this.interrogazioneMovimentiToolStripMenuItem.Text = "Interrogazione movimenti";
+            this.interrogazioneMovimentiToolStripMenuItem.Click += new System.EventHandler(this.interrogazioneMovimentiToolStripMenuItem_Click);
             // 
             // caricoscaricoToolStripMenuItem
             // 
+            this.caricoscaricoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem});
             this.caricoscaricoToolStripMenuItem.Name = "caricoscaricoToolStripMenuItem";
             this.caricoscaricoToolStripMenuItem.Size = new System.Drawing.Size(277, 32);
             this.caricoscaricoToolStripMenuItem.Text = "Carico/scarico manuale";
             this.caricoscaricoToolStripMenuItem.Click += new System.EventHandler(this.caricoscaricoToolStripMenuItem_Click);
+            // 
+            // inserisciNuovoCaricoscaricoToolStripMenuItem
+            // 
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Name = "inserisciNuovoCaricoscaricoToolStripMenuItem";
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Size = new System.Drawing.Size(299, 32);
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Text = "Inserisci nuovo carico/scarico";
+            this.inserisciNuovoCaricoscaricoToolStripMenuItem.Click += new System.EventHandler(this.inserisciNuovoCaricoscaricoToolStripMenuItem_Click);
             // 
             // impostazioniToolStripMenuItem
             // 
@@ -509,6 +522,7 @@
         private System.Windows.Forms.ToolStripMenuItem macchineDiStampoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem macchineDiTaglioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assemblaggioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inserisciNuovoCaricoscaricoToolStripMenuItem;
     }
 }
 

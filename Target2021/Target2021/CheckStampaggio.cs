@@ -16,7 +16,7 @@ namespace Target2021
     public partial class CheckStampaggio : Form
     {
         private string idcommessa;
-
+        DataTable dataTable = new DataTable();
         public CheckStampaggio()
         {
             InitializeComponent();
@@ -32,53 +32,40 @@ namespace Target2021
         private void LoadStampaggio()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT IDCommessa, CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1) AND CodCommessa LIKE 'S%'";
+            string query = "SELECT IDCommessa, CodCommessa,DataCommessa,IDCliente,DataConsegna,NrPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1) AND CodCommessa LIKE 'S%'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter();
             sda.SelectCommand = cmd;
-            DataTable dataTable = new DataTable();
             sda.Fill(dataTable);
             BindingSource source = new BindingSource();
             source.DataSource = dataTable;
             dataGridView1.DataSource = source;
             sda.Update(dataTable);
+            dataTable.Columns.Add("Stato", typeof(Image));
             con.Close();
         }
         private void CheckConsegna()
-        {
-            int giorniconsegna = 0;
-            int diffmese = 0;
-            int diffanno = 0;
-            int giornirim = 0;          
+        {          
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 String stringa = Properties.Resources.StringaConnessione;
                 DateTime dataconsegna = Convert.ToDateTime(dataGridView1.Rows[row.Index].Cells["DataConsegna"].Value);
-                giorniconsegna = dataconsegna.Day;
-                string path=AppDomain.CurrentDomain.BaseDirectory;
-                giornirim = DateTime.Now.Day - giorniconsegna;
-                diffmese = DateTime.Now.Month - dataconsegna.Month;
-                diffanno = DateTime.Now.Year - dataconsegna.Year;
-                DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-                imageColumn.Name = "col";
-                imageColumn.Image = null;
-                this.dataGridView1.Columns.Add(imageColumn);
-                if (giornirim>0&&giornirim<=1&&diffmese==0&&diffanno==0|| diffmese>=1)
+                DateTime giorni = DateTime.Now;
+                int totalDays = Convert.ToInt32((giorni.Date - dataconsegna.Date).TotalDays);
+                if (totalDays>1)
                 {
-                    dataGridView1["col", row.Index].Value = Properties.Resources.arrabiato;
+                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.arrabiato;
                 }
-                if (giornirim>1&&giornirim<5&&diffmese==0&&diffanno==0)
+                if (totalDays<=-1&totalDays>-5)
                 {
-                    Bitmap bitmap = new Bitmap("C:\\Users\\krist\\Source\\Repos\\Target4\\Target2021\\Target2021\\Resources\\preoccupato.jpg");
-                    DataGridViewImageCell cell = new DataGridViewImageCell();
-                    cell.Value = bitmap;
-                    dataGridView1.Rows[row.Index].Cells[9].Value = cell;
+                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.preoccupato;
+
                 }
-                if (giornirim<=-1&&diffmese==0&&diffanno==0||diffmese<=-1)
+                if (totalDays<-5)
                 {
-                    dataGridView1["col", row.Index].Value = Properties.Resources.felice;
+                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.felice;
                 }
             }          
         }
@@ -88,7 +75,7 @@ namespace Target2021
             {
                 try
                 {
-                    int quantita =(int) row.Cells["NRPezziDaLavorare"].Value;
+                    int quantita =(int) row.Cells["NrPezziDaLavorare"].Value;
                     string IDMateriaPrima;
                     String stringa = Properties.Resources.StringaConnessione;
                     IDMateriaPrima = row.Cells["IDMateriaPrima"].Value.ToString();
@@ -125,7 +112,7 @@ namespace Target2021
             {
                 idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells["IDCommessa"].Value);
                 idcommessa.Replace("  ", string.Empty);
-                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells["NRPezziDaLavorare"].Value);
+                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells["NrPezziDaLavorare"].Value);
                 String stringa = Properties.Resources.StringaConnessione;
                 string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells["IDMateriaPrima"].Value + "'";
                 SqlConnection con = new SqlConnection(stringa);
@@ -179,7 +166,7 @@ namespace Target2021
             DateTime DataCommessa =Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataCommessa"].Value);
             DateTime DataConsegna = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataConsegna"].Value);
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "UPDATE Commesse SET CodCommessa='" + dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value + "', DataCommessa='" + DataCommessa.ToShortDateString() + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells["IDCliente"].Value + "',DataConsegna='" +DataConsegna.ToShortDateString() + "',NRPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells["NRPezziDaLavorare"].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells["DescrArticolo"].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells["IDStampo"].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells["IDMateriaPrima"].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value+"'";
+            string query = "UPDATE Commesse SET CodCommessa='" + dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value + "', DataCommessa='" + DataCommessa.ToShortDateString() + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells["IDCliente"].Value + "',DataConsegna='" +DataConsegna.ToShortDateString() + "',NrPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells["NrPezziDaLavorare"].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells["DescrArticolo"].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells["IDStampo"].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells["IDMateriaPrima"].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value+"'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();

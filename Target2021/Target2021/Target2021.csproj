@@ -83,6 +83,18 @@
     <Compile Include="Anagrafiche\AnaFasi.Designer.cs">
       <DependentUpon>AnaFasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\AnaGiacenze.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaGiacenze.Designer.cs">
+      <DependentUpon>AnaGiacenze.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMagazzini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMagazzini.Designer.cs">
+      <DependentUpon>AnaMagazzini.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anagrafiche\AnaMateriePrime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +188,18 @@
     <Compile Include="Anagrafiche\RigaCompleta.Designer.cs">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScaricoCaricoMagazzini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScaricoCaricoMagazzini.Designer.cs">
+      <DependentUpon>ScaricoCaricoMagazzini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RiepilogoMovimenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiepilogoMovimenti.Designer.cs">
+      <DependentUpon>RiepilogoMovimenti.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelezAna\SelForn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +229,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaFasi.resx">
       <DependentUpon>AnaFasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaGiacenze.resx">
+      <DependentUpon>AnaGiacenze.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaMagazzini.resx">
+      <DependentUpon>AnaMagazzini.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaMateriePrime.resx">
       <DependentUpon>AnaMateriePrime.cs</DependentUpon>
@@ -263,6 +293,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\RigaCompleta.resx">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScaricoCaricoMagazzini.resx">
+      <DependentUpon>ScaricoCaricoMagazzini.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RiepilogoMovimenti.resx">
+      <DependentUpon>RiepilogoMovimenti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelezAna\SelForn.resx">
       <DependentUpon>SelForn.cs</DependentUpon>

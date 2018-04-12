@@ -200,6 +200,34 @@ namespace Target2021
             checkassemblaggio.Show();
         }
 
+        private void inserisciNuovoCaricoscaricoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ScaricoCaricoMagazzini scaricoCarico = new ScaricoCaricoMagazzini();
+            scaricoCarico.MdiParent = this;
+            scaricoCarico.Show();
+        }
+
+        private void interrogazioneMovimentiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RiepilogoMovimenti riepilogoMovimenti = new RiepilogoMovimenti();
+            riepilogoMovimenti.MdiParent = this;
+            riepilogoMovimenti.Show();
+        }
+
+        private void anagraficheMagazziniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaMagazzini AnaMag = new AnaMagazzini();
+            AnaMag.MdiParent = this;
+            AnaMag.Show();
+        }
+
+        private void interrogazioneGiacenzeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaGiacenze AnaGia = new AnaGiacenze();
+            AnaGia.MdiParent = this;
+            AnaGia.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
