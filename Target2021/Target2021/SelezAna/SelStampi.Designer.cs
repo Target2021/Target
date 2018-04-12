@@ -56,6 +56,8 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingNavigator)).BeginInit();
@@ -135,7 +137,7 @@
             this.stampiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stampiBindingNavigator.Name = "stampiBindingNavigator";
             this.stampiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stampiBindingNavigator.Size = new System.Drawing.Size(431, 27);
+            this.stampiBindingNavigator.Size = new System.Drawing.Size(441, 27);
             this.stampiBindingNavigator.TabIndex = 0;
             this.stampiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -247,10 +249,10 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.stampiDataGridView.DataSource = this.stampiBindingSource;
-            this.stampiDataGridView.Location = new System.Drawing.Point(0, 30);
+            this.stampiDataGridView.Location = new System.Drawing.Point(0, 94);
             this.stampiDataGridView.Name = "stampiDataGridView";
             this.stampiDataGridView.RowTemplate.Height = 24;
-            this.stampiDataGridView.Size = new System.Drawing.Size(431, 410);
+            this.stampiDataGridView.Size = new System.Drawing.Size(431, 346);
             this.stampiDataGridView.TabIndex = 1;
             this.stampiDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stampiDataGridView_CellContentClick);
             this.stampiDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stampiDataGridView_CellContentClick);
@@ -308,11 +310,30 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Visible = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(128, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "CODICE:";
+            // 
             // SelStampi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 443);
+            this.ClientSize = new System.Drawing.Size(441, 445);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.stampiDataGridView);
             this.Controls.Add(this.stampiBindingNavigator);
             this.Name = "SelStampi";
@@ -357,5 +378,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

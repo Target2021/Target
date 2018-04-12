@@ -42,5 +42,10 @@ namespace Target2021.SelezAna
             CodFase = IDS;
             this.Close();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            stampiBindingSource.Filter = "codice LIKE '%" + textBox1.Text + "%'";
+        }
     }
 }
