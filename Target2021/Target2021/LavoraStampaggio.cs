@@ -45,6 +45,9 @@ namespace Target2021
         }
         private void LavoraStampaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Stampi'. È possibile spostarla o rimuoverla se necessario.
+            this.stampiTableAdapter.Fill(this.target2021DataSet.Stampi);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AnaMagazzini'. È possibile spostarla o rimuoverla se necessario.
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             cCToolStripTextBox.Text = IDCommessa;
@@ -134,7 +137,7 @@ namespace Target2021
         private void commesseBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = " UPDATE Commesse SET  CodCommessa='"+codCommessaTextBox.Text+"', NrCommessa='"+nrCommessaTextBox.Text+"',IDCliente='"+iDClienteTextBox.Text+"',NrPezziDaLavorare='"+nrPezziDaLavorareTextBox.Text+"',CodArticolo='"+codArticoloTextBox.Text+"',DescrArticolo='"+descrArticoloTextBox.Text+"', IDStampo='"+iDStampoTextBox.Text+"',CodArtiDopoStampo='"+codArtiDopoStampoTextBox.Text+"',NrPezziCorretti='"+nrPezziCorrettiTextBox.Text+"',NrPezziScartati='"+nrPezziScartatiTextBox.Text+"', DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "' WHERE IDCommessa='"+IDCommessa+"'";
+            string query = " UPDATE Commesse SET  CodCommessa='"+codCommessaTextBox.Text+"', NrCommessa='"+nrCommessaTextBox.Text+"',IDCliente='"+iDClienteTextBox.Text+"',NrPezziDaLavorare='"+nrPezziDaLavorareTextBox.Text+"',CodArticolo='"+codArticoloTextBox.Text+"',DescrArticolo='"+descrArticoloTextBox.Text+"', IDStampo='"+ iDStampoTextBox.Text+"',CodArtiDopoStampo='"+codArtiDopoStampoTextBox.Text+"',NrPezziCorretti='"+nrPezziCorrettiTextBox.Text+"',NrPezziScartati='"+nrPezziScartatiTextBox.Text+"', DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "' WHERE IDCommessa='"+IDCommessa+"'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -171,11 +174,6 @@ namespace Target2021
             }
         }
 
-        private void iDCommessaLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void iDCommessaTextBox_TextChanged(object sender, EventArgs e)
         {
 
@@ -210,6 +208,48 @@ namespace Target2021
             {
                 MessageBox.Show("Controllare ID commessa");
             }
+        }
+        private void AggiornaLavorazione(object sender, EventArgs e)
+        {
+            string CodLav, stringaconnessione, sql, NomeLavorazione;
+            CodLav = iDStampoTextBox.Text;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT descrizione FROM Fasi WHERE codice=" + CodLav;
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            NomeLavorazione = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            label10.Text = NomeLavorazione;
+        }
+        private void iDStampoTextBox_Click(object sender, EventArgs e)
+        {
+            CambiaStampo(sender,e);
+        }
+        private void CambiaStampo(object sender, EventArgs e)
+        {
+            SelezAna.SelStampi selezionastampo = new SelezAna.SelStampi(iDStampoTextBox.Text);
+            selezionastampo.FormClosed += new FormClosedEventHandler(ChiudiStampo);
+            selezionastampo.Show();
+        }
+
+        private void ChiudiStampo(object sender, FormClosedEventArgs e)
+        {
+            SelezAna.SelStampi sf = (SelezAna.SelStampi)sender;
+            string idStampo = sf.CodFase;
+            iDStampoTextBox.Text = idStampo;
+            string stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            string sql = "SELECT descrizione FROM Stampi WHERE codice='" + idStampo+"'";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            string descrizione = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            label10.Text = descrizione;
+        }
+        private void iDStampoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.commesseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.target2021DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager1 = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.commesseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
+            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -78,26 +78,6 @@
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // commesseBindingSource1
-            // 
-            this.commesseBindingSource1.DataMember = "Commesse";
-            this.commesseBindingSource1.DataSource = this.target2021DataSetBindingSource;
-            // 
-            // target2021DataSetBindingSource
-            // 
-            this.target2021DataSetBindingSource.DataSource = this.target2021DataSet;
-            this.target2021DataSetBindingSource.Position = 0;
-            // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // commesseBindingSource
-            // 
-            this.commesseBindingSource.DataMember = "Commesse";
-            this.commesseBindingSource.DataSource = this.target2021DataSet;
-            // 
             // tableAdapterManager1
             // 
             this.tableAdapterManager1.AnaMagazziniTableAdapter = null;
@@ -130,9 +110,22 @@
             this.tableAdapterManager1.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.UtentiTableAdapter = null;
             // 
+            // commesseBindingSource1
+            // 
+            this.commesseBindingSource1.DataSource = this.target2021DataSetBindingSource;
+            // 
             // commesseTableAdapter
             // 
             this.commesseTableAdapter.ClearBeforeFill = true;
+            // 
+            // commesseBindingSource
+            // 
+            this.commesseBindingSource.DataSource = this.target2021DataSetBindingSource;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CheckStampaggio
             // 
@@ -143,28 +136,28 @@
             this.ClientSize = new System.Drawing.Size(1745, 641);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckStampaggio";
             this.Text = "Attività di stampaggio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.CheckStampaggio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.BindingSource target2021DataSetBindingSource;
-        private Target2021DataSet target2021DataSet;
-        private System.Windows.Forms.BindingSource commesseBindingSource;
-        private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource target2021DataSetBindingSource;
+        private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.BindingSource commesseBindingSource1;
         private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
+        private System.Windows.Forms.BindingSource commesseBindingSource;
+        private Target2021DataSet target2021DataSet;
     }
 }

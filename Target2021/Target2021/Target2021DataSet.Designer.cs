@@ -4395,6 +4395,8 @@ namespace Target2021 {
             
             private global::System.Data.DataColumn columnOFSG5;
             
+            private global::System.Data.DataColumn columnIDStampo1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CommesseDataTable() {
@@ -4774,6 +4776,14 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDStampo1Column {
+                get {
+                    return this.columnIDStampo1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4851,7 +4861,8 @@ namespace Target2021 {
                         System.DateTime OISG4, 
                         System.DateTime OFSG4, 
                         System.DateTime OISG5, 
-                        System.DateTime OFSG5) {
+                        System.DateTime OFSG5, 
+                        string IDStampo1) {
                 CommesseRow rowCommesseRow = ((CommesseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4896,7 +4907,8 @@ namespace Target2021 {
                         OISG4,
                         OFSG4,
                         OISG5,
-                        OFSG5};
+                        OFSG5,
+                        IDStampo1};
                 rowCommesseRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCommesseRow);
                 return rowCommesseRow;
@@ -4969,6 +4981,7 @@ namespace Target2021 {
                 this.columnOFSG4 = base.Columns["OFSG4"];
                 this.columnOISG5 = base.Columns["OISG5"];
                 this.columnOFSG5 = base.Columns["OFSG5"];
+                this.columnIDStampo1 = base.Columns["IDStampo1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5060,6 +5073,8 @@ namespace Target2021 {
                 base.Columns.Add(this.columnOISG5);
                 this.columnOFSG5 = new global::System.Data.DataColumn("OFSG5", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOFSG5);
+                this.columnIDStampo1 = new global::System.Data.DataColumn("IDStampo1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDStampo1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDCommessa}, true));
                 this.columnIDCommessa.AutoIncrement = true;
@@ -5086,6 +5101,8 @@ namespace Target2021 {
                 this.columnIDMinuteria.MaxLength = 15;
                 this.columnNrOrdine.MaxLength = 10;
                 this.columnLottoAcquisto.MaxLength = 20;
+                this.columnIDStampo1.Caption = "IDStampo";
+                this.columnIDStampo1.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18088,6 +18105,22 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string IDStampo1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCommesse.IDStampo1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'IDStampo1\' nella tabella \'Commesse\' è DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCommesse.IDStampo1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDataCommessaNull() {
                 return this.IsNull(this.tableCommesse.DataCommessaColumn);
             }
@@ -18552,6 +18585,18 @@ namespace Target2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetOFSG5Null() {
                 this[this.tableCommesse.OFSG5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIDStampo1Null() {
+                return this.IsNull(this.tableCommesse.IDStampo1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIDStampo1Null() {
+                this[this.tableCommesse.IDStampo1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -31808,7 +31853,6 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             tableMapping.ColumnMappings.Add("Foto", "Foto");
             tableMapping.ColumnMappings.Add("IDFornitore", "IDFornitore");
             tableMapping.ColumnMappings.Add("IDMachStampa", "IDMachStampa");
-            tableMapping.ColumnMappings.Add("IDStampo", "IDStampo");
             tableMapping.ColumnMappings.Add("PercentualeUtilizzoLastra", "PercentualeUtilizzoLastra");
             tableMapping.ColumnMappings.Add("CodArtiDopoStampo", "CodArtiDopoStampo");
             tableMapping.ColumnMappings.Add("IDMachTaglio", "IDMachTaglio");
@@ -31836,6 +31880,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             tableMapping.ColumnMappings.Add("OFSG4", "OFSG4");
             tableMapping.ColumnMappings.Add("OISG5", "OISG5");
             tableMapping.ColumnMappings.Add("OFSG5", "OFSG5");
+            tableMapping.ColumnMappings.Add("IDStampo", "IDStampo1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -31918,7 +31963,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PercentualeUtilizzoLastra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentualeUtilizzoLastra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PercentualeUtilizzoLastra", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentualeUtilizzoLastra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodArtiDopoStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -32013,7 +32058,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Foto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Foto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDFornitore", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDFornitore", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PercentualeUtilizzoLastra", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentualeUtilizzoLastra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodArtiDopoStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMachTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -32132,7 +32177,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Foto", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Foto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDFornitore", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDFornitore", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PercentualeUtilizzoLastra", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentualeUtilizzoLastra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodArtiDopoStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDMachTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -32187,7 +32232,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDMachStampa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDMachStampa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IDStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDStampo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDStampo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PercentualeUtilizzoLastra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentualeUtilizzoLastra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PercentualeUtilizzoLastra", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PercentualeUtilizzoLastra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodArtiDopoStampo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodArtiDopoStampo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -32262,7 +32307,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, OFSG1, OFSG2, OFSG4, OFSG5, OISG1, OISG2, OISG3, OISG4, OISG5, OSFG3 FROM Commesse WHERE (NrCommessa = @Nr)";
+            this._commandCollection[1].CommandText = @"SELECT CodArtiDopoStampo, CodArtiDopoTaglio, CodArticolo, CodCommessa, DataCommessa, DataConsegna, DataTermine, DescrArticolo, Foto, IDCliente, IDCommessa, IDDima, IDFornitore, IDMachStampa, IDMachTaglio, IDMateriaPrima, IDMinuteria, IDStampo, LottoAcquisto, MinutiAttrezzaggio, Note, NrCommessa, NrOrdine, NrPezziCorretti, NrPezziDaLavorare, NrPezziOrdinati, NrPezziScartati, OFSG1, OFSG2, OFSG4, OFSG5, OISG1, OISG2, OISG3, OISG4, OISG5, OSFG3, OrdCliente, PercentualeUtilizzoLastra, Qtaminuteria, SecondiCicloTaglio, Stato, TipoCommessa FROM Commesse WHERE (NrCommessa = @Nr)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nr", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NrCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -32366,7 +32411,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
                     string Original_Foto, 
                     string Original_IDFornitore, 
                     global::System.Nullable<int> Original_IDMachStampa, 
-                    global::System.Nullable<int> Original_IDStampo, 
+                    string Original_IDStampo, 
                     global::System.Nullable<double> Original_PercentualeUtilizzoLastra, 
                     string Original_CodArtiDopoStampo, 
                     global::System.Nullable<int> Original_IDMachTaglio, 
@@ -32491,13 +32536,13 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
                 this.Adapter.DeleteCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            if ((Original_IDStampo.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[27].Value = ((int)(Original_IDStampo.Value));
-            }
-            else {
+            if ((Original_IDStampo == null)) {
                 this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[27].Value = ((string)(Original_IDStampo));
             }
             if ((Original_PercentualeUtilizzoLastra.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[28].Value = ((object)(0));
@@ -32750,7 +32795,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
                     string Foto, 
                     string IDFornitore, 
                     global::System.Nullable<int> IDMachStampa, 
-                    global::System.Nullable<int> IDStampo, 
+                    string IDStampo, 
                     global::System.Nullable<double> PercentualeUtilizzoLastra, 
                     string CodArtiDopoStampo, 
                     global::System.Nullable<int> IDMachTaglio, 
@@ -32852,11 +32897,11 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((IDStampo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((int)(IDStampo.Value));
+            if ((IDStampo == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(IDStampo));
             }
             if ((PercentualeUtilizzoLastra.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[15].Value = ((double)(PercentualeUtilizzoLastra.Value));
@@ -33055,7 +33100,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
                     string Foto, 
                     string IDFornitore, 
                     global::System.Nullable<int> IDMachStampa, 
-                    global::System.Nullable<int> IDStampo, 
+                    string IDStampo, 
                     global::System.Nullable<double> PercentualeUtilizzoLastra, 
                     string CodArtiDopoStampo, 
                     global::System.Nullable<int> IDMachTaglio, 
@@ -33098,7 +33143,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
                     string Original_Foto, 
                     string Original_IDFornitore, 
                     global::System.Nullable<int> Original_IDMachStampa, 
-                    global::System.Nullable<int> Original_IDStampo, 
+                    string Original_IDStampo, 
                     global::System.Nullable<double> Original_PercentualeUtilizzoLastra, 
                     string Original_CodArtiDopoStampo, 
                     global::System.Nullable<int> Original_IDMachTaglio, 
@@ -33201,11 +33246,11 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((IDStampo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(IDStampo.Value));
+            if ((IDStampo == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(IDStampo));
             }
             if ((PercentualeUtilizzoLastra.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(PercentualeUtilizzoLastra.Value));
@@ -33466,13 +33511,13 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
                 this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
             }
-            if ((Original_IDStampo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((int)(Original_IDStampo.Value));
-            }
-            else {
+            if ((Original_IDStampo == null)) {
                 this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(Original_IDStampo));
             }
             if ((Original_PercentualeUtilizzoLastra.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
@@ -33726,7 +33771,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
                     string Foto, 
                     string IDFornitore, 
                     global::System.Nullable<int> IDMachStampa, 
-                    global::System.Nullable<int> IDStampo, 
+                    string IDStampo, 
                     global::System.Nullable<double> PercentualeUtilizzoLastra, 
                     string CodArtiDopoStampo, 
                     global::System.Nullable<int> IDMachTaglio, 
@@ -33769,7 +33814,7 @@ SELECT IDMagazzino, Descrizione FROM AnaMagazzini WHERE (IDMagazzino = @IDMagazz
                     string Original_Foto, 
                     string Original_IDFornitore, 
                     global::System.Nullable<int> Original_IDMachStampa, 
-                    global::System.Nullable<int> Original_IDStampo, 
+                    string Original_IDStampo, 
                     global::System.Nullable<double> Original_PercentualeUtilizzoLastra, 
                     string Original_CodArtiDopoStampo, 
                     global::System.Nullable<int> Original_IDMachTaglio, 

@@ -44,5 +44,10 @@ namespace Target2021.SelezAna
             CodFase = NF;
             this.Close();
         }
+
+        private void fasiBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
     }
 }

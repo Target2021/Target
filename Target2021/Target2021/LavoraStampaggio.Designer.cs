@@ -56,12 +56,9 @@
             System.Windows.Forms.Label iDCommessaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LavoraStampaggio));
             this.label1 = new System.Windows.Forms.Label();
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.commesseBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -79,7 +76,6 @@
             this.nrPezziDaLavorareTextBox = new System.Windows.Forms.TextBox();
             this.codArticoloTextBox = new System.Windows.Forms.TextBox();
             this.descrArticoloTextBox = new System.Windows.Forms.TextBox();
-            this.iDStampoTextBox = new System.Windows.Forms.TextBox();
             this.codArtiDopoStampoTextBox = new System.Windows.Forms.TextBox();
             this.nrPezziOrdinatiTextBox = new System.Windows.Forms.TextBox();
             this.nrPezziCorrettiTextBox = new System.Windows.Forms.TextBox();
@@ -108,6 +104,13 @@
             this.dateTimePicker12 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker13 = new System.Windows.Forms.DateTimePicker();
             this.txt1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
+            this.iDStampoTextBox = new System.Windows.Forms.TextBox();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
             dataCommessaLabel = new System.Windows.Forms.Label();
@@ -133,16 +136,17 @@
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
             iDCommessaLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).BeginInit();
             this.commesseBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             this.fillByToolStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // codCommessaLabel
@@ -422,51 +426,6 @@
             this.label1.Text = "STAMPAGGIO";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // commesseBindingSource
-            // 
-            this.commesseBindingSource.DataMember = "Commesse";
-            this.commesseBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // commesseTableAdapter
-            // 
-            this.commesseTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
-            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
-            this.tableAdapterManager.ArticoliBCTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientiTableAdapter = null;
-            this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
-            this.tableAdapterManager.CompatibStampaTableAdapter = null;
-            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
-            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.DettArticoliTableAdapter = null;
-            this.tableAdapterManager.DimeTableAdapter = null;
-            this.tableAdapterManager.FasiTableAdapter = null;
-            this.tableAdapterManager.FornitoriTableAdapter = null;
-            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
-            this.tableAdapterManager.LavorazioniTableAdapter = null;
-            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
-            this.tableAdapterManager.MacchineStampoTableAdapter = null;
-            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
-            this.tableAdapterManager.MinuterieTableAdapter = null;
-            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
-            this.tableAdapterManager.PrimeTableAdapter = null;
-            this.tableAdapterManager.StampiTableAdapter = null;
-            this.tableAdapterManager.sysdiagramsTableAdapter = null;
-            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.TipoCommessaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtentiTableAdapter = null;
-            // 
             // commesseBindingNavigator
             // 
             this.commesseBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -507,6 +466,11 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
+            // 
+            // commesseBindingSource
+            // 
+            this.commesseBindingSource.DataMember = "Commesse";
+            this.commesseBindingSource.DataSource = this.target2021DataSet;
             // 
             // bindingNavigatorCountItem
             // 
@@ -652,16 +616,6 @@
             this.descrArticoloTextBox.Name = "descrArticoloTextBox";
             this.descrArticoloTextBox.Size = new System.Drawing.Size(265, 26);
             this.descrArticoloTextBox.TabIndex = 19;
-            // 
-            // iDStampoTextBox
-            // 
-            this.iDStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDStampo", true));
-            this.iDStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iDStampoTextBox.Location = new System.Drawing.Point(679, 132);
-            this.iDStampoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.iDStampoTextBox.Name = "iDStampoTextBox";
-            this.iDStampoTextBox.Size = new System.Drawing.Size(132, 26);
-            this.iDStampoTextBox.TabIndex = 21;
             // 
             // codArtiDopoStampoTextBox
             // 
@@ -956,12 +910,81 @@
             this.txt1.TabIndex = 48;
             this.txt1.TextChanged += new System.EventHandler(this.iDCommessaTextBox_TextChanged);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(836, 135);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 17);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "label10";
+            // 
+            // commesseTableAdapter
+            // 
+            this.commesseTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
+            this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
+            this.tableAdapterManager.CompatibStampaTableAdapter = null;
+            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
+            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.DimeTableAdapter = null;
+            this.tableAdapterManager.FasiTableAdapter = null;
+            this.tableAdapterManager.FornitoriTableAdapter = null;
+            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
+            this.tableAdapterManager.MacchineStampoTableAdapter = null;
+            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
+            this.tableAdapterManager.MinuterieTableAdapter = null;
+            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.TipoCommessaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // stampiBindingSource
+            // 
+            this.stampiBindingSource.DataMember = "Stampi";
+            this.stampiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // stampiTableAdapter
+            // 
+            this.stampiTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDStampoTextBox
+            // 
+            this.iDStampoTextBox.Location = new System.Drawing.Point(679, 136);
+            this.iDStampoTextBox.Name = "iDStampoTextBox";
+            this.iDStampoTextBox.Size = new System.Drawing.Size(132, 22);
+            this.iDStampoTextBox.TabIndex = 50;
+            this.iDStampoTextBox.Click += new System.EventHandler(this.iDStampoTextBox_Click);
+            this.iDStampoTextBox.TextChanged += new System.EventHandler(this.iDCommessaTextBox_TextChanged);
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1371, 643);
+            this.Controls.Add(this.iDStampoTextBox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txt1);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -983,7 +1006,6 @@
             this.Controls.Add(codArtiDopoStampoLabel);
             this.Controls.Add(this.codArtiDopoStampoTextBox);
             this.Controls.Add(iDStampoLabel);
-            this.Controls.Add(this.iDStampoTextBox);
             this.Controls.Add(descrArticoloLabel);
             this.Controls.Add(this.descrArticoloTextBox);
             this.Controls.Add(codArticoloLabel);
@@ -1005,11 +1027,10 @@
             this.Name = "LavoraStampaggio";
             this.Text = "LavoraStampaggio";
             this.Load += new System.EventHandler(this.LavoraStampaggio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).EndInit();
             this.commesseBindingNavigator.ResumeLayout(false);
             this.commesseBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1022,6 +1043,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1030,7 +1053,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private Target2021DataSet target2021DataSet;
         private System.Windows.Forms.BindingSource commesseBindingSource;
         private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
@@ -1053,7 +1075,6 @@
         private System.Windows.Forms.TextBox nrPezziDaLavorareTextBox;
         private System.Windows.Forms.TextBox codArticoloTextBox;
         private System.Windows.Forms.TextBox descrArticoloTextBox;
-        private System.Windows.Forms.TextBox iDStampoTextBox;
         private System.Windows.Forms.TextBox codArtiDopoStampoTextBox;
         private System.Windows.Forms.TextBox nrPezziOrdinatiTextBox;
         private System.Windows.Forms.TextBox nrPezziCorrettiTextBox;
@@ -1082,5 +1103,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker12;
         private System.Windows.Forms.DateTimePicker dateTimePicker13;
         private System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.Label label10;
+        private Target2021DataSet target2021DataSet;
+        private System.Windows.Forms.BindingSource stampiBindingSource;
+        private Target2021DataSetTableAdapters.StampiTableAdapter stampiTableAdapter;
+        private System.Windows.Forms.TextBox iDStampoTextBox;
     }
 }

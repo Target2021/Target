@@ -200,6 +200,12 @@
     <Compile Include="SelezAna\SelLav.Designer.cs">
       <DependentUpon>SelLav.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelezAna\SelStampi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelezAna\SelStampi.designer.cs">
+      <DependentUpon>SelStampi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelezAna\SelLav.resx">
       <DependentUpon>SelLav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelezAna\SelStampi.resx">
+      <DependentUpon>SelStampi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
