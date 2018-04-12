@@ -51,6 +51,14 @@ namespace Target2021
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             cCToolStripTextBox.Text = IDCommessa;
+            string stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            string sql = "SELECT descrizione FROM Stampi WHERE codice=(SELECT IDStampo FROM Commesse WHERE IDCommessa='"+IDCommessa+"')";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            string descrizione = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            label10.Text = descrizione;
             int i =0;
            // RecuperoDati();
             RecuperoDate("SELECT DataCommessa FROM Commesse WHERE IDCommessa='" + IDCommessa + "'",i);
