@@ -188,6 +188,7 @@
             this.fornitoriToolStripMenuItem.Name = "fornitoriToolStripMenuItem";
             this.fornitoriToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.fornitoriToolStripMenuItem.Text = "Fornitori";
+            this.fornitoriToolStripMenuItem.Click += new System.EventHandler(this.fornitoriToolStripMenuItem_Click);
             // 
             // macchinariToolStripMenuItem
             // 

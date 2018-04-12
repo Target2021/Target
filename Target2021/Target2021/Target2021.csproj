@@ -83,6 +83,12 @@
     <Compile Include="Anagrafiche\AnaFasi.Designer.cs">
       <DependentUpon>AnaFasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\AnaFornitori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaFornitori.Designer.cs">
+      <DependentUpon>AnaFornitori.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anagrafiche\AnaGiacenze.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaFasi.resx">
       <DependentUpon>AnaFasi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaFornitori.resx">
+      <DependentUpon>AnaFornitori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaGiacenze.resx">
       <DependentUpon>AnaGiacenze.cs</DependentUpon>
