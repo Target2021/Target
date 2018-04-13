@@ -188,6 +188,12 @@
     <Compile Include="Anagrafiche\RigaCompleta.Designer.cs">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="RiepilogoCommesse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RiepilogoCommesse.Designer.cs">
+      <DependentUpon>RiepilogoCommesse.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScaricoCaricoMagazzini.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\RigaCompleta.resx">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RiepilogoCommesse.resx">
+      <DependentUpon>RiepilogoCommesse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScaricoCaricoMagazzini.resx">
       <DependentUpon>ScaricoCaricoMagazzini.cs</DependentUpon>
