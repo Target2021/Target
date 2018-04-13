@@ -137,7 +137,7 @@
             this.stampiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stampiBindingNavigator.Name = "stampiBindingNavigator";
             this.stampiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stampiBindingNavigator.Size = new System.Drawing.Size(441, 27);
+            this.stampiBindingNavigator.Size = new System.Drawing.Size(562, 27);
             this.stampiBindingNavigator.TabIndex = 0;
             this.stampiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -153,7 +153,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -194,7 +194,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -238,6 +238,7 @@
             // stampiDataGridView
             // 
             this.stampiDataGridView.AutoGenerateColumns = false;
+            this.stampiDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.stampiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stampiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -249,10 +250,12 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.stampiDataGridView.DataSource = this.stampiBindingSource;
-            this.stampiDataGridView.Location = new System.Drawing.Point(0, 94);
+            this.stampiDataGridView.Location = new System.Drawing.Point(0, 76);
+            this.stampiDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.stampiDataGridView.Name = "stampiDataGridView";
             this.stampiDataGridView.RowTemplate.Height = 24;
-            this.stampiDataGridView.Size = new System.Drawing.Size(431, 346);
+            this.stampiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.stampiDataGridView.Size = new System.Drawing.Size(562, 281);
             this.stampiDataGridView.TabIndex = 1;
             this.stampiDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stampiDataGridView_CellContentClick);
             this.stampiDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.stampiDataGridView_CellContentClick);
@@ -262,18 +265,21 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "codice";
             this.dataGridViewTextBoxColumn1.HeaderText = "codice";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 64;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "tipo";
             this.dataGridViewTextBoxColumn2.HeaderText = "tipo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 49;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "descrizione";
             this.dataGridViewTextBoxColumn3.HeaderText = "descrizione";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 85;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -312,30 +318,33 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 48);
+            this.textBox1.Location = new System.Drawing.Point(96, 39);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 51);
+            this.label1.Location = new System.Drawing.Point(33, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "CODICE:";
             // 
             // SelStampi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 445);
+            this.ClientSize = new System.Drawing.Size(562, 362);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.stampiDataGridView);
             this.Controls.Add(this.stampiBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SelStampi";
             this.Text = "SelStampi";
             this.Load += new System.EventHandler(this.SelStampi_Load);
