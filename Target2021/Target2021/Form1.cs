@@ -242,6 +242,13 @@ namespace Target2021
             AMT.Show();
         }
 
+        private void commesseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RiepilogoCommesse riepilogocommessa = new RiepilogoCommesse();
+            riepilogocommessa.MdiParent = this;
+            riepilogocommessa.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
