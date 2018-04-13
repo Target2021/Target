@@ -306,7 +306,7 @@
             this.commesseToolStripMenuItem1.Name = "commesseToolStripMenuItem1";
             this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(246, 32);
             this.commesseToolStripMenuItem1.Text = "Commesse";
-            this.commesseToolStripMenuItem1.Click += new System.EventHandler(this.commesseToolStripMenuItem1_Click);
+            //this.commesseToolStripMenuItem1.Click += new System.EventHandler(this.commesseToolStripMenuItem1_Click);
             // 
             // controllaNuoviOrdiniToolStripMenuItem
             // 
