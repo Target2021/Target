@@ -228,6 +228,20 @@ namespace Target2021
             AnaGia.Show();
         }
 
+        private void fornitoriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaFornitori AnaForn = new AnaFornitori();
+            AnaForn.MdiParent = this;
+            AnaForn.Show();
+        }
+
+        private void macchineDiTaglioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaMTaglio AMT = new AnaMTaglio();
+            AMT.MdiParent = this;
+            AMT.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

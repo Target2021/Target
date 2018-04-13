@@ -188,6 +188,7 @@
             this.fornitoriToolStripMenuItem.Name = "fornitoriToolStripMenuItem";
             this.fornitoriToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.fornitoriToolStripMenuItem.Text = "Fornitori";
+            this.fornitoriToolStripMenuItem.Click += new System.EventHandler(this.fornitoriToolStripMenuItem_Click);
             // 
             // macchinariToolStripMenuItem
             // 
@@ -210,6 +211,7 @@
             this.macchineDiTaglioToolStripMenuItem.Name = "macchineDiTaglioToolStripMenuItem";
             this.macchineDiTaglioToolStripMenuItem.Size = new System.Drawing.Size(229, 32);
             this.macchineDiTaglioToolStripMenuItem.Text = "Macchine di taglio";
+            this.macchineDiTaglioToolStripMenuItem.Click += new System.EventHandler(this.macchineDiTaglioToolStripMenuItem_Click);
             // 
             // strumentiToolStripMenuItem
             // 

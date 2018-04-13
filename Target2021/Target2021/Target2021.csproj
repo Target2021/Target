@@ -83,6 +83,12 @@
     <Compile Include="Anagrafiche\AnaFasi.Designer.cs">
       <DependentUpon>AnaFasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\AnaFornitori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaFornitori.Designer.cs">
+      <DependentUpon>AnaFornitori.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anagrafiche\AnaGiacenze.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,12 @@
     </Compile>
     <Compile Include="Anagrafiche\AnaMStampo.Designer.cs">
       <DependentUpon>AnaMStampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMTaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMTaglio.Designer.cs">
+      <DependentUpon>AnaMTaglio.cs</DependentUpon>
     </Compile>
     <Compile Include="Anagrafiche\AnaStampi.cs">
       <SubType>Form</SubType>
@@ -218,6 +230,12 @@
     <Compile Include="SelezAna\SelLav.Designer.cs">
       <DependentUpon>SelLav.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelezAna\SelStampi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelezAna\SelStampi.designer.cs">
+      <DependentUpon>SelStampi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -236,6 +254,9 @@
     <EmbeddedResource Include="Anagrafiche\AnaFasi.resx">
       <DependentUpon>AnaFasi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaFornitori.resx">
+      <DependentUpon>AnaFornitori.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaGiacenze.resx">
       <DependentUpon>AnaGiacenze.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaMStampo.resx">
       <DependentUpon>AnaMStampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaMTaglio.resx">
+      <DependentUpon>AnaMTaglio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaStampi.resx">
       <DependentUpon>AnaStampi.cs</DependentUpon>
@@ -314,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelezAna\SelLav.resx">
       <DependentUpon>SelLav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelezAna\SelStampi.resx">
+      <DependentUpon>SelStampi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
