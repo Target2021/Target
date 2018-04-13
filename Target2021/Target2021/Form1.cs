@@ -113,9 +113,7 @@ namespace Target2021
 
         private void disconnettiUtenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Enabled = false;
+
         }
 
         private void registraUtentiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -240,6 +238,13 @@ namespace Target2021
             AnaMTaglio AMT = new AnaMTaglio();
             AMT.MdiParent = this;
             AMT.Show();
+        }
+
+        private void disconnettiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Enabled = false;
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
