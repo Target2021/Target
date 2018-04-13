@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.movimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -53,55 +49,14 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.movimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // movimentiMagazzinoBindingSource
-            // 
-            this.movimentiMagazzinoBindingSource.DataMember = "MovimentiMagazzino";
-            this.movimentiMagazzinoBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // movimentiMagazzinoTableAdapter
-            // 
-            this.movimentiMagazzinoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
-            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
-            this.tableAdapterManager.ArticoliBCTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientiTableAdapter = null;
-            this.tableAdapterManager.CommesseTableAdapter = null;
-            this.tableAdapterManager.CompatibStampaTableAdapter = null;
-            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
-            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.DettArticoliTableAdapter = null;
-            this.tableAdapterManager.DimeTableAdapter = null;
-            this.tableAdapterManager.FasiTableAdapter = null;
-            this.tableAdapterManager.FornitoriTableAdapter = null;
-            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
-            this.tableAdapterManager.LavorazioniTableAdapter = null;
-            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
-            this.tableAdapterManager.MacchineStampoTableAdapter = null;
-            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
-            this.tableAdapterManager.MinuterieTableAdapter = null;
-            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = this.movimentiMagazzinoTableAdapter;
-            this.tableAdapterManager.PrimeTableAdapter = null;
-            this.tableAdapterManager.StampiTableAdapter = null;
-            this.tableAdapterManager.sysdiagramsTableAdapter = null;
-            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.TipoCommessaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // textBox1
             // 
@@ -137,6 +92,7 @@
             this.Carico.TabStop = true;
             this.Carico.Text = "Carico";
             this.Carico.UseVisualStyleBackColor = true;
+            this.Carico.Click += new System.EventHandler(this.Scarico_Click);
             // 
             // Scarico
             // 
@@ -148,6 +104,7 @@
             this.Scarico.TabStop = true;
             this.Scarico.Text = "Scarico";
             this.Scarico.UseVisualStyleBackColor = true;
+            this.Scarico.Click += new System.EventHandler(this.Scarico_Click);
             // 
             // groupBox1
             // 
@@ -281,6 +238,54 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Prezzo complessivo";
             // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // movimentiMagazzinoBindingSource
+            // 
+            this.movimentiMagazzinoBindingSource.DataMember = "MovimentiMagazzino";
+            this.movimentiMagazzinoBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // movimentiMagazzinoTableAdapter
+            // 
+            this.movimentiMagazzinoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
+            this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.Commesse1TableAdapter = null;
+            this.tableAdapterManager.Commesse2TableAdapter = null;
+            this.tableAdapterManager.Commesse3TableAdapter = null;
+            this.tableAdapterManager.CommesseTableAdapter = null;
+            this.tableAdapterManager.CompatibStampaTableAdapter = null;
+            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
+            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.DimeTableAdapter = null;
+            this.tableAdapterManager.FasiTableAdapter = null;
+            this.tableAdapterManager.FornitoriTableAdapter = null;
+            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
+            this.tableAdapterManager.MacchineStampoTableAdapter = null;
+            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
+            this.tableAdapterManager.MinuterieTableAdapter = null;
+            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = this.movimentiMagazzinoTableAdapter;
+            this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.TipoCommessaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
+            // 
             // ScaricoCaricoMagazzini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,10 +313,10 @@
             this.Name = "ScaricoCaricoMagazzini";
             this.Text = "ScaricoCaricoMagazzini";
             this.Load += new System.EventHandler(this.ScaricoCaricoMagazzini_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

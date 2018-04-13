@@ -35,7 +35,10 @@ namespace Target2021
             int id = Convert.ToInt32(cmd.ExecuteScalar())+1;
             con.Close();
             textBox1.Text = Convert.ToString(id);
-
+            label7.Visible = false;
+            label8.Visible = false;
+            textBox6.Visible = false;
+            textBox7.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,16 +48,25 @@ namespace Target2021
             {
                 if(Carico.Checked)
                 {
+                    label7.Visible = true;
+                    label8.Visible = true;
+                    textBox6.Visible = true;
+                    textBox7.Visible = true;
                     carico(this.comboBox1.GetItemText(this.comboBox1.SelectedItem));                  
                 }
                 if(Scarico.Checked)
                 {
+                    label7.Visible = false;
+                    label8.Visible = false;
+                    textBox6.Visible = false;
+                    textBox7.Visible = false;
                     scarico(this.comboBox1.GetItemText(this.comboBox1.SelectedItem));
                 }
             }
         }
         private void scarico(string oggetto)
         {
+    
             String stringa = Properties.Resources.StringaConnessione;
             string query = null, queryup = null, queryins = null, querydiff = null;
             int quantità = 0;
@@ -134,6 +146,7 @@ namespace Target2021
          }
         private void carico(string oggetto)
         {
+    
             String stringa = Properties.Resources.StringaConnessione;
             string query = null, queryup = null, queryins = null,querydiff=null;
             int quantità = 0;
@@ -210,6 +223,24 @@ namespace Target2021
             }
             con.Close();
             this.Close();
+        }
+
+        private void Scarico_Click(object sender, EventArgs e)
+        {
+            if (Carico.Checked)
+            {
+                label7.Visible = true;
+                label8.Visible = true;
+                textBox6.Visible = true;
+                textBox7.Visible = true;
+            }
+            if (Scarico.Checked)
+            {
+                label7.Visible = false;
+                label8.Visible = false;
+                textBox6.Visible = false;
+                textBox7.Visible = false;
+            }
         }
     }
 }
