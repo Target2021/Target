@@ -72,5 +72,20 @@ namespace Target2021
             SDA.Update(dataTable);
             conn.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ricerca();
+        }
+        private void ricerca()
+        {
+            BindingSource risorsa = new BindingSource();
+            risorsa.DataSource = dataTable;
+            if (comboBox1.Text == "Codice articolo")
+            {
+
+            }
+           
+        }
     }
 }
