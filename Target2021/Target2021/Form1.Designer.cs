@@ -73,9 +73,9 @@
             this.taglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assemblaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disconnettiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disconnettiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -306,7 +306,7 @@
             this.commesseToolStripMenuItem1.Name = "commesseToolStripMenuItem1";
             this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(246, 32);
             this.commesseToolStripMenuItem1.Text = "Commesse";
-            //this.commesseToolStripMenuItem1.Click += new System.EventHandler(this.commesseToolStripMenuItem1_Click);
+            this.commesseToolStripMenuItem1.Click += new System.EventHandler(this.commesseToolStripMenuItem1_Click);
             // 
             // controllaNuoviOrdiniToolStripMenuItem
             // 
@@ -445,6 +445,13 @@
             this.disconnettiUtenteToolStripMenuItem.Text = "Disconnetti utente";
             this.disconnettiUtenteToolStripMenuItem.Click += new System.EventHandler(this.disconnettiUtenteToolStripMenuItem_Click);
             // 
+            // disconnettiToolStripMenuItem
+            // 
+            this.disconnettiToolStripMenuItem.Name = "disconnettiToolStripMenuItem";
+            this.disconnettiToolStripMenuItem.Size = new System.Drawing.Size(169, 32);
+            this.disconnettiToolStripMenuItem.Text = "Disconnetti";
+            this.disconnettiToolStripMenuItem.Click += new System.EventHandler(this.disconnettiToolStripMenuItem_Click);
+            // 
             // registraUtenteToolStripMenuItem
             // 
             this.registraUtenteToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F);
@@ -460,13 +467,6 @@
             this.esciToolStripMenuItem.Size = new System.Drawing.Size(53, 32);
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
-            // 
-            // disconnettiToolStripMenuItem
-            // 
-            this.disconnettiToolStripMenuItem.Name = "disconnettiToolStripMenuItem";
-            this.disconnettiToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
-            this.disconnettiToolStripMenuItem.Text = "Disconnetti";
-            this.disconnettiToolStripMenuItem.Click += new System.EventHandler(this.disconnettiToolStripMenuItem_Click);
             // 
             // Home
             // 
