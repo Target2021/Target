@@ -14,6 +14,7 @@ namespace Target2021
 {
     public partial class ScaricoCaricoMagazzini : Form
     {
+        String stringa = Properties.Resources.StringaConnessione;
         public ScaricoCaricoMagazzini()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Target2021
 
         private void ScaricoCaricoMagazzini_Load(object sender, EventArgs e)
         {
-            String stringa = Properties.Resources.StringaConnessione;
+
             string query = "SELECT MAX(idMovimento) FROM MovimentiMagazzino";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
@@ -66,8 +67,6 @@ namespace Target2021
         }
         private void scarico(string oggetto)
         {
-    
-            String stringa = Properties.Resources.StringaConnessione;
             string query = null, queryup = null, queryins = null, querydiff = null;
             int quantità = 0;
             if (oggetto == "Materia Prima")
@@ -146,8 +145,6 @@ namespace Target2021
          }
         private void carico(string oggetto)
         {
-    
-            String stringa = Properties.Resources.StringaConnessione;
             string query = null, queryup = null, queryins = null,querydiff=null;
             int quantità = 0;
             if (oggetto == "Materia Prima")
