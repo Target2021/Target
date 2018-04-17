@@ -59,6 +59,7 @@
             this.commesseBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -107,10 +108,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.target2021DataSet = new Target2021.Target2021DataSet();
             this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
             this.iDStampoTextBox = new System.Windows.Forms.TextBox();
+            this.LastreEffettive = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
             dataCommessaLabel = new System.Windows.Forms.Label();
@@ -139,13 +141,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).BeginInit();
             this.commesseBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             this.fillByToolStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -419,7 +421,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(345, 31);
+            this.label1.Location = new System.Drawing.Point(351, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(327, 50);
             this.label1.TabIndex = 0;
@@ -471,6 +473,11 @@
             // 
             this.commesseBindingSource.DataMember = "Commesse";
             this.commesseBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -744,7 +751,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(187, 476);
+            this.button1.Location = new System.Drawing.Point(187, 536);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(267, 55);
@@ -904,6 +911,7 @@
             // txt1
             // 
             this.txt1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCommessa", true));
+            this.txt1.Enabled = false;
             this.txt1.Location = new System.Drawing.Point(187, 136);
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(132, 22);
@@ -930,6 +938,9 @@
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.Commesse1TableAdapter = null;
+            this.tableAdapterManager.Commesse2TableAdapter = null;
+            this.tableAdapterManager.Commesse3TableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
@@ -954,11 +965,6 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // stampiBindingSource
             // 
             this.stampiBindingSource.DataMember = "Stampi";
@@ -977,12 +983,32 @@
             this.iDStampoTextBox.Click += new System.EventHandler(this.iDStampoTextBox_Click);
             this.iDStampoTextBox.TextChanged += new System.EventHandler(this.iDCommessaTextBox_TextChanged);
             // 
+            // LastreEffettive
+            // 
+            this.LastreEffettive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastreEffettive.Location = new System.Drawing.Point(187, 474);
+            this.LastreEffettive.Name = "LastreEffettive";
+            this.LastreEffettive.Size = new System.Drawing.Size(132, 30);
+            this.LastreEffettive.TabIndex = 51;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(30, 484);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(126, 20);
+            this.label11.TabIndex = 52;
+            this.label11.Text = "Lastre effettive:";
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1371, 643);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.LastreEffettive);
             this.Controls.Add(this.iDStampoTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txt1);
@@ -1031,6 +1057,7 @@
             this.commesseBindingNavigator.ResumeLayout(false);
             this.commesseBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1043,7 +1070,6 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1108,5 +1134,7 @@
         private System.Windows.Forms.BindingSource stampiBindingSource;
         private Target2021DataSetTableAdapters.StampiTableAdapter stampiTableAdapter;
         private System.Windows.Forms.TextBox iDStampoTextBox;
+        private System.Windows.Forms.TextBox LastreEffettive;
+        private System.Windows.Forms.Label label11;
     }
 }

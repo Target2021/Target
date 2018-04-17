@@ -57,9 +57,7 @@ namespace Target2021
                 NomeFornitore = comando.ExecuteScalar().ToString();
             }
             catch (Exception ex)
-            {
-
-            }
+            { }
             connessione.Close();
             label1.Text = NomeFornitore;
         }
@@ -67,13 +65,18 @@ namespace Target2021
         private void AggiornaLavorazione(object sender, EventArgs e)
         {
             string CodLav, stringaconnessione, sql, NomeLavorazione;
+            NomeLavorazione = label2.Text;
             CodLav = lavorazioneTextBox.Text;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
             sql = "SELECT Descrizione FROM Fasi WHERE IDFase=" + CodLav;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            NomeLavorazione  = comando.ExecuteScalar().ToString();
+            try
+            {       
+                NomeLavorazione  = comando.ExecuteScalar().ToString();
+            }
+            catch { }
             connessione.Close();
             label2.Text = NomeLavorazione;
             if (Convert.ToInt32(CodLav) == 1) codicePrimaStampoDimaLabel.Text = "Codice materia prima:";

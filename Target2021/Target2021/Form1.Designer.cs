@@ -53,8 +53,6 @@
             this.compatibilitàStampiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compatibilitàDimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testataOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dettaglioOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commesseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.controllaNuoviOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +100,9 @@
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.Commesse1TableAdapter = null;
+            this.tableAdapterManager.Commesse2TableAdapter = null;
+            this.tableAdapterManager.Commesse3TableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
@@ -280,26 +281,12 @@
             // ordiniToolStripMenuItem
             // 
             this.ordiniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testataOrdiniToolStripMenuItem,
-            this.dettaglioOrdiniToolStripMenuItem,
             this.commesseToolStripMenuItem1,
             this.controllaNuoviOrdiniToolStripMenuItem});
             this.ordiniToolStripMenuItem.Font = new System.Drawing.Font("Sitka Banner", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordiniToolStripMenuItem.Name = "ordiniToolStripMenuItem";
             this.ordiniToolStripMenuItem.Size = new System.Drawing.Size(72, 32);
             this.ordiniToolStripMenuItem.Text = "Ordini";
-            // 
-            // testataOrdiniToolStripMenuItem
-            // 
-            this.testataOrdiniToolStripMenuItem.Name = "testataOrdiniToolStripMenuItem";
-            this.testataOrdiniToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
-            this.testataOrdiniToolStripMenuItem.Text = "Testata ordini";
-            // 
-            // dettaglioOrdiniToolStripMenuItem
-            // 
-            this.dettaglioOrdiniToolStripMenuItem.Name = "dettaglioOrdiniToolStripMenuItem";
-            this.dettaglioOrdiniToolStripMenuItem.Size = new System.Drawing.Size(246, 32);
-            this.dettaglioOrdiniToolStripMenuItem.Text = "Dettaglio ordini";
             // 
             // commesseToolStripMenuItem1
             // 
@@ -512,8 +499,6 @@
         private System.Windows.Forms.ToolStripMenuItem compatibilitàStampiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compatibilitàDimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordiniToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem testataOrdiniToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dettaglioOrdiniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commesseToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem magazziniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem impostazioniToolStripMenuItem;

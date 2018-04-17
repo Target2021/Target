@@ -104,6 +104,7 @@
             this.Scarico.TabStop = true;
             this.Scarico.Text = "Scarico";
             this.Scarico.UseVisualStyleBackColor = true;
+            this.Scarico.CheckedChanged += new System.EventHandler(this.Scarico_CheckedChanged);
             this.Scarico.Click += new System.EventHandler(this.Scarico_Click);
             // 
             // groupBox1

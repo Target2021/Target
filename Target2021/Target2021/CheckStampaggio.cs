@@ -15,6 +15,7 @@ namespace Target2021
 {
     public partial class CheckStampaggio : Form
     {
+        public String stringa = Properties.Resources.StringaConnessione;
         private string idcommessa;
         DataTable dataTable = new DataTable();
         public CheckStampaggio()
@@ -31,7 +32,6 @@ namespace Target2021
 
         private void LoadStampaggio()
         {
-            String stringa = Properties.Resources.StringaConnessione;
             string query = "SELECT IDCommessa, CodCommessa,DataCommessa,IDCliente,DataConsegna,NrPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1) AND CodCommessa LIKE 'S%'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
@@ -50,7 +50,6 @@ namespace Target2021
         {          
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                String stringa = Properties.Resources.StringaConnessione;
                 DateTime dataconsegna = Convert.ToDateTime(dataGridView1.Rows[row.Index].Cells["DataConsegna"].Value);
                 DateTime giorni = DateTime.Now;
                 int totalDays = Convert.ToInt32((giorni.Date - dataconsegna.Date).TotalDays);
@@ -77,7 +76,6 @@ namespace Target2021
                 {
                     int quantita =(int) row.Cells["NrPezziDaLavorare"].Value;
                     string IDMateriaPrima;
-                    String stringa = Properties.Resources.StringaConnessione;
                     IDMateriaPrima = row.Cells["IDMateriaPrima"].Value.ToString();
                     string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + IDMateriaPrima+ "'";
                     SqlConnection con = new SqlConnection(stringa);
@@ -113,7 +111,6 @@ namespace Target2021
                 idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells["IDCommessa"].Value);
                 idcommessa.Replace("  ", string.Empty);
                 int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells["NrPezziDaLavorare"].Value);
-                String stringa = Properties.Resources.StringaConnessione;
                 string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells["IDMateriaPrima"].Value + "'";
                 SqlConnection con = new SqlConnection(stringa);
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -165,7 +162,6 @@ namespace Target2021
             CheckGiacenzaTotale();
             DateTime DataCommessa =Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataCommessa"].Value);
             DateTime DataConsegna = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataConsegna"].Value);
-            String stringa = Properties.Resources.StringaConnessione;
             string query = "UPDATE Commesse SET CodCommessa='" + dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value + "', DataCommessa='" + DataCommessa.ToShortDateString() + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells["IDCliente"].Value + "',DataConsegna='" +DataConsegna.ToShortDateString() + "',NrPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells["NrPezziDaLavorare"].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells["DescrArticolo"].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells["IDStampo"].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells["IDMateriaPrima"].Value + "' WHERE CodCommessa='"+dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value+"'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
