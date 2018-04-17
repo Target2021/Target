@@ -45,5 +45,10 @@ namespace Target2021
             if (Filter.Text == "Codice articolo") dettArticoliBindingSource.Filter = "codice_articolo LIKE '*" + textBox1.Text+"*'";
             if (Filter.Text == "Descrizione") dettArticoliBindingSource.Filter = "descrizionePrimaStampoDima LIKE '*" + textBox1.Text + "*'";
         }
+
+        private void dettArticoliDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

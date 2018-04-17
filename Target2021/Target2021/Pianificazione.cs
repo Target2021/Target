@@ -13,9 +13,12 @@ namespace Target2021
 {
     public partial class Pianificazione : Form
     {
-        public Pianificazione()
+        public String CodiceCommessa;
+
+        public Pianificazione(String cc)
         {
             InitializeComponent();
+            CodiceCommessa = cc;
         }
 
         private void Pianificazione_Load(object sender, EventArgs e)
@@ -25,6 +28,7 @@ namespace Target2021
             radioButton2.Enabled = false;
             textBox3.Enabled = false;
             button1.Enabled = false;
+            textBox1.Text = CodiceCommessa;
         }
 
         private void button2_Click(object sender, EventArgs e)

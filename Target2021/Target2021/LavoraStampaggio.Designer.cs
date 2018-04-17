@@ -938,9 +938,6 @@
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
-            this.tableAdapterManager.Commesse1TableAdapter = null;
-            this.tableAdapterManager.Commesse2TableAdapter = null;
-            this.tableAdapterManager.Commesse3TableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;

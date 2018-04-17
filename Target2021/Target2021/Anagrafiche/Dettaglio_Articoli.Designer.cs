@@ -283,6 +283,7 @@
             this.dettArticoliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dettArticoliDataGridView.Size = new System.Drawing.Size(875, 387);
             this.dettArticoliDataGridView.TabIndex = 8;
+            this.dettArticoliDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dettArticoliDataGridView_CellContentClick);
             this.dettArticoliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelezionaRiga);
             // 
             // IDDettaglioArticolo
@@ -371,7 +372,7 @@
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dettaglio_Articoli";
-            this.Text = "Dettaglio_Articolo";
+            this.Text = "Anagrafica Articoli";
             this.Load += new System.EventHandler(this.Dettaglio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();

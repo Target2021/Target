@@ -31,11 +31,11 @@ namespace Target2021
             livello =livello.Replace(" ", string.Empty);
             if(livello=="Amministratore")
             {
-                registraUtenteToolStripMenuItem.Enabled = true;
+                registraNuovoUtenteToolStripMenuItem.Enabled = true;
             }
             if(livello=="Dirigente")
             {
-                registraUtenteToolStripMenuItem.Enabled = true;
+                registraNuovoUtenteToolStripMenuItem.Enabled = true;
 
             }
             if (livello == "Segretaria")
@@ -45,7 +45,7 @@ namespace Target2021
             if (livello == "Operaio")
             {
                 clientiToolStripMenuItem.Enabled = false;
-                registraUtenteToolStripMenuItem.Enabled = false;
+                registraNuovoUtenteToolStripMenuItem.Enabled = false;
 
             }
         }
@@ -261,9 +261,21 @@ namespace Target2021
 
         private void pianificazioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Pianificazione pianificazione = new Pianificazione();
+            CheckPianificazione pianificazione = new CheckPianificazione();
             pianificazione.MdiParent = this;
             pianificazione.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void registraNuovoUtenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistraUtenti registraUtenti = new RegistraUtenti();
+            registraUtenti.MdiParent = this;
+            registraUtenti.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
