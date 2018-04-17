@@ -32,7 +32,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -62,10 +61,6 @@
             this.commesseBindingSource.DataMember = "Commesse";
             this.commesseBindingSource.DataSource = this.target2021DataSet;
             // 
-            // commesseTableAdapter
-            // 
-            this.commesseTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
@@ -73,7 +68,9 @@
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
-            this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
+            this.tableAdapterManager.Commesse1TableAdapter = null;
+            this.tableAdapterManager.Commesse2TableAdapter = null;
+            this.tableAdapterManager.Commesse3TableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
@@ -154,7 +151,6 @@
         private System.Windows.Forms.Button button1;
         private Target2021DataSet target2021DataSet;
         private System.Windows.Forms.BindingSource commesseBindingSource;
-        private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;

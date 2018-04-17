@@ -36,7 +36,7 @@ namespace Target2021
 
         public void inserimento_iniziale()
         {
-            string query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMateriaPrima,IDFornitore,ImpegnataMatPrima FROM Commesse WHERE TipoCommessa=1 AND (Stato=0 OR Stato=1)";
+            string query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMateriaPrima,IDFornitore FROM Commesse WHERE TipoCommessa=1 AND (Stato=0 OR Stato=1)";
             SqlConnection connessione = new SqlConnection(stringa_connessione);
             SqlCommand comando = new SqlCommand(query, connessione);
             connessione.Open();

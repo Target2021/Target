@@ -32,6 +32,7 @@ namespace Target2021
         public string IDDima { get; set; }
         public string CodArtiDopoTaglio { get; set; }
         public string IDMateriaPrima { get; set; }
+        public int NrLastreRichieste { get; set; }
         public string IDMinuteria { get; set; }
         public int Qtaminuteria { get; set; }
         public int NrPezziOrdinati { get; set; }

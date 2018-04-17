@@ -254,6 +254,11 @@ namespace Target2021
             riepilogocommesse.Show();
         }
 
+        private void tipiCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

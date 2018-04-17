@@ -34,7 +34,6 @@
             this.target2021DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager1 = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.commesseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.target2021DataSet = new Target2021.Target2021DataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -47,10 +46,10 @@
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(37, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(28, 19);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(145, 54);
+            this.button2.Size = new System.Drawing.Size(109, 44);
             this.button2.TabIndex = 1;
             this.button2.Text = "AGGIORNA";
             this.button2.UseVisualStyleBackColor = true;
@@ -66,13 +65,13 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 82);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 67);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1716, 545);
+            this.dataGridView1.Size = new System.Drawing.Size(1287, 443);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clikka);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
@@ -85,6 +84,9 @@
             this.tableAdapterManager1.ArticoliBCTableAdapter = null;
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.clientiTableAdapter = null;
+            this.tableAdapterManager1.Commesse1TableAdapter = null;
+            this.tableAdapterManager1.Commesse2TableAdapter = null;
+            this.tableAdapterManager1.Commesse3TableAdapter = null;
             this.tableAdapterManager1.CommesseTableAdapter = null;
             this.tableAdapterManager1.CompatibStampaTableAdapter = null;
             this.tableAdapterManager1.CompatibTaglioTableAdapter = null;
@@ -114,10 +116,6 @@
             // 
             this.commesseBindingSource1.DataSource = this.target2021DataSetBindingSource;
             // 
-            // commesseTableAdapter
-            // 
-            this.commesseTableAdapter.ClearBeforeFill = true;
-            // 
             // commesseBindingSource
             // 
             this.commesseBindingSource.DataSource = this.target2021DataSetBindingSource;
@@ -129,14 +127,13 @@
             // 
             // CheckStampaggio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1745, 641);
+            this.ClientSize = new System.Drawing.Size(1028, 521);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckStampaggio";
             this.Text = "Attività di stampaggio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -156,7 +153,6 @@
         private System.Windows.Forms.BindingSource target2021DataSetBindingSource;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.BindingSource commesseBindingSource1;
-        private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
         private System.Windows.Forms.BindingSource commesseBindingSource;
         private Target2021DataSet target2021DataSet;
     }

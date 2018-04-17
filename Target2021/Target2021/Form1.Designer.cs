@@ -48,7 +48,6 @@
             this.stampiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minuterieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipiCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fasiLavorazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compatibilitàStampiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compatibilitàDimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -154,7 +153,6 @@
             this.fornitoriToolStripMenuItem,
             this.macchinariToolStripMenuItem,
             this.strumentiToolStripMenuItem,
-            this.tipiCommesseToolStripMenuItem,
             this.fasiLavorazioneToolStripMenuItem,
             this.compatibilitàStampiToolStripMenuItem,
             this.compatibilitàDimeToolStripMenuItem});
@@ -252,12 +250,6 @@
             this.minuterieToolStripMenuItem.Name = "minuterieToolStripMenuItem";
             this.minuterieToolStripMenuItem.Size = new System.Drawing.Size(188, 32);
             this.minuterieToolStripMenuItem.Text = "Minuterie";
-            // 
-            // tipiCommesseToolStripMenuItem
-            // 
-            this.tipiCommesseToolStripMenuItem.Name = "tipiCommesseToolStripMenuItem";
-            this.tipiCommesseToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.tipiCommesseToolStripMenuItem.Text = "Tipi commesse";
             // 
             // fasiLavorazioneToolStripMenuItem
             // 
@@ -494,7 +486,6 @@
         private System.Windows.Forms.ToolStripMenuItem stampiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minuterieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipiCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fasiLavorazioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compatibilitàStampiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compatibilitàDimeToolStripMenuItem;

@@ -100,7 +100,7 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi;
+            int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi, NrLastreRichieste;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
             string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo, IdFornitore, IDMatPrima;
             SqlDataReader fasi;
@@ -165,7 +165,8 @@ namespace Target2021
                     com.IDFornitore = IdFornitore;
                     IDMatPrima = RecuperaIDMatPri(CodiceArticolo, i);
                     com.IDMateriaPrima = IDMatPrima;
-
+                    NrLastreRichieste = RecuperaNrLasRic(CodiceArticolo, i, IDOrdine);
+                    com.NrLastreRichieste = NrLastreRichieste;
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -345,6 +346,30 @@ namespace Target2021
             return idmp;
         }
 
+        private int RecuperaNrLasRic(string codart, int i, int NrOrd)
+        {
+            int NrPezziRichiesti, Lastre=0;
+            NrPezziRichiesti = RecuperaNrPezzi(NrOrd);
+            string stringa_connessione;
+            stringa_connessione = Properties.Resources.StringaConnessione;
+            SqlConnection conn = new SqlConnection(stringa_connessione);
+            string query = "Select PercentualeLastra From DettArticoli Where codice_articolo='" + codart + "' AND lavorazione=1";
+            SqlCommand comando = new SqlCommand(query, conn);
+            conn.Open();
+            int percentuale = Convert.ToInt32(comando.ExecuteScalar());
+            try
+            {
+                double n = 100 / percentuale;
+                Lastre = (int)Math.Floor(NrPezziRichiesti / n);
+            }
+            catch (DivideByZeroException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            conn.Close();
+            return Lastre;
+        }
+
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -357,7 +382,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrPezziOrdinati, NrOrdine, Stato) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@npo,@no,@stato)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@NrLastreRichieste,@npo,@no,@stato)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -371,6 +396,7 @@ namespace Target2021
             comando.Parameters.AddWithValue("@desart", com.DescrArticolo);
             comando.Parameters.AddWithValue("@idf", com.IDFornitore);
             comando.Parameters.AddWithValue("@idmp", com.IDMateriaPrima);
+            comando.Parameters.AddWithValue("@NrLastreRichieste", com.NrLastreRichieste);
             comando.Parameters.AddWithValue("@npo", 0);
             comando.Parameters.AddWithValue("@no", 'N');
             comando.Parameters.AddWithValue("@stato", 0);
