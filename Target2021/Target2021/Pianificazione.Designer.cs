@@ -46,16 +46,16 @@
             // 
             this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox1.Location = new System.Drawing.Point(355, 132);
+            this.textBox1.Location = new System.Drawing.Point(322, 132);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(142, 22);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(360, 202);
+            this.textBox2.Location = new System.Drawing.Point(322, 202);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 22);
+            this.textBox2.Size = new System.Drawing.Size(118, 22);
             this.textBox2.TabIndex = 2;
             // 
             // radioButton1
@@ -68,6 +68,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Parziale";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -94,16 +95,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 202);
+            this.label1.Location = new System.Drawing.Point(127, 202);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 17);
+            this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Lastre da impegnare";
+            this.label1.Text = "Lastre richieste";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 362);
+            this.label2.Location = new System.Drawing.Point(100, 367);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(203, 17);
             this.label2.TabIndex = 8;
@@ -112,7 +113,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(360, 359);
+            this.textBox3.Location = new System.Drawing.Point(348, 362);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(137, 22);
             this.textBox3.TabIndex = 7;
@@ -139,12 +140,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(530, 119);
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(492, 118);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 35);
+            this.button2.Size = new System.Drawing.Size(113, 51);
             this.button2.TabIndex = 11;
-            this.button2.Text = "CERCA";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "RECUPERA COMMESSA";
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Pianificazione

@@ -37,16 +37,26 @@ namespace Target2021
             try
             {
                 textBox1.Text = Convert.ToString(comando.ExecuteScalar());
-            }
+                if (textBox1.Text != "")
+                {
+                    textBox2.Enabled = true;
+                    textBox3.Enabled = true;
+                    radioButton1.Enabled = true;
+                    radioButton2.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Ordine fornitore non presente, si prega di controllare il codice commessa");
+                    textBox2.Enabled = false;
+                    textBox3.Enabled = false;
+                    radioButton1.Enabled =false;
+                    radioButton2.Enabled = false;
+                }
+                }
             catch (Exception EX)
             {
                 MessageBox.Show("Ordine fornitore non presente, si prega di controllare il codice della commessa");
-            }
-            
-            textBox2.Enabled = true;
-            textBox3.Enabled = true;
-            radioButton1.Enabled = true;
-            radioButton2.Enabled = true;
+            }           
             try {
                 comando.CommandText = querylastre;
                 textBox2.Text = Convert.ToString(comando.ExecuteScalar());
@@ -56,6 +66,19 @@ namespace Target2021
                 MessageBox.Show("Ordine fornitore non presente, si prega di controllare il codice della commessa");
             }
             conn.Close();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                label2.Visible = true;
+                textBox3.Visible = true;
+            } else
+            {
+                label2.Visible = false;
+                textBox3.Visible = false;
+            }
         }
     }
 }
