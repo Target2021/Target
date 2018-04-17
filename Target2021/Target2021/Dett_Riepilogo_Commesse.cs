@@ -79,13 +79,10 @@ namespace Target2021
         }
         private void ricerca()
         {
-            BindingSource risorsa = new BindingSource();
-            risorsa.DataSource = dataTable;
-            if (comboBox1.Text == "Codice articolo")
-            {
+            DataView dv = dataTable.DefaultView;
+            dv.RowFilter = string.Format("TRANSACTYPE  LIKE '%{0}%'", comboBox1.SelectedItem.ToString());
+            dataGridView1.DataSource = dv;
 
-            }
-           
         }
     }
 }

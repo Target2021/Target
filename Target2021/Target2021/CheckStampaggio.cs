@@ -43,7 +43,7 @@ namespace Target2021
             source.DataSource = dataTable;
             dataGridView1.DataSource = source;
             sda.Update(dataTable);
-            dataTable.Columns.Add("Stato", typeof(Image));
+            dataTable.Columns.Add("Scadenza", typeof(Image));
             con.Close();
         }
         private void CheckConsegna()
@@ -55,16 +55,16 @@ namespace Target2021
                 int totalDays = Convert.ToInt32((giorni.Date - dataconsegna.Date).TotalDays);
                 if (totalDays>1)
                 {
-                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.arrabiato;
+                    dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.arrabiato;
                 }
                 if (totalDays<=-1&totalDays>-5)
                 {
-                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.preoccupato;
+                    dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.preoccupato;
 
                 }
                 if (totalDays<-5)
                 {
-                    dataTable.Rows[row.Index]["Stato"] = Properties.Resources.felice;
+                    dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.felice;
                 }
             }          
         }
