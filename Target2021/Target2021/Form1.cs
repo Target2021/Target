@@ -259,6 +259,13 @@ namespace Target2021
 
         }
 
+        private void pianificazioneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pianificazione pianificazione = new Pianificazione();
+            pianificazione.MdiParent = this;
+            pianificazione.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
