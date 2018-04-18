@@ -74,6 +74,8 @@ namespace Target2021 {
         
         private UtentiDataTable tableUtenti;
         
+        private AbbinamentiArticoliDataTable tableAbbinamentiArticoli;
+        
         private CommesseDataTable tableCommesse;
         
         private global::System.Data.DataRelation relationFK_GiacenzeMagazzini_AnaMagazzini;
@@ -184,6 +186,9 @@ namespace Target2021 {
                 }
                 if ((ds.Tables["Utenti"] != null)) {
                     base.Tables.Add(new UtentiDataTable(ds.Tables["Utenti"]));
+                }
+                if ((ds.Tables["AbbinamentiArticoli"] != null)) {
+                    base.Tables.Add(new AbbinamentiArticoliDataTable(ds.Tables["AbbinamentiArticoli"]));
                 }
                 if ((ds.Tables["Commesse"] != null)) {
                     base.Tables.Add(new CommesseDataTable(ds.Tables["Commesse"]));
@@ -460,6 +465,16 @@ namespace Target2021 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AbbinamentiArticoliDataTable AbbinamentiArticoli {
+            get {
+                return this.tableAbbinamentiArticoli;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public CommesseDataTable Commesse {
             get {
                 return this.tableCommesse;
@@ -607,6 +622,9 @@ namespace Target2021 {
                 }
                 if ((ds.Tables["Utenti"] != null)) {
                     base.Tables.Add(new UtentiDataTable(ds.Tables["Utenti"]));
+                }
+                if ((ds.Tables["AbbinamentiArticoli"] != null)) {
+                    base.Tables.Add(new AbbinamentiArticoliDataTable(ds.Tables["AbbinamentiArticoli"]));
                 }
                 if ((ds.Tables["Commesse"] != null)) {
                     base.Tables.Add(new CommesseDataTable(ds.Tables["Commesse"]));
@@ -794,6 +812,12 @@ namespace Target2021 {
                     this.tableUtenti.InitVars();
                 }
             }
+            this.tableAbbinamentiArticoli = ((AbbinamentiArticoliDataTable)(base.Tables["AbbinamentiArticoli"]));
+            if ((initTable == true)) {
+                if ((this.tableAbbinamentiArticoli != null)) {
+                    this.tableAbbinamentiArticoli.InitVars();
+                }
+            }
             this.tableCommesse = ((CommesseDataTable)(base.Tables["Commesse"]));
             if ((initTable == true)) {
                 if ((this.tableCommesse != null)) {
@@ -863,6 +887,8 @@ namespace Target2021 {
             base.Tables.Add(this.tableTipoCommessa);
             this.tableUtenti = new UtentiDataTable();
             base.Tables.Add(this.tableUtenti);
+            this.tableAbbinamentiArticoli = new AbbinamentiArticoliDataTable();
+            base.Tables.Add(this.tableAbbinamentiArticoli);
             this.tableCommesse = new CommesseDataTable();
             base.Tables.Add(this.tableCommesse);
             this.relationFK_GiacenzeMagazzini_AnaMagazzini = new global::System.Data.DataRelation("FK_GiacenzeMagazzini_AnaMagazzini", new global::System.Data.DataColumn[] {
@@ -1031,6 +1057,12 @@ namespace Target2021 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeAbbinamentiArticoli() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeCommesse() {
             return false;
         }
@@ -1164,6 +1196,9 @@ namespace Target2021 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void UtentiRowChangeEventHandler(object sender, UtentiRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void AbbinamentiArticoliRowChangeEventHandler(object sender, AbbinamentiArticoliRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void CommesseRowChangeEventHandler(object sender, CommesseRowChangeEvent e);
@@ -12584,6 +12619,293 @@ namespace Target2021 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AbbinamentiArticoliDataTable : global::System.Data.TypedTableBase<AbbinamentiArticoliRow> {
+            
+            private global::System.Data.DataColumn columnIDA;
+            
+            private global::System.Data.DataColumn columnIdAbbinamento;
+            
+            private global::System.Data.DataColumn columncodice_articolo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AbbinamentiArticoliDataTable() {
+                this.TableName = "AbbinamentiArticoli";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal AbbinamentiArticoliDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected AbbinamentiArticoliDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDAColumn {
+                get {
+                    return this.columnIDA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdAbbinamentoColumn {
+                get {
+                    return this.columnIdAbbinamento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn codice_articoloColumn {
+                get {
+                    return this.columncodice_articolo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AbbinamentiArticoliRow this[int index] {
+                get {
+                    return ((AbbinamentiArticoliRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event AbbinamentiArticoliRowChangeEventHandler AbbinamentiArticoliRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event AbbinamentiArticoliRowChangeEventHandler AbbinamentiArticoliRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event AbbinamentiArticoliRowChangeEventHandler AbbinamentiArticoliRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event AbbinamentiArticoliRowChangeEventHandler AbbinamentiArticoliRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddAbbinamentiArticoliRow(AbbinamentiArticoliRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AbbinamentiArticoliRow AddAbbinamentiArticoliRow(int IDA, int IdAbbinamento, string codice_articolo) {
+                AbbinamentiArticoliRow rowAbbinamentiArticoliRow = ((AbbinamentiArticoliRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        IDA,
+                        IdAbbinamento,
+                        codice_articolo};
+                rowAbbinamentiArticoliRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAbbinamentiArticoliRow);
+                return rowAbbinamentiArticoliRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AbbinamentiArticoliRow FindByIDA(int IDA) {
+                return ((AbbinamentiArticoliRow)(this.Rows.Find(new object[] {
+                            IDA})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AbbinamentiArticoliDataTable cln = ((AbbinamentiArticoliDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AbbinamentiArticoliDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnIDA = base.Columns["IDA"];
+                this.columnIdAbbinamento = base.Columns["IdAbbinamento"];
+                this.columncodice_articolo = base.Columns["codice_articolo"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnIDA = new global::System.Data.DataColumn("IDA", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDA);
+                this.columnIdAbbinamento = new global::System.Data.DataColumn("IdAbbinamento", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdAbbinamento);
+                this.columncodice_articolo = new global::System.Data.DataColumn("codice_articolo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodice_articolo);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIDA}, true));
+                this.columnIDA.AllowDBNull = false;
+                this.columnIDA.Unique = true;
+                this.columncodice_articolo.MaxLength = 10;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AbbinamentiArticoliRow NewAbbinamentiArticoliRow() {
+                return ((AbbinamentiArticoliRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AbbinamentiArticoliRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AbbinamentiArticoliRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AbbinamentiArticoliRowChanged != null)) {
+                    this.AbbinamentiArticoliRowChanged(this, new AbbinamentiArticoliRowChangeEvent(((AbbinamentiArticoliRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AbbinamentiArticoliRowChanging != null)) {
+                    this.AbbinamentiArticoliRowChanging(this, new AbbinamentiArticoliRowChangeEvent(((AbbinamentiArticoliRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AbbinamentiArticoliRowDeleted != null)) {
+                    this.AbbinamentiArticoliRowDeleted(this, new AbbinamentiArticoliRowChangeEvent(((AbbinamentiArticoliRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AbbinamentiArticoliRowDeleting != null)) {
+                    this.AbbinamentiArticoliRowDeleting(this, new AbbinamentiArticoliRowChangeEvent(((AbbinamentiArticoliRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveAbbinamentiArticoliRow(AbbinamentiArticoliRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Target2021DataSet ds = new Target2021DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AbbinamentiArticoliDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CommesseDataTable : global::System.Data.TypedTableBase<CommesseRow> {
             
             private global::System.Data.DataColumn columnIDCommessa;
@@ -12648,21 +12970,31 @@ namespace Target2021 {
             
             private global::System.Data.DataColumn columnNrPezziScartati;
             
+            private global::System.Data.DataColumn columnAttG1;
+            
             private global::System.Data.DataColumn columnOISG1;
             
             private global::System.Data.DataColumn columnOFSG1;
+            
+            private global::System.Data.DataColumn columnAttG2;
             
             private global::System.Data.DataColumn columnOISG2;
             
             private global::System.Data.DataColumn columnOFSG2;
             
+            private global::System.Data.DataColumn columnAttG3;
+            
             private global::System.Data.DataColumn columnOISG3;
             
             private global::System.Data.DataColumn columnOSFG3;
             
+            private global::System.Data.DataColumn columnAttG4;
+            
             private global::System.Data.DataColumn columnOISG4;
             
             private global::System.Data.DataColumn columnOFSG4;
+            
+            private global::System.Data.DataColumn columnAttG5;
             
             private global::System.Data.DataColumn columnOISG5;
             
@@ -12675,8 +13007,6 @@ namespace Target2021 {
             private global::System.Data.DataColumn columnStato;
             
             private global::System.Data.DataColumn columnImpegnataMatPrima;
-            
-            private global::System.Data.DataColumn columnImpegnataMatPrima1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -12961,6 +13291,14 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AttG1Column {
+                get {
+                    return this.columnAttG1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn OISG1Column {
                 get {
                     return this.columnOISG1;
@@ -12972,6 +13310,14 @@ namespace Target2021 {
             public global::System.Data.DataColumn OFSG1Column {
                 get {
                     return this.columnOFSG1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AttG2Column {
+                get {
+                    return this.columnAttG2;
                 }
             }
             
@@ -12993,6 +13339,14 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AttG3Column {
+                get {
+                    return this.columnAttG3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn OISG3Column {
                 get {
                     return this.columnOISG3;
@@ -13009,6 +13363,14 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AttG4Column {
+                get {
+                    return this.columnAttG4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn OISG4Column {
                 get {
                     return this.columnOISG4;
@@ -13020,6 +13382,14 @@ namespace Target2021 {
             public global::System.Data.DataColumn OFSG4Column {
                 get {
                     return this.columnOFSG4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AttG5Column {
+                get {
+                    return this.columnAttG5;
                 }
             }
             
@@ -13068,14 +13438,6 @@ namespace Target2021 {
             public global::System.Data.DataColumn ImpegnataMatPrimaColumn {
                 get {
                     return this.columnImpegnataMatPrima;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ImpegnataMatPrima1Column {
-                get {
-                    return this.columnImpegnataMatPrima1;
                 }
             }
             
@@ -13147,21 +13509,25 @@ namespace Target2021 {
                         System.DateTime DataTermine, 
                         int NrPezziCorretti, 
                         int NrPezziScartati, 
+                        int AttG1, 
                         System.DateTime OISG1, 
                         System.DateTime OFSG1, 
+                        int AttG2, 
                         System.DateTime OISG2, 
                         System.DateTime OFSG2, 
+                        int AttG3, 
                         System.DateTime OISG3, 
                         System.DateTime OSFG3, 
+                        int AttG4, 
                         System.DateTime OISG4, 
                         System.DateTime OFSG4, 
+                        int AttG5, 
                         System.DateTime OISG5, 
                         System.DateTime OFSG5, 
                         int SecondiCicloTaglio, 
                         int MinutiAttrezzaggio, 
                         int Stato, 
-                        int ImpegnataMatPrima, 
-                        int ImpegnataMatPrima1) {
+                        int ImpegnataMatPrima) {
                 CommesseRow rowCommesseRow = ((CommesseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -13195,21 +13561,25 @@ namespace Target2021 {
                         DataTermine,
                         NrPezziCorretti,
                         NrPezziScartati,
+                        AttG1,
                         OISG1,
                         OFSG1,
+                        AttG2,
                         OISG2,
                         OFSG2,
+                        AttG3,
                         OISG3,
                         OSFG3,
+                        AttG4,
                         OISG4,
                         OFSG4,
+                        AttG5,
                         OISG5,
                         OFSG5,
                         SecondiCicloTaglio,
                         MinutiAttrezzaggio,
                         Stato,
-                        ImpegnataMatPrima,
-                        ImpegnataMatPrima1};
+                        ImpegnataMatPrima};
                 rowCommesseRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCommesseRow);
                 return rowCommesseRow;
@@ -13270,21 +13640,25 @@ namespace Target2021 {
                 this.columnDataTermine = base.Columns["DataTermine"];
                 this.columnNrPezziCorretti = base.Columns["NrPezziCorretti"];
                 this.columnNrPezziScartati = base.Columns["NrPezziScartati"];
+                this.columnAttG1 = base.Columns["AttG1"];
                 this.columnOISG1 = base.Columns["OISG1"];
                 this.columnOFSG1 = base.Columns["OFSG1"];
+                this.columnAttG2 = base.Columns["AttG2"];
                 this.columnOISG2 = base.Columns["OISG2"];
                 this.columnOFSG2 = base.Columns["OFSG2"];
+                this.columnAttG3 = base.Columns["AttG3"];
                 this.columnOISG3 = base.Columns["OISG3"];
                 this.columnOSFG3 = base.Columns["OSFG3"];
+                this.columnAttG4 = base.Columns["AttG4"];
                 this.columnOISG4 = base.Columns["OISG4"];
                 this.columnOFSG4 = base.Columns["OFSG4"];
+                this.columnAttG5 = base.Columns["AttG5"];
                 this.columnOISG5 = base.Columns["OISG5"];
                 this.columnOFSG5 = base.Columns["OFSG5"];
                 this.columnSecondiCicloTaglio = base.Columns["SecondiCicloTaglio"];
                 this.columnMinutiAttrezzaggio = base.Columns["MinutiAttrezzaggio"];
                 this.columnStato = base.Columns["Stato"];
                 this.columnImpegnataMatPrima = base.Columns["ImpegnataMatPrima"];
-                this.columnImpegnataMatPrima1 = base.Columns["ImpegnataMatPrima1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13352,22 +13726,32 @@ namespace Target2021 {
                 base.Columns.Add(this.columnNrPezziCorretti);
                 this.columnNrPezziScartati = new global::System.Data.DataColumn("NrPezziScartati", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNrPezziScartati);
+                this.columnAttG1 = new global::System.Data.DataColumn("AttG1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttG1);
                 this.columnOISG1 = new global::System.Data.DataColumn("OISG1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOISG1);
                 this.columnOFSG1 = new global::System.Data.DataColumn("OFSG1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOFSG1);
+                this.columnAttG2 = new global::System.Data.DataColumn("AttG2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttG2);
                 this.columnOISG2 = new global::System.Data.DataColumn("OISG2", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOISG2);
                 this.columnOFSG2 = new global::System.Data.DataColumn("OFSG2", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOFSG2);
+                this.columnAttG3 = new global::System.Data.DataColumn("AttG3", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttG3);
                 this.columnOISG3 = new global::System.Data.DataColumn("OISG3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOISG3);
                 this.columnOSFG3 = new global::System.Data.DataColumn("OSFG3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOSFG3);
+                this.columnAttG4 = new global::System.Data.DataColumn("AttG4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttG4);
                 this.columnOISG4 = new global::System.Data.DataColumn("OISG4", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOISG4);
                 this.columnOFSG4 = new global::System.Data.DataColumn("OFSG4", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOFSG4);
+                this.columnAttG5 = new global::System.Data.DataColumn("AttG5", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttG5);
                 this.columnOISG5 = new global::System.Data.DataColumn("OISG5", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOISG5);
                 this.columnOFSG5 = new global::System.Data.DataColumn("OFSG5", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -13380,8 +13764,6 @@ namespace Target2021 {
                 base.Columns.Add(this.columnStato);
                 this.columnImpegnataMatPrima = new global::System.Data.DataColumn("ImpegnataMatPrima", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnImpegnataMatPrima);
-                this.columnImpegnataMatPrima1 = new global::System.Data.DataColumn("ImpegnataMatPrima1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImpegnataMatPrima1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDCommessa}, true));
                 this.columnIDCommessa.AutoIncrement = true;
@@ -13409,7 +13791,6 @@ namespace Target2021 {
                 this.columnIDMinuteria.MaxLength = 15;
                 this.columnNrOrdine.MaxLength = 10;
                 this.columnLottoAcquisto.MaxLength = 20;
-                this.columnImpegnataMatPrima1.Caption = "ImpegnataMatPrima";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23406,6 +23787,90 @@ namespace Target2021 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class AbbinamentiArticoliRow : global::System.Data.DataRow {
+            
+            private AbbinamentiArticoliDataTable tableAbbinamentiArticoli;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal AbbinamentiArticoliRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAbbinamentiArticoli = ((AbbinamentiArticoliDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IDA {
+                get {
+                    return ((int)(this[this.tableAbbinamentiArticoli.IDAColumn]));
+                }
+                set {
+                    this[this.tableAbbinamentiArticoli.IDAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IdAbbinamento {
+                get {
+                    try {
+                        return ((int)(this[this.tableAbbinamentiArticoli.IdAbbinamentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'IdAbbinamento\' nella tabella \'AbbinamentiArticoli\' è DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAbbinamentiArticoli.IdAbbinamentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string codice_articolo {
+                get {
+                    try {
+                        return ((string)(this[this.tableAbbinamentiArticoli.codice_articoloColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'codice_articolo\' nella tabella \'AbbinamentiArticoli\' è D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAbbinamentiArticoli.codice_articoloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIdAbbinamentoNull() {
+                return this.IsNull(this.tableAbbinamentiArticoli.IdAbbinamentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIdAbbinamentoNull() {
+                this[this.tableAbbinamentiArticoli.IdAbbinamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscodice_articoloNull() {
+                return this.IsNull(this.tableAbbinamentiArticoli.codice_articoloColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcodice_articoloNull() {
+                this[this.tableAbbinamentiArticoli.codice_articoloColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class CommesseRow : global::System.Data.DataRow {
             
             private CommesseDataTable tableCommesse;
@@ -23896,6 +24361,22 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int AttG1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableCommesse.AttG1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'AttG1\' nella tabella \'Commesse\' è DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCommesse.AttG1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime OISG1 {
                 get {
                     try {
@@ -23923,6 +24404,22 @@ namespace Target2021 {
                 }
                 set {
                     this[this.tableCommesse.OFSG1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int AttG2 {
+                get {
+                    try {
+                        return ((int)(this[this.tableCommesse.AttG2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'AttG2\' nella tabella \'Commesse\' è DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCommesse.AttG2Column] = value;
                 }
             }
             
@@ -23960,6 +24457,22 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int AttG3 {
+                get {
+                    try {
+                        return ((int)(this[this.tableCommesse.AttG3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'AttG3\' nella tabella \'Commesse\' è DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCommesse.AttG3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime OISG3 {
                 get {
                     try {
@@ -23992,6 +24505,22 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int AttG4 {
+                get {
+                    try {
+                        return ((int)(this[this.tableCommesse.AttG4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'AttG4\' nella tabella \'Commesse\' è DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCommesse.AttG4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime OISG4 {
                 get {
                     try {
@@ -24019,6 +24548,22 @@ namespace Target2021 {
                 }
                 set {
                     this[this.tableCommesse.OFSG4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int AttG5 {
+                get {
+                    try {
+                        return ((int)(this[this.tableCommesse.AttG5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'AttG5\' nella tabella \'Commesse\' è DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCommesse.AttG5Column] = value;
                 }
             }
             
@@ -24115,22 +24660,6 @@ namespace Target2021 {
                 }
                 set {
                     this[this.tableCommesse.ImpegnataMatPrimaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ImpegnataMatPrima1 {
-                get {
-                    try {
-                        return ((int)(this[this.tableCommesse.ImpegnataMatPrima1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'ImpegnataMatPrima1\' nella tabella \'Commesse\' è DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCommesse.ImpegnataMatPrima1Column] = value;
                 }
             }
             
@@ -24460,6 +24989,18 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAttG1Null() {
+                return this.IsNull(this.tableCommesse.AttG1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAttG1Null() {
+                this[this.tableCommesse.AttG1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsOISG1Null() {
                 return this.IsNull(this.tableCommesse.OISG1Column);
             }
@@ -24480,6 +25021,18 @@ namespace Target2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetOFSG1Null() {
                 this[this.tableCommesse.OFSG1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAttG2Null() {
+                return this.IsNull(this.tableCommesse.AttG2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAttG2Null() {
+                this[this.tableCommesse.AttG2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24508,6 +25061,18 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAttG3Null() {
+                return this.IsNull(this.tableCommesse.AttG3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAttG3Null() {
+                this[this.tableCommesse.AttG3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsOISG3Null() {
                 return this.IsNull(this.tableCommesse.OISG3Column);
             }
@@ -24532,6 +25097,18 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAttG4Null() {
+                return this.IsNull(this.tableCommesse.AttG4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAttG4Null() {
+                this[this.tableCommesse.AttG4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsOISG4Null() {
                 return this.IsNull(this.tableCommesse.OISG4Column);
             }
@@ -24552,6 +25129,18 @@ namespace Target2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetOFSG4Null() {
                 this[this.tableCommesse.OFSG4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAttG5Null() {
+                return this.IsNull(this.tableCommesse.AttG5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAttG5Null() {
+                this[this.tableCommesse.AttG5Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24624,18 +25213,6 @@ namespace Target2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetImpegnataMatPrimaNull() {
                 this[this.tableCommesse.ImpegnataMatPrimaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsImpegnataMatPrima1Null() {
-                return this.IsNull(this.tableCommesse.ImpegnataMatPrima1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetImpegnataMatPrima1Null() {
-                this[this.tableCommesse.ImpegnataMatPrima1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -25475,6 +26052,40 @@ namespace Target2021 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public UtentiRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class AbbinamentiArticoliRowChangeEvent : global::System.EventArgs {
+            
+            private AbbinamentiArticoliRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AbbinamentiArticoliRowChangeEvent(AbbinamentiArticoliRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AbbinamentiArticoliRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -43264,6 +43875,366 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AbbinamentiArticoliTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public AbbinamentiArticoliTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AbbinamentiArticoli";
+            tableMapping.ColumnMappings.Add("IDA", "IDA");
+            tableMapping.ColumnMappings.Add("IdAbbinamento", "IdAbbinamento");
+            tableMapping.ColumnMappings.Add("codice_articolo", "codice_articolo");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[AbbinamentiArticoli] WHERE (([IDA] = @Original_IDA) AND ((@IsNull_IdAbbinamento = 1 AND [IdAbbinamento] IS NULL) OR ([IdAbbinamento] = @Original_IdAbbinamento)) AND ((@IsNull_codice_articolo = 1 AND [codice_articolo] IS NULL) OR ([codice_articolo] = @Original_codice_articolo)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_codice_articolo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codice_articolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AbbinamentiArticoli] ([IDA], [IdAbbinamento], [codice_articolo" +
+                "]) VALUES (@IDA, @IdAbbinamento, @codice_articolo);\r\nSELECT IDA, IdAbbinamento, " +
+                "codice_articolo FROM AbbinamentiArticoli WHERE (IDA = @IDA)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codice_articolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AbbinamentiArticoli] SET [IDA] = @IDA, [IdAbbinamento] = @IdAbbinamento, [codice_articolo] = @codice_articolo WHERE (([IDA] = @Original_IDA) AND ((@IsNull_IdAbbinamento = 1 AND [IdAbbinamento] IS NULL) OR ([IdAbbinamento] = @Original_IdAbbinamento)) AND ((@IsNull_codice_articolo = 1 AND [codice_articolo] IS NULL) OR ([codice_articolo] = @Original_codice_articolo)));
+SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA = @IDA)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codice_articolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_codice_articolo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codice_articolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Target2021.Properties.Settings.Default.Target2021ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT IDA, IdAbbinamento, codice_articolo FROM dbo.AbbinamentiArticoli";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Target2021DataSet.AbbinamentiArticoliDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Target2021DataSet.AbbinamentiArticoliDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Target2021DataSet.AbbinamentiArticoliDataTable dataTable = new Target2021DataSet.AbbinamentiArticoliDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Target2021DataSet.AbbinamentiArticoliDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(Target2021DataSet dataSet) {
+            return this.Adapter.Update(dataSet, "AbbinamentiArticoli");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_IDA, global::System.Nullable<int> Original_IdAbbinamento, string Original_codice_articolo) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IDA));
+            if ((Original_IdAbbinamento.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_IdAbbinamento.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_codice_articolo == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_codice_articolo));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int IDA, global::System.Nullable<int> IdAbbinamento, string codice_articolo) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDA));
+            if ((IdAbbinamento.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(IdAbbinamento.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((codice_articolo == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(codice_articolo));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int IDA, global::System.Nullable<int> IdAbbinamento, string codice_articolo, int Original_IDA, global::System.Nullable<int> Original_IdAbbinamento, string Original_codice_articolo) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDA));
+            if ((IdAbbinamento.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IdAbbinamento.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((codice_articolo == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(codice_articolo));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_IDA));
+            if ((Original_IdAbbinamento.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_IdAbbinamento.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_codice_articolo == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_codice_articolo));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> IdAbbinamento, string codice_articolo, int Original_IDA, global::System.Nullable<int> Original_IdAbbinamento, string Original_codice_articolo) {
+            return this.Update(Original_IDA, IdAbbinamento, codice_articolo, Original_IDA, Original_IdAbbinamento, Original_codice_articolo);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class CommesseTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -43407,77 +44378,87 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             tableMapping.ColumnMappings.Add("DataTermine", "DataTermine");
             tableMapping.ColumnMappings.Add("NrPezziCorretti", "NrPezziCorretti");
             tableMapping.ColumnMappings.Add("NrPezziScartati", "NrPezziScartati");
+            tableMapping.ColumnMappings.Add("AttG1", "AttG1");
             tableMapping.ColumnMappings.Add("OISG1", "OISG1");
             tableMapping.ColumnMappings.Add("OFSG1", "OFSG1");
+            tableMapping.ColumnMappings.Add("AttG2", "AttG2");
             tableMapping.ColumnMappings.Add("OISG2", "OISG2");
             tableMapping.ColumnMappings.Add("OFSG2", "OFSG2");
+            tableMapping.ColumnMappings.Add("AttG3", "AttG3");
             tableMapping.ColumnMappings.Add("OISG3", "OISG3");
             tableMapping.ColumnMappings.Add("OSFG3", "OSFG3");
+            tableMapping.ColumnMappings.Add("AttG4", "AttG4");
             tableMapping.ColumnMappings.Add("OISG4", "OISG4");
             tableMapping.ColumnMappings.Add("OFSG4", "OFSG4");
+            tableMapping.ColumnMappings.Add("AttG5", "AttG5");
             tableMapping.ColumnMappings.Add("OISG5", "OISG5");
             tableMapping.ColumnMappings.Add("OFSG5", "OFSG5");
             tableMapping.ColumnMappings.Add("SecondiCicloTaglio", "SecondiCicloTaglio");
             tableMapping.ColumnMappings.Add("MinutiAttrezzaggio", "MinutiAttrezzaggio");
             tableMapping.ColumnMappings.Add("Stato", "Stato");
-            tableMapping.ColumnMappings.Add("ImpegnataMatPrima", "ImpegnataMatPrima1");
+            tableMapping.ColumnMappings.Add("ImpegnataMatPrima", "ImpegnataMatPrima");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Commesse] WHERE (([IDCommessa] = @Original_IDCommessa) AND ([CodComm" +
-                "essa] = @Original_CodCommessa) AND ([NrCommessa] = @Original_NrCommessa) AND ((@" +
-                "IsNull_DataCommessa = 1 AND [DataCommessa] IS NULL) OR ([DataCommessa] = @Origin" +
-                "al_DataCommessa)) AND ([TipoCommessa] = @Original_TipoCommessa) AND ((@IsNull_ID" +
-                "Cliente = 1 AND [IDCliente] IS NULL) OR ([IDCliente] = @Original_IDCliente)) AND" +
-                " ((@IsNull_OrdCliente = 1 AND [OrdCliente] IS NULL) OR ([OrdCliente] = @Original" +
-                "_OrdCliente)) AND ((@IsNull_DataConsegna = 1 AND [DataConsegna] IS NULL) OR ([Da" +
-                "taConsegna] = @Original_DataConsegna)) AND ((@IsNull_NrPezziDaLavorare = 1 AND [" +
-                "NrPezziDaLavorare] IS NULL) OR ([NrPezziDaLavorare] = @Original_NrPezziDaLavorar" +
-                "e)) AND ((@IsNull_CodArticolo = 1 AND [CodArticolo] IS NULL) OR ([CodArticolo] =" +
-                " @Original_CodArticolo)) AND ((@IsNull_DescrArticolo = 1 AND [DescrArticolo] IS " +
-                "NULL) OR ([DescrArticolo] = @Original_DescrArticolo)) AND ((@IsNull_Note = 1 AND" +
-                " [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_Foto = 1 AND [Foto]" +
-                " IS NULL) OR ([Foto] = @Original_Foto)) AND ((@IsNull_IDFornitore = 1 AND [IDFor" +
-                "nitore] IS NULL) OR ([IDFornitore] = @Original_IDFornitore)) AND ((@IsNull_IDMac" +
-                "hStampa = 1 AND [IDMachStampa] IS NULL) OR ([IDMachStampa] = @Original_IDMachSta" +
-                "mpa)) AND ((@IsNull_IDStampo = 1 AND [IDStampo] IS NULL) OR ([IDStampo] = @Origi" +
-                "nal_IDStampo)) AND ((@IsNull_PercentualeUtilizzoLastra = 1 AND [PercentualeUtili" +
-                "zzoLastra] IS NULL) OR ([PercentualeUtilizzoLastra] = @Original_PercentualeUtili" +
-                "zzoLastra)) AND ((@IsNull_CodArtiDopoStampo = 1 AND [CodArtiDopoStampo] IS NULL)" +
-                " OR ([CodArtiDopoStampo] = @Original_CodArtiDopoStampo)) AND ((@IsNull_IDMachTag" +
-                "lio = 1 AND [IDMachTaglio] IS NULL) OR ([IDMachTaglio] = @Original_IDMachTaglio)" +
-                ") AND ((@IsNull_IDDima = 1 AND [IDDima] IS NULL) OR ([IDDima] = @Original_IDDima" +
-                ")) AND ((@IsNull_CodArtiDopoTaglio = 1 AND [CodArtiDopoTaglio] IS NULL) OR ([Cod" +
-                "ArtiDopoTaglio] = @Original_CodArtiDopoTaglio)) AND ((@IsNull_IDMateriaPrima = 1" +
-                " AND [IDMateriaPrima] IS NULL) OR ([IDMateriaPrima] = @Original_IDMateriaPrima))" +
-                " AND ((@IsNull_NrLastreRichieste = 1 AND [NrLastreRichieste] IS NULL) OR ([NrLas" +
-                "treRichieste] = @Original_NrLastreRichieste)) AND ((@IsNull_IDMinuteria = 1 AND " +
-                "[IDMinuteria] IS NULL) OR ([IDMinuteria] = @Original_IDMinuteria)) AND ((@IsNull" +
-                "_Qtaminuteria = 1 AND [Qtaminuteria] IS NULL) OR ([Qtaminuteria] = @Original_Qta" +
-                "minuteria)) AND ((@IsNull_NrPezziOrdinati = 1 AND [NrPezziOrdinati] IS NULL) OR " +
-                "([NrPezziOrdinati] = @Original_NrPezziOrdinati)) AND ((@IsNull_NrOrdine = 1 AND " +
-                "[NrOrdine] IS NULL) OR ([NrOrdine] = @Original_NrOrdine)) AND ((@IsNull_LottoAcq" +
-                "uisto = 1 AND [LottoAcquisto] IS NULL) OR ([LottoAcquisto] = @Original_LottoAcqu" +
-                "isto)) AND ((@IsNull_DataTermine = 1 AND [DataTermine] IS NULL) OR ([DataTermine" +
-                "] = @Original_DataTermine)) AND ((@IsNull_NrPezziCorretti = 1 AND [NrPezziCorret" +
-                "ti] IS NULL) OR ([NrPezziCorretti] = @Original_NrPezziCorretti)) AND ((@IsNull_N" +
-                "rPezziScartati = 1 AND [NrPezziScartati] IS NULL) OR ([NrPezziScartati] = @Origi" +
-                "nal_NrPezziScartati)) AND ((@IsNull_OISG1 = 1 AND [OISG1] IS NULL) OR ([OISG1] =" +
-                " @Original_OISG1)) AND ((@IsNull_OFSG1 = 1 AND [OFSG1] IS NULL) OR ([OFSG1] = @O" +
-                "riginal_OFSG1)) AND ((@IsNull_OISG2 = 1 AND [OISG2] IS NULL) OR ([OISG2] = @Orig" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Commesse] WHERE (([IDCommessa] = @Original_IDCommessa) AND ([C" +
+                "odCommessa] = @Original_CodCommessa) AND ([NrCommessa] = @Original_NrCommessa) A" +
+                "ND ((@IsNull_DataCommessa = 1 AND [DataCommessa] IS NULL) OR ([DataCommessa] = @" +
+                "Original_DataCommessa)) AND ([TipoCommessa] = @Original_TipoCommessa) AND ((@IsN" +
+                "ull_IDCliente = 1 AND [IDCliente] IS NULL) OR ([IDCliente] = @Original_IDCliente" +
+                ")) AND ((@IsNull_OrdCliente = 1 AND [OrdCliente] IS NULL) OR ([OrdCliente] = @Or" +
+                "iginal_OrdCliente)) AND ((@IsNull_DataConsegna = 1 AND [DataConsegna] IS NULL) O" +
+                "R ([DataConsegna] = @Original_DataConsegna)) AND ((@IsNull_NrPezziDaLavorare = 1" +
+                " AND [NrPezziDaLavorare] IS NULL) OR ([NrPezziDaLavorare] = @Original_NrPezziDaL" +
+                "avorare)) AND ((@IsNull_CodArticolo = 1 AND [CodArticolo] IS NULL) OR ([CodArtic" +
+                "olo] = @Original_CodArticolo)) AND ((@IsNull_DescrArticolo = 1 AND [DescrArticol" +
+                "o] IS NULL) OR ([DescrArticolo] = @Original_DescrArticolo)) AND ((@IsNull_Note =" +
+                " 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_Foto = 1 AND " +
+                "[Foto] IS NULL) OR ([Foto] = @Original_Foto)) AND ((@IsNull_IDFornitore = 1 AND " +
+                "[IDFornitore] IS NULL) OR ([IDFornitore] = @Original_IDFornitore)) AND ((@IsNull" +
+                "_IDMachStampa = 1 AND [IDMachStampa] IS NULL) OR ([IDMachStampa] = @Original_IDM" +
+                "achStampa)) AND ((@IsNull_IDStampo = 1 AND [IDStampo] IS NULL) OR ([IDStampo] = " +
+                "@Original_IDStampo)) AND ((@IsNull_PercentualeUtilizzoLastra = 1 AND [Percentual" +
+                "eUtilizzoLastra] IS NULL) OR ([PercentualeUtilizzoLastra] = @Original_Percentual" +
+                "eUtilizzoLastra)) AND ((@IsNull_CodArtiDopoStampo = 1 AND [CodArtiDopoStampo] IS" +
+                " NULL) OR ([CodArtiDopoStampo] = @Original_CodArtiDopoStampo)) AND ((@IsNull_IDM" +
+                "achTaglio = 1 AND [IDMachTaglio] IS NULL) OR ([IDMachTaglio] = @Original_IDMachT" +
+                "aglio)) AND ((@IsNull_IDDima = 1 AND [IDDima] IS NULL) OR ([IDDima] = @Original_" +
+                "IDDima)) AND ((@IsNull_CodArtiDopoTaglio = 1 AND [CodArtiDopoTaglio] IS NULL) OR" +
+                " ([CodArtiDopoTaglio] = @Original_CodArtiDopoTaglio)) AND ((@IsNull_IDMateriaPri" +
+                "ma = 1 AND [IDMateriaPrima] IS NULL) OR ([IDMateriaPrima] = @Original_IDMateriaP" +
+                "rima)) AND ((@IsNull_NrLastreRichieste = 1 AND [NrLastreRichieste] IS NULL) OR (" +
+                "[NrLastreRichieste] = @Original_NrLastreRichieste)) AND ((@IsNull_IDMinuteria = " +
+                "1 AND [IDMinuteria] IS NULL) OR ([IDMinuteria] = @Original_IDMinuteria)) AND ((@" +
+                "IsNull_Qtaminuteria = 1 AND [Qtaminuteria] IS NULL) OR ([Qtaminuteria] = @Origin" +
+                "al_Qtaminuteria)) AND ((@IsNull_NrPezziOrdinati = 1 AND [NrPezziOrdinati] IS NUL" +
+                "L) OR ([NrPezziOrdinati] = @Original_NrPezziOrdinati)) AND ((@IsNull_NrOrdine = " +
+                "1 AND [NrOrdine] IS NULL) OR ([NrOrdine] = @Original_NrOrdine)) AND ((@IsNull_Lo" +
+                "ttoAcquisto = 1 AND [LottoAcquisto] IS NULL) OR ([LottoAcquisto] = @Original_Lot" +
+                "toAcquisto)) AND ((@IsNull_DataTermine = 1 AND [DataTermine] IS NULL) OR ([DataT" +
+                "ermine] = @Original_DataTermine)) AND ((@IsNull_NrPezziCorretti = 1 AND [NrPezzi" +
+                "Corretti] IS NULL) OR ([NrPezziCorretti] = @Original_NrPezziCorretti)) AND ((@Is" +
+                "Null_NrPezziScartati = 1 AND [NrPezziScartati] IS NULL) OR ([NrPezziScartati] = " +
+                "@Original_NrPezziScartati)) AND ((@IsNull_AttG1 = 1 AND [AttG1] IS NULL) OR ([At" +
+                "tG1] = @Original_AttG1)) AND ((@IsNull_OISG1 = 1 AND [OISG1] IS NULL) OR ([OISG1" +
+                "] = @Original_OISG1)) AND ((@IsNull_OFSG1 = 1 AND [OFSG1] IS NULL) OR ([OFSG1] =" +
+                " @Original_OFSG1)) AND ((@IsNull_AttG2 = 1 AND [AttG2] IS NULL) OR ([AttG2] = @O" +
+                "riginal_AttG2)) AND ((@IsNull_OISG2 = 1 AND [OISG2] IS NULL) OR ([OISG2] = @Orig" +
                 "inal_OISG2)) AND ((@IsNull_OFSG2 = 1 AND [OFSG2] IS NULL) OR ([OFSG2] = @Origina" +
-                "l_OFSG2)) AND ((@IsNull_OISG3 = 1 AND [OISG3] IS NULL) OR ([OISG3] = @Original_O" +
-                "ISG3)) AND ((@IsNull_OSFG3 = 1 AND [OSFG3] IS NULL) OR ([OSFG3] = @Original_OSFG" +
-                "3)) AND ((@IsNull_OISG4 = 1 AND [OISG4] IS NULL) OR ([OISG4] = @Original_OISG4))" +
-                " AND ((@IsNull_OFSG4 = 1 AND [OFSG4] IS NULL) OR ([OFSG4] = @Original_OFSG4)) AN" +
-                "D ((@IsNull_OISG5 = 1 AND [OISG5] IS NULL) OR ([OISG5] = @Original_OISG5)) AND (" +
-                "(@IsNull_OFSG5 = 1 AND [OFSG5] IS NULL) OR ([OFSG5] = @Original_OFSG5)) AND ((@I" +
-                "sNull_SecondiCicloTaglio = 1 AND [SecondiCicloTaglio] IS NULL) OR ([SecondiCiclo" +
-                "Taglio] = @Original_SecondiCicloTaglio)) AND ((@IsNull_MinutiAttrezzaggio = 1 AN" +
-                "D [MinutiAttrezzaggio] IS NULL) OR ([MinutiAttrezzaggio] = @Original_MinutiAttre" +
-                "zzaggio)) AND ((@IsNull_Stato = 1 AND [Stato] IS NULL) OR ([Stato] = @Original_S" +
-                "tato)) AND ((@IsNull_ImpegnataMatPrima = 1 AND [ImpegnataMatPrima] IS NULL) OR (" +
-                "[ImpegnataMatPrima] = @Original_ImpegnataMatPrima)))";
+                "l_OFSG2)) AND ((@IsNull_AttG3 = 1 AND [AttG3] IS NULL) OR ([AttG3] = @Original_A" +
+                "ttG3)) AND ((@IsNull_OISG3 = 1 AND [OISG3] IS NULL) OR ([OISG3] = @Original_OISG" +
+                "3)) AND ((@IsNull_OSFG3 = 1 AND [OSFG3] IS NULL) OR ([OSFG3] = @Original_OSFG3))" +
+                " AND ((@IsNull_AttG4 = 1 AND [AttG4] IS NULL) OR ([AttG4] = @Original_AttG4)) AN" +
+                "D ((@IsNull_OISG4 = 1 AND [OISG4] IS NULL) OR ([OISG4] = @Original_OISG4)) AND (" +
+                "(@IsNull_OFSG4 = 1 AND [OFSG4] IS NULL) OR ([OFSG4] = @Original_OFSG4)) AND ((@I" +
+                "sNull_AttG5 = 1 AND [AttG5] IS NULL) OR ([AttG5] = @Original_AttG5)) AND ((@IsNu" +
+                "ll_OISG5 = 1 AND [OISG5] IS NULL) OR ([OISG5] = @Original_OISG5)) AND ((@IsNull_" +
+                "OFSG5 = 1 AND [OFSG5] IS NULL) OR ([OFSG5] = @Original_OFSG5)) AND ((@IsNull_Sec" +
+                "ondiCicloTaglio = 1 AND [SecondiCicloTaglio] IS NULL) OR ([SecondiCicloTaglio] =" +
+                " @Original_SecondiCicloTaglio)) AND ((@IsNull_MinutiAttrezzaggio = 1 AND [Minuti" +
+                "Attrezzaggio] IS NULL) OR ([MinutiAttrezzaggio] = @Original_MinutiAttrezzaggio))" +
+                " AND ((@IsNull_Stato = 1 AND [Stato] IS NULL) OR ([Stato] = @Original_Stato)) AN" +
+                "D ((@IsNull_ImpegnataMatPrima = 1 AND [ImpegnataMatPrima] IS NULL) OR ([Impegnat" +
+                "aMatPrima] = @Original_ImpegnataMatPrima)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodCommessa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -43537,22 +44518,32 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OFSG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OFSG1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG2", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OFSG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OFSG2", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG3", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OSFG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OSFG3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OSFG3", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OSFG3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG4", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OFSG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OFSG4", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG5", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OFSG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -43567,30 +44558,32 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ImpegnataMatPrima", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImpegnataMatPrima", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Commesse] ([CodCommessa], [NrCommessa], [DataCommessa], [TipoCommess" +
-                "a], [IDCliente], [OrdCliente], [DataConsegna], [NrPezziDaLavorare], [CodArticolo" +
-                "], [DescrArticolo], [Note], [Foto], [IDFornitore], [IDMachStampa], [IDStampo], [" +
-                "PercentualeUtilizzoLastra], [CodArtiDopoStampo], [IDMachTaglio], [IDDima], [CodA" +
-                "rtiDopoTaglio], [IDMateriaPrima], [NrLastreRichieste], [IDMinuteria], [Qtaminute" +
-                "ria], [NrPezziOrdinati], [NrOrdine], [LottoAcquisto], [DataTermine], [NrPezziCor" +
-                "retti], [NrPezziScartati], [OISG1], [OFSG1], [OISG2], [OFSG2], [OISG3], [OSFG3]," +
-                " [OISG4], [OFSG4], [OISG5], [OFSG5], [SecondiCicloTaglio], [MinutiAttrezzaggio]," +
-                " [Stato], [ImpegnataMatPrima]) VALUES (@CodCommessa, @NrCommessa, @DataCommessa," +
-                " @TipoCommessa, @IDCliente, @OrdCliente, @DataConsegna, @NrPezziDaLavorare, @Cod" +
-                "Articolo, @DescrArticolo, @Note, @Foto, @IDFornitore, @IDMachStampa, @IDStampo, " +
-                "@PercentualeUtilizzoLastra, @CodArtiDopoStampo, @IDMachTaglio, @IDDima, @CodArti" +
-                "DopoTaglio, @IDMateriaPrima, @NrLastreRichieste, @IDMinuteria, @Qtaminuteria, @N" +
-                "rPezziOrdinati, @NrOrdine, @LottoAcquisto, @DataTermine, @NrPezziCorretti, @NrPe" +
-                "zziScartati, @OISG1, @OFSG1, @OISG2, @OFSG2, @OISG3, @OSFG3, @OISG4, @OFSG4, @OI" +
-                "SG5, @OFSG5, @SecondiCicloTaglio, @MinutiAttrezzaggio, @Stato, @ImpegnataMatPrim" +
-                "a);\r\nSELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDC" +
-                "liente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo," +
-                " Note, Foto, IDFornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, Cod" +
-                "ArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastr" +
-                "eRichieste, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto," +
-                " DataTermine, NrPezziCorretti, NrPezziScartati, OISG1, OFSG1, OISG2, OFSG2, OISG" +
-                "3, OSFG3, OISG4, OFSG4, OISG5, OFSG5, SecondiCicloTaglio, MinutiAttrezzaggio, St" +
-                "ato, ImpegnataMatPrima FROM Commesse WHERE (IDCommessa = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Commesse] ([CodCommessa], [NrCommessa], [DataCommessa], [TipoC" +
+                "ommessa], [IDCliente], [OrdCliente], [DataConsegna], [NrPezziDaLavorare], [CodAr" +
+                "ticolo], [DescrArticolo], [Note], [Foto], [IDFornitore], [IDMachStampa], [IDStam" +
+                "po], [PercentualeUtilizzoLastra], [CodArtiDopoStampo], [IDMachTaglio], [IDDima]," +
+                " [CodArtiDopoTaglio], [IDMateriaPrima], [NrLastreRichieste], [IDMinuteria], [Qta" +
+                "minuteria], [NrPezziOrdinati], [NrOrdine], [LottoAcquisto], [DataTermine], [NrPe" +
+                "zziCorretti], [NrPezziScartati], [AttG1], [OISG1], [OFSG1], [AttG2], [OISG2], [O" +
+                "FSG2], [AttG3], [OISG3], [OSFG3], [AttG4], [OISG4], [OFSG4], [AttG5], [OISG5], [" +
+                "OFSG5], [SecondiCicloTaglio], [MinutiAttrezzaggio], [Stato], [ImpegnataMatPrima]" +
+                ") VALUES (@CodCommessa, @NrCommessa, @DataCommessa, @TipoCommessa, @IDCliente, @" +
+                "OrdCliente, @DataConsegna, @NrPezziDaLavorare, @CodArticolo, @DescrArticolo, @No" +
+                "te, @Foto, @IDFornitore, @IDMachStampa, @IDStampo, @PercentualeUtilizzoLastra, @" +
+                "CodArtiDopoStampo, @IDMachTaglio, @IDDima, @CodArtiDopoTaglio, @IDMateriaPrima, " +
+                "@NrLastreRichieste, @IDMinuteria, @Qtaminuteria, @NrPezziOrdinati, @NrOrdine, @L" +
+                "ottoAcquisto, @DataTermine, @NrPezziCorretti, @NrPezziScartati, @AttG1, @OISG1, " +
+                "@OFSG1, @AttG2, @OISG2, @OFSG2, @AttG3, @OISG3, @OSFG3, @AttG4, @OISG4, @OFSG4, " +
+                "@AttG5, @OISG5, @OFSG5, @SecondiCicloTaglio, @MinutiAttrezzaggio, @Stato, @Impeg" +
+                "nataMatPrima);\r\nSELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCo" +
+                "mmessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, Des" +
+                "crArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, PercentualeUtilizzo" +
+                "Lastra, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPri" +
+                "ma, NrLastreRichieste, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, Lot" +
+                "toAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, AttG1, OISG1, OFSG1, " +
+                "AttG2, OISG2, OFSG2, AttG3, OISG3, OSFG3, AttG4, OISG4, OFSG4, AttG5, OISG5, OFS" +
+                "G5, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, ImpegnataMatPrima FROM Commes" +
+                "se WHERE (IDCommessa = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodCommessa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -43622,14 +44615,19 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataTermine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataTermine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OFSG1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG2", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OFSG2", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG3", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OSFG3", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OSFG3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG4", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OFSG4", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG5", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OFSG5", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SecondiCicloTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SecondiCicloTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -43638,84 +44636,91 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ImpegnataMatPrima", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ImpegnataMatPrima", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Commesse] SET [CodCommessa] = @CodCommessa, [NrCommessa] = @NrCommessa, [" +
-                "DataCommessa] = @DataCommessa, [TipoCommessa] = @TipoCommessa, [IDCliente] = @ID" +
-                "Cliente, [OrdCliente] = @OrdCliente, [DataConsegna] = @DataConsegna, [NrPezziDaL" +
-                "avorare] = @NrPezziDaLavorare, [CodArticolo] = @CodArticolo, [DescrArticolo] = @" +
-                "DescrArticolo, [Note] = @Note, [Foto] = @Foto, [IDFornitore] = @IDFornitore, [ID" +
-                "MachStampa] = @IDMachStampa, [IDStampo] = @IDStampo, [PercentualeUtilizzoLastra]" +
-                " = @PercentualeUtilizzoLastra, [CodArtiDopoStampo] = @CodArtiDopoStampo, [IDMach" +
-                "Taglio] = @IDMachTaglio, [IDDima] = @IDDima, [CodArtiDopoTaglio] = @CodArtiDopoT" +
-                "aglio, [IDMateriaPrima] = @IDMateriaPrima, [NrLastreRichieste] = @NrLastreRichie" +
-                "ste, [IDMinuteria] = @IDMinuteria, [Qtaminuteria] = @Qtaminuteria, [NrPezziOrdin" +
-                "ati] = @NrPezziOrdinati, [NrOrdine] = @NrOrdine, [LottoAcquisto] = @LottoAcquist" +
-                "o, [DataTermine] = @DataTermine, [NrPezziCorretti] = @NrPezziCorretti, [NrPezziS" +
-                "cartati] = @NrPezziScartati, [OISG1] = @OISG1, [OFSG1] = @OFSG1, [OISG2] = @OISG" +
-                "2, [OFSG2] = @OFSG2, [OISG3] = @OISG3, [OSFG3] = @OSFG3, [OISG4] = @OISG4, [OFSG" +
-                "4] = @OFSG4, [OISG5] = @OISG5, [OFSG5] = @OFSG5, [SecondiCicloTaglio] = @Secondi" +
-                "CicloTaglio, [MinutiAttrezzaggio] = @MinutiAttrezzaggio, [Stato] = @Stato, [Impe" +
-                "gnataMatPrima] = @ImpegnataMatPrima WHERE (([IDCommessa] = @Original_IDCommessa)" +
-                " AND ([CodCommessa] = @Original_CodCommessa) AND ([NrCommessa] = @Original_NrCom" +
-                "messa) AND ((@IsNull_DataCommessa = 1 AND [DataCommessa] IS NULL) OR ([DataComme" +
-                "ssa] = @Original_DataCommessa)) AND ([TipoCommessa] = @Original_TipoCommessa) AN" +
-                "D ((@IsNull_IDCliente = 1 AND [IDCliente] IS NULL) OR ([IDCliente] = @Original_I" +
-                "DCliente)) AND ((@IsNull_OrdCliente = 1 AND [OrdCliente] IS NULL) OR ([OrdClient" +
-                "e] = @Original_OrdCliente)) AND ((@IsNull_DataConsegna = 1 AND [DataConsegna] IS" +
-                " NULL) OR ([DataConsegna] = @Original_DataConsegna)) AND ((@IsNull_NrPezziDaLavo" +
-                "rare = 1 AND [NrPezziDaLavorare] IS NULL) OR ([NrPezziDaLavorare] = @Original_Nr" +
-                "PezziDaLavorare)) AND ((@IsNull_CodArticolo = 1 AND [CodArticolo] IS NULL) OR ([" +
-                "CodArticolo] = @Original_CodArticolo)) AND ((@IsNull_DescrArticolo = 1 AND [Desc" +
-                "rArticolo] IS NULL) OR ([DescrArticolo] = @Original_DescrArticolo)) AND ((@IsNul" +
-                "l_Note = 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND ((@IsNull_Foto " +
-                "= 1 AND [Foto] IS NULL) OR ([Foto] = @Original_Foto)) AND ((@IsNull_IDFornitore " +
-                "= 1 AND [IDFornitore] IS NULL) OR ([IDFornitore] = @Original_IDFornitore)) AND (" +
-                "(@IsNull_IDMachStampa = 1 AND [IDMachStampa] IS NULL) OR ([IDMachStampa] = @Orig" +
-                "inal_IDMachStampa)) AND ((@IsNull_IDStampo = 1 AND [IDStampo] IS NULL) OR ([IDSt" +
-                "ampo] = @Original_IDStampo)) AND ((@IsNull_PercentualeUtilizzoLastra = 1 AND [Pe" +
-                "rcentualeUtilizzoLastra] IS NULL) OR ([PercentualeUtilizzoLastra] = @Original_Pe" +
-                "rcentualeUtilizzoLastra)) AND ((@IsNull_CodArtiDopoStampo = 1 AND [CodArtiDopoSt" +
-                "ampo] IS NULL) OR ([CodArtiDopoStampo] = @Original_CodArtiDopoStampo)) AND ((@Is" +
-                "Null_IDMachTaglio = 1 AND [IDMachTaglio] IS NULL) OR ([IDMachTaglio] = @Original" +
-                "_IDMachTaglio)) AND ((@IsNull_IDDima = 1 AND [IDDima] IS NULL) OR ([IDDima] = @O" +
-                "riginal_IDDima)) AND ((@IsNull_CodArtiDopoTaglio = 1 AND [CodArtiDopoTaglio] IS " +
-                "NULL) OR ([CodArtiDopoTaglio] = @Original_CodArtiDopoTaglio)) AND ((@IsNull_IDMa" +
-                "teriaPrima = 1 AND [IDMateriaPrima] IS NULL) OR ([IDMateriaPrima] = @Original_ID" +
-                "MateriaPrima)) AND ((@IsNull_NrLastreRichieste = 1 AND [NrLastreRichieste] IS NU" +
-                "LL) OR ([NrLastreRichieste] = @Original_NrLastreRichieste)) AND ((@IsNull_IDMinu" +
-                "teria = 1 AND [IDMinuteria] IS NULL) OR ([IDMinuteria] = @Original_IDMinuteria))" +
-                " AND ((@IsNull_Qtaminuteria = 1 AND [Qtaminuteria] IS NULL) OR ([Qtaminuteria] =" +
-                " @Original_Qtaminuteria)) AND ((@IsNull_NrPezziOrdinati = 1 AND [NrPezziOrdinati" +
-                "] IS NULL) OR ([NrPezziOrdinati] = @Original_NrPezziOrdinati)) AND ((@IsNull_NrO" +
-                "rdine = 1 AND [NrOrdine] IS NULL) OR ([NrOrdine] = @Original_NrOrdine)) AND ((@I" +
-                "sNull_LottoAcquisto = 1 AND [LottoAcquisto] IS NULL) OR ([LottoAcquisto] = @Orig" +
-                "inal_LottoAcquisto)) AND ((@IsNull_DataTermine = 1 AND [DataTermine] IS NULL) OR" +
-                " ([DataTermine] = @Original_DataTermine)) AND ((@IsNull_NrPezziCorretti = 1 AND " +
-                "[NrPezziCorretti] IS NULL) OR ([NrPezziCorretti] = @Original_NrPezziCorretti)) A" +
-                "ND ((@IsNull_NrPezziScartati = 1 AND [NrPezziScartati] IS NULL) OR ([NrPezziScar" +
-                "tati] = @Original_NrPezziScartati)) AND ((@IsNull_OISG1 = 1 AND [OISG1] IS NULL)" +
-                " OR ([OISG1] = @Original_OISG1)) AND ((@IsNull_OFSG1 = 1 AND [OFSG1] IS NULL) OR" +
-                " ([OFSG1] = @Original_OFSG1)) AND ((@IsNull_OISG2 = 1 AND [OISG2] IS NULL) OR ([" +
-                "OISG2] = @Original_OISG2)) AND ((@IsNull_OFSG2 = 1 AND [OFSG2] IS NULL) OR ([OFS" +
-                "G2] = @Original_OFSG2)) AND ((@IsNull_OISG3 = 1 AND [OISG3] IS NULL) OR ([OISG3]" +
-                " = @Original_OISG3)) AND ((@IsNull_OSFG3 = 1 AND [OSFG3] IS NULL) OR ([OSFG3] = " +
-                "@Original_OSFG3)) AND ((@IsNull_OISG4 = 1 AND [OISG4] IS NULL) OR ([OISG4] = @Or" +
-                "iginal_OISG4)) AND ((@IsNull_OFSG4 = 1 AND [OFSG4] IS NULL) OR ([OFSG4] = @Origi" +
-                "nal_OFSG4)) AND ((@IsNull_OISG5 = 1 AND [OISG5] IS NULL) OR ([OISG5] = @Original" +
-                "_OISG5)) AND ((@IsNull_OFSG5 = 1 AND [OFSG5] IS NULL) OR ([OFSG5] = @Original_OF" +
-                "SG5)) AND ((@IsNull_SecondiCicloTaglio = 1 AND [SecondiCicloTaglio] IS NULL) OR " +
-                "([SecondiCicloTaglio] = @Original_SecondiCicloTaglio)) AND ((@IsNull_MinutiAttre" +
-                "zzaggio = 1 AND [MinutiAttrezzaggio] IS NULL) OR ([MinutiAttrezzaggio] = @Origin" +
-                "al_MinutiAttrezzaggio)) AND ((@IsNull_Stato = 1 AND [Stato] IS NULL) OR ([Stato]" +
-                " = @Original_Stato)) AND ((@IsNull_ImpegnataMatPrima = 1 AND [ImpegnataMatPrima]" +
-                " IS NULL) OR ([ImpegnataMatPrima] = @Original_ImpegnataMatPrima)));\r\nSELECT IDCo" +
-                "mmessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdClien" +
-                "te, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDF" +
-                "ornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, CodArtiDopoStampo, " +
-                "IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastreRichieste, IDMi" +
-                "nuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, Nr" +
-                "PezziCorretti, NrPezziScartati, OISG1, OFSG1, OISG2, OFSG2, OISG3, OSFG3, OISG4," +
-                " OFSG4, OISG5, OFSG5, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, ImpegnataMa" +
-                "tPrima FROM Commesse WHERE (IDCommessa = @IDCommessa)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Commesse] SET [CodCommessa] = @CodCommessa, [NrCommessa] = @NrComme" +
+                "ssa, [DataCommessa] = @DataCommessa, [TipoCommessa] = @TipoCommessa, [IDCliente]" +
+                " = @IDCliente, [OrdCliente] = @OrdCliente, [DataConsegna] = @DataConsegna, [NrPe" +
+                "zziDaLavorare] = @NrPezziDaLavorare, [CodArticolo] = @CodArticolo, [DescrArticol" +
+                "o] = @DescrArticolo, [Note] = @Note, [Foto] = @Foto, [IDFornitore] = @IDFornitor" +
+                "e, [IDMachStampa] = @IDMachStampa, [IDStampo] = @IDStampo, [PercentualeUtilizzoL" +
+                "astra] = @PercentualeUtilizzoLastra, [CodArtiDopoStampo] = @CodArtiDopoStampo, [" +
+                "IDMachTaglio] = @IDMachTaglio, [IDDima] = @IDDima, [CodArtiDopoTaglio] = @CodArt" +
+                "iDopoTaglio, [IDMateriaPrima] = @IDMateriaPrima, [NrLastreRichieste] = @NrLastre" +
+                "Richieste, [IDMinuteria] = @IDMinuteria, [Qtaminuteria] = @Qtaminuteria, [NrPezz" +
+                "iOrdinati] = @NrPezziOrdinati, [NrOrdine] = @NrOrdine, [LottoAcquisto] = @LottoA" +
+                "cquisto, [DataTermine] = @DataTermine, [NrPezziCorretti] = @NrPezziCorretti, [Nr" +
+                "PezziScartati] = @NrPezziScartati, [AttG1] = @AttG1, [OISG1] = @OISG1, [OFSG1] =" +
+                " @OFSG1, [AttG2] = @AttG2, [OISG2] = @OISG2, [OFSG2] = @OFSG2, [AttG3] = @AttG3," +
+                " [OISG3] = @OISG3, [OSFG3] = @OSFG3, [AttG4] = @AttG4, [OISG4] = @OISG4, [OFSG4]" +
+                " = @OFSG4, [AttG5] = @AttG5, [OISG5] = @OISG5, [OFSG5] = @OFSG5, [SecondiCicloTa" +
+                "glio] = @SecondiCicloTaglio, [MinutiAttrezzaggio] = @MinutiAttrezzaggio, [Stato]" +
+                " = @Stato, [ImpegnataMatPrima] = @ImpegnataMatPrima WHERE (([IDCommessa] = @Orig" +
+                "inal_IDCommessa) AND ([CodCommessa] = @Original_CodCommessa) AND ([NrCommessa] =" +
+                " @Original_NrCommessa) AND ((@IsNull_DataCommessa = 1 AND [DataCommessa] IS NULL" +
+                ") OR ([DataCommessa] = @Original_DataCommessa)) AND ([TipoCommessa] = @Original_" +
+                "TipoCommessa) AND ((@IsNull_IDCliente = 1 AND [IDCliente] IS NULL) OR ([IDClient" +
+                "e] = @Original_IDCliente)) AND ((@IsNull_OrdCliente = 1 AND [OrdCliente] IS NULL" +
+                ") OR ([OrdCliente] = @Original_OrdCliente)) AND ((@IsNull_DataConsegna = 1 AND [" +
+                "DataConsegna] IS NULL) OR ([DataConsegna] = @Original_DataConsegna)) AND ((@IsNu" +
+                "ll_NrPezziDaLavorare = 1 AND [NrPezziDaLavorare] IS NULL) OR ([NrPezziDaLavorare" +
+                "] = @Original_NrPezziDaLavorare)) AND ((@IsNull_CodArticolo = 1 AND [CodArticolo" +
+                "] IS NULL) OR ([CodArticolo] = @Original_CodArticolo)) AND ((@IsNull_DescrArtico" +
+                "lo = 1 AND [DescrArticolo] IS NULL) OR ([DescrArticolo] = @Original_DescrArticol" +
+                "o)) AND ((@IsNull_Note = 1 AND [Note] IS NULL) OR ([Note] = @Original_Note)) AND" +
+                " ((@IsNull_Foto = 1 AND [Foto] IS NULL) OR ([Foto] = @Original_Foto)) AND ((@IsN" +
+                "ull_IDFornitore = 1 AND [IDFornitore] IS NULL) OR ([IDFornitore] = @Original_IDF" +
+                "ornitore)) AND ((@IsNull_IDMachStampa = 1 AND [IDMachStampa] IS NULL) OR ([IDMac" +
+                "hStampa] = @Original_IDMachStampa)) AND ((@IsNull_IDStampo = 1 AND [IDStampo] IS" +
+                " NULL) OR ([IDStampo] = @Original_IDStampo)) AND ((@IsNull_PercentualeUtilizzoLa" +
+                "stra = 1 AND [PercentualeUtilizzoLastra] IS NULL) OR ([PercentualeUtilizzoLastra" +
+                "] = @Original_PercentualeUtilizzoLastra)) AND ((@IsNull_CodArtiDopoStampo = 1 AN" +
+                "D [CodArtiDopoStampo] IS NULL) OR ([CodArtiDopoStampo] = @Original_CodArtiDopoSt" +
+                "ampo)) AND ((@IsNull_IDMachTaglio = 1 AND [IDMachTaglio] IS NULL) OR ([IDMachTag" +
+                "lio] = @Original_IDMachTaglio)) AND ((@IsNull_IDDima = 1 AND [IDDima] IS NULL) O" +
+                "R ([IDDima] = @Original_IDDima)) AND ((@IsNull_CodArtiDopoTaglio = 1 AND [CodArt" +
+                "iDopoTaglio] IS NULL) OR ([CodArtiDopoTaglio] = @Original_CodArtiDopoTaglio)) AN" +
+                "D ((@IsNull_IDMateriaPrima = 1 AND [IDMateriaPrima] IS NULL) OR ([IDMateriaPrima" +
+                "] = @Original_IDMateriaPrima)) AND ((@IsNull_NrLastreRichieste = 1 AND [NrLastre" +
+                "Richieste] IS NULL) OR ([NrLastreRichieste] = @Original_NrLastreRichieste)) AND " +
+                "((@IsNull_IDMinuteria = 1 AND [IDMinuteria] IS NULL) OR ([IDMinuteria] = @Origin" +
+                "al_IDMinuteria)) AND ((@IsNull_Qtaminuteria = 1 AND [Qtaminuteria] IS NULL) OR (" +
+                "[Qtaminuteria] = @Original_Qtaminuteria)) AND ((@IsNull_NrPezziOrdinati = 1 AND " +
+                "[NrPezziOrdinati] IS NULL) OR ([NrPezziOrdinati] = @Original_NrPezziOrdinati)) A" +
+                "ND ((@IsNull_NrOrdine = 1 AND [NrOrdine] IS NULL) OR ([NrOrdine] = @Original_NrO" +
+                "rdine)) AND ((@IsNull_LottoAcquisto = 1 AND [LottoAcquisto] IS NULL) OR ([LottoA" +
+                "cquisto] = @Original_LottoAcquisto)) AND ((@IsNull_DataTermine = 1 AND [DataTerm" +
+                "ine] IS NULL) OR ([DataTermine] = @Original_DataTermine)) AND ((@IsNull_NrPezziC" +
+                "orretti = 1 AND [NrPezziCorretti] IS NULL) OR ([NrPezziCorretti] = @Original_NrP" +
+                "ezziCorretti)) AND ((@IsNull_NrPezziScartati = 1 AND [NrPezziScartati] IS NULL) " +
+                "OR ([NrPezziScartati] = @Original_NrPezziScartati)) AND ((@IsNull_AttG1 = 1 AND " +
+                "[AttG1] IS NULL) OR ([AttG1] = @Original_AttG1)) AND ((@IsNull_OISG1 = 1 AND [OI" +
+                "SG1] IS NULL) OR ([OISG1] = @Original_OISG1)) AND ((@IsNull_OFSG1 = 1 AND [OFSG1" +
+                "] IS NULL) OR ([OFSG1] = @Original_OFSG1)) AND ((@IsNull_AttG2 = 1 AND [AttG2] I" +
+                "S NULL) OR ([AttG2] = @Original_AttG2)) AND ((@IsNull_OISG2 = 1 AND [OISG2] IS N" +
+                "ULL) OR ([OISG2] = @Original_OISG2)) AND ((@IsNull_OFSG2 = 1 AND [OFSG2] IS NULL" +
+                ") OR ([OFSG2] = @Original_OFSG2)) AND ((@IsNull_AttG3 = 1 AND [AttG3] IS NULL) O" +
+                "R ([AttG3] = @Original_AttG3)) AND ((@IsNull_OISG3 = 1 AND [OISG3] IS NULL) OR (" +
+                "[OISG3] = @Original_OISG3)) AND ((@IsNull_OSFG3 = 1 AND [OSFG3] IS NULL) OR ([OS" +
+                "FG3] = @Original_OSFG3)) AND ((@IsNull_AttG4 = 1 AND [AttG4] IS NULL) OR ([AttG4" +
+                "] = @Original_AttG4)) AND ((@IsNull_OISG4 = 1 AND [OISG4] IS NULL) OR ([OISG4] =" +
+                " @Original_OISG4)) AND ((@IsNull_OFSG4 = 1 AND [OFSG4] IS NULL) OR ([OFSG4] = @O" +
+                "riginal_OFSG4)) AND ((@IsNull_AttG5 = 1 AND [AttG5] IS NULL) OR ([AttG5] = @Orig" +
+                "inal_AttG5)) AND ((@IsNull_OISG5 = 1 AND [OISG5] IS NULL) OR ([OISG5] = @Origina" +
+                "l_OISG5)) AND ((@IsNull_OFSG5 = 1 AND [OFSG5] IS NULL) OR ([OFSG5] = @Original_O" +
+                "FSG5)) AND ((@IsNull_SecondiCicloTaglio = 1 AND [SecondiCicloTaglio] IS NULL) OR" +
+                " ([SecondiCicloTaglio] = @Original_SecondiCicloTaglio)) AND ((@IsNull_MinutiAttr" +
+                "ezzaggio = 1 AND [MinutiAttrezzaggio] IS NULL) OR ([MinutiAttrezzaggio] = @Origi" +
+                "nal_MinutiAttrezzaggio)) AND ((@IsNull_Stato = 1 AND [Stato] IS NULL) OR ([Stato" +
+                "] = @Original_Stato)) AND ((@IsNull_ImpegnataMatPrima = 1 AND [ImpegnataMatPrima" +
+                "] IS NULL) OR ([ImpegnataMatPrima] = @Original_ImpegnataMatPrima)));\r\nSELECT IDC" +
+                "ommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdClie" +
+                "nte, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, ID" +
+                "Fornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, CodArtiDopoStampo," +
+                " IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastreRichieste, IDM" +
+                "inuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, N" +
+                "rPezziCorretti, NrPezziScartati, AttG1, OISG1, OFSG1, AttG2, OISG2, OFSG2, AttG3" +
+                ", OISG3, OSFG3, AttG4, OISG4, OFSG4, AttG5, OISG5, OFSG5, SecondiCicloTaglio, Mi" +
+                "nutiAttrezzaggio, Stato, ImpegnataMatPrima FROM Commesse WHERE (IDCommessa = @ID" +
+                "Commessa)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodCommessa", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrCommessa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -43747,14 +44752,19 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataTermine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataTermine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OFSG1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG2", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OFSG2", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG3", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OSFG3", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OSFG3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG4", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OFSG4", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AttG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OISG5", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OFSG5", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SecondiCicloTaglio", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SecondiCicloTaglio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -43819,22 +44829,32 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziCorretti", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziCorretti", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrPezziScartati", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrPezziScartati", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OFSG1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OFSG1", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG2", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OFSG2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OFSG2", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG2", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG3", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OSFG3", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OSFG3", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OSFG3", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OSFG3", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG4", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OFSG4", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG4", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OFSG4", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG4", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AttG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AttG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AttG5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OISG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OISG5", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OISG5", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_OFSG5", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OFSG5", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -43863,10 +44883,7 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, 
-                         PercentualeUtilizzoLastra, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastreRichieste, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, 
-                         NrPezziScartati, OISG1, OFSG1, OISG2, OFSG2, OISG3, OSFG3, OISG4, OFSG4, OISG5, OFSG5, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, ImpegnataMatPrima
-FROM            Commesse";
+            this._commandCollection[0].CommandText = @"SELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastreRichieste, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, AttG1, OISG1, OFSG1, AttG2, OISG2, OFSG2, AttG3, OISG3, OSFG3, AttG4, OISG4, OFSG4, AttG5, OISG5, OFSG5, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, ImpegnataMatPrima FROM dbo.Commesse";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -43959,14 +44976,19 @@ FROM            Commesse";
                     global::System.Nullable<global::System.DateTime> Original_DataTermine, 
                     global::System.Nullable<int> Original_NrPezziCorretti, 
                     global::System.Nullable<int> Original_NrPezziScartati, 
+                    global::System.Nullable<int> Original_AttG1, 
                     global::System.Nullable<global::System.DateTime> Original_OISG1, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG1, 
+                    global::System.Nullable<int> Original_AttG2, 
                     global::System.Nullable<global::System.DateTime> Original_OISG2, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG2, 
+                    global::System.Nullable<int> Original_AttG3, 
                     global::System.Nullable<global::System.DateTime> Original_OISG3, 
                     global::System.Nullable<global::System.DateTime> Original_OSFG3, 
+                    global::System.Nullable<int> Original_AttG4, 
                     global::System.Nullable<global::System.DateTime> Original_OISG4, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG4, 
+                    global::System.Nullable<int> Original_AttG5, 
                     global::System.Nullable<global::System.DateTime> Original_OISG5, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG5, 
                     global::System.Nullable<int> Original_SecondiCicloTaglio, 
@@ -44198,117 +45220,157 @@ FROM            Commesse";
                 this.Adapter.DeleteCommand.Parameters[56].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[57].Value = global::System.DBNull.Value;
             }
-            if ((Original_OISG1.HasValue == true)) {
+            if ((Original_AttG1.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[59].Value = ((System.DateTime)(Original_OISG1.Value));
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((int)(Original_AttG1.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[58].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
-            if ((Original_OFSG1.HasValue == true)) {
+            if ((Original_OISG1.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[61].Value = ((System.DateTime)(Original_OFSG1.Value));
+                this.Adapter.DeleteCommand.Parameters[61].Value = ((System.DateTime)(Original_OISG1.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[60].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[61].Value = global::System.DBNull.Value;
             }
-            if ((Original_OISG2.HasValue == true)) {
+            if ((Original_OFSG1.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[62].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[63].Value = ((System.DateTime)(Original_OISG2.Value));
+                this.Adapter.DeleteCommand.Parameters[63].Value = ((System.DateTime)(Original_OFSG1.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[62].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[63].Value = global::System.DBNull.Value;
             }
-            if ((Original_OFSG2.HasValue == true)) {
+            if ((Original_AttG2.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[65].Value = ((System.DateTime)(Original_OFSG2.Value));
+                this.Adapter.DeleteCommand.Parameters[65].Value = ((int)(Original_AttG2.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[64].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[65].Value = global::System.DBNull.Value;
             }
-            if ((Original_OISG3.HasValue == true)) {
+            if ((Original_OISG2.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[67].Value = ((System.DateTime)(Original_OISG3.Value));
+                this.Adapter.DeleteCommand.Parameters[67].Value = ((System.DateTime)(Original_OISG2.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[66].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[67].Value = global::System.DBNull.Value;
             }
-            if ((Original_OSFG3.HasValue == true)) {
+            if ((Original_OFSG2.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[69].Value = ((System.DateTime)(Original_OSFG3.Value));
+                this.Adapter.DeleteCommand.Parameters[69].Value = ((System.DateTime)(Original_OFSG2.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[68].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[69].Value = global::System.DBNull.Value;
             }
-            if ((Original_OISG4.HasValue == true)) {
+            if ((Original_AttG3.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[71].Value = ((System.DateTime)(Original_OISG4.Value));
+                this.Adapter.DeleteCommand.Parameters[71].Value = ((int)(Original_AttG3.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[70].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[71].Value = global::System.DBNull.Value;
             }
-            if ((Original_OFSG4.HasValue == true)) {
+            if ((Original_OISG3.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[73].Value = ((System.DateTime)(Original_OFSG4.Value));
+                this.Adapter.DeleteCommand.Parameters[73].Value = ((System.DateTime)(Original_OISG3.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[72].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[73].Value = global::System.DBNull.Value;
             }
-            if ((Original_OISG5.HasValue == true)) {
+            if ((Original_OSFG3.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[75].Value = ((System.DateTime)(Original_OISG5.Value));
+                this.Adapter.DeleteCommand.Parameters[75].Value = ((System.DateTime)(Original_OSFG3.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[74].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[75].Value = global::System.DBNull.Value;
             }
-            if ((Original_OFSG5.HasValue == true)) {
+            if ((Original_AttG4.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[77].Value = ((System.DateTime)(Original_OFSG5.Value));
+                this.Adapter.DeleteCommand.Parameters[77].Value = ((int)(Original_AttG4.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[76].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[77].Value = global::System.DBNull.Value;
             }
-            if ((Original_SecondiCicloTaglio.HasValue == true)) {
+            if ((Original_OISG4.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[79].Value = ((int)(Original_SecondiCicloTaglio.Value));
+                this.Adapter.DeleteCommand.Parameters[79].Value = ((System.DateTime)(Original_OISG4.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[78].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[79].Value = global::System.DBNull.Value;
             }
-            if ((Original_MinutiAttrezzaggio.HasValue == true)) {
+            if ((Original_OFSG4.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[81].Value = ((int)(Original_MinutiAttrezzaggio.Value));
+                this.Adapter.DeleteCommand.Parameters[81].Value = ((System.DateTime)(Original_OFSG4.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[80].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[81].Value = global::System.DBNull.Value;
             }
-            if ((Original_Stato.HasValue == true)) {
+            if ((Original_AttG5.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[82].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[83].Value = ((int)(Original_Stato.Value));
+                this.Adapter.DeleteCommand.Parameters[83].Value = ((int)(Original_AttG5.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[82].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[83].Value = global::System.DBNull.Value;
             }
-            if ((Original_ImpegnataMatPrima.HasValue == true)) {
+            if ((Original_OISG5.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[84].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[85].Value = ((int)(Original_ImpegnataMatPrima.Value));
+                this.Adapter.DeleteCommand.Parameters[85].Value = ((System.DateTime)(Original_OISG5.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[84].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[85].Value = global::System.DBNull.Value;
+            }
+            if ((Original_OFSG5.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[86].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[87].Value = ((System.DateTime)(Original_OFSG5.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[86].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[87].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SecondiCicloTaglio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[88].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[89].Value = ((int)(Original_SecondiCicloTaglio.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[88].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[89].Value = global::System.DBNull.Value;
+            }
+            if ((Original_MinutiAttrezzaggio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[90].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[91].Value = ((int)(Original_MinutiAttrezzaggio.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[90].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[91].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Stato.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[92].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[93].Value = ((int)(Original_Stato.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[92].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[93].Value = global::System.DBNull.Value;
+            }
+            if ((Original_ImpegnataMatPrima.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[94].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[95].Value = ((int)(Original_ImpegnataMatPrima.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[94].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[95].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -44361,14 +45423,19 @@ FROM            Commesse";
                     global::System.Nullable<global::System.DateTime> DataTermine, 
                     global::System.Nullable<int> NrPezziCorretti, 
                     global::System.Nullable<int> NrPezziScartati, 
+                    global::System.Nullable<int> AttG1, 
                     global::System.Nullable<global::System.DateTime> OISG1, 
                     global::System.Nullable<global::System.DateTime> OFSG1, 
+                    global::System.Nullable<int> AttG2, 
                     global::System.Nullable<global::System.DateTime> OISG2, 
                     global::System.Nullable<global::System.DateTime> OFSG2, 
+                    global::System.Nullable<int> AttG3, 
                     global::System.Nullable<global::System.DateTime> OISG3, 
                     global::System.Nullable<global::System.DateTime> OSFG3, 
+                    global::System.Nullable<int> AttG4, 
                     global::System.Nullable<global::System.DateTime> OISG4, 
                     global::System.Nullable<global::System.DateTime> OFSG4, 
+                    global::System.Nullable<int> AttG5, 
                     global::System.Nullable<global::System.DateTime> OISG5, 
                     global::System.Nullable<global::System.DateTime> OFSG5, 
                     global::System.Nullable<int> SecondiCicloTaglio, 
@@ -44545,89 +45612,119 @@ FROM            Commesse";
             else {
                 this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            if ((OISG1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((System.DateTime)(OISG1.Value));
+            if ((AttG1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[30].Value = ((int)(AttG1.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((OFSG1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((System.DateTime)(OFSG1.Value));
+            if ((OISG1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((System.DateTime)(OISG1.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            if ((OISG2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[32].Value = ((System.DateTime)(OISG2.Value));
+            if ((OFSG1.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((System.DateTime)(OFSG1.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((OFSG2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[33].Value = ((System.DateTime)(OFSG2.Value));
+            if ((AttG2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[33].Value = ((int)(AttG2.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
-            if ((OISG3.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[34].Value = ((System.DateTime)(OISG3.Value));
+            if ((OISG2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[34].Value = ((System.DateTime)(OISG2.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            if ((OSFG3.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[35].Value = ((System.DateTime)(OSFG3.Value));
+            if ((OFSG2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[35].Value = ((System.DateTime)(OFSG2.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((OISG4.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[36].Value = ((System.DateTime)(OISG4.Value));
+            if ((AttG3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[36].Value = ((int)(AttG3.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            if ((OFSG4.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[37].Value = ((System.DateTime)(OFSG4.Value));
+            if ((OISG3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[37].Value = ((System.DateTime)(OISG3.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            if ((OISG5.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[38].Value = ((System.DateTime)(OISG5.Value));
+            if ((OSFG3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[38].Value = ((System.DateTime)(OSFG3.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((OFSG5.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[39].Value = ((System.DateTime)(OFSG5.Value));
+            if ((AttG4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[39].Value = ((int)(AttG4.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
-            if ((SecondiCicloTaglio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[40].Value = ((int)(SecondiCicloTaglio.Value));
+            if ((OISG4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[40].Value = ((System.DateTime)(OISG4.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            if ((MinutiAttrezzaggio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[41].Value = ((int)(MinutiAttrezzaggio.Value));
+            if ((OFSG4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[41].Value = ((System.DateTime)(OFSG4.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            if ((Stato.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[42].Value = ((int)(Stato.Value));
+            if ((AttG5.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[42].Value = ((int)(AttG5.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
-            if ((ImpegnataMatPrima.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[43].Value = ((int)(ImpegnataMatPrima.Value));
+            if ((OISG5.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[43].Value = ((System.DateTime)(OISG5.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[43].Value = global::System.DBNull.Value;
+            }
+            if ((OFSG5.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[44].Value = ((System.DateTime)(OFSG5.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            if ((SecondiCicloTaglio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[45].Value = ((int)(SecondiCicloTaglio.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            if ((MinutiAttrezzaggio.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[46].Value = ((int)(MinutiAttrezzaggio.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            if ((Stato.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[47].Value = ((int)(Stato.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[47].Value = global::System.DBNull.Value;
+            }
+            if ((ImpegnataMatPrima.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[48].Value = ((int)(ImpegnataMatPrima.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -44680,14 +45777,19 @@ FROM            Commesse";
                     global::System.Nullable<global::System.DateTime> DataTermine, 
                     global::System.Nullable<int> NrPezziCorretti, 
                     global::System.Nullable<int> NrPezziScartati, 
+                    global::System.Nullable<int> AttG1, 
                     global::System.Nullable<global::System.DateTime> OISG1, 
                     global::System.Nullable<global::System.DateTime> OFSG1, 
+                    global::System.Nullable<int> AttG2, 
                     global::System.Nullable<global::System.DateTime> OISG2, 
                     global::System.Nullable<global::System.DateTime> OFSG2, 
+                    global::System.Nullable<int> AttG3, 
                     global::System.Nullable<global::System.DateTime> OISG3, 
                     global::System.Nullable<global::System.DateTime> OSFG3, 
+                    global::System.Nullable<int> AttG4, 
                     global::System.Nullable<global::System.DateTime> OISG4, 
                     global::System.Nullable<global::System.DateTime> OFSG4, 
+                    global::System.Nullable<int> AttG5, 
                     global::System.Nullable<global::System.DateTime> OISG5, 
                     global::System.Nullable<global::System.DateTime> OFSG5, 
                     global::System.Nullable<int> SecondiCicloTaglio, 
@@ -44725,14 +45827,19 @@ FROM            Commesse";
                     global::System.Nullable<global::System.DateTime> Original_DataTermine, 
                     global::System.Nullable<int> Original_NrPezziCorretti, 
                     global::System.Nullable<int> Original_NrPezziScartati, 
+                    global::System.Nullable<int> Original_AttG1, 
                     global::System.Nullable<global::System.DateTime> Original_OISG1, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG1, 
+                    global::System.Nullable<int> Original_AttG2, 
                     global::System.Nullable<global::System.DateTime> Original_OISG2, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG2, 
+                    global::System.Nullable<int> Original_AttG3, 
                     global::System.Nullable<global::System.DateTime> Original_OISG3, 
                     global::System.Nullable<global::System.DateTime> Original_OSFG3, 
+                    global::System.Nullable<int> Original_AttG4, 
                     global::System.Nullable<global::System.DateTime> Original_OISG4, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG4, 
+                    global::System.Nullable<int> Original_AttG5, 
                     global::System.Nullable<global::System.DateTime> Original_OISG5, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG5, 
                     global::System.Nullable<int> Original_SecondiCicloTaglio, 
@@ -44910,428 +46017,498 @@ FROM            Commesse";
             else {
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            if ((OISG1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(OISG1.Value));
+            if ((AttG1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(AttG1.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((OFSG1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(OFSG1.Value));
+            if ((OISG1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(OISG1.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
-            if ((OISG2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(OISG2.Value));
+            if ((OFSG1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(OFSG1.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((OFSG2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((System.DateTime)(OFSG2.Value));
+            if ((AttG2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(AttG2.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
-            if ((OISG3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(OISG3.Value));
+            if ((OISG2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(OISG2.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            if ((OSFG3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(OSFG3.Value));
+            if ((OFSG2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(OFSG2.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
-            if ((OISG4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((System.DateTime)(OISG4.Value));
+            if ((AttG3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(AttG3.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            if ((OFSG4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(OFSG4.Value));
+            if ((OISG3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(OISG3.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            if ((OISG5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(OISG5.Value));
+            if ((OSFG3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(OSFG3.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((OFSG5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(OFSG5.Value));
+            if ((AttG4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(AttG4.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
-            if ((SecondiCicloTaglio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(SecondiCicloTaglio.Value));
+            if ((OISG4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((System.DateTime)(OISG4.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            if ((MinutiAttrezzaggio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(MinutiAttrezzaggio.Value));
+            if ((OFSG4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((System.DateTime)(OFSG4.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            if ((Stato.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Stato.Value));
+            if ((AttG5.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(AttG5.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
-            if ((ImpegnataMatPrima.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(ImpegnataMatPrima.Value));
+            if ((OISG5.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((System.DateTime)(OISG5.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[44].Value = ((int)(Original_IDCommessa));
+            if ((OFSG5.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((System.DateTime)(OFSG5.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+            }
+            if ((SecondiCicloTaglio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((int)(SecondiCicloTaglio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+            }
+            if ((MinutiAttrezzaggio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(MinutiAttrezzaggio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+            }
+            if ((Stato.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((int)(Stato.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+            }
+            if ((ImpegnataMatPrima.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((int)(ImpegnataMatPrima.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Original_IDCommessa));
             if ((Original_CodCommessa == null)) {
                 throw new global::System.ArgumentNullException("Original_CodCommessa");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_CodCommessa));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_CodCommessa));
             }
-            this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(Original_NrCommessa));
+            this.Adapter.UpdateCommand.Parameters[51].Value = ((int)(Original_NrCommessa));
             if ((Original_DataCommessa.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((System.DateTime)(Original_DataCommessa.Value));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((System.DateTime)(Original_DataCommessa.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Original_TipoCommessa));
-            if ((Original_IDCliente == null)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_IDCliente));
-            }
-            if ((Original_OrdCliente == null)) {
                 this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[54].Value = ((int)(Original_TipoCommessa));
+            if ((Original_IDCliente == null)) {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_OrdCliente));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(Original_IDCliente));
+            }
+            if ((Original_OrdCliente == null)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(Original_OrdCliente));
             }
             if ((Original_DataConsegna.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((System.DateTime)(Original_DataConsegna.Value));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((System.DateTime)(Original_DataConsegna.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
             if ((Original_NrPezziDaLavorare.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((int)(Original_NrPezziDaLavorare.Value));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((int)(Original_NrPezziDaLavorare.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
             if ((Original_CodArticolo == null)) {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(Original_CodArticolo));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(Original_CodArticolo));
             }
             if ((Original_DescrArticolo == null)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(Original_DescrArticolo));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(Original_DescrArticolo));
             }
             if ((Original_Note == null)) {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(Original_Note));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(Original_Note));
             }
             if ((Original_Foto == null)) {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(Original_Foto));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(Original_Foto));
             }
             if ((Original_IDFornitore == null)) {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(Original_IDFornitore));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(Original_IDFornitore));
             }
             if ((Original_IDMachStampa.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((int)(Original_IDMachStampa.Value));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((int)(Original_IDMachStampa.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
             if ((Original_IDStampo == null)) {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(Original_IDStampo));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(Original_IDStampo));
             }
             if ((Original_PercentualeUtilizzoLastra.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((double)(Original_PercentualeUtilizzoLastra.Value));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((double)(Original_PercentualeUtilizzoLastra.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
             }
             if ((Original_CodArtiDopoStampo == null)) {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((string)(Original_CodArtiDopoStampo));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(Original_CodArtiDopoStampo));
             }
             if ((Original_IDMachTaglio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((int)(Original_IDMachTaglio.Value));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((int)(Original_IDMachTaglio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
             }
             if ((Original_IDDima == null)) {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((string)(Original_IDDima));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(Original_IDDima));
             }
             if ((Original_CodArtiDopoTaglio == null)) {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((string)(Original_CodArtiDopoTaglio));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(Original_CodArtiDopoTaglio));
             }
             if ((Original_IDMateriaPrima == null)) {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((string)(Original_IDMateriaPrima));
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(Original_IDMateriaPrima));
             }
             if ((Original_NrLastreRichieste.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((int)(Original_NrLastreRichieste.Value));
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((int)(Original_NrLastreRichieste.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
             }
             if ((Original_IDMinuteria == null)) {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((string)(Original_IDMinuteria));
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((string)(Original_IDMinuteria));
             }
             if ((Original_Qtaminuteria.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((int)(Original_Qtaminuteria.Value));
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((int)(Original_Qtaminuteria.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
             }
             if ((Original_NrPezziOrdinati.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((int)(Original_NrPezziOrdinati.Value));
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[96].Value = ((int)(Original_NrPezziOrdinati.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[91].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[96].Value = global::System.DBNull.Value;
             }
             if ((Original_NrOrdine == null)) {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[93].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[98].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((string)(Original_NrOrdine));
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((string)(Original_NrOrdine));
             }
             if ((Original_LottoAcquisto == null)) {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[95].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[100].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[95].Value = ((string)(Original_LottoAcquisto));
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[100].Value = ((string)(Original_LottoAcquisto));
             }
             if ((Original_DataTermine.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((System.DateTime)(Original_DataTermine.Value));
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((System.DateTime)(Original_DataTermine.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[97].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[102].Value = global::System.DBNull.Value;
             }
             if ((Original_NrPezziCorretti.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[99].Value = ((int)(Original_NrPezziCorretti.Value));
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[104].Value = ((int)(Original_NrPezziCorretti.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[99].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[104].Value = global::System.DBNull.Value;
             }
             if ((Original_NrPezziScartati.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((int)(Original_NrPezziScartati.Value));
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[106].Value = ((int)(Original_NrPezziScartati.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[101].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[106].Value = global::System.DBNull.Value;
+            }
+            if ((Original_AttG1.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[108].Value = ((int)(Original_AttG1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[108].Value = global::System.DBNull.Value;
             }
             if ((Original_OISG1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[103].Value = ((System.DateTime)(Original_OISG1.Value));
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[110].Value = ((System.DateTime)(Original_OISG1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[103].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[110].Value = global::System.DBNull.Value;
             }
             if ((Original_OFSG1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[105].Value = ((System.DateTime)(Original_OFSG1.Value));
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[112].Value = ((System.DateTime)(Original_OFSG1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[105].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[112].Value = global::System.DBNull.Value;
+            }
+            if ((Original_AttG2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[113].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[114].Value = ((int)(Original_AttG2.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[113].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[114].Value = global::System.DBNull.Value;
             }
             if ((Original_OISG2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[106].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[107].Value = ((System.DateTime)(Original_OISG2.Value));
+                this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[116].Value = ((System.DateTime)(Original_OISG2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[106].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[107].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[116].Value = global::System.DBNull.Value;
             }
             if ((Original_OFSG2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[108].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[109].Value = ((System.DateTime)(Original_OFSG2.Value));
+                this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[118].Value = ((System.DateTime)(Original_OFSG2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[108].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[109].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[118].Value = global::System.DBNull.Value;
+            }
+            if ((Original_AttG3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[120].Value = ((int)(Original_AttG3.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[120].Value = global::System.DBNull.Value;
             }
             if ((Original_OISG3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[111].Value = ((System.DateTime)(Original_OISG3.Value));
+                this.Adapter.UpdateCommand.Parameters[121].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[122].Value = ((System.DateTime)(Original_OISG3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[111].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[121].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[122].Value = global::System.DBNull.Value;
             }
             if ((Original_OSFG3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[112].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[113].Value = ((System.DateTime)(Original_OSFG3.Value));
+                this.Adapter.UpdateCommand.Parameters[123].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[124].Value = ((System.DateTime)(Original_OSFG3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[112].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[113].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[123].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[124].Value = global::System.DBNull.Value;
+            }
+            if ((Original_AttG4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[125].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[126].Value = ((int)(Original_AttG4.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[125].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[126].Value = global::System.DBNull.Value;
             }
             if ((Original_OISG4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[114].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[115].Value = ((System.DateTime)(Original_OISG4.Value));
+                this.Adapter.UpdateCommand.Parameters[127].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[128].Value = ((System.DateTime)(Original_OISG4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[114].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[115].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[127].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[128].Value = global::System.DBNull.Value;
             }
             if ((Original_OFSG4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[116].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[117].Value = ((System.DateTime)(Original_OFSG4.Value));
+                this.Adapter.UpdateCommand.Parameters[129].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[130].Value = ((System.DateTime)(Original_OFSG4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[116].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[117].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[129].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[130].Value = global::System.DBNull.Value;
+            }
+            if ((Original_AttG5.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[131].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[132].Value = ((int)(Original_AttG5.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[131].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[132].Value = global::System.DBNull.Value;
             }
             if ((Original_OISG5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[118].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[119].Value = ((System.DateTime)(Original_OISG5.Value));
+                this.Adapter.UpdateCommand.Parameters[133].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[134].Value = ((System.DateTime)(Original_OISG5.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[118].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[119].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[133].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[134].Value = global::System.DBNull.Value;
             }
             if ((Original_OFSG5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[120].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[121].Value = ((System.DateTime)(Original_OFSG5.Value));
+                this.Adapter.UpdateCommand.Parameters[135].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[136].Value = ((System.DateTime)(Original_OFSG5.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[120].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[121].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[135].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[136].Value = global::System.DBNull.Value;
             }
             if ((Original_SecondiCicloTaglio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[122].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[123].Value = ((int)(Original_SecondiCicloTaglio.Value));
+                this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[138].Value = ((int)(Original_SecondiCicloTaglio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[122].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[123].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[137].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[138].Value = global::System.DBNull.Value;
             }
             if ((Original_MinutiAttrezzaggio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[124].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[125].Value = ((int)(Original_MinutiAttrezzaggio.Value));
+                this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[140].Value = ((int)(Original_MinutiAttrezzaggio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[124].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[125].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[139].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[140].Value = global::System.DBNull.Value;
             }
             if ((Original_Stato.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[126].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[127].Value = ((int)(Original_Stato.Value));
+                this.Adapter.UpdateCommand.Parameters[141].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[142].Value = ((int)(Original_Stato.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[126].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[127].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[141].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[142].Value = global::System.DBNull.Value;
             }
             if ((Original_ImpegnataMatPrima.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[128].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[129].Value = ((int)(Original_ImpegnataMatPrima.Value));
+                this.Adapter.UpdateCommand.Parameters[143].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[144].Value = ((int)(Original_ImpegnataMatPrima.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[128].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[129].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[143].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[144].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[130].Value = ((int)(IDCommessa));
+            this.Adapter.UpdateCommand.Parameters[145].Value = ((int)(IDCommessa));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -45383,14 +46560,19 @@ FROM            Commesse";
                     global::System.Nullable<global::System.DateTime> DataTermine, 
                     global::System.Nullable<int> NrPezziCorretti, 
                     global::System.Nullable<int> NrPezziScartati, 
+                    global::System.Nullable<int> AttG1, 
                     global::System.Nullable<global::System.DateTime> OISG1, 
                     global::System.Nullable<global::System.DateTime> OFSG1, 
+                    global::System.Nullable<int> AttG2, 
                     global::System.Nullable<global::System.DateTime> OISG2, 
                     global::System.Nullable<global::System.DateTime> OFSG2, 
+                    global::System.Nullable<int> AttG3, 
                     global::System.Nullable<global::System.DateTime> OISG3, 
                     global::System.Nullable<global::System.DateTime> OSFG3, 
+                    global::System.Nullable<int> AttG4, 
                     global::System.Nullable<global::System.DateTime> OISG4, 
                     global::System.Nullable<global::System.DateTime> OFSG4, 
+                    global::System.Nullable<int> AttG5, 
                     global::System.Nullable<global::System.DateTime> OISG5, 
                     global::System.Nullable<global::System.DateTime> OFSG5, 
                     global::System.Nullable<int> SecondiCicloTaglio, 
@@ -45428,21 +46610,26 @@ FROM            Commesse";
                     global::System.Nullable<global::System.DateTime> Original_DataTermine, 
                     global::System.Nullable<int> Original_NrPezziCorretti, 
                     global::System.Nullable<int> Original_NrPezziScartati, 
+                    global::System.Nullable<int> Original_AttG1, 
                     global::System.Nullable<global::System.DateTime> Original_OISG1, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG1, 
+                    global::System.Nullable<int> Original_AttG2, 
                     global::System.Nullable<global::System.DateTime> Original_OISG2, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG2, 
+                    global::System.Nullable<int> Original_AttG3, 
                     global::System.Nullable<global::System.DateTime> Original_OISG3, 
                     global::System.Nullable<global::System.DateTime> Original_OSFG3, 
+                    global::System.Nullable<int> Original_AttG4, 
                     global::System.Nullable<global::System.DateTime> Original_OISG4, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG4, 
+                    global::System.Nullable<int> Original_AttG5, 
                     global::System.Nullable<global::System.DateTime> Original_OISG5, 
                     global::System.Nullable<global::System.DateTime> Original_OFSG5, 
                     global::System.Nullable<int> Original_SecondiCicloTaglio, 
                     global::System.Nullable<int> Original_MinutiAttrezzaggio, 
                     global::System.Nullable<int> Original_Stato, 
                     global::System.Nullable<int> Original_ImpegnataMatPrima) {
-            return this.Update(CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastreRichieste, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, OISG1, OFSG1, OISG2, OFSG2, OISG3, OSFG3, OISG4, OFSG4, OISG5, OFSG5, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, ImpegnataMatPrima, Original_IDCommessa, Original_CodCommessa, Original_NrCommessa, Original_DataCommessa, Original_TipoCommessa, Original_IDCliente, Original_OrdCliente, Original_DataConsegna, Original_NrPezziDaLavorare, Original_CodArticolo, Original_DescrArticolo, Original_Note, Original_Foto, Original_IDFornitore, Original_IDMachStampa, Original_IDStampo, Original_PercentualeUtilizzoLastra, Original_CodArtiDopoStampo, Original_IDMachTaglio, Original_IDDima, Original_CodArtiDopoTaglio, Original_IDMateriaPrima, Original_NrLastreRichieste, Original_IDMinuteria, Original_Qtaminuteria, Original_NrPezziOrdinati, Original_NrOrdine, Original_LottoAcquisto, Original_DataTermine, Original_NrPezziCorretti, Original_NrPezziScartati, Original_OISG1, Original_OFSG1, Original_OISG2, Original_OFSG2, Original_OISG3, Original_OSFG3, Original_OISG4, Original_OFSG4, Original_OISG5, Original_OFSG5, Original_SecondiCicloTaglio, Original_MinutiAttrezzaggio, Original_Stato, Original_ImpegnataMatPrima, Original_IDCommessa);
+            return this.Update(CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastreRichieste, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, AttG1, OISG1, OFSG1, AttG2, OISG2, OFSG2, AttG3, OISG3, OSFG3, AttG4, OISG4, OFSG4, AttG5, OISG5, OFSG5, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, ImpegnataMatPrima, Original_IDCommessa, Original_CodCommessa, Original_NrCommessa, Original_DataCommessa, Original_TipoCommessa, Original_IDCliente, Original_OrdCliente, Original_DataConsegna, Original_NrPezziDaLavorare, Original_CodArticolo, Original_DescrArticolo, Original_Note, Original_Foto, Original_IDFornitore, Original_IDMachStampa, Original_IDStampo, Original_PercentualeUtilizzoLastra, Original_CodArtiDopoStampo, Original_IDMachTaglio, Original_IDDima, Original_CodArtiDopoTaglio, Original_IDMateriaPrima, Original_NrLastreRichieste, Original_IDMinuteria, Original_Qtaminuteria, Original_NrPezziOrdinati, Original_NrOrdine, Original_LottoAcquisto, Original_DataTermine, Original_NrPezziCorretti, Original_NrPezziScartati, Original_AttG1, Original_OISG1, Original_OFSG1, Original_AttG2, Original_OISG2, Original_OFSG2, Original_AttG3, Original_OISG3, Original_OSFG3, Original_AttG4, Original_OISG4, Original_OFSG4, Original_AttG5, Original_OISG5, Original_OFSG5, Original_SecondiCicloTaglio, Original_MinutiAttrezzaggio, Original_Stato, Original_ImpegnataMatPrima, Original_IDCommessa);
         }
     }
     
@@ -45507,6 +46694,8 @@ FROM            Commesse";
         private TipoCommessaTableAdapter _tipoCommessaTableAdapter;
         
         private UtentiTableAdapter _utentiTableAdapter;
+        
+        private AbbinamentiArticoliTableAdapter _abbinamentiArticoliTableAdapter;
         
         private CommesseTableAdapter _commesseTableAdapter;
         
@@ -45880,6 +47069,20 @@ FROM            Commesse";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
+        public AbbinamentiArticoliTableAdapter AbbinamentiArticoliTableAdapter {
+            get {
+                return this._abbinamentiArticoliTableAdapter;
+            }
+            set {
+                this._abbinamentiArticoliTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public CommesseTableAdapter CommesseTableAdapter {
             get {
                 return this._commesseTableAdapter;
@@ -46008,6 +47211,10 @@ FROM            Commesse";
                             && (this._utentiTableAdapter.Connection != null))) {
                     return this._utentiTableAdapter.Connection;
                 }
+                if (((this._abbinamentiArticoliTableAdapter != null) 
+                            && (this._abbinamentiArticoliTableAdapter.Connection != null))) {
+                    return this._abbinamentiArticoliTableAdapter.Connection;
+                }
                 if (((this._commesseTableAdapter != null) 
                             && (this._commesseTableAdapter.Connection != null))) {
                     return this._commesseTableAdapter.Connection;
@@ -46098,6 +47305,9 @@ FROM            Commesse";
                     count = (count + 1);
                 }
                 if ((this._utentiTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._abbinamentiArticoliTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._commesseTableAdapter != null)) {
@@ -46222,6 +47432,15 @@ FROM            Commesse";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._abbinamentiArticoliTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AbbinamentiArticoli.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._abbinamentiArticoliTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._lavorazioniTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Lavorazioni.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -46231,12 +47450,12 @@ FROM            Commesse";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._giacenzeMagazziniTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.GiacenzeMagazzini.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._fornitoriTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Fornitori.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._giacenzeMagazziniTableAdapter.Update(updatedRows));
+                    result = (result + this._fornitoriTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -46330,12 +47549,12 @@ FROM            Commesse";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._fornitoriTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Fornitori.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._giacenzeMagazziniTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.GiacenzeMagazzini.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._fornitoriTableAdapter.Update(updatedRows));
+                    result = (result + this._giacenzeMagazziniTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -46454,6 +47673,14 @@ FROM            Commesse";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._abbinamentiArticoliTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AbbinamentiArticoli.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._abbinamentiArticoliTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._lavorazioniTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Lavorazioni.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -46462,11 +47689,11 @@ FROM            Commesse";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._giacenzeMagazziniTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.GiacenzeMagazzini.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._fornitoriTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Fornitori.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._giacenzeMagazziniTableAdapter.Update(addedRows));
+                    result = (result + this._fornitoriTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -46550,11 +47777,11 @@ FROM            Commesse";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._fornitoriTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Fornitori.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._giacenzeMagazziniTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.GiacenzeMagazzini.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._fornitoriTableAdapter.Update(addedRows));
+                    result = (result + this._giacenzeMagazziniTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -46584,11 +47811,11 @@ FROM            Commesse";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._fornitoriTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Fornitori.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._giacenzeMagazziniTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GiacenzeMagazzini.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._fornitoriTableAdapter.Update(deletedRows));
+                    result = (result + this._giacenzeMagazziniTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -46672,11 +47899,11 @@ FROM            Commesse";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._giacenzeMagazziniTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GiacenzeMagazzini.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._fornitoriTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Fornitori.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._giacenzeMagazziniTableAdapter.Update(deletedRows));
+                    result = (result + this._fornitoriTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -46685,6 +47912,14 @@ FROM            Commesse";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._lavorazioniTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._abbinamentiArticoliTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AbbinamentiArticoli.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._abbinamentiArticoliTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -46945,6 +48180,11 @@ FROM            Commesse";
             }
             if (((this._utentiTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._utentiTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l" +
+                        "a stessa stringa di connessione.");
+            }
+            if (((this._abbinamentiArticoliTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._abbinamentiArticoliTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l" +
                         "a stessa stringa di connessione.");
             }
@@ -47211,6 +48451,15 @@ FROM            Commesse";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._utentiTableAdapter.Adapter);
                     }
                 }
+                if ((this._abbinamentiArticoliTableAdapter != null)) {
+                    revertConnections.Add(this._abbinamentiArticoliTableAdapter, this._abbinamentiArticoliTableAdapter.Connection);
+                    this._abbinamentiArticoliTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._abbinamentiArticoliTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._abbinamentiArticoliTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._abbinamentiArticoliTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._abbinamentiArticoliTableAdapter.Adapter);
+                    }
+                }
                 if ((this._commesseTableAdapter != null)) {
                     revertConnections.Add(this._commesseTableAdapter, this._commesseTableAdapter.Connection);
                     this._commesseTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -47377,6 +48626,10 @@ FROM            Commesse";
                 if ((this._utentiTableAdapter != null)) {
                     this._utentiTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._utentiTableAdapter]));
                     this._utentiTableAdapter.Transaction = null;
+                }
+                if ((this._abbinamentiArticoliTableAdapter != null)) {
+                    this._abbinamentiArticoliTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._abbinamentiArticoliTableAdapter]));
+                    this._abbinamentiArticoliTableAdapter.Transaction = null;
                 }
                 if ((this._commesseTableAdapter != null)) {
                     this._commesseTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._commesseTableAdapter]));

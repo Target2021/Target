@@ -62,6 +62,31 @@ namespace Target2021
             int i =0;
            // RecuperoDati();
             RecuperoDate("SELECT DataCommessa FROM Commesse WHERE IDCommessa='" + IDCommessa + "'",i);
+            ImpostaDateTime();
+        }
+
+        private void ImpostaDateTime()
+        {
+            dateTimePicker4.Format = DateTimePickerFormat.Custom;
+            dateTimePicker4.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker5.Format = DateTimePickerFormat.Custom;
+            dateTimePicker5.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker6.Format = DateTimePickerFormat.Custom;
+            dateTimePicker6.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker7.Format = DateTimePickerFormat.Custom;
+            dateTimePicker7.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker8.Format = DateTimePickerFormat.Custom;
+            dateTimePicker8.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker9.Format = DateTimePickerFormat.Custom;
+            dateTimePicker9.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker10.Format = DateTimePickerFormat.Custom;
+            dateTimePicker10.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker11.Format = DateTimePickerFormat.Custom;
+            dateTimePicker11.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker12.Format = DateTimePickerFormat.Custom;
+            dateTimePicker12.CustomFormat = "MM/dd/yyyy hh:mm:ss";
+            dateTimePicker13.Format = DateTimePickerFormat.Custom;
+            dateTimePicker13.CustomFormat = "MM/dd/yyyy hh:mm:ss";
         }
         private void RecuperoDati()
         {
