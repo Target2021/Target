@@ -101,140 +101,154 @@
             // iDDettaglioArticoloLabel
             // 
             iDDettaglioArticoloLabel.AutoSize = true;
-            iDDettaglioArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            iDDettaglioArticoloLabel.Location = new System.Drawing.Point(70, 58);
+            iDDettaglioArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            iDDettaglioArticoloLabel.Location = new System.Drawing.Point(67, 72);
+            iDDettaglioArticoloLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             iDDettaglioArticoloLabel.Name = "iDDettaglioArticoloLabel";
-            iDDettaglioArticoloLabel.Size = new System.Drawing.Size(142, 18);
+            iDDettaglioArticoloLabel.Size = new System.Drawing.Size(199, 24);
             iDDettaglioArticoloLabel.TabIndex = 1;
             iDDettaglioArticoloLabel.Text = "ID Dettaglio Articolo:";
             // 
             // codice_articoloLabel
             // 
             codice_articoloLabel.AutoSize = true;
-            codice_articoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codice_articoloLabel.Location = new System.Drawing.Point(70, 84);
+            codice_articoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codice_articoloLabel.Location = new System.Drawing.Point(84, 105);
+            codice_articoloLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             codice_articoloLabel.Name = "codice_articoloLabel";
-            codice_articoloLabel.Size = new System.Drawing.Size(113, 18);
+            codice_articoloLabel.Size = new System.Drawing.Size(159, 24);
             codice_articoloLabel.TabIndex = 3;
             codice_articoloLabel.Text = "Codice Articolo:";
             // 
             // progressivoLabel
             // 
             progressivoLabel.AutoSize = true;
-            progressivoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            progressivoLabel.Location = new System.Drawing.Point(70, 110);
+            progressivoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progressivoLabel.Location = new System.Drawing.Point(84, 137);
+            progressivoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             progressivoLabel.Name = "progressivoLabel";
-            progressivoLabel.Size = new System.Drawing.Size(92, 18);
+            progressivoLabel.Size = new System.Drawing.Size(126, 24);
             progressivoLabel.TabIndex = 5;
             progressivoLabel.Text = "Progressivo:";
             // 
             // descrizionePrimaStampoDimaLabel
             // 
             descrizionePrimaStampoDimaLabel.AutoSize = true;
-            descrizionePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descrizionePrimaStampoDimaLabel.Location = new System.Drawing.Point(70, 162);
+            descrizionePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descrizionePrimaStampoDimaLabel.Location = new System.Drawing.Point(93, 199);
+            descrizionePrimaStampoDimaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             descrizionePrimaStampoDimaLabel.Name = "descrizionePrimaStampoDimaLabel";
-            descrizionePrimaStampoDimaLabel.Size = new System.Drawing.Size(91, 18);
+            descrizionePrimaStampoDimaLabel.Size = new System.Drawing.Size(126, 24);
             descrizionePrimaStampoDimaLabel.TabIndex = 9;
             descrizionePrimaStampoDimaLabel.Text = "Descrizione:";
             // 
             // codiceInputLabel
             // 
             codiceInputLabel.AutoSize = true;
-            codiceInputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codiceInputLabel.Location = new System.Drawing.Point(70, 188);
+            codiceInputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codiceInputLabel.Location = new System.Drawing.Point(93, 231);
+            codiceInputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             codiceInputLabel.Name = "codiceInputLabel";
-            codiceInputLabel.Size = new System.Drawing.Size(94, 18);
+            codiceInputLabel.Size = new System.Drawing.Size(134, 24);
             codiceInputLabel.TabIndex = 11;
             codiceInputLabel.Text = "Codice Input:";
             // 
             // codiceOutputLabel
             // 
             codiceOutputLabel.AutoSize = true;
-            codiceOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codiceOutputLabel.Location = new System.Drawing.Point(70, 214);
+            codiceOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codiceOutputLabel.Location = new System.Drawing.Point(93, 263);
+            codiceOutputLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             codiceOutputLabel.Name = "codiceOutputLabel";
-            codiceOutputLabel.Size = new System.Drawing.Size(107, 18);
+            codiceOutputLabel.Size = new System.Drawing.Size(150, 24);
             codiceOutputLabel.TabIndex = 13;
             codiceOutputLabel.Text = "Codice Output:";
             // 
             // codice_fornitoreLabel
             // 
             codice_fornitoreLabel.AutoSize = true;
-            codice_fornitoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codice_fornitoreLabel.Location = new System.Drawing.Point(70, 240);
+            codice_fornitoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codice_fornitoreLabel.Location = new System.Drawing.Point(93, 295);
+            codice_fornitoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             codice_fornitoreLabel.Name = "codice_fornitoreLabel";
-            codice_fornitoreLabel.Size = new System.Drawing.Size(72, 18);
+            codice_fornitoreLabel.Size = new System.Drawing.Size(101, 24);
             codice_fornitoreLabel.TabIndex = 15;
             codice_fornitoreLabel.Text = "Fornitore:";
             // 
             // lavorazioneLabel
             // 
             lavorazioneLabel.AutoSize = true;
-            lavorazioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lavorazioneLabel.Location = new System.Drawing.Point(70, 266);
+            lavorazioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lavorazioneLabel.Location = new System.Drawing.Point(93, 327);
+            lavorazioneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lavorazioneLabel.Name = "lavorazioneLabel";
-            lavorazioneLabel.Size = new System.Drawing.Size(93, 18);
+            lavorazioneLabel.Size = new System.Drawing.Size(129, 24);
             lavorazioneLabel.TabIndex = 17;
             lavorazioneLabel.Text = "Lavorazione:";
             // 
             // percentualeLastraLabel
             // 
             percentualeLastraLabel.AutoSize = true;
-            percentualeLastraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            percentualeLastraLabel.Location = new System.Drawing.Point(70, 292);
+            percentualeLastraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            percentualeLastraLabel.Location = new System.Drawing.Point(93, 359);
+            percentualeLastraLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             percentualeLastraLabel.Name = "percentualeLastraLabel";
-            percentualeLastraLabel.Size = new System.Drawing.Size(135, 18);
+            percentualeLastraLabel.Size = new System.Drawing.Size(189, 24);
             percentualeLastraLabel.TabIndex = 19;
             percentualeLastraLabel.Text = "Percentuale Lastra:";
             // 
             // lottoMinimoRiordinoLabel
             // 
             lottoMinimoRiordinoLabel.AutoSize = true;
-            lottoMinimoRiordinoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lottoMinimoRiordinoLabel.Location = new System.Drawing.Point(70, 318);
+            lottoMinimoRiordinoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lottoMinimoRiordinoLabel.Location = new System.Drawing.Point(62, 393);
+            lottoMinimoRiordinoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lottoMinimoRiordinoLabel.Name = "lottoMinimoRiordinoLabel";
-            lottoMinimoRiordinoLabel.Size = new System.Drawing.Size(159, 18);
+            lottoMinimoRiordinoLabel.Size = new System.Drawing.Size(220, 24);
             lottoMinimoRiordinoLabel.TabIndex = 21;
             lottoMinimoRiordinoLabel.Text = "Lotto Minimo Riordino:";
             // 
             // macPredefStampoLabel
             // 
             macPredefStampoLabel.AutoSize = true;
-            macPredefStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            macPredefStampoLabel.Location = new System.Drawing.Point(70, 344);
+            macPredefStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            macPredefStampoLabel.Location = new System.Drawing.Point(84, 425);
+            macPredefStampoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             macPredefStampoLabel.Name = "macPredefStampoLabel";
-            macPredefStampoLabel.Size = new System.Drawing.Size(144, 18);
+            macPredefStampoLabel.Size = new System.Drawing.Size(198, 24);
             macPredefStampoLabel.TabIndex = 23;
             macPredefStampoLabel.Text = "Mac Predef Stampo:";
             // 
             // macPredefTaglioLabel
             // 
             macPredefTaglioLabel.AutoSize = true;
-            macPredefTaglioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            macPredefTaglioLabel.Location = new System.Drawing.Point(70, 370);
+            macPredefTaglioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            macPredefTaglioLabel.Location = new System.Drawing.Point(93, 457);
+            macPredefTaglioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             macPredefTaglioLabel.Name = "macPredefTaglioLabel";
-            macPredefTaglioLabel.Size = new System.Drawing.Size(132, 18);
+            macPredefTaglioLabel.Size = new System.Drawing.Size(186, 24);
             macPredefTaglioLabel.TabIndex = 25;
             macPredefTaglioLabel.Text = "Mac Predef Taglio:";
             // 
             // costoBaseLabel
             // 
             costoBaseLabel.AutoSize = true;
-            costoBaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            costoBaseLabel.Location = new System.Drawing.Point(70, 397);
+            costoBaseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            costoBaseLabel.Location = new System.Drawing.Point(93, 489);
+            costoBaseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             costoBaseLabel.Name = "costoBaseLabel";
-            costoBaseLabel.Size = new System.Drawing.Size(91, 18);
+            costoBaseLabel.Size = new System.Drawing.Size(121, 24);
             costoBaseLabel.TabIndex = 27;
             costoBaseLabel.Text = "Costo Base:";
             // 
             // codicePrimaStampoDimaLabel
             // 
             this.codicePrimaStampoDimaLabel.AutoSize = true;
-            this.codicePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(70, 136);
+            this.codicePrimaStampoDimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codicePrimaStampoDimaLabel.Location = new System.Drawing.Point(93, 167);
+            this.codicePrimaStampoDimaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.codicePrimaStampoDimaLabel.Name = "codicePrimaStampoDimaLabel";
-            this.codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(59, 18);
+            this.codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(82, 24);
             this.codicePrimaStampoDimaLabel.TabIndex = 7;
             this.codicePrimaStampoDimaLabel.Text = "Codice:";
             // 
@@ -254,6 +268,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -289,6 +304,7 @@
             this.dettArticoliBindingNavigator.BindingSource = this.dettArticoliBindingSource;
             this.dettArticoliBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.dettArticoliBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.dettArticoliBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dettArticoliBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -309,7 +325,7 @@
             this.dettArticoliBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.dettArticoliBindingNavigator.Name = "dettArticoliBindingNavigator";
             this.dettArticoliBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(803, 25);
+            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(1071, 27);
             this.dettArticoliBindingNavigator.TabIndex = 0;
             this.dettArticoliBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -319,13 +335,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -335,7 +351,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
@@ -344,7 +360,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
             // 
             // bindingNavigatorMovePreviousItem
@@ -353,27 +369,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -381,7 +397,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
             // 
             // bindingNavigatorMoveLastItem
@@ -390,20 +406,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // dettArticoliBindingNavigatorSaveItem
             // 
             this.dettArticoliBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.dettArticoliBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("dettArticoliBindingNavigatorSaveItem.Image")));
             this.dettArticoliBindingNavigatorSaveItem.Name = "dettArticoliBindingNavigatorSaveItem";
-            this.dettArticoliBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.dettArticoliBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.dettArticoliBindingNavigatorSaveItem.Text = "Salva dati";
             this.dettArticoliBindingNavigatorSaveItem.Click += new System.EventHandler(this.dettArticoliBindingNavigatorSaveItem_Click);
             // 
@@ -412,9 +428,10 @@
             this.iDDettaglioArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "IDDettaglioArticolo", true));
             this.iDDettaglioArticoloTextBox.Enabled = false;
             this.iDDettaglioArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iDDettaglioArticoloTextBox.Location = new System.Drawing.Point(236, 55);
+            this.iDDettaglioArticoloTextBox.Location = new System.Drawing.Point(315, 68);
+            this.iDDettaglioArticoloTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iDDettaglioArticoloTextBox.Name = "iDDettaglioArticoloTextBox";
-            this.iDDettaglioArticoloTextBox.Size = new System.Drawing.Size(153, 24);
+            this.iDDettaglioArticoloTextBox.Size = new System.Drawing.Size(203, 29);
             this.iDDettaglioArticoloTextBox.TabIndex = 2;
             this.iDDettaglioArticoloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -422,9 +439,10 @@
             // 
             this.codice_articoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codice_articolo", true));
             this.codice_articoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codice_articoloTextBox.Location = new System.Drawing.Point(236, 81);
+            this.codice_articoloTextBox.Location = new System.Drawing.Point(315, 100);
+            this.codice_articoloTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codice_articoloTextBox.Name = "codice_articoloTextBox";
-            this.codice_articoloTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codice_articoloTextBox.Size = new System.Drawing.Size(203, 29);
             this.codice_articoloTextBox.TabIndex = 4;
             this.codice_articoloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -432,9 +450,10 @@
             // 
             this.progressivoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "progressivo", true));
             this.progressivoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progressivoTextBox.Location = new System.Drawing.Point(236, 107);
+            this.progressivoTextBox.Location = new System.Drawing.Point(315, 132);
+            this.progressivoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressivoTextBox.Name = "progressivoTextBox";
-            this.progressivoTextBox.Size = new System.Drawing.Size(153, 24);
+            this.progressivoTextBox.Size = new System.Drawing.Size(203, 29);
             this.progressivoTextBox.TabIndex = 6;
             this.progressivoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -442,9 +461,10 @@
             // 
             this.codicePrimaStampoDimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codicePrimaStampoDima", true));
             this.codicePrimaStampoDimaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codicePrimaStampoDimaTextBox.Location = new System.Drawing.Point(236, 133);
+            this.codicePrimaStampoDimaTextBox.Location = new System.Drawing.Point(315, 164);
+            this.codicePrimaStampoDimaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codicePrimaStampoDimaTextBox.Name = "codicePrimaStampoDimaTextBox";
-            this.codicePrimaStampoDimaTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codicePrimaStampoDimaTextBox.Size = new System.Drawing.Size(203, 29);
             this.codicePrimaStampoDimaTextBox.TabIndex = 8;
             this.codicePrimaStampoDimaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -452,9 +472,10 @@
             // 
             this.descrizionePrimaStampoDimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "descrizionePrimaStampoDima", true));
             this.descrizionePrimaStampoDimaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descrizionePrimaStampoDimaTextBox.Location = new System.Drawing.Point(236, 159);
+            this.descrizionePrimaStampoDimaTextBox.Location = new System.Drawing.Point(315, 196);
+            this.descrizionePrimaStampoDimaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.descrizionePrimaStampoDimaTextBox.Name = "descrizionePrimaStampoDimaTextBox";
-            this.descrizionePrimaStampoDimaTextBox.Size = new System.Drawing.Size(423, 24);
+            this.descrizionePrimaStampoDimaTextBox.Size = new System.Drawing.Size(563, 29);
             this.descrizionePrimaStampoDimaTextBox.TabIndex = 10;
             this.descrizionePrimaStampoDimaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -462,9 +483,10 @@
             // 
             this.codiceInputTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "CodiceInput", true));
             this.codiceInputTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codiceInputTextBox.Location = new System.Drawing.Point(236, 185);
+            this.codiceInputTextBox.Location = new System.Drawing.Point(315, 228);
+            this.codiceInputTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codiceInputTextBox.Name = "codiceInputTextBox";
-            this.codiceInputTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codiceInputTextBox.Size = new System.Drawing.Size(203, 29);
             this.codiceInputTextBox.TabIndex = 12;
             this.codiceInputTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -472,9 +494,10 @@
             // 
             this.codiceOutputTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "CodiceOutput", true));
             this.codiceOutputTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codiceOutputTextBox.Location = new System.Drawing.Point(236, 211);
+            this.codiceOutputTextBox.Location = new System.Drawing.Point(315, 260);
+            this.codiceOutputTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codiceOutputTextBox.Name = "codiceOutputTextBox";
-            this.codiceOutputTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codiceOutputTextBox.Size = new System.Drawing.Size(203, 29);
             this.codiceOutputTextBox.TabIndex = 14;
             this.codiceOutputTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -482,9 +505,10 @@
             // 
             this.codice_fornitoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "codice_fornitore", true));
             this.codice_fornitoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codice_fornitoreTextBox.Location = new System.Drawing.Point(236, 237);
+            this.codice_fornitoreTextBox.Location = new System.Drawing.Point(315, 292);
+            this.codice_fornitoreTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codice_fornitoreTextBox.Name = "codice_fornitoreTextBox";
-            this.codice_fornitoreTextBox.Size = new System.Drawing.Size(153, 24);
+            this.codice_fornitoreTextBox.Size = new System.Drawing.Size(203, 29);
             this.codice_fornitoreTextBox.TabIndex = 16;
             this.codice_fornitoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.codice_fornitoreTextBox.Click += new System.EventHandler(this.CambiaFornitore);
@@ -494,9 +518,10 @@
             // 
             this.lavorazioneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "lavorazione", true));
             this.lavorazioneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lavorazioneTextBox.Location = new System.Drawing.Point(236, 263);
+            this.lavorazioneTextBox.Location = new System.Drawing.Point(315, 324);
+            this.lavorazioneTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lavorazioneTextBox.Name = "lavorazioneTextBox";
-            this.lavorazioneTextBox.Size = new System.Drawing.Size(153, 24);
+            this.lavorazioneTextBox.Size = new System.Drawing.Size(203, 29);
             this.lavorazioneTextBox.TabIndex = 18;
             this.lavorazioneTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lavorazioneTextBox.Click += new System.EventHandler(this.CambiaFase);
@@ -506,9 +531,10 @@
             // 
             this.percentualeLastraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "PercentualeLastra", true));
             this.percentualeLastraTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentualeLastraTextBox.Location = new System.Drawing.Point(236, 289);
+            this.percentualeLastraTextBox.Location = new System.Drawing.Point(315, 356);
+            this.percentualeLastraTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.percentualeLastraTextBox.Name = "percentualeLastraTextBox";
-            this.percentualeLastraTextBox.Size = new System.Drawing.Size(153, 24);
+            this.percentualeLastraTextBox.Size = new System.Drawing.Size(203, 29);
             this.percentualeLastraTextBox.TabIndex = 20;
             this.percentualeLastraTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -516,9 +542,10 @@
             // 
             this.lottoMinimoRiordinoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "LottoMinimoRiordino", true));
             this.lottoMinimoRiordinoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lottoMinimoRiordinoTextBox.Location = new System.Drawing.Point(236, 315);
+            this.lottoMinimoRiordinoTextBox.Location = new System.Drawing.Point(315, 388);
+            this.lottoMinimoRiordinoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lottoMinimoRiordinoTextBox.Name = "lottoMinimoRiordinoTextBox";
-            this.lottoMinimoRiordinoTextBox.Size = new System.Drawing.Size(84, 24);
+            this.lottoMinimoRiordinoTextBox.Size = new System.Drawing.Size(111, 29);
             this.lottoMinimoRiordinoTextBox.TabIndex = 22;
             this.lottoMinimoRiordinoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -526,9 +553,10 @@
             // 
             this.macPredefStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "MacPredefStampo", true));
             this.macPredefStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macPredefStampoTextBox.Location = new System.Drawing.Point(236, 341);
+            this.macPredefStampoTextBox.Location = new System.Drawing.Point(315, 420);
+            this.macPredefStampoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.macPredefStampoTextBox.Name = "macPredefStampoTextBox";
-            this.macPredefStampoTextBox.Size = new System.Drawing.Size(84, 24);
+            this.macPredefStampoTextBox.Size = new System.Drawing.Size(111, 29);
             this.macPredefStampoTextBox.TabIndex = 24;
             this.macPredefStampoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.macPredefStampoTextBox.TextChanged += new System.EventHandler(this.AggMachStampPredef);
@@ -537,9 +565,10 @@
             // 
             this.macPredefTaglioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "MacPredefTaglio", true));
             this.macPredefTaglioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macPredefTaglioTextBox.Location = new System.Drawing.Point(236, 367);
+            this.macPredefTaglioTextBox.Location = new System.Drawing.Point(315, 452);
+            this.macPredefTaglioTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.macPredefTaglioTextBox.Name = "macPredefTaglioTextBox";
-            this.macPredefTaglioTextBox.Size = new System.Drawing.Size(84, 24);
+            this.macPredefTaglioTextBox.Size = new System.Drawing.Size(111, 29);
             this.macPredefTaglioTextBox.TabIndex = 26;
             this.macPredefTaglioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.macPredefTaglioTextBox.TextChanged += new System.EventHandler(this.AggMachTaglPredef);
@@ -548,9 +577,10 @@
             // 
             this.costoBaseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "CostoBase", true));
             this.costoBaseTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.costoBaseTextBox.Location = new System.Drawing.Point(236, 394);
+            this.costoBaseTextBox.Location = new System.Drawing.Point(315, 485);
+            this.costoBaseTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.costoBaseTextBox.Name = "costoBaseTextBox";
-            this.costoBaseTextBox.Size = new System.Drawing.Size(84, 24);
+            this.costoBaseTextBox.Size = new System.Drawing.Size(111, 29);
             this.costoBaseTextBox.TabIndex = 28;
             this.costoBaseTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -558,9 +588,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 240);
+            this.label1.Location = new System.Drawing.Point(527, 295);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 18);
+            this.label1.Size = new System.Drawing.Size(60, 24);
             this.label1.TabIndex = 29;
             this.label1.Text = "label1";
             // 
@@ -568,9 +599,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(395, 266);
+            this.label2.Location = new System.Drawing.Point(527, 327);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 18);
+            this.label2.Size = new System.Drawing.Size(60, 24);
             this.label2.TabIndex = 30;
             this.label2.Text = "label2";
             // 
@@ -578,9 +610,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(326, 344);
+            this.label3.Location = new System.Drawing.Point(435, 423);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 18);
+            this.label3.Size = new System.Drawing.Size(60, 24);
             this.label3.TabIndex = 31;
             this.label3.Text = "label3";
             // 
@@ -588,18 +621,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(326, 370);
+            this.label4.Location = new System.Drawing.Point(435, 455);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 18);
+            this.label4.Size = new System.Drawing.Size(60, 24);
             this.label4.TabIndex = 32;
             this.label4.Text = "label4";
             // 
             // RigaCompleta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(803, 426);
+            this.ClientSize = new System.Drawing.Size(1071, 524);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -633,7 +667,7 @@
             this.Controls.Add(iDDettaglioArticoloLabel);
             this.Controls.Add(this.iDDettaglioArticoloTextBox);
             this.Controls.Add(this.dettArticoliBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RigaCompleta";
             this.Text = "RigaCompleta";
             this.Load += new System.EventHandler(this.RigaCompleta_Load);

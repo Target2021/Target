@@ -43,5 +43,10 @@ namespace Target2021
             if (Filter.Text == "Articoli") movimentiMagazzinoBindingSource.Filter = "idArticoli LIKE '*" + textBox1.Text + "*'";
 
         }
+
+        private void Filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

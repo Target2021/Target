@@ -75,6 +75,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -111,6 +112,7 @@
             this.macchineTaglioBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.macchineTaglioBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.macchineTaglioBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.macchineTaglioBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.macchineTaglioBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -124,14 +126,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.macchineTaglioBindingNavigatorSaveItem});
-            this.macchineTaglioBindingNavigator.Location = new System.Drawing.Point(0, 425);
+            this.macchineTaglioBindingNavigator.Location = new System.Drawing.Point(0, 527);
             this.macchineTaglioBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.macchineTaglioBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.macchineTaglioBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.macchineTaglioBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.macchineTaglioBindingNavigator.Name = "macchineTaglioBindingNavigator";
             this.macchineTaglioBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.macchineTaglioBindingNavigator.Size = new System.Drawing.Size(470, 25);
+            this.macchineTaglioBindingNavigator.Size = new System.Drawing.Size(630, 27);
             this.macchineTaglioBindingNavigator.TabIndex = 0;
             this.macchineTaglioBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -141,13 +143,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -157,7 +159,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
@@ -166,7 +168,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
             // 
             // bindingNavigatorMovePreviousItem
@@ -175,27 +177,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -203,7 +205,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
             // 
             // bindingNavigatorMoveLastItem
@@ -212,27 +214,31 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // macchineTaglioBindingNavigatorSaveItem
             // 
             this.macchineTaglioBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.macchineTaglioBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("macchineTaglioBindingNavigatorSaveItem.Image")));
             this.macchineTaglioBindingNavigatorSaveItem.Name = "macchineTaglioBindingNavigatorSaveItem";
-            this.macchineTaglioBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.macchineTaglioBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.macchineTaglioBindingNavigatorSaveItem.Text = "Salva dati";
             this.macchineTaglioBindingNavigatorSaveItem.Click += new System.EventHandler(this.macchineTaglioBindingNavigatorSaveItem_Click);
             // 
             // macchineTaglioDataGridView
             // 
+            this.macchineTaglioDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.macchineTaglioDataGridView.AutoGenerateColumns = false;
             this.macchineTaglioDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.macchineTaglioDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.macchineTaglioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.macchineTaglioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -247,9 +253,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.macchineTaglioDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.macchineTaglioDataGridView.Location = new System.Drawing.Point(0, 40);
+            this.macchineTaglioDataGridView.Location = new System.Drawing.Point(0, 49);
+            this.macchineTaglioDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.macchineTaglioDataGridView.Name = "macchineTaglioDataGridView";
-            this.macchineTaglioDataGridView.Size = new System.Drawing.Size(470, 382);
+            this.macchineTaglioDataGridView.Size = new System.Drawing.Size(627, 470);
             this.macchineTaglioDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -257,29 +264,31 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IDTaglio";
             this.dataGridViewTextBoxColumn1.HeaderText = "IDTaglio";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 72;
+            this.dataGridViewTextBoxColumn1.Width = 89;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Descrizione";
             this.dataGridViewTextBoxColumn2.HeaderText = "Descrizione";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 87;
+            this.dataGridViewTextBoxColumn2.Width = 111;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "CostoMinuto";
             this.dataGridViewTextBoxColumn3.HeaderText = "CostoMinuto";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 91;
+            this.dataGridViewTextBoxColumn3.Width = 115;
             // 
             // AnaMTaglio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(630, 554);
             this.Controls.Add(this.macchineTaglioDataGridView);
             this.Controls.Add(this.macchineTaglioBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaMTaglio";
             this.Text = "Anagrafica Macchine di Taglio";
             this.Load += new System.EventHandler(this.AnaMTaglio_Load);

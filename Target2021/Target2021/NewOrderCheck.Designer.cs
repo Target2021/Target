@@ -46,17 +46,17 @@
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.commesseBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.commesseBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.commesseDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,8 +88,6 @@
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -103,30 +101,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 39);
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 18);
+            this.label1.Size = new System.Drawing.Size(225, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ultimo ordine presente:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 66);
+            this.label2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 18);
+            this.label2.Size = new System.Drawing.Size(236, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Ultimo ordine in testata:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 93);
+            this.label3.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 116);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 18);
+            this.label3.Size = new System.Drawing.Size(255, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ultimo ordine in dettaglio:";
             // 
@@ -134,9 +135,10 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(220, 36);
+            this.textBox1.Location = new System.Drawing.Point(293, 44);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 26);
+            this.textBox1.Size = new System.Drawing.Size(236, 30);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -144,9 +146,10 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(220, 63);
+            this.textBox2.Location = new System.Drawing.Point(293, 78);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 26);
+            this.textBox2.Size = new System.Drawing.Size(236, 30);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -154,18 +157,20 @@
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(220, 90);
+            this.textBox3.Location = new System.Drawing.Point(293, 111);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(178, 26);
+            this.textBox3.Size = new System.Drawing.Size(236, 30);
             this.textBox3.TabIndex = 5;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(404, 36);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(539, 44);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 79);
+            this.button1.Size = new System.Drawing.Size(116, 97);
             this.button1.TabIndex = 6;
             this.button1.Text = "Check";
             this.button1.UseVisualStyleBackColor = true;
@@ -174,10 +179,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(579, 36);
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(782, 44);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 18);
+            this.label4.Size = new System.Drawing.Size(81, 30);
             this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             this.label4.Visible = false;
@@ -185,10 +191,11 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(531, 71);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(732, 98);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 45);
+            this.button2.Size = new System.Drawing.Size(317, 55);
             this.button2.TabIndex = 8;
             this.button2.Text = "Genera commesse";
             this.button2.UseVisualStyleBackColor = true;
@@ -196,19 +203,28 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(34, 163);
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox4.Location = new System.Drawing.Point(45, 201);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(380, 222);
+            this.textBox4.Size = new System.Drawing.Size(505, 272);
             this.textBox4.TabIndex = 9;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(434, 163);
+            this.dataGridView1.Location = new System.Drawing.Point(579, 201);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(425, 161);
+            this.dataGridView1.Size = new System.Drawing.Size(567, 198);
             this.dataGridView1.TabIndex = 10;
             // 
             // target2021DataSet
@@ -227,6 +243,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -242,6 +259,7 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
@@ -262,6 +280,7 @@
             this.commesseBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.commesseBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.commesseBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.commesseBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.commesseBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -275,16 +294,41 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.commesseBindingNavigatorSaveItem});
-            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 564);
+            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 698);
             this.commesseBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.commesseBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.commesseBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.commesseBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.commesseBindingNavigator.Name = "commesseBindingNavigator";
             this.commesseBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.commesseBindingNavigator.Size = new System.Drawing.Size(879, 25);
+            this.commesseBindingNavigator.Size = new System.Drawing.Size(1172, 27);
             this.commesseBindingNavigator.TabIndex = 11;
             this.commesseBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Text = "di {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -292,7 +336,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
             // 
             // bindingNavigatorMovePreviousItem
@@ -301,34 +345,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 15);
-            this.bindingNavigatorCountItem.Text = "di {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -336,7 +373,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
             // 
             // bindingNavigatorMoveLastItem
@@ -345,44 +382,30 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Elimina";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // commesseBindingNavigatorSaveItem
             // 
             this.commesseBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.commesseBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("commesseBindingNavigatorSaveItem.Image")));
             this.commesseBindingNavigatorSaveItem.Name = "commesseBindingNavigatorSaveItem";
-            this.commesseBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.commesseBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.commesseBindingNavigatorSaveItem.Text = "Salva dati";
             this.commesseBindingNavigatorSaveItem.Click += new System.EventHandler(this.commesseBindingNavigatorSaveItem_Click);
             // 
             // commesseDataGridView
             // 
+            this.commesseDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.commesseDataGridView.AutoGenerateColumns = false;
+            this.commesseDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.commesseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.commesseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -414,14 +437,13 @@
             this.dataGridViewTextBoxColumn27,
             this.dataGridViewTextBoxColumn28,
             this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31,
             this.dataGridViewTextBoxColumn32,
             this.dataGridViewTextBoxColumn33});
             this.commesseDataGridView.DataSource = this.commesseBindingSource;
-            this.commesseDataGridView.Location = new System.Drawing.Point(12, 391);
+            this.commesseDataGridView.Location = new System.Drawing.Point(16, 481);
+            this.commesseDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.commesseDataGridView.Name = "commesseDataGridView";
-            this.commesseDataGridView.Size = new System.Drawing.Size(855, 161);
+            this.commesseDataGridView.Size = new System.Drawing.Size(1140, 198);
             this.commesseDataGridView.TabIndex = 12;
             // 
             // dataGridViewTextBoxColumn1
@@ -429,6 +451,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IDCommessa";
             this.dataGridViewTextBoxColumn1.HeaderText = "IDCommessa";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -598,18 +621,6 @@
             this.dataGridViewTextBoxColumn29.HeaderText = "NrPezziScartati";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
             // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "OraInizioStampo";
-            this.dataGridViewTextBoxColumn30.HeaderText = "OraInizioStampo";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "OraFineStampo";
-            this.dataGridViewTextBoxColumn31.HeaderText = "OraFineStampo";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            // 
             // dataGridViewTextBoxColumn32
             // 
             this.dataGridViewTextBoxColumn32.DataPropertyName = "SecondiCicloTaglio";
@@ -624,9 +635,10 @@
             // 
             // NewOrderCheck
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 589);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1172, 725);
             this.Controls.Add(this.commesseDataGridView);
             this.Controls.Add(this.commesseBindingNavigator);
             this.Controls.Add(this.dataGridView1);
@@ -640,6 +652,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NewOrderCheck";
             this.Text = "NewOrderCheck";
             this.Load += new System.EventHandler(this.NewOrderCheck_Load);

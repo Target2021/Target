@@ -64,7 +64,6 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Filter = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingNavigator)).BeginInit();
@@ -88,6 +87,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -245,6 +245,9 @@
             // 
             // movimentiMagazzinoDataGridView
             // 
+            this.movimentiMagazzinoDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.movimentiMagazzinoDataGridView.AutoGenerateColumns = false;
             this.movimentiMagazzinoDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.movimentiMagazzinoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -356,6 +359,9 @@
             // 
             // Filter
             // 
+            this.Filter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filter.FormattingEnabled = true;
             this.Filter.Items.AddRange(new object[] {
             "ID",
@@ -366,28 +372,23 @@
             "Semilavorati",
             "Articoli",
             "NrOrdine"});
-            this.Filter.Location = new System.Drawing.Point(194, 80);
+            this.Filter.Location = new System.Drawing.Point(83, 79);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(143, 24);
+            this.Filter.Size = new System.Drawing.Size(143, 33);
             this.Filter.TabIndex = 2;
+            this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(389, 82);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(271, 79);
+            this.textBox1.MinimumSize = new System.Drawing.Size(6, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 22);
+            this.textBox1.Size = new System.Drawing.Size(198, 30);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(632, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 27);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // RiepilogoMovimenti
             // 
@@ -395,7 +396,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1482, 668);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.movimentiMagazzinoDataGridView);
@@ -450,6 +450,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.ComboBox Filter;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
     }
 }

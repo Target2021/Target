@@ -68,27 +68,27 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(375, 39);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(498, 51);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 24);
+            this.textBox1.Size = new System.Drawing.Size(197, 30);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.button1_Click);
             // 
             // Filter
             // 
-            this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filter.FormattingEnabled = true;
             this.Filter.Items.AddRange(new object[] {
             "Codice articolo",
             "Descrizione",
             "Codice Input",
             "Codice Output"});
-            this.Filter.Location = new System.Drawing.Point(227, 39);
-            this.Filter.Margin = new System.Windows.Forms.Padding(2);
+            this.Filter.Location = new System.Drawing.Point(286, 48);
+            this.Filter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(144, 26);
+            this.Filter.Size = new System.Drawing.Size(191, 33);
             this.Filter.TabIndex = 7;
             // 
             // target2021DataSet
@@ -107,6 +107,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -142,6 +143,7 @@
             this.dettArticoliBindingNavigator.BindingSource = this.dettArticoliBindingSource;
             this.dettArticoliBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.dettArticoliBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.dettArticoliBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dettArticoliBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -162,7 +164,7 @@
             this.dettArticoliBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.dettArticoliBindingNavigator.Name = "dettArticoliBindingNavigator";
             this.dettArticoliBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(877, 25);
+            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(1169, 27);
             this.dettArticoliBindingNavigator.TabIndex = 8;
             this.dettArticoliBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -172,13 +174,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -188,7 +190,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
@@ -197,7 +199,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
             // 
             // bindingNavigatorMovePreviousItem
@@ -206,27 +208,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -234,7 +236,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
             // 
             // bindingNavigatorMoveLastItem
@@ -243,20 +245,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // dettArticoliBindingNavigatorSaveItem
             // 
             this.dettArticoliBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.dettArticoliBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("dettArticoliBindingNavigatorSaveItem.Image")));
             this.dettArticoliBindingNavigatorSaveItem.Name = "dettArticoliBindingNavigatorSaveItem";
-            this.dettArticoliBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.dettArticoliBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.dettArticoliBindingNavigatorSaveItem.Text = "Salva dati";
             this.dettArticoliBindingNavigatorSaveItem.Click += new System.EventHandler(this.dettArticoliBindingNavigatorSaveItem_Click_3);
             // 
@@ -264,9 +266,11 @@
             // 
             this.dettArticoliDataGridView.AllowUserToAddRows = false;
             this.dettArticoliDataGridView.AllowUserToDeleteRows = false;
-            this.dettArticoliDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dettArticoliDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dettArticoliDataGridView.AutoGenerateColumns = false;
+            this.dettArticoliDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dettArticoliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dettArticoliDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDDettaglioArticolo,
@@ -277,11 +281,12 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn9});
             this.dettArticoliDataGridView.DataSource = this.dettArticoliBindingSource;
-            this.dettArticoliDataGridView.Location = new System.Drawing.Point(0, 76);
+            this.dettArticoliDataGridView.Location = new System.Drawing.Point(0, 94);
+            this.dettArticoliDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dettArticoliDataGridView.Name = "dettArticoliDataGridView";
             this.dettArticoliDataGridView.ReadOnly = true;
             this.dettArticoliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dettArticoliDataGridView.Size = new System.Drawing.Size(875, 387);
+            this.dettArticoliDataGridView.Size = new System.Drawing.Size(1167, 476);
             this.dettArticoliDataGridView.TabIndex = 8;
             this.dettArticoliDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dettArticoliDataGridView_CellContentClick);
             this.dettArticoliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelezionaRiga);
@@ -340,19 +345,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(97, 40);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(103, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 18);
+            this.label1.Size = new System.Drawing.Size(166, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Campo da filtrare:";
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(529, 39);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(732, 46);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 24);
+            this.button1.Size = new System.Drawing.Size(117, 35);
             this.button1.TabIndex = 10;
             this.button1.Text = "CERCA";
             this.button1.UseVisualStyleBackColor = true;
@@ -360,17 +367,17 @@
             // 
             // Dettaglio_Articoli
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(877, 464);
+            this.ClientSize = new System.Drawing.Size(1169, 571);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dettArticoliDataGridView);
             this.Controls.Add(this.dettArticoliBindingNavigator);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dettaglio_Articoli";
             this.Text = "Anagrafica Articoli";
             this.Load += new System.EventHandler(this.Dettaglio_Load);

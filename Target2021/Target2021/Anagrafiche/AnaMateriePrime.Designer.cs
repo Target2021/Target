@@ -85,6 +85,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -121,6 +122,7 @@
             this.primeBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.primeBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.primeBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.primeBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.primeBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -134,14 +136,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.primeBindingNavigatorSaveItem});
-            this.primeBindingNavigator.Location = new System.Drawing.Point(0, 425);
+            this.primeBindingNavigator.Location = new System.Drawing.Point(0, 527);
             this.primeBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.primeBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.primeBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.primeBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.primeBindingNavigator.Name = "primeBindingNavigator";
             this.primeBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.primeBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.primeBindingNavigator.Size = new System.Drawing.Size(1067, 27);
             this.primeBindingNavigator.TabIndex = 0;
             this.primeBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -151,13 +153,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -167,7 +169,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
@@ -176,7 +178,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
             // 
             // bindingNavigatorMovePreviousItem
@@ -185,27 +187,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -213,7 +215,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
             // 
             // bindingNavigatorMoveLastItem
@@ -222,27 +224,31 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // primeBindingNavigatorSaveItem
             // 
             this.primeBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.primeBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("primeBindingNavigatorSaveItem.Image")));
             this.primeBindingNavigatorSaveItem.Name = "primeBindingNavigatorSaveItem";
-            this.primeBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.primeBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.primeBindingNavigatorSaveItem.Text = "Salva dati";
             this.primeBindingNavigatorSaveItem.Click += new System.EventHandler(this.primeBindingNavigatorSaveItem_Click);
             // 
             // primeDataGridView
             // 
+            this.primeDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.primeDataGridView.AutoGenerateColumns = false;
             this.primeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.primeDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.primeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.primeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -260,10 +266,10 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.primeDataGridView.DataSource = this.primeBindingSource;
-            this.primeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.primeDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.primeDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.primeDataGridView.Name = "primeDataGridView";
-            this.primeDataGridView.Size = new System.Drawing.Size(800, 425);
+            this.primeDataGridView.Size = new System.Drawing.Size(1067, 523);
             this.primeDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -271,106 +277,107 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "codice";
             this.dataGridViewTextBoxColumn1.HeaderText = "codice";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 64;
+            this.dataGridViewTextBoxColumn1.Width = 78;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "tipo";
             this.dataGridViewTextBoxColumn2.HeaderText = "tipo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 49;
+            this.dataGridViewTextBoxColumn2.Width = 60;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "descrizione";
             this.dataGridViewTextBoxColumn3.HeaderText = "descrizione";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 85;
+            this.dataGridViewTextBoxColumn3.Width = 109;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "prezzo_acq";
             this.dataGridViewTextBoxColumn4.HeaderText = "prezzo_acq";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 87;
+            this.dataGridViewTextBoxColumn4.Width = 111;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "unita_misura";
             this.dataGridViewTextBoxColumn5.HeaderText = "unita_misura";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 91;
+            this.dataGridViewTextBoxColumn5.Width = 118;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "quantita_riordino";
             this.dataGridViewTextBoxColumn6.HeaderText = "quantita_riordino";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 110;
+            this.dataGridViewTextBoxColumn6.Width = 144;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "scorta_minima";
             this.dataGridViewTextBoxColumn7.HeaderText = "scorta_minima";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 99;
+            this.dataGridViewTextBoxColumn7.Width = 128;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "codice_fornitore";
             this.dataGridViewTextBoxColumn8.HeaderText = "codice_fornitore";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 108;
+            this.dataGridViewTextBoxColumn8.Width = 139;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn9.HeaderText = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 129;
+            this.dataGridViewTextBoxColumn9.Width = 170;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Barcode";
             this.dataGridViewTextBoxColumn10.HeaderText = "Barcode";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 72;
+            this.dataGridViewTextBoxColumn10.Width = 90;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "DimX";
             this.dataGridViewTextBoxColumn11.HeaderText = "DimX";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 57;
+            this.dataGridViewTextBoxColumn11.Width = 70;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "DimY";
             this.dataGridViewTextBoxColumn12.HeaderText = "DimY";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 57;
+            this.dataGridViewTextBoxColumn12.Width = 70;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "DimZ";
             this.dataGridViewTextBoxColumn13.HeaderText = "DimZ";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 57;
+            this.dataGridViewTextBoxColumn13.Width = 70;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "Peso";
             this.dataGridViewTextBoxColumn14.HeaderText = "Peso";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 56;
+            this.dataGridViewTextBoxColumn14.Width = 69;
             // 
             // AnaMateriePrime
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.primeDataGridView);
             this.Controls.Add(this.primeBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaMateriePrime";
             this.Text = "Anagrafica materie prime";
             this.Load += new System.EventHandler(this.AnaMateriePrime_Load);

@@ -187,6 +187,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -243,7 +244,7 @@
             this.clientiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clientiBindingNavigator.Name = "clientiBindingNavigator";
             this.clientiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clientiBindingNavigator.Size = new System.Drawing.Size(835, 27);
+            this.clientiBindingNavigator.Size = new System.Drawing.Size(1113, 27);
             this.clientiBindingNavigator.TabIndex = 0;
             this.clientiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -259,7 +260,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -300,7 +301,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(49, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -343,6 +344,9 @@
             // 
             // clientiDataGridView
             // 
+            this.clientiDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.clientiDataGridView.AutoGenerateColumns = false;
             this.clientiDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.clientiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -460,11 +464,11 @@
             this.dataGridViewTextBoxColumn111,
             this.dataGridViewTextBoxColumn112});
             this.clientiDataGridView.DataSource = this.clientiBindingSource;
-            this.clientiDataGridView.Location = new System.Drawing.Point(9, 126);
-            this.clientiDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clientiDataGridView.Location = new System.Drawing.Point(12, 155);
+            this.clientiDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clientiDataGridView.Name = "clientiDataGridView";
             this.clientiDataGridView.RowTemplate.Height = 24;
-            this.clientiDataGridView.Size = new System.Drawing.Size(815, 345);
+            this.clientiDataGridView.Size = new System.Drawing.Size(1087, 425);
             this.clientiDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -1220,33 +1224,36 @@
             // 
             // Filter
             // 
+            this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Filter.FormattingEnabled = true;
             this.Filter.Items.AddRange(new object[] {
             "Codice",
             "Ragione_sociale",
             "Località"});
-            this.Filter.Location = new System.Drawing.Point(331, 68);
-            this.Filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Filter.Location = new System.Drawing.Point(405, 84);
+            this.Filter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(116, 21);
+            this.Filter.Size = new System.Drawing.Size(153, 33);
             this.Filter.TabIndex = 10;
             this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(451, 68);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(584, 87);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 20);
+            this.textBox1.Size = new System.Drawing.Size(156, 30);
             this.textBox1.TabIndex = 9;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // CERCA
             // 
-            this.CERCA.Location = new System.Drawing.Point(573, 63);
-            this.CERCA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CERCA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CERCA.Location = new System.Drawing.Point(792, 82);
+            this.CERCA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CERCA.Name = "CERCA";
-            this.CERCA.Size = new System.Drawing.Size(99, 28);
+            this.CERCA.Size = new System.Drawing.Size(132, 34);
             this.CERCA.TabIndex = 8;
             this.CERCA.Text = "CERCA";
             this.CERCA.UseVisualStyleBackColor = true;
@@ -1255,26 +1262,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(201, 67);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(217, 92);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 18);
+            this.label1.Size = new System.Drawing.Size(166, 25);
             this.label1.TabIndex = 11;
             this.label1.Text = "Campo da filtrare:";
             // 
             // Clienti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(835, 484);
+            this.ClientSize = new System.Drawing.Size(1113, 596);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CERCA);
             this.Controls.Add(this.clientiDataGridView);
             this.Controls.Add(this.clientiBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Clienti";
             this.Text = "Clienti";
             this.Load += new System.EventHandler(this.Clienti_Load);

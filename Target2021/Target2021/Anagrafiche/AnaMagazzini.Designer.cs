@@ -74,6 +74,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = this.anaMagazziniTableAdapter;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -106,9 +107,11 @@
             // anaMagazziniBindingNavigator
             // 
             this.anaMagazziniBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.anaMagazziniBindingNavigator.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.anaMagazziniBindingNavigator.BindingSource = this.anaMagazziniBindingSource;
             this.anaMagazziniBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.anaMagazziniBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.anaMagazziniBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.anaMagazziniBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -129,7 +132,7 @@
             this.anaMagazziniBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.anaMagazziniBindingNavigator.Name = "anaMagazziniBindingNavigator";
             this.anaMagazziniBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.anaMagazziniBindingNavigator.Size = new System.Drawing.Size(483, 25);
+            this.anaMagazziniBindingNavigator.Size = new System.Drawing.Size(644, 27);
             this.anaMagazziniBindingNavigator.TabIndex = 0;
             this.anaMagazziniBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -139,13 +142,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -155,7 +158,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
@@ -164,7 +167,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
             // 
             // bindingNavigatorMovePreviousItem
@@ -173,27 +176,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -201,7 +204,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
             // 
             // bindingNavigatorMoveLastItem
@@ -210,20 +213,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // anaMagazziniBindingNavigatorSaveItem
             // 
             this.anaMagazziniBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.anaMagazziniBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("anaMagazziniBindingNavigatorSaveItem.Image")));
             this.anaMagazziniBindingNavigatorSaveItem.Name = "anaMagazziniBindingNavigatorSaveItem";
-            this.anaMagazziniBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.anaMagazziniBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.anaMagazziniBindingNavigatorSaveItem.Text = "Salva dati";
             this.anaMagazziniBindingNavigatorSaveItem.Click += new System.EventHandler(this.anaMagazziniBindingNavigatorSaveItem_Click);
             // 
@@ -231,6 +234,7 @@
             // 
             this.anaMagazziniDataGridView.AutoGenerateColumns = false;
             this.anaMagazziniDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.anaMagazziniDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.anaMagazziniDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.anaMagazziniDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -244,9 +248,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.anaMagazziniDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.anaMagazziniDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.anaMagazziniDataGridView.Location = new System.Drawing.Point(0, 24);
+            this.anaMagazziniDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.anaMagazziniDataGridView.Name = "anaMagazziniDataGridView";
-            this.anaMagazziniDataGridView.Size = new System.Drawing.Size(483, 289);
+            this.anaMagazziniDataGridView.Size = new System.Drawing.Size(644, 366);
             this.anaMagazziniDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -254,22 +259,23 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IDMagazzino";
             this.dataGridViewTextBoxColumn1.HeaderText = "IDMagazzino";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 94;
+            this.dataGridViewTextBoxColumn1.Width = 118;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Descrizione";
             this.dataGridViewTextBoxColumn2.HeaderText = "Descrizione";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 87;
+            this.dataGridViewTextBoxColumn2.Width = 111;
             // 
             // AnaMagazzini
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 317);
+            this.ClientSize = new System.Drawing.Size(644, 390);
             this.Controls.Add(this.anaMagazziniDataGridView);
             this.Controls.Add(this.anaMagazziniBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaMagazzini";
             this.Text = "Anagrafica Magazzini";
             this.Load += new System.EventHandler(this.AnaMagazzini_Load);

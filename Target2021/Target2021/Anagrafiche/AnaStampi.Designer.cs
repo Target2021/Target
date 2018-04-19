@@ -79,6 +79,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -115,6 +116,7 @@
             this.stampiBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.stampiBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.stampiBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.stampiBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.stampiBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -128,14 +130,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.stampiBindingNavigatorSaveItem});
-            this.stampiBindingNavigator.Location = new System.Drawing.Point(0, 425);
+            this.stampiBindingNavigator.Location = new System.Drawing.Point(0, 527);
             this.stampiBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.stampiBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.stampiBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.stampiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stampiBindingNavigator.Name = "stampiBindingNavigator";
             this.stampiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stampiBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.stampiBindingNavigator.Size = new System.Drawing.Size(1067, 27);
             this.stampiBindingNavigator.TabIndex = 0;
             this.stampiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -145,13 +147,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -161,7 +163,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Elimina";
             // 
             // bindingNavigatorMoveFirstItem
@@ -170,7 +172,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
             // 
             // bindingNavigatorMovePreviousItem
@@ -179,27 +181,27 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -207,7 +209,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
             // 
             // bindingNavigatorMoveLastItem
@@ -216,27 +218,31 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // stampiBindingNavigatorSaveItem
             // 
             this.stampiBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.stampiBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("stampiBindingNavigatorSaveItem.Image")));
             this.stampiBindingNavigatorSaveItem.Name = "stampiBindingNavigatorSaveItem";
-            this.stampiBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.stampiBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.stampiBindingNavigatorSaveItem.Text = "Salva dati";
             this.stampiBindingNavigatorSaveItem.Click += new System.EventHandler(this.stampiBindingNavigatorSaveItem_Click);
             // 
             // stampiDataGridView
             // 
+            this.stampiDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.stampiDataGridView.AutoGenerateColumns = false;
             this.stampiDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.stampiDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.stampiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stampiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -248,10 +254,10 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.stampiDataGridView.DataSource = this.stampiBindingSource;
-            this.stampiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.stampiDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.stampiDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stampiDataGridView.Name = "stampiDataGridView";
-            this.stampiDataGridView.Size = new System.Drawing.Size(800, 425);
+            this.stampiDataGridView.Size = new System.Drawing.Size(1067, 523);
             this.stampiDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -259,64 +265,65 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "codice";
             this.dataGridViewTextBoxColumn1.HeaderText = "codice";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 64;
+            this.dataGridViewTextBoxColumn1.Width = 78;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "tipo";
             this.dataGridViewTextBoxColumn2.HeaderText = "tipo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 49;
+            this.dataGridViewTextBoxColumn2.Width = 60;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "descrizione";
             this.dataGridViewTextBoxColumn3.HeaderText = "descrizione";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 85;
+            this.dataGridViewTextBoxColumn3.Width = 109;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "prezzo_acq";
             this.dataGridViewTextBoxColumn4.HeaderText = "prezzo_acq";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 87;
+            this.dataGridViewTextBoxColumn4.Width = 111;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "codice_fornitore";
             this.dataGridViewTextBoxColumn5.HeaderText = "codice_fornitore";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 108;
+            this.dataGridViewTextBoxColumn5.Width = 139;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn6.HeaderText = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 129;
+            this.dataGridViewTextBoxColumn6.Width = 170;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Barcode";
             this.dataGridViewTextBoxColumn7.HeaderText = "Barcode";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 72;
+            this.dataGridViewTextBoxColumn7.Width = 90;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Posizione";
             this.dataGridViewTextBoxColumn8.HeaderText = "Posizione";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 77;
+            this.dataGridViewTextBoxColumn8.Width = 98;
             // 
             // AnaStampi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.stampiDataGridView);
             this.Controls.Add(this.stampiBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaStampi";
             this.Text = "Anagrafica Stampi";
             this.Load += new System.EventHandler(this.AnaStampi_Load);

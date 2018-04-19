@@ -150,6 +150,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
@@ -165,6 +166,7 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
@@ -321,7 +323,11 @@
             // 
             // utentiDataGridView
             // 
+            this.utentiDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.utentiDataGridView.AutoGenerateColumns = false;
+            this.utentiDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.utentiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.utentiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
