@@ -137,14 +137,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.fornitoriBindingNavigatorSaveItem});
-            this.fornitoriBindingNavigator.Location = new System.Drawing.Point(0, 527);
+            this.fornitoriBindingNavigator.Location = new System.Drawing.Point(0, 423);
             this.fornitoriBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.fornitoriBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.fornitoriBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.fornitoriBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.fornitoriBindingNavigator.Name = "fornitoriBindingNavigator";
             this.fornitoriBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.fornitoriBindingNavigator.Size = new System.Drawing.Size(1180, 27);
+            this.fornitoriBindingNavigator.Size = new System.Drawing.Size(885, 27);
             this.fornitoriBindingNavigator.TabIndex = 0;
             this.fornitoriBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -160,7 +160,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -201,7 +201,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -268,10 +268,10 @@
             this.dataGridViewTextBoxColumn15});
             this.fornitoriDataGridView.DataSource = this.fornitoriBindingSource;
             this.fornitoriDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.fornitoriDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fornitoriDataGridView.Name = "fornitoriDataGridView";
-            this.fornitoriDataGridView.Size = new System.Drawing.Size(1180, 523);
+            this.fornitoriDataGridView.Size = new System.Drawing.Size(885, 425);
             this.fornitoriDataGridView.TabIndex = 1;
+            this.fornitoriDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.fornitoriDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -365,12 +365,11 @@
             // 
             // AnaFornitori
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1180, 554);
+            this.ClientSize = new System.Drawing.Size(885, 450);
             this.Controls.Add(this.fornitoriDataGridView);
             this.Controls.Add(this.fornitoriBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaFornitori";
             this.Text = "AnaFornitori";
             this.Load += new System.EventHandler(this.AnaFornitori_Load);

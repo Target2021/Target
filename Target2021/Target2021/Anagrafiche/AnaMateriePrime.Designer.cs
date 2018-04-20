@@ -30,10 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaMateriePrime));
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.primeBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -48,72 +45,25 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.primeBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.primeDataGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingNavigator)).BeginInit();
             this.primeBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.primeDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // primeBindingSource
-            // 
-            this.primeBindingSource.DataMember = "Prime";
-            this.primeBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // primeTableAdapter
-            // 
-            this.primeTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
-            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
-            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
-            this.tableAdapterManager.ArticoliBCTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientiTableAdapter = null;
-            this.tableAdapterManager.CommesseTableAdapter = null;
-            this.tableAdapterManager.CompatibStampaTableAdapter = null;
-            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
-            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.DettArticoliTableAdapter = null;
-            this.tableAdapterManager.DimeTableAdapter = null;
-            this.tableAdapterManager.FasiTableAdapter = null;
-            this.tableAdapterManager.FornitoriTableAdapter = null;
-            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
-            this.tableAdapterManager.LavorazioniTableAdapter = null;
-            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
-            this.tableAdapterManager.MacchineStampoTableAdapter = null;
-            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
-            this.tableAdapterManager.MinuterieTableAdapter = null;
-            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
-            this.tableAdapterManager.PrimeTableAdapter = this.primeTableAdapter;
-            this.tableAdapterManager.StampiTableAdapter = null;
-            this.tableAdapterManager.sysdiagramsTableAdapter = null;
-            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.TipoCommessaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // primeBindingNavigator
             // 
@@ -136,14 +86,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.primeBindingNavigatorSaveItem});
-            this.primeBindingNavigator.Location = new System.Drawing.Point(0, 527);
+            this.primeBindingNavigator.Location = new System.Drawing.Point(0, 423);
             this.primeBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.primeBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.primeBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.primeBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.primeBindingNavigator.Name = "primeBindingNavigator";
             this.primeBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.primeBindingNavigator.Size = new System.Drawing.Size(1067, 27);
+            this.primeBindingNavigator.Size = new System.Drawing.Size(866, 27);
             this.primeBindingNavigator.TabIndex = 0;
             this.primeBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -159,7 +109,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -200,7 +150,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -254,139 +204,168 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
+            this.dataGridViewTextBoxColumn9});
             this.primeDataGridView.DataSource = this.primeBindingSource;
-            this.primeDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.primeDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.primeDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.primeDataGridView.Location = new System.Drawing.Point(0, 46);
             this.primeDataGridView.Name = "primeDataGridView";
-            this.primeDataGridView.Size = new System.Drawing.Size(1067, 523);
+            this.primeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.primeDataGridView.Size = new System.Drawing.Size(866, 379);
             this.primeDataGridView.TabIndex = 1;
+            this.primeDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Seleziona);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(40, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 24);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Cerca per:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Codice",
+            "Descrizione"});
+            this.comboBox1.Location = new System.Drawing.Point(144, 6);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(227, 32);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(657, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 33);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Cerca";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(377, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(265, 29);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.button1_Click);
+            // 
+            // primeBindingSource
+            // 
+            this.primeBindingSource.DataMember = "Prime";
+            this.primeBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // primeTableAdapter
+            // 
+            this.primeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
+            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
+            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
+            this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CommesseTableAdapter = null;
+            this.tableAdapterManager.CompatibStampaTableAdapter = null;
+            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
+            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.DimeTableAdapter = null;
+            this.tableAdapterManager.FasiTableAdapter = null;
+            this.tableAdapterManager.FornitoriTableAdapter = null;
+            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
+            this.tableAdapterManager.MacchineStampoTableAdapter = null;
+            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
+            this.tableAdapterManager.MinuterieTableAdapter = null;
+            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.PrimeTableAdapter = this.primeTableAdapter;
+            this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.TipoCommessaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "codice";
             this.dataGridViewTextBoxColumn1.HeaderText = "codice";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 78;
+            this.dataGridViewTextBoxColumn1.Width = 64;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "tipo";
             this.dataGridViewTextBoxColumn2.HeaderText = "tipo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 60;
+            this.dataGridViewTextBoxColumn2.Width = 49;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "descrizione";
             this.dataGridViewTextBoxColumn3.HeaderText = "descrizione";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 109;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "prezzo_acq";
-            this.dataGridViewTextBoxColumn4.HeaderText = "prezzo_acq";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 111;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "unita_misura";
-            this.dataGridViewTextBoxColumn5.HeaderText = "unita_misura";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 118;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "quantita_riordino";
-            this.dataGridViewTextBoxColumn6.HeaderText = "quantita_riordino";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 144;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "scorta_minima";
-            this.dataGridViewTextBoxColumn7.HeaderText = "scorta_minima";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 128;
+            this.dataGridViewTextBoxColumn3.Width = 85;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "codice_fornitore";
             this.dataGridViewTextBoxColumn8.HeaderText = "codice_fornitore";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 139;
+            this.dataGridViewTextBoxColumn8.Width = 108;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn9.HeaderText = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 170;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Barcode";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Barcode";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "DimX";
-            this.dataGridViewTextBoxColumn11.HeaderText = "DimX";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "DimY";
-            this.dataGridViewTextBoxColumn12.HeaderText = "DimY";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "DimZ";
-            this.dataGridViewTextBoxColumn13.HeaderText = "DimZ";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Peso";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Peso";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 69;
+            this.dataGridViewTextBoxColumn9.Width = 129;
             // 
             // AnaMateriePrime
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(866, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.primeDataGridView);
             this.Controls.Add(this.primeBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaMateriePrime";
             this.Text = "Anagrafica materie prime";
             this.Load += new System.EventHandler(this.AnaMateriePrime_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingNavigator)).EndInit();
             this.primeBindingNavigator.ResumeLayout(false);
             this.primeBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.primeDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,19 +391,14 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton primeBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView primeDataGridView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }

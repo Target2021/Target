@@ -31,5 +31,10 @@ namespace Target2021.Anagrafiche
             this.fornitoriTableAdapter.Fill(this.target2021DataSet.Fornitori);
 
         }
+
+        private void fornitoriDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
