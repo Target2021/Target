@@ -84,5 +84,4 @@ namespace Target2021
                 textBox3.Visible = false;
             }
         }
-    }
 }
