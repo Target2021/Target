@@ -20,11 +20,21 @@ namespace Target2021
         {
             InitializeComponent();
             IDCommessa = id;
+            CheckEvasoParziale();
         }
 
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             
+        }
+        private void CheckEvasoParziale()
+        {
+            string query="SELECT EvasoParziale FROM Commesse WHERE CodCommessa='"+codCommessaTextBox.Text+"'";
+            SqlConnection con = new SqlConnection(stringa);
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            bool evaso = Convert.ToBoolean(cmd.ExecuteScalar());
+            if (!evaso) MessageBox.Show("Prodotto evaso parzialmente precedentemente!");
         }
         private void CheckGiacenza(int id)
         {
@@ -193,15 +203,31 @@ namespace Target2021
            DialogResult dialogResult= MessageBox.Show("Sicuro di voler apportare le seguenti modifiche?","Modifiche",MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
-                string query = " UPDATE Commesse SET  CodCommessa='" +Convert.ToString(codCommessaTextBox.Text) + "', NrCommessa='" +Convert.ToString(nrCommessaTextBox.Text) + "',IDCliente='" +Convert.ToString(iDClienteTextBox.Text) + "',NrPezziDaLavorare=" +Convert.ToInt32(nrPezziDaLavorareTextBox.Text) + ",CodArticolo='" +Convert.ToString(codArticoloTextBox.Text) + "',DescrArticolo='" +Convert.ToString(descrArticoloTextBox.Text)+ "', IDStampo='" +Convert.ToString(iDStampoTextBox.Text) + "',CodArtiDopoStampo='" +Convert.ToString(codArtiDopoStampoTextBox.Text) + "',NrPezziCorretti=" + Convert.ToInt32(nrPezziCorrettiTextBox.Text)+ ",NrPezziScartati=" +Convert.ToInt32(nrPezziScartatiTextBox.Text) + ", DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "',Stato='"+3+"' WHERE IDCommessa='" + IDCommessa + "'";
-                SqlConnection con = new SqlConnection(stringa);
-                SqlCommand cmd = new SqlCommand(query, con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-                AggiornaGiacenze();
-                MessageBox.Show("Operazione completata con successo");
-                this.Close();
+                if(evaso.Checked)
+                {
+                    string query = " UPDATE Commesse SET  CodCommessa='" + Convert.ToString(codCommessaTextBox.Text) + "', NrCommessa='" + Convert.ToString(nrCommessaTextBox.Text) + "',IDCliente='" + Convert.ToString(iDClienteTextBox.Text) + "',NrPezziDaLavorare=" + Convert.ToInt32(nrPezziDaLavorareTextBox.Text) + ",CodArticolo='" + Convert.ToString(codArticoloTextBox.Text) + "',DescrArticolo='" + Convert.ToString(descrArticoloTextBox.Text) + "', IDStampo='" + Convert.ToString(iDStampoTextBox.Text) + "',CodArtiDopoStampo='" + Convert.ToString(codArtiDopoStampoTextBox.Text) + "',NrPezziCorretti = NrPezziCorretti + " + Convert.ToInt32(nrPezziCorrettiTextBox.Text) + ",NrPezziScartati= NrPezziScartati +" + Convert.ToInt32(nrPezziScartatiTextBox.Text) + ", DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "',Stato='" + 2 + "',EvasoParziale= 1 WHERE IDCommessa='" + IDCommessa + "'";
+                    SqlConnection con = new SqlConnection(stringa);
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    AggiornaGiacenze();
+                    MessageBox.Show("Operazione completata con successo");
+                    this.Close();
+                }
+                if(!evaso.Checked)
+                {
+                    string query = " UPDATE Commesse SET  CodCommessa='" + Convert.ToString(codCommessaTextBox.Text) + "', NrCommessa='" + Convert.ToString(nrCommessaTextBox.Text) + "',IDCliente='" + Convert.ToString(iDClienteTextBox.Text) + "',NrPezziDaLavorare=" + Convert.ToInt32(nrPezziDaLavorareTextBox.Text) + ",CodArticolo='" + Convert.ToString(codArticoloTextBox.Text) + "',DescrArticolo='" + Convert.ToString(descrArticoloTextBox.Text) + "', IDStampo='" + Convert.ToString(iDStampoTextBox.Text) + "',CodArtiDopoStampo='" + Convert.ToString(codArtiDopoStampoTextBox.Text) + "',NrPezziCorretti = NrPezziCorretti + " + Convert.ToInt32(nrPezziCorrettiTextBox.Text) + ",NrPezziScartati= NrPezziScartati +" + Convert.ToInt32(nrPezziScartatiTextBox.Text) + ", DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "',Stato='" + 3 + "',EvasoParziale=0 WHERE IDCommessa='" + IDCommessa + "'";
+                    SqlConnection con = new SqlConnection(stringa);
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    AggiornaGiacenze();
+                    MessageBox.Show("Operazione completata con successo");
+                    this.Close();
+                }
+
             }
         }
         private void iDCommessaTextBox_TextChanged(object sender, EventArgs e)
@@ -228,7 +254,6 @@ namespace Target2021
                 }
             }
         }
-
         private void cCToolStripTextBox_Leave(object sender, EventArgs e)
         {
             try {
@@ -261,7 +286,6 @@ namespace Target2021
             selezionastampo.FormClosed += new FormClosedEventHandler(ChiudiStampo);
             selezionastampo.Show();
         }
-
         private void ChiudiStampo(object sender, FormClosedEventArgs e)
         {
             SelezAna.SelStampi sf = (SelezAna.SelStampi)sender;

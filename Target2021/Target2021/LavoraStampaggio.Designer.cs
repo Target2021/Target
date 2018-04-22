@@ -113,6 +113,7 @@
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
+            this.evaso = new System.Windows.Forms.RadioButton();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
             dataCommessaLabel = new System.Windows.Forms.Label();
@@ -449,7 +450,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.commesseBindingNavigatorSaveItem});
-            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 615);
+            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 657);
             this.commesseBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.commesseBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.commesseBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -567,9 +568,10 @@
             // codCommessaTextBox
             // 
             this.codCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodCommessa", true));
+            this.codCommessaTextBox.Enabled = false;
             this.codCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codCommessaTextBox.Location = new System.Drawing.Point(187, 142);
-            this.codCommessaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.codCommessaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.codCommessaTextBox.Name = "codCommessaTextBox";
             this.codCommessaTextBox.Size = new System.Drawing.Size(132, 26);
             this.codCommessaTextBox.TabIndex = 5;
@@ -577,9 +579,10 @@
             // nrCommessaTextBox
             // 
             this.nrCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrCommessa", true));
+            this.nrCommessaTextBox.Enabled = false;
             this.nrCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrCommessaTextBox.Location = new System.Drawing.Point(187, 174);
-            this.nrCommessaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nrCommessaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nrCommessaTextBox.Name = "nrCommessaTextBox";
             this.nrCommessaTextBox.Size = new System.Drawing.Size(132, 26);
             this.nrCommessaTextBox.TabIndex = 7;
@@ -587,9 +590,10 @@
             // iDClienteTextBox
             // 
             this.iDClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCliente", true));
+            this.iDClienteTextBox.Enabled = false;
             this.iDClienteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iDClienteTextBox.Location = new System.Drawing.Point(187, 238);
-            this.iDClienteTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iDClienteTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.iDClienteTextBox.Name = "iDClienteTextBox";
             this.iDClienteTextBox.Size = new System.Drawing.Size(132, 26);
             this.iDClienteTextBox.TabIndex = 11;
@@ -599,7 +603,7 @@
             this.nrPezziDaLavorareTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziDaLavorare", true));
             this.nrPezziDaLavorareTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(209, 302);
-            this.nrPezziDaLavorareTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nrPezziDaLavorareTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nrPezziDaLavorareTextBox.Name = "nrPezziDaLavorareTextBox";
             this.nrPezziDaLavorareTextBox.Size = new System.Drawing.Size(132, 26);
             this.nrPezziDaLavorareTextBox.TabIndex = 15;
@@ -607,9 +611,10 @@
             // codArticoloTextBox
             // 
             this.codArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArticolo", true));
+            this.codArticoloTextBox.Enabled = false;
             this.codArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codArticoloTextBox.Location = new System.Drawing.Point(187, 366);
-            this.codArticoloTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.codArticoloTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.codArticoloTextBox.Name = "codArticoloTextBox";
             this.codArticoloTextBox.Size = new System.Drawing.Size(132, 26);
             this.codArticoloTextBox.TabIndex = 17;
@@ -617,9 +622,10 @@
             // descrArticoloTextBox
             // 
             this.descrArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "DescrArticolo", true));
+            this.descrArticoloTextBox.Enabled = false;
             this.descrArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descrArticoloTextBox.Location = new System.Drawing.Point(187, 398);
-            this.descrArticoloTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.descrArticoloTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.descrArticoloTextBox.Name = "descrArticoloTextBox";
             this.descrArticoloTextBox.Size = new System.Drawing.Size(265, 26);
             this.descrArticoloTextBox.TabIndex = 19;
@@ -627,9 +633,10 @@
             // codArtiDopoStampoTextBox
             // 
             this.codArtiDopoStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
+            this.codArtiDopoStampoTextBox.Enabled = false;
             this.codArtiDopoStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(716, 168);
-            this.codArtiDopoStampoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.codArtiDopoStampoTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.codArtiDopoStampoTextBox.Name = "codArtiDopoStampoTextBox";
             this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(132, 26);
             this.codArtiDopoStampoTextBox.TabIndex = 23;
@@ -639,7 +646,7 @@
             this.nrPezziOrdinatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziOrdinati", true));
             this.nrPezziOrdinatiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrPezziOrdinatiTextBox.Location = new System.Drawing.Point(187, 334);
-            this.nrPezziOrdinatiTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nrPezziOrdinatiTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nrPezziOrdinatiTextBox.Name = "nrPezziOrdinatiTextBox";
             this.nrPezziOrdinatiTextBox.Size = new System.Drawing.Size(132, 26);
             this.nrPezziOrdinatiTextBox.TabIndex = 25;
@@ -650,7 +657,7 @@
             this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
             this.nrPezziCorrettiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(716, 237);
-            this.nrPezziCorrettiTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nrPezziCorrettiTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nrPezziCorrettiTextBox.Name = "nrPezziCorrettiTextBox";
             this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(132, 26);
             this.nrPezziCorrettiTextBox.TabIndex = 29;
@@ -660,7 +667,7 @@
             this.nrPezziScartatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziScartati", true));
             this.nrPezziScartatiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(716, 267);
-            this.nrPezziScartatiTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nrPezziScartatiTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nrPezziScartatiTextBox.Name = "nrPezziScartatiTextBox";
             this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(132, 26);
             this.nrPezziScartatiTextBox.TabIndex = 31;
@@ -706,6 +713,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yy-MM-dd";
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Location = new System.Drawing.Point(187, 208);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -725,6 +733,7 @@
             // 
             // dateTimePicker3
             // 
+            this.dateTimePicker3.Enabled = false;
             this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker3.Location = new System.Drawing.Point(716, 203);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -767,10 +776,10 @@
             this.groupBox1.Controls.Add(oraFineStampoLabel);
             this.groupBox1.Controls.Add(this.dateTimePicker4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(505, 326);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(506, 378);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(819, 48);
             this.groupBox1.TabIndex = 43;
             this.groupBox1.TabStop = false;
@@ -784,10 +793,10 @@
             this.groupBox2.Controls.Add(this.dateTimePicker7);
             this.groupBox2.Enabled = false;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(505, 382);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(506, 434);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(819, 48);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
@@ -817,10 +826,10 @@
             this.groupBox3.Controls.Add(this.dateTimePicker9);
             this.groupBox3.Enabled = false;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(505, 437);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(506, 489);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(819, 48);
             this.groupBox3.TabIndex = 45;
             this.groupBox3.TabStop = false;
@@ -850,10 +859,10 @@
             this.groupBox4.Controls.Add(this.dateTimePicker11);
             this.groupBox4.Enabled = false;
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(505, 492);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Location = new System.Drawing.Point(506, 544);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(819, 48);
             this.groupBox4.TabIndex = 46;
             this.groupBox4.TabStop = false;
@@ -883,10 +892,10 @@
             this.groupBox5.Controls.Add(this.dateTimePicker13);
             this.groupBox5.Enabled = false;
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(505, 548);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Location = new System.Drawing.Point(506, 600);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox5.Size = new System.Drawing.Size(819, 48);
             this.groupBox5.TabIndex = 47;
             this.groupBox5.TabStop = false;
@@ -966,6 +975,7 @@
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -1003,12 +1013,25 @@
             // 
             this.stampiTableAdapter.ClearBeforeFill = true;
             // 
+            // evaso
+            // 
+            this.evaso.AutoSize = true;
+            this.evaso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.evaso.Location = new System.Drawing.Point(534, 331);
+            this.evaso.Name = "evaso";
+            this.evaso.Size = new System.Drawing.Size(299, 29);
+            this.evaso.TabIndex = 53;
+            this.evaso.TabStop = true;
+            this.evaso.Text = "EVASO ANTICIPATAMENTE";
+            this.evaso.UseVisualStyleBackColor = true;
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1371, 642);
+            this.ClientSize = new System.Drawing.Size(1371, 684);
+            this.Controls.Add(this.evaso);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.LastreEffettive);
             this.Controls.Add(this.iDStampoTextBox);
@@ -1138,5 +1161,6 @@
         private System.Windows.Forms.TextBox iDStampoTextBox;
         private System.Windows.Forms.TextBox LastreEffettive;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RadioButton evaso;
     }
 }
