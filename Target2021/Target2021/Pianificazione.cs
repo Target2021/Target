@@ -33,8 +33,8 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query="SELECT CodCommessa FROM Commesse WHERE CodCommessa='"+textBox1.Text+"'";
-            string querylastre="SELECT NrLastreRichieste FROM Commesse WHERE CodCommessa='"+textBox1.Text+"'";
+            string query = "SELECT CodCommessa FROM Commesse WHERE CodCommessa='" + textBox1.Text + "'";
+            string querylastre = "SELECT NrLastreRichieste FROM Commesse WHERE CodCommessa='" + textBox1.Text + "'";
             SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
             SqlCommand comando = new SqlCommand(query, conn);
             conn.Open();
@@ -53,19 +53,20 @@ namespace Target2021
                     MessageBox.Show("Ordine fornitore non presente, si prega di controllare il codice commessa");
                     textBox2.Enabled = false;
                     textBox3.Enabled = false;
-                    radioButton1.Enabled =false;
+                    radioButton1.Enabled = false;
                     radioButton2.Enabled = false;
                 }
-                }
+            }
             catch (Exception EX)
             {
                 MessageBox.Show("Ordine fornitore non presente, si prega di controllare il codice della commessa");
-            }           
-            try {
+            }
+            try
+            {
                 comando.CommandText = querylastre;
                 textBox2.Text = Convert.ToString(comando.ExecuteScalar());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ordine fornitore non presente, si prega di controllare il codice della commessa");
             }
@@ -78,10 +79,12 @@ namespace Target2021
             {
                 label2.Visible = true;
                 textBox3.Visible = true;
-            } else
+            }
+            else
             {
                 label2.Visible = false;
                 textBox3.Visible = false;
             }
         }
+    }
 }

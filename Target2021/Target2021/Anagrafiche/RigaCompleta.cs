@@ -126,6 +126,11 @@ namespace Target2021
             selezionaFase.Show();
         }
 
+        private void codicePrimaStampoDimaLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void AggMachTaglPredef(object sender, EventArgs e)
         {
             string CodMTP, stringaconnessione, sql, NomeMachT;
