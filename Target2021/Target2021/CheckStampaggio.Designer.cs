@@ -135,9 +135,7 @@
             this.Controls.Add(this.button2);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CheckStampaggio";
-            this.Text = "Attività di stampaggio";
-            this.Load += new System.EventHandler(this.CheckStampaggio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Attività di stampaggio";            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();

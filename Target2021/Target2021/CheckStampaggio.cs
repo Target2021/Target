@@ -15,8 +15,8 @@ namespace Target2021
 {
     public partial class CheckStampaggio : Form
     {
-        public String stringa = Properties.Resources.StringaConnessione;
-        public bool caricato = false;
+        private String stringa = Properties.Resources.StringaConnessione;
+        private bool caricato = false;
         private string idcommessa;
         DataTable dataTable = new DataTable();
         public CheckStampaggio()
@@ -24,10 +24,6 @@ namespace Target2021
             InitializeComponent();
             LoadStampaggio();
             caricato = true;
-        }
-        private void CheckStampaggio_Load(object sender, EventArgs e)
-        {
-
         }
         private void LoadStampaggio()
         {
@@ -106,12 +102,7 @@ namespace Target2021
                 int diff = Giacenza - quantita;
                 if (diff < 0)
                 { MessageBox.Show("Giacenza insufficiente, si prega di effettuare il riordino"); }
-                if (Enumerable.Range(0, 10).Contains(diff))
-                {
-                    LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
-                    lavoraStampaggio.Show();
-                }
-                if (diff > 10)
+                else
                 {
                     LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
                     lavoraStampaggio.Show();
@@ -122,7 +113,6 @@ namespace Target2021
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             LoadStampaggio();
