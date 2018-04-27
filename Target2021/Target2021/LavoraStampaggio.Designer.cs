@@ -926,7 +926,6 @@
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(132, 22);
             this.txt1.TabIndex = 48;
-            this.txt1.TextChanged += new System.EventHandler(this.iDCommessaTextBox_TextChanged);
             // 
             // label10
             // 
@@ -946,7 +945,6 @@
             this.iDStampoTextBox.Size = new System.Drawing.Size(132, 22);
             this.iDStampoTextBox.TabIndex = 50;
             this.iDStampoTextBox.Click += new System.EventHandler(this.iDStampoTextBox_Click);
-            this.iDStampoTextBox.TextChanged += new System.EventHandler(this.iDCommessaTextBox_TextChanged);
             // 
             // LastreEffettive
             // 

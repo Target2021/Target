@@ -215,8 +215,7 @@ namespace Target2021
                     MessageBox.Show("Operazione completata con successo");
                     this.Close();
                 }
-                if(!evaso.Checked)
-                {
+                else { 
                     string query = " UPDATE Commesse SET  CodCommessa='" + Convert.ToString(codCommessaTextBox.Text) + "', NrCommessa='" + Convert.ToString(nrCommessaTextBox.Text) + "',IDCliente='" + Convert.ToString(iDClienteTextBox.Text) + "',NrPezziDaLavorare=" + Convert.ToInt32(nrPezziDaLavorareTextBox.Text) + ",CodArticolo='" + Convert.ToString(codArticoloTextBox.Text) + "',DescrArticolo='" + Convert.ToString(descrArticoloTextBox.Text) + "', IDStampo='" + Convert.ToString(iDStampoTextBox.Text) + "',CodArtiDopoStampo='" + Convert.ToString(codArtiDopoStampoTextBox.Text) + "',NrPezziCorretti = NrPezziCorretti + " + Convert.ToInt32(nrPezziCorrettiTextBox.Text) + ",NrPezziScartati= NrPezziScartati +" + Convert.ToInt32(nrPezziScartatiTextBox.Text) + ", DataCommessa='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "',DataConsegna='" + dateTimePicker2.Value.ToString("yyyy-MM-dd") + "',DataTermine='" + dateTimePicker3.Value.ToString("yyyy-MM-dd") + "',Stato='" + 3 + "',EvasoParziale=0 WHERE IDCommessa='" + IDCommessa + "'";
                     SqlConnection con = new SqlConnection(stringa);
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -230,16 +229,6 @@ namespace Target2021
 
             }
         }
-        private void iDCommessaTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cCToolStripTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void cCToolStripTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode==Keys.Enter)
@@ -248,7 +237,7 @@ namespace Target2021
                 {
                     CheckGiacenza(Int32.Parse(cCToolStripTextBox.Text));
                 }
-                catch (Exception ex)
+                catch
                 {
                     MessageBox.Show("Controllare ID commessa");
                 }
@@ -259,7 +248,7 @@ namespace Target2021
             try {
                 CheckGiacenza(Int32.Parse(cCToolStripTextBox.Text));
             } 
-            catch(Exception ex)
+            catch
             {
                 MessageBox.Show("Controllare ID commessa");
             }
@@ -299,16 +288,10 @@ namespace Target2021
             connessione.Close();
             label10.Text = descrizione;
         }
-        private void iDStampoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void AggiornaGiacenze()
         {
             string IDPrime = "";
             int giacimp = 0,idMovimento=0,idMagazzino=0;
-            string queryMagazzino="SELECT idMagazzino FROM GiacenzeMagazzini WHERE idPrime='"+Convert.ToString(IDPrime)+"'";
             string querysel = "SELECT IDMateriaPrima FROM Commesse WHERE IDCommessa='" + txt1.Text + "'"; // Recupero l'ID conservato nella commessa
             string queryselImpegnati = "SELECT GiacenzaImpegnati FROM GiacenzeMagazzini WHERE idPrime='" + IDPrime + "'";
             string queryupdImpegnati = " UPDATE GiacenzeMagazzini SET GiacenzaImpegnati= GiacenzaImpegnati-"+Convert.ToInt32(LastreEffettive.Text)+"";
