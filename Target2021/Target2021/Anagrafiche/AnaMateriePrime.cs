@@ -28,9 +28,7 @@ namespace Target2021.Anagrafiche
 
         private void AnaMateriePrime_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
-
         }
 
         private void Seleziona(object sender, DataGridViewCellEventArgs e)

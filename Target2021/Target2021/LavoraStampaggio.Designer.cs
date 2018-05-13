@@ -426,9 +426,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(327, 50);
             this.label1.TabIndex = 0;
-            this.label1.Text = "STAMPAGGIO";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
+            this.label1.Text = "STAMPAGGIO";            // 
             // commesseBindingNavigator
             // 
             this.commesseBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
