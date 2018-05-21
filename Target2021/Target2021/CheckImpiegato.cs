@@ -107,6 +107,9 @@ namespace Target2021
         private void button1_Click(object sender, EventArgs e)
         {
             dataTable.Columns.Remove("Disponibilità Lastre");
+            dataTable.Columns.Remove("Descrizione materia prima");
+            dataTable.Columns.Remove("Codice fornitore");
+            dataTable.Columns.Remove("Descrizione fornitore");
             dataTable.Clear();
             richTextBox1.Text = "";
             inserimento_iniziale();

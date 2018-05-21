@@ -119,12 +119,13 @@ namespace Target2021
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {            
-            CheckGiacenzaTotale();
+            //CheckGiacenzaTotale();
             dataGridView1.ClearSelection();
         }
+
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex==5)
+            if (e.ColumnIndex == 5)
             {
                 CheckConsegna();
             }

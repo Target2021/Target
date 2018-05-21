@@ -101,8 +101,8 @@ namespace Target2021
         private void ChiudiSelezionaFase(object sender, FormClosedEventArgs e)
         {
             SelLav sl = (SelLav)sender;
-            string codfor = sl.CodFase;
-            lavorazioneTextBox.Text = codfor;
+            string codfase = sl.CodFase;
+            lavorazioneTextBox.Text = codfase;
         }
 
         private void AggMachStampPredef(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace Target2021
 
         private void CambiaFase(object sender, EventArgs e)
         {
-            SelLav selezionaFase = new SelLav(codice_fornitoreTextBox.Text);
+            SelLav selezionaFase = new SelLav(lavorazioneTextBox.Text);
             selezionaFase.FormClosed += new FormClosedEventHandler(ChiudiSelezionaFase);
             selezionaFase.Show();
         }
