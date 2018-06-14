@@ -146,5 +146,10 @@ namespace Target2021
         {
             CheckGiacenzaRow(e.RowIndex);
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

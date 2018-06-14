@@ -237,7 +237,7 @@
             this.codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(66, 18);
             this.codicePrimaStampoDimaLabel.TabIndex = 7;
             this.codicePrimaStampoDimaLabel.Text = "Codice:";
-            this.codicePrimaStampoDimaLabel.Click += new System.EventHandler(this.codicePrimaStampoDimaLabel_Click);
+            //this.codicePrimaStampoDimaLabel.Click += new System.EventHandler(this.codicePrimaStampoDimaLabel_Click);
             // 
             // target2021DataSet
             // 

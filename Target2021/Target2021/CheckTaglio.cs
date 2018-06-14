@@ -87,7 +87,11 @@ namespace Target2021
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string idcommessa = "T12";
+            idcommessa = dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value.ToString();
 
+            LavoraTaglio_cs LavTag = new LavoraTaglio_cs (idcommessa);
+            LavTag.Show();
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

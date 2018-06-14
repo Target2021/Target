@@ -235,6 +235,12 @@
     <Compile Include="LavoraStampaggio.Designer.cs">
       <DependentUpon>LavoraStampaggio.cs</DependentUpon>
     </Compile>
+    <Compile Include="LavoraTaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LavoraTaglio.Designer.cs">
+      <DependentUpon>LavoraTaglio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,18 @@
     </Compile>
     <Compile Include="RiepilogoCommesse.Designer.cs">
       <DependentUpon>RiepilogoCommesse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scan.Designer.cs">
+      <DependentUpon>Scan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scanner\Scanna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scanner\Scanna.designer.cs">
+      <DependentUpon>Scanna.cs</DependentUpon>
     </Compile>
     <Compile Include="ScaricoCaricoMagazzini.cs">
       <SubType>Form</SubType>
@@ -379,6 +397,9 @@
     <EmbeddedResource Include="LavoraStampaggio.resx">
       <DependentUpon>LavoraStampaggio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LavoraTaglio.resx">
+      <DependentUpon>LavoraTaglio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +427,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RiepilogoCommesse.resx">
       <DependentUpon>RiepilogoCommesse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scan.resx">
+      <DependentUpon>Scan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scanner\Scanna.resx">
+      <DependentUpon>Scanna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScaricoCaricoMagazzini.resx">
       <DependentUpon>ScaricoCaricoMagazzini.cs</DependentUpon>
