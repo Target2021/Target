@@ -247,6 +247,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MonitoraTaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonitoraTaglio.Designer.cs">
+      <DependentUpon>MonitoraTaglio.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewOrderCheck.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,12 +278,6 @@
     </Compile>
     <Compile Include="RiepilogoCommesse.Designer.cs">
       <DependentUpon>RiepilogoCommesse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Scan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Scan.Designer.cs">
-      <DependentUpon>Scan.cs</DependentUpon>
     </Compile>
     <Compile Include="Scanner\Scanna.cs">
       <SubType>Form</SubType>
@@ -403,6 +403,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MonitoraTaglio.resx">
+      <DependentUpon>MonitoraTaglio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewOrderCheck.resx">
       <DependentUpon>NewOrderCheck.cs</DependentUpon>
     </EmbeddedResource>
@@ -428,9 +431,6 @@
     <EmbeddedResource Include="RiepilogoCommesse.resx">
       <DependentUpon>RiepilogoCommesse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Scan.resx">
-      <DependentUpon>Scan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Scanner\Scanna.resx">
       <DependentUpon>Scanna.cs</DependentUpon>
     </EmbeddedResource>
@@ -452,6 +452,7 @@
     <EmbeddedResource Include="SelezAna\SelStampi.resx">
       <DependentUpon>SelStampi.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
-namespace CaptureWindow
+namespace Target2021
 {
     public partial class Scanna : Form
     {
@@ -26,9 +27,19 @@ namespace CaptureWindow
             IntPtr subWindow = getSubWindow();
             IntPtr sxCounterWindow = getSxCounterWindow(subWindow);
             IntPtr dxCounterWindow = getDxCounterWindow(subWindow);
+            // Legge i programmi di taglio
+            IntPtr sxProgrTaglio = LeggiProgrTaglioSx(subWindow);
+            IntPtr dxProgrTaglio = LeggiProgrTaglioDx(subWindow);
+            // Legge i secondi dei cicli di taglio
+            IntPtr sxSecondiCiclo = LeggiSecondiCicloSx(subWindow);
+            IntPtr dxSecondiCiclo = LeggiSecondiCicloDx(subWindow);
 
             textBox1.Text = GetText(sxCounterWindow);
             textBox2.Text = GetText(dxCounterWindow);
+            textBox3.Text = GetText(sxProgrTaglio);
+            textBox4.Text = GetText(dxProgrTaglio);
+            textBox5.Text = GetText(sxSecondiCiclo);
+            textBox6.Text = GetText(dxSecondiCiclo);
 
         }
 
@@ -69,6 +80,37 @@ namespace CaptureWindow
             return dxCounterWindow;
         }
 
+        private IntPtr LeggiProgrTaglioSx(IntPtr subWindow)
+        {
+            IntPtr sxWindow = FindWindowByIndex(subWindow, "WindowsForms10.Window.8.app.0.378734a", 2);
+            IntPtr progTagSx = FindWindowByIndex(sxWindow, "WindowsForms10.COMBOBOX.app.0.378734a", 4);
+
+            return progTagSx;
+        }
+
+        private IntPtr LeggiProgrTaglioDx(IntPtr subWindow)
+        {
+            IntPtr dxWindow = FindWindowByIndex(subWindow, "WindowsForms10.Window.8.app.0.378734a", 1);
+            IntPtr progTagDx = FindWindowByIndex(dxWindow, "WindowsForms10.COMBOBOX.app.0.378734a", 4);
+
+            return progTagDx;
+        }
+
+        private IntPtr LeggiSecondiCicloSx(IntPtr subWindow)
+        {
+            IntPtr sxWindow = FindWindowByIndex(subWindow, "WindowsForms10.Window.8.app.0.378734a", 2);
+            IntPtr progTagSx = FindWindowByIndex(sxWindow, "WindowsForms10.STATIC.app.0.378734a", 2);
+
+            return progTagSx;
+        }
+
+        private IntPtr LeggiSecondiCicloDx(IntPtr subWindow)
+        {
+            IntPtr dxWindow = FindWindowByIndex(subWindow, "WindowsForms10.Window.8.app.0.378734a", 1);
+            IntPtr progTagDx = FindWindowByIndex(dxWindow, "WindowsForms10.STATIC.app.0.378734a", 2);
+
+            return progTagDx;
+        }
         // FOR DEBUG ONLY - REMOVE!!
         private void SetText(IntPtr hWnd, string text)
         {
@@ -146,6 +188,34 @@ namespace CaptureWindow
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Scanna_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int sxPezzi, dxPezzi, sxSecondi, dxSecondi;
+            string sxProgramma, dxProgramma;
+
+            sxPezzi = Convert.ToInt32(textBox1.Text);
+            dxPezzi = Convert.ToInt32(textBox2.Text);
+            sxSecondi = Convert.ToInt32(textBox5.Text);
+            dxSecondi = Convert.ToInt32(textBox6.Text);
+
+            sxProgramma = textBox3.Text;
+            dxProgramma = textBox4.Text;
+
+            string stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            string query = "UPDATE TaglioOnLine SET ProgTaglio1='" + sxProgramma + "', SecondiCiclo1=" + Convert.ToString(sxSecondi) + ", NumPezzi1=" + Convert.ToString(sxPezzi) + ", ProgTaglio2='" + dxProgramma + "', SecondiCiclo2=" + Convert.ToString(dxSecondi) + ", NumPezzi2=" + Convert.ToString(dxPezzi) + " WHERE IDT=1";
+            SqlCommand cmd = new SqlCommand(query, connessione);
+            connessione.Open();
+            cmd.ExecuteNonQuery();
+            connessione.Close();
+            MessageBox.Show("Operazione completata con successo");
         }
     }
 }

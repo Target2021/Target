@@ -36,7 +36,8 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            Scanna scanner = new Scanna();
+            scanner.Show();
         }
     }
 }

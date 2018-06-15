@@ -54,6 +54,7 @@
             this.ordiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commesseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.controllaNuoviOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordiniAFornitoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anagraficheMagazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interrogazioneGiacenzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,8 @@
             this.disconnettiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraNuovoUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordiniAFornitoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monitoraggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taglioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -121,6 +123,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -137,6 +140,7 @@
             this.impostazioniToolStripMenuItem,
             this.ruoliToolStripMenuItem,
             this.disconnettiUtenteToolStripMenuItem,
+            this.monitoraggioToolStripMenuItem,
             this.esciToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -296,6 +300,12 @@
             this.controllaNuoviOrdiniToolStripMenuItem.Text = "Controlla nuovi ordini";
             this.controllaNuoviOrdiniToolStripMenuItem.Click += new System.EventHandler(this.controllaNuoviOrdiniToolStripMenuItem_Click);
             // 
+            // ordiniAFornitoreToolStripMenuItem
+            // 
+            this.ordiniAFornitoreToolStripMenuItem.Name = "ordiniAFornitoreToolStripMenuItem";
+            this.ordiniAFornitoreToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
+            this.ordiniAFornitoreToolStripMenuItem.Text = "Ordini a fornitore";
+            // 
             // magazziniToolStripMenuItem
             // 
             this.magazziniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -450,11 +460,20 @@
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
-            // ordiniAFornitoreToolStripMenuItem
+            // monitoraggioToolStripMenuItem
             // 
-            this.ordiniAFornitoreToolStripMenuItem.Name = "ordiniAFornitoreToolStripMenuItem";
-            this.ordiniAFornitoreToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
-            this.ordiniAFornitoreToolStripMenuItem.Text = "Ordini a fornitore";
+            this.monitoraggioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.taglioToolStripMenuItem1});
+            this.monitoraggioToolStripMenuItem.Name = "monitoraggioToolStripMenuItem";
+            this.monitoraggioToolStripMenuItem.Size = new System.Drawing.Size(132, 30);
+            this.monitoraggioToolStripMenuItem.Text = "Monitoraggio";
+            // 
+            // taglioToolStripMenuItem1
+            // 
+            this.taglioToolStripMenuItem1.Name = "taglioToolStripMenuItem1";
+            this.taglioToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
+            this.taglioToolStripMenuItem1.Text = "Taglio";
+            this.taglioToolStripMenuItem1.Click += new System.EventHandler(this.taglioToolStripMenuItem1_Click);
             // 
             // Home
             // 
@@ -523,6 +542,8 @@
         private System.Windows.Forms.ToolStripMenuItem disconnettiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registraNuovoUtenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordiniAFornitoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem monitoraggioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem taglioToolStripMenuItem1;
     }
 }
 

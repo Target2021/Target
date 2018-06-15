@@ -102,7 +102,7 @@ namespace Target2021
         {
             int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi, NrLastreRichieste;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
-            string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo, IdFornitore, IDMatPrima;
+            string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo, IdFornitore, IDMatPrima,PT1,PT2;
             SqlDataReader fasi;
             BindingSource SorgenteDati = new BindingSource();
 
@@ -167,6 +167,10 @@ namespace Target2021
                     com.IDMateriaPrima = IDMatPrima;
                     NrLastreRichieste = RecuperaNrLasRic(CodiceArticolo, i, IDOrdine);
                     com.NrLastreRichieste = NrLastreRichieste;
+                    PT1 = RecuperaProgTaglio(CodiceArticolo, i, 1);
+                    com.ProgrTaglio1 = PT1;
+                    PT2 = RecuperaProgTaglio(CodiceArticolo, i, 2);
+                    com.ProgrTaglio2 = PT2;
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -370,6 +374,20 @@ namespace Target2021
             return Lastre;
         }
 
+        private string RecuperaProgTaglio(string codart, int i, int lato)
+        {
+            string stringaconnessione, sql="", progt;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            if (lato == 1) sql = "SELECT ProgrTaglio1 FROM DettArticoli WHERE codice_articolo=" + codart + " AND lavorazione=3";
+            if (lato == 2) sql = "SELECT ProgrTaglio2 FROM DettArticoli WHERE codice_articolo=" + codart + " AND lavorazione=3";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            progt = comando.ExecuteScalar().ToString();
+            connessione.Close();
+            return progt;
+        }
+
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -382,7 +400,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@NrLastreRichieste,@npo,@no,@stato)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ProgrTaglio1, ProgrTaglio2) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@NrLastreRichieste,@npo,@no,@stato,@prt1,@prt2)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -400,6 +418,8 @@ namespace Target2021
             comando.Parameters.AddWithValue("@npo", 0);
             comando.Parameters.AddWithValue("@no", 'N');
             comando.Parameters.AddWithValue("@stato", 0);
+            comando.Parameters.AddWithValue("@prt1", com.ProgrTaglio1);
+            comando.Parameters.AddWithValue("@prt2", com.ProgrTaglio2);
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();

@@ -43,6 +43,9 @@
             System.Windows.Forms.Label macPredefTaglioLabel;
             System.Windows.Forms.Label costoBaseLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RigaCompleta));
+            System.Windows.Forms.Label abbinamentoStampoLabel;
+            System.Windows.Forms.Label progrTaglio1Label;
+            System.Windows.Forms.Label progrTaglio2Label;
             this.codicePrimaStampoDimaLabel = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -79,6 +82,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.abbinamentoStampoTextBox = new System.Windows.Forms.TextBox();
+            this.progrTaglio1TextBox = new System.Windows.Forms.TextBox();
+            this.progrTaglio2TextBox = new System.Windows.Forms.TextBox();
             iDDettaglioArticoloLabel = new System.Windows.Forms.Label();
             codice_articoloLabel = new System.Windows.Forms.Label();
             progressivoLabel = new System.Windows.Forms.Label();
@@ -92,6 +98,9 @@
             macPredefStampoLabel = new System.Windows.Forms.Label();
             macPredefTaglioLabel = new System.Windows.Forms.Label();
             costoBaseLabel = new System.Windows.Forms.Label();
+            abbinamentoStampoLabel = new System.Windows.Forms.Label();
+            progrTaglio1Label = new System.Windows.Forms.Label();
+            progrTaglio2Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingNavigator)).BeginInit();
@@ -237,7 +246,6 @@
             this.codicePrimaStampoDimaLabel.Size = new System.Drawing.Size(66, 18);
             this.codicePrimaStampoDimaLabel.TabIndex = 7;
             this.codicePrimaStampoDimaLabel.Text = "Codice:";
-            //this.codicePrimaStampoDimaLabel.Click += new System.EventHandler(this.codicePrimaStampoDimaLabel_Click);
             // 
             // target2021DataSet
             // 
@@ -281,6 +289,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -598,12 +607,75 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "label4";
             // 
+            // abbinamentoStampoLabel
+            // 
+            abbinamentoStampoLabel.AutoSize = true;
+            abbinamentoStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            abbinamentoStampoLabel.Location = new System.Drawing.Point(50, 425);
+            abbinamentoStampoLabel.Name = "abbinamentoStampoLabel";
+            abbinamentoStampoLabel.Size = new System.Drawing.Size(173, 18);
+            abbinamentoStampoLabel.TabIndex = 33;
+            abbinamentoStampoLabel.Text = "Abbinamento Stampo:";
+            // 
+            // abbinamentoStampoTextBox
+            // 
+            this.abbinamentoStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "AbbinamentoStampo", true));
+            this.abbinamentoStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abbinamentoStampoTextBox.Location = new System.Drawing.Point(236, 422);
+            this.abbinamentoStampoTextBox.Name = "abbinamentoStampoTextBox";
+            this.abbinamentoStampoTextBox.Size = new System.Drawing.Size(100, 24);
+            this.abbinamentoStampoTextBox.TabIndex = 34;
+            // 
+            // progrTaglio1Label
+            // 
+            progrTaglio1Label.AutoSize = true;
+            progrTaglio1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progrTaglio1Label.Location = new System.Drawing.Point(50, 454);
+            progrTaglio1Label.Name = "progrTaglio1Label";
+            progrTaglio1Label.Size = new System.Drawing.Size(115, 18);
+            progrTaglio1Label.TabIndex = 35;
+            progrTaglio1Label.Text = "Progr Taglio1:";
+            // 
+            // progrTaglio1TextBox
+            // 
+            this.progrTaglio1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "ProgrTaglio1", true));
+            this.progrTaglio1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progrTaglio1TextBox.Location = new System.Drawing.Point(236, 451);
+            this.progrTaglio1TextBox.Name = "progrTaglio1TextBox";
+            this.progrTaglio1TextBox.Size = new System.Drawing.Size(100, 24);
+            this.progrTaglio1TextBox.TabIndex = 36;
+            // 
+            // progrTaglio2Label
+            // 
+            progrTaglio2Label.AutoSize = true;
+            progrTaglio2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progrTaglio2Label.Location = new System.Drawing.Point(50, 481);
+            progrTaglio2Label.Name = "progrTaglio2Label";
+            progrTaglio2Label.Size = new System.Drawing.Size(115, 18);
+            progrTaglio2Label.TabIndex = 37;
+            progrTaglio2Label.Text = "Progr Taglio2:";
+            // 
+            // progrTaglio2TextBox
+            // 
+            this.progrTaglio2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dettArticoliBindingSource, "ProgrTaglio2", true));
+            this.progrTaglio2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progrTaglio2TextBox.Location = new System.Drawing.Point(236, 481);
+            this.progrTaglio2TextBox.Name = "progrTaglio2TextBox";
+            this.progrTaglio2TextBox.Size = new System.Drawing.Size(100, 24);
+            this.progrTaglio2TextBox.TabIndex = 38;
+            // 
             // RigaCompleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(803, 426);
+            this.ClientSize = new System.Drawing.Size(803, 529);
+            this.Controls.Add(progrTaglio2Label);
+            this.Controls.Add(this.progrTaglio2TextBox);
+            this.Controls.Add(progrTaglio1Label);
+            this.Controls.Add(this.progrTaglio1TextBox);
+            this.Controls.Add(abbinamentoStampoLabel);
+            this.Controls.Add(this.abbinamentoStampoTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -637,7 +709,7 @@
             this.Controls.Add(iDDettaglioArticoloLabel);
             this.Controls.Add(this.iDDettaglioArticoloTextBox);
             this.Controls.Add(this.dettArticoliBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RigaCompleta";
             this.Text = "RigaCompleta";
             this.Load += new System.EventHandler(this.RigaCompleta_Load);
@@ -689,5 +761,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label codicePrimaStampoDimaLabel;
+        private System.Windows.Forms.TextBox abbinamentoStampoTextBox;
+        private System.Windows.Forms.TextBox progrTaglio1TextBox;
+        private System.Windows.Forms.TextBox progrTaglio2TextBox;
     }
 }

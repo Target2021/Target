@@ -278,6 +278,12 @@ namespace Target2021
             registraUtenti.Show();
         }
 
+        private void taglioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MonitoraTaglio mt = new MonitoraTaglio();
+            mt.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
