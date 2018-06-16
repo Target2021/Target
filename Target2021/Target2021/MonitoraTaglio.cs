@@ -31,5 +31,10 @@ namespace Target2021
             this.taglioOnLineTableAdapter.Fill(this.target2021DataSet.TaglioOnLine);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.taglioOnLineTableAdapter.Fill(this.target2021DataSet.TaglioOnLine);
+        }
     }
 }

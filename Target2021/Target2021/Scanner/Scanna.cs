@@ -197,13 +197,14 @@ namespace Target2021
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int sxPezzi, dxPezzi, sxSecondi, dxSecondi;
+            int sxPezzi=0, dxPezzi=0, sxSecondi=0, dxSecondi=0;
             string sxProgramma, dxProgramma;
-
+            try {
             sxPezzi = Convert.ToInt32(textBox1.Text);
             dxPezzi = Convert.ToInt32(textBox2.Text);
             sxSecondi = Convert.ToInt32(textBox5.Text);
             dxSecondi = Convert.ToInt32(textBox6.Text);
+            } catch { }
 
             sxProgramma = textBox3.Text;
             dxProgramma = textBox4.Text;
