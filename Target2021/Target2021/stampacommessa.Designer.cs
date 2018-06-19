@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,6 +44,13 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.Target2021DataSet = new Target2021.Target2021DataSet();
+            this.CommesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CommesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.Target2021DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommesseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -65,7 +74,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(55, 82);
+            this.button1.Location = new System.Drawing.Point(56, 68);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(343, 44);
             this.button1.TabIndex = 2;
@@ -82,12 +91,13 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Stampa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(55, 156);
+            this.label2.Location = new System.Drawing.Point(54, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 21);
             this.label2.TabIndex = 4;
@@ -97,7 +107,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 190);
+            this.label3.Location = new System.Drawing.Point(55, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 21);
             this.label3.TabIndex = 5;
@@ -127,7 +137,7 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(183, 153);
+            this.textBox2.Location = new System.Drawing.Point(182, 118);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(216, 28);
             this.textBox2.TabIndex = 8;
@@ -136,9 +146,9 @@
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(183, 187);
+            this.textBox3.Location = new System.Drawing.Point(183, 152);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(216, 28);
+            this.textBox3.Size = new System.Drawing.Size(124, 28);
             this.textBox3.TabIndex = 9;
             // 
             // textBox4
@@ -178,11 +188,49 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Note:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(55, 190);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 21);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "label7";
+            // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.CommesseBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Target2021.Report.RCommessa.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(433, 34);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(501, 362);
+            this.reportViewer1.TabIndex = 15;
+            // 
+            // Target2021DataSet
+            // 
+            this.Target2021DataSet.DataSetName = "Target2021DataSet";
+            this.Target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // CommesseBindingSource
+            // 
+            this.CommesseBindingSource.DataMember = "Commesse";
+            this.CommesseBindingSource.DataSource = this.Target2021DataSet;
+            // 
+            // CommesseTableAdapter
+            // 
+            this.CommesseTableAdapter.ClearBeforeFill = true;
+            // 
             // stampacommessa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 408);
+            this.ClientSize = new System.Drawing.Size(946, 408);
+            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox5);
@@ -199,6 +247,9 @@
             this.Controls.Add(this.textBox1);
             this.Name = "stampacommessa";
             this.Text = "Stampa scheda commessa";
+            this.Load += new System.EventHandler(this.stampacommessa_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommesseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +271,10 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource CommesseBindingSource;
+        private Target2021DataSet Target2021DataSet;
+        private Target2021DataSetTableAdapters.CommesseTableAdapter CommesseTableAdapter;
     }
 }

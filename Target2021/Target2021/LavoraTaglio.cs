@@ -39,5 +39,26 @@ namespace Target2021
             Scanna scanner = new Scanna();
             scanner.Show();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            calcolapezzi();
+        }
+
+        private void nrPezziScartatiTextBox_TextChanged(object sender, EventArgs e)
+        {
+            calcolapezzi();
+        }
+
+        private void calcolapezzi()
+        {
+            int pztagliati, pzscartati, pzcorretti;
+            if (textBox1.Text == "") textBox1.Text = "0";
+            if (nrPezziScartatiTextBox.Text == "") nrPezziScartatiTextBox.Text = "0";
+            pztagliati = Convert.ToInt32(textBox1.Text);
+            pzscartati = Convert.ToInt32(nrPezziScartatiTextBox.Text);
+            pzcorretti = pztagliati - pzscartati;
+            nrPezziCorrettiTextBox.Text = pzcorretti.ToString();
+        }
     }
 }

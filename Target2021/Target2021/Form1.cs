@@ -281,13 +281,22 @@ namespace Target2021
         private void taglioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MonitoraTaglio mt = new MonitoraTaglio();
+            mt.MdiParent = this;
             mt.Show();
         }
 
         private void stampaSchedaCommessaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             stampacommessa stampa = new stampacommessa();
+            stampa.MdiParent = this;
             stampa.Show();
+        }
+
+        private void schermataTaglioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MascheraTaglio MT = new MascheraTaglio();
+            MT.MdiParent = this;
+            MT.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

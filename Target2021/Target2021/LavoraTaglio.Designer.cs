@@ -66,6 +66,7 @@
             System.Windows.Forms.Label impegnataMatPrimaLabel;
             System.Windows.Forms.Label evasoParzialeLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LavoraTaglio_cs));
+            System.Windows.Forms.Label label1;
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
@@ -120,6 +121,7 @@
             this.impegnataMatPrimaTextBox = new System.Windows.Forms.TextBox();
             this.evasoParzialeCheckBox = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -156,6 +158,7 @@
             statoLabel = new System.Windows.Forms.Label();
             impegnataMatPrimaLabel = new System.Windows.Forms.Label();
             evasoParzialeLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).BeginInit();
@@ -426,7 +429,7 @@
             // nrPezziCorrettiLabel
             // 
             nrPezziCorrettiLabel.AutoSize = true;
-            nrPezziCorrettiLabel.Location = new System.Drawing.Point(773, 158);
+            nrPezziCorrettiLabel.Location = new System.Drawing.Point(773, 213);
             nrPezziCorrettiLabel.Name = "nrPezziCorrettiLabel";
             nrPezziCorrettiLabel.Size = new System.Drawing.Size(85, 13);
             nrPezziCorrettiLabel.TabIndex = 59;
@@ -444,7 +447,7 @@
             // secondiCicloTaglioLabel
             // 
             secondiCicloTaglioLabel.AutoSize = true;
-            secondiCicloTaglioLabel.Location = new System.Drawing.Point(773, 210);
+            secondiCicloTaglioLabel.Location = new System.Drawing.Point(773, 239);
             secondiCicloTaglioLabel.Name = "secondiCicloTaglioLabel";
             secondiCicloTaglioLabel.Size = new System.Drawing.Size(107, 13);
             secondiCicloTaglioLabel.TabIndex = 93;
@@ -453,7 +456,7 @@
             // minutiAttrezzaggioLabel
             // 
             minutiAttrezzaggioLabel.AutoSize = true;
-            minutiAttrezzaggioLabel.Location = new System.Drawing.Point(773, 236);
+            minutiAttrezzaggioLabel.Location = new System.Drawing.Point(773, 265);
             minutiAttrezzaggioLabel.Name = "minutiAttrezzaggioLabel";
             minutiAttrezzaggioLabel.Size = new System.Drawing.Size(99, 13);
             minutiAttrezzaggioLabel.TabIndex = 95;
@@ -462,7 +465,7 @@
             // statoLabel
             // 
             statoLabel.AutoSize = true;
-            statoLabel.Location = new System.Drawing.Point(773, 262);
+            statoLabel.Location = new System.Drawing.Point(773, 291);
             statoLabel.Name = "statoLabel";
             statoLabel.Size = new System.Drawing.Size(35, 13);
             statoLabel.TabIndex = 97;
@@ -471,7 +474,7 @@
             // impegnataMatPrimaLabel
             // 
             impegnataMatPrimaLabel.AutoSize = true;
-            impegnataMatPrimaLabel.Location = new System.Drawing.Point(773, 288);
+            impegnataMatPrimaLabel.Location = new System.Drawing.Point(773, 317);
             impegnataMatPrimaLabel.Name = "impegnataMatPrimaLabel";
             impegnataMatPrimaLabel.Size = new System.Drawing.Size(110, 13);
             impegnataMatPrimaLabel.TabIndex = 99;
@@ -480,7 +483,7 @@
             // evasoParzialeLabel
             // 
             evasoParzialeLabel.AutoSize = true;
-            evasoParzialeLabel.Location = new System.Drawing.Point(773, 316);
+            evasoParzialeLabel.Location = new System.Drawing.Point(773, 345);
             evasoParzialeLabel.Name = "evasoParzialeLabel";
             evasoParzialeLabel.Size = new System.Drawing.Size(80, 13);
             evasoParzialeLabel.TabIndex = 101;
@@ -893,7 +896,7 @@
             // nrPezziCorrettiTextBox
             // 
             this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
-            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(914, 155);
+            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(914, 207);
             this.nrPezziCorrettiTextBox.Name = "nrPezziCorrettiTextBox";
             this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(200, 20);
             this.nrPezziCorrettiTextBox.TabIndex = 60;
@@ -905,11 +908,12 @@
             this.nrPezziScartatiTextBox.Name = "nrPezziScartatiTextBox";
             this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(200, 20);
             this.nrPezziScartatiTextBox.TabIndex = 62;
+            this.nrPezziScartatiTextBox.TextChanged += new System.EventHandler(this.nrPezziScartatiTextBox_TextChanged);
             // 
             // secondiCicloTaglioTextBox
             // 
             this.secondiCicloTaglioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "SecondiCicloTaglio", true));
-            this.secondiCicloTaglioTextBox.Location = new System.Drawing.Point(914, 207);
+            this.secondiCicloTaglioTextBox.Location = new System.Drawing.Point(914, 233);
             this.secondiCicloTaglioTextBox.Name = "secondiCicloTaglioTextBox";
             this.secondiCicloTaglioTextBox.Size = new System.Drawing.Size(200, 20);
             this.secondiCicloTaglioTextBox.TabIndex = 94;
@@ -917,7 +921,7 @@
             // minutiAttrezzaggioTextBox
             // 
             this.minutiAttrezzaggioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "MinutiAttrezzaggio", true));
-            this.minutiAttrezzaggioTextBox.Location = new System.Drawing.Point(914, 233);
+            this.minutiAttrezzaggioTextBox.Location = new System.Drawing.Point(914, 262);
             this.minutiAttrezzaggioTextBox.Name = "minutiAttrezzaggioTextBox";
             this.minutiAttrezzaggioTextBox.Size = new System.Drawing.Size(200, 20);
             this.minutiAttrezzaggioTextBox.TabIndex = 96;
@@ -925,7 +929,7 @@
             // statoTextBox
             // 
             this.statoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "Stato", true));
-            this.statoTextBox.Location = new System.Drawing.Point(914, 259);
+            this.statoTextBox.Location = new System.Drawing.Point(914, 288);
             this.statoTextBox.Name = "statoTextBox";
             this.statoTextBox.Size = new System.Drawing.Size(200, 20);
             this.statoTextBox.TabIndex = 98;
@@ -933,7 +937,7 @@
             // impegnataMatPrimaTextBox
             // 
             this.impegnataMatPrimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "ImpegnataMatPrima", true));
-            this.impegnataMatPrimaTextBox.Location = new System.Drawing.Point(914, 285);
+            this.impegnataMatPrimaTextBox.Location = new System.Drawing.Point(914, 314);
             this.impegnataMatPrimaTextBox.Name = "impegnataMatPrimaTextBox";
             this.impegnataMatPrimaTextBox.Size = new System.Drawing.Size(200, 20);
             this.impegnataMatPrimaTextBox.TabIndex = 100;
@@ -941,7 +945,7 @@
             // evasoParzialeCheckBox
             // 
             this.evasoParzialeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.commesseBindingSource, "EvasoParziale", true));
-            this.evasoParzialeCheckBox.Location = new System.Drawing.Point(914, 311);
+            this.evasoParzialeCheckBox.Location = new System.Drawing.Point(914, 340);
             this.evasoParzialeCheckBox.Name = "evasoParzialeCheckBox";
             this.evasoParzialeCheckBox.Size = new System.Drawing.Size(200, 24);
             this.evasoParzialeCheckBox.TabIndex = 102;
@@ -958,12 +962,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(773, 158);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(82, 13);
+            label1.TabIndex = 104;
+            label1.Text = "Nr Pezzi tagliati:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(914, 156);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.TabIndex = 105;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // LavoraTaglio_cs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1182, 422);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(iDCommessaLabel);
             this.Controls.Add(this.iDCommessaTextBox);
@@ -1107,5 +1130,6 @@
         private System.Windows.Forms.TextBox impegnataMatPrimaTextBox;
         private System.Windows.Forms.CheckBox evasoParzialeCheckBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
