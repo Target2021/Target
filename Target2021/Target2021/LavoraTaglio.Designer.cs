@@ -65,8 +65,8 @@
             System.Windows.Forms.Label statoLabel;
             System.Windows.Forms.Label impegnataMatPrimaLabel;
             System.Windows.Forms.Label evasoParzialeLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LavoraTaglio_cs));
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LavoraTaglio_cs));
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
@@ -488,6 +488,15 @@
             evasoParzialeLabel.Size = new System.Drawing.Size(80, 13);
             evasoParzialeLabel.TabIndex = 101;
             evasoParzialeLabel.Text = "Evaso Parziale:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(773, 158);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(82, 13);
+            label1.TabIndex = 104;
+            label1.Text = "Nr Pezzi tagliati:";
             // 
             // target2021DataSet
             // 
@@ -961,15 +970,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(773, 158);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(82, 13);
-            label1.TabIndex = 104;
-            label1.Text = "Nr Pezzi tagliati:";
             // 
             // textBox1
             // 

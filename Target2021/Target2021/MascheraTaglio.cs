@@ -27,8 +27,8 @@ namespace Target2021
         private void MascheraTaglio_Load(object sender, EventArgs e)
         {
             textBox1.Enabled = false;
-            timer1.Interval = 500;
-            timer2.Interval = 60000;
+            timer1.Interval = 1000;
+            timer2.Interval = 6000;
             timer1.Stop();
             timer2.Stop();
         }
@@ -43,16 +43,54 @@ namespace Target2021
         {
             string PGTaglioInMacchina,PGTaglioInCommessa;
 
-            timer1.Stop();
+            //timer1.Stop();
             textBox1.Enabled = false;
-            textBox4.Focus();
+            //textBox4.Focus();
             leggiprogrammataglio();
             PGTaglioInMacchina = controllaPGMacchina();
             PGTaglioInCommessa = controllaPGCommessa(textBox1.Text);
             if (PGTaglioInMacchina == PGTaglioInCommessa)
             {
+                label6.Visible = false;
+                timer1.Stop();
                 timer2.Start();
             }
+            else
+            {
+                if (PGTaglioInMacchina == "")
+                {
+                    label6.Text ="Inserire programma nel MAIN";
+                    label6.Visible = true;
+                }                      
+                else
+                {
+                    label6.Text ="Il programma selezionato non corrisponde alla Commessa inserita";
+                    label6.Visible = true;
+                }               
+            }
+        }
+
+        private void salva(string codcom, int stato)
+        {
+            int sxPezzi = 0, dxPezzi = 0, sxSecondi = 0, dxSecondi = 0;
+            string sxProgramma, dxProgramma;
+            try
+            {
+                sxPezzi = Convert.ToInt32(textBox3.Text);
+                sxSecondi = Convert.ToInt32(textBox5.Text);
+            }
+            catch { }
+
+            sxProgramma = textBox2.Text;
+            //dxProgramma = textBox4.Text;
+
+            string stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            string query = "UPDATE Commesse SET ProgrTaglio1='" + sxProgramma + "', SecondiCicloTaglio=" + Convert.ToString(sxSecondi) + ", NrPezziCorretti=" + textBox6.Text + ", NrPezziScartati="+textBox4.Text+", Stato="+stato+" WHERE CodCommessa='"+codcom +"'";
+            SqlCommand cmd = new SqlCommand(query, connessione);
+            connessione.Open();
+            cmd.ExecuteNonQuery();
+            connessione.Close();
         }
 
         private void leggiprogrammataglio()
@@ -82,11 +120,13 @@ namespace Target2021
             conn.Open();
             Programma = comando.ExecuteScalar().ToString();
             conn.Close();
+            Programma = Programma.TrimEnd();
             return Programma;
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            string  codicecommessa;
             try
             {
                 List<WinText> windows = new List<WinText>();
@@ -105,9 +145,10 @@ namespace Target2021
                 //textBox6.Text = GetText(dxSecondiCiclo);
             }
             catch { }
+            codicecommessa = textBox1.Text;
+            aggiornacorretti();
+            salva(codicecommessa,1);
         }
-
-
 
         private IntPtr getSubWindow()
         {
@@ -225,5 +266,48 @@ namespace Target2021
         [DllImport("user32.dll")]
         static extern IntPtr GetDlgItem(IntPtr hDlg, int nIDDlgItem);
 
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aggiornacorretti()
+        {
+            int prodotti, scartati=0;
+            if (textBox3.Text == "") textBox3.Text = "0";
+            prodotti = Convert.ToInt32(textBox3.Text);
+            //if (textBox3.Text == "") textBox3.Text =
+            try
+            {
+            scartati = Convert.ToInt32(textBox4.Text);
+            }
+            catch { }
+            textBox6.Text = (prodotti - scartati).ToString();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            aggiornacorretti();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Sei sicuro?", "Conferma salvataggio", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                timer2.Stop();
+                string codicecommessa = textBox1.Text;
+                salva(codicecommessa,2);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
