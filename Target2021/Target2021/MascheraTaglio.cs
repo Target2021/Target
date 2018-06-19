@@ -26,11 +26,26 @@ namespace Target2021
 
         private void MascheraTaglio_Load(object sender, EventArgs e)
         {
+            Scanna scanner = new Scanna();
             textBox1.Enabled = false;
             timer1.Interval = 1000;
             timer2.Interval = 6000;
             timer1.Stop();
             timer2.Stop();
+
+            // CARICA DATI DI PARTENZA
+            string stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            string query = "SELECT CodCommessaSinistra, PezziScartatiSinistra FROM Configurazione WHERE IDAzienda=1";
+            SqlCommand cmd = new SqlCommand(query, connessione);
+            connessione.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                textBox1.Text = reader[0].ToString();
+                textBox4.Text = reader[1].ToString();
+            }
+            connessione.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -292,12 +307,20 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int pezzicorretti = 0;
+            pezzicorretti = Convert.ToInt32(textBox6.Text);
             DialogResult dialogResult = MessageBox.Show("Sei sicuro?", "Conferma salvataggio", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 timer2.Stop();
                 string codicecommessa = textBox1.Text;
                 salva(codicecommessa,2);
+                salvatemp();
+                textBox1.Text = "";
+                timer1.Stop();
+                textBox4.Text = "0";
+                caricamagazzino(codicecommessa,pezzicorretti);
+                aggiornagiacenze(codicecommessa, pezzicorretti);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -308,6 +331,103 @@ namespace Target2021
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SalvaDatiParziali(object sender, FormClosedEventArgs e)
+        {
+            string ccs, ccd;
+            int pss, psd;
+            ccs = textBox1.Text;
+            pss = Convert.ToInt32(textBox4.Text);
+            string stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            string query = "UPDATE Configurazione SET CodCommessaSinistra='" + ccs + "', PezziScartatiSinistra=" + Convert.ToString(pss) + " WHERE IDAzienda=1";
+            SqlCommand cmd = new SqlCommand(query, connessione);
+            connessione.Open();
+            cmd.ExecuteNonQuery();
+            connessione.Close();
+        }
+
+        private void salvatemp()
+        {
+            string stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            string query = "UPDATE Configurazione SET CodCommessaSinistra=' ', PezziScartatiSinistra=0 WHERE IDAzienda=1";
+            SqlCommand cmd = new SqlCommand(query, connessione);
+            connessione.Open();
+            cmd.ExecuteNonQuery();
+            connessione.Close();
+        }
+
+        private void caricamagazzino(string ccom, int npez)
+        {
+            int IDMagazzino = 5, quantita = 0;
+            string IDArticoli,BarCode,Ordine;
+            DateTime DataMovimento;
+
+            quantita = npez;
+            Ordine = ccom;
+
+            DataMovimento = DateTime.Now;
+            IDArticoli = RitCodArticolo(ccom);
+
+            // Inserisce movimento in MOVIMENTI DI MAGAZZINO
+            string stringa_connessione;
+            stringa_connessione = Properties.Resources.StringaConnessione;
+            SqlConnection conn = new SqlConnection(stringa_connessione);
+            string queryCliente = "INSERT INTO MovimentiMagazzino (idMagazzino, idArticoli, CarScar, Quantita, Barcode, NrOrdine, DataOraMovimento) VALUES (5, @ida, 'C', @q, @bc, @nro, @dtm)";
+            SqlCommand comando = new SqlCommand(queryCliente, conn);
+            comando.Parameters.AddWithValue("@ida", IDArticoli);
+            comando.Parameters.AddWithValue("@q", quantita);
+            comando.Parameters.AddWithValue("@bc", "123");
+            comando.Parameters.AddWithValue("@nro", Ordine);
+            comando.Parameters.AddWithValue("@dtm", DataMovimento);
+
+            conn.Open();
+            comando.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        private string RitCodArticolo(string ccom)
+        {
+            string stringa_connessione, CodArt;
+            stringa_connessione = Properties.Resources.StringaConnessione;
+            SqlConnection conn = new SqlConnection(stringa_connessione);
+            string queryCliente = "Select CodArticolo From Commesse Where CodCommessa='" + ccom + "'";
+            SqlCommand comando = new SqlCommand(queryCliente, conn);
+            conn.Open();
+            CodArt = comando.ExecuteScalar().ToString();
+            conn.Close();
+            return CodArt;
+        }
+
+        private void aggiornagiacenze(string ccom, int npez)
+        {   // SE c'è lo aggiorna, se non c'è lo inserisce
+            //int IDMagazzino = 5, quantita = 0;
+            //string IDArticoli, BarCode, Ordine;
+            //DateTime DataMovimento;
+
+            //quantita = npez;
+            //Ordine = ccom;
+
+            //DataMovimento = DateTime.Now;
+            //IDArticoli = RitCodArticolo(ccom);
+
+            //Inserisce movimento in MOVIMENTI DI MAGAZZINO
+            //string stringa_connessione;
+            //stringa_connessione = Properties.Resources.StringaConnessione;
+            //SqlConnection conn = new SqlConnection(stringa_connessione);
+            //string queryCliente = "INSERT INTO MovimentiMagazzino (idMagazzino, idArticoli, CarScar, Quantita, Barcode, NrOrdine, DataOraMovimento) VALUES (5, @ida, 'C', @q, @bc, @nro, @dtm)";
+            //SqlCommand comando = new SqlCommand(queryCliente, conn);
+            //comando.Parameters.AddWithValue("@ida", IDArticoli);
+            //comando.Parameters.AddWithValue("@q", quantita);
+            //comando.Parameters.AddWithValue("@bc", "123");
+            //comando.Parameters.AddWithValue("@nro", Ordine);
+            //comando.Parameters.AddWithValue("@dtm", DataMovimento);
+
+            //conn.Open();
+            //comando.ExecuteNonQuery();
+            //conn.Close();
         }
     }
 }

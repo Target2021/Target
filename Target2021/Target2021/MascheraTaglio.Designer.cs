@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -44,9 +47,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,38 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stazione sinistra - 1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(35, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 24);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "label6";
+            this.label6.Visible = false;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(210, 232);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 29);
+            this.textBox6.TabIndex = 12;
+            this.textBox6.Text = "0";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(26, 237);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 24);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Pezzi corretti:";
             // 
             // button2
             // 
@@ -181,9 +213,9 @@
             // groupBox2
             // 
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(453, 12);
+            this.groupBox2.Location = new System.Drawing.Point(453, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(437, 359);
+            this.groupBox2.Size = new System.Drawing.Size(437, 367);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stazione destra - 2";
@@ -196,38 +228,6 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 237);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 24);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Pezzi corretti:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(210, 232);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 29);
-            this.textBox6.TabIndex = 12;
-            this.textBox6.Text = "0";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(35, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 24);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "label6";
-            this.label6.Visible = false;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
             // MascheraTaglio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,6 +237,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "MascheraTaglio";
             this.Text = "Gestione Taglio";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SalvaDatiParziali);
             this.Load += new System.EventHandler(this.MascheraTaglio_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

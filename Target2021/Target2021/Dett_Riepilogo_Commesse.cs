@@ -51,13 +51,13 @@ namespace Target2021
                     query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMateriaPrima,IDFornitore,ImpegnataMatPrima FROM Commesse WHERE TipoCommessa=2 AND Stato=2";
                     break;
                 case 7:
-                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMateriaPrima,IDFornitore,ImpegnataMatPrima FROM Commesse WHERE TipoCommessa=3 AND Stato=0";
+                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,NrPezziCorretti, NrPezziScartati, SecondiCicloTaglio FROM Commesse WHERE TipoCommessa=3 AND Stato=0";
                     break;
                 case 8:
-                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMateriaPrima,IDFornitore,ImpegnataMatPrima FROM Commesse WHERE TipoCommessa=3 AND Stato=1";
+                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,NrPezziCorretti, NrPezziScartati, SecondiCicloTaglio FROM Commesse WHERE TipoCommessa=3 AND Stato=1";
                     break;
                 case 9:
-                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMateriaPrima,IDFornitore,ImpegnataMatPrima FROM Commesse WHERE TipoCommessa=3 AND Stato=2";
+                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,NrPezziCorretti, NrPezziScartati, SecondiCicloTaglio FROM Commesse WHERE TipoCommessa=3 AND Stato=2";
                     break;
             }
             SqlConnection conn = new SqlConnection(stringa_connessione);
@@ -82,6 +82,11 @@ namespace Target2021
             DataView dv = dataTable.DefaultView;
             dv.RowFilter = string.Format("TRANSACTYPE  LIKE '%{0}%'", comboBox1.SelectedItem.ToString());
             dataGridView1.DataSource = dv;
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

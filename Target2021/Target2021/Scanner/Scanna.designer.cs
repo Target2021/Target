@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,16 +36,17 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +69,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(95, 29);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -77,7 +78,6 @@
             this.label1.Size = new System.Drawing.Size(84, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nr pezzi:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -87,7 +87,6 @@
             this.label2.Size = new System.Drawing.Size(84, 24);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nr pezzi:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox2
             // 
@@ -96,7 +95,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(95, 29);
             this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button2
             // 
@@ -107,6 +105,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Imposta (per debug)";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
@@ -125,6 +124,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pannello di sinistra";
             // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(665, 26);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(85, 29);
+            this.textBox5.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(530, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 24);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Secondi ciclo:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(355, 26);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(149, 29);
+            this.textBox3.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(234, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Progr. taglio:";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox6);
@@ -141,48 +174,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pannello di destra";
             // 
-            // label3
+            // textBox6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(234, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Progr. taglio:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(234, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 24);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Progr. taglio:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(355, 26);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(149, 29);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(355, 31);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 29);
-            this.textBox4.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(530, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 24);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Secondi ciclo:";
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(665, 31);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(85, 29);
+            this.textBox6.TabIndex = 10;
             // 
             // label6
             // 
@@ -193,21 +191,22 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Secondi ciclo:";
             // 
-            // textBox5
+            // textBox4
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(665, 26);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(85, 29);
-            this.textBox5.TabIndex = 6;
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(355, 31);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(148, 29);
+            this.textBox4.TabIndex = 9;
             // 
-            // textBox6
+            // label4
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(665, 31);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(85, 29);
-            this.textBox6.TabIndex = 10;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(234, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 24);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Progr. taglio:";
             // 
             // button3
             // 
@@ -219,6 +218,10 @@
             this.button3.Text = "Scrivi";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Scanna
             // 
@@ -264,6 +267,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

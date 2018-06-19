@@ -21,6 +21,11 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bottone1();
+        }
+
+        private void bottone1()
+        {
             try
             {
                 List<WinText> windows = new List<WinText>();
@@ -47,6 +52,11 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
+            bottone2();
+        }
+
+        private void bottone2()
+        {
             IntPtr subWindow = getSubWindow();
             IntPtr sxCounterWindow = getSxCounterWindow(subWindow);
             IntPtr dxCounterWindow = getDxCounterWindow(subWindow);
@@ -54,7 +64,6 @@ namespace Target2021
             SetText(sxCounterWindow, textBox1.Text);
             SetText(dxCounterWindow, textBox2.Text);
         }
-
         private IntPtr getSubWindow()
         {
             IntPtr mainWindow = FindWindow("WindowsForms10.Window.8.app.0.378734a", "CMS Operator Interfacev.5.3.0 - NC Name: 192.168.139.1");
@@ -171,29 +180,9 @@ namespace Target2021
         [DllImport("user32.dll")]
         static extern IntPtr GetDlgItem(IntPtr hDlg, int nIDDlgItem);
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Scanna_Load(object sender, EventArgs e)
         {
-
+            timer1.Interval = 60000;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -217,7 +206,13 @@ namespace Target2021
             connessione.Open();
             cmd.ExecuteNonQuery();
             connessione.Close();
-            MessageBox.Show("Operazione completata con successo");
+            //MessageBox.Show("Operazione completata con successo");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            bottone1();
+            bottone2();
         }
     }
 }

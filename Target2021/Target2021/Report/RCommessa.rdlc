@@ -626,8 +626,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox24</rd:DefaultName>
-        <Top>7.69648cm</Top>
-        <Left>5.02391cm</Left>
+        <Top>15.18419cm</Top>
+        <Left>5.51306cm</Left>
         <Height>0.74083cm</Height>
         <Width>3.04271cm</Width>
         <ZIndex>22</ZIndex>
@@ -656,10 +656,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
-        <Top>9.22196cm</Top>
-        <Left>0.47307cm</Left>
+        <Top>16.70967cm</Top>
+        <Left>0.96222cm</Left>
         <Height>0.635cm</Height>
-        <Width>5.5468cm</Width>
+        <Width>6.04951cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -686,10 +686,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
-        <Top>9.22196cm</Top>
-        <Left>11.92953cm</Left>
+        <Top>16.74495cm</Top>
+        <Left>12.41868cm</Left>
         <Height>0.635cm</Height>
-        <Width>5.5468cm</Width>
+        <Width>5.79849cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -719,10 +719,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProgrTaglio1</rd:DefaultName>
-        <Top>10.03335cm</Top>
-        <Left>0.566cm</Left>
+        <Top>17.52106cm</Top>
+        <Left>0.96222cm</Left>
         <Height>1.81708cm</Height>
-        <Width>5.5468cm</Width>
+        <Width>7.59355cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
           <Border>
@@ -752,10 +752,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProgrTaglio2</rd:DefaultName>
-        <Top>9.99807cm</Top>
-        <Left>12.02246cm</Left>
+        <Top>17.55633cm</Top>
+        <Left>9.79051cm</Left>
         <Height>1.85236cm</Height>
-        <Width>5.5468cm</Width>
+        <Width>8.42666cm</Width>
         <ZIndex>26</ZIndex>
         <Style>
           <Border>
@@ -849,8 +849,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NrCommessa1</rd:DefaultName>
-        <Top>7.2996cm</Top>
-        <Left>8.3353cm</Left>
+        <Top>14.78731cm</Top>
+        <Left>8.82445cm</Left>
         <Height>1.74597cm</Height>
         <Width>5.45042cm</Width>
         <ZIndex>29</ZIndex>
@@ -864,8 +864,20 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line4">
+        <Top>14.39016cm</Top>
+        <Left>0.55245cm</Left>
+        <Height>0cm</Height>
+        <Width>18.34381cm</Width>
+        <ZIndex>30</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
-    <Height>5.17708in</Height>
+    <Height>7.92708in</Height>
     <Style />
   </Body>
   <Width>7.65823in</Width>

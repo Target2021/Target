@@ -12,7 +12,7 @@
     <Shape ID="DesignTable:clienti" ZOrder="29" X="1286" Y="70" Height="305" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:CompatibStampa" ZOrder="27" X="1835" Y="70" Height="134" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:CompatibTaglio" ZOrder="26" X="2150" Y="70" Height="134" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:Configurazione" ZOrder="25" X="2457" Y="70" Height="134" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:Configurazione" ZOrder="25" X="2457" Y="70" Height="210" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:dettaglio_ordini_multiriga" ZOrder="24" X="2760" Y="70" Height="305" Width="295" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:DettArticoli" ZOrder="23" X="3125" Y="70" Height="305" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Dime" ZOrder="22" X="3407" Y="70" Height="229" Width="175" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />

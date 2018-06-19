@@ -4994,6 +4994,14 @@ namespace Target2021 {
             
             private global::System.Data.DataColumn columnDataUltimoOrdine;
             
+            private global::System.Data.DataColumn columnCodCommessaSinistra;
+            
+            private global::System.Data.DataColumn columnCodCommessaDestra;
+            
+            private global::System.Data.DataColumn columnPezziScartatiSinistra;
+            
+            private global::System.Data.DataColumn columnPezziScartatiDestra;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ConfigurazioneDataTable() {
@@ -5053,6 +5061,38 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CodCommessaSinistraColumn {
+                get {
+                    return this.columnCodCommessaSinistra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CodCommessaDestraColumn {
+                get {
+                    return this.columnCodCommessaDestra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PezziScartatiSinistraColumn {
+                get {
+                    return this.columnPezziScartatiSinistra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PezziScartatiDestraColumn {
+                get {
+                    return this.columnPezziScartatiDestra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5088,12 +5128,16 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ConfigurazioneRow AddConfigurazioneRow(int IDAzienda, int NrUltimoOrdineLetto, System.DateTime DataUltimoOrdine) {
+            public ConfigurazioneRow AddConfigurazioneRow(int IDAzienda, int NrUltimoOrdineLetto, System.DateTime DataUltimoOrdine, string CodCommessaSinistra, string CodCommessaDestra, int PezziScartatiSinistra, int PezziScartatiDestra) {
                 ConfigurazioneRow rowConfigurazioneRow = ((ConfigurazioneRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         IDAzienda,
                         NrUltimoOrdineLetto,
-                        DataUltimoOrdine};
+                        DataUltimoOrdine,
+                        CodCommessaSinistra,
+                        CodCommessaDestra,
+                        PezziScartatiSinistra,
+                        PezziScartatiDestra};
                 rowConfigurazioneRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowConfigurazioneRow);
                 return rowConfigurazioneRow;
@@ -5126,6 +5170,10 @@ namespace Target2021 {
                 this.columnIDAzienda = base.Columns["IDAzienda"];
                 this.columnNrUltimoOrdineLetto = base.Columns["NrUltimoOrdineLetto"];
                 this.columnDataUltimoOrdine = base.Columns["DataUltimoOrdine"];
+                this.columnCodCommessaSinistra = base.Columns["CodCommessaSinistra"];
+                this.columnCodCommessaDestra = base.Columns["CodCommessaDestra"];
+                this.columnPezziScartatiSinistra = base.Columns["PezziScartatiSinistra"];
+                this.columnPezziScartatiDestra = base.Columns["PezziScartatiDestra"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5137,11 +5185,21 @@ namespace Target2021 {
                 base.Columns.Add(this.columnNrUltimoOrdineLetto);
                 this.columnDataUltimoOrdine = new global::System.Data.DataColumn("DataUltimoOrdine", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataUltimoOrdine);
+                this.columnCodCommessaSinistra = new global::System.Data.DataColumn("CodCommessaSinistra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodCommessaSinistra);
+                this.columnCodCommessaDestra = new global::System.Data.DataColumn("CodCommessaDestra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodCommessaDestra);
+                this.columnPezziScartatiSinistra = new global::System.Data.DataColumn("PezziScartatiSinistra", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPezziScartatiSinistra);
+                this.columnPezziScartatiDestra = new global::System.Data.DataColumn("PezziScartatiDestra", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPezziScartatiDestra);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDAzienda}, true));
                 this.columnIDAzienda.AllowDBNull = false;
                 this.columnIDAzienda.Unique = true;
                 this.columnNrUltimoOrdineLetto.AllowDBNull = false;
+                this.columnCodCommessaSinistra.MaxLength = 10;
+                this.columnCodCommessaDestra.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18896,6 +18954,74 @@ namespace Target2021 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CodCommessaSinistra {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfigurazione.CodCommessaSinistraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'CodCommessaSinistra\' nella tabella \'Configurazione\' è DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfigurazione.CodCommessaSinistraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string CodCommessaDestra {
+                get {
+                    try {
+                        return ((string)(this[this.tableConfigurazione.CodCommessaDestraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'CodCommessaDestra\' nella tabella \'Configurazione\' è DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfigurazione.CodCommessaDestraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int PezziScartatiSinistra {
+                get {
+                    try {
+                        return ((int)(this[this.tableConfigurazione.PezziScartatiSinistraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'PezziScartatiSinistra\' nella tabella \'Configurazione\' è " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfigurazione.PezziScartatiSinistraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int PezziScartatiDestra {
+                get {
+                    try {
+                        return ((int)(this[this.tableConfigurazione.PezziScartatiDestraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'PezziScartatiDestra\' nella tabella \'Configurazione\' è DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableConfigurazione.PezziScartatiDestraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsDataUltimoOrdineNull() {
                 return this.IsNull(this.tableConfigurazione.DataUltimoOrdineColumn);
             }
@@ -18904,6 +19030,54 @@ namespace Target2021 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDataUltimoOrdineNull() {
                 this[this.tableConfigurazione.DataUltimoOrdineColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCodCommessaSinistraNull() {
+                return this.IsNull(this.tableConfigurazione.CodCommessaSinistraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCodCommessaSinistraNull() {
+                this[this.tableConfigurazione.CodCommessaSinistraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCodCommessaDestraNull() {
+                return this.IsNull(this.tableConfigurazione.CodCommessaDestraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCodCommessaDestraNull() {
+                this[this.tableConfigurazione.CodCommessaDestraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPezziScartatiSinistraNull() {
+                return this.IsNull(this.tableConfigurazione.PezziScartatiSinistraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPezziScartatiSinistraNull() {
+                this[this.tableConfigurazione.PezziScartatiSinistraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPezziScartatiDestraNull() {
+                return this.IsNull(this.tableConfigurazione.PezziScartatiDestraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPezziScartatiDestraNull() {
+                this[this.tableConfigurazione.PezziScartatiDestraColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -34672,35 +34846,63 @@ SELECT IDTaglio, IDArticolo, IDMacchinaTaglio FROM CompatibTaglio WHERE (IDTagli
             tableMapping.ColumnMappings.Add("IDAzienda", "IDAzienda");
             tableMapping.ColumnMappings.Add("NrUltimoOrdineLetto", "NrUltimoOrdineLetto");
             tableMapping.ColumnMappings.Add("DataUltimoOrdine", "DataUltimoOrdine");
+            tableMapping.ColumnMappings.Add("CodCommessaSinistra", "CodCommessaSinistra");
+            tableMapping.ColumnMappings.Add("CodCommessaDestra", "CodCommessaDestra");
+            tableMapping.ColumnMappings.Add("PezziScartatiSinistra", "PezziScartatiSinistra");
+            tableMapping.ColumnMappings.Add("PezziScartatiDestra", "PezziScartatiDestra");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Configurazione] WHERE (([IDAzienda] = @Original_IDAzienda) AND ([NrUltimoOrdineLetto] = @Original_NrUltimoOrdineLetto) AND ((@IsNull_DataUltimoOrdine = 1 AND [DataUltimoOrdine] IS NULL) OR ([DataUltimoOrdine] = @Original_DataUltimoOrdine)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Configurazione] WHERE (([IDAzienda] = @Original_IDAzienda) AND ([NrUltimoOrdineLetto] = @Original_NrUltimoOrdineLetto) AND ((@IsNull_DataUltimoOrdine = 1 AND [DataUltimoOrdine] IS NULL) OR ([DataUltimoOrdine] = @Original_DataUltimoOrdine)) AND ((@IsNull_CodCommessaDestra = 1 AND [CodCommessaDestra] IS NULL) OR ([CodCommessaDestra] = @Original_CodCommessaDestra)) AND ((@IsNull_CodCommessaSinistra = 1 AND [CodCommessaSinistra] IS NULL) OR ([CodCommessaSinistra] = @Original_CodCommessaSinistra)) AND ((@IsNull_PezziScartatiDestra = 1 AND [PezziScartatiDestra] IS NULL) OR ([PezziScartatiDestra] = @Original_PezziScartatiDestra)) AND ((@IsNull_PezziScartatiSinistra = 1 AND [PezziScartatiSinistra] IS NULL) OR ([PezziScartatiSinistra] = @Original_PezziScartatiSinistra)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDAzienda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDAzienda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrUltimoOrdineLetto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrUltimoOrdineLetto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataUltimoOrdine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataUltimoOrdine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataUltimoOrdine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataUltimoOrdine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodCommessaDestra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaDestra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodCommessaDestra", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaDestra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodCommessaSinistra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaSinistra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodCommessaSinistra", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaSinistra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PezziScartatiDestra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiDestra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PezziScartatiDestra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiDestra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PezziScartatiSinistra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiSinistra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PezziScartatiSinistra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiSinistra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Configurazione] ([IDAzienda], [NrUltimoOrdineLetto], [DataUltimoOrdine]) VALUES (@IDAzienda, @NrUltimoOrdineLetto, @DataUltimoOrdine);
-SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHERE (IDAzienda = @IDAzienda)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Configurazione] ([IDAzienda], [NrUltimoOrdineLetto], [DataUltimoOrdine], [CodCommessaDestra], [CodCommessaSinistra], [PezziScartatiDestra], [PezziScartatiSinistra]) VALUES (@IDAzienda, @NrUltimoOrdineLetto, @DataUltimoOrdine, @CodCommessaDestra, @CodCommessaSinistra, @PezziScartatiDestra, @PezziScartatiSinistra);
+SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine, CodCommessaDestra, CodCommessaSinistra, PezziScartatiDestra, PezziScartatiSinistra FROM Configurazione WHERE (IDAzienda = @IDAzienda)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAzienda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDAzienda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrUltimoOrdineLetto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrUltimoOrdineLetto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataUltimoOrdine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataUltimoOrdine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodCommessaDestra", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaDestra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodCommessaSinistra", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaSinistra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PezziScartatiDestra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiDestra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PezziScartatiSinistra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiSinistra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Configurazione] SET [IDAzienda] = @IDAzienda, [NrUltimoOrdineLetto] = @NrUltimoOrdineLetto, [DataUltimoOrdine] = @DataUltimoOrdine WHERE (([IDAzienda] = @Original_IDAzienda) AND ([NrUltimoOrdineLetto] = @Original_NrUltimoOrdineLetto) AND ((@IsNull_DataUltimoOrdine = 1 AND [DataUltimoOrdine] IS NULL) OR ([DataUltimoOrdine] = @Original_DataUltimoOrdine)));
-SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHERE (IDAzienda = @IDAzienda)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Configurazione] SET [IDAzienda] = @IDAzienda, [NrUltimoOrdineLetto] = @NrUltimoOrdineLetto, [DataUltimoOrdine] = @DataUltimoOrdine, [CodCommessaDestra] = @CodCommessaDestra, [CodCommessaSinistra] = @CodCommessaSinistra, [PezziScartatiDestra] = @PezziScartatiDestra, [PezziScartatiSinistra] = @PezziScartatiSinistra WHERE (([IDAzienda] = @Original_IDAzienda) AND ([NrUltimoOrdineLetto] = @Original_NrUltimoOrdineLetto) AND ((@IsNull_DataUltimoOrdine = 1 AND [DataUltimoOrdine] IS NULL) OR ([DataUltimoOrdine] = @Original_DataUltimoOrdine)) AND ((@IsNull_CodCommessaDestra = 1 AND [CodCommessaDestra] IS NULL) OR ([CodCommessaDestra] = @Original_CodCommessaDestra)) AND ((@IsNull_CodCommessaSinistra = 1 AND [CodCommessaSinistra] IS NULL) OR ([CodCommessaSinistra] = @Original_CodCommessaSinistra)) AND ((@IsNull_PezziScartatiDestra = 1 AND [PezziScartatiDestra] IS NULL) OR ([PezziScartatiDestra] = @Original_PezziScartatiDestra)) AND ((@IsNull_PezziScartatiSinistra = 1 AND [PezziScartatiSinistra] IS NULL) OR ([PezziScartatiSinistra] = @Original_PezziScartatiSinistra)));
+SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine, CodCommessaDestra, CodCommessaSinistra, PezziScartatiDestra, PezziScartatiSinistra FROM Configurazione WHERE (IDAzienda = @IDAzienda)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAzienda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDAzienda", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NrUltimoOrdineLetto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrUltimoOrdineLetto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataUltimoOrdine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataUltimoOrdine", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodCommessaDestra", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaDestra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodCommessaSinistra", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaSinistra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PezziScartatiDestra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiDestra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PezziScartatiSinistra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiSinistra", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDAzienda", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDAzienda", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NrUltimoOrdineLetto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NrUltimoOrdineLetto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataUltimoOrdine", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataUltimoOrdine", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataUltimoOrdine", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataUltimoOrdine", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodCommessaDestra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaDestra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodCommessaDestra", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaDestra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CodCommessaSinistra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaSinistra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodCommessaSinistra", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodCommessaSinistra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PezziScartatiDestra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiDestra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PezziScartatiDestra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiDestra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PezziScartatiSinistra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiSinistra", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PezziScartatiSinistra", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PezziScartatiSinistra", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -34716,7 +34918,8 @@ SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM dbo.Configurazione";
+            this._commandCollection[0].CommandText = "SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine, CodCommessaDestra, CodCo" +
+                "mmessaSinistra, PezziScartatiDestra, PezziScartatiSinistra FROM Configurazione";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -34777,7 +34980,7 @@ SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IDAzienda, int Original_NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> Original_DataUltimoOrdine) {
+        public virtual int Delete(int Original_IDAzienda, int Original_NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> Original_DataUltimoOrdine, string Original_CodCommessaDestra, string Original_CodCommessaSinistra, global::System.Nullable<int> Original_PezziScartatiDestra, global::System.Nullable<int> Original_PezziScartatiSinistra) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IDAzienda));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_NrUltimoOrdineLetto));
             if ((Original_DataUltimoOrdine.HasValue == true)) {
@@ -34787,6 +34990,38 @@ SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHER
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CodCommessaDestra == null)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_CodCommessaDestra));
+            }
+            if ((Original_CodCommessaSinistra == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_CodCommessaSinistra));
+            }
+            if ((Original_PezziScartatiDestra.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_PezziScartatiDestra.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PezziScartatiSinistra.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_PezziScartatiSinistra.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -34808,7 +35043,7 @@ SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IDAzienda, int NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> DataUltimoOrdine) {
+        public virtual int Insert(int IDAzienda, int NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> DataUltimoOrdine, string CodCommessaDestra, string CodCommessaSinistra, global::System.Nullable<int> PezziScartatiDestra, global::System.Nullable<int> PezziScartatiSinistra) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDAzienda));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(NrUltimoOrdineLetto));
             if ((DataUltimoOrdine.HasValue == true)) {
@@ -34816,6 +35051,30 @@ SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHER
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((CodCommessaDestra == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CodCommessaDestra));
+            }
+            if ((CodCommessaSinistra == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(CodCommessaSinistra));
+            }
+            if ((PezziScartatiDestra.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(PezziScartatiDestra.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((PezziScartatiSinistra.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(PezziScartatiSinistra.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -34837,7 +35096,7 @@ SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IDAzienda, int NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> DataUltimoOrdine, int Original_IDAzienda, int Original_NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> Original_DataUltimoOrdine) {
+        public virtual int Update(int IDAzienda, int NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> DataUltimoOrdine, string CodCommessaDestra, string CodCommessaSinistra, global::System.Nullable<int> PezziScartatiDestra, global::System.Nullable<int> PezziScartatiSinistra, int Original_IDAzienda, int Original_NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> Original_DataUltimoOrdine, string Original_CodCommessaDestra, string Original_CodCommessaSinistra, global::System.Nullable<int> Original_PezziScartatiDestra, global::System.Nullable<int> Original_PezziScartatiSinistra) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDAzienda));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(NrUltimoOrdineLetto));
             if ((DataUltimoOrdine.HasValue == true)) {
@@ -34846,15 +35105,71 @@ SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHER
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_IDAzienda));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_NrUltimoOrdineLetto));
-            if ((Original_DataUltimoOrdine.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_DataUltimoOrdine.Value));
+            if ((CodCommessaDestra == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(CodCommessaDestra));
+            }
+            if ((CodCommessaSinistra == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(CodCommessaSinistra));
+            }
+            if ((PezziScartatiDestra.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(PezziScartatiDestra.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((PezziScartatiSinistra.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(PezziScartatiSinistra.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_IDAzienda));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_NrUltimoOrdineLetto));
+            if ((Original_DataUltimoOrdine.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DataUltimoOrdine.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_CodCommessaDestra == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_CodCommessaDestra));
+            }
+            if ((Original_CodCommessaSinistra == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_CodCommessaSinistra));
+            }
+            if ((Original_PezziScartatiDestra.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_PezziScartatiDestra.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PezziScartatiSinistra.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_PezziScartatiSinistra.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -34876,8 +35191,8 @@ SELECT IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine FROM Configurazione WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> DataUltimoOrdine, int Original_IDAzienda, int Original_NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> Original_DataUltimoOrdine) {
-            return this.Update(Original_IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine, Original_IDAzienda, Original_NrUltimoOrdineLetto, Original_DataUltimoOrdine);
+        public virtual int Update(int NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> DataUltimoOrdine, string CodCommessaDestra, string CodCommessaSinistra, global::System.Nullable<int> PezziScartatiDestra, global::System.Nullable<int> PezziScartatiSinistra, int Original_IDAzienda, int Original_NrUltimoOrdineLetto, global::System.Nullable<global::System.DateTime> Original_DataUltimoOrdine, string Original_CodCommessaDestra, string Original_CodCommessaSinistra, global::System.Nullable<int> Original_PezziScartatiDestra, global::System.Nullable<int> Original_PezziScartatiSinistra) {
+            return this.Update(Original_IDAzienda, NrUltimoOrdineLetto, DataUltimoOrdine, CodCommessaDestra, CodCommessaSinistra, PezziScartatiDestra, PezziScartatiSinistra, Original_IDAzienda, Original_NrUltimoOrdineLetto, Original_DataUltimoOrdine, Original_CodCommessaDestra, Original_CodCommessaSinistra, Original_PezziScartatiDestra, Original_PezziScartatiSinistra);
         }
     }
     
