@@ -21,26 +21,28 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                List<WinText> windows = new List<WinText>();
 
-            List<WinText> windows = new List<WinText>();
+                IntPtr subWindow = getSubWindow();
+                IntPtr sxCounterWindow = getSxCounterWindow(subWindow);
+                IntPtr dxCounterWindow = getDxCounterWindow(subWindow);
+                // Legge i programmi di taglio
+                IntPtr sxProgrTaglio = LeggiProgrTaglioSx(subWindow);
+                IntPtr dxProgrTaglio = LeggiProgrTaglioDx(subWindow);
+                // Legge i secondi dei cicli di taglio
+                IntPtr sxSecondiCiclo = LeggiSecondiCicloSx(subWindow);
+                IntPtr dxSecondiCiclo = LeggiSecondiCicloDx(subWindow);
 
-            IntPtr subWindow = getSubWindow();
-            IntPtr sxCounterWindow = getSxCounterWindow(subWindow);
-            IntPtr dxCounterWindow = getDxCounterWindow(subWindow);
-            // Legge i programmi di taglio
-            IntPtr sxProgrTaglio = LeggiProgrTaglioSx(subWindow);
-            IntPtr dxProgrTaglio = LeggiProgrTaglioDx(subWindow);
-            // Legge i secondi dei cicli di taglio
-            IntPtr sxSecondiCiclo = LeggiSecondiCicloSx(subWindow);
-            IntPtr dxSecondiCiclo = LeggiSecondiCicloDx(subWindow);
-
-            textBox1.Text = GetText(sxCounterWindow);
-            textBox2.Text = GetText(dxCounterWindow);
-            textBox3.Text = GetText(sxProgrTaglio);
-            textBox4.Text = GetText(dxProgrTaglio);
-            textBox5.Text = GetText(sxSecondiCiclo);
-            textBox6.Text = GetText(dxSecondiCiclo);
-
+                textBox1.Text = GetText(sxCounterWindow);
+                textBox2.Text = GetText(dxCounterWindow);
+                textBox3.Text = GetText(sxProgrTaglio);
+                textBox4.Text = GetText(dxProgrTaglio);
+                textBox5.Text = GetText(sxSecondiCiclo);
+                textBox6.Text = GetText(dxSecondiCiclo);
+            }
+            catch { }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,7 +53,6 @@ namespace Target2021
 
             SetText(sxCounterWindow, textBox1.Text);
             SetText(dxCounterWindow, textBox2.Text);
-
         }
 
         private IntPtr getSubWindow()

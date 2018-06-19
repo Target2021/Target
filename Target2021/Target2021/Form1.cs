@@ -284,6 +284,12 @@ namespace Target2021
             mt.Show();
         }
 
+        private void stampaSchedaCommessaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stampacommessa stampa = new stampacommessa();
+            stampa.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
