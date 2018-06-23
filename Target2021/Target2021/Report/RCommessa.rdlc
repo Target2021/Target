@@ -39,7 +39,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!OrdCliente.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -68,7 +70,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Data:</Value>
+                <Value>Data ordine:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -79,7 +81,7 @@
         <Top>2.25432cm</Top>
         <Left>6.45266cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.61396cm</Width>
+        <Width>2.10311cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -99,7 +101,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=FormatDateTime(First(Fields!DataCommessa.Value, "DataSet1"), DateFormat.ShortDate)</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -107,7 +111,7 @@
         </Paragraphs>
         <rd:DefaultName>DataCommessa</rd:DefaultName>
         <Top>2.25432cm</Top>
-        <Left>8.20773cm</Left>
+        <Left>8.82445cm</Left>
         <Height>0.6cm</Height>
         <Width>3.24083cm</Width>
         <ZIndex>3</ZIndex>
@@ -137,7 +141,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>2.25432cm</Top>
-        <Left>11.92953cm</Left>
+        <Left>13.2518cm</Left>
         <Height>0.6cm</Height>
         <Width>2.96333cm</Width>
         <ZIndex>4</ZIndex>
@@ -159,7 +163,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=FormatDateTime(First(Fields!DataConsegna.Value, "DataSet1"), DateFormat.ShortDate)</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -167,7 +173,7 @@
         </Paragraphs>
         <rd:DefaultName>DataConsegna</rd:DefaultName>
         <Top>2.25432cm</Top>
-        <Left>15.06926cm</Left>
+        <Left>16.39153cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>5</ZIndex>
@@ -252,10 +258,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>0.27849cm</Top>
-        <Left>9.79051cm</Left>
+        <Top>0.0762cm</Top>
+        <Left>9.07613cm</Left>
         <Height>0.58208cm</Height>
-        <Width>3.99521cm</Width>
+        <Width>4.1275cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -282,10 +288,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>0.27849cm</Top>
-        <Left>14.90106cm</Left>
+        <Top>0.0762cm</Top>
+        <Left>14.62357cm</Left>
         <Height>0.58208cm</Height>
-        <Width>3.99521cm</Width>
+        <Width>3.19673cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -304,18 +310,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!IDMachStampa.Value, "DataSet1")</Value>
+                <Label>NrMachStamp</Label>
+                <Value>=First(Fields!IDMachStampa.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IDMachStampa</rd:DefaultName>
-        <Top>1.31037cm</Top>
-        <Left>10.31085cm</Left>
+        <Top>0.05828cm</Top>
+        <Left>13.30947cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>0.9654cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -334,18 +343,20 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!IDMachTaglio.Value, "DataSet1")</Value>
+                <Value>=First(Fields!IDMachTaglio.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IDMachTaglio</rd:DefaultName>
-        <Top>1.31037cm</Top>
-        <Left>15.71717cm</Left>
+        <Top>0.0762cm</Top>
+        <Left>17.92613cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Width>0.9654cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -455,7 +466,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!CodArticolo.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -515,7 +528,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=Sum(Fields!NrPezziDaLavorare.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -748,7 +763,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ProgrTaglio2</rd:DefaultName>
@@ -838,7 +855,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="*"+First(Fields!CodCommessa.Value, "DataSet1")+"*"</Value>
+                <Value>="*"+Lookup(3, Fields!TipoCommessa.Value, Fields!CodCommessa.Value, "DataSet1")   +"*"</Value>
                 <Style>
                   <FontFamily>IDAHC39M Code 39 Barcode</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -876,6 +893,72 @@
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Descrizione">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Lookup(First(Fields!IDMachStampa.Value, "DataSet1"), Fields!IdStampa.Value, Fields!Descrizione.Value, "DataSet2")</Value>
+                <Style>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Descrizione</rd:DefaultName>
+        <Top>0.96724cm</Top>
+        <Left>10.59306cm</Left>
+        <Height>0.90785cm</Height>
+        <Width>3.68181cm</Width>
+        <ZIndex>31</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Descrizione1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Lookup(First(Fields!IDMachTaglio.Value, "DataSet1"), Fields!IDTaglio.Value, Fields!Descrizione.Value, "DataSet3")</Value>
+                <Style>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Descrizione1</rd:DefaultName>
+        <Top>0.96724cm</Top>
+        <Left>15.9682cm</Left>
+        <Height>0.90785cm</Height>
+        <Width>2.92333cm</Width>
+        <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>7.92708in</Height>
     <Style />
@@ -1128,6 +1211,90 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>CommesseTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>Target2021DataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="IdStampa">
+          <DataField>IdStampa</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Descrizione">
+          <DataField>Descrizione</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fascia1m2">
+          <DataField>Fascia1m2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CostoFascia1">
+          <DataField>CostoFascia1</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Fascia2m2">
+          <DataField>Fascia2m2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CostoFascia2">
+          <DataField>CostoFascia2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Fascia3m2">
+          <DataField>Fascia3m2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CostoFascia3">
+          <DataField>CostoFascia3</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Fascia4m2">
+          <DataField>Fascia4m2</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CostoFascia4">
+          <DataField>CostoFascia4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Target2021DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\flavi\Desktop\Target\Target2021\Target\Target2021\Target2021\Target2021DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>MacchineStampo</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>MacchineStampoTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet3">
+      <Query>
+        <DataSourceName>Target2021DataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="IDTaglio">
+          <DataField>IDTaglio</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Descrizione">
+          <DataField>Descrizione</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CostoMinuto">
+          <DataField>CostoMinuto</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Target2021DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\flavi\Desktop\Target\Target2021\Target\Target2021\Target2021\Target2021DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>MacchineTaglio</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>MacchineTaglioTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

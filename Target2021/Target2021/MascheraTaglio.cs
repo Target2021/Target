@@ -402,22 +402,23 @@ namespace Target2021
         }
 
         private void aggiornagiacenze(string ccom, int npez)
-        {   // SE c'è lo aggiorna, se non c'è lo inserisce
-            //int IDMagazzino = 5, quantita = 0;
-            //string IDArticoli, BarCode, Ordine;
-            //DateTime DataMovimento;
+        {   
+            // SE c'è lo aggiorna, se non c'è lo inserisce
+            int IDMagazzino = 5, quantita = 0;
+            string IDArticoli, BarCode, Ordine;
+            DateTime DataMovimento;
 
-            //quantita = npez;
-            //Ordine = ccom;
+            quantita = npez;
+            Ordine = ccom;
 
-            //DataMovimento = DateTime.Now;
-            //IDArticoli = RitCodArticolo(ccom);
+            DataMovimento = DateTime.Now;
+            IDArticoli = RitCodArticolo(ccom);
 
             //Inserisce movimento in MOVIMENTI DI MAGAZZINO
-            //string stringa_connessione;
-            //stringa_connessione = Properties.Resources.StringaConnessione;
-            //SqlConnection conn = new SqlConnection(stringa_connessione);
-            //string queryCliente = "INSERT INTO MovimentiMagazzino (idMagazzino, idArticoli, CarScar, Quantita, Barcode, NrOrdine, DataOraMovimento) VALUES (5, @ida, 'C', @q, @bc, @nro, @dtm)";
+            string stringa_connessione;
+            stringa_connessione = Properties.Resources.StringaConnessione;
+            SqlConnection conn = new SqlConnection(stringa_connessione);
+            //string queryCliente = "UPDATE INTO MovimentiMagazzino (idMagazzino, idArticoli, CarScar, Quantita, Barcode, NrOrdine, DataOraMovimento) VALUES (5, @ida, 'C', @q, @bc, @nro, @dtm)";
             //SqlCommand comando = new SqlCommand(queryCliente, conn);
             //comando.Parameters.AddWithValue("@ida", IDArticoli);
             //comando.Parameters.AddWithValue("@q", quantita);

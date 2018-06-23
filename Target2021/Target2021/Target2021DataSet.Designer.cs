@@ -46801,11 +46801,18 @@ SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastreRichieste, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, AttG1, OISG1, OFSG1, AttG2, OISG2, OFSG2, AttG3, OISG3, OSFG3, AttG4, OISG4, OFSG4, AttG5, OISG5, OFSG5, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, ImpegnataMatPrima, EvasoParziale, ProgrTaglio1, ProgrTaglio2 FROM Commesse";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT IDCommessa, CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, Note, Foto, IDFornitore, IDMachStampa, IDStampo, PercentualeUtilizzoLastra, CodArtiDopoStampo, IDMachTaglio, IDDima, CodArtiDopoTaglio, IDMateriaPrima, NrLastreRichieste, IDMinuteria, Qtaminuteria, NrPezziOrdinati, NrOrdine, LottoAcquisto, DataTermine, NrPezziCorretti, NrPezziScartati, AttG1, OISG1, OFSG1, AttG2, OISG2, OFSG2, AttG3, OISG3, OSFG3, AttG4, OISG4, OFSG4, AttG5, OISG5, OFSG5, SecondiCicloTaglio, MinutiAttrezzaggio, Stato, ImpegnataMatPrima, EvasoParziale, ProgrTaglio1, ProgrTaglio2 
+FROM Commesse
+WHERE NrCommessa = @Numero";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Numero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NrCommessa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -46830,6 +46837,20 @@ SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA =
             Target2021DataSet.CommesseDataTable dataTable = new Target2021DataSet.CommesseDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNr(Target2021DataSet.CommesseDataTable dataTable, int Numero) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Numero));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
