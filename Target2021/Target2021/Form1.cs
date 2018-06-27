@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Target2021.Anagrafiche;
+using Target2021.Stampe;
 
 namespace Target2021
 {
@@ -297,6 +298,25 @@ namespace Target2021
             MascheraTaglio MT = new MascheraTaglio();
             MT.MdiParent = this;
             MT.Show();
+        }
+
+        private void nuovoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuovoArticolo NA = new NuovoArticolo();
+            NA.MdiParent = this;
+            NA.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void etichetteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SEtichette StampaEtichette = new SEtichette();
+            StampaEtichette .MdiParent = this;
+            StampaEtichette .Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

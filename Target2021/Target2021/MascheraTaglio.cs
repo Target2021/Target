@@ -21,18 +21,19 @@ namespace Target2021
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            timer1.Start();
+            timer1.Stop();
+            if (textBox1 .Text !="" && textBox1 .Text !="          ") timer1.Start();
         }
 
         private void MascheraTaglio_Load(object sender, EventArgs e)
         {
             Scanna scanner = new Scanna();
             textBox1.Enabled = false;
-            timer1.Interval = 1000;
+            timer1.Interval = 500;
             timer2.Interval = 6000;
             timer1.Stop();
             timer2.Stop();
-
+            textBox1.Text = "";
             // CARICA DATI DI PARTENZA
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
@@ -50,6 +51,8 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
+            textBox2.Text = "";
             textBox1.Enabled = true;
             textBox1.Focus();
         }
@@ -57,14 +60,16 @@ namespace Target2021
         private void timer1_Tick(object sender, EventArgs e)
         {
             string PGTaglioInMacchina,PGTaglioInCommessa;
-
+            //label7.Text = (Convert.ToInt32(label7.Text) + 1).ToString();
             //timer1.Stop();
             textBox1.Enabled = false;
             //textBox4.Focus();
             leggiprogrammataglio();
             PGTaglioInMacchina = controllaPGMacchina();
             PGTaglioInCommessa = controllaPGCommessa(textBox1.Text);
-            if (PGTaglioInMacchina == PGTaglioInCommessa)
+            //label7.Text = PGTaglioInMacchina;
+            //label8.Text = PGTaglioInCommessa;
+            if (PGTaglioInMacchina == PGTaglioInCommessa && PGTaglioInMacchina !="")
             {
                 label6.Visible = false;
                 timer1.Stop();
@@ -127,14 +132,17 @@ namespace Target2021
 
         private string controllaPGCommessa(string Prog)
         {
-            string CodCommessa, stringa_connessione, Programma;
+            string CodCommessa, stringa_connessione, Programma = "";
             stringa_connessione = Properties.Resources.StringaConnessione;
             SqlConnection conn = new SqlConnection(stringa_connessione);
             string queryCliente = "Select ProgrTaglio1 From Commesse Where CodCommessa='" + Prog+"'";
             SqlCommand comando = new SqlCommand(queryCliente, conn);
-            conn.Open();
-            Programma = comando.ExecuteScalar().ToString();
-            conn.Close();
+            try
+            {
+                conn.Open();
+                Programma = comando.ExecuteScalar().ToString();
+                conn.Close();
+            } catch { }
             Programma = Programma.TrimEnd();
             return Programma;
         }
@@ -156,7 +164,7 @@ namespace Target2021
 
                 textBox3.Text = GetText(sxCounterWindow);
                 //textBox2.Text = GetText(dxCounterWindow);
-                textBox5.Text = GetText(sxSecondiCiclo);
+                if (GetText(sxSecondiCiclo)!="0")  textBox5.Text = GetText(sxSecondiCiclo);
                 //textBox6.Text = GetText(dxSecondiCiclo);
             }
             catch { }
@@ -318,7 +326,9 @@ namespace Target2021
                 salvatemp();
                 textBox1.Text = "";
                 timer1.Stop();
+                textBox3.Text = "0";
                 textBox4.Text = "0";
+                textBox5.Text = "0";
                 caricamagazzino(codicecommessa,pezzicorretti);
                 aggiornagiacenze(codicecommessa, pezzicorretti);
             }
@@ -326,6 +336,7 @@ namespace Target2021
             {
                 
             }
+            textBox2.Text = "";
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -402,9 +413,9 @@ namespace Target2021
         }
 
         private void aggiornagiacenze(string ccom, int npez)
-        {   
+        {
             // SE c'è lo aggiorna, se non c'è lo inserisce
-            int IDMagazzino = 5, quantita = 0;
+            int IDMagazzino = 5, quantita = 0, npezzi = 0;
             string IDArticoli, BarCode, Ordine;
             DateTime DataMovimento;
 
@@ -413,22 +424,37 @@ namespace Target2021
 
             DataMovimento = DateTime.Now;
             IDArticoli = RitCodArticolo(ccom);
+            npezzi = RecuperaGiacenzaComplessiva(IDArticoli);
 
             //Inserisce movimento in MOVIMENTI DI MAGAZZINO
             string stringa_connessione;
             stringa_connessione = Properties.Resources.StringaConnessione;
             SqlConnection conn = new SqlConnection(stringa_connessione);
-            //string queryCliente = "UPDATE INTO MovimentiMagazzino (idMagazzino, idArticoli, CarScar, Quantita, Barcode, NrOrdine, DataOraMovimento) VALUES (5, @ida, 'C', @q, @bc, @nro, @dtm)";
-            //SqlCommand comando = new SqlCommand(queryCliente, conn);
-            //comando.Parameters.AddWithValue("@ida", IDArticoli);
-            //comando.Parameters.AddWithValue("@q", quantita);
-            //comando.Parameters.AddWithValue("@bc", "123");
-            //comando.Parameters.AddWithValue("@nro", Ordine);
-            //comando.Parameters.AddWithValue("@dtm", DataMovimento);
+            string queryCliente = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva=@compl, GiacenzaDisponibili=@dispo, DataUltimoMovimento=@dtm WHERE idArticoli=@ida";
+            SqlCommand comando = new SqlCommand(queryCliente, conn);
+            comando.Parameters.AddWithValue("@ida", IDArticoli);
+            comando.Parameters.AddWithValue("@compl", npezzi + quantita);
+            comando.Parameters.AddWithValue("@dispo", npezzi + quantita);  // DA correggere
+            comando.Parameters.AddWithValue("@dtm", DataMovimento);
+            conn.Open();
+            comando.ExecuteNonQuery();
+            conn.Close();
+        }
 
-            //conn.Open();
-            //comando.ExecuteNonQuery();
-            //conn.Close();
+        private int RecuperaGiacenzaComplessiva(string CodArt)
+        {
+            int NrPezzi=0;
+
+            string stringa_connessione;
+            stringa_connessione = Properties.Resources.StringaConnessione;
+            SqlConnection conn = new SqlConnection(stringa_connessione);
+            string queryCliente = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idArticoli = @ida";
+            SqlCommand comando = new SqlCommand(queryCliente, conn);
+            comando.Parameters.AddWithValue("@ida", CodArt);
+            conn.Open();
+            NrPezzi =Convert.ToInt32(comando.ExecuteScalar());
+            conn.Close();
+            return NrPezzi;
         }
     }
 }

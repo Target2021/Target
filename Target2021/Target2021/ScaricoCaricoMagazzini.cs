@@ -36,10 +36,10 @@ namespace Target2021
             int id = Convert.ToInt32(cmd.ExecuteScalar())+1;
             con.Close();
             textBox1.Text = Convert.ToString(id);
-            label7.Visible = false;
-            label8.Visible = false;
-            textBox6.Visible = false;
-            textBox7.Visible = false;
+            //label7.Visible = false;
+            //label8.Visible = false;
+            //textBox6.Visible = false;
+            //textBox7.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,10 +57,10 @@ namespace Target2021
                 }
                 if(Scarico.Checked)
                 {
-                    label7.Visible = false;
-                    label8.Visible = false;
-                    textBox6.Visible = false;
-                    textBox7.Visible = false;
+                    //label7.Visible = false;
+                    //label8.Visible = false;
+                    //textBox6.Visible = false;
+                    //textBox7.Visible = false;
                     scarico(this.comboBox1.GetItemText(this.comboBox1.SelectedItem));
                 }
             }
@@ -122,7 +122,7 @@ namespace Target2021
             if (oggetto == "Articolo")
             {
                 queryup = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva='" + quantità + "' WHERE idArticoli='" + textBox3.Text + "'";
-                queryins = "INSERT INTO MovimentiMagazzino (idMovimento,idMagazzino,idArticoli,CarScar,Quantita,NrOrdine,DataOraMovimento,PesoMateriaPrima,PrezzoComplessivoMateriaPrima) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','S','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss.fff", CultureInfo.InvariantCulture) + "','" + textBox6.Text + "','" + textBox7.Text + "')";
+                queryins = "INSERT INTO MovimentiMagazzino (idMagazzino,idArticoli,CarScar,Quantita,NrOrdine,DataOraMovimento,PesoMateriaPrima,PrezzoComplessivoMateriaPrima) VALUES ('" + textBox2.Text + "','" + textBox3.Text + "','S','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss.fff", CultureInfo.InvariantCulture) + "','" + textBox6.Text + "','" + textBox7.Text + "')";
                 querydiff = "UPDATE GiacenzeMagazzini SET GiacenzaDisponibili=GiacenzaComplessiva-GiacenzaImpegnati WHERE idArticoli='" + textBox3.Text + "'";
 
             }
@@ -200,7 +200,7 @@ namespace Target2021
             if (oggetto == "Articolo")
             {
                 queryup = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva='" + quantità + "' WHERE idArticoli='" + textBox3.Text + "'";
-                queryins = "INSERT INTO MovimentiMagazzino (idMovimento,idMagazzino,idArticoli,CarScar,Quantita,NrOrdine,DataOraMovimento,PesoMateriaPrima,PrezzoComplessivoMateriaPrima) VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox3.Text + "','C','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss.fff", CultureInfo.InvariantCulture) + "','" + textBox6.Text + "','" + textBox7.Text + "')";
+                queryins = "INSERT INTO MovimentiMagazzino (idMagazzino,idArticoli,CarScar,Quantita,NrOrdine,DataOraMovimento,PesoMateriaPrima,PrezzoComplessivoMateriaPrima) VALUES ('" + textBox2.Text + "','" + textBox3.Text + "','C','" + textBox4.Text + "','" + textBox5.Text + "','" + DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss.fff", CultureInfo.InvariantCulture) + "','" + textBox6.Text + "','" + textBox7.Text + "')";
                 querydiff = "UPDATE GiacenzeMagazzini SET GiacenzaDisponibili=GiacenzaComplessiva-GiacenzaImpegnati WHERE idArticoli='" + textBox3.Text + "'";
 
             }

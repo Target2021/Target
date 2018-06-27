@@ -168,6 +168,12 @@
     <Compile Include="Anagrafiche\CheckAssemblaggio.Designer.cs">
       <DependentUpon>CheckAssemblaggio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\NuovoArticolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\NuovoArticolo.Designer.cs">
+      <DependentUpon>NuovoArticolo.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnArticForn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +341,12 @@
     <Compile Include="stampacommessa.Designer.cs">
       <DependentUpon>stampacommessa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stampe\SEtichette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stampe\SEtichette.Designer.cs">
+      <DependentUpon>SEtichette.cs</DependentUpon>
+    </Compile>
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -375,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\CheckAssemblaggio.resx">
       <DependentUpon>CheckAssemblaggio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\NuovoArticolo.resx">
+      <DependentUpon>NuovoArticolo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AnArticForn.resx">
       <DependentUpon>AnArticForn.cs</DependentUpon>
@@ -470,6 +485,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="stampacommessa.resx">
       <DependentUpon>stampacommessa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stampe\SEtichette.resx">
+      <DependentUpon>SEtichette.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
