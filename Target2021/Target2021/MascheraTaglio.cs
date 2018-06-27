@@ -29,6 +29,7 @@ namespace Target2021
         {
             Scanna scanner = new Scanna();
             textBox1.Enabled = false;
+            textBox12.Enabled = false;
             timer1.Interval = 500;
             timer2.Interval = 6000;
             timer1.Stop();
@@ -455,6 +456,19 @@ namespace Target2021
             NrPezzi =Convert.ToInt32(comando.ExecuteScalar());
             conn.Close();
             return NrPezzi;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox12.Text = "";
+            textBox11.Text = "";
+            textBox12.Enabled = true;
+            textBox12.Focus();
         }
     }
 }

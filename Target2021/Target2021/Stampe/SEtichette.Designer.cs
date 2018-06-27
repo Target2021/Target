@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,7 +42,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.abbinamentiArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.abbinamentiArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.AbbinamentiArticoliTableAdapter();
+            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
+            this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abbinamentiArticoliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,7 +123,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(216, 222);
+            this.button1.Location = new System.Drawing.Point(32, 222);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(326, 44);
             this.button1.TabIndex = 6;
@@ -152,17 +165,52 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(113, 302);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.commesseBindingSource;
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.clientiBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Target2021.Report.REtichetta.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(32, 272);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(756, 286);
             this.reportViewer1.TabIndex = 10;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // abbinamentiArticoliBindingSource
+            // 
+            this.abbinamentiArticoliBindingSource.DataMember = "AbbinamentiArticoli";
+            this.abbinamentiArticoliBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // abbinamentiArticoliTableAdapter
+            // 
+            this.abbinamentiArticoliTableAdapter.ClearBeforeFill = true;
+            // 
+            // commesseBindingSource
+            // 
+            this.commesseBindingSource.DataMember = "Commesse";
+            this.commesseBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // commesseTableAdapter
+            // 
+            this.commesseTableAdapter.ClearBeforeFill = true;
+            // 
+            // clientiBindingSource
+            // 
+            this.clientiBindingSource.DataMember = "clienti";
+            this.clientiBindingSource.DataSource = this.target2021DataSet;
             // 
             // SEtichette
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 570);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox2);
@@ -176,6 +224,10 @@
             this.Load += new System.EventHandler(this.SEtichette_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abbinamentiArticoliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,5 +246,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Target2021DataSet target2021DataSet;
+        private System.Windows.Forms.BindingSource abbinamentiArticoliBindingSource;
+        private Target2021DataSetTableAdapters.AbbinamentiArticoliTableAdapter abbinamentiArticoliTableAdapter;
+        private System.Windows.Forms.BindingSource commesseBindingSource;
+        private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
+        private System.Windows.Forms.BindingSource clientiBindingSource;
     }
 }

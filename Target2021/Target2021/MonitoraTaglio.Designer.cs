@@ -60,7 +60,7 @@
             // 
             progTaglio1Label.AutoSize = true;
             progTaglio1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            progTaglio1Label.Location = new System.Drawing.Point(61, 56);
+            progTaglio1Label.Location = new System.Drawing.Point(17, 15);
             progTaglio1Label.Name = "progTaglio1Label";
             progTaglio1Label.Size = new System.Drawing.Size(96, 18);
             progTaglio1Label.TabIndex = 3;
@@ -70,7 +70,7 @@
             // 
             secondiCiclo1Label.AutoSize = true;
             secondiCiclo1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            secondiCiclo1Label.Location = new System.Drawing.Point(61, 82);
+            secondiCiclo1Label.Location = new System.Drawing.Point(17, 41);
             secondiCiclo1Label.Name = "secondiCiclo1Label";
             secondiCiclo1Label.Size = new System.Drawing.Size(112, 18);
             secondiCiclo1Label.TabIndex = 5;
@@ -80,7 +80,7 @@
             // 
             numPezzi1Label.AutoSize = true;
             numPezzi1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            numPezzi1Label.Location = new System.Drawing.Point(61, 108);
+            numPezzi1Label.Location = new System.Drawing.Point(17, 67);
             numPezzi1Label.Name = "numPezzi1Label";
             numPezzi1Label.Size = new System.Drawing.Size(93, 18);
             numPezzi1Label.TabIndex = 7;
@@ -90,7 +90,7 @@
             // 
             progTaglio2Label.AutoSize = true;
             progTaglio2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            progTaglio2Label.Location = new System.Drawing.Point(318, 56);
+            progTaglio2Label.Location = new System.Drawing.Point(274, 15);
             progTaglio2Label.Name = "progTaglio2Label";
             progTaglio2Label.Size = new System.Drawing.Size(96, 18);
             progTaglio2Label.TabIndex = 9;
@@ -100,7 +100,7 @@
             // 
             secondiCiclo2Label.AutoSize = true;
             secondiCiclo2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            secondiCiclo2Label.Location = new System.Drawing.Point(318, 82);
+            secondiCiclo2Label.Location = new System.Drawing.Point(274, 41);
             secondiCiclo2Label.Name = "secondiCiclo2Label";
             secondiCiclo2Label.Size = new System.Drawing.Size(112, 18);
             secondiCiclo2Label.TabIndex = 11;
@@ -110,7 +110,7 @@
             // 
             numPezzi2Label.AutoSize = true;
             numPezzi2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            numPezzi2Label.Location = new System.Drawing.Point(318, 108);
+            numPezzi2Label.Location = new System.Drawing.Point(274, 67);
             numPezzi2Label.Name = "numPezzi2Label";
             numPezzi2Label.Size = new System.Drawing.Size(93, 18);
             numPezzi2Label.TabIndex = 13;
@@ -169,65 +169,71 @@
             this.progTaglio1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taglioOnLineBindingSource, "ProgTaglio1", true));
             this.progTaglio1TextBox.Enabled = false;
             this.progTaglio1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progTaglio1TextBox.Location = new System.Drawing.Point(180, 53);
+            this.progTaglio1TextBox.Location = new System.Drawing.Point(136, 12);
             this.progTaglio1TextBox.Name = "progTaglio1TextBox";
-            this.progTaglio1TextBox.Size = new System.Drawing.Size(100, 24);
+            this.progTaglio1TextBox.Size = new System.Drawing.Size(132, 24);
             this.progTaglio1TextBox.TabIndex = 4;
+            this.progTaglio1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // secondiCiclo1TextBox
             // 
             this.secondiCiclo1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taglioOnLineBindingSource, "SecondiCiclo1", true));
             this.secondiCiclo1TextBox.Enabled = false;
             this.secondiCiclo1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondiCiclo1TextBox.Location = new System.Drawing.Point(180, 79);
+            this.secondiCiclo1TextBox.Location = new System.Drawing.Point(136, 38);
             this.secondiCiclo1TextBox.Name = "secondiCiclo1TextBox";
-            this.secondiCiclo1TextBox.Size = new System.Drawing.Size(100, 24);
+            this.secondiCiclo1TextBox.Size = new System.Drawing.Size(132, 24);
             this.secondiCiclo1TextBox.TabIndex = 6;
+            this.secondiCiclo1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numPezzi1TextBox
             // 
             this.numPezzi1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taglioOnLineBindingSource, "NumPezzi1", true));
             this.numPezzi1TextBox.Enabled = false;
             this.numPezzi1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPezzi1TextBox.Location = new System.Drawing.Point(180, 105);
+            this.numPezzi1TextBox.Location = new System.Drawing.Point(136, 64);
             this.numPezzi1TextBox.Name = "numPezzi1TextBox";
-            this.numPezzi1TextBox.Size = new System.Drawing.Size(100, 24);
+            this.numPezzi1TextBox.Size = new System.Drawing.Size(132, 24);
             this.numPezzi1TextBox.TabIndex = 8;
+            this.numPezzi1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // progTaglio2TextBox
             // 
             this.progTaglio2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taglioOnLineBindingSource, "ProgTaglio2", true));
             this.progTaglio2TextBox.Enabled = false;
             this.progTaglio2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progTaglio2TextBox.Location = new System.Drawing.Point(437, 53);
+            this.progTaglio2TextBox.Location = new System.Drawing.Point(393, 12);
             this.progTaglio2TextBox.Name = "progTaglio2TextBox";
-            this.progTaglio2TextBox.Size = new System.Drawing.Size(100, 24);
+            this.progTaglio2TextBox.Size = new System.Drawing.Size(132, 24);
             this.progTaglio2TextBox.TabIndex = 10;
+            this.progTaglio2TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // secondiCiclo2TextBox
             // 
             this.secondiCiclo2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taglioOnLineBindingSource, "SecondiCiclo2", true));
             this.secondiCiclo2TextBox.Enabled = false;
             this.secondiCiclo2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondiCiclo2TextBox.Location = new System.Drawing.Point(437, 79);
+            this.secondiCiclo2TextBox.Location = new System.Drawing.Point(393, 38);
             this.secondiCiclo2TextBox.Name = "secondiCiclo2TextBox";
-            this.secondiCiclo2TextBox.Size = new System.Drawing.Size(100, 24);
+            this.secondiCiclo2TextBox.Size = new System.Drawing.Size(132, 24);
             this.secondiCiclo2TextBox.TabIndex = 12;
+            this.secondiCiclo2TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numPezzi2TextBox
             // 
             this.numPezzi2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.taglioOnLineBindingSource, "NumPezzi2", true));
             this.numPezzi2TextBox.Enabled = false;
             this.numPezzi2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numPezzi2TextBox.Location = new System.Drawing.Point(437, 105);
+            this.numPezzi2TextBox.Location = new System.Drawing.Point(393, 64);
             this.numPezzi2TextBox.Name = "numPezzi2TextBox";
-            this.numPezzi2TextBox.Size = new System.Drawing.Size(100, 24);
+            this.numPezzi2TextBox.Size = new System.Drawing.Size(132, 24);
             this.numPezzi2TextBox.TabIndex = 14;
+            this.numPezzi2TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(224, 150);
+            this.button1.Location = new System.Drawing.Point(188, 105);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 33);
             this.button1.TabIndex = 15;
@@ -239,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 195);
+            this.ClientSize = new System.Drawing.Size(543, 157);
             this.Controls.Add(this.button1);
             this.Controls.Add(progTaglio1Label);
             this.Controls.Add(this.progTaglio1TextBox);

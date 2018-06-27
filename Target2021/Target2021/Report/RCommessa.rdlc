@@ -902,7 +902,7 @@
               <TextRun>
                 <Value>=Lookup(First(Fields!IDMachStampa.Value, "DataSet1"), Fields!IdStampa.Value, Fields!Descrizione.Value, "DataSet2")</Value>
                 <Style>
-                  <FontSize>18pt</FontSize>
+                  <FontSize>24pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -911,10 +911,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Descrizione</rd:DefaultName>
-        <Top>0.96724cm</Top>
-        <Left>10.59306cm</Left>
-        <Height>0.90785cm</Height>
-        <Width>3.68181cm</Width>
+        <Top>0.85259cm</Top>
+        <Left>10.32848cm</Left>
+        <Height>0.98722cm</Height>
+        <Width>3.16587cm</Width>
         <ZIndex>31</ZIndex>
         <Style>
           <Border>
@@ -935,7 +935,7 @@
               <TextRun>
                 <Value>=Lookup(First(Fields!IDMachTaglio.Value, "DataSet1"), Fields!IDTaglio.Value, Fields!Descrizione.Value, "DataSet3")</Value>
                 <Style>
-                  <FontSize>18pt</FontSize>
+                  <FontSize>24pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -944,10 +944,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Descrizione1</rd:DefaultName>
-        <Top>0.96724cm</Top>
-        <Left>15.9682cm</Left>
-        <Height>0.90785cm</Height>
-        <Width>2.92333cm</Width>
+        <Top>0.88787cm</Top>
+        <Left>15.29384cm</Left>
+        <Height>0.98722cm</Height>
+        <Width>3.24083cm</Width>
         <ZIndex>32</ZIndex>
         <Style>
           <Border>

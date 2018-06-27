@@ -459,6 +459,7 @@
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RCommessa.rdlc" />
+    <EmbeddedResource Include="Report\REtichetta.rdlc" />
     <EmbeddedResource Include="RiepilogoCommesse.resx">
       <DependentUpon>RiepilogoCommesse.cs</DependentUpon>
     </EmbeddedResource>
