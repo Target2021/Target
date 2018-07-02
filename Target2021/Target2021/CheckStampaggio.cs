@@ -19,6 +19,7 @@ namespace Target2021
         private bool caricato = false;
         private string idcommessa;
         DataTable dataTable = new DataTable();
+        SqlCommand cmd = new SqlCommand();
         public CheckStampaggio()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace Target2021
         {
             string query = "SELECT IDCommessa, CodCommessa,DataCommessa,IDCliente,DataConsegna,NrPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1 OR Stato=2) AND CodCommessa LIKE 'S%'";
             SqlConnection con = new SqlConnection(stringa);
-            SqlCommand cmd = new SqlCommand(query, con);
+            cmd = new SqlCommand(query, con);
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter();
             sda.SelectCommand = cmd;
@@ -51,7 +52,7 @@ namespace Target2021
                 int totalDays = Convert.ToInt32((giorni.Date - dataconsegna.Date).TotalDays);
                 if (totalDays>1)
                 {dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.arrabiato;}
-                if (totalDays<=-1&totalDays>-5)
+                if (totalDays<=-1&&totalDays>-5)
                 {dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.preoccupato;}
                 if (totalDays<-5)
                 {dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.felice;}
@@ -66,19 +67,16 @@ namespace Target2021
                     int quantita =(int) row.Cells["NrPezziDaLavorare"].Value;
                     string IDMateriaPrima;
                     IDMateriaPrima = row.Cells["IDMateriaPrima"].Value.ToString();
-                    string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + IDMateriaPrima+ "'";
+                    string query = $"SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime= '{IDMateriaPrima}'";
                     SqlConnection con = new SqlConnection(stringa);
-                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd = new SqlCommand(query, con);
                     con.Open();
                     int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
                     con.Close();
                     int diff = Giacenza - quantita;
-                    if (diff < 0)
-                    { row.DefaultCellStyle.BackColor = Color.Red;}
-                    if (Enumerable.Range(0, 10).Contains(diff))
-                    { row.DefaultCellStyle.BackColor = Color.Yellow;}
-                    if (diff > 10)
-                    {row.DefaultCellStyle.BackColor = Color.Green;}
+                    if (diff < 0){ row.DefaultCellStyle.BackColor = Color.Red;}
+                    if (Enumerable.Range(0, 10).Contains(diff)){ row.DefaultCellStyle.BackColor = Color.Yellow;}
+                    if (diff > 10){row.DefaultCellStyle.BackColor = Color.Green;}
                 }
                 catch (Exception ex)
                 {
@@ -93,9 +91,10 @@ namespace Target2021
                 idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells["IDCommessa"].Value);
                 idcommessa.Replace("  ", string.Empty);
                 int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells["NrPezziDaLavorare"].Value);
-                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + dataGridView1.Rows[index].Cells["IDMateriaPrima"].Value + "'";
+                string idprime =Convert.ToString(dataGridView1.Rows[index].Cells["IDMateriaPrima"].Value);
+                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + idprime + "'";
                 SqlConnection con = new SqlConnection(stringa);
-                SqlCommand cmd = new SqlCommand(query, con);
+                cmd = new SqlCommand(query, con);
                 con.Open();
                 int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
                 con.Close();
@@ -103,32 +102,22 @@ namespace Target2021
                 if (diff < 0)
                 { MessageBox.Show("Giacenza insufficiente, si prega di effettuare il riordino"); }
                 else
-                {
-                    LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);
-                    lavoraStampaggio.Show();
-                }
+                { LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);lavoraStampaggio.Show();}
             }
             catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            {MessageBox.Show(ex.Message);}
         }
         private void button2_Click(object sender, EventArgs e)
-        {
-            LoadStampaggio();
-        }
+        { LoadStampaggio(); }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {            
-            //CheckGiacenzaTotale();
+        {
+            CheckGiacenzaTotale();
             dataGridView1.ClearSelection();
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
-            {
-                CheckConsegna();
-            }
+            if (e.ColumnIndex == 5){ CheckConsegna(); }
             if (caricato)
             {
                 CheckGiacenzaTotale();
@@ -143,13 +132,6 @@ namespace Target2021
             }
         }
         private void clikka(object sender, DataGridViewCellEventArgs e)
-        {
-            CheckGiacenzaRow(e.RowIndex);
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        { CheckGiacenzaRow(e.RowIndex); }
     }
 }
