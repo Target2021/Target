@@ -63,6 +63,10 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Filter = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CERCA = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingNavigator)).BeginInit();
@@ -88,6 +92,7 @@
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -111,6 +116,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -137,14 +143,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.fornitoriBindingNavigatorSaveItem});
-            this.fornitoriBindingNavigator.Location = new System.Drawing.Point(0, 423);
+            this.fornitoriBindingNavigator.Location = new System.Drawing.Point(0, 661);
             this.fornitoriBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.fornitoriBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.fornitoriBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.fornitoriBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.fornitoriBindingNavigator.Name = "fornitoriBindingNavigator";
             this.fornitoriBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.fornitoriBindingNavigator.Size = new System.Drawing.Size(885, 27);
+            this.fornitoriBindingNavigator.Size = new System.Drawing.Size(1198, 27);
             this.fornitoriBindingNavigator.TabIndex = 0;
             this.fornitoriBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -160,7 +166,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -201,7 +207,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -267,9 +273,10 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15});
             this.fornitoriDataGridView.DataSource = this.fornitoriBindingSource;
-            this.fornitoriDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.fornitoriDataGridView.Location = new System.Drawing.Point(0, 123);
+            this.fornitoriDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fornitoriDataGridView.Name = "fornitoriDataGridView";
-            this.fornitoriDataGridView.Size = new System.Drawing.Size(885, 425);
+            this.fornitoriDataGridView.Size = new System.Drawing.Size(1198, 534);
             this.fornitoriDataGridView.TabIndex = 1;
             this.fornitoriDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.fornitoriDataGridView_CellContentClick);
             // 
@@ -363,13 +370,66 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "mail";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(224, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 25);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Campo da filtrare:";
+            // 
+            // Filter
+            // 
+            this.Filter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Filter.FormattingEnabled = true;
+            this.Filter.Items.AddRange(new object[] {
+            "Codice",
+            "Ragione_sociale",
+            "Località"});
+            this.Filter.Location = new System.Drawing.Point(412, 47);
+            this.Filter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(153, 33);
+            this.Filter.TabIndex = 14;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(591, 50);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(156, 30);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.TextChanged += new System.EventHandler(this.Button2_Click);
+            // 
+            // CERCA
+            // 
+            this.CERCA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CERCA.Location = new System.Drawing.Point(799, 45);
+            this.CERCA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CERCA.Name = "CERCA";
+            this.CERCA.Size = new System.Drawing.Size(132, 34);
+            this.CERCA.TabIndex = 12;
+            this.CERCA.Text = "CERCA";
+            this.CERCA.UseVisualStyleBackColor = true;
+            this.CERCA.Click += new System.EventHandler(this.Button2_Click);
+            // 
             // AnaFornitori
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1198, 688);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Filter);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CERCA);
             this.Controls.Add(this.fornitoriDataGridView);
             this.Controls.Add(this.fornitoriBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaFornitori";
             this.Text = "AnaFornitori";
             this.Load += new System.EventHandler(this.AnaFornitori_Load);
@@ -419,5 +479,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox Filter;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button CERCA;
     }
 }

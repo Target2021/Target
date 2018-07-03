@@ -319,6 +319,21 @@ namespace Target2021
             StampaEtichette .Show();
         }
 
+        private void minuterieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void compatibilitàStampiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void compatibilitàDimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

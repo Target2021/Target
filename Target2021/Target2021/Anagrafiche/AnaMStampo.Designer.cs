@@ -83,6 +83,7 @@
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -106,6 +107,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -259,10 +261,11 @@
             this.dataGridViewTextBoxColumn10});
             this.macchineStampoDataGridView.DataSource = this.macchineStampoBindingSource;
             this.macchineStampoDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.macchineStampoDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.macchineStampoDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.macchineStampoDataGridView.Name = "macchineStampoDataGridView";
             this.macchineStampoDataGridView.Size = new System.Drawing.Size(1067, 523);
             this.macchineStampoDataGridView.TabIndex = 1;
+            this.macchineStampoDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.macchineStampoDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -341,7 +344,7 @@
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.macchineStampoDataGridView);
             this.Controls.Add(this.macchineStampoBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaMStampo";
             this.Text = "Anagrafica macchine di stampo";
             this.Load += new System.EventHandler(this.AnaMStampo_Load);

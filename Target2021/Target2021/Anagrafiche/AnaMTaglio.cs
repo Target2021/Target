@@ -31,5 +31,10 @@ namespace Target2021.Anagrafiche
             this.macchineTaglioTableAdapter.Fill(this.target2021DataSet.MacchineTaglio);
 
         }
+
+        private void macchineTaglioDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
+        }
     }
 }

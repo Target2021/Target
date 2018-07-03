@@ -34,19 +34,9 @@ namespace Target2021
         }
         private void Button2_Click(object sender, EventArgs e)
         {
-            if (Filter.Text == "Codice")
-            {
-                Search_Filter("SELECT * FROM clienti WHERE codice LIKE '%" + textBox1.Text + "%'");
-            }
-            if (Filter.Text == "Ragione_sociale")
-            {
-                Search_Filter("SELECT * FROM clienti WHERE ragione_sociale LIKE '%" + textBox1.Text + "%'");
-            }
-            if (Filter.Text == "Località")
-            {
-                ControlNumber(textBox1.Text);       
-                Search_Filter("SELECT * FROM clienti WHERE localita LIKE '%" + textBox1.Text + "%'");
-            }
+            if (Filter.Text == "Codice") clientiBindingSource.Filter = "codice LIKE '*" + textBox1.Text + "*'";
+            if (Filter.Text == "Ragione_sociale") clientiBindingSource.Filter = "ragione_sociale LIKE '*" + textBox1.Text + "*'";
+            if (Filter.Text == "Località") { ControlNumber(textBox1.Text); clientiBindingSource.Filter = "localita LIKE '*" + textBox1.Text + "*'"; }
         }
         public void ControlNumber(string frase)
         {
@@ -62,28 +52,6 @@ namespace Target2021
                 }
             }
         }
-        public void Search_Filter(string query)
-        {
-            String stringa = "Data Source=target2021.database.windows.net;Initial Catalog=Target2021;User ID=Amministratore;Password=Barilla23";
-            SqlConnection con = new SqlConnection(stringa);
-            string variabile = textBox1.Text;
-            SqlCommand cmd = new SqlCommand(query, con);
-            try
-            {
-                SqlDataAdapter sda = new SqlDataAdapter();
-                sda.SelectCommand = cmd;
-                DataTable dataTable = new DataTable();
-                sda.Fill(dataTable);
-                BindingSource source = new BindingSource();
-                source.DataSource = dataTable;
-                clientiDataGridView.DataSource = source;
-                sda.Update(dataTable);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         private void Filter_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -96,6 +64,11 @@ namespace Target2021
                 Button2_Click(sender, e);
             }
 
+        }
+
+        private void clientiDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
         }
     }
 }

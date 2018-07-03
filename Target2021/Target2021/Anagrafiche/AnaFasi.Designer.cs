@@ -100,6 +100,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -126,14 +127,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.fasiBindingNavigatorSaveItem});
-            this.fasiBindingNavigator.Location = new System.Drawing.Point(0, 364);
+            this.fasiBindingNavigator.Location = new System.Drawing.Point(0, 454);
             this.fasiBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.fasiBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.fasiBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.fasiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.fasiBindingNavigator.Name = "fasiBindingNavigator";
             this.fasiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.fasiBindingNavigator.Size = new System.Drawing.Size(418, 27);
+            this.fasiBindingNavigator.Size = new System.Drawing.Size(557, 27);
             this.fasiBindingNavigator.TabIndex = 0;
             this.fasiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -149,7 +150,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -190,7 +191,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -254,31 +255,34 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.fasiDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.fasiDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.fasiDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fasiDataGridView.Name = "fasiDataGridView";
-            this.fasiDataGridView.Size = new System.Drawing.Size(418, 366);
+            this.fasiDataGridView.Size = new System.Drawing.Size(557, 450);
             this.fasiDataGridView.TabIndex = 1;
+            this.fasiDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.fasiDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IDFase";
             this.dataGridViewTextBoxColumn1.HeaderText = "IDFase";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 66;
+            this.dataGridViewTextBoxColumn1.Width = 81;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Descrizione";
             this.dataGridViewTextBoxColumn2.HeaderText = "Descrizione";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 87;
+            this.dataGridViewTextBoxColumn2.Width = 111;
             // 
             // AnaFasi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 391);
+            this.ClientSize = new System.Drawing.Size(557, 481);
             this.Controls.Add(this.fasiDataGridView);
             this.Controls.Add(this.fasiBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaFasi";
             this.Text = "Anagrafica fasi di lavorazione";
             this.Load += new System.EventHandler(this.AnaFasi_Load);
