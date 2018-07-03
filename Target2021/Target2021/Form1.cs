@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Target2021.Anagrafiche;
@@ -240,14 +241,18 @@ namespace Target2021
             AMT.MdiParent = this;
             AMT.Show();
         }
-
-        private void disconnettiToolStripMenuItem_Click(object sender, EventArgs e)
+        public void log()
         {
             Login login = new Login();
-            login.Show();
-            this.Enabled = false;
+            login.ShowDialog();
         }
-
+        private void disconnettiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(log);
+            thread.Start();
+            this.Close();
+        }
+  
         private void commesseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             RiepilogoCommesse riepilogocommesse = new RiepilogoCommesse();
