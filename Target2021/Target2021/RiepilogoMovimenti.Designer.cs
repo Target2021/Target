@@ -89,6 +89,7 @@
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -112,6 +113,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -272,6 +274,7 @@
             this.movimentiMagazzinoDataGridView.RowTemplate.Height = 24;
             this.movimentiMagazzinoDataGridView.Size = new System.Drawing.Size(1470, 513);
             this.movimentiMagazzinoDataGridView.TabIndex = 1;
+            this.movimentiMagazzinoDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.movimentiMagazzinoDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 

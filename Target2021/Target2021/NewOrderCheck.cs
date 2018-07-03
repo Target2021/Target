@@ -379,8 +379,8 @@ namespace Target2021
             string stringaconnessione, sql="", progt;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            if (lato == 1) sql = "SELECT ProgrTaglio1 FROM DettArticoli WHERE codice_articolo=" + codart + " AND lavorazione=3";
-            if (lato == 2) sql = "SELECT ProgrTaglio2 FROM DettArticoli WHERE codice_articolo=" + codart + " AND lavorazione=3";
+            if (lato == 1) sql = "SELECT ProgrTaglio1 FROM DettArticoli WHERE codice_articolo='" + codart + "' AND lavorazione=3";
+            if (lato == 2) sql = "SELECT ProgrTaglio2 FROM DettArticoli WHERE codice_articolo='" + codart + "' AND lavorazione=3";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             progt = comando.ExecuteScalar().ToString();

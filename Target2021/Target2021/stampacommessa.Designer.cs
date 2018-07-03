@@ -32,6 +32,10 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.CommesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Target2021DataSet = new Target2021.Target2021DataSet();
+            this.MacchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MacchineTaglioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -49,10 +53,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.commesseDataGridView = new System.Windows.Forms.DataGridView();
-            this.fillByNrToolStrip = new System.Windows.Forms.ToolStrip();
-            this.numeroToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.numeroToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByNrToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -106,46 +106,69 @@
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CommesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Target2021DataSet = new Target2021.Target2021DataSet();
+            this.fillByNrToolStrip = new System.Windows.Forms.ToolStrip();
+            this.numeroToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.numeroToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByNrToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.CommesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.MacchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MacchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
-            this.MacchineTaglioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MacchineTaglioTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
-            this.fillByNrToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CommesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MacchineStampoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MacchineTaglioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
+            this.fillByNrToolStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // CommesseBindingSource
+            // 
+            this.CommesseBindingSource.DataMember = "Commesse";
+            this.CommesseBindingSource.DataSource = this.Target2021DataSet;
+            // 
+            // Target2021DataSet
+            // 
+            this.Target2021DataSet.DataSetName = "Target2021DataSet";
+            this.Target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // MacchineStampoBindingSource
+            // 
+            this.MacchineStampoBindingSource.DataMember = "MacchineStampo";
+            this.MacchineStampoBindingSource.DataSource = this.Target2021DataSet;
+            // 
+            // MacchineTaglioBindingSource
+            // 
+            this.MacchineTaglioBindingSource.DataMember = "MacchineTaglio";
+            this.MacchineTaglioBindingSource.DataSource = this.Target2021DataSet;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(169, 25);
+            this.textBox1.Location = new System.Drawing.Point(225, 31);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 28);
+            this.textBox1.Size = new System.Drawing.Size(247, 33);
             this.textBox1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 28);
+            this.label1.Location = new System.Drawing.Point(9, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 21);
+            this.label1.Size = new System.Drawing.Size(196, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Numero commessa:";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 59);
+            this.button1.Location = new System.Drawing.Point(16, 73);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(343, 44);
+            this.button1.Size = new System.Drawing.Size(457, 54);
             this.button1.TabIndex = 2;
             this.button1.Text = "Recupera";
             this.button1.UseVisualStyleBackColor = true;
@@ -154,9 +177,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(11, 349);
+            this.button2.Location = new System.Drawing.Point(15, 430);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(343, 38);
+            this.button2.Size = new System.Drawing.Size(457, 47);
             this.button2.TabIndex = 3;
             this.button2.Text = "Stampa";
             this.button2.UseVisualStyleBackColor = true;
@@ -166,9 +190,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 112);
+            this.label2.Location = new System.Drawing.Point(13, 138);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
+            this.label2.Size = new System.Drawing.Size(86, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Cliente:";
             // 
@@ -176,9 +201,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 146);
+            this.label3.Location = new System.Drawing.Point(15, 180);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 21);
+            this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Articolo:";
             // 
@@ -186,9 +212,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 216);
+            this.label4.Location = new System.Drawing.Point(15, 266);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 21);
+            this.label4.Size = new System.Drawing.Size(105, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "Nr. pezzi:";
             // 
@@ -196,9 +223,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 250);
+            this.label5.Location = new System.Drawing.Point(15, 308);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 21);
+            this.label5.Size = new System.Drawing.Size(156, 25);
             this.label5.TabIndex = 7;
             this.label5.Text = "Data consegna:";
             // 
@@ -206,54 +234,60 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(138, 109);
+            this.textBox2.Location = new System.Drawing.Point(184, 134);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 28);
+            this.textBox2.Size = new System.Drawing.Size(287, 33);
             this.textBox2.TabIndex = 8;
             // 
             // textBox3
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(139, 143);
+            this.textBox3.Location = new System.Drawing.Point(185, 176);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 28);
+            this.textBox3.Size = new System.Drawing.Size(164, 33);
             this.textBox3.TabIndex = 9;
             // 
             // textBox4
             // 
             this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(139, 213);
+            this.textBox4.Location = new System.Drawing.Point(185, 262);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(216, 28);
+            this.textBox4.Size = new System.Drawing.Size(287, 33);
             this.textBox4.TabIndex = 10;
             // 
             // textBox5
             // 
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(139, 247);
+            this.textBox5.Location = new System.Drawing.Point(185, 304);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(216, 28);
+            this.textBox5.Size = new System.Drawing.Size(287, 33);
             this.textBox5.TabIndex = 11;
             // 
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(139, 285);
+            this.textBox6.Location = new System.Drawing.Point(185, 351);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(216, 58);
+            this.textBox6.Size = new System.Drawing.Size(287, 70);
             this.textBox6.TabIndex = 13;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 288);
+            this.label6.Location = new System.Drawing.Point(15, 354);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 21);
+            this.label6.Size = new System.Drawing.Size(62, 25);
             this.label6.TabIndex = 12;
             this.label6.Text = "Note:";
             // 
@@ -261,9 +295,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 181);
+            this.label7.Location = new System.Drawing.Point(15, 223);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 21);
+            this.label7.Size = new System.Drawing.Size(71, 25);
             this.label7.TabIndex = 14;
             this.label7.Text = "label7";
             // 
@@ -282,15 +317,17 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Target2021.Report.RCommessa.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(360, 3);
+            this.reportViewer1.Location = new System.Drawing.Point(480, 4);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(759, 663);
+            this.reportViewer1.Size = new System.Drawing.Size(1011, 816);
             this.reportViewer1.TabIndex = 15;
             // 
             // commesseDataGridView
             // 
             this.commesseDataGridView.AutoGenerateColumns = false;
+            this.commesseDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.commesseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.commesseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -347,42 +384,11 @@
             this.dataGridViewTextBoxColumn51,
             this.dataGridViewTextBoxColumn52});
             this.commesseDataGridView.DataSource = this.CommesseBindingSource;
-            this.commesseDataGridView.Location = new System.Drawing.Point(14, 393);
+            this.commesseDataGridView.Location = new System.Drawing.Point(19, 484);
+            this.commesseDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.commesseDataGridView.Name = "commesseDataGridView";
-            this.commesseDataGridView.Size = new System.Drawing.Size(340, 216);
+            this.commesseDataGridView.Size = new System.Drawing.Size(453, 266);
             this.commesseDataGridView.TabIndex = 16;
-            // 
-            // fillByNrToolStrip
-            // 
-            this.fillByNrToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.numeroToolStripLabel,
-            this.numeroToolStripTextBox,
-            this.fillByNrToolStripButton});
-            this.fillByNrToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByNrToolStrip.Name = "fillByNrToolStrip";
-            this.fillByNrToolStrip.Size = new System.Drawing.Size(962, 25);
-            this.fillByNrToolStrip.TabIndex = 17;
-            this.fillByNrToolStrip.Text = "fillByNrToolStrip";
-            this.fillByNrToolStrip.Visible = false;
-            // 
-            // numeroToolStripLabel
-            // 
-            this.numeroToolStripLabel.Name = "numeroToolStripLabel";
-            this.numeroToolStripLabel.Size = new System.Drawing.Size(54, 22);
-            this.numeroToolStripLabel.Text = "Numero:";
-            // 
-            // numeroToolStripTextBox
-            // 
-            this.numeroToolStripTextBox.Name = "numeroToolStripTextBox";
-            this.numeroToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillByNrToolStripButton
-            // 
-            this.fillByNrToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByNrToolStripButton.Name = "fillByNrToolStripButton";
-            this.fillByNrToolStripButton.Size = new System.Drawing.Size(52, 22);
-            this.fillByNrToolStripButton.Text = "FillByNr";
-            this.fillByNrToolStripButton.Click += new System.EventHandler(this.fillByNrToolStripButton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -703,15 +709,38 @@
             this.dataGridViewTextBoxColumn52.HeaderText = "ProgrTaglio2";
             this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
             // 
-            // CommesseBindingSource
+            // fillByNrToolStrip
             // 
-            this.CommesseBindingSource.DataMember = "Commesse";
-            this.CommesseBindingSource.DataSource = this.Target2021DataSet;
+            this.fillByNrToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.fillByNrToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.numeroToolStripLabel,
+            this.numeroToolStripTextBox,
+            this.fillByNrToolStripButton});
+            this.fillByNrToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByNrToolStrip.Name = "fillByNrToolStrip";
+            this.fillByNrToolStrip.Size = new System.Drawing.Size(1283, 31);
+            this.fillByNrToolStrip.TabIndex = 17;
+            this.fillByNrToolStrip.Text = "fillByNrToolStrip";
+            this.fillByNrToolStrip.Visible = false;
             // 
-            // Target2021DataSet
+            // numeroToolStripLabel
             // 
-            this.Target2021DataSet.DataSetName = "Target2021DataSet";
-            this.Target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.numeroToolStripLabel.Name = "numeroToolStripLabel";
+            this.numeroToolStripLabel.Size = new System.Drawing.Size(66, 28);
+            this.numeroToolStripLabel.Text = "Numero:";
+            // 
+            // numeroToolStripTextBox
+            // 
+            this.numeroToolStripTextBox.Name = "numeroToolStripTextBox";
+            this.numeroToolStripTextBox.Size = new System.Drawing.Size(132, 31);
+            // 
+            // fillByNrToolStripButton
+            // 
+            this.fillByNrToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByNrToolStripButton.Name = "fillByNrToolStripButton";
+            this.fillByNrToolStripButton.Size = new System.Drawing.Size(64, 28);
+            this.fillByNrToolStripButton.Text = "FillByNr";
+            this.fillByNrToolStripButton.Click += new System.EventHandler(this.fillByNrToolStripButton_Click);
             // 
             // CommesseTableAdapter
             // 
@@ -751,19 +780,9 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // MacchineStampoBindingSource
-            // 
-            this.MacchineStampoBindingSource.DataMember = "MacchineStampo";
-            this.MacchineStampoBindingSource.DataSource = this.Target2021DataSet;
-            // 
             // MacchineStampoTableAdapter
             // 
             this.MacchineStampoTableAdapter.ClearBeforeFill = true;
-            // 
-            // MacchineTaglioBindingSource
-            // 
-            this.MacchineTaglioBindingSource.DataMember = "MacchineTaglio";
-            this.MacchineTaglioBindingSource.DataSource = this.Target2021DataSet;
             // 
             // MacchineTaglioTableAdapter
             // 
@@ -771,9 +790,10 @@
             // 
             // stampacommessa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 678);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1508, 834);
             this.Controls.Add(this.fillByNrToolStrip);
             this.Controls.Add(this.commesseDataGridView);
             this.Controls.Add(this.reportViewer1);
@@ -792,16 +812,17 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "stampacommessa";
             this.Text = "Stampa scheda commessa";
             this.Load += new System.EventHandler(this.stampacommessa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).EndInit();
-            this.fillByNrToolStrip.ResumeLayout(false);
-            this.fillByNrToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CommesseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MacchineStampoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MacchineTaglioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).EndInit();
+            this.fillByNrToolStrip.ResumeLayout(false);
+            this.fillByNrToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
