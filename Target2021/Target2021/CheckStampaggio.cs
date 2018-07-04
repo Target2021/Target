@@ -31,11 +31,6 @@ namespace Target2021
         private volatile bool threadRun;
         private void loading()
         {
-            Panel panel = new Panel();
-            Label loading = new Label();
-            loading.Text = "Loading...";
-            panel.Controls.Add(loading);
-            panel.Show();
             threadRun = true;
             Task.Factory.StartNew(() =>
             {
@@ -43,23 +38,7 @@ namespace Target2021
             string labelText;
                 while (threadRun)
                 {
-                    Thread.Sleep(500);
-                    switch (i)
-                    {
-                        case 0:
-                            labelText = "Loading.";
-                            i = 1;
-                            break;
-                        case 1:
-                            labelText = "Loading..";
-                            i = 2;
-                            break;
-                        default:
-                            labelText = "Loading...";
-                            i = 0;
-                            break;
-                    }
-                    loading.BeginInvoke(new Action(() => loading.Text = labelText));
+                    Thread.Sleep(500);                 
                 }
             });
             Thread update = new Thread(LoadStampaggio);
@@ -77,6 +56,7 @@ namespace Target2021
             if (!scadenza) { dataTable.Columns.Add("Scadenza", typeof(Image)); scadenza = true; }
             source.DataSource = dataTable;
             dataGridView1.Invoke(new Action(() => dataGridView1.DataSource=source));
+            threadRun = false;
             sda.Update(dataTable);
             con.Close();
             CheckConsegna();
