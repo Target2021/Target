@@ -34,8 +34,6 @@ namespace Target2021
             threadRun = true;
             Task.Factory.StartNew(() =>
             {
-                int i = 0;
-            string labelText;
                 while (threadRun)
                 {
                     Thread.Sleep(500);                 
