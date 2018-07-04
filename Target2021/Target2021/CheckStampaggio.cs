@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,15 +17,53 @@ namespace Target2021
     public partial class CheckStampaggio : Form
     {
         private String stringa = Properties.Resources.StringaConnessione;
-        private bool caricato = false;
+        private bool caricato = false,scadenza=false;
         private string idcommessa;
         DataTable dataTable = new DataTable();
+        BindingSource source = new BindingSource();
         SqlCommand cmd = new SqlCommand();
         public CheckStampaggio()
         {
             InitializeComponent();
-            LoadStampaggio();
+            loading();
             caricato = true;
+        }
+        private volatile bool threadRun;
+        private void loading()
+        {
+            Panel panel = new Panel();
+            Label loading = new Label();
+            loading.Text = "Loading...";
+            panel.Controls.Add(loading);
+            panel.Show();
+            threadRun = true;
+            Task.Factory.StartNew(() =>
+            {
+                int i = 0;
+            string labelText;
+                while (threadRun)
+                {
+                    Thread.Sleep(500);
+                    switch (i)
+                    {
+                        case 0:
+                            labelText = "Loading.";
+                            i = 1;
+                            break;
+                        case 1:
+                            labelText = "Loading..";
+                            i = 2;
+                            break;
+                        default:
+                            labelText = "Loading...";
+                            i = 0;
+                            break;
+                    }
+                    loading.BeginInvoke(new Action(() => loading.Text = labelText));
+                }
+            });
+            Thread update = new Thread(LoadStampaggio);
+            update.Start();
         }
         private void LoadStampaggio()
         {
@@ -35,11 +74,10 @@ namespace Target2021
             SqlDataAdapter sda = new SqlDataAdapter();
             sda.SelectCommand = cmd;
             sda.Fill(dataTable);
-            BindingSource source = new BindingSource();
+            if (!scadenza) { dataTable.Columns.Add("Scadenza", typeof(Image)); scadenza = true; }
             source.DataSource = dataTable;
-            dataGridView1.DataSource = source;
+            dataGridView1.Invoke(new Action(() => dataGridView1.DataSource=source));
             sda.Update(dataTable);
-            dataTable.Columns.Add("Scadenza", typeof(Image));
             con.Close();
             CheckConsegna();
         }
