@@ -42,15 +42,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 102);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 126);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(1445, 428);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
@@ -58,10 +58,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(25, 11);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(33, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 46);
+            this.button1.Size = new System.Drawing.Size(181, 57);
             this.button1.TabIndex = 1;
             this.button1.Text = "AGGIORNA";
             this.button1.UseVisualStyleBackColor = true;
@@ -71,23 +71,24 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 69);
+            this.label1.Location = new System.Drawing.Point(27, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1011, 31);
+            this.label1.Size = new System.Drawing.Size(1220, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "Ordini già stampati in verde, ancora da stampare in rosso, stampa parziale in gia" +
     "llo:";
             // 
             // CheckTaglio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1120, 461);
+            this.ClientSize = new System.Drawing.Size(1493, 567);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CheckTaglio";
             this.Text = "Attività di taglio";
             this.Load += new System.EventHandler(this.CheckTaglio_Load);

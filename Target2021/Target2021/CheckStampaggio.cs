@@ -109,11 +109,8 @@ namespace Target2021
                 int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells["NrPezziDaLavorare"].Value);
                 string idprime =Convert.ToString(dataGridView1.Rows[index].Cells["IDMateriaPrima"].Value);
                 string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + idprime + "'";
-                SqlConnection con = new SqlConnection(stringa);
-                cmd = new SqlCommand(query, con);
-                con.Open();
-                int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
-                con.Close();
+                EsecuzioneQuery esecuzione = new EsecuzioneQuery(query);
+                int Giacenza = Convert.ToInt32(esecuzione.EseguiQuery(0));
                 int diff = Giacenza - quantita;
                 if (diff < 0)
                 { MessageBox.Show("Giacenza insufficiente, si prega di effettuare il riordino"); }
