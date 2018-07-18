@@ -77,6 +77,7 @@
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -100,6 +101,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -254,10 +256,11 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.macchineTaglioDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.macchineTaglioDataGridView.Location = new System.Drawing.Point(0, 49);
-            this.macchineTaglioDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.macchineTaglioDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.macchineTaglioDataGridView.Name = "macchineTaglioDataGridView";
             this.macchineTaglioDataGridView.Size = new System.Drawing.Size(627, 470);
             this.macchineTaglioDataGridView.TabIndex = 1;
+            this.macchineTaglioDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.macchineTaglioDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -288,7 +291,7 @@
             this.ClientSize = new System.Drawing.Size(630, 554);
             this.Controls.Add(this.macchineTaglioDataGridView);
             this.Controls.Add(this.macchineTaglioBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaMTaglio";
             this.Text = "Anagrafica Macchine di Taglio";
             this.Load += new System.EventHandler(this.AnaMTaglio_Load);

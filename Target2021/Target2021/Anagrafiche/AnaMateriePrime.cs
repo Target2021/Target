@@ -44,5 +44,10 @@ namespace Target2021.Anagrafiche
             if (comboBox1.Text == "Codice") primeBindingSource.Filter = "codice LIKE '*" + textBox1.Text + "*'";
             if (comboBox1.Text == "Descrizione") primeBindingSource.Filter = "descrizione LIKE '*" + textBox1.Text + "*'";
         }
+
+        private void primeDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
+        }
     }
 }

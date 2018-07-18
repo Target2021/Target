@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace Target2021
 {
     public partial class Login : Form
     {
+        string NomeUtente, Password;
         public Login()
         {
             InitializeComponent();
@@ -32,14 +34,12 @@ namespace Target2021
                 sqlDataAdapter.Fill(dt);
                 if (dt.Rows.Count == 1)
                 {
-                    string NomeUtente = textBox1.Text;
-                    string Password = textBox2.Text;
-                    Home home = new Home(NomeUtente, Password);
-                    this.Hide();
-                    home.ShowDialog();
-                    home.Enabled = true;
+                    Thread thread = new Thread(Myform);
+                    thread.Start();
                     con.Close();
-                    this.Close();
+                    NomeUtente = textBox1.Text;
+                    Password = textBox2.Text;
+                    this.Hide();
                 }
                 else
                 {
@@ -50,7 +50,11 @@ namespace Target2021
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private void Myform()
+        {
+            Home home = new Home(NomeUtente, Password);
+            home.ShowDialog();
+        }
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)

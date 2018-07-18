@@ -26,9 +26,16 @@ namespace Target2021
 
         private void dettArticoliBindingNavigatorSaveItem_Click_3(object sender, EventArgs e)
         {
-            this.Validate();
-            this.dettArticoliBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            try
+            {
+                this.Validate();
+                this.dettArticoliBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("La tabella non può essere modificata");
+            }
         }
 
         private void SelezionaRiga(object sender, DataGridViewCellEventArgs e)
@@ -48,7 +55,12 @@ namespace Target2021
 
         private void dettArticoliDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try{Dettaglio_Load(sender,e);}catch(NoNullAllowedException ex){ MessageBox.Show("La tabella non può essere modificata"); }
+        }
 
+        private void dettArticoliDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try {  } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
         }
     }
 }

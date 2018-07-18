@@ -31,5 +31,10 @@ namespace Target2021.Anagrafiche
             this.anaMagazziniTableAdapter.Fill(this.target2021DataSet.AnaMagazzini);
 
         }
+
+        private void anaMagazziniDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
+        }
     }
 }

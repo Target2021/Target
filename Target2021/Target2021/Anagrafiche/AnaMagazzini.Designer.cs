@@ -76,6 +76,7 @@
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = this.anaMagazziniTableAdapter;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -99,6 +100,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -249,10 +251,11 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.anaMagazziniDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.anaMagazziniDataGridView.Location = new System.Drawing.Point(0, 24);
-            this.anaMagazziniDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.anaMagazziniDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.anaMagazziniDataGridView.Name = "anaMagazziniDataGridView";
             this.anaMagazziniDataGridView.Size = new System.Drawing.Size(644, 366);
             this.anaMagazziniDataGridView.TabIndex = 1;
+            this.anaMagazziniDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.anaMagazziniDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -275,7 +278,7 @@
             this.ClientSize = new System.Drawing.Size(644, 390);
             this.Controls.Add(this.anaMagazziniDataGridView);
             this.Controls.Add(this.anaMagazziniBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaMagazzini";
             this.Text = "Anagrafica Magazzini";
             this.Load += new System.EventHandler(this.AnaMagazzini_Load);

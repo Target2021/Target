@@ -31,5 +31,10 @@ namespace Target2021.Anagrafiche
             this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
 
         }
+
+        private void giacenzeMagazziniDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
+        }
     }
 }

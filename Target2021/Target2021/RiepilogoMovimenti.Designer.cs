@@ -89,6 +89,7 @@
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
@@ -112,6 +113,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -272,6 +274,7 @@
             this.movimentiMagazzinoDataGridView.RowTemplate.Height = 24;
             this.movimentiMagazzinoDataGridView.Size = new System.Drawing.Size(1470, 513);
             this.movimentiMagazzinoDataGridView.TabIndex = 1;
+            this.movimentiMagazzinoDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.movimentiMagazzinoDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -372,18 +375,17 @@
             "Semilavorati",
             "Articoli",
             "NrOrdine"});
-            this.Filter.Location = new System.Drawing.Point(83, 79);
+            this.Filter.Location = new System.Drawing.Point(79, 76);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(143, 33);
+            this.Filter.Size = new System.Drawing.Size(162, 33);
             this.Filter.TabIndex = 2;
-            this.Filter.SelectedIndexChanged += new System.EventHandler(this.Filter_SelectedIndexChanged);
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(271, 79);
+            this.textBox1.Location = new System.Drawing.Point(300, 79);
             this.textBox1.MinimumSize = new System.Drawing.Size(6, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(198, 30);

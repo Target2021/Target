@@ -70,10 +70,10 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(374, 41);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(499, 50);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(149, 26);
+            this.textBox1.Size = new System.Drawing.Size(197, 30);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.button1_Click);
             // 
@@ -86,10 +86,10 @@
             "Descrizione",
             "Codice Input",
             "Codice Output"});
-            this.Filter.Location = new System.Drawing.Point(214, 39);
-            this.Filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Filter.Location = new System.Drawing.Point(285, 48);
+            this.Filter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(144, 28);
+            this.Filter.Size = new System.Drawing.Size(191, 33);
             this.Filter.TabIndex = 7;
             // 
             // target2021DataSet
@@ -134,6 +134,7 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -166,7 +167,7 @@
             this.dettArticoliBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.dettArticoliBindingNavigator.Name = "dettArticoliBindingNavigator";
             this.dettArticoliBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(877, 27);
+            this.dettArticoliBindingNavigator.Size = new System.Drawing.Size(1169, 27);
             this.dettArticoliBindingNavigator.TabIndex = 8;
             this.dettArticoliBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -182,7 +183,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -223,7 +224,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -291,14 +292,16 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dettArticoliDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dettArticoliDataGridView.Location = new System.Drawing.Point(0, 76);
+            this.dettArticoliDataGridView.Location = new System.Drawing.Point(0, 94);
+            this.dettArticoliDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dettArticoliDataGridView.Name = "dettArticoliDataGridView";
             this.dettArticoliDataGridView.ReadOnly = true;
             this.dettArticoliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dettArticoliDataGridView.Size = new System.Drawing.Size(875, 387);
+            this.dettArticoliDataGridView.Size = new System.Drawing.Size(1167, 476);
             this.dettArticoliDataGridView.TabIndex = 8;
             this.dettArticoliDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dettArticoliDataGridView_CellContentClick);
             this.dettArticoliDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelezionaRiga);
+            this.dettArticoliDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dettArticoliDataGridView_DataError);
             // 
             // IDDettaglioArticolo
             // 
@@ -355,18 +358,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 44);
+            this.label1.Location = new System.Drawing.Point(103, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 20);
+            this.label1.Size = new System.Drawing.Size(166, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "Campo da filtrare:";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(549, 37);
+            this.button1.Location = new System.Drawing.Point(732, 46);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 28);
+            this.button1.Size = new System.Drawing.Size(117, 34);
             this.button1.TabIndex = 10;
             this.button1.Text = "CERCA";
             this.button1.UseVisualStyleBackColor = true;
@@ -374,17 +379,17 @@
             // 
             // Dettaglio_Articoli
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(877, 464);
+            this.ClientSize = new System.Drawing.Size(1169, 571);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dettArticoliDataGridView);
             this.Controls.Add(this.dettArticoliBindingNavigator);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dettaglio_Articoli";
             this.Text = "Anagrafica Articoli";
             this.Load += new System.EventHandler(this.Dettaglio_Load);

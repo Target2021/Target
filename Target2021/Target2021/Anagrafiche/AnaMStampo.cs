@@ -31,5 +31,10 @@ namespace Target2021.Anagrafiche
             this.macchineStampoTableAdapter.Fill(this.target2021DataSet.MacchineStampo);
 
         }
+
+        private void macchineStampoDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
+        }
     }
 }

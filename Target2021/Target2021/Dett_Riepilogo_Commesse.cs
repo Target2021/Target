@@ -16,18 +16,14 @@ namespace Target2021
         int indice;
         string query="";
         string mio;
+        BindingSource source = new BindingSource();
         string stringa_connessione= Properties.Resources.StringaConnessione;
         DataTable dataTable = new DataTable();
         public Dett_Riepilogo_Commesse(int numero)
-        {
-            InitializeComponent();
-            indice = numero;
-        }
+        {           InitializeComponent();           indice = numero;       }
 
         private void Dett_Riepilogo_Commesse_Load(object sender, EventArgs e)
-        {
-            caricamento_dati();
-        }
+        {            caricamento_dati();      }
         private void caricamento_dati()
         {
             switch (indice)
@@ -66,7 +62,6 @@ namespace Target2021
             SqlDataAdapter SDA = new SqlDataAdapter();
             SDA.SelectCommand = comando;
             SDA.Fill(dataTable);
-            BindingSource source = new BindingSource();
             source.DataSource = dataTable;
             dataGridView1.DataSource = source;
             SDA.Update(dataTable);
@@ -74,20 +69,15 @@ namespace Target2021
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            ricerca();
-        }
+        {            ricerca();       }
         private void ricerca()
         {
-            DataView dv = dataTable.DefaultView;
-            dv.RowFilter = string.Format("TRANSACTYPE  LIKE '%{0}%'", comboBox1.SelectedItem.ToString());
-            dataGridView1.DataSource = dv;
+            if (comboBox1.Text == "Codice") source.Filter = "CodCommessa LIKE '*" + textBox1.Text + "*'";
+            if (comboBox1.Text == "Data") source.Filter = "DataCommessa LIKE '*" + textBox1.Text + "*'";
+            dataGridView1.DataSource = source;
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {           ricerca();       }
     }
 }

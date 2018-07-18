@@ -67,28 +67,29 @@ namespace Target2021
         }
         private void scarico(string oggetto)
         {
-            string query = null, queryup = null, queryins = null, querydiff = null;
+            string query = null, queryup = null, queryins = null, querydiff = null,scelta="";
             int quantità = 0;
             if (oggetto == "Materia Prima")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idPrime='" + textBox3.Text + "'";
+                scelta = "idPrime";
             }
             if (oggetto == "Stampo")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idStampi='" + textBox3.Text + "'";
+                scelta = "idStampi";
             }
             if (oggetto == "Dima")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idDime='" + textBox3.Text + "'";
+                scelta = " idDime";
             }
             if (oggetto == "Semi lavorato")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idSemilavorati='" + textBox3.Text + "'";
+                scelta = "idSemilavorati";
             }
             if (oggetto == "Articolo")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idArticoli='" + textBox3.Text + "'";
+                scelta = "idArticoli";
             }
+            query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE "+scelta+"='" + textBox3.Text + "'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -145,28 +146,29 @@ namespace Target2021
          }
         private void carico(string oggetto)
         {
-            string query = null, queryup = null, queryins = null,querydiff=null;
+            string query = null, queryup = null, queryins = null,querydiff=null,scelta="";
             int quantità = 0;
             if (oggetto == "Materia Prima")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idPrime='" + textBox3.Text + "'";
+                scelta = "idPrime";
             }
             if(oggetto=="Stampo")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idStampi='" + textBox3.Text + "'";
+                scelta = "idStampi";
             }
             if(oggetto=="Dima")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idDime='" + textBox3.Text + "'";
+                scelta = " idDime";
             }
             if (oggetto == "Semi lavorato")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idSemilavorati='" + textBox3.Text + "'";
+                scelta = "idSemilavorati";
             }
             if (oggetto == "Articolo")
             {
-                query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE idArticoli='" + textBox3.Text + "'";
+                scelta = "idArticoli";
             }
+             query = "SELECT GiacenzaComplessiva FROM GiacenzeMagazzini WHERE "+scelta+"='" + textBox3.Text + "'";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
