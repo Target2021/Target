@@ -200,8 +200,8 @@
         </Style>
       </Line>
       <Line Name="Line2">
-        <Top>2.0162cm</Top>
-        <Left>0.20849cm</Left>
+        <Top>2.01619cm</Top>
+        <Left>0.20375cm</Left>
         <Height>0cm</Height>
         <Width>18.68778cm</Width>
         <ZIndex>7</ZIndex>
@@ -221,6 +221,7 @@
                 <Value>SCHEDA COMMESSA</Value>
                 <Style>
                   <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -235,7 +236,7 @@
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Dotted</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -258,7 +259,6 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>0.0762cm</Top>
         <Left>9.07613cm</Left>
         <Height>0.58208cm</Height>
         <Width>4.1275cm</Width>
@@ -288,7 +288,6 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>0.0762cm</Top>
         <Left>14.62357cm</Left>
         <Height>0.58208cm</Height>
         <Width>3.19673cm</Width>
@@ -321,7 +320,6 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IDMachStampa</rd:DefaultName>
-        <Top>0.05828cm</Top>
         <Left>13.30947cm</Left>
         <Height>0.6cm</Height>
         <Width>0.9654cm</Width>
@@ -353,10 +351,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IDMachTaglio</rd:DefaultName>
-        <Top>0.0762cm</Top>
         <Left>17.92613cm</Left>
         <Height>0.6cm</Height>
-        <Width>0.9654cm</Width>
+        <Width>0.97014cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -527,7 +524,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!NrPezziDaLavorare.Value, "DataSet1")</Value>
+                <Value>=First(Fields!NrPezziDaLavorare.Value, "DataSet1")</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -902,7 +899,7 @@
               <TextRun>
                 <Value>=Lookup(First(Fields!IDMachStampa.Value, "DataSet1"), Fields!IdStampa.Value, Fields!Descrizione.Value, "DataSet2")</Value>
                 <Style>
-                  <FontSize>24pt</FontSize>
+                  <FontSize>22pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -911,10 +908,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Descrizione</rd:DefaultName>
-        <Top>0.85259cm</Top>
-        <Left>10.32848cm</Left>
-        <Height>0.98722cm</Height>
-        <Width>3.16587cm</Width>
+        <Top>0.72319cm</Top>
+        <Left>9.48181cm</Left>
+        <Height>1.11661cm</Height>
+        <Width>3.44809cm</Width>
         <ZIndex>31</ZIndex>
         <Style>
           <Border>
@@ -935,7 +932,7 @@
               <TextRun>
                 <Value>=Lookup(First(Fields!IDMachTaglio.Value, "DataSet1"), Fields!IDTaglio.Value, Fields!Descrizione.Value, "DataSet3")</Value>
                 <Style>
-                  <FontSize>24pt</FontSize>
+                  <FontSize>22pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -944,11 +941,183 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Descrizione1</rd:DefaultName>
-        <Top>0.88787cm</Top>
-        <Left>15.29384cm</Left>
-        <Height>0.98722cm</Height>
-        <Width>3.24083cm</Width>
+        <Top>0.74111cm</Top>
+        <Left>14.90579cm</Left>
+        <Height>1.11661cm</Height>
+        <Width>3.5936cm</Width>
         <ZIndex>32</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line5">
+        <Top>7.17613cm</Top>
+        <Left>0.28787cm</Left>
+        <Height>0cm</Height>
+        <Width>18.60366cm</Width>
+        <ZIndex>33</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>STAMPAGGIO</Value>
+                <Style>
+                  <FontSize>18pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>7.88141cm</Top>
+        <Left>0.28787cm</Left>
+        <Height>0.75875cm</Height>
+        <Width>5.09701cm</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Codice articolo in uscita dalla fase di stampaggio:</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>9.01912cm</Top>
+        <Left>0.27433cm</Left>
+        <Height>0.75875cm</Height>
+        <Width>11.79095cm</Width>
+        <ZIndex>35</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CodArtiDopoStampo">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!CodArtiDopoStampo.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CodArtiDopoStampo</rd:DefaultName>
+        <Top>9.01912cm</Top>
+        <Left>12.72328cm</Left>
+        <Height>0.75875cm</Height>
+        <Width>3.95521cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="IDStampo">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!IDStampo.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>IDStampo</rd:DefaultName>
+        <Top>10.08489cm</Top>
+        <Left>4.47645cm</Left>
+        <Height>0.75875cm</Height>
+        <Width>3.95521cm</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Codice stampo:</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>10.08489cm</Top>
+        <Left>0.20849cm</Left>
+        <Height>0.75875cm</Height>
+        <Width>4.09158cm</Width>
+        <ZIndex>38</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -967,10 +1136,10 @@
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>1cm</LeftMargin>
-    <RightMargin>1cm</RightMargin>
-    <TopMargin>1cm</TopMargin>
-    <BottomMargin>1cm</BottomMargin>
+    <LeftMargin>0.5cm</LeftMargin>
+    <RightMargin>0.5cm</RightMargin>
+    <TopMargin>0.5cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
