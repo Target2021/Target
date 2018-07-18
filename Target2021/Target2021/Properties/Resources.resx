@@ -125,7 +125,7 @@
     <value>..\Resources\linea-tratteggiata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="StringaConnessione" xml:space="preserve">
-    <value>Data Source=target2021.database.windows.net;Initial Catalog=Target2021;Persist Security Info=True;User ID=Amministratore;Password=Barilla23</value>
+    <value>Data Source=DESKTOP-CSQ69NN\SQLEXPRESS;Initial Catalog=Target2021;Integrated Security=True</value>
   </data>
   <data name="Aggiorna" xml:space="preserve">
     <value />

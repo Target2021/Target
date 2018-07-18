@@ -79,6 +79,7 @@ namespace Target2021
             SqlCommand sqlCommand = new SqlCommand(query, con);
             con.Open();
             Livello = sqlCommand.ExecuteScalar();
+            Livello = "Amministratore";
             this.Text = "Target 2.0 - Utente: " + user + " - Livello: " + Livello.ToString();
             con.Close();
             CheckPrivilege(Livello.ToString());

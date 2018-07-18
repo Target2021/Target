@@ -120,7 +120,7 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Data Source=target2021.database.windows.net;Initial Catalog=Target2021;Persist Security Info=True;User ID=Amministratore;Password=Barilla23.
+        ///   Cerca una stringa localizzata simile a Data Source=DESKTOP-CSQ69NN\SQLEXPRESS;Initial Catalog=Target2021;Integrated Security=True.
         /// </summary>
         internal static string StringaConnessione {
             get {

@@ -200,7 +200,7 @@
             // 
             dimXLabel.AutoSize = true;
             dimXLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dimXLabel.Location = new System.Drawing.Point(425, 179);
+            dimXLabel.Location = new System.Drawing.Point(425, 153);
             dimXLabel.Name = "dimXLabel";
             dimXLabel.Size = new System.Drawing.Size(56, 20);
             dimXLabel.TabIndex = 21;
@@ -210,7 +210,7 @@
             // 
             dimYLabel.AutoSize = true;
             dimYLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dimYLabel.Location = new System.Drawing.Point(425, 205);
+            dimYLabel.Location = new System.Drawing.Point(425, 179);
             dimYLabel.Name = "dimYLabel";
             dimYLabel.Size = new System.Drawing.Size(56, 20);
             dimYLabel.TabIndex = 23;
@@ -220,7 +220,7 @@
             // 
             dimZLabel.AutoSize = true;
             dimZLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dimZLabel.Location = new System.Drawing.Point(425, 231);
+            dimZLabel.Location = new System.Drawing.Point(425, 205);
             dimZLabel.Name = "dimZLabel";
             dimZLabel.Size = new System.Drawing.Size(55, 20);
             dimZLabel.TabIndex = 25;
@@ -230,7 +230,7 @@
             // 
             pesoLabel.AutoSize = true;
             pesoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pesoLabel.Location = new System.Drawing.Point(429, 257);
+            pesoLabel.Location = new System.Drawing.Point(429, 231);
             pesoLabel.Name = "pesoLabel";
             pesoLabel.Size = new System.Drawing.Size(49, 20);
             pesoLabel.TabIndex = 27;
@@ -278,6 +278,7 @@
             this.tableAdapterManager.PrimeTableAdapter = this.primeTableAdapter;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -501,7 +502,7 @@
             // 
             this.dimXTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.primeBindingSource, "DimX", true));
             this.dimXTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dimXTextBox.Location = new System.Drawing.Point(521, 176);
+            this.dimXTextBox.Location = new System.Drawing.Point(521, 150);
             this.dimXTextBox.Name = "dimXTextBox";
             this.dimXTextBox.Size = new System.Drawing.Size(100, 26);
             this.dimXTextBox.TabIndex = 22;
@@ -510,7 +511,7 @@
             // 
             this.dimYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.primeBindingSource, "DimY", true));
             this.dimYTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dimYTextBox.Location = new System.Drawing.Point(521, 202);
+            this.dimYTextBox.Location = new System.Drawing.Point(521, 176);
             this.dimYTextBox.Name = "dimYTextBox";
             this.dimYTextBox.Size = new System.Drawing.Size(100, 26);
             this.dimYTextBox.TabIndex = 24;
@@ -519,7 +520,7 @@
             // 
             this.dimZTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.primeBindingSource, "DimZ", true));
             this.dimZTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dimZTextBox.Location = new System.Drawing.Point(521, 228);
+            this.dimZTextBox.Location = new System.Drawing.Point(521, 202);
             this.dimZTextBox.Name = "dimZTextBox";
             this.dimZTextBox.Size = new System.Drawing.Size(100, 26);
             this.dimZTextBox.TabIndex = 26;
@@ -528,7 +529,7 @@
             // 
             this.pesoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.primeBindingSource, "Peso", true));
             this.pesoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pesoTextBox.Location = new System.Drawing.Point(521, 254);
+            this.pesoTextBox.Location = new System.Drawing.Point(521, 228);
             this.pesoTextBox.Name = "pesoTextBox";
             this.pesoTextBox.Size = new System.Drawing.Size(100, 26);
             this.pesoTextBox.TabIndex = 28;
