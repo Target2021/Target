@@ -23,7 +23,6 @@ namespace Target2021.Anagrafiche
             this.Validate();
             this.primeBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
         }
 
         private void AnaMateriePrime_Load(object sender, EventArgs e)
