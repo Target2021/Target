@@ -340,6 +340,13 @@ namespace Target2021
 
         }
 
+        private void distintaBaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaArticoli DistintaBase = new AnaArticoli();
+            DistintaBase.MdiParent = this;
+            DistintaBase.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
