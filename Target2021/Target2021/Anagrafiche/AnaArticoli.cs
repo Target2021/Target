@@ -27,6 +27,12 @@ namespace Target2021.Anagrafiche
 
         private void AnaArticoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
+            this.fornitoriTableAdapter.Fill(this.target2021DataSet.Fornitori);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
+            this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fasi'. È possibile spostarla o rimuoverla se necessario.
+            this.fasiTableAdapter.Fill(this.target2021DataSet.Fasi);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.articoli_semplici'. È possibile spostarla o rimuoverla se necessario.
             this.articoli_sempliciTableAdapter.Fill(this.target2021DataSet.articoli_semplici);
 
@@ -40,8 +46,29 @@ namespace Target2021.Anagrafiche
 
         private void articoli_sempliciDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string codice=articoli_sempliciDataGridView.Rows[e.RowIndex].Cells[0].ToString();
+            string codice = articoli_sempliciDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             label1.Text = codice;
+            string descrizione= articoli_sempliciDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
+            label2.Text = descrizione;
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filtro = "codice='" + comboBox3.SelectedValue+"'";
+            DataRow[] MatPrima = target2021DataSet.Tables["Prime"].Select(filtro);
+            label6.Text = MatPrima[0].Field <String>("descrizione");
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string filtro = "codice='" + comboBox4.SelectedValue + "'";
+            DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
+            label7.Text = Fornitore[0].Field<String>("ragione_sociale");
         }
     }
 }

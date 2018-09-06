@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaArticoli));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.articoli_sempliciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.articoli_sempliciTableAdapter = new Target2021.Target2021DataSetTableAdapters.articoli_sempliciTableAdapter();
@@ -56,12 +57,36 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.fasiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.fasiTableAdapter = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
+            this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
+            this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingNavigator)).BeginInit();
             this.articoli_sempliciBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // target2021DataSet
@@ -144,7 +169,7 @@
             this.articoli_sempliciBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.articoli_sempliciBindingNavigator.Name = "articoli_sempliciBindingNavigator";
             this.articoli_sempliciBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.articoli_sempliciBindingNavigator.Size = new System.Drawing.Size(776, 25);
+            this.articoli_sempliciBindingNavigator.Size = new System.Drawing.Size(815, 25);
             this.articoli_sempliciBindingNavigator.TabIndex = 0;
             this.articoli_sempliciBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -253,10 +278,18 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn18});
             this.articoli_sempliciDataGridView.DataSource = this.articoli_sempliciBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.articoli_sempliciDataGridView.Location = new System.Drawing.Point(-1, 93);
             this.articoli_sempliciDataGridView.Name = "articoli_sempliciDataGridView";
             this.articoli_sempliciDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(772, 220);
+            this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(816, 144);
             this.articoli_sempliciDataGridView.TabIndex = 1;
             this.articoli_sempliciDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.articoli_sempliciDataGridView_CellContentClick);
             // 
@@ -295,7 +328,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(771, 51);
+            this.groupBox1.Size = new System.Drawing.Size(811, 51);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtra";
@@ -322,18 +355,195 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(212, 357);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(167, 240);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 270);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(816, 212);
+            this.tabControl1.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.comboBox4);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.comboBox3);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(808, 186);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Fase 1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(290, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 18);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "label7";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(290, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 18);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "label6";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DataSource = this.fornitoriBindingSource;
+            this.comboBox4.DisplayMember = "codice";
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(153, 89);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(131, 26);
+            this.comboBox4.TabIndex = 5;
+            this.comboBox4.ValueMember = "codice";
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            // 
+            // fornitoriBindingSource
+            // 
+            this.fornitoriBindingSource.DataMember = "Fornitori";
+            this.fornitoriBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(10, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 18);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Codice fornitore:";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.primeBindingSource;
+            this.comboBox3.DisplayMember = "codice";
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(154, 51);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(130, 26);
+            this.comboBox3.TabIndex = 3;
+            this.comboBox3.ValueMember = "codice";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // primeBindingSource
+            // 
+            this.primeBindingSource.DataMember = "Prime";
+            this.primeBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 18);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Cod. materia prima:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 18);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "FASE:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.fasiBindingSource;
+            this.comboBox2.DisplayMember = "Descrizione";
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(68, 16);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(216, 26);
+            this.comboBox2.TabIndex = 0;
+            this.comboBox2.ValueMember = "IDFase";
+            // 
+            // fasiBindingSource
+            // 
+            this.fasiBindingSource.DataMember = "Fasi";
+            this.fasiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(808, 186);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Fase 2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(808, 186);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Fase 3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(280, 240);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "label2";
+            // 
+            // fasiTableAdapter
+            // 
+            this.fasiTableAdapter.ClearBeforeFill = true;
+            // 
+            // primeTableAdapter
+            // 
+            this.primeTableAdapter.ClearBeforeFill = true;
+            // 
+            // fornitoriTableAdapter
+            // 
+            this.fornitoriTableAdapter.ClearBeforeFill = true;
             // 
             // AnaArticoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 450);
+            this.ClientSize = new System.Drawing.Size(815, 483);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.articoli_sempliciDataGridView);
             this.Controls.Add(this.articoli_sempliciBindingNavigator);
@@ -348,6 +558,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +597,24 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource fasiBindingSource;
+        private Target2021DataSetTableAdapters.FasiTableAdapter fasiTableAdapter;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.BindingSource primeBindingSource;
+        private Target2021DataSetTableAdapters.PrimeTableAdapter primeTableAdapter;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.BindingSource fornitoriBindingSource;
+        private Target2021DataSetTableAdapters.FornitoriTableAdapter fornitoriTableAdapter;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
