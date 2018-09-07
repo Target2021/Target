@@ -70,5 +70,10 @@ namespace Target2021.Anagrafiche
             DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
             label7.Text = Fornitore[0].Field<String>("ragione_sociale");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
