@@ -63,7 +63,7 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(230, 81);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(93, 20);
             this.textBox1.TabIndex = 0;
@@ -82,7 +82,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(230, 134);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(57, 20);
             this.textBox2.TabIndex = 2;
@@ -91,7 +91,7 @@
             // 
             this.Carico.AutoSize = true;
             this.Carico.Location = new System.Drawing.Point(19, 15);
-            this.Carico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Carico.Margin = new System.Windows.Forms.Padding(2);
             this.Carico.Name = "Carico";
             this.Carico.Size = new System.Drawing.Size(55, 17);
             this.Carico.TabIndex = 3;
@@ -104,7 +104,7 @@
             // 
             this.Scarico.AutoSize = true;
             this.Scarico.Location = new System.Drawing.Point(134, 15);
-            this.Scarico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Scarico.Margin = new System.Windows.Forms.Padding(2);
             this.Scarico.Name = "Scarico";
             this.Scarico.Size = new System.Drawing.Size(61, 17);
             this.Scarico.TabIndex = 4;
@@ -119,9 +119,9 @@
             this.groupBox1.Controls.Add(this.Scarico);
             this.groupBox1.Controls.Add(this.Carico);
             this.groupBox1.Location = new System.Drawing.Point(207, 262);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(242, 60);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
@@ -147,7 +147,7 @@
             "Semi lavorato",
             "Articolo"});
             this.comboBox1.Location = new System.Drawing.Point(228, 183);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(127, 21);
             this.comboBox1.TabIndex = 7;
@@ -155,7 +155,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(230, 229);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(124, 20);
             this.textBox3.TabIndex = 8;
@@ -185,7 +185,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(230, 344);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(125, 20);
             this.textBox4.TabIndex = 11;
@@ -205,7 +205,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(230, 509);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 40);
             this.button1.TabIndex = 13;
@@ -216,7 +216,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(230, 392);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(123, 20);
             this.textBox5.TabIndex = 14;
@@ -235,7 +235,7 @@
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(230, 430);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(125, 20);
             this.textBox6.TabIndex = 16;
@@ -243,7 +243,7 @@
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(230, 472);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(125, 20);
             this.textBox7.TabIndex = 17;
@@ -293,10 +293,14 @@
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
@@ -309,6 +313,8 @@
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = this.movimentiMagazzinoTableAdapter;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
@@ -352,7 +358,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ScaricoCaricoMagazzini";
             this.Text = "ScaricoCaricoMagazzini";
             this.Load += new System.EventHandler(this.ScaricoCaricoMagazzini_Load);

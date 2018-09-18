@@ -235,6 +235,12 @@
     <Compile Include="Dett_Riepilogo_Commesse.Designer.cs">
       <DependentUpon>Dett_Riepilogo_Commesse.cs</DependentUpon>
     </Compile>
+    <Compile Include="DistintaBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DistintaBase.Designer.cs">
+      <DependentUpon>DistintaBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="EsecuzioneQuery.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -428,6 +434,9 @@
     <EmbeddedResource Include="Dett_Riepilogo_Commesse.resx">
       <DependentUpon>Dett_Riepilogo_Commesse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DistintaBase.resx">
+      <DependentUpon>DistintaBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -528,6 +537,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Immagini\allegaFile.png" />
+    <None Include="Resources\allegaFile.png" />
+    <Content Include="Immagini\list-interface-symbol_icon-icons.com_73223.png" />
+    <None Include="Resources\list-interface-symbol_icon-icons.com_73223.png" />
+    <None Include="Resources\elenco_iscritti_new.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -72,9 +72,29 @@ namespace Target2021.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap allegaFile {
+            get {
+                object obj = ResourceManager.GetObject("allegaFile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrabiato {
             get {
                 object obj = ResourceManager.GetObject("arrabiato", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap elenco_iscritti_new {
+            get {
+                object obj = ResourceManager.GetObject("elenco_iscritti_new", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -95,6 +115,16 @@ namespace Target2021.Properties {
         internal static System.Drawing.Bitmap linea_tratteggiata {
             get {
                 object obj = ResourceManager.GetObject("linea-tratteggiata", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list_interface_symbol_icon_icons_com_73223 {
+            get {
+                object obj = ResourceManager.GetObject("list-interface-symbol_icon-icons.com_73223", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

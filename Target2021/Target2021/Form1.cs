@@ -342,9 +342,21 @@ namespace Target2021
 
         private void distintaBaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AnaArticoli DistintaBase = new AnaArticoli();
+            DistintaBase DistintaBase = new DistintaBase();
             DistintaBase.MdiParent = this;
             DistintaBase.Show();
+        }
+
+        private void articoloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void anagraficaArticoloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaArticoli AnArt = new AnaArticoli();
+            AnArt.MdiParent = this;
+            AnArt.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

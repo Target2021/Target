@@ -40,6 +40,7 @@
             this.dettaglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.distintaBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornitoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macchinariToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +83,7 @@
             this.monitoraggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taglioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.distintaBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anagraficaArticoloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -186,10 +187,12 @@
             this.dettaglioToolStripMenuItem,
             this.nuovoToolStripMenuItem,
             this.toolStripMenuItem1,
-            this.distintaBaseToolStripMenuItem});
+            this.distintaBaseToolStripMenuItem,
+            this.anagraficaArticoloToolStripMenuItem});
             this.articoloToolStripMenuItem.Name = "articoloToolStripMenuItem";
             this.articoloToolStripMenuItem.Size = new System.Drawing.Size(286, 30);
             this.articoloToolStripMenuItem.Text = "Articoli";
+            this.articoloToolStripMenuItem.Click += new System.EventHandler(this.articoloToolStripMenuItem_Click);
             // 
             // dettaglioToolStripMenuItem
             // 
@@ -210,6 +213,13 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(270, 30);
             this.toolStripMenuItem1.Text = "Duplica";
+            // 
+            // distintaBaseToolStripMenuItem
+            // 
+            this.distintaBaseToolStripMenuItem.Name = "distintaBaseToolStripMenuItem";
+            this.distintaBaseToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
+            this.distintaBaseToolStripMenuItem.Text = "Distinta Base";
+            this.distintaBaseToolStripMenuItem.Click += new System.EventHandler(this.distintaBaseToolStripMenuItem_Click);
             // 
             // clientiToolStripMenuItem
             // 
@@ -542,12 +552,12 @@
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
-            // distintaBaseToolStripMenuItem
+            // anagraficaArticoloToolStripMenuItem
             // 
-            this.distintaBaseToolStripMenuItem.Name = "distintaBaseToolStripMenuItem";
-            this.distintaBaseToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
-            this.distintaBaseToolStripMenuItem.Text = "Distinta Base";
-            this.distintaBaseToolStripMenuItem.Click += new System.EventHandler(this.distintaBaseToolStripMenuItem_Click);
+            this.anagraficaArticoloToolStripMenuItem.Name = "anagraficaArticoloToolStripMenuItem";
+            this.anagraficaArticoloToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
+            this.anagraficaArticoloToolStripMenuItem.Text = "Anagrafica articolo";
+            this.anagraficaArticoloToolStripMenuItem.Click += new System.EventHandler(this.anagraficaArticoloToolStripMenuItem_Click);
             // 
             // Home
             // 
@@ -625,6 +635,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem etichetteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem distintaBaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem anagraficaArticoloToolStripMenuItem;
     }
 }
 

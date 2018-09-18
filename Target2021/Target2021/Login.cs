@@ -61,7 +61,6 @@ namespace Target2021
             {
                 button1_Click(sender, e);
             }
-
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

@@ -29,19 +29,23 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPrezzo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboUnita = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button2 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.txtPercorso = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,13 +59,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Codice Articolo:";
             // 
-            // textBox1
+            // txtCodice
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 31);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 26);
-            this.textBox1.TabIndex = 3;
+            this.txtCodice.Location = new System.Drawing.Point(131, 31);
+            this.txtCodice.Multiline = true;
+            this.txtCodice.Name = "txtCodice";
+            this.txtCodice.Size = new System.Drawing.Size(174, 26);
+            this.txtCodice.TabIndex = 3;
             // 
             // label1
             // 
@@ -73,13 +77,13 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Descizione:";
             // 
-            // textBox2
+            // txtDesc
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 256);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(287, 81);
-            this.textBox2.TabIndex = 5;
+            this.txtDesc.Location = new System.Drawing.Point(131, 256);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(287, 81);
+            this.txtDesc.TabIndex = 5;
             // 
             // label2
             // 
@@ -91,13 +95,13 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Prezzo (€):";
             // 
-            // textBox3
+            // txtPrezzo
             // 
-            this.textBox3.Location = new System.Drawing.Point(131, 91);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 26);
-            this.textBox3.TabIndex = 7;
+            this.txtPrezzo.Location = new System.Drawing.Point(131, 91);
+            this.txtPrezzo.Multiline = true;
+            this.txtPrezzo.Name = "txtPrezzo";
+            this.txtPrezzo.Size = new System.Drawing.Size(174, 26);
+            this.txtPrezzo.TabIndex = 7;
             // 
             // label4
             // 
@@ -109,13 +113,13 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Note:";
             // 
-            // textBox4
+            // txtNote
             // 
-            this.textBox4.Location = new System.Drawing.Point(131, 368);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(287, 51);
-            this.textBox4.TabIndex = 9;
+            this.txtNote.Location = new System.Drawing.Point(131, 368);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(287, 51);
+            this.txtNote.TabIndex = 9;
             // 
             // label5
             // 
@@ -127,13 +131,16 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Unità di misura:";
             // 
-            // comboBox1
+            // comboUnita
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 21);
-            this.comboBox1.TabIndex = 11;
+            this.comboUnita.FormattingEnabled = true;
+            this.comboUnita.Items.AddRange(new object[] {
+            "Nr.",
+            "Pz."});
+            this.comboUnita.Location = new System.Drawing.Point(131, 149);
+            this.comboUnita.Name = "comboUnita";
+            this.comboUnita.Size = new System.Drawing.Size(174, 21);
+            this.comboUnita.TabIndex = 11;
             // 
             // label6
             // 
@@ -145,13 +152,13 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Tipo:";
             // 
-            // textBox5
+            // txtTipo
             // 
-            this.textBox5.Location = new System.Drawing.Point(131, 202);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(174, 26);
-            this.textBox5.TabIndex = 13;
+            this.txtTipo.Location = new System.Drawing.Point(131, 202);
+            this.txtTipo.Multiline = true;
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(174, 26);
+            this.txtTipo.TabIndex = 13;
             // 
             // button1
             // 
@@ -161,33 +168,62 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Salva";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(339, 31);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 197);
+            this.pictureBox1.Size = new System.Drawing.Size(220, 171);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::Target2021.Properties.Resources.allegaFile;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(529, 202);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 33);
+            this.button2.TabIndex = 16;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtPercorso
+            // 
+            this.txtPercorso.Location = new System.Drawing.Point(339, 210);
+            this.txtPercorso.Name = "txtPercorso";
+            this.txtPercorso.Size = new System.Drawing.Size(184, 20);
+            this.txtPercorso.TabIndex = 17;
             // 
             // NuovoArticolo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 427);
+            this.Controls.Add(this.txtPercorso);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboUnita);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtNote);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPrezzo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCodice);
             this.Controls.Add(this.label3);
             this.Name = "NuovoArticolo";
             this.Text = "Nuovo Articolo";
@@ -200,18 +236,22 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodice;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPrezzo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboUnita;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.TextBox txtPercorso;
     }
 }
