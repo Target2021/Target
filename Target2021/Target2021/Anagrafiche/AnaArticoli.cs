@@ -35,10 +35,13 @@ namespace Target2021.Anagrafiche
             textBox6.Text = "";
             textBox7.Text = "";
             textBox8.Text = "";
+            comboBox8.Text = "0";
         }
 
         private void AnaArticoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet4.MacchineStampo'. È possibile spostarla o rimuoverla se necessario.
+            this.macchineStampoTableAdapter.Fill(this.target2021DataSet4.MacchineStampo);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet3.Fornitori'. È possibile spostarla o rimuoverla se necessario.
             this.fornitoriTableAdapter1.Fill(this.target2021DataSet3.Fornitori);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet2.Stampi'. È possibile spostarla o rimuoverla se necessario.
@@ -166,6 +169,16 @@ namespace Target2021.Anagrafiche
                 comboBox6.Refresh();
                 comboBox7.Text = Fase2[0].Field<string>("codice_fornitore");
                 comboBox7.Refresh();
+                textBox9.Text = Fase2[0].Field<string>("CodiceInput");
+                textBox9.Refresh();
+                textBox10.Text = Fase2[0].Field<string>("CodiceOutput");
+                textBox10.Refresh();
+                textBox11.Text = Fase2[0].Field<int>("PercentualeLastra").ToString();
+                textBox11.Refresh();
+                comboBox8.Text = Fase2[0].Field<int>("MacPredefStampo").ToString();
+                comboBox8.Refresh();
+                textBox12.Text = Fase2[0].Field<int>("AbbinamentoStampo").ToString();
+                textBox12.Refresh();
             }
             catch { }
         }
@@ -219,6 +232,30 @@ namespace Target2021.Anagrafiche
                 label18.Text = Fornitore[0].Field<String>("ragione_sociale");
             }
             catch { }
+        }
+
+        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtro = "IdStampa='" + comboBox8.SelectedValue + "'";
+                DataRow[] MPredef = target2021DataSet4.Tables["MacchineStampo"].Select(filtro);
+                label25.Text = MPredef[0].Field<String>("Descrizione");
+            }
+            catch { }
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int CodAbb;
+            CodAbb = Convert.ToInt32(textBox12.Text);
+            DettAbbinamStampo DAS = new DettAbbinamStampo(CodAbb,textBox2.Text);
+            DAS.Show();
         }
     }
 }

@@ -41,6 +41,7 @@
             this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.distintaBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anagraficaArticoloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornitoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.macchinariToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,6 @@
             this.minuterieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fasiLavorazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compatibilitàStampiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.compatibilitàDimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commesseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.controllaNuoviOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +83,6 @@
             this.monitoraggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taglioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.anagraficaArticoloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -174,8 +173,7 @@
             this.macchinariToolStripMenuItem,
             this.strumentiToolStripMenuItem,
             this.fasiLavorazioneToolStripMenuItem,
-            this.compatibilitàStampiToolStripMenuItem,
-            this.compatibilitàDimeToolStripMenuItem});
+            this.compatibilitàStampiToolStripMenuItem});
             this.anagraficeToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anagraficeToolStripMenuItem.Name = "anagraficeToolStripMenuItem";
             this.anagraficeToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
@@ -220,6 +218,13 @@
             this.distintaBaseToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
             this.distintaBaseToolStripMenuItem.Text = "Distinta Base";
             this.distintaBaseToolStripMenuItem.Click += new System.EventHandler(this.distintaBaseToolStripMenuItem_Click);
+            // 
+            // anagraficaArticoloToolStripMenuItem
+            // 
+            this.anagraficaArticoloToolStripMenuItem.Name = "anagraficaArticoloToolStripMenuItem";
+            this.anagraficaArticoloToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
+            this.anagraficaArticoloToolStripMenuItem.Text = "Anagrafica articolo";
+            this.anagraficaArticoloToolStripMenuItem.Click += new System.EventHandler(this.anagraficaArticoloToolStripMenuItem_Click);
             // 
             // clientiToolStripMenuItem
             // 
@@ -310,13 +315,6 @@
             this.compatibilitàStampiToolStripMenuItem.Size = new System.Drawing.Size(286, 30);
             this.compatibilitàStampiToolStripMenuItem.Text = "Compatibilità Stampi";
             this.compatibilitàStampiToolStripMenuItem.Click += new System.EventHandler(this.compatibilitàStampiToolStripMenuItem_Click);
-            // 
-            // compatibilitàDimeToolStripMenuItem
-            // 
-            this.compatibilitàDimeToolStripMenuItem.Name = "compatibilitàDimeToolStripMenuItem";
-            this.compatibilitàDimeToolStripMenuItem.Size = new System.Drawing.Size(286, 30);
-            this.compatibilitàDimeToolStripMenuItem.Text = "Compatibilità Dime";
-            this.compatibilitàDimeToolStripMenuItem.Click += new System.EventHandler(this.compatibilitàDimeToolStripMenuItem_Click);
             // 
             // ordiniToolStripMenuItem
             // 
@@ -552,13 +550,6 @@
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
-            // anagraficaArticoloToolStripMenuItem
-            // 
-            this.anagraficaArticoloToolStripMenuItem.Name = "anagraficaArticoloToolStripMenuItem";
-            this.anagraficaArticoloToolStripMenuItem.Size = new System.Drawing.Size(270, 30);
-            this.anagraficaArticoloToolStripMenuItem.Text = "Anagrafica articolo";
-            this.anagraficaArticoloToolStripMenuItem.Click += new System.EventHandler(this.anagraficaArticoloToolStripMenuItem_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,7 +591,6 @@
         private System.Windows.Forms.ToolStripMenuItem minuterieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fasiLavorazioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compatibilitàStampiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem compatibilitàDimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordiniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commesseToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem magazziniToolStripMenuItem;

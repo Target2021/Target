@@ -50783,19 +50783,17 @@ SELECT IDutente, Nome, Cognome, Livello, Password FROM Utenti WHERE (IDutente = 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codice_articolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AbbinamentiArticoli] ([IDA], [IdAbbinamento], [codice_articolo" +
-                "]) VALUES (@IDA, @IdAbbinamento, @codice_articolo);\r\nSELECT IDA, IdAbbinamento, " +
-                "codice_articolo FROM AbbinamentiArticoli WHERE (IDA = @IDA)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[AbbinamentiArticoli] ([IdAbbinamento], [codice_articolo]) VALU" +
+                "ES (@IdAbbinamento, @codice_articolo);\r\nSELECT IDA, IdAbbinamento, codice_artico" +
+                "lo FROM AbbinamentiArticoli WHERE (IDA = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codice_articolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AbbinamentiArticoli] SET [IDA] = @IDA, [IdAbbinamento] = @IdAbbinamento, [codice_articolo] = @codice_articolo WHERE (([IDA] = @Original_IDA) AND ((@IsNull_IdAbbinamento = 1 AND [IdAbbinamento] IS NULL) OR ([IdAbbinamento] = @Original_IdAbbinamento)) AND ((@IsNull_codice_articolo = 1 AND [codice_articolo] IS NULL) OR ([codice_articolo] = @Original_codice_articolo)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AbbinamentiArticoli] SET [IdAbbinamento] = @IdAbbinamento, [codice_articolo] = @codice_articolo WHERE (([IDA] = @Original_IDA) AND ((@IsNull_IdAbbinamento = 1 AND [IdAbbinamento] IS NULL) OR ([IdAbbinamento] = @Original_IdAbbinamento)) AND ((@IsNull_codice_articolo = 1 AND [codice_articolo] IS NULL) OR ([codice_articolo] = @Original_codice_articolo)));
 SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA = @IDA)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codice_articolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IDA", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IDA", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -50803,6 +50801,7 @@ SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA =
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdAbbinamento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_codice_articolo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codice_articolo", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codice_articolo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDA", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -50815,11 +50814,17 @@ SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IDA, IdAbbinamento, codice_articolo FROM dbo.AbbinamentiArticoli";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT IDA, IdAbbinamento, codice_articolo FROM dbo.AbbinamentiArticoli\r\nWHERE Id" +
+                "Abbinamento = @CA";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CA", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdAbbinamento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -50844,6 +50849,25 @@ SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA =
             Target2021DataSet.AbbinamentiArticoliDataTable dataTable = new Target2021DataSet.AbbinamentiArticoliDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Target2021DataSet.AbbinamentiArticoliDataTable dataTable, global::System.Nullable<int> CA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((CA.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CA.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -50917,19 +50941,18 @@ SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IDA, global::System.Nullable<int> IdAbbinamento, string codice_articolo) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IDA));
+        public virtual int Insert(global::System.Nullable<int> IdAbbinamento, string codice_articolo) {
             if ((IdAbbinamento.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(IdAbbinamento.Value));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IdAbbinamento.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             if ((codice_articolo == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(codice_articolo));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(codice_articolo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -50951,37 +50974,37 @@ SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IDA, global::System.Nullable<int> IdAbbinamento, string codice_articolo, int Original_IDA, global::System.Nullable<int> Original_IdAbbinamento, string Original_codice_articolo) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IDA));
+        public virtual int Update(global::System.Nullable<int> IdAbbinamento, string codice_articolo, int Original_IDA, global::System.Nullable<int> Original_IdAbbinamento, string Original_codice_articolo, int IDA) {
             if ((IdAbbinamento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IdAbbinamento.Value));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IdAbbinamento.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             if ((codice_articolo == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(codice_articolo));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(codice_articolo));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_IDA));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_IDA));
             if ((Original_IdAbbinamento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_IdAbbinamento.Value));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_IdAbbinamento.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((Original_codice_articolo == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_codice_articolo));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_codice_articolo));
             }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(IDA));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -51003,7 +51026,7 @@ SELECT IDA, IdAbbinamento, codice_articolo FROM AbbinamentiArticoli WHERE (IDA =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> IdAbbinamento, string codice_articolo, int Original_IDA, global::System.Nullable<int> Original_IdAbbinamento, string Original_codice_articolo) {
-            return this.Update(Original_IDA, IdAbbinamento, codice_articolo, Original_IDA, Original_IdAbbinamento, Original_codice_articolo);
+            return this.Update(IdAbbinamento, codice_articolo, Original_IDA, Original_IdAbbinamento, Original_codice_articolo, Original_IDA);
         }
     }
     

@@ -332,7 +332,9 @@ namespace Target2021
 
         private void compatibilitàStampiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AnaAbbinamentoStampi AAS = new AnaAbbinamentoStampi();
+            AAS.MdiParent = this;
+            AAS.Show();
         }
 
         private void compatibilitàDimeToolStripMenuItem_Click(object sender, EventArgs e)

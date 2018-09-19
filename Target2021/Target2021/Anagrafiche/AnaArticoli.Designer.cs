@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaArticoli));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.articoli_sempliciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.articoli_sempliciTableAdapter = new Target2021.Target2021DataSetTableAdapters.articoli_sempliciTableAdapter();
@@ -80,9 +80,35 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.fasiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.macchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet4 = new Target2021.Target2021DataSet4();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.fornitoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet3 = new Target2021.Target2021DataSet3();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet2 = new Target2021.Target2021DataSet2();
+            this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.fasiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet1 = new Target2021.Target2021DataSet1();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.fasiTableAdapter = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
@@ -99,21 +125,10 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
-            this.target2021DataSet1 = new Target2021.Target2021DataSet1();
-            this.fasiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fasiTableAdapter1 = new Target2021.Target2021DataSet1TableAdapters.FasiTableAdapter();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.target2021DataSet2 = new Target2021.Target2021DataSet2();
-            this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stampiTableAdapter = new Target2021.Target2021DataSet2TableAdapters.StampiTableAdapter();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.target2021DataSet3 = new Target2021.Target2021DataSet3();
-            this.fornitoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.fornitoriTableAdapter1 = new Target2021.Target2021DataSet3TableAdapters.FornitoriTableAdapter();
+            this.macchineStampoTableAdapter = new Target2021.Target2021DataSet4TableAdapters.MacchineStampoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingNavigator)).BeginInit();
@@ -126,13 +141,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // target2021DataSet
@@ -317,14 +334,14 @@
             // 
             this.articoli_sempliciDataGridView.AutoGenerateColumns = false;
             this.articoli_sempliciDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.articoli_sempliciDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articoli_sempliciDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.articoli_sempliciDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articoli_sempliciDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -332,25 +349,25 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn18});
             this.articoli_sempliciDataGridView.DataSource = this.articoli_sempliciBindingSource;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.articoli_sempliciDataGridView.Location = new System.Drawing.Point(-1, 93);
             this.articoli_sempliciDataGridView.MultiSelect = false;
             this.articoli_sempliciDataGridView.Name = "articoli_sempliciDataGridView";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.articoli_sempliciDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(816, 144);
             this.articoli_sempliciDataGridView.TabIndex = 1;
@@ -634,6 +651,18 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label25);
+            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.textBox12);
+            this.tabPage2.Controls.Add(this.label24);
+            this.tabPage2.Controls.Add(this.comboBox8);
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.Controls.Add(this.textBox11);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.textBox9);
+            this.tabPage2.Controls.Add(this.textBox10);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.comboBox7);
             this.tabPage2.Controls.Add(this.label19);
@@ -650,6 +679,219 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Fase 2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(666, 18);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(54, 18);
+            this.label25.TabIndex = 25;
+            this.label25.Text = "label25";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(752, 86);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(48, 29);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "DETT";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox12
+            // 
+            this.textBox12.Enabled = false;
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(647, 89);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(95, 24);
+            this.textBox12.TabIndex = 23;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(535, 92);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(106, 18);
+            this.label24.TabIndex = 22;
+            this.label24.Text = "Abbin. stampo:";
+            this.label24.Click += new System.EventHandler(this.label24_Click);
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.DataSource = this.macchineStampoBindingSource;
+            this.comboBox8.DisplayMember = "IdStampa";
+            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Location = new System.Drawing.Point(556, 15);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(95, 26);
+            this.comboBox8.TabIndex = 21;
+            this.comboBox8.ValueMember = "IdStampa";
+            this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
+            // 
+            // macchineStampoBindingSource
+            // 
+            this.macchineStampoBindingSource.DataMember = "MacchineStampo";
+            this.macchineStampoBindingSource.DataSource = this.target2021DataSet4;
+            // 
+            // target2021DataSet4
+            // 
+            this.target2021DataSet4.DataSetName = "Target2021DataSet4";
+            this.target2021DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(350, 18);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(200, 18);
+            this.label23.TabIndex = 20;
+            this.label23.Text = "Macchina stampa predefinita:";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(649, 129);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(93, 24);
+            this.textBox11.TabIndex = 19;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(463, 132);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(180, 18);
+            this.label22.TabIndex = 18;
+            this.label22.Text = "Percentuale utilizzo lastra:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(115, 129);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(90, 24);
+            this.textBox9.TabIndex = 17;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(339, 129);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(90, 24);
+            this.textBox10.TabIndex = 16;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(229, 132);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(104, 18);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Codice output:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(15, 132);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(94, 18);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Codice input:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(279, 92);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(54, 18);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "label18";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DataSource = this.fornitoriBindingSource1;
+            this.comboBox7.DisplayMember = "codice";
+            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(142, 89);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(131, 26);
+            this.comboBox7.TabIndex = 11;
+            this.comboBox7.ValueMember = "codice";
+            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
+            // 
+            // fornitoriBindingSource1
+            // 
+            this.fornitoriBindingSource1.DataMember = "Fornitori";
+            this.fornitoriBindingSource1.DataSource = this.target2021DataSet3;
+            // 
+            // target2021DataSet3
+            // 
+            this.target2021DataSet3.DataSetName = "Target2021DataSet3";
+            this.target2021DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(11, 92);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(132, 18);
+            this.label19.TabIndex = 10;
+            this.label19.Text = "Cod. forn. stampo:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(251, 55);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(54, 18);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "label15";
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DataSource = this.stampiBindingSource;
+            this.comboBox6.DisplayMember = "codice";
+            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(115, 52);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(130, 26);
+            this.comboBox6.TabIndex = 8;
+            this.comboBox6.ValueMember = "codice";
+            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            // 
+            // stampiBindingSource
+            // 
+            this.stampiBindingSource.DataMember = "Stampi";
+            this.stampiBindingSource.DataSource = this.target2021DataSet2;
+            // 
+            // target2021DataSet2
+            // 
+            this.target2021DataSet2.DataSetName = "Target2021DataSet2";
+            this.target2021DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(11, 55);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(98, 18);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "Cod. stampo:";
             // 
             // label14
             // 
@@ -683,6 +925,16 @@
             this.comboBox5.TabIndex = 0;
             this.comboBox5.ValueMember = "IDFase";
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged_1);
+            // 
+            // fasiBindingSource1
+            // 
+            this.fasiBindingSource1.DataMember = "Fasi";
+            this.fasiBindingSource1.DataSource = this.target2021DataSet1;
+            // 
+            // target2021DataSet1
+            // 
+            this.target2021DataSet1.DataSetName = "Target2021DataSet1";
+            this.target2021DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage3
             // 
@@ -799,113 +1051,21 @@
             // 
             this.dettArticoliTableAdapter.ClearBeforeFill = true;
             // 
-            // target2021DataSet1
-            // 
-            this.target2021DataSet1.DataSetName = "Target2021DataSet1";
-            this.target2021DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fasiBindingSource1
-            // 
-            this.fasiBindingSource1.DataMember = "Fasi";
-            this.fasiBindingSource1.DataSource = this.target2021DataSet1;
-            // 
             // fasiTableAdapter1
             // 
             this.fasiTableAdapter1.ClearBeforeFill = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(251, 55);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 18);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "label15";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.DataSource = this.stampiBindingSource;
-            this.comboBox6.DisplayMember = "codice";
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(115, 52);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(130, 26);
-            this.comboBox6.TabIndex = 8;
-            this.comboBox6.ValueMember = "codice";
-            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(11, 55);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(98, 18);
-            this.label17.TabIndex = 7;
-            this.label17.Text = "Cod. stampo:";
-            // 
-            // target2021DataSet2
-            // 
-            this.target2021DataSet2.DataSetName = "Target2021DataSet2";
-            this.target2021DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stampiBindingSource
-            // 
-            this.stampiBindingSource.DataMember = "Stampi";
-            this.stampiBindingSource.DataSource = this.target2021DataSet2;
             // 
             // stampiTableAdapter
             // 
             this.stampiTableAdapter.ClearBeforeFill = true;
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(279, 92);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(54, 18);
-            this.label18.TabIndex = 12;
-            this.label18.Text = "label18";
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.DataSource = this.fornitoriBindingSource1;
-            this.comboBox7.DisplayMember = "codice";
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(142, 89);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(131, 26);
-            this.comboBox7.TabIndex = 11;
-            this.comboBox7.ValueMember = "codice";
-            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(11, 92);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(132, 18);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "Cod. forn. stampo:";
-            // 
-            // target2021DataSet3
-            // 
-            this.target2021DataSet3.DataSetName = "Target2021DataSet3";
-            this.target2021DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fornitoriBindingSource1
-            // 
-            this.fornitoriBindingSource1.DataMember = "Fornitori";
-            this.fornitoriBindingSource1.DataSource = this.target2021DataSet3;
-            // 
             // fornitoriTableAdapter1
             // 
             this.fornitoriTableAdapter1.ClearBeforeFill = true;
+            // 
+            // macchineStampoTableAdapter
+            // 
+            this.macchineStampoTableAdapter.ClearBeforeFill = true;
             // 
             // AnaArticoli
             // 
@@ -945,13 +1105,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1040,5 +1202,20 @@
         private Target2021DataSet3 target2021DataSet3;
         private System.Windows.Forms.BindingSource fornitoriBindingSource1;
         private Target2021DataSet3TableAdapters.FornitoriTableAdapter fornitoriTableAdapter1;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private Target2021DataSet4 target2021DataSet4;
+        private System.Windows.Forms.BindingSource macchineStampoBindingSource;
+        private Target2021DataSet4TableAdapters.MacchineStampoTableAdapter macchineStampoTableAdapter;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.Label label25;
     }
 }
