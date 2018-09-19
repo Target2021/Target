@@ -27,9 +27,11 @@ namespace Target2021.Anagrafiche
 
         private void pulisci()
         {
-            comboBox2.Text = "";
-            comboBox3.Text = "";
+            comboBox2.Text = "0";
+            comboBox3.Text = "LAS.00.000";
             comboBox4.Text = "";
+            comboBox5.Text = "0";
+            comboBox6.Text = "STA.00.000";
             textBox6.Text = "";
             textBox7.Text = "";
             textBox8.Text = "";
@@ -37,6 +39,12 @@ namespace Target2021.Anagrafiche
 
         private void AnaArticoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet3.Fornitori'. È possibile spostarla o rimuoverla se necessario.
+            this.fornitoriTableAdapter1.Fill(this.target2021DataSet3.Fornitori);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet2.Stampi'. È possibile spostarla o rimuoverla se necessario.
+            this.stampiTableAdapter.Fill(this.target2021DataSet2.Stampi);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet1.Fasi'. È possibile spostarla o rimuoverla se necessario.
+            this.fasiTableAdapter1.Fill(this.target2021DataSet1.Fasi);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
@@ -88,7 +96,6 @@ namespace Target2021.Anagrafiche
             label6.Text = MatPrima[0].Field <String>("descrizione");
             }
             catch { }
-
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,6 +123,7 @@ namespace Target2021.Anagrafiche
         private void AggiornaTab(string codice)
         {
             Tab1(codice);
+            Tab2(codice);
         }
 
         private void articoli_sempliciDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -146,9 +154,71 @@ namespace Target2021.Anagrafiche
             catch { }
         }
 
+        private void Tab2(string codice)
+        {
+            try
+            {
+                string filtro = "codice_articolo='" + codice + "' AND lavorazione=2";
+                DataRow[] Fase2 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
+                comboBox5.Text = Fase2[0].Field<int>("lavorazione").ToString();
+                comboBox5.Refresh();
+                comboBox6.Text = Fase2[0].Field<string>("codicePrimaStampoDima");
+                comboBox6.Refresh();
+                comboBox7.Text = Fase2[0].Field<string>("codice_fornitore");
+                comboBox7.Refresh();
+            }
+            catch { }
+        }
+
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtro = "IDFase='" + comboBox5.SelectedValue.ToString() + "'";
+                DataRow[] Fase = target2021DataSet.Tables["Fasi"].Select(filtro);
+                label13.Text = Fase[0].Field<String>("Descrizione");
+            }
+            catch { }
+        }
+
+        private void comboBox5_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            
+                try
+                {
+                    string filtro = "IDFase='" + comboBox5.SelectedValue.ToString() + "'";
+                    DataRow[] Fase = target2021DataSet1.Tables["Fasi"].Select(filtro);
+                    label13.Text = Fase[0].Field<String>("Descrizione");
+                }
+                catch { }
+            
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtro = "codice='" + comboBox6.SelectedValue + "'";
+                DataRow[] Stampo = target2021DataSet2.Tables["Stampi"].Select(filtro);
+                label15.Text = Stampo[0].Field<String>("descrizione");
+            }
+            catch { }
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtro = "codice='" + comboBox7.SelectedValue + "'";
+                DataRow[] Fornitore = target2021DataSet3.Tables["Fornitori"].Select(filtro);
+                label18.Text = Fornitore[0].Field<String>("ragione_sociale");
+            }
+            catch { }
         }
     }
 }
