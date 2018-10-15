@@ -409,6 +409,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Target2021DataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Target2021DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Target2021DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Target2021DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Target2021DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Target2021DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Target2021DataSet7.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Anagrafiche\AnaAbbinamentoStampi.resx">
       <DependentUpon>AnaAbbinamentoStampi.cs</DependentUpon>
     </EmbeddedResource>
@@ -621,6 +636,39 @@
     </None>
     <None Include="Target2021DataSet4.xss">
       <DependentUpon>Target2021DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet5.xsc">
+      <DependentUpon>Target2021DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Target2021DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Target2021DataSet5.xss">
+      <DependentUpon>Target2021DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet6.xsc">
+      <DependentUpon>Target2021DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Target2021DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Target2021DataSet6.xss">
+      <DependentUpon>Target2021DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet7.xsc">
+      <DependentUpon>Target2021DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Target2021DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Target2021DataSet7.xss">
+      <DependentUpon>Target2021DataSet7.xsd</DependentUpon>
     </None>
     <None Include="Target2021_TemporaryKey.pfx" />
   </ItemGroup>

@@ -497,7 +497,7 @@
             // etichetteToolStripMenuItem
             // 
             this.etichetteToolStripMenuItem.Name = "etichetteToolStripMenuItem";
-            this.etichetteToolStripMenuItem.Size = new System.Drawing.Size(168, 30);
+            this.etichetteToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
             this.etichetteToolStripMenuItem.Text = "Etichette";
             this.etichetteToolStripMenuItem.Click += new System.EventHandler(this.etichetteToolStripMenuItem_Click);
             // 

@@ -21,6 +21,10 @@ namespace Target2021
 
         private void DistintaBase_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet7.Fornitori'. È possibile spostarla o rimuoverla se necessario.
+            this.fornitoriTableAdapter.Fill(this.target2021DataSet7.Fornitori);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet5.Prime'. È possibile spostarla o rimuoverla se necessario.
+            this.primeTableAdapter.Fill(this.target2021DataSet5.Prime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.articoli_semplici'. È possibile spostarla o rimuoverla se necessario.
             this.articoli_sempliciTableAdapter.Fill(this.target2021DataSet.articoli_semplici);
 

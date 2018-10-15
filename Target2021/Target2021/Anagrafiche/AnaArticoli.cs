@@ -127,6 +127,7 @@ namespace Target2021.Anagrafiche
         {
             Tab1(codice);
             Tab2(codice);
+            Tab3(codice);
         }
 
         private void articoli_sempliciDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -179,6 +180,32 @@ namespace Target2021.Anagrafiche
                 comboBox8.Refresh();
                 textBox12.Text = Fase2[0].Field<int>("AbbinamentoStampo").ToString();
                 textBox12.Refresh();
+            }
+            catch { }
+        }
+
+        private void Tab3(string codice)
+        {
+            try
+            {
+                string filtro = "codice_articolo='" + codice + "' AND lavorazione=3";
+                DataRow[] Fase3 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
+                comboBox12.Text = Fase3[0].Field<int>("lavorazione").ToString();
+                comboBox12.Refresh();
+                comboBox11.Text = Fase3[0].Field<string>("codicePrimaStampoDima");
+                comboBox11.Refresh();
+                comboBox10.Text = Fase3[0].Field<string>("codice_fornitore");
+                comboBox10.Refresh();
+                textBox15.Text = Fase3[0].Field<string>("CodiceInput");
+                textBox15.Refresh();
+                textBox16.Text = Fase3[0].Field<string>("CodiceOutput");
+                textBox16.Refresh();
+                comboBox9.Text = Fase3[0].Field<int>("MacPredefTaglio").ToString();
+                comboBox9.Refresh();
+                textBox13.Text = Fase3[0].Field<int>("ProgrTaglio1").ToString();
+                textBox13.Refresh();
+                textBox14.Text = Fase3[0].Field<int>("ProgrTaglio2").ToString();
+                textBox14.Refresh();
             }
             catch { }
         }

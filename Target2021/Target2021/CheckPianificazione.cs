@@ -57,5 +57,10 @@ namespace Target2021
             Pianificazione pianificazione = new Pianificazione(CodCom);
             pianificazione.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
