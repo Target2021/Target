@@ -76,6 +76,10 @@
             this.dimZTextBox = new System.Windows.Forms.TextBox();
             this.pesoTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
             codiceLabel = new System.Windows.Forms.Label();
             tipoLabel = new System.Windows.Forms.Label();
             descrizioneLabel = new System.Windows.Forms.Label();
@@ -94,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingNavigator)).BeginInit();
             this.primeBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // codiceLabel
@@ -259,10 +264,14 @@
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
@@ -275,6 +284,8 @@
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = this.primeTableAdapter;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
@@ -474,6 +485,7 @@
             // codice_fornitoreTextBox
             // 
             this.codice_fornitoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.primeBindingSource, "codice_fornitore", true));
+            this.codice_fornitoreTextBox.Enabled = false;
             this.codice_fornitoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codice_fornitoreTextBox.Location = new System.Drawing.Point(145, 254);
             this.codice_fornitoreTextBox.Name = "codice_fornitoreTextBox";
@@ -483,6 +495,7 @@
             // descrizione_fornitoreTextBox
             // 
             this.descrizione_fornitoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.primeBindingSource, "descrizione_fornitore", true));
+            this.descrizione_fornitoreTextBox.Enabled = false;
             this.descrizione_fornitoreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.descrizione_fornitoreTextBox.Location = new System.Drawing.Point(521, 72);
             this.descrizione_fornitoreTextBox.Name = "descrizione_fornitoreTextBox";
@@ -545,11 +558,47 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(262, 254);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 26);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "Cambia";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.fornitoriBindingSource;
+            this.comboBox1.DisplayMember = "ragione_sociale";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(18, 301);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(317, 28);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.ValueMember = "codice";
+            this.comboBox1.Visible = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.assegna);
+            // 
+            // fornitoriBindingSource
+            // 
+            this.fornitoriBindingSource.DataMember = "Fornitori";
+            this.fornitoriBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // fornitoriTableAdapter
+            // 
+            this.fornitoriTableAdapter.ClearBeforeFill = true;
+            // 
             // SelPrime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(pesoLabel);
             this.Controls.Add(this.pesoTextBox);
@@ -588,6 +637,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingNavigator)).EndInit();
             this.primeBindingNavigator.ResumeLayout(false);
             this.primeBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,5 +677,9 @@
         private System.Windows.Forms.TextBox dimZTextBox;
         private System.Windows.Forms.TextBox pesoTextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource fornitoriBindingSource;
+        private Target2021DataSetTableAdapters.FornitoriTableAdapter fornitoriTableAdapter;
     }
 }

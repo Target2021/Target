@@ -424,6 +424,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Target2021DataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Target2021DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Target2021DataSet8.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Anagrafiche\AnaAbbinamentoStampi.resx">
       <DependentUpon>AnaAbbinamentoStampi.cs</DependentUpon>
     </EmbeddedResource>
@@ -670,6 +675,17 @@
     <None Include="Target2021DataSet7.xss">
       <DependentUpon>Target2021DataSet7.xsd</DependentUpon>
     </None>
+    <None Include="Target2021DataSet8.xsc">
+      <DependentUpon>Target2021DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Target2021DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Target2021DataSet8.xss">
+      <DependentUpon>Target2021DataSet8.xsd</DependentUpon>
+    </None>
     <None Include="Target2021_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -681,6 +697,7 @@
     <Content Include="Immagini\list-interface-symbol_icon-icons.com_73223.png" />
     <None Include="Resources\list-interface-symbol_icon-icons.com_73223.png" />
     <None Include="Resources\elenco_iscritti_new.png" />
+    <Content Include="Immagini\question-mark.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

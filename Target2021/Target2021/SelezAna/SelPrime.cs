@@ -39,8 +39,29 @@ namespace Target2021.SelezAna
             artforn.Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            comboBox1.Visible = true;
+        }
+
+        private void assegna(object sender, EventArgs e)
+        {
+            string codice, descrizione;
+            try
+            {
+                codice = comboBox1.SelectedValue.ToString();
+                descrizione = ((DataRowView)comboBox1.SelectedItem).Row["ragione_sociale"].ToString();
+                codice_fornitoreTextBox.Text = codice;
+                descrizione_fornitoreTextBox.Text = descrizione;
+                comboBox1.Visible = false;
+            }
+            catch { }
+        }
+
         private void SelPrime_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
+            this.fornitoriTableAdapter.Fill(this.target2021DataSet.Fornitori);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             if (c == "Codice") primeBindingSource.Filter = "codice='" + v + "'";

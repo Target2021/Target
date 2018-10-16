@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaArticoli));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.articoli_sempliciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.articoli_sempliciTableAdapter = new Target2021.Target2021DataSetTableAdapters.articoli_sempliciTableAdapter();
@@ -55,6 +55,9 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costo_standard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.indirizzo_immagine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -110,6 +113,33 @@
             this.fasiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.target2021DataSet1 = new Target2021.Target2021DataSet1();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.macchineTaglioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.comboBox10 = new System.Windows.Forms.ComboBox();
+            this.fornitoriBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.dimeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.comboBox12 = new System.Windows.Forms.ComboBox();
+            this.fasiBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.macchineTaglioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet8 = new Target2021.Target2021DataSet8();
+            this.dimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.fasiTableAdapter = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
             this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
@@ -129,26 +159,15 @@
             this.stampiTableAdapter = new Target2021.Target2021DataSet2TableAdapters.StampiTableAdapter();
             this.fornitoriTableAdapter1 = new Target2021.Target2021DataSet3TableAdapters.FornitoriTableAdapter();
             this.macchineStampoTableAdapter = new Target2021.Target2021DataSet4TableAdapters.MacchineStampoTableAdapter();
-            this.label26 = new System.Windows.Forms.Label();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.comboBox12 = new System.Windows.Forms.ComboBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.macchineTaglioTableAdapter = new Target2021.Target2021DataSet8TableAdapters.MacchineTaglioTableAdapter();
+            this.dimeTableAdapter = new Target2021.Target2021DataSetTableAdapters.DimeTableAdapter();
+            this.fasiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.macchineTaglioTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingNavigator)).BeginInit();
@@ -170,7 +189,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // target2021DataSet
@@ -253,7 +282,7 @@
             this.articoli_sempliciBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.articoli_sempliciBindingNavigator.Name = "articoli_sempliciBindingNavigator";
             this.articoli_sempliciBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.articoli_sempliciBindingNavigator.Size = new System.Drawing.Size(907, 25);
+            this.articoli_sempliciBindingNavigator.Size = new System.Drawing.Size(1107, 25);
             this.articoli_sempliciBindingNavigator.TabIndex = 0;
             this.articoli_sempliciBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -353,44 +382,50 @@
             // 
             // articoli_sempliciDataGridView
             // 
+            this.articoli_sempliciDataGridView.AllowUserToDeleteRows = false;
+            this.articoli_sempliciDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.articoli_sempliciDataGridView.AutoGenerateColumns = false;
             this.articoli_sempliciDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.articoli_sempliciDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articoli_sempliciDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.articoli_sempliciDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articoli_sempliciDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn18});
+            this.dataGridViewTextBoxColumn18,
+            this.costo_standard,
+            this.note,
+            this.indirizzo_immagine});
             this.articoli_sempliciDataGridView.DataSource = this.articoli_sempliciBindingSource;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.articoli_sempliciDataGridView.Location = new System.Drawing.Point(-1, 93);
             this.articoli_sempliciDataGridView.MultiSelect = false;
             this.articoli_sempliciDataGridView.Name = "articoli_sempliciDataGridView";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.articoli_sempliciDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(816, 144);
+            this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(816, 161);
             this.articoli_sempliciDataGridView.TabIndex = 1;
             this.articoli_sempliciDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.articoli_sempliciDataGridView_CellContentClick);
             this.articoli_sempliciDataGridView.SelectionChanged += new System.EventHandler(this.articoli_sempliciDataGridView_SelectionChanged);
@@ -422,6 +457,27 @@
             this.dataGridViewTextBoxColumn18.HeaderText = "giacenza_magazzino";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.Width = 131;
+            // 
+            // costo_standard
+            // 
+            this.costo_standard.DataPropertyName = "costo_standard";
+            this.costo_standard.HeaderText = "costo_standard";
+            this.costo_standard.Name = "costo_standard";
+            this.costo_standard.Width = 105;
+            // 
+            // note
+            // 
+            this.note.DataPropertyName = "note";
+            this.note.HeaderText = "note";
+            this.note.Name = "note";
+            this.note.Width = 53;
+            // 
+            // indirizzo_immagine
+            // 
+            this.indirizzo_immagine.DataPropertyName = "indirizzo_immagine";
+            this.indirizzo_immagine.HeaderText = "indirizzo_immagine";
+            this.indirizzo_immagine.Name = "indirizzo_immagine";
+            this.indirizzo_immagine.Width = 119;
             // 
             // groupBox1
             // 
@@ -456,9 +512,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 254);
+            this.label1.Location = new System.Drawing.Point(6, 271);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 18);
             this.label1.TabIndex = 3;
@@ -466,14 +523,16 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(0, 309);
+            this.tabControl1.Location = new System.Drawing.Point(0, 326);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(816, 199);
             this.tabControl1.TabIndex = 3;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.AggiornaTabulato);
             // 
             // tabPage1
             // 
@@ -612,7 +671,6 @@
             this.label5.Size = new System.Drawing.Size(158, 18);
             this.label5.TabIndex = 4;
             this.label5.Text = "Codice fornitore lastra:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // comboBox3
             // 
@@ -705,7 +763,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(666, 18);
+            this.label25.Location = new System.Drawing.Point(637, 18);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(54, 18);
             this.label25.TabIndex = 25;
@@ -739,7 +797,6 @@
             this.label24.Size = new System.Drawing.Size(106, 18);
             this.label24.TabIndex = 22;
             this.label24.Text = "Abbin. stampo:";
-            this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
             // comboBox8
             // 
@@ -749,7 +806,7 @@
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(556, 15);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(95, 26);
+            this.comboBox8.Size = new System.Drawing.Size(75, 26);
             this.comboBox8.TabIndex = 21;
             this.comboBox8.ValueMember = "IdStampa";
             this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
@@ -945,7 +1002,7 @@
             this.comboBox5.Size = new System.Drawing.Size(84, 26);
             this.comboBox5.TabIndex = 0;
             this.comboBox5.ValueMember = "IDFase";
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged_1);
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // fasiBindingSource1
             // 
@@ -986,133 +1043,47 @@
             this.tabPage3.Text = "Fase 3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // textBox14
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 285);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Descrizione:";
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.Location = new System.Drawing.Point(569, 131);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(227, 24);
+            this.textBox14.TabIndex = 50;
             // 
-            // fasiTableAdapter
+            // textBox13
             // 
-            this.fasiTableAdapter.ClearBeforeFill = true;
+            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox13.Location = new System.Drawing.Point(569, 94);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(227, 24);
+            this.textBox13.TabIndex = 49;
             // 
-            // primeTableAdapter
+            // label29
             // 
-            this.primeTableAdapter.ClearBeforeFill = true;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(445, 134);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(104, 18);
+            this.label29.TabIndex = 48;
+            this.label29.Text = "Progr. taglio 2:";
             // 
-            // fornitoriTableAdapter
+            // label27
             // 
-            this.fornitoriTableAdapter.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(821, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 39);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Nuovo";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(818, 331);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 43);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Salva";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(71, 251);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 24);
-            this.textBox2.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(103, 282);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(338, 24);
-            this.textBox3.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(217, 254);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 18);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Costo base produzione:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(390, 251);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(151, 24);
-            this.textBox4.TabIndex = 12;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(447, 285);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 18);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "Fasi:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(493, 282);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(48, 24);
-            this.textBox5.TabIndex = 14;
-            // 
-            // dettArticoliBindingSource
-            // 
-            this.dettArticoliBindingSource.DataMember = "DettArticoli";
-            this.dettArticoliBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // dettArticoliTableAdapter
-            // 
-            this.dettArticoliTableAdapter.ClearBeforeFill = true;
-            // 
-            // fasiTableAdapter1
-            // 
-            this.fasiTableAdapter1.ClearBeforeFill = true;
-            // 
-            // stampiTableAdapter
-            // 
-            this.stampiTableAdapter.ClearBeforeFill = true;
-            // 
-            // fornitoriTableAdapter1
-            // 
-            this.fornitoriTableAdapter1.ClearBeforeFill = true;
-            // 
-            // macchineStampoTableAdapter
-            // 
-            this.macchineStampoTableAdapter.ClearBeforeFill = true;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(445, 97);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(104, 18);
+            this.label27.TabIndex = 47;
+            this.label27.Text = "Progr. taglio 1:";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(665, 20);
+            this.label26.Location = new System.Drawing.Point(642, 20);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(54, 18);
             this.label26.TabIndex = 46;
@@ -1120,15 +1091,21 @@
             // 
             // comboBox9
             // 
-            this.comboBox9.DataSource = this.macchineStampoBindingSource;
-            this.comboBox9.DisplayMember = "IdStampa";
+            this.comboBox9.DataSource = this.macchineTaglioBindingSource1;
+            this.comboBox9.DisplayMember = "IDTaglio";
             this.comboBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Location = new System.Drawing.Point(555, 17);
             this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(95, 26);
+            this.comboBox9.Size = new System.Drawing.Size(81, 26);
             this.comboBox9.TabIndex = 42;
-            this.comboBox9.ValueMember = "IdStampa";
+            this.comboBox9.ValueMember = "IDTaglio";
+            this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
+            // 
+            // macchineTaglioBindingSource1
+            // 
+            this.macchineTaglioBindingSource1.DataMember = "MacchineTaglio";
+            this.macchineTaglioBindingSource1.DataSource = this.target2021DataSet;
             // 
             // label28
             // 
@@ -1188,7 +1165,7 @@
             // 
             // comboBox10
             // 
-            this.comboBox10.DataSource = this.fornitoriBindingSource1;
+            this.comboBox10.DataSource = this.fornitoriBindingSource2;
             this.comboBox10.DisplayMember = "codice";
             this.comboBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox10.FormattingEnabled = true;
@@ -1197,6 +1174,12 @@
             this.comboBox10.Size = new System.Drawing.Size(131, 26);
             this.comboBox10.TabIndex = 33;
             this.comboBox10.ValueMember = "codice";
+            this.comboBox10.SelectedIndexChanged += new System.EventHandler(this.comboBox10_SelectedIndexChanged);
+            // 
+            // fornitoriBindingSource2
+            // 
+            this.fornitoriBindingSource2.DataMember = "Fornitori";
+            this.fornitoriBindingSource2.DataSource = this.target2021DataSet;
             // 
             // label33
             // 
@@ -1220,7 +1203,7 @@
             // 
             // comboBox11
             // 
-            this.comboBox11.DataSource = this.stampiBindingSource;
+            this.comboBox11.DataSource = this.dimeBindingSource1;
             this.comboBox11.DisplayMember = "codice";
             this.comboBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox11.FormattingEnabled = true;
@@ -1229,6 +1212,12 @@
             this.comboBox11.Size = new System.Drawing.Size(130, 26);
             this.comboBox11.TabIndex = 30;
             this.comboBox11.ValueMember = "codice";
+            this.comboBox11.SelectedIndexChanged += new System.EventHandler(this.comboBox11_SelectedIndexChanged);
+            // 
+            // dimeBindingSource1
+            // 
+            this.dimeBindingSource1.DataMember = "Dime";
+            this.dimeBindingSource1.DataSource = this.target2021DataSet;
             // 
             // label35
             // 
@@ -1262,7 +1251,7 @@
             // 
             // comboBox12
             // 
-            this.comboBox12.DataSource = this.fasiBindingSource1;
+            this.comboBox12.DataSource = this.fasiBindingSource3;
             this.comboBox12.DisplayMember = "IDFase";
             this.comboBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox12.FormattingEnabled = true;
@@ -1271,48 +1260,237 @@
             this.comboBox12.Size = new System.Drawing.Size(84, 26);
             this.comboBox12.TabIndex = 26;
             this.comboBox12.ValueMember = "IDFase";
+            this.comboBox12.SelectedIndexChanged += new System.EventHandler(this.comboBox12_SelectedIndexChanged);
             // 
-            // label27
+            // fasiBindingSource3
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(431, 62);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(104, 18);
-            this.label27.TabIndex = 47;
-            this.label27.Text = "Progr. taglio 1:";
+            this.fasiBindingSource3.DataMember = "Fasi";
+            this.fasiBindingSource3.DataSource = this.target2021DataSet;
             // 
-            // label29
+            // macchineTaglioBindingSource
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(431, 99);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(104, 18);
-            this.label29.TabIndex = 48;
-            this.label29.Text = "Progr. taglio 2:";
+            this.macchineTaglioBindingSource.DataMember = "MacchineTaglio";
+            this.macchineTaglioBindingSource.DataSource = this.target2021DataSet8;
             // 
-            // textBox13
+            // target2021DataSet8
             // 
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(555, 59);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(95, 24);
-            this.textBox13.TabIndex = 49;
+            this.target2021DataSet8.DataSetName = "Target2021DataSet8";
+            this.target2021DataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBox14
+            // dimeBindingSource
             // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(555, 96);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(95, 24);
-            this.textBox14.TabIndex = 50;
+            this.dimeBindingSource.DataMember = "Dime";
+            this.dimeBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Descrizione:";
+            // 
+            // fasiTableAdapter
+            // 
+            this.fasiTableAdapter.ClearBeforeFill = true;
+            // 
+            // primeTableAdapter
+            // 
+            this.primeTableAdapter.ClearBeforeFill = true;
+            // 
+            // fornitoriTableAdapter
+            // 
+            this.fornitoriTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(821, 93);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 39);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Nuovo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(822, 482);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 43);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Salva";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(71, 268);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(130, 24);
+            this.textBox2.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(103, 299);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(360, 24);
+            this.textBox3.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(217, 271);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(189, 18);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Costo base produzione (€):";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(412, 268);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(151, 24);
+            this.textBox4.TabIndex = 12;
+            this.textBox4.Leave += new System.EventHandler(this.controllaNumero);
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(469, 302);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 18);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Fasi:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox5.Enabled = false;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(515, 299);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(48, 24);
+            this.textBox5.TabIndex = 14;
+            // 
+            // dettArticoliBindingSource
+            // 
+            this.dettArticoliBindingSource.DataMember = "DettArticoli";
+            this.dettArticoliBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // dettArticoliTableAdapter
+            // 
+            this.dettArticoliTableAdapter.ClearBeforeFill = true;
+            // 
+            // fasiTableAdapter1
+            // 
+            this.fasiTableAdapter1.ClearBeforeFill = true;
+            // 
+            // stampiTableAdapter
+            // 
+            this.stampiTableAdapter.ClearBeforeFill = true;
+            // 
+            // fornitoriTableAdapter1
+            // 
+            this.fornitoriTableAdapter1.ClearBeforeFill = true;
+            // 
+            // macchineStampoTableAdapter
+            // 
+            this.macchineStampoTableAdapter.ClearBeforeFill = true;
+            // 
+            // macchineTaglioTableAdapter
+            // 
+            this.macchineTaglioTableAdapter.ClearBeforeFill = true;
+            // 
+            // dimeTableAdapter
+            // 
+            this.dimeTableAdapter.ClearBeforeFill = true;
+            // 
+            // fasiBindingSource2
+            // 
+            this.fasiBindingSource2.DataMember = "Fasi";
+            this.fasiBindingSource2.DataSource = this.target2021DataSet;
+            // 
+            // macchineTaglioTableAdapter1
+            // 
+            this.macchineTaglioTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(822, 138);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(273, 338);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(741, 271);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 56);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Cambia foto";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1107, 25);
+            this.fillByToolStrip.TabIndex = 17;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // AnaArticoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 511);
+            this.ClientSize = new System.Drawing.Size(1107, 528);
+            this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox4);
@@ -1356,7 +1534,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1382,10 +1571,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton articoli_sempliciBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView articoli_sempliciDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -1480,5 +1665,28 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox13;
+        private Target2021DataSet8 target2021DataSet8;
+        private System.Windows.Forms.BindingSource macchineTaglioBindingSource;
+        private Target2021DataSet8TableAdapters.MacchineTaglioTableAdapter macchineTaglioTableAdapter;
+        private System.Windows.Forms.BindingSource dimeBindingSource;
+        private Target2021DataSetTableAdapters.DimeTableAdapter dimeTableAdapter;
+        private System.Windows.Forms.BindingSource fasiBindingSource2;
+        private System.Windows.Forms.BindingSource fasiBindingSource3;
+        private System.Windows.Forms.BindingSource fornitoriBindingSource2;
+        private System.Windows.Forms.BindingSource dimeBindingSource1;
+        private System.Windows.Forms.BindingSource macchineTaglioBindingSource1;
+        private Target2021DataSetTableAdapters.MacchineTaglioTableAdapter macchineTaglioTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costo_standard;
+        private System.Windows.Forms.DataGridViewTextBoxColumn note;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn indirizzo_immagine;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }
