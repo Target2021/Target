@@ -14,62 +14,62 @@ using Target2021.Stampe;
 
 namespace Target2021
 {
-    public partial class Home : Form
+    public partial class Form1 : Form
     {
         public object Livello;
         public string user, pass;
-        public Home(string user,string pass)
+        public Form1()
         {
             InitializeComponent();          
-            menuStrip1.Renderer = new MyRenderer();
-            this.user =user;
+            //menuStrip1.Renderer = new MyRenderer();
+            //this.user =user;
         }
-        private class MyRenderer : ToolStripProfessionalRenderer
-        {
-            public MyRenderer() : base(new MyColors()) { }
-        }      
-        public  void CheckPrivilege(string livello)
-        {
-            livello =livello.Replace(" ", string.Empty);
-            if(livello=="Amministratore")
-            {
-                registraNuovoUtenteToolStripMenuItem.Enabled = true;
-            }
-            if(livello=="Dirigente")
-            {
-                registraNuovoUtenteToolStripMenuItem.Enabled = true;
+        //private class MyRenderer : ToolStripProfessionalRenderer
+        //{
+        //    public MyRenderer() : base(new MyColors()) { }
+        //}      
+        //public  void CheckPrivilege(string livello)
+        //{
+        //    livello =livello.Replace(" ", string.Empty);
+        //    if(livello=="Amministratore")
+        //    {
+        //        registraNuovoUtenteToolStripMenuItem.Enabled = true;
+        //    }
+        //    if(livello=="Dirigente")
+        //    {
+        //        registraNuovoUtenteToolStripMenuItem.Enabled = true;
 
-            }
-            if (livello == "Segretaria")
-            {
+        //    }
+        //    if (livello == "Segretaria")
+        //    {
 
-            }
-            if (livello == "Operaio")
-            {
-                clientiToolStripMenuItem.Enabled = false;
-                registraNuovoUtenteToolStripMenuItem.Enabled = false;
+        //    }
+        //    if (livello == "Operaio")
+        //    {
+        //        clientiToolStripMenuItem.Enabled = false;
+        //        registraNuovoUtenteToolStripMenuItem.Enabled = false;
 
-            }
-        }
-        private class MyColors : ProfessionalColorTable
-        {
-            public override Color MenuItemSelected
-            {
-                get { return Color.DeepSkyBlue; }
-            }
-            public override Color MenuItemSelectedGradientBegin
-            {
-                get { return Color.Aqua; }
-            }
-            public override Color MenuItemSelectedGradientEnd
-            {
-                get { return Color.CadetBlue; }
-            }
-            public override Color MenuItemPressedGradientMiddle
-            {
-                get { return Color.Aquamarine; }
-            }
-        }
+        //    }
+        //}
+        //private class MyColors : ProfessionalColorTable
+        //{
+        //    public override Color MenuItemSelected
+        //    {
+        //        get { return Color.DeepSkyBlue; }
+        //    }
+        //    public override Color MenuItemSelectedGradientBegin
+        //    {
+        //        get { return Color.Aqua; }
+        //    }
+        //    public override Color MenuItemSelectedGradientEnd
+        //    {
+        //        get { return Color.CadetBlue; }
+        //    }
+        //    public override Color MenuItemPressedGradientMiddle
+        //    {
+        //        get { return Color.Aquamarine; }
+        //    }
+        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -82,7 +82,7 @@ namespace Target2021
             Livello = "Amministratore";
             this.Text = "Target 2.0 - Utente: " + user + " - Livello: " + Livello.ToString();
             con.Close();
-            CheckPrivilege(Livello.ToString());
+            //CheckPrivilege(Livello.ToString());
             this.WindowState = FormWindowState.Maximized;
         }
        
@@ -359,6 +359,25 @@ namespace Target2021
             AnaArticoli AnArt = new AnaArticoli();
             AnArt.MdiParent = this;
             AnArt.Show();
+        }
+
+        private void pesiSpecificiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaPesiSpecifici aps = new AnaPesiSpecifici();
+            aps.MdiParent = this;
+            aps.Show();
+        }
+
+        private void posizioniStampiEDimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PosizioniStampiDime PSD = new PosizioniStampiDime();
+            PSD.MdiParent = this;
+            PSD.Show();
+        }
+
+        private void magazziniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

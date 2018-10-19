@@ -10,7 +10,7 @@
     <AssemblyName>Target2021</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
     <PublishUrl>D:\Beta target\</PublishUrl>
@@ -49,7 +49,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Target2021.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>2ECCE62293007FE7A38C3635AE75DEA20359F422</ManifestCertificateThumbprint>
@@ -65,8 +66,18 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="DataGridViewAutoFilter">
+      <HintPath>..\..\..\..\..\Desktop\Obbiettivi\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="DgvFilterPopup">
+      <HintPath>..\..\..\..\..\Desktop\Obbiettivi\DgvFilterPopup.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -167,6 +178,12 @@
     </Compile>
     <Compile Include="Anagrafiche\AnaMTaglio.Designer.cs">
       <DependentUpon>AnaMTaglio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaPesiSpecifici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaPesiSpecifici.Designer.cs">
+      <DependentUpon>AnaPesiSpecifici.cs</DependentUpon>
     </Compile>
     <Compile Include="Anagrafiche\AnaStampi.cs">
       <SubType>Form</SubType>
@@ -307,6 +324,12 @@
     </Compile>
     <Compile Include="Pianificazione.Designer.cs">
       <DependentUpon>Pianificazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PosizioniStampiDime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PosizioniStampiDime.Designer.cs">
+      <DependentUpon>PosizioniStampiDime.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -459,6 +482,9 @@
     <EmbeddedResource Include="Anagrafiche\AnaMTaglio.resx">
       <DependentUpon>AnaMTaglio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaPesiSpecifici.resx">
+      <DependentUpon>AnaPesiSpecifici.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaStampi.resx">
       <DependentUpon>AnaStampi.cs</DependentUpon>
     </EmbeddedResource>
@@ -527,6 +553,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pianificazione.resx">
       <DependentUpon>Pianificazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PosizioniStampiDime.resx">
+      <DependentUpon>PosizioniStampiDime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -694,10 +723,12 @@
   <ItemGroup>
     <Content Include="Immagini\allegaFile.png" />
     <None Include="Resources\allegaFile.png" />
+    <Content Include="Immagini\Excel.png" />
     <Content Include="Immagini\list-interface-symbol_icon-icons.com_73223.png" />
     <None Include="Resources\list-interface-symbol_icon-icons.com_73223.png" />
     <None Include="Resources\elenco_iscritti_new.png" />
     <Content Include="Immagini\question-mark.jpg" />
+    <None Include="Resources\Excel.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

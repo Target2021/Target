@@ -63,6 +63,8 @@ namespace Target2021
                     //textBox7.Visible = false;
                     scarico(this.comboBox1.GetItemText(this.comboBox1.SelectedItem));
                 }
+                // Maschera stampa etichette di carico di magazzino materia prima
+
             }
         }
         private void scarico(string oggetto)

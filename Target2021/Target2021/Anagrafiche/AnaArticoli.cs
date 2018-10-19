@@ -41,10 +41,15 @@ namespace Target2021.Anagrafiche
             comboBox10.Text = "AAA";
             comboBox11.Text = "AAA.02.001";
             comboBox12.Text = "0";
+            textBox17.Text = "0";
+            textBox23.Text = textBox24.Text = textBox25.Text = "0";
+            textBox19.Text = textBox20.Text = textBox21.Text = "0";
         }
 
         private void AnaArticoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.StampiDime'. È possibile spostarla o rimuoverla se necessario.
+            this.stampiDimeTableAdapter.Fill(this.target2021DataSet.StampiDime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MacchineTaglio'. È possibile spostarla o rimuoverla se necessario.
             this.macchineTaglioTableAdapter1.Fill(this.target2021DataSet.MacchineTaglio);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Dime'. È possibile spostarla o rimuoverla se necessario.
@@ -80,16 +85,21 @@ namespace Target2021.Anagrafiche
 
         private void CambiataSelezione(int numero)
         {
+            pulisci();
             int NumeroFasi = 0;
             string codice = articoli_sempliciDataGridView.Rows[numero].Cells[0].Value.ToString();
             textBox2.Text = codice;
-            string descrizione= articoli_sempliciDataGridView.Rows[numero].Cells[1].Value.ToString();
+            string descrizione = articoli_sempliciDataGridView.Rows[numero].Cells[1].Value.ToString();
             textBox3.Text = descrizione;
             string costo = articoli_sempliciDataGridView.Rows[numero].Cells[4].Value.ToString();
             if (costo == "") textBox4.Text = "0"; else textBox4.Text = costo;
-            NumeroFasi  = (from row in target2021DataSet.Tables["DettArticoli"].AsEnumerable() where row.Field<string>("codice_articolo").Contains(codice) select row).Count();
+            string prezzo = articoli_sempliciDataGridView.Rows[numero].Cells[2].Value.ToString();
+            if (prezzo == "") textBox17.Text = "0"; else textBox17.Text = prezzo;
+            NumeroFasi = (from row in target2021DataSet.Tables["DettArticoli"].AsEnumerable() where row.Field<string>("codice_articolo").Contains(codice) select row).Count();
             textBox5.Text = NumeroFasi.ToString();
-            string immagine= articoli_sempliciDataGridView.Rows[numero].Cells[6].Value.ToString();
+            string imballaggio = articoli_sempliciDataGridView.Rows[numero].Cells[5].Value.ToString();
+            textBox18.Text = imballaggio;
+            string immagine = articoli_sempliciDataGridView.Rows[numero].Cells[6].Value.ToString();
             try
             {
                 pictureBox1.Image = new Bitmap(immagine);
@@ -112,9 +122,9 @@ namespace Target2021.Anagrafiche
         {
             try
             {
-            string filtro = "codice='" + comboBox3.SelectedValue+"'";
-            DataRow[] MatPrima = target2021DataSet.Tables["Prime"].Select(filtro);
-            label6.Text = MatPrima[0].Field <String>("descrizione");
+                string filtro = "codice='" + comboBox3.SelectedValue + "'";
+                DataRow[] MatPrima = target2021DataSet.Tables["Prime"].Select(filtro);
+                label6.Text = MatPrima[0].Field<String>("descrizione");
             }
             catch
             {
@@ -155,13 +165,14 @@ namespace Target2021.Anagrafiche
             Tab1(codice);
             Tab2(codice);
             Tab3(codice);
+            Tab4(codice);
         }
 
         private void articoli_sempliciDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             DataGridViewRow riga;
             riga = articoli_sempliciDataGridView.CurrentRow;
-            if (riga!=null) CambiataSelezione(riga.Index);
+            if (riga != null) CambiataSelezione(riga.Index);
         }
 
         private void Tab1(string codice)
@@ -183,7 +194,7 @@ namespace Target2021.Anagrafiche
                 textBox8.Text = Fase1[0].Field<int>("LottoMinimoRiordino").ToString();
                 textBox8.Refresh();
                 comboBox4_SelectedIndexChanged(new object(), new EventArgs());
-            }           
+            }
             catch
             {
                 comboBox2.Text = "0";
@@ -218,7 +229,15 @@ namespace Target2021.Anagrafiche
                 textBox12.Text = Fase2[0].Field<int>("AbbinamentoStampo").ToString();
                 textBox12.Refresh();
                 comboBox7_SelectedIndexChanged(new object(), new EventArgs());
-            }
+                DataRow[] riga;
+                riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox6.Text + "'");
+                textBox19.Text = riga[0]["Posizione"].ToString();
+                textBox20.Text = riga[0]["Campata"].ToString();
+                textBox21.Text = riga[0]["Corsia"].ToString();
+                textBox22.Text = Fase2[0].Field<string>("ProgStampaggio").ToString();
+                textBox22.Refresh();
+            }  
+             
             catch
             {
                 comboBox5.Text = "0";
@@ -256,6 +275,11 @@ namespace Target2021.Anagrafiche
                 textBox14.Refresh();
                 comboBox11_SelectedIndexChanged(new object(), new EventArgs());
                 comboBox10_SelectedIndexChanged(new object(), new EventArgs());
+                DataRow[] riga;
+                riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox11.Text + "'");
+                textBox23.Text = riga[0]["Posizione"].ToString();
+                textBox24.Text = riga[0]["Campata"].ToString();
+                textBox25.Text = riga[0]["Corsia"].ToString();
             }
             catch
             {
@@ -270,7 +294,14 @@ namespace Target2021.Anagrafiche
             }
         }
 
-        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        private void Tab4(string codice)
+        {
+            //string filtro = "codice_articolo='" + codice + "' AND lavorazione=4";
+            //DataRow[] Fase4 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
+            dettArticoliBindingSource1.Filter = "codice_articolo = '" + codice + "' AND lavorazione=4";
+        }
+
+            private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -288,6 +319,11 @@ namespace Target2021.Anagrafiche
                 string filtro = "codice='" + comboBox6.SelectedValue + "'";
                 DataRow[] Stampo = target2021DataSet2.Tables["Stampi"].Select(filtro);
                 label15.Text = Stampo[0].Field<String>("descrizione");
+                DataRow[] riga;
+                riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox6.Text + "'");
+                textBox19.Text = riga[0]["Posizione"].ToString();
+                textBox20.Text = riga[0]["Campata"].ToString();
+                textBox21.Text = riga[0]["Corsia"].ToString();
             }
             catch { }
         }
@@ -318,7 +354,7 @@ namespace Target2021.Anagrafiche
         {
             int CodAbb;
             CodAbb = Convert.ToInt32(textBox12.Text);
-            DettAbbinamStampo DAS = new DettAbbinamStampo(CodAbb,textBox2.Text);
+            DettAbbinamStampo DAS = new DettAbbinamStampo(CodAbb, textBox2.Text);
             DAS.Show();
         }
 
@@ -335,25 +371,11 @@ namespace Target2021.Anagrafiche
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Per la testata articoli aggiorna solo Descrizione e Costo Base Produzione
-            string codice, descrizione;
-            double costo;
-
-            codice = textBox2.Text;
-            descrizione = textBox3.Text;
-            costo = Convert.ToDouble(textBox4.Text);
-
-            DataRow riga;
-            DataTable TabellaArticoli;
-            TabellaArticoli = target2021DataSet.Tables["articoli_semplici"];
-
-            riga = TabellaArticoli.Rows.Find(codice);
-            riga.BeginEdit();
-            riga["descrizione"] = descrizione;
-            riga["costo_standard"] = costo;
-            riga.EndEdit();
-
-            articoli_sempliciTableAdapter.Update(target2021DataSet);
+            SalvaGenerale();
+            //SalvaTab1();
+            //SalvaTab2();
+            //SalvaTab3();
+            MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
         }
 
         private void AggiornaTabulato(object sender, EventArgs e)
@@ -371,6 +393,11 @@ namespace Target2021.Anagrafiche
                 string filtro = "codice='" + comboBox11.SelectedValue + "'";
                 DataRow[] Dima = target2021DataSet.Tables["Dime"].Select(filtro);
                 label34.Text = Dima[0].Field<String>("descrizione");
+                DataRow[] riga;
+                riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox11.Text + "'");
+                textBox23.Text = riga[0]["Posizione"].ToString();
+                textBox24.Text = riga[0]["Campata"].ToString();
+                textBox25.Text = riga[0]["Corsia"].ToString();
             }
             catch (Exception ex) { //MessageBox.Show(ex.Message); 
             }
@@ -406,17 +433,16 @@ namespace Target2021.Anagrafiche
 
         private void button4_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-        //    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-        //    {
-        //    string file = openFileDialog1.FileName;
-        //    try
-        //        {
-        //            pictureBox1.Image = new Bitmap(file);
-        //            articoli_sempliciDataGridView.Rows[articoli_sempliciDataGridView.CurrentRow.Index].Cells[6].Value = file;
-        //        }
-        //    catch { pictureBox1.Image = new Bitmap("C:\\Users\\targe\\Source\\Repos\\Target\\Target2021\\Target2021\\Immagini\\question-mark.jpg"); }
-        //    }
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string file = openFileDialog1.FileName;
+                try
+                {
+                    pictureBox1.Image = new Bitmap(file);
+                    articoli_sempliciDataGridView.Rows[articoli_sempliciDataGridView.CurrentRow.Index].Cells[6].Value = file;
+                }
+                catch { pictureBox1.Image = new Bitmap("C:\\Users\\targe\\Source\\Repos\\Target\\Target2021\\Target2021\\Immagini\\question-mark.jpg"); }
+            }
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -450,6 +476,73 @@ namespace Target2021.Anagrafiche
                 textBox4.Text = "0";
                 textBox4.Focus();
             }
+        }
+
+        private void SalvaGenerale()
+        {
+            // Per la testata articoli aggiorna solo Descrizione e Costo Base Produzione
+            string codice, descrizione, imballaggio;
+            double costo, prezzo;
+
+            codice = textBox2.Text;
+            descrizione = textBox3.Text;
+            imballaggio = textBox18.Text;
+            costo = Convert.ToDouble(textBox4.Text);
+            prezzo = Convert.ToDouble(textBox17.Text);
+
+            DataRow riga;
+            DataTable TabellaArticoli;
+            TabellaArticoli = target2021DataSet.Tables["articoli_semplici"];
+
+            riga = TabellaArticoli.Rows.Find(codice);
+            riga.BeginEdit();
+            riga["descrizione"] = descrizione;
+            riga["costo_standard"] = costo;
+            riga["prezzo_b"] = prezzo;
+            riga["note"] = imballaggio;
+            riga.EndEdit();
+
+            articoli_sempliciTableAdapter.Update(target2021DataSet);
+        }
+
+        private void SalvaTab1()
+        {
+            // Per Tab1 aggiorna ....
+            string codice, CodMateriaPrima, CodFornitoreLastra, CodIn, CodOut;
+            int LottoMinimo;
+
+            codice = textBox2.Text;
+            CodMateriaPrima  = comboBox3.Text;
+            CodFornitoreLastra  = comboBox4.Text;
+            CodIn = textBox6.Text;
+            CodOut = textBox7.Text;
+            LottoMinimo = Convert.ToInt32(textBox8.Text);
+
+            DataRow[] riga;
+            DataTable TabellaFasi;
+            TabellaFasi = target2021DataSet.Tables["DettArticoli"];
+
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + codice + "' AND lavorazione=1");
+
+            riga[0].BeginEdit();
+            riga[0]["codicePrimaStampoDima"] = CodMateriaPrima;
+            riga[0]["codice_fornitore"] = CodFornitoreLastra;
+            riga[0]["CodiceInput"] = CodIn;
+            riga[0]["CodiceOutput"] = CodOut;
+            riga[0]["LottoMinimoRiordino"] = LottoMinimo;
+            riga[0].EndEdit();
+
+            dettArticoliTableAdapter.Update(target2021DataSet);
+        }
+
+        private void SalvaTab2()
+        {
+
+        }
+
+        private void SalvaTab3()
+        {
+
         }
     }
 }

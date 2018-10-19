@@ -28,7 +28,6 @@ namespace Target2021.SelezAna
             this.Validate();
             this.primeBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,8 +57,64 @@ namespace Target2021.SelezAna
             catch { }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            comboBox2.Visible = true;
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string codice;
+            try
+            {
+                codice = comboBox2.SelectedValue.ToString();
+                materialeTextBox.Text = codice;
+                comboBox2.Visible = false;
+            }
+            catch { }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string codice;
+            double ps,peso;
+            double x, y, z;
+            x = Convert.ToDouble(dimXTextBox.Text);
+            y = Convert.ToDouble(dimYTextBox.Text);
+            z = Convert.ToDouble(dimZTextBox.Text);
+            //try
+            //{
+                codice = materialeTextBox.Text;
+                DataRow[] riga;
+                DataTable TabellaMateriali;
+                TabellaMateriali = target2021DataSet.Tables["PesiSpecifici"];
+                riga = target2021DataSet.Tables["PesiSpecifici"].Select("Materiale='" + codice+"'");
+                ps = Convert.ToDouble (riga[0]["PesoSpecifico"]);
+                peso = (ps * x * y * z) / 1000000;
+                pesoTextBox.Text = peso.ToString("N"+3);
+            //}
+            //catch { }
+        }
+
+        private void Salvare(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Vuoi salvare le modifiche?", "SALVARE?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Validate();
+                this.primeBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+        }
+
         private void SelPrime_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.PesiSpecifici'. È possibile spostarla o rimuoverla se necessario.
+            this.pesiSpecificiTableAdapter.Fill(this.target2021DataSet.PesiSpecifici);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
             this.fornitoriTableAdapter.Fill(this.target2021DataSet.Fornitori);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.

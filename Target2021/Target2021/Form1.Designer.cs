@@ -1,6 +1,6 @@
 ﻿namespace Target2021
 {
-    partial class Home
+    partial class Form1
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
@@ -54,6 +54,7 @@
             this.minuterieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fasiLavorazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compatibilitàStampiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pesiSpecificiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commesseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.controllaNuoviOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +66,7 @@
             this.interrogazioneMovimentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inserisciNuovoCaricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.posizioniStampiEDimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,6 +123,7 @@
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
@@ -133,7 +136,9 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
@@ -173,7 +178,8 @@
             this.macchinariToolStripMenuItem,
             this.strumentiToolStripMenuItem,
             this.fasiLavorazioneToolStripMenuItem,
-            this.compatibilitàStampiToolStripMenuItem});
+            this.compatibilitàStampiToolStripMenuItem,
+            this.pesiSpecificiToolStripMenuItem});
             this.anagraficeToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anagraficeToolStripMenuItem.Name = "anagraficeToolStripMenuItem";
             this.anagraficeToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
@@ -316,6 +322,13 @@
             this.compatibilitàStampiToolStripMenuItem.Text = "Compatibilità Stampi";
             this.compatibilitàStampiToolStripMenuItem.Click += new System.EventHandler(this.compatibilitàStampiToolStripMenuItem_Click);
             // 
+            // pesiSpecificiToolStripMenuItem
+            // 
+            this.pesiSpecificiToolStripMenuItem.Name = "pesiSpecificiToolStripMenuItem";
+            this.pesiSpecificiToolStripMenuItem.Size = new System.Drawing.Size(286, 30);
+            this.pesiSpecificiToolStripMenuItem.Text = "Pesi specifici";
+            this.pesiSpecificiToolStripMenuItem.Click += new System.EventHandler(this.pesiSpecificiToolStripMenuItem_Click);
+            // 
             // ordiniToolStripMenuItem
             // 
             this.ordiniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -361,11 +374,13 @@
             this.anagraficheMagazziniToolStripMenuItem,
             this.interrogazioneGiacenzeToolStripMenuItem,
             this.interrogazioneMovimentiToolStripMenuItem,
-            this.caricoscaricoToolStripMenuItem});
+            this.caricoscaricoToolStripMenuItem,
+            this.posizioniStampiEDimeToolStripMenuItem});
             this.magazziniToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.magazziniToolStripMenuItem.Name = "magazziniToolStripMenuItem";
             this.magazziniToolStripMenuItem.Size = new System.Drawing.Size(122, 30);
             this.magazziniToolStripMenuItem.Text = "Magazzini";
+            this.magazziniToolStripMenuItem.Click += new System.EventHandler(this.magazziniToolStripMenuItem_Click);
             // 
             // anagraficheMagazziniToolStripMenuItem
             // 
@@ -403,6 +418,13 @@
             this.inserisciNuovoCaricoscaricoToolStripMenuItem.Size = new System.Drawing.Size(368, 30);
             this.inserisciNuovoCaricoscaricoToolStripMenuItem.Text = "Inserisci nuovo carico/scarico";
             this.inserisciNuovoCaricoscaricoToolStripMenuItem.Click += new System.EventHandler(this.inserisciNuovoCaricoscaricoToolStripMenuItem_Click);
+            // 
+            // posizioniStampiEDimeToolStripMenuItem
+            // 
+            this.posizioniStampiEDimeToolStripMenuItem.Name = "posizioniStampiEDimeToolStripMenuItem";
+            this.posizioniStampiEDimeToolStripMenuItem.Size = new System.Drawing.Size(329, 30);
+            this.posizioniStampiEDimeToolStripMenuItem.Text = "Posizioni Stampi e Dime";
+            this.posizioniStampiEDimeToolStripMenuItem.Click += new System.EventHandler(this.posizioniStampiEDimeToolStripMenuItem_Click);
             // 
             // impostazioniToolStripMenuItem
             // 
@@ -497,8 +519,8 @@
             // etichetteToolStripMenuItem
             // 
             this.etichetteToolStripMenuItem.Name = "etichetteToolStripMenuItem";
-            this.etichetteToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.etichetteToolStripMenuItem.Text = "Etichette";
+            this.etichetteToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
+            this.etichetteToolStripMenuItem.Text = "Etichette carico";
             this.etichetteToolStripMenuItem.Click += new System.EventHandler(this.etichetteToolStripMenuItem_Click);
             // 
             // disconnettiUtenteToolStripMenuItem
@@ -626,6 +648,8 @@
         private System.Windows.Forms.ToolStripMenuItem etichetteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem distintaBaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem anagraficaArticoloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pesiSpecificiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem posizioniStampiEDimeToolStripMenuItem;
     }
 }
 

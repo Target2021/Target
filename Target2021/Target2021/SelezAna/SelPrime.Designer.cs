@@ -44,6 +44,7 @@
             System.Windows.Forms.Label dimZLabel;
             System.Windows.Forms.Label pesoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelPrime));
+            System.Windows.Forms.Label materialeLabel;
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
@@ -80,6 +81,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
+            this.materialeTextBox = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.target2021DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pesiSpecificiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pesiSpecificiTableAdapter = new Target2021.Target2021DataSetTableAdapters.PesiSpecificiTableAdapter();
+            this.button4 = new System.Windows.Forms.Button();
             codiceLabel = new System.Windows.Forms.Label();
             tipoLabel = new System.Windows.Forms.Label();
             descrizioneLabel = new System.Windows.Forms.Label();
@@ -94,18 +102,21 @@
             dimYLabel = new System.Windows.Forms.Label();
             dimZLabel = new System.Windows.Forms.Label();
             pesoLabel = new System.Windows.Forms.Label();
+            materialeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingNavigator)).BeginInit();
             this.primeBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pesiSpecificiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // codiceLabel
             // 
             codiceLabel.AutoSize = true;
             codiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codiceLabel.Location = new System.Drawing.Point(57, 78);
+            codiceLabel.Location = new System.Drawing.Point(79, 75);
             codiceLabel.Name = "codiceLabel";
             codiceLabel.Size = new System.Drawing.Size(59, 20);
             codiceLabel.TabIndex = 1;
@@ -115,7 +126,7 @@
             // 
             tipoLabel.AutoSize = true;
             tipoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tipoLabel.Location = new System.Drawing.Point(72, 104);
+            tipoLabel.Location = new System.Drawing.Point(99, 101);
             tipoLabel.Name = "tipoLabel";
             tipoLabel.Size = new System.Drawing.Size(39, 20);
             tipoLabel.TabIndex = 3;
@@ -125,7 +136,7 @@
             // 
             descrizioneLabel.AutoSize = true;
             descrizioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descrizioneLabel.Location = new System.Drawing.Point(36, 130);
+            descrizioneLabel.Location = new System.Drawing.Point(45, 127);
             descrizioneLabel.Name = "descrizioneLabel";
             descrizioneLabel.Size = new System.Drawing.Size(93, 20);
             descrizioneLabel.TabIndex = 5;
@@ -135,7 +146,7 @@
             // 
             prezzo_acqLabel.AutoSize = true;
             prezzo_acqLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            prezzo_acqLabel.Location = new System.Drawing.Point(37, 156);
+            prezzo_acqLabel.Location = new System.Drawing.Point(47, 153);
             prezzo_acqLabel.Name = "prezzo_acqLabel";
             prezzo_acqLabel.Size = new System.Drawing.Size(91, 20);
             prezzo_acqLabel.TabIndex = 7;
@@ -145,7 +156,7 @@
             // 
             unita_misuraLabel.AutoSize = true;
             unita_misuraLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            unita_misuraLabel.Location = new System.Drawing.Point(33, 182);
+            unita_misuraLabel.Location = new System.Drawing.Point(39, 179);
             unita_misuraLabel.Name = "unita_misuraLabel";
             unita_misuraLabel.Size = new System.Drawing.Size(99, 20);
             unita_misuraLabel.TabIndex = 9;
@@ -155,7 +166,7 @@
             // 
             quantita_riordinoLabel.AutoSize = true;
             quantita_riordinoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            quantita_riordinoLabel.Location = new System.Drawing.Point(14, 208);
+            quantita_riordinoLabel.Location = new System.Drawing.Point(11, 205);
             quantita_riordinoLabel.Name = "quantita_riordinoLabel";
             quantita_riordinoLabel.Size = new System.Drawing.Size(127, 20);
             quantita_riordinoLabel.TabIndex = 11;
@@ -165,7 +176,7 @@
             // 
             scorta_minimaLabel.AutoSize = true;
             scorta_minimaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            scorta_minimaLabel.Location = new System.Drawing.Point(25, 234);
+            scorta_minimaLabel.Location = new System.Drawing.Point(27, 234);
             scorta_minimaLabel.Name = "scorta_minimaLabel";
             scorta_minimaLabel.Size = new System.Drawing.Size(111, 20);
             scorta_minimaLabel.TabIndex = 13;
@@ -175,7 +186,7 @@
             // 
             codice_fornitoreLabel.AutoSize = true;
             codice_fornitoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codice_fornitoreLabel.Location = new System.Drawing.Point(16, 260);
+            codice_fornitoreLabel.Location = new System.Drawing.Point(16, 256);
             codice_fornitoreLabel.Name = "codice_fornitoreLabel";
             codice_fornitoreLabel.Size = new System.Drawing.Size(122, 20);
             codice_fornitoreLabel.TabIndex = 15;
@@ -235,7 +246,7 @@
             // 
             pesoLabel.AutoSize = true;
             pesoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pesoLabel.Location = new System.Drawing.Point(429, 231);
+            pesoLabel.Location = new System.Drawing.Point(425, 231);
             pesoLabel.Name = "pesoLabel";
             pesoLabel.Size = new System.Drawing.Size(49, 20);
             pesoLabel.TabIndex = 27;
@@ -274,6 +285,7 @@
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
@@ -286,6 +298,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = this.primeTableAdapter;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
@@ -550,7 +563,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(567, 318);
+            this.button1.Location = new System.Drawing.Point(600, 379);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(188, 59);
             this.button1.TabIndex = 29;
@@ -592,11 +605,86 @@
             // 
             this.fornitoriTableAdapter.ClearBeforeFill = true;
             // 
+            // materialeLabel
+            // 
+            materialeLabel.AutoSize = true;
+            materialeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            materialeLabel.Location = new System.Drawing.Point(425, 256);
+            materialeLabel.Name = "materialeLabel";
+            materialeLabel.Size = new System.Drawing.Size(78, 20);
+            materialeLabel.TabIndex = 32;
+            materialeLabel.Text = "Materiale:";
+            // 
+            // materialeTextBox
+            // 
+            this.materialeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.primeBindingSource, "Materiale", true));
+            this.materialeTextBox.Enabled = false;
+            this.materialeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialeTextBox.Location = new System.Drawing.Point(521, 253);
+            this.materialeTextBox.Name = "materialeTextBox";
+            this.materialeTextBox.Size = new System.Drawing.Size(100, 26);
+            this.materialeTextBox.TabIndex = 33;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(644, 253);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(73, 26);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Cambia";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.pesiSpecificiBindingSource;
+            this.comboBox2.DisplayMember = "Materiale";
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(434, 301);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(321, 28);
+            this.comboBox2.TabIndex = 35;
+            this.comboBox2.ValueMember = "Materiale";
+            this.comboBox2.Visible = false;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // target2021DataSetBindingSource
+            // 
+            this.target2021DataSetBindingSource.DataSource = this.target2021DataSet;
+            this.target2021DataSetBindingSource.Position = 0;
+            // 
+            // pesiSpecificiBindingSource
+            // 
+            this.pesiSpecificiBindingSource.DataMember = "PesiSpecifici";
+            this.pesiSpecificiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // pesiSpecificiTableAdapter
+            // 
+            this.pesiSpecificiTableAdapter.ClearBeforeFill = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(644, 229);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(73, 26);
+            this.button4.TabIndex = 36;
+            this.button4.Text = "Calcola";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // SelPrime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(materialeLabel);
+            this.Controls.Add(this.materialeTextBox);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -631,6 +719,7 @@
             this.Controls.Add(this.primeBindingNavigator);
             this.Name = "SelPrime";
             this.Text = "Dettaglio materie prime";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Salvare);
             this.Load += new System.EventHandler(this.SelPrime_Load);
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
@@ -638,6 +727,8 @@
             this.primeBindingNavigator.ResumeLayout(false);
             this.primeBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pesiSpecificiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -681,5 +772,12 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource fornitoriBindingSource;
         private Target2021DataSetTableAdapters.FornitoriTableAdapter fornitoriTableAdapter;
+        private System.Windows.Forms.TextBox materialeTextBox;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource target2021DataSetBindingSource;
+        private System.Windows.Forms.BindingSource pesiSpecificiBindingSource;
+        private Target2021DataSetTableAdapters.PesiSpecificiTableAdapter pesiSpecificiTableAdapter;
+        private System.Windows.Forms.Button button4;
     }
 }
