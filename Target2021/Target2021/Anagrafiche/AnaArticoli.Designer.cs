@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaArticoli));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.articoli_sempliciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.articoli_sempliciTableAdapter = new Target2021.Target2021DataSetTableAdapters.articoli_sempliciTableAdapter();
@@ -119,6 +119,10 @@
             this.fasiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.target2021DataSet1 = new Target2021.Target2021DataSet1();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -189,10 +193,6 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.stampiDimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stampiDimeTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiDimeTableAdapter();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingNavigator)).BeginInit();
@@ -419,14 +419,14 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.articoli_sempliciDataGridView.AutoGenerateColumns = false;
             this.articoli_sempliciDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.articoli_sempliciDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articoli_sempliciDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.articoli_sempliciDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articoli_sempliciDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -437,25 +437,25 @@
             this.note,
             this.indirizzo_immagine});
             this.articoli_sempliciDataGridView.DataSource = this.articoli_sempliciBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.articoli_sempliciDataGridView.Location = new System.Drawing.Point(-1, 93);
             this.articoli_sempliciDataGridView.MultiSelect = false;
             this.articoli_sempliciDataGridView.Name = "articoli_sempliciDataGridView";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.articoli_sempliciDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(582, 174);
             this.articoli_sempliciDataGridView.TabIndex = 1;
@@ -616,6 +616,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(110, 127);
             this.textBox6.Name = "textBox6";
@@ -1146,6 +1147,43 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Fase 3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // textBox23
+            // 
+            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox23.Location = new System.Drawing.Point(670, 54);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(41, 24);
+            this.textBox23.TabIndex = 54;
+            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox24
+            // 
+            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox24.Location = new System.Drawing.Point(712, 54);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(41, 24);
+            this.textBox24.TabIndex = 53;
+            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox25
+            // 
+            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox25.Location = new System.Drawing.Point(755, 54);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(41, 24);
+            this.textBox25.TabIndex = 52;
+            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(533, 57);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(131, 18);
+            this.label42.TabIndex = 51;
+            this.label42.Text = "Posiz. magazzino:";
             // 
             // textBox14
             // 
@@ -1707,43 +1745,6 @@
             // stampiDimeTableAdapter
             // 
             this.stampiDimeTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(670, 54);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(41, 24);
-            this.textBox23.TabIndex = 54;
-            this.textBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox24
-            // 
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(712, 54);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(41, 24);
-            this.textBox24.TabIndex = 53;
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox25
-            // 
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(755, 54);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(41, 24);
-            this.textBox25.TabIndex = 52;
-            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(533, 57);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(131, 18);
-            this.label42.TabIndex = 51;
-            this.label42.Text = "Posiz. magazzino:";
             // 
             // AnaArticoli
             // 

@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.anagraficeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articoloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,67 +81,15 @@
             this.monitoraggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taglioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // anaMagazziniBindingSource
-            // 
-            this.anaMagazziniBindingSource.DataMember = "AnaMagazzini";
-            this.anaMagazziniBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // anaMagazziniTableAdapter
-            // 
-            this.anaMagazziniTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
-            this.tableAdapterManager.AnaMagazziniTableAdapter = this.anaMagazziniTableAdapter;
-            this.tableAdapterManager.ArtFornTableAdapter = null;
-            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
-            this.tableAdapterManager.ArticoliBCTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientiTableAdapter = null;
-            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
-            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
-            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
-            this.tableAdapterManager.CommesseTableAdapter = null;
-            this.tableAdapterManager.CompatibStampaTableAdapter = null;
-            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
-            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.DettArticoliTableAdapter = null;
-            this.tableAdapterManager.dimensioniTableAdapter = null;
-            this.tableAdapterManager.DimeTableAdapter = null;
-            this.tableAdapterManager.FasiTableAdapter = null;
-            this.tableAdapterManager.FornitoriTableAdapter = null;
-            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
-            this.tableAdapterManager.LavorazioniTableAdapter = null;
-            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
-            this.tableAdapterManager.MacchineStampoTableAdapter = null;
-            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
-            this.tableAdapterManager.MinuterieTableAdapter = null;
-            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
-            this.tableAdapterManager.OrdFornDettTableAdapter = null;
-            this.tableAdapterManager.OrdFornTestTableAdapter = null;
-            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
-            this.tableAdapterManager.PrimeTableAdapter = null;
-            this.tableAdapterManager.StampiDimeTableAdapter = null;
-            this.tableAdapterManager.StampiTableAdapter = null;
-            this.tableAdapterManager.sysdiagramsTableAdapter = null;
-            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
-            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.TipoCommessaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // menuStrip1
             // 
@@ -335,11 +279,13 @@
             this.commesseToolStripMenuItem1,
             this.controllaNuoviOrdiniToolStripMenuItem,
             this.ordiniAFornitoreToolStripMenuItem,
-            this.stampaSchedaCommessaToolStripMenuItem});
+            this.stampaSchedaCommessaToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.ordiniToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordiniToolStripMenuItem.Name = "ordiniToolStripMenuItem";
             this.ordiniToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
             this.ordiniToolStripMenuItem.Text = "Ordini";
+            this.ordiniToolStripMenuItem.Click += new System.EventHandler(this.ordiniToolStripMenuItem_Click);
             // 
             // commesseToolStripMenuItem1
             // 
@@ -572,7 +518,71 @@
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
-            // Home
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // anaMagazziniBindingSource
+            // 
+            this.anaMagazziniBindingSource.DataMember = "AnaMagazzini";
+            this.anaMagazziniBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // anaMagazziniTableAdapter
+            // 
+            this.anaMagazziniTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
+            this.tableAdapterManager.AnaMagazziniTableAdapter = this.anaMagazziniTableAdapter;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
+            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
+            this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
+            this.tableAdapterManager.CommesseTableAdapter = null;
+            this.tableAdapterManager.CompatibStampaTableAdapter = null;
+            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
+            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
+            this.tableAdapterManager.DimeTableAdapter = null;
+            this.tableAdapterManager.FasiTableAdapter = null;
+            this.tableAdapterManager.FornitoriTableAdapter = null;
+            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
+            this.tableAdapterManager.MacchineStampoTableAdapter = null;
+            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
+            this.tableAdapterManager.MinuterieTableAdapter = null;
+            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
+            this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.TipoCommessaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
+            // 
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -582,13 +592,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Home";
+            this.Name = "Form1";
             this.Text = "Target2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,6 +660,7 @@
         private System.Windows.Forms.ToolStripMenuItem anagraficaArticoloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pesiSpecificiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem posizioniStampiEDimeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
 

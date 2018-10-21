@@ -380,6 +380,23 @@ namespace Target2021
 
         }
 
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Stati riga di commessa:
+            // TipoCommessa = 1  // Approvigionamento materia prima
+                // Stato 0 = Fase da prendere in carico
+                // Stato 1 = Effettuato ordine a fornitore, in attesa dell'arrivo della merce
+                // Stato 2 = Evasione parziale (ovvero impegno di una quantità < quantità richiesta)
+                // Stato 3 = Fase completata
+            // TipoCommessa = 2 // Stampaggio
+
+        }
+
+        private void ordiniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

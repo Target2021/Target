@@ -58,7 +58,7 @@ namespace Target2021
 
         private void button3_Click(object sender, EventArgs e)
         {
-            i = 3;
+            i = 1;
             passaggio();
         }
 
@@ -70,7 +70,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            i = 1;
+            i = 3;
             passaggio();
         }
 
@@ -107,9 +107,9 @@ namespace Target2021
             query_t2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 3 AND Stato=1";
             query_t3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 3 AND Stato=2";
             SqlConnection connessione = new SqlConnection(stringa_connessione);
-            SqlCommand comando = new SqlCommand(query_of1, connessione);
+            SqlCommand comando2 = new SqlCommand(query_of1, connessione);
             SqlCommand comando1 = new SqlCommand(query_of2, connessione);
-            SqlCommand comando2 = new SqlCommand(query_of3, connessione);
+            SqlCommand comando = new SqlCommand(query_of3, connessione);
             SqlCommand comando3 = new SqlCommand(query_s1, connessione);
             SqlCommand comando4 = new SqlCommand(query_s2, connessione);
             SqlCommand comando5 = new SqlCommand(query_s3, connessione);

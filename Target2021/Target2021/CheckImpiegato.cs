@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using Target2021.Fase1;
 
 namespace Target2021
 {
@@ -33,8 +34,11 @@ namespace Target2021
 
         private void CheckImpiegato_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
+            this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
             inserimento_iniziale();
             verifica_commesse();
+            SoloInOrdine();
         }
 
         public void inserimento_iniziale()
@@ -99,9 +103,10 @@ namespace Target2021
             dataGridView1.DataSource = source;
         }
 
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        public void SoloInOrdine()
         {
-            //verifica_commesse();
+
+            //giacenzeMagazziniBindingSource.Filter = "idPrime = '" + textBox1.Text + "'";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -116,21 +121,16 @@ namespace Target2021
             verifica_commesse();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Document doc = new Document(PageSize.A4);
             var output = new FileStream(("C:\\temp\\OrdineAFornitore.pdf"), FileMode.Create);
             var writer = PdfWriter.GetInstance(doc, output);
             doc.Open();
-            var logo = iTextSharp.text.Image.GetInstance("c://temp//logo.png");
-            logo.SetAbsolutePosition(430, 770);
-            logo.ScaleAbsoluteHeight(50);
-            logo.ScaleAbsoluteWidth(70);
+            var logo = iTextSharp.text.Image.GetInstance("C://Users//targe//Source//Repos//Target//Target2021//Target2021//Immagini//Immagine1.png");
+            logo.SetAbsolutePosition(400, 760);
+            logo.ScaleAbsoluteHeight(45);
+            logo.ScaleAbsoluteWidth(100);
             doc.Add(logo);
             PdfPTable table1 = new PdfPTable(2);
             table1.DefaultCell.Border = 0;
@@ -147,11 +147,11 @@ namespace Target2021
             PdfPTable table2 = new PdfPTable(3);
             //One row added
             PdfPCell cell21 = new PdfPCell();
-            cell21.AddElement(new Paragraph("Photo Type"));
+            cell21.AddElement(new Paragraph("Codice articolo"));
             PdfPCell cell22 = new PdfPCell();
-            cell22.AddElement(new Paragraph("No. of Copies"));
+            cell22.AddElement(new Paragraph("Descrizione"));
             PdfPCell cell23 = new PdfPCell();
-            cell23.AddElement(new Paragraph("Amount"));
+            cell23.AddElement(new Paragraph("Quantità"));
             table2.AddCell(cell21);
             table2.AddCell(cell22);
             table2.AddCell(cell23);
@@ -184,6 +184,19 @@ namespace Target2021
             doc.Add(table1);
             doc.Close();
             System.Diagnostics.Process.Start(@"c:\temp\OrdineAFornitore.pdf");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string CodiceLastra="",DescrizioneLastra="";
+
+            if (e.RowIndex > -1 && dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                CodiceLastra = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                DescrizioneLastra = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
+            ImpegnaMatPrima Impegna = new ImpegnaMatPrima(CodiceLastra,DescrizioneLastra);
+            Impegna.Show();
         }
     }
 }

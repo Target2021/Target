@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistraUtenti));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.utentiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.utentiTableAdapter = new Target2021.Target2021DataSetTableAdapters.UtentiTableAdapter();
@@ -54,8 +47,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.utentiBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.utentiDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,71 +59,6 @@
             this.utentiBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.utentiDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 125);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "NOME";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(103, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "PASSWORD";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(244, 125);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 22);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(244, 218);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(213, 22);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.UseSystemPasswordChar = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(275, 347);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 40);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "REGISTRA";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Amministratore",
-            "Segretaria",
-            "Operaio"});
-            this.comboBox1.Location = new System.Drawing.Point(271, 274);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 24);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 281);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "LIVELLO";
             // 
             // target2021DataSet
             // 
@@ -152,16 +78,22 @@
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
@@ -172,9 +104,14 @@
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -207,7 +144,7 @@
             this.utentiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.utentiBindingNavigator.Name = "utentiBindingNavigator";
             this.utentiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.utentiBindingNavigator.Size = new System.Drawing.Size(1085, 27);
+            this.utentiBindingNavigator.Size = new System.Drawing.Size(751, 27);
             this.utentiBindingNavigator.TabIndex = 7;
             this.utentiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -223,7 +160,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -264,7 +201,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -305,22 +242,6 @@
             this.utentiBindingNavigatorSaveItem.Text = "Salva dati";
             this.utentiBindingNavigatorSaveItem.Click += new System.EventHandler(this.utentiBindingNavigatorSaveItem_Click);
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(244, 173);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(213, 22);
-            this.textBox3.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(111, 173);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 17);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "COGNOME";
-            // 
             // utentiDataGridView
             // 
             this.utentiDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -336,10 +257,11 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.utentiDataGridView.DataSource = this.utentiBindingSource;
-            this.utentiDataGridView.Location = new System.Drawing.Point(509, 86);
+            this.utentiDataGridView.Location = new System.Drawing.Point(0, 29);
+            this.utentiDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.utentiDataGridView.Name = "utentiDataGridView";
             this.utentiDataGridView.RowTemplate.Height = 24;
-            this.utentiDataGridView.Size = new System.Drawing.Size(537, 372);
+            this.utentiDataGridView.Size = new System.Drawing.Size(751, 279);
             this.utentiDataGridView.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn1
@@ -374,22 +296,14 @@
             // 
             // RegistraUtenti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1085, 487);
+            this.ClientSize = new System.Drawing.Size(751, 305);
             this.Controls.Add(this.utentiDataGridView);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.utentiBindingNavigator);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RegistraUtenti";
             this.Text = "Utenti";
             this.Load += new System.EventHandler(this.RegistraUtenti_Load);
@@ -405,14 +319,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
         private Target2021DataSet target2021DataSet;
         private System.Windows.Forms.BindingSource utentiBindingSource;
         private Target2021DataSetTableAdapters.UtentiTableAdapter utentiTableAdapter;
@@ -430,8 +336,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton utentiBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView utentiDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

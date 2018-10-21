@@ -400,7 +400,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ProgrTaglio1, ProgrTaglio2) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@NrLastreRichieste,@npo,@no,@stato,@prt1,@prt2)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -418,6 +418,7 @@ namespace Target2021
             comando.Parameters.AddWithValue("@npo", 0);
             comando.Parameters.AddWithValue("@no", 'N');
             comando.Parameters.AddWithValue("@stato", 0);
+            comando.Parameters.AddWithValue("@imatpri", 0);
             comando.Parameters.AddWithValue("@prt1", com.ProgrTaglio1);
             comando.Parameters.AddWithValue("@prt2", com.ProgrTaglio2);
             connessione.Open();
