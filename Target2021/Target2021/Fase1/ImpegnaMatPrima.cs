@@ -13,7 +13,7 @@ namespace Target2021.Fase1
     public partial class ImpegnaMatPrima : Form
     {
         string CodiceLastra, DescrizioneLastra;
-        int disponibili;
+        int disponibili, impegnate;
         DataRow[] riga;
 
         public ImpegnaMatPrima(string CodLas, string DesLas)
@@ -29,14 +29,12 @@ namespace Target2021.Fase1
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
             this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
-            dataGridView1.KeyPress += OnDataGridView1_KeyPress;
             testata();
             dettaglio();
         }
 
         private void testata()
         {
-            //DataRow[] riga;
             string selezione = "idPrime = '" + CodiceLastra+"'";
             riga=target2021DataSet.Tables["GiacenzeMagazzini"].Select(selezione);
             textBox1.Text = riga[0]["idPrime"].ToString();
@@ -48,11 +46,12 @@ namespace Target2021.Fase1
             textBox5.Text = riga[0]["GiacenzaDisponibili"].ToString();
             disponibili = Convert.ToInt32(textBox5.Text);
             textBox6.Text = riga[0]["GiacenzaImpegnati"].ToString();
+            impegnate = Convert.ToInt32(textBox6.Text);
         }
 
         private void dettaglio()
         {
-            commesseBindingSource.Filter = "IDMateriaPrima = '" +  CodiceLastra + "' AND TipoCommessa=1 AND Stato=0";
+            commesseBindingSource.Filter = "IDMateriaPrima = '" +  CodiceLastra + "' AND TipoCommessa=1 AND (Stato=0 OR Stato=1)";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,44 +60,48 @@ namespace Target2021.Fase1
             this.commesseBindingSource.EndEdit();
             this.giacenzeMagazziniBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            MessageBox.Show("Salvataggio effettuato!");
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void Esci(object sender, DataGridViewCellEventArgs e)
-        {
-            int numero;
-            if (e.RowIndex > -1 && dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
+            int nlastre=0,nrichieste;
+            disponibili = disponibili + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            impegnate = impegnate - Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            nrichieste = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+            try
             {
-                numero =Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
-                if (numero > disponibili)
-                {
-                    MessageBox.Show("Non hai disponibili tutte quelle lastre!");
-                    dataGridView1.Rows[e.RowIndex].Cells[8].Value = 0;
-                }
-                else
-                {
-                    if (numero > 0) dataGridView1.Rows[e.RowIndex].Cells[9].Value = true;
-                    riga[0]["GiacenzaDisponibili"] = Convert.ToInt32(textBox5.Text) - numero;
-                    riga[0]["GiacenzaImpegnati"]= Convert.ToInt32(textBox6.Text) + numero;
-                }
+                nlastre = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Quante lastre vuoi impiegare per questa commessa?", "IMPEGNO LASTRE", "0"));
             }
-            //this.Validate();
-            //this.commesseBindingSource.EndEdit();
-            //this.giacenzeMagazziniBindingSource.EndEdit();
-            //this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            catch { }
+            if (nlastre > disponibili)
+            {
+                MessageBox.Show("Non hai disponibili tutte quelle lastre!");
+                dataGridView1.Rows[e.RowIndex].Cells[8].Value = 0;
+            }
+            else
+            {
+                if (nlastre > 0 && nlastre < nrichieste)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[9].Value = true;
+                    dataGridView1.Rows[e.RowIndex].Cells[10].Value = 1;
+                }
+                dataGridView1.Rows[e.RowIndex].Cells[8].Value = nlastre;
+                riga[0]["GiacenzaDisponibili"] = disponibili - nlastre;
+                riga[0]["GiacenzaImpegnati"] = impegnate + nlastre;
+                if (nlastre == nrichieste)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[9].Value = false;
+                    dataGridView1.Rows[e.RowIndex].Cells[10].Value = 2;
+                }
+                if (nlastre == 0)
+                { 
+                    dataGridView1.Rows[e.RowIndex].Cells[10].Value = 0;
+                    dataGridView1.Rows[e.RowIndex].Cells[9].Value = false;
+                }
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+            }
             testata();
-        }
-
-        private void OnDataGridView1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                //Esci(sender, e);
-            }
         }
 
         private void giacenzeMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)

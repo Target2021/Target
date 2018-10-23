@@ -314,7 +314,7 @@
             this.articoli_sempliciBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.articoli_sempliciBindingNavigator.Name = "articoli_sempliciBindingNavigator";
             this.articoli_sempliciBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.articoli_sempliciBindingNavigator.Size = new System.Drawing.Size(1107, 25);
+            this.articoli_sempliciBindingNavigator.Size = new System.Drawing.Size(1212, 25);
             this.articoli_sempliciBindingNavigator.TabIndex = 0;
             this.articoli_sempliciBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -1656,7 +1656,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(822, 138);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 363);
+            this.pictureBox1.Size = new System.Drawing.Size(378, 363);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -1684,7 +1684,7 @@
             this.fillByToolStripButton});
             this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
             this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(1107, 25);
+            this.fillByToolStrip.Size = new System.Drawing.Size(1212, 25);
             this.fillByToolStrip.TabIndex = 17;
             this.fillByToolStrip.Text = "fillByToolStrip";
             // 
@@ -1750,7 +1750,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 553);
+            this.ClientSize = new System.Drawing.Size(1212, 553);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.textBox18);

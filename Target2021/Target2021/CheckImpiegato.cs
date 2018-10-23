@@ -137,7 +137,7 @@ namespace Target2021
             table1.WidthPercentage = 80;
             PdfPCell cell11 = new PdfPCell();
             cell11.Colspan = 1;
-            cell11.AddElement(new Paragraph("Target S.P.A."));
+            cell11.AddElement(new Paragraph("Target Srl"));
             cell11.AddElement(new Paragraph("ORDINE A FORNITORE"));
             cell11.VerticalAlignment = Element.ALIGN_LEFT;
             PdfPCell cell12 = new PdfPCell();
@@ -186,7 +186,7 @@ namespace Target2021
             System.Diagnostics.Process.Start(@"c:\temp\OrdineAFornitore.pdf");
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Selezi(object sender, DataGridViewCellEventArgs e)
         {
             string CodiceLastra="",DescrizioneLastra="";
 

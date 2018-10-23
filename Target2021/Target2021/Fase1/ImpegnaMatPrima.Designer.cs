@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -70,6 +70,7 @@
             this.nrLastreRichiesteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.impegnataMatPrimaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evasoParzialeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Stato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
@@ -239,14 +240,14 @@
             this.descrArticoloDataGridViewTextBoxColumn,
             this.nrLastreRichiesteDataGridViewTextBoxColumn,
             this.impegnataMatPrimaDataGridViewTextBoxColumn,
-            this.evasoParzialeDataGridViewCheckBoxColumn});
+            this.evasoParzialeDataGridViewCheckBoxColumn,
+            this.Stato});
             this.dataGridView1.DataSource = this.commesseBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 153);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1028, 234);
+            this.dataGridView1.Size = new System.Drawing.Size(1105, 234);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.Esci);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // commesseBindingSource
             // 
@@ -317,7 +318,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(816, 393);
+            this.button1.Location = new System.Drawing.Point(893, 393);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(215, 31);
             this.button1.TabIndex = 2;
@@ -328,8 +329,8 @@
             // nrCommessaDataGridViewTextBoxColumn
             // 
             this.nrCommessaDataGridViewTextBoxColumn.DataPropertyName = "NrCommessa";
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nrCommessaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nrCommessaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.nrCommessaDataGridViewTextBoxColumn.HeaderText = "Nr";
             this.nrCommessaDataGridViewTextBoxColumn.Name = "nrCommessaDataGridViewTextBoxColumn";
             this.nrCommessaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -338,8 +339,8 @@
             // dataCommessaDataGridViewTextBoxColumn
             // 
             this.dataCommessaDataGridViewTextBoxColumn.DataPropertyName = "DataCommessa";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataCommessaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataCommessaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataCommessaDataGridViewTextBoxColumn.HeaderText = "Data";
             this.dataCommessaDataGridViewTextBoxColumn.Name = "dataCommessaDataGridViewTextBoxColumn";
             this.dataCommessaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -348,8 +349,8 @@
             // iDClienteDataGridViewTextBoxColumn
             // 
             this.iDClienteDataGridViewTextBoxColumn.DataPropertyName = "IDCliente";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iDClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.iDClienteDataGridViewTextBoxColumn.HeaderText = "Cliente";
             this.iDClienteDataGridViewTextBoxColumn.Name = "iDClienteDataGridViewTextBoxColumn";
             this.iDClienteDataGridViewTextBoxColumn.ReadOnly = true;
@@ -358,8 +359,8 @@
             // dataConsegnaDataGridViewTextBoxColumn
             // 
             this.dataConsegnaDataGridViewTextBoxColumn.DataPropertyName = "DataConsegna";
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataConsegnaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataConsegnaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataConsegnaDataGridViewTextBoxColumn.HeaderText = "Consegna";
             this.dataConsegnaDataGridViewTextBoxColumn.Name = "dataConsegnaDataGridViewTextBoxColumn";
             this.dataConsegnaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -368,8 +369,8 @@
             // nrPezziDaLavorareDataGridViewTextBoxColumn
             // 
             this.nrPezziDaLavorareDataGridViewTextBoxColumn.DataPropertyName = "NrPezziDaLavorare";
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nrPezziDaLavorareDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nrPezziDaLavorareDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.nrPezziDaLavorareDataGridViewTextBoxColumn.HeaderText = "Pezzi";
             this.nrPezziDaLavorareDataGridViewTextBoxColumn.Name = "nrPezziDaLavorareDataGridViewTextBoxColumn";
             this.nrPezziDaLavorareDataGridViewTextBoxColumn.ReadOnly = true;
@@ -378,8 +379,8 @@
             // codArticoloDataGridViewTextBoxColumn
             // 
             this.codArticoloDataGridViewTextBoxColumn.DataPropertyName = "CodArticolo";
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codArticoloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codArticoloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.codArticoloDataGridViewTextBoxColumn.HeaderText = "Articolo";
             this.codArticoloDataGridViewTextBoxColumn.Name = "codArticoloDataGridViewTextBoxColumn";
             this.codArticoloDataGridViewTextBoxColumn.ReadOnly = true;
@@ -389,8 +390,8 @@
             // 
             this.descrArticoloDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.descrArticoloDataGridViewTextBoxColumn.DataPropertyName = "DescrArticolo";
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.descrArticoloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.descrArticoloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.descrArticoloDataGridViewTextBoxColumn.HeaderText = "Descrizione";
             this.descrArticoloDataGridViewTextBoxColumn.Name = "descrArticoloDataGridViewTextBoxColumn";
             this.descrArticoloDataGridViewTextBoxColumn.ReadOnly = true;
@@ -400,8 +401,8 @@
             // nrLastreRichiesteDataGridViewTextBoxColumn
             // 
             this.nrLastreRichiesteDataGridViewTextBoxColumn.DataPropertyName = "NrLastreRichieste";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nrLastreRichiesteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nrLastreRichiesteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.nrLastreRichiesteDataGridViewTextBoxColumn.HeaderText = "Lastre richieste";
             this.nrLastreRichiesteDataGridViewTextBoxColumn.Name = "nrLastreRichiesteDataGridViewTextBoxColumn";
             this.nrLastreRichiesteDataGridViewTextBoxColumn.ReadOnly = true;
@@ -410,9 +411,9 @@
             // impegnataMatPrimaDataGridViewTextBoxColumn
             // 
             this.impegnataMatPrimaDataGridViewTextBoxColumn.DataPropertyName = "ImpegnataMatPrima";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.impegnataMatPrimaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.impegnataMatPrimaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.impegnataMatPrimaDataGridViewTextBoxColumn.HeaderText = "Lastre impegnate";
             this.impegnataMatPrimaDataGridViewTextBoxColumn.Name = "impegnataMatPrimaDataGridViewTextBoxColumn";
             this.impegnataMatPrimaDataGridViewTextBoxColumn.Width = 163;
@@ -425,11 +426,19 @@
             this.evasoParzialeDataGridViewCheckBoxColumn.ReadOnly = true;
             this.evasoParzialeDataGridViewCheckBoxColumn.Width = 134;
             // 
+            // Stato
+            // 
+            this.Stato.DataPropertyName = "Stato";
+            this.Stato.HeaderText = "Stato";
+            this.Stato.Name = "Stato";
+            this.Stato.Visible = false;
+            this.Stato.Width = 76;
+            // 
             // ImpegnaMatPrima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 426);
+            this.ClientSize = new System.Drawing.Size(1115, 426);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
@@ -482,5 +491,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nrLastreRichiesteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn impegnataMatPrimaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn evasoParzialeDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stato;
     }
 }

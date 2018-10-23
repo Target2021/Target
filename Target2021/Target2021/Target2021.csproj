@@ -104,6 +104,7 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -167,6 +168,12 @@
     <Compile Include="Anagrafiche\AnaMateriePrime.Designer.cs">
       <DependentUpon>AnaMateriePrime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\AnaMinuterie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaMinuterie.Designer.cs">
+      <DependentUpon>AnaMinuterie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anagrafiche\AnaMStampo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +227,12 @@
     </Compile>
     <Compile Include="AnArticForn.Designer.cs">
       <DependentUpon>AnArticForn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaricoScarico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaricoScarico.Designer.cs">
+      <DependentUpon>CaricoScarico.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckImpiegato.cs">
       <SubType>Form</SubType>
@@ -482,6 +495,9 @@
     <EmbeddedResource Include="Anagrafiche\AnaMateriePrime.resx">
       <DependentUpon>AnaMateriePrime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaMinuterie.resx">
+      <DependentUpon>AnaMinuterie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaMStampo.resx">
       <DependentUpon>AnaMStampo.cs</DependentUpon>
     </EmbeddedResource>
@@ -508,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AnArticForn.resx">
       <DependentUpon>AnArticForn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaricoScarico.resx">
+      <DependentUpon>CaricoScarico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CheckImpiegato.resx">
       <DependentUpon>CheckImpiegato.cs</DependentUpon>

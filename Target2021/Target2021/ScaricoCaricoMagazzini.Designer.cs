@@ -303,6 +303,7 @@
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
@@ -315,7 +316,10 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = this.movimentiMagazzinoTableAdapter;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
@@ -327,11 +331,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 14);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(79, 18);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(251, 13);
+            this.label9.Size = new System.Drawing.Size(414, 25);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Inserimento manuale registrazione di Carico/Scarico";
+            this.label9.Text = "Registrazione manuale Carico/Scarico";
             // 
             // ScaricoCaricoMagazzini
             // 
@@ -360,7 +365,7 @@
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ScaricoCaricoMagazzini";
-            this.Text = "ScaricoCaricoMagazzini";
+            this.Text = "Carico/scarico Magazzini";
             this.Load += new System.EventHandler(this.ScaricoCaricoMagazzini_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

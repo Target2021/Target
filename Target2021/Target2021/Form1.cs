@@ -21,55 +21,7 @@ namespace Target2021
         public Form1()
         {
             InitializeComponent();          
-            //menuStrip1.Renderer = new MyRenderer();
-            //this.user =user;
         }
-        //private class MyRenderer : ToolStripProfessionalRenderer
-        //{
-        //    public MyRenderer() : base(new MyColors()) { }
-        //}      
-        //public  void CheckPrivilege(string livello)
-        //{
-        //    livello =livello.Replace(" ", string.Empty);
-        //    if(livello=="Amministratore")
-        //    {
-        //        registraNuovoUtenteToolStripMenuItem.Enabled = true;
-        //    }
-        //    if(livello=="Dirigente")
-        //    {
-        //        registraNuovoUtenteToolStripMenuItem.Enabled = true;
-
-        //    }
-        //    if (livello == "Segretaria")
-        //    {
-
-        //    }
-        //    if (livello == "Operaio")
-        //    {
-        //        clientiToolStripMenuItem.Enabled = false;
-        //        registraNuovoUtenteToolStripMenuItem.Enabled = false;
-
-        //    }
-        //}
-        //private class MyColors : ProfessionalColorTable
-        //{
-        //    public override Color MenuItemSelected
-        //    {
-        //        get { return Color.DeepSkyBlue; }
-        //    }
-        //    public override Color MenuItemSelectedGradientBegin
-        //    {
-        //        get { return Color.Aqua; }
-        //    }
-        //    public override Color MenuItemSelectedGradientEnd
-        //    {
-        //        get { return Color.CadetBlue; }
-        //    }
-        //    public override Color MenuItemPressedGradientMiddle
-        //    {
-        //        get { return Color.Aquamarine; }
-        //    }
-        //}
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -156,7 +108,9 @@ namespace Target2021
 
         private void caricoscaricoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Generare etichetta da attaccare sul bancale vedi foglio etichetta file di XLS
+            ScaricoCaricoMagazzini scaricoCarico = new ScaricoCaricoMagazzini();
+            scaricoCarico.MdiParent = this;
+            scaricoCarico.Show();
         }
 
         private void materiePrimeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -203,9 +157,7 @@ namespace Target2021
 
         private void inserisciNuovoCaricoscaricoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ScaricoCaricoMagazzini scaricoCarico = new ScaricoCaricoMagazzini();
-            scaricoCarico.MdiParent = this;
-            scaricoCarico.Show();
+
         }
 
         private void interrogazioneMovimentiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -327,7 +279,9 @@ namespace Target2021
 
         private void minuterieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AnaMinuterie AnaMin = new AnaMinuterie();
+            AnaMin.MdiParent = this;
+            AnaMin.Show();
         }
 
         private void compatibilitàStampiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -385,9 +339,8 @@ namespace Target2021
             // Stati riga di commessa:
             // TipoCommessa = 1  // Approvigionamento materia prima
                 // Stato 0 = Fase da prendere in carico
-                // Stato 1 = Effettuato ordine a fornitore, in attesa dell'arrivo della merce
-                // Stato 2 = Evasione parziale (ovvero impegno di una quantità < quantità richiesta)
-                // Stato 3 = Fase completata
+                // Stato 1 = Evasione parziale (ovvero impegno di una quantità < quantità richiesta)
+                // Stato 2 = Fase completata
             // TipoCommessa = 2 // Stampaggio
 
         }
@@ -395,6 +348,13 @@ namespace Target2021
         private void ordiniToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CaricoScarico CS = new CaricoScarico ();
+            CS.MdiParent = this;
+            CS.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
