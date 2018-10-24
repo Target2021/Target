@@ -63,6 +63,11 @@ namespace Target2021.Fase1
             MessageBox.Show("Salvataggio effettuato!");
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int nlastre=0,nrichieste;

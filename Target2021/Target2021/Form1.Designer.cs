@@ -61,7 +61,6 @@
             this.interrogazioneGiacenzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interrogazioneMovimentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.posizioniStampiEDimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -350,19 +349,10 @@
             // 
             // caricoscaricoToolStripMenuItem
             // 
-            this.caricoscaricoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
             this.caricoscaricoToolStripMenuItem.Name = "caricoscaricoToolStripMenuItem";
             this.caricoscaricoToolStripMenuItem.Size = new System.Drawing.Size(329, 30);
             this.caricoscaricoToolStripMenuItem.Text = "Carico/scarico manuale";
             this.caricoscaricoToolStripMenuItem.Click += new System.EventHandler(this.caricoscaricoToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(295, 30);
-            this.toolStripMenuItem1.Text = "Nuovo Carico/Scarico";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // posizioniStampiEDimeToolStripMenuItem
             // 
@@ -652,7 +642,6 @@
         private System.Windows.Forms.ToolStripMenuItem pesiSpecificiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem posizioniStampiEDimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

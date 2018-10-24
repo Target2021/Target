@@ -29,72 +29,81 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaricoScarico));
-            System.Windows.Forms.Label idMovimentoLabel;
-            System.Windows.Forms.Label idMagazzinoLabel;
-            System.Windows.Forms.Label idPrimeLabel;
-            System.Windows.Forms.Label idStampiLabel;
-            System.Windows.Forms.Label idDimeLabel;
-            System.Windows.Forms.Label idSemilavoratiLabel;
-            System.Windows.Forms.Label idArticoliLabel;
-            System.Windows.Forms.Label carScarLabel;
             System.Windows.Forms.Label quantitaLabel;
             System.Windows.Forms.Label barcodeLabel;
             System.Windows.Forms.Label nrOrdineLabel;
             System.Windows.Forms.Label dataOraMovimentoLabel;
-            System.Windows.Forms.Label pesoMateriaPrimaLabel;
-            System.Windows.Forms.Label prezzoComplessivoMateriaPrimaLabel;
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.movimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.movimentiMagazzinoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.movimentiMagazzinoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.idMovimentoTextBox = new System.Windows.Forms.TextBox();
-            this.idMagazzinoTextBox = new System.Windows.Forms.TextBox();
-            this.idPrimeTextBox = new System.Windows.Forms.TextBox();
-            this.idStampiTextBox = new System.Windows.Forms.TextBox();
-            this.idDimeTextBox = new System.Windows.Forms.TextBox();
-            this.idSemilavoratiTextBox = new System.Windows.Forms.TextBox();
-            this.idArticoliTextBox = new System.Windows.Forms.TextBox();
-            this.carScarTextBox = new System.Windows.Forms.TextBox();
-            this.quantitaTextBox = new System.Windows.Forms.TextBox();
-            this.barcodeTextBox = new System.Windows.Forms.TextBox();
-            this.nrOrdineTextBox = new System.Windows.Forms.TextBox();
-            this.dataOraMovimentoDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.pesoMateriaPrimaTextBox = new System.Windows.Forms.TextBox();
-            this.prezzoComplessivoMateriaPrimaTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            idMovimentoLabel = new System.Windows.Forms.Label();
-            idMagazzinoLabel = new System.Windows.Forms.Label();
-            idPrimeLabel = new System.Windows.Forms.Label();
-            idStampiLabel = new System.Windows.Forms.Label();
-            idDimeLabel = new System.Windows.Forms.Label();
-            idSemilavoratiLabel = new System.Windows.Forms.Label();
-            idArticoliLabel = new System.Windows.Forms.Label();
-            carScarLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             quantitaLabel = new System.Windows.Forms.Label();
             barcodeLabel = new System.Windows.Forms.Label();
             nrOrdineLabel = new System.Windows.Forms.Label();
             dataOraMovimentoLabel = new System.Windows.Forms.Label();
-            pesoMateriaPrimaLabel = new System.Windows.Forms.Label();
-            prezzoComplessivoMateriaPrimaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingNavigator)).BeginInit();
-            this.movimentiMagazzinoBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // quantitaLabel
+            // 
+            quantitaLabel.AutoSize = true;
+            quantitaLabel.Location = new System.Drawing.Point(39, 162);
+            quantitaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            quantitaLabel.Name = "quantitaLabel";
+            quantitaLabel.Size = new System.Drawing.Size(67, 18);
+            quantitaLabel.TabIndex = 17;
+            quantitaLabel.Text = "Quantita:";
+            // 
+            // barcodeLabel
+            // 
+            barcodeLabel.AutoSize = true;
+            barcodeLabel.Location = new System.Drawing.Point(41, 194);
+            barcodeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            barcodeLabel.Name = "barcodeLabel";
+            barcodeLabel.Size = new System.Drawing.Size(68, 18);
+            barcodeLabel.TabIndex = 19;
+            barcodeLabel.Text = "Barcode:";
+            // 
+            // nrOrdineLabel
+            // 
+            nrOrdineLabel.AutoSize = true;
+            nrOrdineLabel.Location = new System.Drawing.Point(41, 230);
+            nrOrdineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nrOrdineLabel.Name = "nrOrdineLabel";
+            nrOrdineLabel.Size = new System.Drawing.Size(76, 18);
+            nrOrdineLabel.TabIndex = 21;
+            nrOrdineLabel.Text = "Nr Ordine:";
+            // 
+            // dataOraMovimentoLabel
+            // 
+            dataOraMovimentoLabel.AutoSize = true;
+            dataOraMovimentoLabel.Location = new System.Drawing.Point(41, 266);
+            dataOraMovimentoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dataOraMovimentoLabel.Name = "dataOraMovimentoLabel";
+            dataOraMovimentoLabel.Size = new System.Drawing.Size(72, 18);
+            dataOraMovimentoLabel.TabIndex = 23;
+            dataOraMovimentoLabel.Text = "Data Ora:";
             // 
             // target2021DataSet
             // 
@@ -154,422 +163,202 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // movimentiMagazzinoBindingNavigator
-            // 
-            this.movimentiMagazzinoBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.movimentiMagazzinoBindingNavigator.BindingSource = this.movimentiMagazzinoBindingSource;
-            this.movimentiMagazzinoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.movimentiMagazzinoBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.movimentiMagazzinoBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.movimentiMagazzinoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.movimentiMagazzinoBindingNavigatorSaveItem});
-            this.movimentiMagazzinoBindingNavigator.Location = new System.Drawing.Point(0, 340);
-            this.movimentiMagazzinoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.movimentiMagazzinoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.movimentiMagazzinoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.movimentiMagazzinoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.movimentiMagazzinoBindingNavigator.Name = "movimentiMagazzinoBindingNavigator";
-            this.movimentiMagazzinoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.movimentiMagazzinoBindingNavigator.Size = new System.Drawing.Size(855, 25);
-            this.movimentiMagazzinoBindingNavigator.TabIndex = 0;
-            this.movimentiMagazzinoBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 15);
-            this.bindingNavigatorCountItem.Text = "di {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Elimina";
-            // 
-            // movimentiMagazzinoBindingNavigatorSaveItem
-            // 
-            this.movimentiMagazzinoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.movimentiMagazzinoBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("movimentiMagazzinoBindingNavigatorSaveItem.Image")));
-            this.movimentiMagazzinoBindingNavigatorSaveItem.Name = "movimentiMagazzinoBindingNavigatorSaveItem";
-            this.movimentiMagazzinoBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
-            this.movimentiMagazzinoBindingNavigatorSaveItem.Text = "Salva dati";
-            this.movimentiMagazzinoBindingNavigatorSaveItem.Click += new System.EventHandler(this.movimentiMagazzinoBindingNavigatorSaveItem_Click);
-            // 
-            // idMovimentoLabel
-            // 
-            idMovimentoLabel.AutoSize = true;
-            idMovimentoLabel.Location = new System.Drawing.Point(12, 56);
-            idMovimentoLabel.Name = "idMovimentoLabel";
-            idMovimentoLabel.Size = new System.Drawing.Size(73, 13);
-            idMovimentoLabel.TabIndex = 1;
-            idMovimentoLabel.Text = "id Movimento:";
-            // 
-            // idMovimentoTextBox
-            // 
-            this.idMovimentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "idMovimento", true));
-            this.idMovimentoTextBox.Location = new System.Drawing.Point(189, 53);
-            this.idMovimentoTextBox.Name = "idMovimentoTextBox";
-            this.idMovimentoTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idMovimentoTextBox.TabIndex = 2;
-            // 
-            // idMagazzinoLabel
-            // 
-            idMagazzinoLabel.AutoSize = true;
-            idMagazzinoLabel.Location = new System.Drawing.Point(12, 82);
-            idMagazzinoLabel.Name = "idMagazzinoLabel";
-            idMagazzinoLabel.Size = new System.Drawing.Size(72, 13);
-            idMagazzinoLabel.TabIndex = 3;
-            idMagazzinoLabel.Text = "id Magazzino:";
-            // 
-            // idMagazzinoTextBox
-            // 
-            this.idMagazzinoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "idMagazzino", true));
-            this.idMagazzinoTextBox.Location = new System.Drawing.Point(189, 79);
-            this.idMagazzinoTextBox.Name = "idMagazzinoTextBox";
-            this.idMagazzinoTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idMagazzinoTextBox.TabIndex = 4;
-            // 
-            // idPrimeLabel
-            // 
-            idPrimeLabel.AutoSize = true;
-            idPrimeLabel.Location = new System.Drawing.Point(12, 108);
-            idPrimeLabel.Name = "idPrimeLabel";
-            idPrimeLabel.Size = new System.Drawing.Size(47, 13);
-            idPrimeLabel.TabIndex = 5;
-            idPrimeLabel.Text = "id Prime:";
-            // 
-            // idPrimeTextBox
-            // 
-            this.idPrimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "idPrime", true));
-            this.idPrimeTextBox.Location = new System.Drawing.Point(189, 105);
-            this.idPrimeTextBox.Name = "idPrimeTextBox";
-            this.idPrimeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idPrimeTextBox.TabIndex = 6;
-            // 
-            // idStampiLabel
-            // 
-            idStampiLabel.AutoSize = true;
-            idStampiLabel.Location = new System.Drawing.Point(12, 134);
-            idStampiLabel.Name = "idStampiLabel";
-            idStampiLabel.Size = new System.Drawing.Size(53, 13);
-            idStampiLabel.TabIndex = 7;
-            idStampiLabel.Text = "id Stampi:";
-            // 
-            // idStampiTextBox
-            // 
-            this.idStampiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "idStampi", true));
-            this.idStampiTextBox.Location = new System.Drawing.Point(189, 131);
-            this.idStampiTextBox.Name = "idStampiTextBox";
-            this.idStampiTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idStampiTextBox.TabIndex = 8;
-            // 
-            // idDimeLabel
-            // 
-            idDimeLabel.AutoSize = true;
-            idDimeLabel.Location = new System.Drawing.Point(12, 160);
-            idDimeLabel.Name = "idDimeLabel";
-            idDimeLabel.Size = new System.Drawing.Size(45, 13);
-            idDimeLabel.TabIndex = 9;
-            idDimeLabel.Text = "id Dime:";
-            // 
-            // idDimeTextBox
-            // 
-            this.idDimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "idDime", true));
-            this.idDimeTextBox.Location = new System.Drawing.Point(189, 157);
-            this.idDimeTextBox.Name = "idDimeTextBox";
-            this.idDimeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idDimeTextBox.TabIndex = 10;
-            // 
-            // idSemilavoratiLabel
-            // 
-            idSemilavoratiLabel.AutoSize = true;
-            idSemilavoratiLabel.Location = new System.Drawing.Point(12, 186);
-            idSemilavoratiLabel.Name = "idSemilavoratiLabel";
-            idSemilavoratiLabel.Size = new System.Drawing.Size(78, 13);
-            idSemilavoratiLabel.TabIndex = 11;
-            idSemilavoratiLabel.Text = "id Semilavorati:";
-            // 
-            // idSemilavoratiTextBox
-            // 
-            this.idSemilavoratiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "idSemilavorati", true));
-            this.idSemilavoratiTextBox.Location = new System.Drawing.Point(189, 183);
-            this.idSemilavoratiTextBox.Name = "idSemilavoratiTextBox";
-            this.idSemilavoratiTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idSemilavoratiTextBox.TabIndex = 12;
-            // 
-            // idArticoliLabel
-            // 
-            idArticoliLabel.AutoSize = true;
-            idArticoliLabel.Location = new System.Drawing.Point(12, 212);
-            idArticoliLabel.Name = "idArticoliLabel";
-            idArticoliLabel.Size = new System.Drawing.Size(52, 13);
-            idArticoliLabel.TabIndex = 13;
-            idArticoliLabel.Text = "id Articoli:";
-            // 
-            // idArticoliTextBox
-            // 
-            this.idArticoliTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "idArticoli", true));
-            this.idArticoliTextBox.Location = new System.Drawing.Point(189, 209);
-            this.idArticoliTextBox.Name = "idArticoliTextBox";
-            this.idArticoliTextBox.Size = new System.Drawing.Size(200, 20);
-            this.idArticoliTextBox.TabIndex = 14;
-            // 
-            // carScarLabel
-            // 
-            carScarLabel.AutoSize = true;
-            carScarLabel.Location = new System.Drawing.Point(441, 56);
-            carScarLabel.Name = "carScarLabel";
-            carScarLabel.Size = new System.Drawing.Size(51, 13);
-            carScarLabel.TabIndex = 15;
-            carScarLabel.Text = "Car Scar:";
-            // 
-            // carScarTextBox
-            // 
-            this.carScarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "CarScar", true));
-            this.carScarTextBox.Location = new System.Drawing.Point(618, 53);
-            this.carScarTextBox.Name = "carScarTextBox";
-            this.carScarTextBox.Size = new System.Drawing.Size(200, 20);
-            this.carScarTextBox.TabIndex = 16;
-            // 
-            // quantitaLabel
-            // 
-            quantitaLabel.AutoSize = true;
-            quantitaLabel.Location = new System.Drawing.Point(441, 82);
-            quantitaLabel.Name = "quantitaLabel";
-            quantitaLabel.Size = new System.Drawing.Size(50, 13);
-            quantitaLabel.TabIndex = 17;
-            quantitaLabel.Text = "Quantita:";
-            // 
-            // quantitaTextBox
-            // 
-            this.quantitaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "Quantita", true));
-            this.quantitaTextBox.Location = new System.Drawing.Point(618, 79);
-            this.quantitaTextBox.Name = "quantitaTextBox";
-            this.quantitaTextBox.Size = new System.Drawing.Size(200, 20);
-            this.quantitaTextBox.TabIndex = 18;
-            // 
-            // barcodeLabel
-            // 
-            barcodeLabel.AutoSize = true;
-            barcodeLabel.Location = new System.Drawing.Point(441, 108);
-            barcodeLabel.Name = "barcodeLabel";
-            barcodeLabel.Size = new System.Drawing.Size(50, 13);
-            barcodeLabel.TabIndex = 19;
-            barcodeLabel.Text = "Barcode:";
-            // 
-            // barcodeTextBox
-            // 
-            this.barcodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "Barcode", true));
-            this.barcodeTextBox.Location = new System.Drawing.Point(618, 105);
-            this.barcodeTextBox.Name = "barcodeTextBox";
-            this.barcodeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.barcodeTextBox.TabIndex = 20;
-            // 
-            // nrOrdineLabel
-            // 
-            nrOrdineLabel.AutoSize = true;
-            nrOrdineLabel.Location = new System.Drawing.Point(441, 134);
-            nrOrdineLabel.Name = "nrOrdineLabel";
-            nrOrdineLabel.Size = new System.Drawing.Size(55, 13);
-            nrOrdineLabel.TabIndex = 21;
-            nrOrdineLabel.Text = "Nr Ordine:";
-            // 
-            // nrOrdineTextBox
-            // 
-            this.nrOrdineTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "NrOrdine", true));
-            this.nrOrdineTextBox.Location = new System.Drawing.Point(618, 131);
-            this.nrOrdineTextBox.Name = "nrOrdineTextBox";
-            this.nrOrdineTextBox.Size = new System.Drawing.Size(200, 20);
-            this.nrOrdineTextBox.TabIndex = 22;
-            // 
-            // dataOraMovimentoLabel
-            // 
-            dataOraMovimentoLabel.AutoSize = true;
-            dataOraMovimentoLabel.Location = new System.Drawing.Point(441, 161);
-            dataOraMovimentoLabel.Name = "dataOraMovimentoLabel";
-            dataOraMovimentoLabel.Size = new System.Drawing.Size(108, 13);
-            dataOraMovimentoLabel.TabIndex = 23;
-            dataOraMovimentoLabel.Text = "Data Ora Movimento:";
-            // 
-            // dataOraMovimentoDateTimePicker
-            // 
-            this.dataOraMovimentoDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.movimentiMagazzinoBindingSource, "DataOraMovimento", true));
-            this.dataOraMovimentoDateTimePicker.Location = new System.Drawing.Point(618, 157);
-            this.dataOraMovimentoDateTimePicker.Name = "dataOraMovimentoDateTimePicker";
-            this.dataOraMovimentoDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.dataOraMovimentoDateTimePicker.TabIndex = 24;
-            // 
-            // pesoMateriaPrimaLabel
-            // 
-            pesoMateriaPrimaLabel.AutoSize = true;
-            pesoMateriaPrimaLabel.Location = new System.Drawing.Point(441, 186);
-            pesoMateriaPrimaLabel.Name = "pesoMateriaPrimaLabel";
-            pesoMateriaPrimaLabel.Size = new System.Drawing.Size(101, 13);
-            pesoMateriaPrimaLabel.TabIndex = 25;
-            pesoMateriaPrimaLabel.Text = "Peso Materia Prima:";
-            // 
-            // pesoMateriaPrimaTextBox
-            // 
-            this.pesoMateriaPrimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "PesoMateriaPrima", true));
-            this.pesoMateriaPrimaTextBox.Location = new System.Drawing.Point(618, 183);
-            this.pesoMateriaPrimaTextBox.Name = "pesoMateriaPrimaTextBox";
-            this.pesoMateriaPrimaTextBox.Size = new System.Drawing.Size(200, 20);
-            this.pesoMateriaPrimaTextBox.TabIndex = 26;
-            // 
-            // prezzoComplessivoMateriaPrimaLabel
-            // 
-            prezzoComplessivoMateriaPrimaLabel.AutoSize = true;
-            prezzoComplessivoMateriaPrimaLabel.Location = new System.Drawing.Point(441, 212);
-            prezzoComplessivoMateriaPrimaLabel.Name = "prezzoComplessivoMateriaPrimaLabel";
-            prezzoComplessivoMateriaPrimaLabel.Size = new System.Drawing.Size(171, 13);
-            prezzoComplessivoMateriaPrimaLabel.TabIndex = 27;
-            prezzoComplessivoMateriaPrimaLabel.Text = "Prezzo Complessivo Materia Prima:";
-            // 
-            // prezzoComplessivoMateriaPrimaTextBox
-            // 
-            this.prezzoComplessivoMateriaPrimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.movimentiMagazzinoBindingSource, "PrezzoComplessivoMateriaPrima", true));
-            this.prezzoComplessivoMateriaPrimaTextBox.Location = new System.Drawing.Point(618, 209);
-            this.prezzoComplessivoMateriaPrimaTextBox.Name = "prezzoComplessivoMateriaPrimaTextBox";
-            this.prezzoComplessivoMateriaPrimaTextBox.Size = new System.Drawing.Size(200, 20);
-            this.prezzoComplessivoMateriaPrimaTextBox.TabIndex = 28;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 9);
+            this.label1.Location = new System.Drawing.Point(13, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(379, 26);
             this.label1.TabIndex = 29;
             this.label1.Text = "Carico/Scarico manuale di magazzino";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 18);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Magazzino:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.anaMagazziniBindingSource;
+            this.comboBox1.DisplayMember = "Descrizione";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(130, 58);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(233, 26);
+            this.comboBox1.TabIndex = 31;
+            this.comboBox1.ValueMember = "IDMagazzino";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // anaMagazziniBindingSource
+            // 
+            this.anaMagazziniBindingSource.DataMember = "AnaMagazzini";
+            this.anaMagazziniBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // anaMagazziniTableAdapter
+            // 
+            this.anaMagazziniTableAdapter.ClearBeforeFill = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 18);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Articolo:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(130, 89);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(233, 24);
+            this.textBox1.TabIndex = 33;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.textBox1, "Doppio click per visualizzare maschera di selezione");
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.DoubleClick += new System.EventHandler(this.Seleziona);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(130, 127);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(70, 22);
+            this.radioButton1.TabIndex = 34;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Carico";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(232, 127);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(77, 22);
+            this.radioButton2.TabIndex = 35;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Scarico";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(130, 159);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(233, 24);
+            this.textBox2.TabIndex = 36;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(130, 191);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(233, 24);
+            this.textBox3.TabIndex = 37;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(131, 227);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(232, 24);
+            this.textBox4.TabIndex = 38;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(131, 261);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(232, 24);
+            this.dateTimePicker1.TabIndex = 39;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(45, 367);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(318, 31);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "Inserisci movimento di magazzino";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(183, 292);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(180, 24);
+            this.textBox5.TabIndex = 41;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox5.Visible = false;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(169, 326);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(194, 24);
+            this.textBox6.TabIndex = 42;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox6.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(39, 295);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(141, 18);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "Peso materia prima:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 329);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 18);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Prezzo di carico:";
+            // 
             // CaricoScarico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 365);
+            this.ClientSize = new System.Drawing.Size(408, 410);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(idMovimentoLabel);
-            this.Controls.Add(this.idMovimentoTextBox);
-            this.Controls.Add(idMagazzinoLabel);
-            this.Controls.Add(this.idMagazzinoTextBox);
-            this.Controls.Add(idPrimeLabel);
-            this.Controls.Add(this.idPrimeTextBox);
-            this.Controls.Add(idStampiLabel);
-            this.Controls.Add(this.idStampiTextBox);
-            this.Controls.Add(idDimeLabel);
-            this.Controls.Add(this.idDimeTextBox);
-            this.Controls.Add(idSemilavoratiLabel);
-            this.Controls.Add(this.idSemilavoratiTextBox);
-            this.Controls.Add(idArticoliLabel);
-            this.Controls.Add(this.idArticoliTextBox);
-            this.Controls.Add(carScarLabel);
-            this.Controls.Add(this.carScarTextBox);
             this.Controls.Add(quantitaLabel);
-            this.Controls.Add(this.quantitaTextBox);
             this.Controls.Add(barcodeLabel);
-            this.Controls.Add(this.barcodeTextBox);
             this.Controls.Add(nrOrdineLabel);
-            this.Controls.Add(this.nrOrdineTextBox);
             this.Controls.Add(dataOraMovimentoLabel);
-            this.Controls.Add(this.dataOraMovimentoDateTimePicker);
-            this.Controls.Add(pesoMateriaPrimaLabel);
-            this.Controls.Add(this.pesoMateriaPrimaTextBox);
-            this.Controls.Add(prezzoComplessivoMateriaPrimaLabel);
-            this.Controls.Add(this.prezzoComplessivoMateriaPrimaTextBox);
-            this.Controls.Add(this.movimentiMagazzinoBindingNavigator);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CaricoScarico";
             this.Text = "Carico/Scarico di magazzino";
             this.Load += new System.EventHandler(this.CaricoScarico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingNavigator)).EndInit();
-            this.movimentiMagazzinoBindingNavigator.ResumeLayout(false);
-            this.movimentiMagazzinoBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,33 +370,24 @@
         private System.Windows.Forms.BindingSource movimentiMagazzinoBindingSource;
         private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator movimentiMagazzinoBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton movimentiMagazzinoBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox idMovimentoTextBox;
-        private System.Windows.Forms.TextBox idMagazzinoTextBox;
-        private System.Windows.Forms.TextBox idPrimeTextBox;
-        private System.Windows.Forms.TextBox idStampiTextBox;
-        private System.Windows.Forms.TextBox idDimeTextBox;
-        private System.Windows.Forms.TextBox idSemilavoratiTextBox;
-        private System.Windows.Forms.TextBox idArticoliTextBox;
-        private System.Windows.Forms.TextBox carScarTextBox;
-        private System.Windows.Forms.TextBox quantitaTextBox;
-        private System.Windows.Forms.TextBox barcodeTextBox;
-        private System.Windows.Forms.TextBox nrOrdineTextBox;
-        private System.Windows.Forms.DateTimePicker dataOraMovimentoDateTimePicker;
-        private System.Windows.Forms.TextBox pesoMateriaPrimaTextBox;
-        private System.Windows.Forms.TextBox prezzoComplessivoMateriaPrimaTextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource anaMagazziniBindingSource;
+        private Target2021DataSetTableAdapters.AnaMagazziniTableAdapter anaMagazziniTableAdapter;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

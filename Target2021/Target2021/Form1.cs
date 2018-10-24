@@ -108,9 +108,9 @@ namespace Target2021
 
         private void caricoscaricoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ScaricoCaricoMagazzini scaricoCarico = new ScaricoCaricoMagazzini();
-            scaricoCarico.MdiParent = this;
-            scaricoCarico.Show();
+            CaricoScarico CS = new CaricoScarico();
+            CS.MdiParent = this;
+            CS.Show();
         }
 
         private void materiePrimeToolStripMenuItem_Click(object sender, EventArgs e)
