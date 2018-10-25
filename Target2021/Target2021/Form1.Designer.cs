@@ -84,6 +84,7 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.caricoProdottiFinitiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -444,7 +445,8 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.etichetteToolStripMenuItem});
+            this.etichetteToolStripMenuItem,
+            this.caricoProdottiFinitiToolStripMenuItem});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(97, 30);
@@ -454,8 +456,8 @@
             // etichetteToolStripMenuItem
             // 
             this.etichetteToolStripMenuItem.Name = "etichetteToolStripMenuItem";
-            this.etichetteToolStripMenuItem.Size = new System.Drawing.Size(232, 30);
-            this.etichetteToolStripMenuItem.Text = "Etichette carico";
+            this.etichetteToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
+            this.etichetteToolStripMenuItem.Text = "Carico Materie prime";
             this.etichetteToolStripMenuItem.Click += new System.EventHandler(this.etichetteToolStripMenuItem_Click);
             // 
             // disconnettiUtenteToolStripMenuItem
@@ -565,6 +567,13 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
+            // caricoProdottiFinitiToolStripMenuItem
+            // 
+            this.caricoProdottiFinitiToolStripMenuItem.Name = "caricoProdottiFinitiToolStripMenuItem";
+            this.caricoProdottiFinitiToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
+            this.caricoProdottiFinitiToolStripMenuItem.Text = "Carico Prodotti finiti";
+            this.caricoProdottiFinitiToolStripMenuItem.Click += new System.EventHandler(this.caricoProdottiFinitiToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,6 +651,7 @@
         private System.Windows.Forms.ToolStripMenuItem pesiSpecificiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem posizioniStampiEDimeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caricoProdottiFinitiToolStripMenuItem;
     }
 }
 

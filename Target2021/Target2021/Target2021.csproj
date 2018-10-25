@@ -358,6 +358,12 @@
     <Compile Include="Anagrafiche\RigaCompleta.Designer.cs">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\WFCaricoLastra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\WFCaricoLastra.Designer.cs">
+      <DependentUpon>WFCaricoLastra.cs</DependentUpon>
+    </Compile>
     <Compile Include="RiepilogoCommesse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,6 +412,18 @@
     <Compile Include="SelezAna\SelStampi.designer.cs">
       <DependentUpon>SelStampi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Selezioni\SelezionaArticolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaArticolo.Designer.cs">
+      <DependentUpon>SelezionaArticolo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaDime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaDime.Designer.cs">
+      <DependentUpon>SelezionaDime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Selezioni\SelezionaLastre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +443,12 @@
     </Compile>
     <Compile Include="stampacommessa.Designer.cs">
       <DependentUpon>stampacommessa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stampe\CaricoLastre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stampe\CaricoLastre.Designer.cs">
+      <DependentUpon>CaricoLastre.cs</DependentUpon>
     </Compile>
     <Compile Include="Stampe\SEtichette.cs">
       <SubType>Form</SubType>
@@ -482,6 +506,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Target2021DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Target2021DataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Target2021DataSet9.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Anagrafiche\AnaAbbinamentoStampi.resx">
       <DependentUpon>AnaAbbinamentoStampi.cs</DependentUpon>
@@ -615,6 +644,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RCommessa.rdlc" />
     <EmbeddedResource Include="Report\REtichetta.rdlc" />
+    <EmbeddedResource Include="Report\WFCaricoLastra.resx">
+      <DependentUpon>WFCaricoLastra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RiepilogoCommesse.resx">
       <DependentUpon>RiepilogoCommesse.cs</DependentUpon>
     </EmbeddedResource>
@@ -639,6 +671,12 @@
     <EmbeddedResource Include="SelezAna\SelStampi.resx">
       <DependentUpon>SelStampi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Selezioni\SelezionaArticolo.resx">
+      <DependentUpon>SelezionaArticolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Selezioni\SelezionaDime.resx">
+      <DependentUpon>SelezionaDime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Selezioni\SelezionaLastre.resx">
       <DependentUpon>SelezionaLastre.cs</DependentUpon>
     </EmbeddedResource>
@@ -647,6 +685,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="stampacommessa.resx">
       <DependentUpon>stampacommessa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stampe\CaricoLastre.resx">
+      <DependentUpon>CaricoLastre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stampe\SEtichette.resx">
       <DependentUpon>SEtichette.cs</DependentUpon>
@@ -760,6 +801,17 @@
     </None>
     <None Include="Target2021DataSet8.xss">
       <DependentUpon>Target2021DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet9.xsc">
+      <DependentUpon>Target2021DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Target2021DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Target2021DataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Target2021DataSet9.xss">
+      <DependentUpon>Target2021DataSet9.xsd</DependentUpon>
     </None>
     <None Include="Target2021_TemporaryKey.pfx" />
   </ItemGroup>

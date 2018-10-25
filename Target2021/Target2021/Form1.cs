@@ -272,9 +272,9 @@ namespace Target2021
 
         private void etichetteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SEtichette StampaEtichette = new SEtichette();
-            StampaEtichette .MdiParent = this;
-            StampaEtichette .Show();
+            CaricoLastre CLastre = new CaricoLastre();
+            CLastre.MdiParent = this;
+            CLastre.Show();
         }
 
         private void minuterieToolStripMenuItem_Click(object sender, EventArgs e)
@@ -352,9 +352,14 @@ namespace Target2021
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            CaricoScarico CS = new CaricoScarico ();
-            CS.MdiParent = this;
-            CS.Show();
+
+        }
+
+        private void caricoProdottiFinitiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SEtichette StampaEtichette = new SEtichette();
+            StampaEtichette.MdiParent = this;
+            StampaEtichette.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

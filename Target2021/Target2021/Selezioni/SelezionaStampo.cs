@@ -36,8 +36,8 @@ namespace Target2021.Selezioni
 
         private void Filtra(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "Codice") primeBindingSource.Filter = "codice LIKE '*" + textBox1.Text + "*'";
-            if (comboBox1.Text == "Descrizione") primeBindingSource.Filter = "descrizione LIKE '*" + textBox1.Text + "*'";
+            if (comboBox1.Text == "Codice") stampiBindingSource.Filter = "codice LIKE '*" + textBox1.Text + "*'";
+            if (comboBox1.Text == "Descrizione") stampiBindingSource.Filter = "descrizione LIKE '*" + textBox1.Text + "*'";
         }
 
         private void Selezionata(object sender, DataGridViewCellEventArgs e)

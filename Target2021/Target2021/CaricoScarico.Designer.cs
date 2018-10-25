@@ -56,6 +56,10 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
             quantitaLabel = new System.Windows.Forms.Label();
             barcodeLabel = new System.Windows.Forms.Label();
             nrOrdineLabel = new System.Windows.Forms.Label();
@@ -63,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // quantitaLabel
@@ -73,7 +78,7 @@
             quantitaLabel.Name = "quantitaLabel";
             quantitaLabel.Size = new System.Drawing.Size(67, 18);
             quantitaLabel.TabIndex = 17;
-            quantitaLabel.Text = "Quantita:";
+            quantitaLabel.Text = "Quantità:";
             // 
             // barcodeLabel
             // 
@@ -101,9 +106,9 @@
             dataOraMovimentoLabel.Location = new System.Drawing.Point(41, 266);
             dataOraMovimentoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dataOraMovimentoLabel.Name = "dataOraMovimentoLabel";
-            dataOraMovimentoLabel.Size = new System.Drawing.Size(72, 18);
+            dataOraMovimentoLabel.Size = new System.Drawing.Size(43, 18);
             dataOraMovimentoLabel.TabIndex = 23;
-            dataOraMovimentoLabel.Text = "Data Ora:";
+            dataOraMovimentoLabel.Text = "Data:";
             // 
             // target2021DataSet
             // 
@@ -167,7 +172,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 9);
+            this.label1.Location = new System.Drawing.Point(4, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(379, 26);
@@ -234,23 +239,25 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Carico";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(232, 127);
+            this.radioButton2.Location = new System.Drawing.Point(206, 127);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(77, 22);
             this.radioButton2.TabIndex = 35;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Scarico";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(130, 159);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 24);
+            this.textBox2.Size = new System.Drawing.Size(158, 24);
             this.textBox2.TabIndex = 36;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -280,9 +287,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(45, 367);
+            this.button1.Location = new System.Drawing.Point(42, 367);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(318, 31);
+            this.button1.Size = new System.Drawing.Size(321, 31);
             this.button1.TabIndex = 40;
             this.button1.Text = "Inserisci movimento di magazzino";
             this.button1.UseVisualStyleBackColor = true;
@@ -290,18 +297,18 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(183, 292);
+            this.textBox5.Location = new System.Drawing.Point(223, 292);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(180, 24);
+            this.textBox5.Size = new System.Drawing.Size(140, 24);
             this.textBox5.TabIndex = 41;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.Visible = false;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(169, 326);
+            this.textBox6.Location = new System.Drawing.Point(183, 326);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(194, 24);
+            this.textBox6.Size = new System.Drawing.Size(180, 24);
             this.textBox6.TabIndex = 42;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox6.Visible = false;
@@ -312,9 +319,9 @@
             this.label4.Location = new System.Drawing.Point(39, 295);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 18);
+            this.label4.Size = new System.Drawing.Size(177, 18);
             this.label4.TabIndex = 43;
-            this.label4.Text = "Peso materia prima:";
+            this.label4.Text = "Peso materia prima (Kg.):";
             // 
             // label5
             // 
@@ -322,15 +329,45 @@
             this.label5.Location = new System.Drawing.Point(39, 329);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 18);
+            this.label5.Size = new System.Drawing.Size(142, 18);
             this.label5.TabIndex = 44;
-            this.label5.Text = "Prezzo di carico:";
+            this.label5.Text = "Prezzo di carico (€):";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(294, 159);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(68, 24);
+            this.textBox7.TabIndex = 45;
+            this.textBox7.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(295, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 16);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Giacenza:";
+            this.label6.Visible = false;
+            // 
+            // giacenzeMagazziniBindingSource
+            // 
+            this.giacenzeMagazziniBindingSource.DataMember = "GiacenzeMagazzini";
+            this.giacenzeMagazziniBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // giacenzeMagazziniTableAdapter
+            // 
+            this.giacenzeMagazziniTableAdapter.ClearBeforeFill = true;
             // 
             // CaricoScarico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 410);
+            this.ClientSize = new System.Drawing.Size(386, 411);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox6);
@@ -359,6 +396,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -389,5 +427,9 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.BindingSource giacenzeMagazziniBindingSource;
+        private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
     }
 }
