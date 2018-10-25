@@ -642,6 +642,7 @@
     <EmbeddedResource Include="Anagrafiche\RigaCompleta.resx">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\CaricoLastre.rdlc" />
     <EmbeddedResource Include="Report\RCommessa.rdlc" />
     <EmbeddedResource Include="Report\REtichetta.rdlc" />
     <EmbeddedResource Include="Report\WFCaricoLastra.resx">
