@@ -43,8 +43,8 @@
             System.Windows.Forms.Label dimYLabel;
             System.Windows.Forms.Label dimZLabel;
             System.Windows.Forms.Label pesoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelPrime));
             System.Windows.Forms.Label materialeLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelPrime));
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
@@ -84,10 +84,12 @@
             this.materialeTextBox = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.target2021DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pesiSpecificiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pesiSpecificiTableAdapter = new Target2021.Target2021DataSetTableAdapters.PesiSpecificiTableAdapter();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             codiceLabel = new System.Windows.Forms.Label();
             tipoLabel = new System.Windows.Forms.Label();
             descrizioneLabel = new System.Windows.Forms.Label();
@@ -108,8 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingNavigator)).BeginInit();
             this.primeBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesiSpecificiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // codiceLabel
@@ -252,6 +254,16 @@
             pesoLabel.TabIndex = 27;
             pesoLabel.Text = "Peso:";
             // 
+            // materialeLabel
+            // 
+            materialeLabel.AutoSize = true;
+            materialeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            materialeLabel.Location = new System.Drawing.Point(425, 256);
+            materialeLabel.Name = "materialeLabel";
+            materialeLabel.Size = new System.Drawing.Size(78, 20);
+            materialeLabel.TabIndex = 32;
+            materialeLabel.Text = "Materiale:";
+            // 
             // target2021DataSet
             // 
             this.target2021DataSet.DataSetName = "Target2021DataSet";
@@ -299,7 +311,9 @@
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = this.primeTableAdapter;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
@@ -605,16 +619,6 @@
             // 
             this.fornitoriTableAdapter.ClearBeforeFill = true;
             // 
-            // materialeLabel
-            // 
-            materialeLabel.AutoSize = true;
-            materialeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            materialeLabel.Location = new System.Drawing.Point(425, 256);
-            materialeLabel.Name = "materialeLabel";
-            materialeLabel.Size = new System.Drawing.Size(78, 20);
-            materialeLabel.TabIndex = 32;
-            materialeLabel.Text = "Materiale:";
-            // 
             // materialeTextBox
             // 
             this.materialeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.primeBindingSource, "Materiale", true));
@@ -650,15 +654,15 @@
             this.comboBox2.Visible = false;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // target2021DataSetBindingSource
-            // 
-            this.target2021DataSetBindingSource.DataSource = this.target2021DataSet;
-            this.target2021DataSetBindingSource.Position = 0;
-            // 
             // pesiSpecificiBindingSource
             // 
             this.pesiSpecificiBindingSource.DataMember = "PesiSpecifici";
             this.pesiSpecificiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // target2021DataSetBindingSource
+            // 
+            this.target2021DataSetBindingSource.DataSource = this.target2021DataSet;
+            this.target2021DataSetBindingSource.Position = 0;
             // 
             // pesiSpecificiTableAdapter
             // 
@@ -675,11 +679,33 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(397, 380);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(197, 58);
+            this.button5.TabIndex = 37;
+            this.button5.Text = "Visualizza ultime 10 commesse";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(194, 380);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(197, 58);
+            this.button6.TabIndex = 38;
+            this.button6.Text = "Visualizza ultimi 10 carichi a magazzino";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // SelPrime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button3);
@@ -727,8 +753,8 @@
             this.primeBindingNavigator.ResumeLayout(false);
             this.primeBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesiSpecificiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,5 +805,7 @@
         private System.Windows.Forms.BindingSource pesiSpecificiBindingSource;
         private Target2021DataSetTableAdapters.PesiSpecificiTableAdapter pesiSpecificiTableAdapter;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

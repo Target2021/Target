@@ -302,6 +302,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornitori\NuovoOrdineForn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornitori\NuovoOrdineForn.Designer.cs">
+      <DependentUpon>NuovoOrdineForn.cs</DependentUpon>
+    </Compile>
     <Compile Include="LavoraStampaggio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -424,17 +430,41 @@
     <Compile Include="Selezioni\SelezionaDime.Designer.cs">
       <DependentUpon>SelezionaDime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Selezioni\SelezionaFornitore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaFornitore.Designer.cs">
+      <DependentUpon>SelezionaFornitore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Selezioni\SelezionaLastre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Selezioni\SelezionaLastre.Designer.cs">
       <DependentUpon>SelezionaLastre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Selezioni\SelezionaModalitaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaModalitaPagamento.Designer.cs">
+      <DependentUpon>SelezionaModalitaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaSpedizione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaSpedizione.Designer.cs">
+      <DependentUpon>SelezionaSpedizione.cs</DependentUpon>
+    </Compile>
     <Compile Include="Selezioni\SelezionaStampo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Selezioni\SelezionaStampo.Designer.cs">
       <DependentUpon>SelezionaStampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaTerminiPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Selezioni\SelezionaTerminiPagamento.Designer.cs">
+      <DependentUpon>SelezionaTerminiPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -602,6 +632,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fornitori\NuovoOrdineForn.resx">
+      <DependentUpon>NuovoOrdineForn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LavoraStampaggio.resx">
       <DependentUpon>LavoraStampaggio.cs</DependentUpon>
     </EmbeddedResource>
@@ -678,11 +711,23 @@
     <EmbeddedResource Include="Selezioni\SelezionaDime.resx">
       <DependentUpon>SelezionaDime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Selezioni\SelezionaFornitore.resx">
+      <DependentUpon>SelezionaFornitore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Selezioni\SelezionaLastre.resx">
       <DependentUpon>SelezionaLastre.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Selezioni\SelezionaModalitaPagamento.resx">
+      <DependentUpon>SelezionaModalitaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Selezioni\SelezionaSpedizione.resx">
+      <DependentUpon>SelezionaSpedizione.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Selezioni\SelezionaStampo.resx">
       <DependentUpon>SelezionaStampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Selezioni\SelezionaTerminiPagamento.resx">
+      <DependentUpon>SelezionaTerminiPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="stampacommessa.resx">
       <DependentUpon>stampacommessa.cs</DependentUpon>

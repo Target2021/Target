@@ -306,9 +306,9 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(183, 326);
+            this.textBox6.Location = new System.Drawing.Point(223, 326);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(180, 24);
+            this.textBox6.Size = new System.Drawing.Size(140, 24);
             this.textBox6.TabIndex = 42;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox6.Visible = false;
@@ -319,9 +319,9 @@
             this.label4.Location = new System.Drawing.Point(39, 295);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 18);
+            this.label4.Size = new System.Drawing.Size(171, 18);
             this.label4.TabIndex = 43;
-            this.label4.Text = "Peso materia prima (Kg.):";
+            this.label4.Text = "Peso complessivo (Kg.):";
             // 
             // label5
             // 
@@ -329,9 +329,9 @@
             this.label5.Location = new System.Drawing.Point(39, 329);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 18);
+            this.label5.Size = new System.Drawing.Size(171, 18);
             this.label5.TabIndex = 44;
-            this.label5.Text = "Prezzo di carico (€):";
+            this.label5.Text = "Prezzo di carico (al Kg.):";
             // 
             // textBox7
             // 

@@ -10,17 +10,19 @@
             <TextRuns>
               <TextRun>
                 <Value>CODICE LASTRA</Value>
-                <Style />
+                <Style>
+                  <FontSize>30pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.60537cm</Top>
+        <Top>0.86995cm</Top>
         <Left>0.89641cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.96062cm</Width>
+        <Height>1.34083cm</Height>
+        <Width>8.95583cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -39,17 +41,22 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!idPrime.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontSize>54pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>idPrime</rd:DefaultName>
-        <Top>0.7112cm</Top>
-        <Left>6.87599cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.77542cm</Width>
+        <Top>0.41698cm</Top>
+        <Left>11.37391cm</Left>
+        <Height>2.13458cm</Height>
+        <Width>13.55959cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -69,17 +76,19 @@
             <TextRuns>
               <TextRun>
                 <Value>Descrizione</Value>
-                <Style />
+                <Style>
+                  <FontSize>24pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>2.06057cm</Top>
-        <Left>1.16099cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>3.30411cm</Top>
+        <Left>0.89641cm</Left>
+        <Height>1.02333cm</Height>
+        <Width>6.78625cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -99,17 +108,19 @@
             <TextRuns>
               <TextRun>
                 <Value>Dimensioni</Value>
-                <Style />
+                <Style>
+                  <FontSize>24pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>3.30412cm</Top>
-        <Left>1.16099cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>5.23558cm</Top>
+        <Left>0.89641cm</Left>
+        <Height>1.12007cm</Height>
+        <Width>7.73875cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -129,17 +140,19 @@
             <TextRuns>
               <TextRun>
                 <Value>Peso bancale</Value>
-                <Style />
+                <Style>
+                  <FontSize>24pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>4.60058cm</Top>
-        <Left>1.16099cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>7.11412cm</Top>
+        <Left>0.89641cm</Left>
+        <Height>1.235cm</Height>
+        <Width>7.73875cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -158,18 +171,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Fields!PesoMateriaPrima.Value, "DataSet1"</Value>
-                <Style />
+                <Value>=First(Fields!PesoMateriaPrima.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>34pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>PesoMateriaPrima</rd:DefaultName>
-        <Top>4.60058cm</Top>
-        <Left>5.02391cm</Left>
-        <Height>0.6cm</Height>
-        <Width>3.82292cm</Width>
+        <Top>7.07885cm</Top>
+        <Left>11.10933cm</Left>
+        <Height>1.235cm</Height>
+        <Width>10.38459cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -189,17 +207,19 @@
             <TextRuns>
               <TextRun>
                 <Value>Quantità</Value>
-                <Style />
+                <Style>
+                  <FontSize>24pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>5.60599cm</Top>
-        <Left>1.16099cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>8.9662cm</Top>
+        <Left>0.89641cm</Left>
+        <Height>1.18208cm</Height>
+        <Width>3.82291cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -218,18 +238,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!Quantita.Value, "DataSet1")</Value>
-                <Style />
+                <Value>=First(Fields!Quantita.Value, "DataSet1")</Value>
+                <Style>
+                  <FontSize>34pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Quantita</rd:DefaultName>
-        <Top>5.60599cm</Top>
-        <Left>5.02391cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>8.9662cm</Top>
+        <Left>11.07405cm</Left>
+        <Height>1.49958cm</Height>
+        <Width>6.83917cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -249,17 +274,19 @@
             <TextRuns>
               <TextRun>
                 <Value>Data</Value>
-                <Style />
+                <Style>
+                  <FontSize>24pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.63787cm</Top>
-        <Left>1.16099cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>9.07203cm</Top>
+        <Left>5.71183cm</Left>
+        <Height>1.07625cm</Height>
+        <Width>2.92333cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -278,18 +305,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!DataOraMovimento.Value, "DataSet1")</Value>
-                <Style />
+                <Value>=FormatDateTime(First(Fields!DataOraMovimento.Value, "DataSet1"),DateFormat.ShortDate)</Value>
+                <Style>
+                  <FontSize>34pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DataOraMovimento</rd:DefaultName>
-        <Top>6.63787cm</Top>
-        <Left>5.02391cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>8.9662cm</Top>
+        <Left>18.35891cm</Left>
+        <Height>1.18208cm</Height>
+        <Width>6.57459cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -309,17 +341,19 @@
             <TextRuns>
               <TextRun>
                 <Value>Nr. ordine</Value>
-                <Style />
+                <Style>
+                  <FontSize>24pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>7.59037cm</Top>
-        <Left>1.16099cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>11.00349cm</Top>
+        <Left>0.89641cm</Left>
+        <Height>1.02333cm</Height>
+        <Width>7.73875cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -339,17 +373,22 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!NrOrdine.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontSize>34pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NrOrdine</rd:DefaultName>
-        <Top>7.59037cm</Top>
-        <Left>5.02391cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>10.64217cm</Top>
+        <Left>11.07405cm</Left>
+        <Height>1.39375cm</Height>
+        <Width>10.38459cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -369,17 +408,19 @@
             <TextRuns>
               <TextRun>
                 <Value>Lotto</Value>
-                <Style />
+                <Style>
+                  <FontSize>24pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>8.56933cm</Top>
-        <Left>1.16099cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>13.0937cm</Top>
+        <Left>0.89641cm</Left>
+        <Height>0.94396cm</Height>
+        <Width>7.73875cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -399,17 +440,23 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!Barcode.Value, "DataSet1")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>IDAutomationHC39M Free Version</FontFamily>
+                  <FontSize>34pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Barcode</rd:DefaultName>
-        <Top>8.56933cm</Top>
-        <Left>5.02391cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>12.57363cm</Top>
+        <Left>11.10933cm</Left>
+        <Height>2.95161cm</Height>
+        <Width>13.295cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -421,11 +468,28 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line1">
+        <Top>0.41698cm</Top>
+        <Left>10.48724cm</Left>
+        <Height>15.62833cm</Height>
+        <Width>0cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
-    <Height>3.84375in</Height>
-    <Style />
+    <Height>6.40997in</Height>
+    <Style>
+      <Border>
+        <Style>Solid</Style>
+        <Width>5pt</Width>
+      </Border>
+    </Style>
   </Body>
-  <Width>6.5in</Width>
+  <Width>10.02467in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

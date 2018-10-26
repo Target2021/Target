@@ -48,9 +48,13 @@ namespace Target2021.Stampe
         private void button1_Click(object sender, EventArgs e)
         {
             int nrmov;
-            nrmov =Convert.ToInt32(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[0].Value);
-            WFCaricoLastra cl = new WFCaricoLastra(nrmov);
-            cl.Show();
+            try
+            {
+                nrmov = Convert.ToInt32(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[0].Value);
+                WFCaricoLastra cl = new WFCaricoLastra(nrmov);
+                cl.Show();
+            }
+            catch { }
         }
     }
 }

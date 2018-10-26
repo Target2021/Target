@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Target2021.Anagrafiche;
 using Target2021.Stampe;
+using Target2021.Fornitori;
 
 namespace Target2021
 {
@@ -339,7 +340,9 @@ namespace Target2021
             // Stati riga di commessa:
             // TipoCommessa = 1  // Approvigionamento materia prima
                 // Stato 0 = Fase da prendere in carico
+                // Stato 5 = Ordinata la merce, impegnato su ordinato, in attesa di arrivo
                 // Stato 1 = Evasione parziale (ovvero impegno di una quantità < quantità richiesta)
+                // Stato 51 = Evasione parziale + Ordino (impegnato su ordinato)
                 // Stato 2 = Fase completata
             // TipoCommessa = 2 // Stampaggio
 
@@ -360,6 +363,17 @@ namespace Target2021
             SEtichette StampaEtichette = new SEtichette();
             StampaEtichette.MdiParent = this;
             StampaEtichette.Show();
+        }
+
+        private void ordiniAFornitoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nuovoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            NuovoOrdineForn NOF = new NuovoOrdineForn();
+            NOF.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

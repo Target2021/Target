@@ -48,5 +48,10 @@ namespace Target2021.Anagrafiche
         {
             try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
         }
+
+        private void primeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
