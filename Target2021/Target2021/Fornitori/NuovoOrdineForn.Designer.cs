@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.codTermPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,34 +52,42 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.codModPagamentoTableAdapter = new Target2021.Target2021DataSetTableAdapters.CodModPagamentoTableAdapter();
             this.codSpedizioniTableAdapter = new Target2021.Target2021DataSetTableAdapters.CodSpedizioniTableAdapter();
             this.codTermPagamentoTableAdapter = new Target2021.Target2021DataSetTableAdapters.CodTermPagamentoTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ordFornDettBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordFornDettTableAdapter = new Target2021.Target2021DataSetTableAdapters.OrdFornDettTableAdapter();
-            this.idOFDettDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idOFTestataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCodiceArtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descrizioneArtDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantitaRichDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataConsegnaRichiestaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataConsegnaConfermataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezzoKgDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtaEffettivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pesoTotaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prezzoALastraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.ordFornTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordFornTestTableAdapter = new Target2021.Target2021DataSetTableAdapters.OrdFornTestTableAdapter();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.artFornBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.artFornTableAdapter = new Target2021.Target2021DataSetTableAdapters.ArtFornTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.codTermPagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codModPagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codSpedizioniBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordFornDettBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordFornTestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artFornBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -102,7 +111,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(10, 9);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(874, 175);
+            this.groupBox1.Size = new System.Drawing.Size(995, 175);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Testata ordine";
@@ -111,7 +120,7 @@
             // 
             this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.codTermPagamentoBindingSource, "Descrizione", true));
             this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(556, 139);
+            this.textBox9.Location = new System.Drawing.Point(646, 139);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(312, 29);
             this.textBox9.TabIndex = 15;
@@ -130,7 +139,7 @@
             // 
             this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.codModPagamentoBindingSource, "Descrizione", true));
             this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(255, 139);
+            this.textBox8.Location = new System.Drawing.Point(345, 139);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(291, 29);
             this.textBox8.TabIndex = 14;
@@ -146,7 +155,7 @@
             this.textBox7.Enabled = false;
             this.textBox7.Location = new System.Drawing.Point(10, 139);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(235, 29);
+            this.textBox7.Size = new System.Drawing.Size(329, 29);
             this.textBox7.TabIndex = 13;
             // 
             // codSpedizioniBindingSource
@@ -162,6 +171,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(487, 29);
             this.textBox6.TabIndex = 12;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fornitoriBindingSource
             // 
@@ -171,7 +181,7 @@
             // textBox5
             // 
             this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fornitoriBindingSource, "tipo_pagamento", true));
-            this.textBox5.Location = new System.Drawing.Point(705, 109);
+            this.textBox5.Location = new System.Drawing.Point(795, 109);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(163, 29);
             this.textBox5.TabIndex = 11;
@@ -182,7 +192,7 @@
             // textBox4
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fornitoriBindingSource, "codice_tipo_pagamento", true));
-            this.textBox4.Location = new System.Drawing.Point(383, 109);
+            this.textBox4.Location = new System.Drawing.Point(473, 109);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(163, 29);
             this.textBox4.TabIndex = 10;
@@ -196,7 +206,7 @@
             this.textBox3.ForeColor = System.Drawing.Color.Black;
             this.textBox3.Location = new System.Drawing.Point(113, 109);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 29);
+            this.textBox3.Size = new System.Drawing.Size(226, 29);
             this.textBox3.TabIndex = 9;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -205,7 +215,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(552, 112);
+            this.label6.Location = new System.Drawing.Point(642, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 24);
             this.label6.TabIndex = 8;
@@ -214,7 +224,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(251, 112);
+            this.label5.Location = new System.Drawing.Point(341, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(126, 24);
             this.label5.TabIndex = 7;
@@ -235,6 +245,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(135, 29);
             this.textBox2.TabIndex = 5;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -267,6 +278,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(135, 29);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.SelezForn);
             // 
@@ -278,6 +290,71 @@
             this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fornitore:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(115, 187);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 17);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Codice Articolo";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(102, 207);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(129, 26);
+            this.textBox10.TabIndex = 3;
+            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.textBox10.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Seleziona);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(364, 187);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(133, 17);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Descrizione Articolo";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox11.Location = new System.Drawing.Point(237, 207);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(381, 26);
+            this.textBox11.TabIndex = 5;
+            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(39, 187);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 17);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Tipo";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Lastre",
+            "Minuterie",
+            "Stampi",
+            "Dime"});
+            this.comboBox1.Location = new System.Drawing.Point(12, 207);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(85, 26);
+            this.comboBox1.TabIndex = 7;
+            this.comboBox1.Text = "Lastre";
             // 
             // fornitoriTableAdapter
             // 
@@ -339,29 +416,6 @@
             // 
             this.codTermPagamentoTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idOFDettDataGridViewTextBoxColumn,
-            this.idOFTestataDataGridViewTextBoxColumn,
-            this.idCodiceArtDataGridViewTextBoxColumn,
-            this.descrizioneArtDataGridViewTextBoxColumn,
-            this.quantitaRichDataGridViewTextBoxColumn,
-            this.dataConsegnaRichiestaDataGridViewTextBoxColumn,
-            this.dataConsegnaConfermataDataGridViewTextBoxColumn,
-            this.statoDataGridViewTextBoxColumn,
-            this.prezzoKgDataGridViewTextBoxColumn,
-            this.qtaEffettivaDataGridViewTextBoxColumn,
-            this.pesoTotaleDataGridViewTextBoxColumn,
-            this.prezzoALastraDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.ordFornDettBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 192);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(867, 183);
-            this.dataGridView1.TabIndex = 1;
-            // 
             // ordFornDettBindingSource
             // 
             this.ordFornDettBindingSource.DataMember = "OrdFornDett";
@@ -371,85 +425,116 @@
             // 
             this.ordFornDettTableAdapter.ClearBeforeFill = true;
             // 
-            // idOFDettDataGridViewTextBoxColumn
+            // primeBindingSource
             // 
-            this.idOFDettDataGridViewTextBoxColumn.DataPropertyName = "idOFDett";
-            this.idOFDettDataGridViewTextBoxColumn.HeaderText = "idOFDett";
-            this.idOFDettDataGridViewTextBoxColumn.Name = "idOFDettDataGridViewTextBoxColumn";
-            this.idOFDettDataGridViewTextBoxColumn.ReadOnly = true;
+            this.primeBindingSource.DataMember = "Prime";
+            this.primeBindingSource.DataSource = this.target2021DataSet;
             // 
-            // idOFTestataDataGridViewTextBoxColumn
+            // primeTableAdapter
             // 
-            this.idOFTestataDataGridViewTextBoxColumn.DataPropertyName = "idOFTestata";
-            this.idOFTestataDataGridViewTextBoxColumn.HeaderText = "idOFTestata";
-            this.idOFTestataDataGridViewTextBoxColumn.Name = "idOFTestataDataGridViewTextBoxColumn";
+            this.primeTableAdapter.ClearBeforeFill = true;
             // 
-            // idCodiceArtDataGridViewTextBoxColumn
+            // label10
             // 
-            this.idCodiceArtDataGridViewTextBoxColumn.DataPropertyName = "idCodiceArt";
-            this.idCodiceArtDataGridViewTextBoxColumn.HeaderText = "idCodiceArt";
-            this.idCodiceArtDataGridViewTextBoxColumn.Name = "idCodiceArtDataGridViewTextBoxColumn";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(641, 187);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 17);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Quantità";
             // 
-            // descrizioneArtDataGridViewTextBoxColumn
+            // textBox12
             // 
-            this.descrizioneArtDataGridViewTextBoxColumn.DataPropertyName = "DescrizioneArt";
-            this.descrizioneArtDataGridViewTextBoxColumn.HeaderText = "DescrizioneArt";
-            this.descrizioneArtDataGridViewTextBoxColumn.Name = "descrizioneArtDataGridViewTextBoxColumn";
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(624, 207);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(91, 26);
+            this.textBox12.TabIndex = 9;
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeri);
             // 
-            // quantitaRichDataGridViewTextBoxColumn
+            // ordFornTestBindingSource
             // 
-            this.quantitaRichDataGridViewTextBoxColumn.DataPropertyName = "QuantitaRich";
-            this.quantitaRichDataGridViewTextBoxColumn.HeaderText = "QuantitaRich";
-            this.quantitaRichDataGridViewTextBoxColumn.Name = "quantitaRichDataGridViewTextBoxColumn";
+            this.ordFornTestBindingSource.DataMember = "OrdFornTest";
+            this.ordFornTestBindingSource.DataSource = this.target2021DataSet;
             // 
-            // dataConsegnaRichiestaDataGridViewTextBoxColumn
+            // ordFornTestTableAdapter
             // 
-            this.dataConsegnaRichiestaDataGridViewTextBoxColumn.DataPropertyName = "DataConsegnaRichiesta";
-            this.dataConsegnaRichiestaDataGridViewTextBoxColumn.HeaderText = "DataConsegnaRichiesta";
-            this.dataConsegnaRichiestaDataGridViewTextBoxColumn.Name = "dataConsegnaRichiestaDataGridViewTextBoxColumn";
+            this.ordFornTestTableAdapter.ClearBeforeFill = true;
             // 
-            // dataConsegnaConfermataDataGridViewTextBoxColumn
+            // label11
             // 
-            this.dataConsegnaConfermataDataGridViewTextBoxColumn.DataPropertyName = "DataConsegnaConfermata";
-            this.dataConsegnaConfermataDataGridViewTextBoxColumn.HeaderText = "DataConsegnaConfermata";
-            this.dataConsegnaConfermataDataGridViewTextBoxColumn.Name = "dataConsegnaConfermataDataGridViewTextBoxColumn";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(780, 187);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 17);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Data consegna";
             // 
-            // statoDataGridViewTextBoxColumn
+            // dateTimePicker2
             // 
-            this.statoDataGridViewTextBoxColumn.DataPropertyName = "Stato";
-            this.statoDataGridViewTextBoxColumn.HeaderText = "Stato";
-            this.statoDataGridViewTextBoxColumn.Name = "statoDataGridViewTextBoxColumn";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Location = new System.Drawing.Point(721, 207);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(246, 26);
+            this.dateTimePicker2.TabIndex = 11;
             // 
-            // prezzoKgDataGridViewTextBoxColumn
+            // artFornBindingSource
             // 
-            this.prezzoKgDataGridViewTextBoxColumn.DataPropertyName = "PrezzoKg";
-            this.prezzoKgDataGridViewTextBoxColumn.HeaderText = "PrezzoKg";
-            this.prezzoKgDataGridViewTextBoxColumn.Name = "prezzoKgDataGridViewTextBoxColumn";
+            this.artFornBindingSource.DataMember = "ArtForn";
+            this.artFornBindingSource.DataSource = this.target2021DataSet;
             // 
-            // qtaEffettivaDataGridViewTextBoxColumn
+            // artFornTableAdapter
             // 
-            this.qtaEffettivaDataGridViewTextBoxColumn.DataPropertyName = "QtaEffettiva";
-            this.qtaEffettivaDataGridViewTextBoxColumn.HeaderText = "QtaEffettiva";
-            this.qtaEffettivaDataGridViewTextBoxColumn.Name = "qtaEffettivaDataGridViewTextBoxColumn";
+            this.artFornTableAdapter.ClearBeforeFill = true;
             // 
-            // pesoTotaleDataGridViewTextBoxColumn
+            // dataGridView1
             // 
-            this.pesoTotaleDataGridViewTextBoxColumn.DataPropertyName = "PesoTotale";
-            this.pesoTotaleDataGridViewTextBoxColumn.HeaderText = "PesoTotale";
-            this.pesoTotaleDataGridViewTextBoxColumn.Name = "pesoTotaleDataGridViewTextBoxColumn";
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 247);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(998, 216);
+            this.dataGridView1.TabIndex = 13;
             // 
-            // prezzoALastraDataGridViewTextBoxColumn
+            // button1
             // 
-            this.prezzoALastraDataGridViewTextBoxColumn.DataPropertyName = "PrezzoALastra";
-            this.prezzoALastraDataGridViewTextBoxColumn.HeaderText = "PrezzoALastra";
-            this.prezzoALastraDataGridViewTextBoxColumn.Name = "prezzoALastraDataGridViewTextBoxColumn";
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(975, 201);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NuovoOrdineForn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 399);
+            this.ClientSize = new System.Drawing.Size(1033, 537);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Name = "NuovoOrdineForn";
             this.Text = "Nuovo ordine a FORNITORE";
@@ -461,9 +546,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.codModPagamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codSpedizioniBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordFornDettBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordFornTestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artFornBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -496,20 +585,25 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource ordFornDettBindingSource;
         private Target2021DataSetTableAdapters.OrdFornDettTableAdapter ordFornDettTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idOFDettDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idOFTestataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCodiceArtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneArtDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantitaRichDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataConsegnaRichiestaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataConsegnaConfermataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prezzoKgDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtaEffettivaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pesoTotaleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prezzoALastraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource primeBindingSource;
+        private Target2021DataSetTableAdapters.PrimeTableAdapter primeTableAdapter;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.BindingSource ordFornTestBindingSource;
+        private Target2021DataSetTableAdapters.OrdFornTestTableAdapter ordFornTestTableAdapter;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.BindingSource artFornBindingSource;
+        private Target2021DataSetTableAdapters.ArtFornTableAdapter artFornTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
