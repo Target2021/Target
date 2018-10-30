@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.codTermPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,6 +58,14 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.codModPagamentoTableAdapter = new Target2021.Target2021DataSetTableAdapters.CodModPagamentoTableAdapter();
@@ -67,27 +75,22 @@
             this.ordFornDettTableAdapter = new Target2021.Target2021DataSetTableAdapters.OrdFornDettTableAdapter();
             this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.ordFornTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordFornTestTableAdapter = new Target2021.Target2021DataSetTableAdapters.OrdFornTestTableAdapter();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.artFornBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.artFornTableAdapter = new Target2021.Target2021DataSetTableAdapters.ArtFornTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.codTermPagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codModPagamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.codSpedizioniBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordFornDettBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordFornTestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.artFornBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -356,6 +359,95 @@
             this.comboBox1.TabIndex = 7;
             this.comboBox1.Text = "Lastre";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(641, 187);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 17);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Quantità";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox12.Location = new System.Drawing.Point(624, 207);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(91, 26);
+            this.textBox12.TabIndex = 9;
+            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeri);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(780, 187);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 17);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Data consegna";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Location = new System.Drawing.Point(721, 207);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(246, 26);
+            this.dateTimePicker2.TabIndex = 11;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 247);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1003, 226);
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(975, 201);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(10, 479);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(171, 46);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Salva e chiudi";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(187, 479);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(171, 46);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Stampa ordine";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // fornitoriTableAdapter
             // 
             this.fornitoriTableAdapter.ClearBeforeFill = true;
@@ -434,26 +526,6 @@
             // 
             this.primeTableAdapter.ClearBeforeFill = true;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(641, 187);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 17);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Quantità";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(624, 207);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(91, 26);
-            this.textBox12.TabIndex = 9;
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SoloNumeri);
-            // 
             // ordFornTestBindingSource
             // 
             this.ordFornTestBindingSource.DataMember = "OrdFornTest";
@@ -462,24 +534,6 @@
             // ordFornTestTableAdapter
             // 
             this.ordFornTestTableAdapter.ClearBeforeFill = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(780, 187);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 17);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Data consegna";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(721, 207);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(246, 26);
-            this.dateTimePicker2.TabIndex = 11;
             // 
             // artFornBindingSource
             // 
@@ -490,39 +544,24 @@
             // 
             this.artFornTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // label12
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 247);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(998, 216);
-            this.dataGridView1.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(975, 201);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 34);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1011, 214);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(9, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "l";
+            this.label12.Visible = false;
             // 
             // NuovoOrdineForn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 537);
+            this.ClientSize = new System.Drawing.Size(1033, 545);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dateTimePicker2);
@@ -546,11 +585,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.codModPagamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.codSpedizioniBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordFornDettBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordFornTestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artFornBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -605,5 +644,8 @@
         private Target2021DataSetTableAdapters.ArtFornTableAdapter artFornTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label12;
     }
 }

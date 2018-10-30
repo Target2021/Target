@@ -143,7 +143,9 @@
             this.dataGridViewTextBoxColumn17});
             this.primeDataGridView.DataSource = this.primeBindingSource;
             this.primeDataGridView.Location = new System.Drawing.Point(0, 105);
+            this.primeDataGridView.MultiSelect = false;
             this.primeDataGridView.Name = "primeDataGridView";
+            this.primeDataGridView.ReadOnly = true;
             this.primeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.primeDataGridView.Size = new System.Drawing.Size(697, 268);
             this.primeDataGridView.TabIndex = 1;
@@ -154,12 +156,14 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "codice";
             this.dataGridViewTextBoxColumn1.HeaderText = "codice";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "tipo";
             this.dataGridViewTextBoxColumn2.HeaderText = "tipo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
@@ -167,6 +171,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "descrizione";
             this.dataGridViewTextBoxColumn3.HeaderText = "descrizione";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 250;
             // 
             // dataGridViewTextBoxColumn4
@@ -174,6 +179,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "prezzo_acq";
             this.dataGridViewTextBoxColumn4.HeaderText = "prezzo_acq";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn5
@@ -181,6 +187,7 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "unita_misura";
             this.dataGridViewTextBoxColumn5.HeaderText = "unita_misura";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
@@ -188,6 +195,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "quantita_riordino";
             this.dataGridViewTextBoxColumn6.HeaderText = "quantita_riordino";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
             // dataGridViewTextBoxColumn7
@@ -195,6 +203,7 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "scorta_minima";
             this.dataGridViewTextBoxColumn7.HeaderText = "scorta_minima";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
@@ -202,12 +211,14 @@
             this.dataGridViewTextBoxColumn8.DataPropertyName = "codice_fornitore";
             this.dataGridViewTextBoxColumn8.HeaderText = "codice_fornitore";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn9.HeaderText = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Visible = false;
             // 
             // dataGridViewTextBoxColumn10
@@ -215,6 +226,7 @@
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Barcode";
             this.dataGridViewTextBoxColumn10.HeaderText = "Barcode";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Visible = false;
             // 
             // dataGridViewTextBoxColumn11
@@ -222,6 +234,7 @@
             this.dataGridViewTextBoxColumn11.DataPropertyName = "DimX";
             this.dataGridViewTextBoxColumn11.HeaderText = "DimX";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Visible = false;
             // 
             // dataGridViewTextBoxColumn12
@@ -229,6 +242,7 @@
             this.dataGridViewTextBoxColumn12.DataPropertyName = "DimY";
             this.dataGridViewTextBoxColumn12.HeaderText = "DimY";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Visible = false;
             // 
             // dataGridViewTextBoxColumn13
@@ -236,6 +250,7 @@
             this.dataGridViewTextBoxColumn13.DataPropertyName = "DimZ";
             this.dataGridViewTextBoxColumn13.HeaderText = "DimZ";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             this.dataGridViewTextBoxColumn13.Visible = false;
             // 
             // dataGridViewTextBoxColumn14
@@ -243,12 +258,14 @@
             this.dataGridViewTextBoxColumn14.DataPropertyName = "Peso";
             this.dataGridViewTextBoxColumn14.HeaderText = "Peso";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "PercVergine";
             this.dataGridViewTextBoxColumn15.HeaderText = "PercVergine";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Visible = false;
             // 
             // dataGridViewTextBoxColumn16
@@ -256,6 +273,7 @@
             this.dataGridViewTextBoxColumn16.DataPropertyName = "PercRigen";
             this.dataGridViewTextBoxColumn16.HeaderText = "PercRigen";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Visible = false;
             // 
             // dataGridViewTextBoxColumn17
@@ -263,6 +281,7 @@
             this.dataGridViewTextBoxColumn17.DataPropertyName = "Materiale";
             this.dataGridViewTextBoxColumn17.HeaderText = "Materiale";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
             // 
             // label1
             // 

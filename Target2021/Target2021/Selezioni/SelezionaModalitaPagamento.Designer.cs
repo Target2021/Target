@@ -34,13 +34,13 @@
             this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.primeDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.codModPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.codModPagamentoTableAdapter = new Target2021.Target2021DataSetTableAdapters.CodModPagamentoTableAdapter();
             this.idCodModPagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codMPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codModPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.codModPagamentoTableAdapter = new Target2021.Target2021DataSetTableAdapters.CodModPagamentoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeDataGridView)).BeginInit();
@@ -115,12 +115,41 @@
             this.descrizioneDataGridViewTextBoxColumn});
             this.primeDataGridView.DataSource = this.codModPagamentoBindingSource;
             this.primeDataGridView.Location = new System.Drawing.Point(0, 79);
+            this.primeDataGridView.MultiSelect = false;
             this.primeDataGridView.Name = "primeDataGridView";
+            this.primeDataGridView.ReadOnly = true;
             this.primeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.primeDataGridView.Size = new System.Drawing.Size(450, 266);
             this.primeDataGridView.TabIndex = 1;
             this.primeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Selezionata);
             this.primeDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.primeDataGridView_CellContentClick);
+            // 
+            // idCodModPagDataGridViewTextBoxColumn
+            // 
+            this.idCodModPagDataGridViewTextBoxColumn.DataPropertyName = "IdCodModPag";
+            this.idCodModPagDataGridViewTextBoxColumn.HeaderText = "IdCodModPag";
+            this.idCodModPagDataGridViewTextBoxColumn.Name = "idCodModPagDataGridViewTextBoxColumn";
+            this.idCodModPagDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codMPDataGridViewTextBoxColumn
+            // 
+            this.codMPDataGridViewTextBoxColumn.DataPropertyName = "CodMP";
+            this.codMPDataGridViewTextBoxColumn.HeaderText = "CodMP";
+            this.codMPDataGridViewTextBoxColumn.Name = "codMPDataGridViewTextBoxColumn";
+            this.codMPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descrizioneDataGridViewTextBoxColumn
+            // 
+            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
+            this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descrizioneDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // codModPagamentoBindingSource
+            // 
+            this.codModPagamentoBindingSource.DataMember = "CodModPagamento";
+            this.codModPagamentoBindingSource.DataSource = this.target2021DataSet;
             // 
             // label1
             // 
@@ -143,34 +172,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // codModPagamentoBindingSource
-            // 
-            this.codModPagamentoBindingSource.DataMember = "CodModPagamento";
-            this.codModPagamentoBindingSource.DataSource = this.target2021DataSet;
-            // 
             // codModPagamentoTableAdapter
             // 
             this.codModPagamentoTableAdapter.ClearBeforeFill = true;
-            // 
-            // idCodModPagDataGridViewTextBoxColumn
-            // 
-            this.idCodModPagDataGridViewTextBoxColumn.DataPropertyName = "IdCodModPag";
-            this.idCodModPagDataGridViewTextBoxColumn.HeaderText = "IdCodModPag";
-            this.idCodModPagDataGridViewTextBoxColumn.Name = "idCodModPagDataGridViewTextBoxColumn";
-            this.idCodModPagDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codMPDataGridViewTextBoxColumn
-            // 
-            this.codMPDataGridViewTextBoxColumn.DataPropertyName = "CodMP";
-            this.codMPDataGridViewTextBoxColumn.HeaderText = "CodMP";
-            this.codMPDataGridViewTextBoxColumn.Name = "codMPDataGridViewTextBoxColumn";
-            // 
-            // descrizioneDataGridViewTextBoxColumn
-            // 
-            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
-            this.descrizioneDataGridViewTextBoxColumn.Width = 200;
             // 
             // SelezionaModalitaPagamento
             // 

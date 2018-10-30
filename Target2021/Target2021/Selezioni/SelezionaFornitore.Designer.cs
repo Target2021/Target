@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.primeDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ragione_sociale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.partita_iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -39,11 +44,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ragione_sociale = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partita_iva = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
@@ -66,11 +66,50 @@
             this.partita_iva});
             this.primeDataGridView.DataSource = this.fornitoriBindingSource;
             this.primeDataGridView.Location = new System.Drawing.Point(0, 105);
+            this.primeDataGridView.MultiSelect = false;
             this.primeDataGridView.Name = "primeDataGridView";
+            this.primeDataGridView.ReadOnly = true;
             this.primeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.primeDataGridView.Size = new System.Drawing.Size(697, 240);
             this.primeDataGridView.TabIndex = 1;
             this.primeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Selezionata);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "codice";
+            this.dataGridViewTextBoxColumn1.HeaderText = "codice";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // ragione_sociale
+            // 
+            this.ragione_sociale.DataPropertyName = "ragione_sociale";
+            this.ragione_sociale.HeaderText = "ragione_sociale";
+            this.ragione_sociale.Name = "ragione_sociale";
+            this.ragione_sociale.ReadOnly = true;
+            this.ragione_sociale.Width = 200;
+            // 
+            // localita
+            // 
+            this.localita.DataPropertyName = "localita";
+            this.localita.HeaderText = "localita";
+            this.localita.Name = "localita";
+            this.localita.ReadOnly = true;
+            this.localita.Width = 150;
+            // 
+            // Provincia
+            // 
+            this.Provincia.DataPropertyName = "Provincia";
+            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.Name = "Provincia";
+            this.Provincia.ReadOnly = true;
+            // 
+            // partita_iva
+            // 
+            this.partita_iva.DataPropertyName = "partita_iva";
+            this.partita_iva.HeaderText = "partita_iva";
+            this.partita_iva.Name = "partita_iva";
+            this.partita_iva.ReadOnly = true;
             // 
             // fornitoriBindingSource
             // 
@@ -145,6 +184,7 @@
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -163,6 +203,7 @@
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
+            this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
@@ -175,38 +216,6 @@
             // fornitoriTableAdapter
             // 
             this.fornitoriTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "codice";
-            this.dataGridViewTextBoxColumn1.HeaderText = "codice";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // ragione_sociale
-            // 
-            this.ragione_sociale.DataPropertyName = "ragione_sociale";
-            this.ragione_sociale.HeaderText = "ragione_sociale";
-            this.ragione_sociale.Name = "ragione_sociale";
-            this.ragione_sociale.Width = 200;
-            // 
-            // localita
-            // 
-            this.localita.DataPropertyName = "localita";
-            this.localita.HeaderText = "localita";
-            this.localita.Name = "localita";
-            this.localita.Width = 150;
-            // 
-            // Provincia
-            // 
-            this.Provincia.DataPropertyName = "Provincia";
-            this.Provincia.HeaderText = "Provincia";
-            this.Provincia.Name = "Provincia";
-            // 
-            // partita_iva
-            // 
-            this.partita_iva.DataPropertyName = "partita_iva";
-            this.partita_iva.HeaderText = "partita_iva";
-            this.partita_iva.Name = "partita_iva";
             // 
             // SelezionaFornitore
             // 

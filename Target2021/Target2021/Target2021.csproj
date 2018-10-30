@@ -486,6 +486,12 @@
     <Compile Include="Stampe\SEtichette.Designer.cs">
       <DependentUpon>SEtichette.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stampe\StampaOrdFor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stampe\StampaOrdFor.Designer.cs">
+      <DependentUpon>StampaOrdFor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -676,6 +682,7 @@
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\CaricoLastre.rdlc" />
+    <EmbeddedResource Include="Report\OrdForn.rdlc" />
     <EmbeddedResource Include="Report\RCommessa.rdlc" />
     <EmbeddedResource Include="Report\REtichetta.rdlc" />
     <EmbeddedResource Include="Report\WFCaricoLastra.resx">
@@ -737,6 +744,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stampe\SEtichette.resx">
       <DependentUpon>SEtichette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stampe\StampaOrdFor.resx">
+      <DependentUpon>StampaOrdFor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

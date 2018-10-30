@@ -34,13 +34,13 @@
             this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.primeDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.codSpedizioniBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.codSpedizioniTableAdapter = new Target2021.Target2021DataSetTableAdapters.CodSpedizioniTableAdapter();
             this.idCodSpedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codiceIncotermDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codSpedizioniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.codSpedizioniTableAdapter = new Target2021.Target2021DataSetTableAdapters.CodSpedizioniTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeDataGridView)).BeginInit();
@@ -115,11 +115,39 @@
             this.descrizioneDataGridViewTextBoxColumn});
             this.primeDataGridView.DataSource = this.codSpedizioniBindingSource;
             this.primeDataGridView.Location = new System.Drawing.Point(0, 79);
+            this.primeDataGridView.MultiSelect = false;
             this.primeDataGridView.Name = "primeDataGridView";
+            this.primeDataGridView.ReadOnly = true;
             this.primeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.primeDataGridView.Size = new System.Drawing.Size(522, 215);
             this.primeDataGridView.TabIndex = 1;
             this.primeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Selezionata);
+            // 
+            // idCodSpedDataGridViewTextBoxColumn
+            // 
+            this.idCodSpedDataGridViewTextBoxColumn.DataPropertyName = "idCodSped";
+            this.idCodSpedDataGridViewTextBoxColumn.HeaderText = "idCodSped";
+            this.idCodSpedDataGridViewTextBoxColumn.Name = "idCodSpedDataGridViewTextBoxColumn";
+            this.idCodSpedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codiceIncotermDataGridViewTextBoxColumn
+            // 
+            this.codiceIncotermDataGridViewTextBoxColumn.DataPropertyName = "CodiceIncoterm";
+            this.codiceIncotermDataGridViewTextBoxColumn.HeaderText = "CodiceIncoterm";
+            this.codiceIncotermDataGridViewTextBoxColumn.Name = "codiceIncotermDataGridViewTextBoxColumn";
+            this.codiceIncotermDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descrizioneDataGridViewTextBoxColumn
+            // 
+            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
+            this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codSpedizioniBindingSource
+            // 
+            this.codSpedizioniBindingSource.DataMember = "CodSpedizioni";
+            this.codSpedizioniBindingSource.DataSource = this.target2021DataSet;
             // 
             // label1
             // 
@@ -142,33 +170,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // codSpedizioniBindingSource
-            // 
-            this.codSpedizioniBindingSource.DataMember = "CodSpedizioni";
-            this.codSpedizioniBindingSource.DataSource = this.target2021DataSet;
-            // 
             // codSpedizioniTableAdapter
             // 
             this.codSpedizioniTableAdapter.ClearBeforeFill = true;
-            // 
-            // idCodSpedDataGridViewTextBoxColumn
-            // 
-            this.idCodSpedDataGridViewTextBoxColumn.DataPropertyName = "idCodSped";
-            this.idCodSpedDataGridViewTextBoxColumn.HeaderText = "idCodSped";
-            this.idCodSpedDataGridViewTextBoxColumn.Name = "idCodSpedDataGridViewTextBoxColumn";
-            this.idCodSpedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codiceIncotermDataGridViewTextBoxColumn
-            // 
-            this.codiceIncotermDataGridViewTextBoxColumn.DataPropertyName = "CodiceIncoterm";
-            this.codiceIncotermDataGridViewTextBoxColumn.HeaderText = "CodiceIncoterm";
-            this.codiceIncotermDataGridViewTextBoxColumn.Name = "codiceIncotermDataGridViewTextBoxColumn";
-            // 
-            // descrizioneDataGridViewTextBoxColumn
-            // 
-            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
             // 
             // SelezionaSpedizione
             // 

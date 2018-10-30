@@ -126,7 +126,9 @@
             this.dataGridViewTextBoxColumn10});
             this.primeDataGridView.DataSource = this.stampiBindingSource;
             this.primeDataGridView.Location = new System.Drawing.Point(0, 105);
+            this.primeDataGridView.MultiSelect = false;
             this.primeDataGridView.Name = "primeDataGridView";
+            this.primeDataGridView.ReadOnly = true;
             this.primeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.primeDataGridView.Size = new System.Drawing.Size(697, 269);
             this.primeDataGridView.TabIndex = 1;
@@ -137,12 +139,14 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "codice";
             this.dataGridViewTextBoxColumn1.HeaderText = "codice";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "tipo";
             this.dataGridViewTextBoxColumn2.HeaderText = "tipo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
@@ -150,6 +154,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "descrizione";
             this.dataGridViewTextBoxColumn3.HeaderText = "descrizione";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 250;
             // 
             // dataGridViewTextBoxColumn4
@@ -157,6 +162,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "prezzo_acq";
             this.dataGridViewTextBoxColumn4.HeaderText = "prezzo_acq";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
@@ -164,12 +170,14 @@
             this.dataGridViewTextBoxColumn8.DataPropertyName = "codice_fornitore";
             this.dataGridViewTextBoxColumn8.HeaderText = "codice_fornitore";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn9.HeaderText = "descrizione_fornitore";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Visible = false;
             // 
             // dataGridViewTextBoxColumn10
@@ -177,6 +185,7 @@
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Barcode";
             this.dataGridViewTextBoxColumn10.HeaderText = "Barcode";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Visible = false;
             // 
             // stampiBindingSource
