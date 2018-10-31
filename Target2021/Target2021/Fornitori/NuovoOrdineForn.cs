@@ -266,7 +266,12 @@ namespace Target2021.Fornitori
 
         private void button3_Click(object sender, EventArgs e)
         {
-            StampaOrdFor stampa = new StampaOrdFor();
+            string NrO = textBox2.Text;
+            string dto = dateTimePicker1.Text;
+            string p3 = textBox7.Text;
+            string p4 = textBox8.Text;
+            string p5 = textBox9.Text;
+            StampaOrdFor stampa = new StampaOrdFor(NrO,dto,p3,p4,p5);
             stampa.Show();
         }
     }
