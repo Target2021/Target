@@ -376,6 +376,12 @@ namespace Target2021
             NOF.Show();
         }
 
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaOrdine CO = new ConsultaOrdine();
+            CO.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

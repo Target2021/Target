@@ -302,6 +302,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornitori\ConsultaOrdine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornitori\ConsultaOrdine.Designer.cs">
+      <DependentUpon>ConsultaOrdine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornitori\NuovoOrdineForn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +370,7 @@
     <Compile Include="Anagrafiche\RigaCompleta.Designer.cs">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecAnaForn.cs" />
     <Compile Include="Report\WFCaricoLastra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -637,6 +644,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornitori\ConsultaOrdine.resx">
+      <DependentUpon>ConsultaOrdine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornitori\NuovoOrdineForn.resx">
       <DependentUpon>NuovoOrdineForn.cs</DependentUpon>

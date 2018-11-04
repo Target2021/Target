@@ -271,7 +271,9 @@ namespace Target2021.Fornitori
             string p3 = textBox7.Text;
             string p4 = textBox8.Text;
             string p5 = textBox9.Text;
-            StampaOrdFor stampa = new StampaOrdFor(NrO,dto,p3,p4,p5);
+            string p6 = textBox1.Text;
+
+            StampaOrdFor stampa = new StampaOrdFor(NrO,dto,p3,p4,p5,p6);
             stampa.Show();
         }
     }
