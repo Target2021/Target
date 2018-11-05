@@ -315,7 +315,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Modalità pagamento: </Value>
+                        <Value>Modalità pagam.: </Value>
                         <Style>
                           <FontSize>9pt</FontSize>
                         </Style>
@@ -352,7 +352,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>Termini pagamento: </Value>
+                        <Value>Termini pagam.: </Value>
                         <Style>
                           <FontSize>9pt</FontSize>
                         </Style>
@@ -971,7 +971,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>

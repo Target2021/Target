@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,10 @@ namespace Target2021.Fornitori
 
         private void NuovoOrdineForn_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
+            this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
+            this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.ArtForn'. È possibile spostarla o rimuoverla se necessario.
             this.artFornTableAdapter.Fill(this.target2021DataSet.ArtForn);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdFornTest'. È possibile spostarla o rimuoverla se necessario.
@@ -139,9 +144,13 @@ namespace Target2021.Fornitori
                 }
                 catch 
                 {
-                    std = target2021DataSet.Tables["Prime"].Select("codice= '" + textBox10.Text + "'");
-                    ris = std[0];
-                    descrizione = ris[2].ToString();
+                    try
+                    {
+                        std = target2021DataSet.Tables["Prime"].Select("codice= '" + textBox10.Text + "'");
+                        ris = std[0];
+                        descrizione = ris[2].ToString();
+                    }
+                    catch { }
                 }
                 try
                 {
@@ -184,17 +193,24 @@ namespace Target2021.Fornitori
             dt.Columns.Add("Quantità",System.Type.GetType("System.Int32"));
             dt.Columns.Add("Data consegna", System.Type.GetType("System.DateTime"));
             dt.Columns.Add("Peso unitario", System.Type.GetType("System.String"));
+            dt.Columns.Add("Peso complessivo", System.Type.GetType("System.String"));
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[0].Width = 200;
             dataGridView1.Columns[1].Width = 400;
             dataGridView1.Columns[2].Width = 100;
             dataGridView1.Columns[3].Width = 200;
             dataGridView1.Columns[4].Width = 100;
+            dataGridView1.Columns[5].Width = 100;
         }
 
         private void AggiungiRiga()
         {
-            dt.Rows.Add(new object[]{textBox10.Text, textBox11.Text, Convert.ToInt32(textBox12.Text), dateTimePicker2.Text, label12.Text});
+            double pesos, pesot;
+            int numero;
+            pesos = Convert.ToDouble(label12.Text);
+            numero = Convert.ToInt32(textBox12.Text);
+            pesot = pesos * numero;
+            dt.Rows.Add(new object[]{textBox10.Text, textBox11.Text, Convert.ToInt32(textBox12.Text), dateTimePicker2.Text, label12.Text,pesot.ToString()});
             dataGridView1.DataSource = dt;
         }
 
@@ -210,6 +226,7 @@ namespace Target2021.Fornitori
         {
             SalvaTestataOF();
             SalvaDettaglioOF();
+            SalvaGiacenzeMagazzino();
             MessageBox.Show("Ordine registrato correttamente");
             Disabilita();
         }
@@ -261,6 +278,27 @@ namespace Target2021.Fornitori
                 Peso = Peso * Qta;
                 ordFornDettTableAdapter.Insert(NrOrdine, CodArt, Descr, Qta, DataCons, DataCons, 0, 0, 0, Peso, 0);
                 ordFornDettTableAdapter.Fill(target2021DataSet.OrdFornDett);
+            }
+        }
+
+        private void SalvaGiacenzeMagazzino()
+        {
+            string CodArt;
+            int QtaRiga, QtaOrdinato;
+
+            foreach (DataGridViewRow riga in dataGridView1.Rows)
+            {
+                CodArt = Convert.ToString(riga.Cells[0].Value);
+                QtaRiga = Convert.ToInt32(riga.Cells[2].Value);
+                QtaOrdinato = Convert.ToInt32 ((target2021DataSet.Tables["GiacenzeMagazzini"].Select("idPrime = '" + CodArt + "'"))[0]["GiacenzaOrdinati"]);
+                QtaOrdinato = QtaOrdinato + QtaRiga;
+
+                SqlConnection connessione = new SqlConnection(Properties.Resources.StringaConnessione);
+                connessione.Open();
+                string query = "UPDATE GiacenzeMagazzini SET GiacenzaOrdinati = "+ QtaOrdinato.ToString() + " WHERE idPrime = '" + CodArt + "'";
+                SqlCommand comando = new SqlCommand(query, connessione);
+                comando.ExecuteNonQuery();
+                connessione.Close();
             }
         }
 

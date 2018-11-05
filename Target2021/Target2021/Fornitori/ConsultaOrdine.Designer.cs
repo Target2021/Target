@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.ordFornTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordFornTestTableAdapter = new Target2021.Target2021DataSetTableAdapters.OrdFornTestTableAdapter();
@@ -134,13 +135,22 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.ordFornTestDataGridView.DataSource = this.ordFornTestBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ordFornTestDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.ordFornTestDataGridView.Location = new System.Drawing.Point(1, 46);
             this.ordFornTestDataGridView.Name = "ordFornTestDataGridView";
             this.ordFornTestDataGridView.ReadOnly = true;
             this.ordFornTestDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ordFornTestDataGridView.Size = new System.Drawing.Size(527, 237);
+            this.ordFornTestDataGridView.Size = new System.Drawing.Size(453, 237);
             this.ordFornTestDataGridView.TabIndex = 1;
             this.ordFornTestDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Selezionata);
+            this.ordFornTestDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordFornTestDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -242,7 +252,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 9);
+            this.label1.Location = new System.Drawing.Point(27, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(382, 26);
             this.label1.TabIndex = 2;
@@ -253,9 +263,9 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(179, 298);
+            this.button1.Location = new System.Drawing.Point(112, 298);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 33);
+            this.button1.Size = new System.Drawing.Size(180, 33);
             this.button1.TabIndex = 3;
             this.button1.Text = "CONSULTA";
             this.button1.UseVisualStyleBackColor = true;
@@ -264,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 343);
+            this.ClientSize = new System.Drawing.Size(454, 343);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ordFornTestDataGridView);

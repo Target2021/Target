@@ -308,6 +308,12 @@
     <Compile Include="Fornitori\ConsultaOrdine.Designer.cs">
       <DependentUpon>ConsultaOrdine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornitori\DettConsultazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornitori\DettConsultazione.Designer.cs">
+      <DependentUpon>DettConsultazione.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornitori\NuovoOrdineForn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -647,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fornitori\ConsultaOrdine.resx">
       <DependentUpon>ConsultaOrdine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornitori\DettConsultazione.resx">
+      <DependentUpon>DettConsultazione.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornitori\NuovoOrdineForn.resx">
       <DependentUpon>NuovoOrdineForn.cs</DependentUpon>
