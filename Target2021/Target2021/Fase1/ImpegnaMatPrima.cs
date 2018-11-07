@@ -14,6 +14,7 @@ namespace Target2021.Fase1
     {
         string CodiceLastra, DescrizioneLastra;
         int disponibili, impegnate;
+        int disponibili_o, impegnate_o, ordinati;
         DataRow[] riga;
 
         public ImpegnaMatPrima(string CodLas, string DesLas)
@@ -47,6 +48,12 @@ namespace Target2021.Fase1
             disponibili = Convert.ToInt32(textBox5.Text);
             textBox6.Text = riga[0]["GiacenzaImpegnati"].ToString();
             impegnate = Convert.ToInt32(textBox6.Text);
+            textBox9.Text= riga[0]["GiacenzaOrdinati"].ToString();
+            ordinati = Convert.ToInt32(textBox9.Text);
+            textBox10.Text = riga[0]["GiacImpegnSuOrd"].ToString();
+            impegnate_o = Convert.ToInt32(textBox10.Text);
+            disponibili_o = ordinati - impegnate_o;
+            textBox11.Text = disponibili_o.ToString();
         }
 
         private void dettaglio()
@@ -68,45 +75,98 @@ namespace Target2021.Fase1
 
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int nlastre=0,nrichieste;
+            int evento = e.ColumnIndex;  // 8 su magazzino - 9 su ordinato
+            int IdCommessa, NumCommessa;
+            int nlastre = 0, nlastreord = 0, nrichieste;
             disponibili = disponibili + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             impegnate = impegnate - Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+            disponibili_o = disponibili_o + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            impegnate_o = impegnate_o - Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+
             nrichieste = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
             try
             {
-                nlastre = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Quante lastre vuoi impiegare per questa commessa?", "IMPEGNO LASTRE", "0"));
+                if (evento == 8) nlastre = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Quante lastre vuoi impiegare per questa commessa dal MAGAZZINO?", "IMPEGNO LASTRE MAGAZZINO", "0"));
+                //if (evento == 9) nlastreord = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Quante lastre vuoi impiegare per questa commessa dall'ORDINATO?", "IMPEGNO LASTRE ORDINATE", "0"));
+
             }
             catch { }
-            if (nlastre > disponibili)
+            if (evento==8)
             {
-                MessageBox.Show("Non hai disponibili tutte quelle lastre!");
-                dataGridView1.Rows[e.RowIndex].Cells[8].Value = 0;
+                if (nlastre > disponibili)
+                {
+                    MessageBox.Show("Non hai disponibili tutte quelle lastre!");
+                    dataGridView1.Rows[e.RowIndex].Cells[8].Value = 0;
+                }
+                else
+                {
+                    if (nlastre > 0 && nlastre < nrichieste)
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells[10].Value = true;
+                        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 1;
+                    }
+                    dataGridView1.Rows[e.RowIndex].Cells[8].Value = nlastre;
+                    riga[0]["GiacenzaDisponibili"] = disponibili - nlastre;
+                    riga[0]["GiacenzaImpegnati"] = impegnate + nlastre;
+                    if (nlastre == nrichieste)
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells[10].Value = false;
+                        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 2;
+                    }
+                    if (nlastre == 0)
+                    { 
+                        dataGridView1.Rows[e.RowIndex].Cells[10].Value = false;
+                        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 0;
+                    }
+                    this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                }
             }
-            else
+            if (evento == 9)
             {
-                if (nlastre > 0 && nlastre < nrichieste)
-                {
-                    dataGridView1.Rows[e.RowIndex].Cells[9].Value = true;
-                    dataGridView1.Rows[e.RowIndex].Cells[10].Value = 1;
-                }
-                dataGridView1.Rows[e.RowIndex].Cells[8].Value = nlastre;
-                riga[0]["GiacenzaDisponibili"] = disponibili - nlastre;
-                riga[0]["GiacenzaImpegnati"] = impegnate + nlastre;
-                if (nlastre == nrichieste)
-                {
-                    dataGridView1.Rows[e.RowIndex].Cells[9].Value = false;
-                    dataGridView1.Rows[e.RowIndex].Cells[10].Value = 2;
-                }
-                if (nlastre == 0)
-                { 
-                    dataGridView1.Rows[e.RowIndex].Cells[10].Value = 0;
-                    dataGridView1.Rows[e.RowIndex].Cells[9].Value = false;
-                }
-                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                //if (nlastreord > disponibili_o)
+                //{
+                //    MessageBox.Show("Non hai disponibili tutte quelle lastre!");
+                //    dataGridView1.Rows[e.RowIndex].Cells[9].Value = 0;
+                //}
+                //else
+                //{
+                //    if (nlastreord > 0 && nlastreord < nrichieste)
+                //    {
+                //        dataGridView1.Rows[e.RowIndex].Cells[10].Value = true;
+                //        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 5;
+                //    }
+                //    if (nlastreord == nrichieste)
+                //    {
+                //        dataGridView1.Rows[e.RowIndex].Cells[10].Value = false;
+                //        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 2;
+                //    }
+                //    if (nlastreord == 0)
+                //    {
+                //        dataGridView1.Rows[e.RowIndex].Cells[10].Value = false;
+                //        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 0;
+                //    }
+                //    dataGridView1.Rows[e.RowIndex].Cells[9].Value = nlastreord;
+                //    riga[0]["GiacImpegnSuOrd"] = impegnate_o + nlastreord;
+                //    this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                //}
+                IdCommessa = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+                NumCommessa = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                QualiLastre(textBox1.Text, IdCommessa, NumCommessa);
             }
             testata();
+        }
+
+        private void QualiLastre(string CodLas, int IdC, int NumC)
+        {
+            ElencoLastreOrdinate Elenco = new ElencoLastreOrdinate(CodLas, IdC, NumC);
+            Elenco.Show();
         }
 
         private void giacenzeMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)

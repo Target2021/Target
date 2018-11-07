@@ -290,6 +290,12 @@
       <DependentUpon>DistintaBase.cs</DependentUpon>
     </Compile>
     <Compile Include="EsecuzioneQuery.cs" />
+    <Compile Include="Fase1\ElencoLastreOrdinate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase1\ElencoLastreOrdinate.Designer.cs">
+      <DependentUpon>ElencoLastreOrdinate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fase1\ImpegnaMatPrima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -644,6 +650,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DistintaBase.resx">
       <DependentUpon>DistintaBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fase1\ElencoLastreOrdinate.resx">
+      <DependentUpon>ElencoLastreOrdinate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fase1\ImpegnaMatPrima.resx">
       <DependentUpon>ImpegnaMatPrima.cs</DependentUpon>

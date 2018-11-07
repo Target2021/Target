@@ -44,17 +44,18 @@ namespace Target2021
 
         public void inserimento_iniziale()
         {
-            string query = "Select IDMateriaPrima,SUM(NrLastreRichieste) as LastreRichieste FROM Commesse WHERE TipoCommessa=1 AND Stato=0 GROUP BY IDMateriaPrima";
+            string query = "Select IDMateriaPrima AS [Materia Prima],SUM(NrLastreRichieste) as [Lastre Richieste] FROM Commesse WHERE TipoCommessa=1 AND Stato=0 GROUP BY IDMateriaPrima";
             SqlConnection connessione = new SqlConnection(stringa_connessione);
             SqlCommand comando = new SqlCommand(query, connessione);
             connessione.Open();
             SqlDataAdapter SDA = new SqlDataAdapter();
             SDA.SelectCommand = comando;
             SDA.Fill(dataTable);
-            dataTable.Columns.Add("Disponibilità Lastre", typeof(Int32));
+            dataTable.Columns.Add("Disponibilità Lastre Magazzino", typeof(Int32));
+            dataTable.Columns.Add("Disponibilità Lastre Ordinato", typeof(Int32));
             dataTable.Columns.Add("Descrizione materia prima", typeof(String));
             dataTable.Columns.Add("Codice fornitore", typeof(String));
-            dataTable.Columns.Add("Descrizione fornitore", typeof(String));
+            //dataTable.Columns.Add("Descrizione fornitore", typeof(String));
             BindingSource source = new BindingSource();
             source.DataSource = dataTable;
             dataGridView1.DataSource = source;
@@ -73,22 +74,30 @@ namespace Target2021
             {
                 riga = dataGridView1.Rows[nriga];
                 string query1 = "Select GiacenzaDisponibili From GiacenzeMagazzini Where idPrime='" + Convert.ToString(riga.Cells[0].Value) + "'";
+                string query5 = "Select GiacenzaOrdinati From GiacenzeMagazzini Where idPrime='" + Convert.ToString(riga.Cells[0].Value) + "'";
+                string query6 = "Select GiacImpegnSuOrd From GiacenzeMagazzini Where idPrime='" + Convert.ToString(riga.Cells[0].Value) + "'";
                 string query2 = "Select descrizione From Prime Where codice='" + Convert.ToString(riga.Cells[0].Value) + "'";
                 string query3 = "Select codice_fornitore From Prime Where codice='" + Convert.ToString(riga.Cells[0].Value) + "'";                
                 SqlCommand comando1 = new SqlCommand(query1, conn);
                 SqlCommand comando2 = new SqlCommand(query2, conn);
                 SqlCommand comando3 = new SqlCommand(query3, conn);
+                SqlCommand comando5 = new SqlCommand(query5, conn);
+                SqlCommand comando6 = new SqlCommand(query6, conn);
                 conn.Open();
                 int giacenza = Convert.ToInt32(comando1.ExecuteScalar());
+                int ordinati = Convert.ToInt32(comando5.ExecuteScalar());
+                int ImpSuOrd = Convert.ToInt32(comando6.ExecuteScalar());
+                int LiberiOrdinati = ordinati - ImpSuOrd;
                 string descrizione = comando2.ExecuteScalar().ToString();
                 string cod_for= comando3.ExecuteScalar().ToString();
                 string query4 = "Select ragione_sociale From Fornitori Where codice='" + cod_for + "'";
                 SqlCommand comando4 = new SqlCommand(query4, conn);
                 string des_for = comando4.ExecuteScalar().ToString();
-                dataTable.Rows[nriga]["Disponibilità Lastre"]=giacenza;
+                dataTable.Rows[nriga]["Disponibilità Lastre Magazzino"]=giacenza;
+                dataTable.Rows[nriga]["Disponibilità Lastre Ordinato"] = LiberiOrdinati;
                 dataTable.Rows[nriga]["Descrizione materia prima"] = descrizione;
                 dataTable.Rows[nriga]["Codice fornitore"] = cod_for;
-                dataTable.Rows[nriga]["Descrizione fornitore"] = des_for;
+                //dataTable.Rows[nriga]["Descrizione fornitore"] = des_for;
                 PezziOrdinati = Convert.ToInt32(riga.Cells[1].Value);
                 if (giacenza < PezziOrdinati)
                 {
@@ -112,7 +121,8 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataTable.Columns.Remove("Disponibilità Lastre");
+            dataTable.Columns.Remove("Disponibilità Lastre Magazzino");
+            dataTable.Columns.Remove("Disponibilità Lastre Ordinato");
             dataTable.Columns.Remove("Descrizione materia prima");
             dataTable.Columns.Remove("Codice fornitore");
             dataTable.Columns.Remove("Descrizione fornitore");
@@ -129,7 +139,7 @@ namespace Target2021
             if (e.RowIndex > -1 && dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
             {
                 CodiceLastra = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                DescrizioneLastra = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                DescrizioneLastra = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             }
             ImpegnaMatPrima Impegna = new ImpegnaMatPrima(CodiceLastra,DescrizioneLastra);
             Impegna.Show();
@@ -139,6 +149,11 @@ namespace Target2021
         {
             NuovoOrdineForn NOF = new NuovoOrdineForn();
             NOF.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
