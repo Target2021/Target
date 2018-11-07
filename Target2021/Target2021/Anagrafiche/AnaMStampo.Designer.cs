@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaMStampo));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.macchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
@@ -88,12 +90,17 @@
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
@@ -104,7 +111,12 @@
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
@@ -134,14 +146,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.macchineStampoBindingNavigatorSaveItem});
-            this.macchineStampoBindingNavigator.Location = new System.Drawing.Point(0, 527);
+            this.macchineStampoBindingNavigator.Location = new System.Drawing.Point(0, 271);
             this.macchineStampoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.macchineStampoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.macchineStampoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.macchineStampoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.macchineStampoBindingNavigator.Name = "macchineStampoBindingNavigator";
             this.macchineStampoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.macchineStampoBindingNavigator.Size = new System.Drawing.Size(1067, 27);
+            this.macchineStampoBindingNavigator.Size = new System.Drawing.Size(936, 27);
             this.macchineStampoBindingNavigator.TabIndex = 0;
             this.macchineStampoBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -157,7 +169,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -198,7 +210,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -247,6 +259,14 @@
             this.macchineStampoDataGridView.AutoGenerateColumns = false;
             this.macchineStampoDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.macchineStampoDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.macchineStampoDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.macchineStampoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.macchineStampoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -260,10 +280,17 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.macchineStampoDataGridView.DataSource = this.macchineStampoBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.macchineStampoDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.macchineStampoDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.macchineStampoDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.macchineStampoDataGridView.Name = "macchineStampoDataGridView";
-            this.macchineStampoDataGridView.Size = new System.Drawing.Size(1067, 523);
+            this.macchineStampoDataGridView.Size = new System.Drawing.Size(936, 273);
             this.macchineStampoDataGridView.TabIndex = 1;
             this.macchineStampoDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.macchineStampoDataGridView_DataError);
             // 
@@ -272,79 +299,78 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdStampa";
             this.dataGridViewTextBoxColumn1.HeaderText = "IdStampa";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 96;
+            this.dataGridViewTextBoxColumn1.Width = 112;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Descrizione";
             this.dataGridViewTextBoxColumn2.HeaderText = "Descrizione";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 111;
+            this.dataGridViewTextBoxColumn2.Width = 128;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Fascia1m2";
             this.dataGridViewTextBoxColumn3.HeaderText = "Fascia1m2";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 105;
+            this.dataGridViewTextBoxColumn3.Width = 121;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "CostoFascia1";
             this.dataGridViewTextBoxColumn4.HeaderText = "CostoFascia1";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 122;
+            this.dataGridViewTextBoxColumn4.Width = 144;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Fascia2m2";
             this.dataGridViewTextBoxColumn5.HeaderText = "Fascia2m2";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 105;
+            this.dataGridViewTextBoxColumn5.Width = 121;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "CostoFascia2";
             this.dataGridViewTextBoxColumn6.HeaderText = "CostoFascia2";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 122;
+            this.dataGridViewTextBoxColumn6.Width = 144;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Fascia3m2";
             this.dataGridViewTextBoxColumn7.HeaderText = "Fascia3m2";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 105;
+            this.dataGridViewTextBoxColumn7.Width = 121;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "CostoFascia3";
             this.dataGridViewTextBoxColumn8.HeaderText = "CostoFascia3";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 122;
+            this.dataGridViewTextBoxColumn8.Width = 144;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Fascia4m2";
             this.dataGridViewTextBoxColumn9.HeaderText = "Fascia4m2";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 105;
+            this.dataGridViewTextBoxColumn9.Width = 121;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "CostoFascia4";
             this.dataGridViewTextBoxColumn10.HeaderText = "CostoFascia4";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 122;
+            this.dataGridViewTextBoxColumn10.Width = 144;
             // 
             // AnaMStampo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(936, 298);
             this.Controls.Add(this.macchineStampoDataGridView);
             this.Controls.Add(this.macchineStampoBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaMStampo";
             this.Text = "Anagrafica macchine di stampo";
             this.Load += new System.EventHandler(this.AnaMStampo_Load);

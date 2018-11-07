@@ -15,6 +15,7 @@ namespace Target2021.Fase1
     {
         private string Cod;
         private int IdCommessa, NumCommessa;
+        public int NrLastreImpegnate { get; set; }
 
         public ElencoLastreOrdinate(string Codice, int IdC, int NumC)
         {
@@ -44,7 +45,7 @@ namespace Target2021.Fase1
 
         private void Filtra()
         {
-            ordFornDettBindingSource.Filter = "idCodiceArt = '" + Cod + "' AND Stato<>3 AND (QtaImpegnata<QuantitaRich)";
+            ordFornDettBindingSource.Filter = "idCodiceArt = '" + Cod + "' AND Stato<>3"; // prima anche AND(QtaImpegnata < QuantitaRich)
         }
 
         private void AggiornaQuantitaAssegnata()
@@ -93,7 +94,7 @@ namespace Target2021.Fase1
                 ordinata = Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn4"].Value);
                 impegnata = Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn13"].Value);
                 disponibile = ordinata - impegnata;
-                if (assegnate > disponibile)
+                if (assegnate > ordinata)           // prima > disponibile
                 {
                     MessageBox.Show("Non è disponibile questa quantità");
                     row.Cells["QuantitaAssegnata"].Value = 0;
@@ -110,22 +111,68 @@ namespace Target2021.Fase1
             AggiornaImpegnateSuOrdinato();
             AggiornaOrdiniFornitori();
             AggiornaGiacenze();
+            MessageBox.Show("Aggiornamento effettuato correttamente!");
+            this.Close();
         }
 
         private void AggiornaImpegnateSuOrdinato()
-        {
-            // Aggiorna tabella ImpegnateOrdinato
-            
+        {   // Aggiorna tabella ImpegnateOrdinato
+            int IdOrdineAFornitoreDettaglio, IdCommessa, QtaImpegnata;
+            SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
+            string CodArt;
+            conn.Open();
+            foreach (DataGridViewRow row in ordFornDettDataGridView.Rows)
+            {
+                QtaImpegnata = Convert.ToInt32(row.Cells["QuantitaAssegnata"].Value);
+                IdOrdineAFornitoreDettaglio = Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn12"].Value);
+                IdCommessa = Convert.ToInt32(textBox3.Text);
+                string query1 = "UPDATE ImpegnateOrdinato SET QtaImpegnata = "+ QtaImpegnata.ToString()+" Where IdOrdFornDett='" + Convert.ToString(IdOrdineAFornitoreDettaglio) + "' AND IdCommessa = '" + IdCommessa.ToString() + "'";
+                SqlCommand comando1 = new SqlCommand(query1, conn);    
+                try
+                {
+                    comando1.ExecuteScalar();
+                }
+                catch
+                {
+                }
+            }
+            conn.Close();
+            ordFornDettDataGridView.Refresh();
         }
 
         private void AggiornaOrdiniFornitori()
-        {
-            // Aggiorna tabella OrdFornDett
+        {   // Aggiorna tabella OrdFornDett
+            int IdOrdineAFornitoreDettaglio, QtaImpegnata;
+            SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
+            conn.Open();
+            foreach (DataGridViewRow row in ordFornDettDataGridView.Rows)
+            {
+                QtaImpegnata = Convert.ToInt32(row.Cells["QuantitaAssegnata"].Value);
+                IdOrdineAFornitoreDettaglio = Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn12"].Value);
+                string query1 = "UPDATE OrdFornDett SET QtaImpegnata = " + QtaImpegnata.ToString() + " Where idOFDett='" + Convert.ToString(IdOrdineAFornitoreDettaglio) + "'";
+                SqlCommand comando1 = new SqlCommand(query1, conn);
+                try
+                {
+                    comando1.ExecuteScalar();
+                }
+                catch
+                {
+                }
+            }
+            conn.Close();
+            ordFornDettDataGridView.Refresh();
         }
 
         private void AggiornaGiacenze()
         {
             // Aggiorna tabella GiacenzeMagazzini
+            // Questo aggiornamento lo faccio fare al form padre
+            NrLastreImpegnate = Convert.ToInt32(textBox2.Text);
+        }
+
+        private void ordFornDettDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)

@@ -60,6 +60,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             quantitaLabel = new System.Windows.Forms.Label();
             barcodeLabel = new System.Windows.Forms.Label();
             nrOrdineLabel = new System.Windows.Forms.Label();
@@ -73,7 +74,7 @@
             // quantitaLabel
             // 
             quantitaLabel.AutoSize = true;
-            quantitaLabel.Location = new System.Drawing.Point(39, 162);
+            quantitaLabel.Location = new System.Drawing.Point(38, 185);
             quantitaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             quantitaLabel.Name = "quantitaLabel";
             quantitaLabel.Size = new System.Drawing.Size(67, 18);
@@ -83,7 +84,7 @@
             // barcodeLabel
             // 
             barcodeLabel.AutoSize = true;
-            barcodeLabel.Location = new System.Drawing.Point(41, 194);
+            barcodeLabel.Location = new System.Drawing.Point(40, 217);
             barcodeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             barcodeLabel.Name = "barcodeLabel";
             barcodeLabel.Size = new System.Drawing.Size(68, 18);
@@ -93,7 +94,7 @@
             // nrOrdineLabel
             // 
             nrOrdineLabel.AutoSize = true;
-            nrOrdineLabel.Location = new System.Drawing.Point(41, 230);
+            nrOrdineLabel.Location = new System.Drawing.Point(40, 253);
             nrOrdineLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nrOrdineLabel.Name = "nrOrdineLabel";
             nrOrdineLabel.Size = new System.Drawing.Size(76, 18);
@@ -103,7 +104,7 @@
             // dataOraMovimentoLabel
             // 
             dataOraMovimentoLabel.AutoSize = true;
-            dataOraMovimentoLabel.Location = new System.Drawing.Point(41, 266);
+            dataOraMovimentoLabel.Location = new System.Drawing.Point(40, 289);
             dataOraMovimentoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dataOraMovimentoLabel.Name = "dataOraMovimentoLabel";
             dataOraMovimentoLabel.Size = new System.Drawing.Size(43, 18);
@@ -172,7 +173,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 9);
+            this.label1.Location = new System.Drawing.Point(25, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(379, 26);
@@ -182,7 +183,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 61);
+            this.label2.Location = new System.Drawing.Point(38, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 18);
             this.label2.TabIndex = 30;
@@ -193,7 +194,7 @@
             this.comboBox1.DataSource = this.anaMagazziniBindingSource;
             this.comboBox1.DisplayMember = "Descrizione";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(130, 58);
+            this.comboBox1.Location = new System.Drawing.Point(129, 81);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(233, 26);
             this.comboBox1.TabIndex = 31;
@@ -212,7 +213,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 92);
+            this.label3.Location = new System.Drawing.Point(38, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 32;
@@ -220,7 +221,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 89);
+            this.textBox1.Location = new System.Drawing.Point(129, 112);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(233, 24);
             this.textBox1.TabIndex = 33;
@@ -232,7 +233,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(130, 127);
+            this.radioButton1.Location = new System.Drawing.Point(129, 150);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(70, 22);
             this.radioButton1.TabIndex = 34;
@@ -244,7 +245,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(206, 127);
+            this.radioButton2.Location = new System.Drawing.Point(205, 150);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(77, 22);
             this.radioButton2.TabIndex = 35;
@@ -255,7 +256,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 159);
+            this.textBox2.Location = new System.Drawing.Point(129, 182);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(158, 24);
             this.textBox2.TabIndex = 36;
@@ -263,7 +264,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 191);
+            this.textBox3.Location = new System.Drawing.Point(129, 214);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(233, 24);
             this.textBox3.TabIndex = 37;
@@ -271,7 +272,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(131, 227);
+            this.textBox4.Location = new System.Drawing.Point(130, 250);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(232, 24);
             this.textBox4.TabIndex = 38;
@@ -279,7 +280,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(131, 261);
+            this.dateTimePicker1.Location = new System.Drawing.Point(130, 284);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(232, 24);
             this.dateTimePicker1.TabIndex = 39;
@@ -287,7 +288,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(42, 367);
+            this.button1.Location = new System.Drawing.Point(41, 390);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(321, 31);
             this.button1.TabIndex = 40;
@@ -297,7 +298,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(223, 292);
+            this.textBox5.Location = new System.Drawing.Point(222, 315);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(140, 24);
             this.textBox5.TabIndex = 41;
@@ -306,7 +307,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(223, 326);
+            this.textBox6.Location = new System.Drawing.Point(222, 349);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(140, 24);
             this.textBox6.TabIndex = 42;
@@ -316,7 +317,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 295);
+            this.label4.Location = new System.Drawing.Point(38, 318);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(171, 18);
@@ -326,7 +327,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 329);
+            this.label5.Location = new System.Drawing.Point(38, 352);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(171, 18);
@@ -335,7 +336,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(294, 159);
+            this.textBox7.Location = new System.Drawing.Point(293, 182);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(68, 24);
             this.textBox7.TabIndex = 45;
@@ -345,7 +346,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(295, 138);
+            this.label6.Location = new System.Drawing.Point(294, 161);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 16);
             this.label6.TabIndex = 46;
@@ -361,11 +362,21 @@
             // 
             this.giacenzeMagazziniTableAdapter.ClearBeforeFill = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(129, 38);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(194, 27);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Da ordine a Fornitore";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // CaricoScarico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 411);
+            this.ClientSize = new System.Drawing.Size(877, 433);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label5);
@@ -431,5 +442,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource giacenzeMagazziniBindingSource;
         private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
+        private System.Windows.Forms.Button button2;
     }
 }

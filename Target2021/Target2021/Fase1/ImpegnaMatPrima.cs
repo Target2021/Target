@@ -75,6 +75,11 @@ namespace Target2021.Fase1
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -130,43 +135,22 @@ namespace Target2021.Fase1
             }
             if (evento == 9)
             {
-                //if (nlastreord > disponibili_o)
-                //{
-                //    MessageBox.Show("Non hai disponibili tutte quelle lastre!");
-                //    dataGridView1.Rows[e.RowIndex].Cells[9].Value = 0;
-                //}
-                //else
-                //{
-                //    if (nlastreord > 0 && nlastreord < nrichieste)
-                //    {
-                //        dataGridView1.Rows[e.RowIndex].Cells[10].Value = true;
-                //        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 5;
-                //    }
-                //    if (nlastreord == nrichieste)
-                //    {
-                //        dataGridView1.Rows[e.RowIndex].Cells[10].Value = false;
-                //        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 2;
-                //    }
-                //    if (nlastreord == 0)
-                //    {
-                //        dataGridView1.Rows[e.RowIndex].Cells[10].Value = false;
-                //        dataGridView1.Rows[e.RowIndex].Cells[11].Value = 0;
-                //    }
-                //    dataGridView1.Rows[e.RowIndex].Cells[9].Value = nlastreord;
-                //    riga[0]["GiacImpegnSuOrd"] = impegnate_o + nlastreord;
-                //    this.SelectNextControl(this.ActiveControl, true, true, true, true);
-                //}
                 IdCommessa = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
                 NumCommessa = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                QualiLastre(textBox1.Text, IdCommessa, NumCommessa);
+                nlastreord= QualiLastre(textBox1.Text, IdCommessa, NumCommessa);
+                dataGridView1.Rows[e.RowIndex].Cells[9].Value = nlastreord;
+                riga[0]["GiacImpegnSuOrd"] = impegnate_o + nlastreord;
             }
             testata();
         }
 
-        private void QualiLastre(string CodLas, int IdC, int NumC)
+        private int QualiLastre(string CodLas, int IdC, int NumC)
         {
+            int NrL;
             ElencoLastreOrdinate Elenco = new ElencoLastreOrdinate(CodLas, IdC, NumC);
-            Elenco.Show();
+            Elenco.ShowDialog();
+            NrL = Elenco.NrLastreImpegnate;
+            return NrL;
         }
 
         private void giacenzeMagazziniBindingNavigatorSaveItem_Click(object sender, EventArgs e)
