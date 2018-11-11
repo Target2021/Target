@@ -382,6 +382,12 @@ namespace Target2021
             CO.Show();
         }
 
+        private void arrivoMerceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ArrivoMerce AM = new ArrivoMerce();
+            AM.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

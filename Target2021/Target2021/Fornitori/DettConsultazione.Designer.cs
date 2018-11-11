@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -521,7 +523,17 @@
             // 
             this.ordFornDettDataGridView.AllowUserToAddRows = false;
             this.ordFornDettDataGridView.AllowUserToDeleteRows = false;
+            this.ordFornDettDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ordFornDettDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ordFornDettDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ordFornDettDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordFornDettDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -537,12 +549,23 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.ordFornDettDataGridView.DataSource = this.ordFornDettBindingSource;
-            this.ordFornDettDataGridView.Enabled = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ordFornDettDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.ordFornDettDataGridView.Location = new System.Drawing.Point(12, 244);
+            this.ordFornDettDataGridView.MultiSelect = false;
             this.ordFornDettDataGridView.Name = "ordFornDettDataGridView";
             this.ordFornDettDataGridView.ReadOnly = true;
-            this.ordFornDettDataGridView.Size = new System.Drawing.Size(995, 234);
+            this.ordFornDettDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ordFornDettDataGridView.Size = new System.Drawing.Size(1087, 234);
             this.ordFornDettDataGridView.TabIndex = 33;
+            this.ordFornDettDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelezRiga);
+            this.ordFornDettDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordFornDettDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -662,12 +685,13 @@
             this.button5.TabIndex = 35;
             this.button5.Text = "Commesse collegate";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // DettConsultazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 548);
+            this.ClientSize = new System.Drawing.Size(1111, 548);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.ordFornDettDataGridView);
@@ -687,7 +711,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox1);
             this.Name = "DettConsultazione";
-            this.Text = "j";
+            this.Text = "Consultazione / Modifica ordine a Fornitore";
             this.Load += new System.EventHandler(this.DettConsultazione_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -81,5 +81,27 @@ namespace Target2021.Fornitori
             button1.Enabled = true;
             ordFornDettDataGridView.Enabled = true;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Cosa visualizzo? l'elenco delle commesse per le quali era
+            // stato impegnato su ordinato il materiale in ques'ordine
+            // a fornitore?
+            MessageBox.Show("Click sulla singola riga per vedere l'elenco delle commesse che hanno impegnato del matriale su quest'ordine");
+        }
+
+        private void ordFornDettDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SelezRiga(object sender, DataGridViewCellEventArgs e)
+        {
+            int IdOrdFornDett;
+            IdOrdFornDett = Convert.ToInt32(ordFornDettDataGridView.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value);
+            //MessageBox.Show(IdOrdFornDett.ToString());
+            CommesseCollegate Dettaglio = new CommesseCollegate(IdOrdFornDett);
+            Dettaglio.Show();
+        }
     }
 }

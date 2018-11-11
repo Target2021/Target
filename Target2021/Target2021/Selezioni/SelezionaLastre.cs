@@ -52,5 +52,10 @@ namespace Target2021.Selezioni
         {
 
         }
+
+        private void primeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

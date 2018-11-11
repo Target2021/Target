@@ -308,6 +308,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornitori\ArrivoMerce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornitori\ArrivoMerce.Designer.cs">
+      <DependentUpon>ArrivoMerce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fornitori\CommesseCollegate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornitori\CommesseCollegate.Designer.cs">
+      <DependentUpon>CommesseCollegate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornitori\ConsultaOrdine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -659,6 +671,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornitori\ArrivoMerce.resx">
+      <DependentUpon>ArrivoMerce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornitori\CommesseCollegate.resx">
+      <DependentUpon>CommesseCollegate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornitori\ConsultaOrdine.resx">
       <DependentUpon>ConsultaOrdine.cs</DependentUpon>

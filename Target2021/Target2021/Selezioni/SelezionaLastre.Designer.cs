@@ -150,6 +150,7 @@
             this.primeDataGridView.Size = new System.Drawing.Size(697, 268);
             this.primeDataGridView.TabIndex = 1;
             this.primeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Selezionata);
+            this.primeDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.primeDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

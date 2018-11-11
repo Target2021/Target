@@ -55,9 +55,8 @@
             this.controllaNuoviOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordiniAFornitoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuovoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stampaSchedaCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arrivoMerceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anagraficheMagazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,6 +77,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.etichetteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caricoProdottiFinitiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stampaSchedaCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnettiUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnettiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraNuovoUtenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -274,7 +274,6 @@
             this.commesseToolStripMenuItem1,
             this.controllaNuoviOrdiniToolStripMenuItem,
             this.ordiniAFornitoreToolStripMenuItem,
-            this.stampaSchedaCommessaToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.ordiniToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordiniToolStripMenuItem.Name = "ordiniToolStripMenuItem";
@@ -285,14 +284,14 @@
             // commesseToolStripMenuItem1
             // 
             this.commesseToolStripMenuItem1.Name = "commesseToolStripMenuItem1";
-            this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(349, 30);
+            this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(288, 30);
             this.commesseToolStripMenuItem1.Text = "Commesse";
             this.commesseToolStripMenuItem1.Click += new System.EventHandler(this.commesseToolStripMenuItem1_Click);
             // 
             // controllaNuoviOrdiniToolStripMenuItem
             // 
             this.controllaNuoviOrdiniToolStripMenuItem.Name = "controllaNuoviOrdiniToolStripMenuItem";
-            this.controllaNuoviOrdiniToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
+            this.controllaNuoviOrdiniToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
             this.controllaNuoviOrdiniToolStripMenuItem.Text = "Controlla nuovi ordini";
             this.controllaNuoviOrdiniToolStripMenuItem.Click += new System.EventHandler(this.controllaNuoviOrdiniToolStripMenuItem_Click);
             // 
@@ -300,44 +299,38 @@
             // 
             this.ordiniAFornitoreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuovoToolStripMenuItem1,
-            this.modificaToolStripMenuItem,
-            this.consultaToolStripMenuItem});
+            this.consultaToolStripMenuItem,
+            this.arrivoMerceToolStripMenuItem});
             this.ordiniAFornitoreToolStripMenuItem.Name = "ordiniAFornitoreToolStripMenuItem";
-            this.ordiniAFornitoreToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
+            this.ordiniAFornitoreToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
             this.ordiniAFornitoreToolStripMenuItem.Text = "Ordini a fornitore";
             this.ordiniAFornitoreToolStripMenuItem.Click += new System.EventHandler(this.ordiniAFornitoreToolStripMenuItem_Click);
             // 
             // nuovoToolStripMenuItem1
             // 
             this.nuovoToolStripMenuItem1.Name = "nuovoToolStripMenuItem1";
-            this.nuovoToolStripMenuItem1.Size = new System.Drawing.Size(180, 30);
+            this.nuovoToolStripMenuItem1.Size = new System.Drawing.Size(269, 30);
             this.nuovoToolStripMenuItem1.Text = "Nuovo";
             this.nuovoToolStripMenuItem1.Click += new System.EventHandler(this.nuovoToolStripMenuItem1_Click);
-            // 
-            // modificaToolStripMenuItem
-            // 
-            this.modificaToolStripMenuItem.Name = "modificaToolStripMenuItem";
-            this.modificaToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.modificaToolStripMenuItem.Text = "Modifica";
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 30);
-            this.consultaToolStripMenuItem.Text = "Consulta";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(269, 30);
+            this.consultaToolStripMenuItem.Text = "Consulta / Modifica";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
-            // stampaSchedaCommessaToolStripMenuItem
+            // arrivoMerceToolStripMenuItem
             // 
-            this.stampaSchedaCommessaToolStripMenuItem.Name = "stampaSchedaCommessaToolStripMenuItem";
-            this.stampaSchedaCommessaToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
-            this.stampaSchedaCommessaToolStripMenuItem.Text = "Stampa scheda commessa";
-            this.stampaSchedaCommessaToolStripMenuItem.Click += new System.EventHandler(this.stampaSchedaCommessaToolStripMenuItem_Click);
+            this.arrivoMerceToolStripMenuItem.Name = "arrivoMerceToolStripMenuItem";
+            this.arrivoMerceToolStripMenuItem.Size = new System.Drawing.Size(269, 30);
+            this.arrivoMerceToolStripMenuItem.Text = "Arrivo merce";
+            this.arrivoMerceToolStripMenuItem.Click += new System.EventHandler(this.arrivoMerceToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -474,7 +467,8 @@
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.etichetteToolStripMenuItem,
-            this.caricoProdottiFinitiToolStripMenuItem});
+            this.caricoProdottiFinitiToolStripMenuItem,
+            this.stampaSchedaCommessaToolStripMenuItem});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(97, 30);
@@ -484,16 +478,22 @@
             // etichetteToolStripMenuItem
             // 
             this.etichetteToolStripMenuItem.Name = "etichetteToolStripMenuItem";
-            this.etichetteToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
+            this.etichetteToolStripMenuItem.Size = new System.Drawing.Size(342, 30);
             this.etichetteToolStripMenuItem.Text = "Carico Materie prime";
             this.etichetteToolStripMenuItem.Click += new System.EventHandler(this.etichetteToolStripMenuItem_Click);
             // 
             // caricoProdottiFinitiToolStripMenuItem
             // 
             this.caricoProdottiFinitiToolStripMenuItem.Name = "caricoProdottiFinitiToolStripMenuItem";
-            this.caricoProdottiFinitiToolStripMenuItem.Size = new System.Drawing.Size(283, 30);
+            this.caricoProdottiFinitiToolStripMenuItem.Size = new System.Drawing.Size(342, 30);
             this.caricoProdottiFinitiToolStripMenuItem.Text = "Carico Prodotti finiti";
             this.caricoProdottiFinitiToolStripMenuItem.Click += new System.EventHandler(this.caricoProdottiFinitiToolStripMenuItem_Click);
+            // 
+            // stampaSchedaCommessaToolStripMenuItem
+            // 
+            this.stampaSchedaCommessaToolStripMenuItem.Name = "stampaSchedaCommessaToolStripMenuItem";
+            this.stampaSchedaCommessaToolStripMenuItem.Size = new System.Drawing.Size(342, 30);
+            this.stampaSchedaCommessaToolStripMenuItem.Text = "Stampa scheda commessa";
             // 
             // disconnettiUtenteToolStripMenuItem
             // 
@@ -669,7 +669,6 @@
         private System.Windows.Forms.ToolStripMenuItem ordiniAFornitoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monitoraggioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem taglioToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem stampaSchedaCommessaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem schermataTaglioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuovoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
@@ -681,8 +680,9 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caricoProdottiFinitiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuovoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modificaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stampaSchedaCommessaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem arrivoMerceToolStripMenuItem;
     }
 }
 
