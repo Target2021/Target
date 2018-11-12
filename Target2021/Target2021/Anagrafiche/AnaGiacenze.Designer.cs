@@ -88,12 +88,17 @@
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
@@ -104,7 +109,12 @@
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
@@ -134,14 +144,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.giacenzeMagazziniBindingNavigatorSaveItem});
-            this.giacenzeMagazziniBindingNavigator.Location = new System.Drawing.Point(0, 527);
+            this.giacenzeMagazziniBindingNavigator.Location = new System.Drawing.Point(0, 423);
             this.giacenzeMagazziniBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.giacenzeMagazziniBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.giacenzeMagazziniBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.giacenzeMagazziniBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.giacenzeMagazziniBindingNavigator.Name = "giacenzeMagazziniBindingNavigator";
             this.giacenzeMagazziniBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.giacenzeMagazziniBindingNavigator.Size = new System.Drawing.Size(1252, 27);
+            this.giacenzeMagazziniBindingNavigator.Size = new System.Drawing.Size(939, 27);
             this.giacenzeMagazziniBindingNavigator.TabIndex = 0;
             this.giacenzeMagazziniBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -157,7 +167,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -198,7 +208,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -261,10 +271,11 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.giacenzeMagazziniDataGridView.DataSource = this.giacenzeMagazziniBindingSource;
-            this.giacenzeMagazziniDataGridView.Location = new System.Drawing.Point(0, 101);
-            this.giacenzeMagazziniDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.giacenzeMagazziniDataGridView.Location = new System.Drawing.Point(0, 82);
+            this.giacenzeMagazziniDataGridView.MultiSelect = false;
             this.giacenzeMagazziniDataGridView.Name = "giacenzeMagazziniDataGridView";
-            this.giacenzeMagazziniDataGridView.Size = new System.Drawing.Size(1252, 422);
+            this.giacenzeMagazziniDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.giacenzeMagazziniDataGridView.Size = new System.Drawing.Size(939, 343);
             this.giacenzeMagazziniDataGridView.TabIndex = 1;
             this.giacenzeMagazziniDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.giacenzeMagazziniDataGridView_DataError);
             // 
@@ -330,13 +341,12 @@
             // 
             // AnaGiacenze
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1252, 554);
+            this.ClientSize = new System.Drawing.Size(939, 450);
             this.Controls.Add(this.giacenzeMagazziniDataGridView);
             this.Controls.Add(this.giacenzeMagazziniBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnaGiacenze";
             this.Text = "Giacenze articoli a magazzino";
             this.Load += new System.EventHandler(this.AnaGiacenze_Load);

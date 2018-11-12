@@ -877,6 +877,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1031,7 +1032,7 @@
                         <FilterExpression>=CStr(Fields!idOFTestata.Value)</FilterExpression>
                         <Operator>Equal</Operator>
                         <FilterValues>
-                          <FilterValue>=Parameters!Param1.Value</FilterValue>
+                          <FilterValue>=Parameters!Param6.Value</FilterValue>
                         </FilterValues>
                       </Filter>
                     </Filters>
@@ -1191,6 +1192,10 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="Param6">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1246,6 +1251,11 @@
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>2</RowIndex>
           <ParameterName>PProv</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>Param6</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

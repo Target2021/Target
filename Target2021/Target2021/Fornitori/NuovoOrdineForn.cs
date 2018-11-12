@@ -16,6 +16,7 @@ namespace Target2021.Fornitori
     public partial class NuovoOrdineForn : Form
     {
         DataTable dt = new DataTable("Articoli");
+        int IdTestata;
 
         public NuovoOrdineForn()
         {
@@ -60,7 +61,11 @@ namespace Target2021.Fornitori
         private void AggiornaNrOrdine()
         {
             int Nr=0;
-            Nr = target2021DataSet.Tables["OrdFornTest"].AsEnumerable().Max(x => x.Field<int>("NrOrdine"));
+            try
+            {
+                Nr = target2021DataSet.Tables["OrdFornTest"].AsEnumerable().Max(x => x.Field<int>("NrOrdine"));
+            }
+            catch { Nr = 0; }
             textBox2.Text = (Nr+1).ToString();
         }
 
@@ -258,6 +263,17 @@ namespace Target2021.Fornitori
 
             ordFornTestTableAdapter.Insert(IDF,DataOrdine,NrOrdine,0,0,0,0,0,CodSped,CodModPag,CodTermPag);
             ordFornTestTableAdapter.Fill(target2021DataSet.OrdFornTest);
+            ImpostaIdTestata();
+        }
+
+        private void ImpostaIdTestata()
+        {
+            SqlConnection connessione = new SqlConnection(Properties.Resources.StringaConnessione);
+            connessione.Open();
+            string query = "SELECT MAX(idOFTestata) FROM OrdFornTest";
+            SqlCommand comando = new SqlCommand(query, connessione);
+            IdTestata=Convert.ToInt32(comando.ExecuteScalar());
+            connessione.Close();
         }
 
         private void SalvaDettaglioOF()
@@ -266,7 +282,7 @@ namespace Target2021.Fornitori
             string CodArt, Descr;
             DateTime DataCons;
             double Peso;
-            NrOrdine = Convert.ToInt32(textBox2.Text);
+            NrOrdine = IdTestata;
 
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
@@ -310,8 +326,9 @@ namespace Target2021.Fornitori
             string p4 = textBox8.Text;
             string p5 = textBox9.Text;
             string p6 = textBox1.Text;
+            string p7 = IdTestata.ToString();
 
-            StampaOrdFor stampa = new StampaOrdFor(NrO,dto,p3,p4,p5,p6);
+            StampaOrdFor stampa = new StampaOrdFor(NrO,dto,p3,p4,p5,p6,p7);
             stampa.Show();
         }
     }

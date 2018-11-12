@@ -40,7 +40,7 @@ namespace Target2021.Fornitori
 
         private void Filtra()
         {
-            ordFornTestBindingSource.Filter = "NrOrdine = '"+Num.ToString()+"'";
+            ordFornTestBindingSource.Filter = "idOFTestata = '"+Num.ToString()+"'";
             fornitoriBindingSource.Filter = "codice = '" + textBox1.Text + "'";
             ordFornDettBindingSource.Filter = "idOFTestata = '" + Num.ToString() + "'";
             bindingSource1.Filter = "idCodSped = '" + textBox3.Text + "'";
@@ -56,8 +56,8 @@ namespace Target2021.Fornitori
             string p4 = textBox8.Text;
             string p5 = textBox9.Text;
             string p6 = textBox1.Text;
-
-            StampaOrdFor stampa = new StampaOrdFor(NrO, dto, p3, p4, p5, p6);
+            string p7 = Num.ToString();
+            StampaOrdFor stampa = new StampaOrdFor(NrO, dto, p3, p4, p5, p6, p7);
             stampa.Show();
         }
 
@@ -102,6 +102,11 @@ namespace Target2021.Fornitori
             //MessageBox.Show(IdOrdFornDett.ToString());
             CommesseCollegate Dettaglio = new CommesseCollegate(IdOrdFornDett);
             Dettaglio.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

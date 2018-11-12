@@ -35,12 +35,17 @@ namespace Target2021.Fornitori
         private void Selezionata(object sender, DataGridViewCellEventArgs e)
         {
             int NrOrd;
-            NrOrd = Convert.ToInt32(ordFornTestDataGridView.Rows[e.RowIndex].Cells[2].Value);
+            NrOrd = Convert.ToInt32(ordFornTestDataGridView.Rows[e.RowIndex].Cells[11].Value);
             DettConsultazione Dettaglio = new DettConsultazione(NrOrd);
             Dettaglio.Show();
         }
 
         private void ordFornTestDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

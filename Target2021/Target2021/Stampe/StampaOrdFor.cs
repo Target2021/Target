@@ -14,9 +14,15 @@ namespace Target2021.Stampe
     public partial class StampaOrdFor : Form
     {
         private string num, DtO, par3,par4,par5, par6;
-        private string ragsoc, ind, cap, loc, prov;
 
-        public StampaOrdFor(string Nr, string dt, string p3, string p4, string p5, string CodFor)
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private string ragsoc, ind, cap, loc, prov, IdT;
+
+        public StampaOrdFor(string Nr, string dt, string p3, string p4, string p5, string CodFor, string p7)
         {
             InitializeComponent();
             num = Nr;
@@ -25,6 +31,7 @@ namespace Target2021.Stampe
             par4 = p4;  // mod pagam
             par5 = p5;  // term pagam
             par6 = CodFor; // Codice Fornitore
+            IdT = p7;
         }
 
         private void StampaOrdFor_Load(object sender, EventArgs e)
@@ -58,7 +65,8 @@ namespace Target2021.Stampe
             ReportParameter p8 = new ReportParameter("PCap", cap);
             ReportParameter p9 = new ReportParameter("PLoc", loc);
             ReportParameter p10 = new ReportParameter("PProv", prov);
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1,p2,p3,p4,p5,p6,p7,p8,p9,p10 });
+            ReportParameter p11 = new ReportParameter("Param6", IdT);
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11 });
             this.reportViewer1.RefreshReport();
         }
     }
