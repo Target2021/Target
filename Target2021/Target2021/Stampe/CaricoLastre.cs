@@ -38,6 +38,7 @@ namespace Target2021.Stampe
             data = dateTimePicker1.Value;
             data = data.Date;
             movimentiMagazzinoBindingSource.Filter = "DataOraMovimento = '" + data + "'";
+            movimentiMagazzinoBindingSource.Filter = string.Format("DataOraMovimento >= '{0:yyyy-MM-dd}' AND DataOraMovimento < '{1:yyyy-MM-dd}'", data, data.AddDays(1));
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -47,11 +48,20 @@ namespace Target2021.Stampe
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int nrmov;
+            int nrmov, qta, nrordine;
+            double p;
+            string CodLas;
+            DateTime data;
             try
             {
                 nrmov = Convert.ToInt32(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[0].Value);
-                WFCaricoLastra cl = new WFCaricoLastra(nrmov);
+                CodLas = movimentiMagazzinoDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                p = Convert.ToDouble(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[12].Value);
+                qta = Convert.ToInt32(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[8].Value);
+                data =Convert.ToDateTime( movimentiMagazzinoDataGridView.SelectedRows[0].Cells[11].Value);
+                nrordine = Convert.ToInt32(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[10].Value);
+
+                WFCaricoLastra cl = new WFCaricoLastra(nrmov, CodLas, p, qta, data, nrordine);
                 cl.Show();
             }
             catch { }

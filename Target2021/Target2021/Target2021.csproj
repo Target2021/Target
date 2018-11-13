@@ -314,6 +314,12 @@
     <Compile Include="Fornitori\ArrivoMerce.Designer.cs">
       <DependentUpon>ArrivoMerce.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornitori\ChiudiDettaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornitori\ChiudiDettaglio.Designer.cs">
+      <DependentUpon>ChiudiDettaglio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornitori\CommesseCollegate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -675,6 +681,9 @@
     <EmbeddedResource Include="Fornitori\ArrivoMerce.resx">
       <DependentUpon>ArrivoMerce.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fornitori\ChiudiDettaglio.resx">
+      <DependentUpon>ChiudiDettaglio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fornitori\CommesseCollegate.resx">
       <DependentUpon>CommesseCollegate.cs</DependentUpon>
     </EmbeddedResource>
@@ -727,8 +736,8 @@
     <EmbeddedResource Include="Anagrafiche\RigaCompleta.resx">
       <DependentUpon>RigaCompleta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\CaricoLastre.rdlc" />
     <EmbeddedResource Include="Report\OrdForn.rdlc" />
+    <EmbeddedResource Include="Report\RCaricoLastre.rdlc" />
     <EmbeddedResource Include="Report\RCommessa.rdlc" />
     <EmbeddedResource Include="Report\REtichetta.rdlc" />
     <EmbeddedResource Include="Report\WFCaricoLastra.resx">
