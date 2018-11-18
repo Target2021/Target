@@ -84,7 +84,7 @@ namespace Target2021.Fornitori
         private int AggiornaOrdineFornitoreDettaglio()
         {
             int ris;
-            ChiudiDettaglio CD = new ChiudiDettaglio(IdDettaglio);
+            ChiudiDettaglio CD = new ChiudiDettaglio(IdDettaglio,5);  // 5 = chiusura
             CD.ShowDialog();
             ris = CD.risultato;
             PesoTot = CD.Peso;
@@ -124,6 +124,11 @@ namespace Target2021.Fornitori
             }
         }
 
+        private void ordFornDettDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void EliminaRigaImpegnateOrdinato()
         {
             //      d) ImpegnateOrdinato -> Io non lo toccherei (o si?) -> si
@@ -133,6 +138,13 @@ namespace Target2021.Fornitori
         {
             int ordinate, arrivate, impegnate;
             int gc, gd, gi, go, gso;
+
+            this.ordFornDettTableAdapter.Fill(this.target2021DataSet.OrdFornDett);
+            ordFornDettBindingSource.Filter = "Stato=2 AND idOFTestata = " + NrOrdine.ToString();
+            ordFornDettDataGridView.DataSource = ordFornDettBindingSource;
+            //ordFornDettTableAdapter.Fill(target2021DataSet.OrdFornDett);
+            ordFornDettDataGridView.Update();
+            ordFornDettDataGridView.Refresh();
 
             ordinate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[3].Value);
             arrivate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[8].Value);

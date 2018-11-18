@@ -90,6 +90,7 @@ namespace Target2021.Fase1
             int evento = e.ColumnIndex;  // 8 su magazzino - 9 su ordinato
             int IdCommessa, NumCommessa;
             int nlastre = 0, nlastreord = 0, nrichieste;
+            if (e.RowIndex == -1) return;
             disponibili = disponibili + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             impegnate = impegnate - Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             disponibili_o = disponibili_o + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);

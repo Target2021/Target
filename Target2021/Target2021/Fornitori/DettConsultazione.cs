@@ -13,11 +13,12 @@ namespace Target2021.Fornitori
 {
     public partial class DettConsultazione : Form
     {
-        private int Num;
-        public DettConsultazione(int no)
+        private int Num, Origine;
+        public DettConsultazione(int no, int o)
         {
             InitializeComponent();
             Num = no;
+            Origine = o;
         }
 
         private void DettConsultazione_Load(object sender, EventArgs e)
@@ -82,14 +83,6 @@ namespace Target2021.Fornitori
             ordFornDettDataGridView.Enabled = true;
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            // Cosa visualizzo? l'elenco delle commesse per le quali era
-            // stato impegnato su ordinato il materiale in ques'ordine
-            // a fornitore?
-            MessageBox.Show("Click sulla singola riga per vedere l'elenco delle commesse che hanno impegnato del matriale su quest'ordine");
-        }
-
         private void ordFornDettDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -100,8 +93,10 @@ namespace Target2021.Fornitori
             int IdOrdFornDett;
             IdOrdFornDett = Convert.ToInt32(ordFornDettDataGridView.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn12"].Value);
             //MessageBox.Show(IdOrdFornDett.ToString());
-            CommesseCollegate Dettaglio = new CommesseCollegate(IdOrdFornDett);
-            Dettaglio.Show();
+            //CommesseCollegate Dettaglio = new CommesseCollegate(IdOrdFornDett);
+            //Dettaglio.Show();
+            ChiudiDettaglio ch = new ChiudiDettaglio(IdOrdFornDett, 2); // Origine
+            ch.Show();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

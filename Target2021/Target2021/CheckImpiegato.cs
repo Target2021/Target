@@ -60,6 +60,7 @@ namespace Target2021
             BindingSource source = new BindingSource();
             source.DataSource = dataTable;
             dataGridView1.DataSource = source;
+            dataGridView1.Columns["Descrizione fornitore"].Visible = false;
             SDA.Update(dataTable);
             connessione.Close();
         }
@@ -133,6 +134,7 @@ namespace Target2021
             dataTable.Columns.Remove("Descrizione materia prima");
             dataTable.Columns.Remove("Codice fornitore");
             dataTable.Columns.Remove("Descrizione fornitore");
+            dataTable.Columns.Remove("Lastre assegnate");
             dataTable.Clear();
             richTextBox1.Text = "";
             inserimento_iniziale();

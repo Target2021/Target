@@ -16,18 +16,33 @@ namespace Target2021.Fornitori
         public int risultato { get; set; }
         public double Peso { get; set; }
         public double Prezzo { get; set; }
+        private int Origine;
 
-        public ChiudiDettaglio(int IdDett)
+        public ChiudiDettaglio(int IdDett, int o)
         {
             InitializeComponent();
             ID = IdDett;
+            Origine = o;
         }
 
         private void ChiudiDettaglio_Load(object sender, EventArgs e)
         {
             this.ordFornDettTableAdapter.Fill(this.target2021DataSet.OrdFornDett);
             ordFornDettBindingSource.Filter = "idOFDett = "+ID.ToString();
-            imposta();
+            if (Origine==5)   // CHiudere riga
+            {
+                imposta();
+            }
+            if (Origine==2)   // Conferma d'ordine
+            {
+                button1.Visible = false;
+                qtaEffettivaTextBox.Enabled = false;
+                pesoTotaleTextBox.Enabled = false;
+                dataConsegnaConfermataDateTimePicker.Enabled = true;
+                dataConsegnaEffettivaDateTimePicker.Enabled = false;
+                button2.Visible = true;
+                button2.Enabled = true;
+            }
         }
 
         private void imposta()
@@ -47,17 +62,19 @@ namespace Target2021.Fornitori
 
         private void AggiornaPrezzoLastra(object sender, EventArgs e)
         {
-            double PrezzoKg, Qta, PesoTot;
+            double PrezzoKg, Qta, PesoTot, Qt;
             double PrezzoTot, PrezzoLastra;
             try
             {
                 PrezzoKg = Convert.ToDouble(prezzoKgTextBox.Text);
                 Qta = Convert.ToDouble(qtaEffettivaTextBox.Text);
+                Qt = Convert.ToDouble(quantitaRichTextBox.Text);
                 PesoTot = Convert.ToDouble(pesoTotaleTextBox.Text);
                 Peso = PesoTot;
                 PrezzoTot = PrezzoKg * PesoTot;
                 Prezzo = PrezzoTot;
-                PrezzoLastra = PrezzoTot / Qta;
+                if (Origine == 5) PrezzoLastra = PrezzoTot / Qta;
+                else PrezzoLastra = PrezzoTot / Qt;
                 prezzoALastraTextBox.Text = PrezzoLastra.ToString();
                 risultato = 2; // tutto ok
             }
@@ -74,6 +91,25 @@ namespace Target2021.Fornitori
             this.ordFornDettBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
             MessageBox.Show("Riga salvata e chiusa correttamente!");
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(IdOrdFornDett.ToString());
+            int num;
+            num = Convert.ToInt32(idOFDettTextBox.Text);
+            CommesseCollegate Dettaglio = new CommesseCollegate(num);
+            Dettaglio.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            risultato = 1;
+            this.Validate();
+            this.ordFornDettBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            MessageBox.Show("Riga aggiornata correttamente!");
             this.Close();
         }
     }

@@ -36,5 +36,10 @@ namespace Target2021.Anagrafiche
         {
             try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
         }
+
+        private void filtra(object sender, EventArgs e)
+        {
+            giacenzeMagazziniBindingSource.Filter = "idPrime LIKE '*" + textBox1.Text + "*'";
+        }
     }
 }

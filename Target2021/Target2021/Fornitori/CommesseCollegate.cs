@@ -13,19 +13,19 @@ namespace Target2021.Fornitori
 {
     public partial class CommesseCollegate : Form
     {
-        private int IdOrdFornDett;
+        private int IdOrdForn;
 
-        public CommesseCollegate(int IdOFD)
+        public CommesseCollegate(int IdOF)
         {
             InitializeComponent();
-            IdOrdFornDett = IdOFD;
+            IdOrdForn = IdOF;
         }
 
         private void CommesseCollegate_Load(object sender, EventArgs e)
         {
             string stringa_connessione = Properties.Resources.StringaConnessione;
             //string query = "SELECT * FROM Commesse WHERE iDCOmmessa=(SELECT IdCommessa FROM ImpegnateOrdinato WHERE IdOrdFornDett="+ IdOrdFornDett.ToString() + " AND QtaImpegnata>0)";
-            string query = "SELECT CodCommessa,DataCommessa, IDCliente, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDMateriaPrima, NrLastreRichieste, ImpegnateOrdinato.QtaImpegnata FROM Commesse INNER JOIN ImpegnateOrdinato ON Commesse.IDCommessa = ImpegnateOrdinato.IdCommessa WHERE Commesse.IDCOmmessa = ImpegnateOrdinato.IdCommessa AND QtaImpegnata> 0 AND ImpegnateOrdinato.IdOrdFornDett=" + IdOrdFornDett.ToString() + "";
+            string query = "SELECT CodCommessa,DataCommessa, IDCliente, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDMateriaPrima, NrLastreRichieste, ImpegnateOrdinato.QtaImpegnata FROM Commesse INNER JOIN ImpegnateOrdinato ON Commesse.IDCommessa = ImpegnateOrdinato.IdCommessa WHERE Commesse.IDCOmmessa = ImpegnateOrdinato.IdCommessa AND QtaImpegnata> 0 AND ImpegnateOrdinato.IdOrdFornDett=" + IdOrdForn.ToString() + "";
             SqlConnection connessione = new SqlConnection(stringa_connessione);
             SqlCommand comando = new SqlCommand(query, connessione);
             connessione.Open();

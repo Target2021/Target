@@ -30,32 +30,12 @@ namespace Target2021
 
         private void carica()
         {
-            String stringa = Properties.Resources.StringaConnessione;
-            string idcommessa;
-            DataTable dataTable = new DataTable();
-            string query = "SELECT CodCommessa,DataCommessa,IDCliente,DataConsegna,NrPezziDaLavorare,DescrArticolo,IDMateriaPrima, NrLastreRichieste FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1) AND CodCommessa LIKE 'S%'";
-            SqlConnection con = new SqlConnection(stringa);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter();
-            sda.SelectCommand = cmd;
-            sda.Fill(dataTable);
-            BindingSource source = new BindingSource();
-            source.DataSource = dataTable;
-            dataGridView1.DataSource = source;
-            sda.Update(dataTable);
-            dataTable.Columns.Add("Scadenza", typeof(Image));
-            con.Close();
+
         }
 
         private void SelezionaRiga(object sender, DataGridViewCellEventArgs e)
         {
-            int riga;
-            String CodCom;
-            riga = e.RowIndex;
-            CodCom = dataGridView1.Rows[riga].Cells[0].Value.ToString();
-            Pianificazione pianificazione = new Pianificazione(CodCom);
-            pianificazione.Show();
+
         }
 
         private void label1_Click(object sender, EventArgs e)

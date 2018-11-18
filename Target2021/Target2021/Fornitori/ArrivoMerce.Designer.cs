@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.ordFornTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -362,6 +360,7 @@
             this.ordFornDettDataGridView.Size = new System.Drawing.Size(1069, 215);
             this.ordFornDettDataGridView.TabIndex = 3;
             this.ordFornDettDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelezionataRigaOrdine);
+            this.ordFornDettDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordFornDettDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -494,14 +493,6 @@
             // giacenzeMagazziniDataGridView
             // 
             this.giacenzeMagazziniDataGridView.AutoGenerateColumns = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.giacenzeMagazziniDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.giacenzeMagazziniDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.giacenzeMagazziniDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn26,
@@ -521,14 +512,6 @@
             this.dataGridViewTextBoxColumn40,
             this.dataGridViewTextBoxColumn41});
             this.giacenzeMagazziniDataGridView.DataSource = this.giacenzeMagazziniBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.giacenzeMagazziniDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.giacenzeMagazziniDataGridView.Location = new System.Drawing.Point(877, 482);
             this.giacenzeMagazziniDataGridView.Name = "giacenzeMagazziniDataGridView";
             this.giacenzeMagazziniDataGridView.Size = new System.Drawing.Size(181, 109);

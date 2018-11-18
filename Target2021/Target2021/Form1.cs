@@ -388,6 +388,12 @@ namespace Target2021
             AM.Show();
         }
 
+        private void confermaDordineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfermaOrdine CO = new ConfermaOrdine();
+            CO.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
