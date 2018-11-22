@@ -394,6 +394,13 @@ namespace Target2021
             CO.Show();
         }
 
+        private void creaSuperCommessaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckPianificazione pianificazione = new CheckPianificazione();
+            pianificazione.MdiParent = this;
+            pianificazione.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

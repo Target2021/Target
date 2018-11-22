@@ -57,6 +57,7 @@
             this.nuovoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arrivoMerceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.superCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anagraficheMagazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +89,8 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.creaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pianificazioneTemporaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -274,6 +277,7 @@
             this.commesseToolStripMenuItem1,
             this.controllaNuoviOrdiniToolStripMenuItem,
             this.ordiniAFornitoreToolStripMenuItem,
+            this.superCommesseToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.ordiniToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordiniToolStripMenuItem.Name = "ordiniToolStripMenuItem";
@@ -326,6 +330,12 @@
             this.arrivoMerceToolStripMenuItem.Size = new System.Drawing.Size(269, 30);
             this.arrivoMerceToolStripMenuItem.Text = "Arrivo merce";
             this.arrivoMerceToolStripMenuItem.Click += new System.EventHandler(this.arrivoMerceToolStripMenuItem_Click);
+            // 
+            // superCommesseToolStripMenuItem
+            // 
+            this.superCommesseToolStripMenuItem.Name = "superCommesseToolStripMenuItem";
+            this.superCommesseToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
+            this.superCommesseToolStripMenuItem.Text = "SuperCommesse";
             // 
             // helpToolStripMenuItem
             // 
@@ -430,6 +440,9 @@
             // 
             // pianificazioneToolStripMenuItem
             // 
+            this.pianificazioneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaSuperCommessaToolStripMenuItem,
+            this.pianificazioneTemporaleToolStripMenuItem});
             this.pianificazioneToolStripMenuItem.Name = "pianificazioneToolStripMenuItem";
             this.pianificazioneToolStripMenuItem.Size = new System.Drawing.Size(311, 30);
             this.pianificazioneToolStripMenuItem.Text = "Pianificazione";
@@ -561,6 +574,7 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
+            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = this.anaMagazziniTableAdapter;
             this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
@@ -595,12 +609,26 @@
             this.tableAdapterManager.PrimeTableAdapter = null;
             this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
+            // 
+            // creaSuperCommessaToolStripMenuItem
+            // 
+            this.creaSuperCommessaToolStripMenuItem.Name = "creaSuperCommessaToolStripMenuItem";
+            this.creaSuperCommessaToolStripMenuItem.Size = new System.Drawing.Size(322, 30);
+            this.creaSuperCommessaToolStripMenuItem.Text = "Crea SuperCommessa";
+            this.creaSuperCommessaToolStripMenuItem.Click += new System.EventHandler(this.creaSuperCommessaToolStripMenuItem_Click);
+            // 
+            // pianificazioneTemporaleToolStripMenuItem
+            // 
+            this.pianificazioneTemporaleToolStripMenuItem.Name = "pianificazioneTemporaleToolStripMenuItem";
+            this.pianificazioneTemporaleToolStripMenuItem.Size = new System.Drawing.Size(322, 30);
+            this.pianificazioneTemporaleToolStripMenuItem.Text = "Pianificazione temporale";
             // 
             // Form1
             // 
@@ -683,6 +711,9 @@
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stampaSchedaCommessaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arrivoMerceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem superCommesseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creaSuperCommessaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pianificazioneTemporaleToolStripMenuItem;
     }
 }
 

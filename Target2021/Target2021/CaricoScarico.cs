@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -135,6 +136,7 @@ namespace Target2021
                     if (IdMagazzino == 4) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", CodArt, "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
                     if (IdMagazzino == 5) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", "", CodArt, CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
                     movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
+                    AggiornaGiacenze(qta, CodArt, CS);
                     MessageBox.Show("Movimento registrato correttamente!");
                 }
                 catch (Exception ex)
@@ -143,6 +145,49 @@ namespace Target2021
                 }
             }
         }
+
+        private void AggiornaGiacenze(int q, string Cod, string cs)
+        {
+            int numero, disponibili;
+            string query2, query3;
+            DateTime ora;
+            SqlCommand comando2, comando3;
+            SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
+            conn.Open();
+            string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+            SqlCommand comando1 = new SqlCommand(query1, conn);
+            try
+            {
+                numero = (int) comando1.ExecuteScalar();
+                if (numero>0)   // articolo già presente nelle giacenze
+                {
+                    query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+                    comando2 = new SqlCommand(query2, conn);
+                    disponibili = (int)comando2.ExecuteScalar();
+                    numero = numero + q;
+                    disponibili = disponibili + q;
+                    // update
+                    ora = DateTime.Now;
+                    query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = "+numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '"+ora.ToString()+"' WHERE idPrime='" + Cod + "'";
+                    comando2 = new SqlCommand(query2, conn);
+                    comando2.ExecuteNonQuery();
+                    MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
+                }
+            }
+            catch
+            {
+                numero = q;
+                disponibili = q;
+                // insert
+                ora = DateTime.Now;
+                query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idPrime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";   
+                comando2 = new SqlCommand(query2, conn);
+                comando2.ExecuteNonQuery();
+                MessageBox.Show("Materia prima non presente in magazzino. Creata.");
+                MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
+            }
+            conn.Close();
+        }        
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {

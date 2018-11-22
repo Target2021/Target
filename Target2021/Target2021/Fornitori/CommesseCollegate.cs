@@ -35,5 +35,10 @@ namespace Target2021.Fornitori
             dataGridView1.DataSource = table;
             connessione.Close();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

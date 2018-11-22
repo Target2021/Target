@@ -76,6 +76,7 @@ namespace Target2021.Fornitori
                     AggiornaMagazzini(e.RowIndex);
                     AggiornaMovimenti(e.RowIndex);
                     EliminaRigaImpegnateOrdinato();
+                    AggiornaCommesseCollegate();
                 }
             }
             catch { }
@@ -189,6 +190,49 @@ namespace Target2021.Fornitori
             comando.ExecuteNonQuery();
             connessione.Close();
             textBox1.Text = textBox1.Text + "Movimento di magazzino inserito correttamente!\r\n";
+        }
+
+        private void AggiornaCommesseCollegate()
+        {
+            SqlConnection connessione = new SqlConnection(Properties.Resources.StringaConnessione);
+            SqlConnection connessione1 = new SqlConnection(Properties.Resources.StringaConnessione);
+            SqlDataReader dati;
+            int IdCommessa, NrLastreNecessarie, NrLastreOrdinate, NrLastreAssegnate, Stato, ImpegnoTotale;
+            bool Parziale;
+            connessione.Open();
+            string query = "SELECT Commesse.IDCommessa,CodCommessa,TipoCommessa,NrLastreRichieste,NrPezziOrdinati,QtaImpegnata,Stato,ImpegnataMatPrima,EvasoParziale FROM Commesse INNER JOIN ImpegnateOrdinato ON Commesse.IDCommessa = ImpegnateOrdinato.IdCommessa WHERE TipoCommessa = 1 AND IdOrdFornDett = " + IdDettaglio.ToString();
+            SqlCommand comando = new SqlCommand(query, connessione);
+            dati = comando.ExecuteReader();
+            while (dati.Read())
+                {
+                IdCommessa = Convert.ToInt32(dati.GetValue(0));
+                NrLastreNecessarie = Convert.ToInt32(dati.GetValue(3));
+                NrLastreOrdinate = Convert.ToInt32(dati.GetValue(4));
+                NrLastreAssegnate = Convert.ToInt32(dati.GetValue(5));
+                Stato = Convert.ToInt32(dati.GetValue(6));
+                ImpegnoTotale = Convert.ToInt32(dati.GetValue(7));
+                Parziale = Convert.ToBoolean(dati.GetValue(8));
+
+                ImpegnoTotale = ImpegnoTotale + NrLastreAssegnate;
+                if (ImpegnoTotale >= NrLastreNecessarie)
+                    {
+                        Stato = 2;
+                        Parziale = false;
+                    }
+                connessione1.Open();
+                string query2 = "UPDATE Commesse SET ImpegnataMatPrima = " + ImpegnoTotale.ToString() + " , Stato = " + Stato.ToString() + " , EvasoParziale = '" + Parziale.ToString() + "' WHERE IDCommessa = " + IdCommessa.ToString();
+                SqlCommand comando2 = new SqlCommand(query2, connessione1);
+                try
+                    {
+                        comando2.ExecuteNonQuery();
+                    }
+                catch (Exception e)
+                    { }
+                textBox1.Text = textBox1.Text + "Aggiornata commessa nr. " + IdCommessa.ToString() + " !\r\n";
+                connessione1.Close();
+                }
+            dati.Close();
+            connessione.Close();         
         }
     }
 }
