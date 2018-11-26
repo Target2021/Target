@@ -30,8 +30,38 @@ namespace Target2021.Fase1
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
             this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
+            string selezione = "idPrime = '" + CodiceLastra + "'";
+            try
+            {
+            riga = target2021DataSet.Tables["GiacenzeMagazzini"].Select(selezione);
             testata();
             dettaglio();
+            }
+            catch
+            {
+                inserisci(CodiceLastra);
+                this.Close();
+            }
+        }
+
+        private void inserisci(string cl)
+        {
+            // Create a new row.
+            Target2021DataSet.GiacenzeMagazziniRow NuovaRiga;
+            NuovaRiga = target2021DataSet.GiacenzeMagazzini.NewGiacenzeMagazziniRow();
+            NuovaRiga.idMagazzino = 1;
+            NuovaRiga.idPrime = cl;
+            NuovaRiga.GiacenzaComplessiva = 0;
+            NuovaRiga.GiacenzaDisponibili = 0;
+            NuovaRiga.GiacenzaImpegnati = 0;
+            NuovaRiga.PosizioneA = 0;
+            NuovaRiga.PosizioneB = "0";
+            NuovaRiga.PosizioneC = "0";
+            NuovaRiga.GiacenzaOrdinati = 0;
+            NuovaRiga.GiacImpegnSuOrd = 0;
+
+            target2021DataSet.GiacenzeMagazzini.Rows.Add(NuovaRiga);
+            giacenzeMagazziniTableAdapter.Update(target2021DataSet.GiacenzeMagazzini);
         }
 
         private void testata()

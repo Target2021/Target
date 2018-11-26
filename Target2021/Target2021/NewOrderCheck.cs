@@ -13,7 +13,7 @@ namespace Target2021
 {
     public partial class NewOrderCheck : Form
     {
-        private int NumOrd, NumTest;
+        private int NumOrd, NumTest, percentuale;
 
         public NewOrderCheck()
         {
@@ -22,6 +22,8 @@ namespace Target2021
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
 
@@ -100,7 +102,7 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi, NrLastreRichieste;
+            int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi, NrLastreRichieste, MachStamp;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
             string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo, IdFornitore, IDMatPrima,PT1,PT2;
             SqlDataReader fasi;
@@ -171,11 +173,22 @@ namespace Target2021
                     com.ProgrTaglio1 = PT1;
                     PT2 = RecuperaProgTaglio(CodiceArticolo, i, 2);
                     com.ProgrTaglio2 = PT2;
+                    com.PercentualeUtilizzoLastra = percentuale;
+                    MachStamp = RecuperaMacchinaStampa(CodiceArticolo);
+                    com.Mps = MachStamp; 
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
             } while (IDOrdine + 1 < IDOrdine+1);  //UltimoID
             commesseDataGridView.Update();
+        }
+
+        private int RecuperaMacchinaStampa(string ca)
+        {
+            int risultato;
+            string filtro = "codice_articolo = '" + ca + "'";
+            risultato=(int) target2021DataSet.DettArticoli.Compute("MAX(MacPredefStampo)", filtro);
+            return risultato; ;
         }
 
         private string CodiceArt(int numord)
@@ -360,7 +373,7 @@ namespace Target2021
             string query = "Select PercentualeLastra From DettArticoli Where codice_articolo='" + codart + "' AND lavorazione=1";
             SqlCommand comando = new SqlCommand(query, conn);
             conn.Open();
-            int percentuale = Convert.ToInt32(comando.ExecuteScalar());
+            percentuale = Convert.ToInt32(comando.ExecuteScalar());
             try
             {
                 double n = 100 / percentuale;
@@ -400,7 +413,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -421,6 +434,8 @@ namespace Target2021
             comando.Parameters.AddWithValue("@imatpri", 0);
             comando.Parameters.AddWithValue("@prt1", com.ProgrTaglio1);
             comando.Parameters.AddWithValue("@prt2", com.ProgrTaglio2);
+            comando.Parameters.AddWithValue("@percent", com.PercentualeUtilizzoLastra);
+            comando.Parameters.AddWithValue("@mps", com.Mps);
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();

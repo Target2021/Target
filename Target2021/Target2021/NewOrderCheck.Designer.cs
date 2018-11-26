@@ -90,22 +90,24 @@
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).BeginInit();
             this.commesseBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 50);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(10, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 25);
+            this.label1.Size = new System.Drawing.Size(190, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ultimo ordine presente:";
             // 
@@ -113,10 +115,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 83);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(10, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(236, 25);
+            this.label2.Size = new System.Drawing.Size(199, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Ultimo ordine in testata:";
             // 
@@ -124,10 +125,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 116);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(10, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(255, 25);
+            this.label3.Size = new System.Drawing.Size(215, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ultimo ordine in dettaglio:";
             // 
@@ -135,10 +135,9 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(293, 44);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(220, 36);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 30);
+            this.textBox1.Size = new System.Drawing.Size(178, 26);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -146,10 +145,9 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(293, 78);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(220, 63);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(236, 30);
+            this.textBox2.Size = new System.Drawing.Size(178, 26);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -157,20 +155,18 @@
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(293, 111);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Location = new System.Drawing.Point(220, 90);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(236, 30);
+            this.textBox3.Size = new System.Drawing.Size(178, 26);
             this.textBox3.TabIndex = 5;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(539, 44);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(404, 36);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 97);
+            this.button1.Size = new System.Drawing.Size(87, 79);
             this.button1.TabIndex = 6;
             this.button1.Text = "Check";
             this.button1.UseVisualStyleBackColor = true;
@@ -180,10 +176,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(782, 44);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(586, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 30);
+            this.label4.Size = new System.Drawing.Size(63, 24);
             this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             this.label4.Visible = false;
@@ -192,10 +187,9 @@
             // 
             this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(732, 98);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(549, 80);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(317, 55);
+            this.button2.Size = new System.Drawing.Size(238, 45);
             this.button2.TabIndex = 8;
             this.button2.Text = "Genera commesse";
             this.button2.UseVisualStyleBackColor = true;
@@ -206,12 +200,11 @@
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(45, 201);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Location = new System.Drawing.Point(34, 163);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(505, 272);
+            this.textBox4.Size = new System.Drawing.Size(388, 246);
             this.textBox4.TabIndex = 9;
             // 
             // dataGridView1
@@ -221,10 +214,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(579, 201);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(434, 163);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(567, 198);
+            this.dataGridView1.Size = new System.Drawing.Size(433, 185);
             this.dataGridView1.TabIndex = 10;
             // 
             // target2021DataSet
@@ -244,30 +236,45 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
+            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
             this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -294,14 +301,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.commesseBindingNavigatorSaveItem});
-            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 698);
+            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 586);
             this.commesseBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.commesseBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.commesseBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.commesseBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.commesseBindingNavigator.Name = "commesseBindingNavigator";
             this.commesseBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.commesseBindingNavigator.Size = new System.Drawing.Size(1172, 27);
+            this.commesseBindingNavigator.Size = new System.Drawing.Size(887, 27);
             this.commesseBindingNavigator.TabIndex = 11;
             this.commesseBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -317,7 +324,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -358,7 +365,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -440,10 +447,9 @@
             this.dataGridViewTextBoxColumn32,
             this.dataGridViewTextBoxColumn33});
             this.commesseDataGridView.DataSource = this.commesseBindingSource;
-            this.commesseDataGridView.Location = new System.Drawing.Point(16, 481);
-            this.commesseDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.commesseDataGridView.Location = new System.Drawing.Point(12, 391);
             this.commesseDataGridView.Name = "commesseDataGridView";
-            this.commesseDataGridView.Size = new System.Drawing.Size(1140, 198);
+            this.commesseDataGridView.Size = new System.Drawing.Size(863, 185);
             this.commesseDataGridView.TabIndex = 12;
             // 
             // dataGridViewTextBoxColumn1
@@ -633,12 +639,21 @@
             this.dataGridViewTextBoxColumn33.HeaderText = "MinutiAttrezzaggio";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             // 
+            // dettArticoliBindingSource
+            // 
+            this.dettArticoliBindingSource.DataMember = "DettArticoli";
+            this.dettArticoliBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // dettArticoliTableAdapter
+            // 
+            this.dettArticoliTableAdapter.ClearBeforeFill = true;
+            // 
             // NewOrderCheck
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1172, 725);
+            this.ClientSize = new System.Drawing.Size(887, 613);
             this.Controls.Add(this.commesseDataGridView);
             this.Controls.Add(this.commesseBindingNavigator);
             this.Controls.Add(this.dataGridView1);
@@ -652,7 +667,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NewOrderCheck";
             this.Text = "NewOrderCheck";
             this.Load += new System.EventHandler(this.NewOrderCheck_Load);
@@ -663,6 +677,7 @@
             this.commesseBindingNavigator.ResumeLayout(false);
             this.commesseBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -732,5 +747,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.BindingSource dettArticoliBindingSource;
+        private Target2021DataSetTableAdapters.DettArticoliTableAdapter dettArticoliTableAdapter;
     }
 }

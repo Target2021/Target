@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Target2021.Anagrafiche;
 using Target2021.Stampe;
 using Target2021.Fornitori;
+using Target2021.Fase2;
 
 namespace Target2021
 {
@@ -221,9 +222,9 @@ namespace Target2021
 
         private void pianificazioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CheckPianificazione pianificazione = new CheckPianificazione();
-            pianificazione.MdiParent = this;
-            pianificazione.Show();
+            //CheckPianificazione pianificazione = new CheckPianificazione();
+            //pianificazione.MdiParent = this;
+            //pianificazione.Show();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -399,6 +400,13 @@ namespace Target2021
             CheckPianificazione pianificazione = new CheckPianificazione();
             pianificazione.MdiParent = this;
             pianificazione.Show();
+        }
+
+        private void pianificazioneTemporaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PianificaStampo PS = new PianificaStampo();
+            PS.MdiParent = this;
+            PS.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

@@ -16,135 +16,20 @@ namespace Target2021
 {
     public partial class CheckStampaggio : Form
     {
-        private String stringa = Properties.Resources.StringaConnessione;
-        private bool caricato = false,scadenza=false;
-        private string idcommessa;
-        DataTable dataTable = new DataTable();
-        BindingSource source = new BindingSource();
-        SqlCommand cmd = new SqlCommand();
         public CheckStampaggio()
         {
             InitializeComponent();
-            loading();
-            caricato = true;
-        }
-        private volatile bool threadRun;
-        private void loading()
-        {
-            threadRun = true;
-            Task.Factory.StartNew(() =>
-            {
-                while (threadRun)
-                {
-                    Thread.Sleep(500);                 
-                }
-            });
-            Thread update = new Thread(LoadStampaggio);
-            update.Start();
-        }
-        private void LoadStampaggio()
-        {
-            string query = "SELECT IDCommessa, CodCommessa,DataCommessa,IDCliente,DataConsegna,NrPezziDaLavorare,DescrArticolo,IDStampo,IDMateriaPrima FROM Commesse WHERE TipoCommessa=2 AND (Stato=0 OR Stato=1 OR Stato=2) AND CodCommessa LIKE 'S%'";
-            SqlConnection con = new SqlConnection(stringa);
-            cmd = new SqlCommand(query, con);
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter();
-            sda.SelectCommand = cmd;
-            sda.Fill(dataTable);
-            if (!scadenza) { dataTable.Columns.Add("Scadenza", typeof(Image)); scadenza = true; }
-            source.DataSource = dataTable;
-            dataGridView1.Invoke(new Action(() => dataGridView1.DataSource=source));
-            threadRun = false;
-            sda.Update(dataTable);
-            con.Close();
-            CheckConsegna();
-        }
-        private void CheckConsegna()
-        {          
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                DateTime dataconsegna = Convert.ToDateTime(dataGridView1.Rows[row.Index].Cells["DataConsegna"].Value);
-                DateTime giorni = DateTime.Now;
-                int totalDays = Convert.ToInt32((giorni.Date - dataconsegna.Date).TotalDays);
-                if (totalDays>1)
-                {dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.arrabiato;}
-                if (totalDays<=-1&&totalDays>-5)
-                {dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.preoccupato;}
-                if (totalDays<-5)
-                {dataTable.Rows[row.Index]["Scadenza"] = Properties.Resources.felice;}
-            }          
-        }
-        private void CheckGiacenzaTotale()
-        {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                try
-                {
-                    int quantita =(int) row.Cells["NrPezziDaLavorare"].Value;
-                    string IDMateriaPrima;
-                    IDMateriaPrima = row.Cells["IDMateriaPrima"].Value.ToString();
-                    string query = $"SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime= '{IDMateriaPrima}'";
-                    SqlConnection con = new SqlConnection(stringa);
-                    cmd = new SqlCommand(query, con);
-                    con.Open();
-                    int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
-                    con.Close();
-                    int diff = Giacenza - quantita;
-                    if (diff < 0){ row.DefaultCellStyle.BackColor = Color.Red;}
-                    if (Enumerable.Range(0, 10).Contains(diff)){ row.DefaultCellStyle.BackColor = Color.Yellow;}
-                    if (diff > 10){row.DefaultCellStyle.BackColor = Color.Green;}
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-        private void CheckGiacenzaRow(int index)
-        {
-            try
-            {
-                idcommessa = Convert.ToString(dataGridView1.Rows[index].Cells["IDCommessa"].Value);
-                idcommessa.Replace("  ", string.Empty);
-                int quantita = Convert.ToInt32(dataGridView1.Rows[index].Cells["NrPezziDaLavorare"].Value);
-                string idprime =Convert.ToString(dataGridView1.Rows[index].Cells["IDMateriaPrima"].Value);
-                string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime='" + idprime + "'";
-                EsecuzioneQuery esecuzione = new EsecuzioneQuery(query);
-                int Giacenza = Convert.ToInt32(esecuzione.EseguiQuery(0));
-                int diff = Giacenza - quantita;
-                if (diff < 0)
-                { MessageBox.Show("Giacenza insufficiente, si prega di effettuare il riordino"); }
-                else
-                { LavoraStampaggio lavoraStampaggio = new LavoraStampaggio(idcommessa);lavoraStampaggio.Show();}
-            }
-            catch (Exception ex)
-            {MessageBox.Show(ex.Message);}
-        }
-        private void button2_Click(object sender, EventArgs e)
-        { LoadStampaggio(); }
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            CheckGiacenzaTotale();
-            dataGridView1.ClearSelection();
         }
 
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void LoadStampaggio()
         {
-            if (e.ColumnIndex == 5){ CheckConsegna(); }
-            if (caricato)
-            {
-                CheckGiacenzaTotale();
-                DateTime DataCommessa = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataCommessa"].Value);
-                DateTime DataConsegna = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells["DataConsegna"].Value);
-                string query = "UPDATE Commesse SET CodCommessa='" + dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value + "', DataCommessa='" + DataCommessa.ToShortDateString() + "',IDCliente='" + dataGridView1.Rows[e.RowIndex].Cells["IDCliente"].Value + "',DataConsegna='" + DataConsegna.ToShortDateString() + "',NrPezziDaLavorare='" + dataGridView1.Rows[e.RowIndex].Cells["NrPezziDaLavorare"].Value + "',DescrArticolo='" + dataGridView1.Rows[e.RowIndex].Cells["DescrArticolo"].Value + "',IDStampo ='" + dataGridView1.Rows[e.RowIndex].Cells["IDStampo"].Value + "',IDMateriaPrima ='" + dataGridView1.Rows[e.RowIndex].Cells["IDMateriaPrima"].Value + "' WHERE CodCommessa='" + dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value + "'";
-                SqlConnection con = new SqlConnection(stringa);
-                SqlCommand cmd = new SqlCommand(query, con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
+
         }
-        private void clikka(object sender, DataGridViewCellEventArgs e)
-        { CheckGiacenzaRow(e.RowIndex); }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LavoraStampaggio LS = new LavoraStampaggio("1");
+            LS.Show();
+        }
     }
 }

@@ -111,6 +111,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.macchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.abbinamentiSuperCommesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.abbinamentiSuperCommesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.AbbinamentiSuperCommesseTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
@@ -118,6 +122,7 @@
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superCommessaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abbinamentiSuperCommesseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -211,7 +216,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.commesseDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.commesseDataGridView.Location = new System.Drawing.Point(1, 47);
+            this.commesseDataGridView.Location = new System.Drawing.Point(1, 38);
             this.commesseDataGridView.MultiSelect = false;
             this.commesseDataGridView.Name = "commesseDataGridView";
             this.commesseDataGridView.ReadOnly = true;
@@ -223,8 +228,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.commesseDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.commesseDataGridView.RowHeadersVisible = false;
             this.commesseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.commesseDataGridView.Size = new System.Drawing.Size(1319, 294);
+            this.commesseDataGridView.Size = new System.Drawing.Size(1281, 294);
             this.commesseDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -705,9 +711,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(33, 347);
+            this.button1.Location = new System.Drawing.Point(1, 347);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1287, 35);
+            this.button1.Size = new System.Drawing.Size(1281, 35);
             this.button1.TabIndex = 3;
             this.button1.Text = "↓ Inserisci commesse selezionate nella SuperCommessa Stampaggio ↓";
             this.button1.UseVisualStyleBackColor = true;
@@ -741,7 +747,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1156, 203);
+            this.dataGridView1.Size = new System.Drawing.Size(1123, 170);
             this.dataGridView1.TabIndex = 4;
             // 
             // contextMenuStrip1
@@ -788,6 +794,7 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
             this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
@@ -882,19 +889,22 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1163, 503);
+            this.button2.Location = new System.Drawing.Point(1130, 532);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 59);
+            this.button2.Size = new System.Drawing.Size(158, 59);
             this.button2.TabIndex = 11;
             this.button2.Text = "Crea SuperCommessa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1183, 421);
+            this.label5.Location = new System.Drawing.Point(1139, 431);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 18);
             this.label5.TabIndex = 12;
@@ -902,15 +912,17 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.DataSource = this.macchineStampoBindingSource;
             this.comboBox1.DisplayMember = "Descrizione";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1182, 452);
+            this.comboBox1.Location = new System.Drawing.Point(1142, 452);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 26);
+            this.comboBox1.Size = new System.Drawing.Size(126, 26);
             this.comboBox1.TabIndex = 13;
             this.comboBox1.ValueMember = "IdStampa";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.CambiaFocus);
             // 
             // macchineStampoBindingSource
             // 
@@ -921,12 +933,44 @@
             // 
             this.macchineStampoTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(992, 391);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(132, 24);
+            this.textBox4.TabIndex = 15;
+            this.textBox4.Text = "0";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(914, 394);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 18);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Nr. lastre:";
+            // 
+            // abbinamentiSuperCommesseBindingSource
+            // 
+            this.abbinamentiSuperCommesseBindingSource.DataMember = "AbbinamentiSuperCommesse";
+            this.abbinamentiSuperCommesseBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // abbinamentiSuperCommesseTableAdapter
+            // 
+            this.abbinamentiSuperCommesseTableAdapter.ClearBeforeFill = true;
+            // 
             // CheckPianificazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1322, 633);
+            this.ClientSize = new System.Drawing.Size(1294, 603);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
@@ -950,6 +994,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superCommessaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abbinamentiSuperCommesseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -973,6 +1018,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource macchineStampoBindingSource;
+        private Target2021DataSetTableAdapters.MacchineStampoTableAdapter macchineStampoTableAdapter;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1027,12 +1081,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn52;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource macchineStampoBindingSource;
-        private Target2021DataSetTableAdapters.MacchineStampoTableAdapter macchineStampoTableAdapter;
+        private System.Windows.Forms.BindingSource abbinamentiSuperCommesseBindingSource;
+        private Target2021DataSetTableAdapters.AbbinamentiSuperCommesseTableAdapter abbinamentiSuperCommesseTableAdapter;
     }
 }

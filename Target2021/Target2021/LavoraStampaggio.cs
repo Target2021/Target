@@ -36,24 +36,7 @@ namespace Target2021
             bool evaso = Convert.ToBoolean(cmd.ExecuteScalar());
             if (!evaso) MessageBox.Show("Prodotto evaso parzialmente precedentemente!");
         }
-        private void CheckGiacenza(int id)
-        {
-            string query = "SELECT GiacenzaDisponibili FROM GiacenzeMagazzini WHERE idPrime=(SELECT IDMateriaPrima FROM Commesse WHERE IDCommessa='" + id + "')";
-            string query2="SELECT NrPezziDaLavorare FROM Commesse WHERE IDCommessa='"+id+"'";
-            SqlConnection con = new SqlConnection(stringa);
-            SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
-            int Giacenza = Convert.ToInt32(cmd.ExecuteScalar());
-            cmd = new SqlCommand(query2,con);
-            int quantita = Convert.ToInt32(cmd.ExecuteScalar());
-            con.Close();
-            int diff = Giacenza - quantita;
-            if(diff<=0)
-            {
-                MessageBox.Show("Giacenza insufficiente,impossibile caricare la commessa");
-                cCToolStripTextBox.Text = "";
-            }
-        }
+
         private void LavoraStampaggio_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Stampi'. È possibile spostarla o rimuoverla se necessario.
@@ -61,7 +44,7 @@ namespace Target2021
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AnaMagazzini'. È possibile spostarla o rimuoverla se necessario.
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-            cCToolStripTextBox.Text = IDCommessa;
+
             SqlConnection connessione = new SqlConnection(stringa);
             string sql = "SELECT descrizione FROM Stampi WHERE codice=(SELECT IDStampo FROM Commesse WHERE IDCommessa='"+IDCommessa+"')";
             SqlCommand comando = new SqlCommand(sql, connessione);
@@ -100,7 +83,7 @@ namespace Target2021
         }
         private void RecuperoDati()
         {
-            SqlDataAdapter da = new SqlDataAdapter(@"SELECT * FROM Commesse WHERE IDCommessa='"+cCToolStripTextBox.Text+"' AND CodCommessa LIKE 'S%'", stringa);
+            SqlDataAdapter da = new SqlDataAdapter(@"SELECT * FROM Commesse WHERE IDCommessa='2' AND CodCommessa LIKE 'S%'", stringa);
             DataSet ds = new DataSet();
             da.Fill(ds, "Commesse");
             txt1.DataBindings.Clear();
@@ -210,30 +193,7 @@ namespace Target2021
 
             }
         }
-        private void cCToolStripTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode==Keys.Enter)
-            {
-                try
-                {
-                    CheckGiacenza(Int32.Parse(cCToolStripTextBox.Text));
-                }
-                catch
-                {
-                    MessageBox.Show("Controllare ID commessa");
-                }
-            }
-        }
-        private void cCToolStripTextBox_Leave(object sender, EventArgs e)
-        {
-            try {
-                CheckGiacenza(Int32.Parse(cCToolStripTextBox.Text));
-            } 
-            catch
-            {
-                MessageBox.Show("Controllare ID commessa");
-            }
-        }
+
         private void AggiornaLavorazione(object sender, EventArgs e)
         {
             string CodLav,sql, NomeLavorazione;

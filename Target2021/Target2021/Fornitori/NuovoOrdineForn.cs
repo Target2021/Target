@@ -306,7 +306,13 @@ namespace Target2021.Fornitori
             {
                 CodArt = Convert.ToString(riga.Cells[0].Value);
                 QtaRiga = Convert.ToInt32(riga.Cells[2].Value);
-                QtaOrdinato = Convert.ToInt32 ((target2021DataSet.Tables["GiacenzeMagazzini"].Select("idPrime = '" + CodArt + "'"))[0]["GiacenzaOrdinati"]);
+                try { 
+                        QtaOrdinato = Convert.ToInt32 ((target2021DataSet.Tables["GiacenzeMagazzini"].Select("idPrime = '" + CodArt + "'"))[0]["GiacenzaOrdinati"]);
+                    }
+                catch
+                    {
+                        QtaOrdinato = 0;
+                    }
                 QtaOrdinato = QtaOrdinato + QtaRiga;
 
                 SqlConnection connessione = new SqlConnection(Properties.Resources.StringaConnessione);

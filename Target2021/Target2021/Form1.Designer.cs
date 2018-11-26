@@ -71,6 +71,8 @@
             this.ruoliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impiegataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pianificazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pianificazioneTemporaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stampaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assemblaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,8 +91,6 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.creaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pianificazioneTemporaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -448,6 +448,20 @@
             this.pianificazioneToolStripMenuItem.Text = "Pianificazione";
             this.pianificazioneToolStripMenuItem.Click += new System.EventHandler(this.pianificazioneToolStripMenuItem_Click);
             // 
+            // creaSuperCommessaToolStripMenuItem
+            // 
+            this.creaSuperCommessaToolStripMenuItem.Name = "creaSuperCommessaToolStripMenuItem";
+            this.creaSuperCommessaToolStripMenuItem.Size = new System.Drawing.Size(322, 30);
+            this.creaSuperCommessaToolStripMenuItem.Text = "Crea SuperCommessa";
+            this.creaSuperCommessaToolStripMenuItem.Click += new System.EventHandler(this.creaSuperCommessaToolStripMenuItem_Click);
+            // 
+            // pianificazioneTemporaleToolStripMenuItem
+            // 
+            this.pianificazioneTemporaleToolStripMenuItem.Name = "pianificazioneTemporaleToolStripMenuItem";
+            this.pianificazioneTemporaleToolStripMenuItem.Size = new System.Drawing.Size(322, 30);
+            this.pianificazioneTemporaleToolStripMenuItem.Text = "Pianificazione temporale";
+            this.pianificazioneTemporaleToolStripMenuItem.Click += new System.EventHandler(this.pianificazioneTemporaleToolStripMenuItem_Click);
+            // 
             // stampaggioToolStripMenuItem
             // 
             this.stampaggioToolStripMenuItem.Name = "stampaggioToolStripMenuItem";
@@ -596,6 +610,7 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
             this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
@@ -616,19 +631,6 @@
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
-            // 
-            // creaSuperCommessaToolStripMenuItem
-            // 
-            this.creaSuperCommessaToolStripMenuItem.Name = "creaSuperCommessaToolStripMenuItem";
-            this.creaSuperCommessaToolStripMenuItem.Size = new System.Drawing.Size(322, 30);
-            this.creaSuperCommessaToolStripMenuItem.Text = "Crea SuperCommessa";
-            this.creaSuperCommessaToolStripMenuItem.Click += new System.EventHandler(this.creaSuperCommessaToolStripMenuItem_Click);
-            // 
-            // pianificazioneTemporaleToolStripMenuItem
-            // 
-            this.pianificazioneTemporaleToolStripMenuItem.Name = "pianificazioneTemporaleToolStripMenuItem";
-            this.pianificazioneTemporaleToolStripMenuItem.Size = new System.Drawing.Size(322, 30);
-            this.pianificazioneTemporaleToolStripMenuItem.Text = "Pianificazione temporale";
             // 
             // Form1
             // 
