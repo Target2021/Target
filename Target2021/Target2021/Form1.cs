@@ -344,7 +344,11 @@ namespace Target2021
                 // Stato 5 = Ordinata la merce, impegnato su ordinato, in attesa di arrivo
                 // Stato 1 = Evasione parziale (ovvero impegno di una quantità < quantità richiesta)
                 // Stato 51 = Evasione parziale + Ordino (impegnato su ordinato)
-                // Stato 2 = Fase completata
+                // Stato 2 = Approvigionamento materia prima completato
+                // Stato 3 = Pianificato
+                // Stato 4 = Inserito in SuperCOmmessa
+                // Stato 5 = Stampato
+
             // TipoCommessa = 2 // Stampaggio
 
         }
@@ -407,6 +411,12 @@ namespace Target2021
             PianificaStampo PS = new PianificaStampo();
             PS.MdiParent = this;
             PS.Show();
+        }
+
+        private void eliminaSuperCommessaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EliminaSC EliminaSuperCommessa = new EliminaSC();
+            EliminaSuperCommessa.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

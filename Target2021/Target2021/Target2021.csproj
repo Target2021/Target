@@ -318,6 +318,18 @@
     <Compile Include="Fase2\DettaglioSC.Designer.cs">
       <DependentUpon>DettaglioSC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fase2\DettPianifica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase2\DettPianifica.Designer.cs">
+      <DependentUpon>DettPianifica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fase2\EliminaSC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase2\EliminaSC.Designer.cs">
+      <DependentUpon>EliminaSC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fase2\PianificaStampo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -706,6 +718,12 @@
     <EmbeddedResource Include="Fase2\DettaglioSC.resx">
       <DependentUpon>DettaglioSC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fase2\DettPianifica.resx">
+      <DependentUpon>DettPianifica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fase2\EliminaSC.resx">
+      <DependentUpon>EliminaSC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fase2\PianificaStampo.resx">
       <DependentUpon>PianificaStampo.cs</DependentUpon>
     </EmbeddedResource>
@@ -841,6 +859,7 @@
       <DependentUpon>StampaOrdFor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
