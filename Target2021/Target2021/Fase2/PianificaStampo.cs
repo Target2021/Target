@@ -33,10 +33,16 @@ namespace Target2021.Fase2
         {
             DataView CNonPianif = new DataView(target2021DataSet.Commesse);
             DataView CPianifM1 = new DataView(target2021DataSet.Commesse);
+            DataView CPianifM2 = new DataView(target2021DataSet.Commesse);
+            DataView CPianifM3 = new DataView(target2021DataSet.Commesse);
             CNonPianif.RowFilter = "Stato = 2";
             CPianifM1.RowFilter = "Stato = 3 AND SchedMach = 1";
+            CPianifM2.RowFilter = "Stato = 3 AND SchedMach = 2";
+            CPianifM3.RowFilter = "Stato = 3 AND SchedMach = 3";
             commesseDataGridView.DataSource = CNonPianif;
             commesseDataGridView1.DataSource = CPianifM1;
+            commesseDataGridView2.DataSource = CPianifM2;
+            commesseDataGridView3.DataSource = CPianifM3;
             NascondiColonne();
         }
 
@@ -52,6 +58,24 @@ namespace Target2021.Fase2
             }
 
             foreach (DataGridViewColumn col in commesseDataGridView1.Columns)
+            {
+                if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
+                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
+                    col.Visible = true;
+                else
+                    col.Visible = false;
+            }
+
+            foreach (DataGridViewColumn col in commesseDataGridView2.Columns)
+            {
+                if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
+                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
+                    col.Visible = true;
+                else
+                    col.Visible = false;
+            }
+
+            foreach (DataGridViewColumn col in commesseDataGridView3.Columns)
             {
                 if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
                 if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
@@ -116,6 +140,11 @@ namespace Target2021.Fase2
 
         private void commesseDataGridView1_DragDrop(object sender, DragEventArgs e)
         {
+            DraggaEDroppa(e,1);
+        }
+
+        private void DraggaEDroppa(DragEventArgs e, int macchina)
+        {
             int IdC;
             IdC = Convert.ToInt32(CodiceCommessa);
             if (e.Effect == DragDropEffects.Move)
@@ -123,7 +152,7 @@ namespace Target2021.Fase2
                 Target2021DataSet.CommesseRow Riga;
                 Riga = target2021DataSet.Commesse.FindByIDCommessa(IdC);
                 Riga.Stato = 3;
-                Riga.SchedMach = 1;
+                Riga.SchedMach = macchina;
                 commesseTableAdapter.Update(target2021DataSet.Commesse);
             }
             Aggiorna();
@@ -146,10 +175,26 @@ namespace Target2021.Fase2
 
         private void commesseDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            AggiornaValori(sender);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void commesseDataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AggiornaValori(sender);
+        }
+
+        private void AggiornaValori (object mittente)
+        {
+
             string ora;
             int durata;
             DateTime data;
-            DataGridView Griglia = sender as DataGridView;
+            DataGridView Griglia = mittente as DataGridView;
 
             if (Griglia != null)
             {
@@ -189,8 +234,46 @@ namespace Target2021.Fase2
                 }
             }
             this.commesseDataGridView1.Sort(commesseDataGridView1.Columns[57], ListSortDirection.Ascending);
+            this.commesseDataGridView2.Sort(commesseDataGridView2.Columns[57], ListSortDirection.Ascending);
+            this.commesseDataGridView3.Sort(commesseDataGridView3.Columns[57], ListSortDirection.Ascending);
             commesseTableAdapter.Update(target2021DataSet.Commesse);
             Aggiorna();
+        }
+
+        private void commesseDataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AggiornaValori(sender);
+        }
+
+        private void commesseDataGridView2_DragDrop(object sender, DragEventArgs e)
+        {
+            DraggaEDroppa(e,2);
+        }
+
+        private void commesseDataGridView3_DragDrop(object sender, DragEventArgs e)
+        {
+            DraggaEDroppa(e,3);
+        }
+
+        private void commesseDataGridView2_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(DataGridViewSelectedRowCollection)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+        }
+
+        private void commesseDataGridView3_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(DataGridViewSelectedRowCollection)))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+        }
+
+        private void commesseDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

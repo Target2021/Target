@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Target2021.Fase3;
 
 namespace Target2021
 {
@@ -28,8 +29,8 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LavoraStampaggio LS = new LavoraStampaggio("1");
-            LS.Show();
+            SelezionaCommessaDaStampare C = new SelezionaCommessaDaStampare(1);
+            C.Show();
         }
     }
 }

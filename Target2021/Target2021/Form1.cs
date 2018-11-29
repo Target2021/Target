@@ -338,7 +338,7 @@ namespace Target2021
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Stati riga di commessa:
+         // Stati riga di commessa:
             // TipoCommessa = 1  // Approvigionamento materia prima
                 // Stato 0 = Fase da prendere in carico
                 // Stato 5 = Ordinata la merce, impegnato su ordinato, in attesa di arrivo
@@ -346,11 +346,14 @@ namespace Target2021
                 // Stato 51 = Evasione parziale + Ordino (impegnato su ordinato)
                 // Stato 2 = Approvigionamento materia prima completato
                 // Stato 3 = Pianificato
-                // Stato 4 = Inserito in SuperCOmmessa
+                // Stato 4 = Inserito in SuperCommessa
                 // Stato 5 = Stampato
-
             // TipoCommessa = 2 // Stampaggio
-
+            
+         // Stati di riga SuperCommessa (materia prima SEMPRE già reperita):
+            // Stato = 0 -> Riga non pianificata
+            // Stato = 1 -> Riga pianificata
+            // Stato = 2 -> Riga stampata
         }
 
         private void ordiniToolStripMenuItem_Click(object sender, EventArgs e)

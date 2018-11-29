@@ -336,6 +336,12 @@
     <Compile Include="Fase2\PianificaStampo.Designer.cs">
       <DependentUpon>PianificaStampo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fase3\SelezionaCommessaDaStampare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase3\SelezionaCommessaDaStampare.Designer.cs">
+      <DependentUpon>SelezionaCommessaDaStampare.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,10 +390,10 @@
     <Compile Include="Fornitori\NuovoOrdineForn.Designer.cs">
       <DependentUpon>NuovoOrdineForn.cs</DependentUpon>
     </Compile>
-    <Compile Include="LavoraStampaggio.cs">
+    <Compile Include="Fase3\LavoraStampaggio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LavoraStampaggio.Designer.cs">
+    <Compile Include="Fase3\LavoraStampaggio.Designer.cs">
       <DependentUpon>LavoraStampaggio.cs</DependentUpon>
     </Compile>
     <Compile Include="LavoraTaglio.cs">
@@ -727,6 +733,9 @@
     <EmbeddedResource Include="Fase2\PianificaStampo.resx">
       <DependentUpon>PianificaStampo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fase3\SelezionaCommessaDaStampare.resx">
+      <DependentUpon>SelezionaCommessaDaStampare.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -751,7 +760,7 @@
     <EmbeddedResource Include="Fornitori\NuovoOrdineForn.resx">
       <DependentUpon>NuovoOrdineForn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LavoraStampaggio.resx">
+    <EmbeddedResource Include="Fase3\LavoraStampaggio.resx">
       <DependentUpon>LavoraStampaggio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LavoraTaglio.resx">

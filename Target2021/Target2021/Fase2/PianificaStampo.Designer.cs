@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.commesseDataGridView = new System.Windows.Forms.DataGridView();
@@ -73,6 +73,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.commesseDataGridView2 = new System.Windows.Forms.DataGridView();
+            this.commesseDataGridView3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.superCommessaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.superCommessaBindingSource)).BeginInit();
@@ -80,6 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulazioneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -97,12 +101,13 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(152, 253);
+            this.label2.Location = new System.Drawing.Point(144, 279);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "SuperCommesse:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // commesseDataGridView
             // 
@@ -110,30 +115,30 @@
             this.commesseDataGridView.AllowUserToAddRows = false;
             this.commesseDataGridView.AllowUserToDeleteRows = false;
             this.commesseDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.commesseDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.commesseDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.commesseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.commesseDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.commesseDataGridView.DefaultCellStyle = dataGridViewCellStyle34;
             this.commesseDataGridView.Location = new System.Drawing.Point(12, 40);
             this.commesseDataGridView.MultiSelect = false;
             this.commesseDataGridView.Name = "commesseDataGridView";
             this.commesseDataGridView.ReadOnly = true;
             this.commesseDataGridView.RowHeadersVisible = false;
             this.commesseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.commesseDataGridView.Size = new System.Drawing.Size(479, 203);
+            this.commesseDataGridView.Size = new System.Drawing.Size(479, 236);
             this.commesseDataGridView.TabIndex = 3;
             this.commesseDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.commesseDataGridView_DataBindingComplete);
             this.commesseDataGridView.DragEnter += new System.Windows.Forms.DragEventHandler(this.Effetto);
@@ -147,14 +152,14 @@
             this.superCommessaDataGridView.AllowUserToDeleteRows = false;
             this.superCommessaDataGridView.AutoGenerateColumns = false;
             this.superCommessaDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.superCommessaDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.superCommessaDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.superCommessaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.superCommessaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn56,
@@ -181,21 +186,21 @@
             this.dataGridViewTextBoxColumn77,
             this.dataGridViewTextBoxColumn78});
             this.superCommessaDataGridView.DataSource = this.superCommessaBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.superCommessaDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
-            this.superCommessaDataGridView.Location = new System.Drawing.Point(12, 274);
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.superCommessaDataGridView.DefaultCellStyle = dataGridViewCellStyle36;
+            this.superCommessaDataGridView.Location = new System.Drawing.Point(12, 300);
             this.superCommessaDataGridView.MultiSelect = false;
             this.superCommessaDataGridView.Name = "superCommessaDataGridView";
             this.superCommessaDataGridView.ReadOnly = true;
             this.superCommessaDataGridView.RowHeadersVisible = false;
             this.superCommessaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.superCommessaDataGridView.Size = new System.Drawing.Size(479, 220);
+            this.superCommessaDataGridView.Size = new System.Drawing.Size(479, 267);
             this.superCommessaDataGridView.TabIndex = 3;
             this.superCommessaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.superCommessaDataGridView_CellClick);
             this.superCommessaDataGridView.DragEnter += new System.Windows.Forms.DragEventHandler(this.Effetto);
@@ -504,8 +509,9 @@
             this.commesseDataGridView1.MultiSelect = false;
             this.commesseDataGridView1.Name = "commesseDataGridView1";
             this.commesseDataGridView1.ReadOnly = true;
+            this.commesseDataGridView1.RowHeadersVisible = false;
             this.commesseDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.commesseDataGridView1.Size = new System.Drawing.Size(764, 220);
+            this.commesseDataGridView1.Size = new System.Drawing.Size(781, 157);
             this.commesseDataGridView1.TabIndex = 7;
             this.commesseDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView1_CellClick);
             this.commesseDataGridView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView1_DragDrop);
@@ -525,7 +531,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(736, 274);
+            this.label5.Location = new System.Drawing.Point(750, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(221, 18);
             this.label5.TabIndex = 9;
@@ -534,18 +540,57 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(736, 374);
+            this.label6.Location = new System.Drawing.Point(736, 386);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(228, 18);
             this.label6.TabIndex = 10;
             this.label6.Text = "Macchina di stampaggio: Cannon";
+            // 
+            // commesseDataGridView2
+            // 
+            this.commesseDataGridView2.AllowDrop = true;
+            this.commesseDataGridView2.AllowUserToAddRows = false;
+            this.commesseDataGridView2.AllowUserToDeleteRows = false;
+            this.commesseDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.commesseDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.commesseDataGridView2.Location = new System.Drawing.Point(514, 221);
+            this.commesseDataGridView2.Name = "commesseDataGridView2";
+            this.commesseDataGridView2.ReadOnly = true;
+            this.commesseDataGridView2.RowHeadersVisible = false;
+            this.commesseDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.commesseDataGridView2.Size = new System.Drawing.Size(781, 162);
+            this.commesseDataGridView2.TabIndex = 10;
+            this.commesseDataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView2_CellClick);
+            this.commesseDataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView2_CellContentClick);
+            this.commesseDataGridView2.DragDrop += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView2_DragDrop);
+            this.commesseDataGridView2.DragEnter += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView2_DragEnter);
+            // 
+            // commesseDataGridView3
+            // 
+            this.commesseDataGridView3.AllowDrop = true;
+            this.commesseDataGridView3.AllowUserToAddRows = false;
+            this.commesseDataGridView3.AllowUserToDeleteRows = false;
+            this.commesseDataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.commesseDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.commesseDataGridView3.Location = new System.Drawing.Point(514, 407);
+            this.commesseDataGridView3.Name = "commesseDataGridView3";
+            this.commesseDataGridView3.ReadOnly = true;
+            this.commesseDataGridView3.RowHeadersVisible = false;
+            this.commesseDataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.commesseDataGridView3.Size = new System.Drawing.Size(781, 160);
+            this.commesseDataGridView3.TabIndex = 10;
+            this.commesseDataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView3_CellClick);
+            this.commesseDataGridView3.DragDrop += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView3_DragDrop);
+            this.commesseDataGridView3.DragEnter += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView3_DragEnter);
             // 
             // PianificaStampo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1281, 500);
+            this.ClientSize = new System.Drawing.Size(1298, 571);
+            this.Controls.Add(this.commesseDataGridView3);
+            this.Controls.Add(this.commesseDataGridView2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -567,6 +612,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulazioneBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -614,5 +661,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView commesseDataGridView2;
+        private System.Windows.Forms.DataGridView commesseDataGridView3;
     }
 }
