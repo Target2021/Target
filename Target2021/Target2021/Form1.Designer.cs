@@ -71,6 +71,7 @@
             this.ruoliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impiegataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pianificazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splittaCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pianificazioneTemporaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -289,14 +290,14 @@
             // commesseToolStripMenuItem1
             // 
             this.commesseToolStripMenuItem1.Name = "commesseToolStripMenuItem1";
-            this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(288, 30);
-            this.commesseToolStripMenuItem1.Text = "Commesse";
+            this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(293, 30);
+            this.commesseToolStripMenuItem1.Text = "Riepilogo Commesse";
             this.commesseToolStripMenuItem1.Click += new System.EventHandler(this.commesseToolStripMenuItem1_Click);
             // 
             // controllaNuoviOrdiniToolStripMenuItem
             // 
             this.controllaNuoviOrdiniToolStripMenuItem.Name = "controllaNuoviOrdiniToolStripMenuItem";
-            this.controllaNuoviOrdiniToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
+            this.controllaNuoviOrdiniToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
             this.controllaNuoviOrdiniToolStripMenuItem.Text = "Controlla nuovi ordini";
             this.controllaNuoviOrdiniToolStripMenuItem.Click += new System.EventHandler(this.controllaNuoviOrdiniToolStripMenuItem_Click);
             // 
@@ -307,7 +308,7 @@
             this.consultaToolStripMenuItem,
             this.arrivoMerceToolStripMenuItem});
             this.ordiniAFornitoreToolStripMenuItem.Name = "ordiniAFornitoreToolStripMenuItem";
-            this.ordiniAFornitoreToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
+            this.ordiniAFornitoreToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
             this.ordiniAFornitoreToolStripMenuItem.Text = "Ordini a fornitore";
             this.ordiniAFornitoreToolStripMenuItem.Click += new System.EventHandler(this.ordiniAFornitoreToolStripMenuItem_Click);
             // 
@@ -335,13 +336,13 @@
             // superCommesseToolStripMenuItem
             // 
             this.superCommesseToolStripMenuItem.Name = "superCommesseToolStripMenuItem";
-            this.superCommesseToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
+            this.superCommesseToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
             this.superCommesseToolStripMenuItem.Text = "SuperCommesse";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(288, 30);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -442,6 +443,7 @@
             // pianificazioneToolStripMenuItem
             // 
             this.pianificazioneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.splittaCommessaToolStripMenuItem,
             this.creaSuperCommessaToolStripMenuItem,
             this.eliminaSuperCommessaToolStripMenuItem,
             this.pianificazioneTemporaleToolStripMenuItem});
@@ -449,6 +451,13 @@
             this.pianificazioneToolStripMenuItem.Size = new System.Drawing.Size(311, 30);
             this.pianificazioneToolStripMenuItem.Text = "Pianificazione";
             this.pianificazioneToolStripMenuItem.Click += new System.EventHandler(this.pianificazioneToolStripMenuItem_Click);
+            // 
+            // splittaCommessaToolStripMenuItem
+            // 
+            this.splittaCommessaToolStripMenuItem.Name = "splittaCommessaToolStripMenuItem";
+            this.splittaCommessaToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
+            this.splittaCommessaToolStripMenuItem.Text = "Splitta Commessa";
+            this.splittaCommessaToolStripMenuItem.Click += new System.EventHandler(this.splittaCommessaToolStripMenuItem_Click);
             // 
             // creaSuperCommessaToolStripMenuItem
             // 
@@ -727,6 +736,7 @@
         private System.Windows.Forms.ToolStripMenuItem creaSuperCommessaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pianificazioneTemporaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminaSuperCommessaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem splittaCommessaToolStripMenuItem;
     }
 }
 

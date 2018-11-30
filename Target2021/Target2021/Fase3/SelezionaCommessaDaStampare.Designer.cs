@@ -64,7 +64,7 @@
             this.commesseDataGridView1.ReadOnly = true;
             this.commesseDataGridView1.RowHeadersVisible = false;
             this.commesseDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.commesseDataGridView1.Size = new System.Drawing.Size(781, 242);
+            this.commesseDataGridView1.Size = new System.Drawing.Size(881, 340);
             this.commesseDataGridView1.TabIndex = 8;
             this.commesseDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView1_CellClick);
             // 
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 336);
+            this.ClientSize = new System.Drawing.Size(903, 414);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.commesseDataGridView1);
             this.Controls.Add(this.label1);

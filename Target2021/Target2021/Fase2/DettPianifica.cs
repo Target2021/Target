@@ -48,7 +48,7 @@ namespace Target2021.Fase2
         private void imposta()
         {
             dateTimePicker1.Value = data;
-            comboBox1.Text = ora;
+            textBox2.Text = ora;
             textBox1.Text = durata.ToString();     
         }
 
@@ -61,7 +61,7 @@ namespace Target2021.Fase2
         private void button1_Click(object sender, EventArgs e)
         {
             data = dateTimePicker1.Value;
-            ora = comboBox1.Text;
+            ora = textBox2.Text;
             durata = Convert.ToInt32(textBox1.Text);
             this.Dispose();
         }

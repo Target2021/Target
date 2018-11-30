@@ -23,14 +23,6 @@ namespace Target2021.Fornitori
             InitializeComponent();
         }
 
-        private void ordFornTestBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.ordFornTestBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
-        }
-
         private void ArrivoMerce_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
@@ -70,14 +62,22 @@ namespace Target2021.Fornitori
                 CodArt = ordFornDettDataGridView.Rows[e.RowIndex].Cells[1].Value.ToString();
                 giacenzeMagazziniBindingSource.Filter = "idPrime = '" + CodArt + "'";
                 risultato = AggiornaOrdineFornitoreDettaglio();
+
                 if (risultato == 2)
                 {
+                    textBox1.Text = "";
                     AggiornaOrdineFornitoreTestata();
                     AggiornaMagazzini(e.RowIndex);
                     AggiornaMovimenti(e.RowIndex);
                     EliminaRigaImpegnateOrdinato();
                     AggiornaCommesseCollegate();
                 }
+
+                this.ordFornDettTableAdapter.Fill(this.target2021DataSet.OrdFornDett);
+                ordFornDettBindingSource.Filter = "Stato<>2 AND idOFTestata = " + NrOrdine.ToString();
+                ordFornDettDataGridView.DataSource = ordFornDettBindingSource;
+                ordFornDettDataGridView.Update();
+                ordFornDettDataGridView.Refresh();
             }
             catch { }
         }
@@ -101,7 +101,7 @@ namespace Target2021.Fornitori
             //          c2) Imposto lo stato = 1 se altre righe e 2 se unica riga?
             SqlConnection connessione = new SqlConnection(Properties.Resources.StringaConnessione);
             connessione.Open();
-            string query = "SELECT count(idOFdett) FROM OrdFornDett WHERE idOFTestata="+IdDettaglio.ToString()+" AND STATO != '2'";
+            string query = "SELECT count(idOFdett) FROM OrdFornDett WHERE idOFTestata="+NrOrdine.ToString()+" AND STATO != '2'";
             SqlCommand comando = new SqlCommand(query, connessione);
             ris = Convert.ToInt32 (comando.ExecuteScalar());
             connessione.Close();
@@ -135,26 +135,50 @@ namespace Target2021.Fornitori
             //      d) ImpegnateOrdinato -> Io non lo toccherei (o si?) -> si
         }
 
+        private void SeNonEsisteCrea(string Cod)
+        {
+            DataRow[] RigaTrovata;
+            RigaTrovata = target2021DataSet.Tables["GiacenzeMagazzini"].Select("idPrime = '"+Cod+"'");
+
+            if (RigaTrovata.Length != 0)
+            {
+                //MessageBox.Show("L'articolo "+Cod+" esiste nelle giacenze");
+            }
+            else
+            {
+                //MessageBox.Show("L'articolo "+Cod+" va creato nelle giacenze!");
+                Target2021DataSet.GiacenzeMagazziniRow riga = target2021DataSet.GiacenzeMagazzini.NewGiacenzeMagazziniRow();
+                riga.idMagazzino = 1;
+                riga.idPrime = Cod;
+                riga.GiacenzaComplessiva = 0;
+                riga.GiacenzaDisponibili = 0;
+                riga.GiacenzaImpegnati = 0;
+                riga.DataUltimoMovimento = DateTime.Today;
+                riga.GiacenzaOrdinati = 0;
+                riga.GiacImpegnSuOrd = 0;
+                target2021DataSet.GiacenzeMagazzini.Rows.Add(riga);
+                giacenzeMagazziniTableAdapter.Update(target2021DataSet.GiacenzeMagazzini);
+            }
+        }
+
         private void AggiornaMagazzini(int nriga)
         {
+            SeNonEsisteCrea(CodArt);
             int ordinate, arrivate, impegnate;
             int gc, gd, gi, go, gso;
-
-            this.ordFornDettTableAdapter.Fill(this.target2021DataSet.OrdFornDett);
-            ordFornDettBindingSource.Filter = "Stato=2 AND idOFTestata = " + NrOrdine.ToString();
-            ordFornDettDataGridView.DataSource = ordFornDettBindingSource;
-            //ordFornDettTableAdapter.Fill(target2021DataSet.OrdFornDett);
-            ordFornDettDataGridView.Update();
-            ordFornDettDataGridView.Refresh();
 
             ordinate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[3].Value);
             arrivate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[8].Value);
             impegnate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[12].Value);
-            gc = Convert.ToInt32(giacenzeMagazziniDataGridView.Rows[nriga].Cells[7].Value);
-            gd = Convert.ToInt32(giacenzeMagazziniDataGridView.Rows[nriga].Cells[8].Value);
-            gi = Convert.ToInt32(giacenzeMagazziniDataGridView.Rows[nriga].Cells[9].Value);
-            go = Convert.ToInt32(giacenzeMagazziniDataGridView.Rows[nriga].Cells[14].Value);
-            gso = Convert.ToInt32(giacenzeMagazziniDataGridView.Rows[nriga].Cells[15].Value);
+
+            //DataRow[] RigaGiacenza;
+            Target2021DataSet.GiacenzeMagazziniRow[] RigaGiacenza;
+            RigaGiacenza =(Target2021DataSet.GiacenzeMagazziniRow[]) target2021DataSet.Tables["GiacenzeMagazzini"].Select("idPrime = '" + CodArt + "'");
+            gc = RigaGiacenza[0].GiacenzaComplessiva;
+            gd = RigaGiacenza[0].GiacenzaDisponibili;
+            gi = RigaGiacenza[0].GiacenzaImpegnati;
+            go = RigaGiacenza[0].GiacenzaOrdinati;
+            gso = RigaGiacenza[0].GiacImpegnSuOrd;
 
             gc = gc + arrivate;
             gd = gd + (arrivate - impegnate);
@@ -162,16 +186,16 @@ namespace Target2021.Fornitori
             go = go - ordinate;
             gso = gso - impegnate;
 
-            giacenzeMagazziniDataGridView.Rows[nriga].Cells[7].Value=gc;
-            giacenzeMagazziniDataGridView.Rows[nriga].Cells[8].Value=gd;
-            giacenzeMagazziniDataGridView.Rows[nriga].Cells[9].Value=gi;
-            giacenzeMagazziniDataGridView.Rows[nriga].Cells[14].Value=go;
-            giacenzeMagazziniDataGridView.Rows[nriga].Cells[15].Value=gso;
+            RigaGiacenza[0].GiacenzaComplessiva = gc;
+            RigaGiacenza[0].GiacenzaDisponibili = gd;
+            RigaGiacenza[0].GiacenzaImpegnati = gi;
+            RigaGiacenza[0].GiacenzaOrdinati = go;
+            RigaGiacenza[0].GiacImpegnSuOrd = gso;
+            RigaGiacenza[0].DataUltimoMovimento = DateTime.Today;
 
             this.Validate();
             this.giacenzeMagazziniBindingSource.EndEdit();
             giacenzeMagazziniTableAdapter.Update(target2021DataSet.GiacenzeMagazzini);
-            //this.tableAdapterManager.UpdateAll(this.target2021DataSet);
             textBox1.Text = textBox1.Text + "Giacenze di magazzino aggiornate correttamente!\r\n";
         }
 

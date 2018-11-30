@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -212,7 +213,8 @@ namespace Target2021.Fornitori
         {
             double pesos, pesot;
             int numero;
-            pesos = Convert.ToDouble(label12.Text);
+            pesos = Double.Parse(label12.Text);
+            //pesos = Convert.ToDouble(label12.Text);
             numero = Convert.ToInt32(textBox12.Text);
             pesot = pesos * numero;
             dt.Rows.Add(new object[]{textBox10.Text, textBox11.Text, Convert.ToInt32(textBox12.Text), dateTimePicker2.Text, label12.Text,pesot.ToString()});
@@ -305,6 +307,7 @@ namespace Target2021.Fornitori
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
                 CodArt = Convert.ToString(riga.Cells[0].Value);
+                SeNonEsisteCrea(CodArt);
                 QtaRiga = Convert.ToInt32(riga.Cells[2].Value);
                 try { 
                         QtaOrdinato = Convert.ToInt32 ((target2021DataSet.Tables["GiacenzeMagazzini"].Select("idPrime = '" + CodArt + "'"))[0]["GiacenzaOrdinati"]);
@@ -321,6 +324,32 @@ namespace Target2021.Fornitori
                 SqlCommand comando = new SqlCommand(query, connessione);
                 comando.ExecuteNonQuery();
                 connessione.Close();
+            }
+        }
+
+        private void SeNonEsisteCrea(string Cod)
+        {
+            DataRow[] RigaTrovata;
+            RigaTrovata = target2021DataSet.Tables["GiacenzeMagazzini"].Select("idPrime = '" + Cod + "'");
+
+            if (RigaTrovata.Length != 0)
+            {
+                //MessageBox.Show("L'articolo "+Cod+" esiste nelle giacenze");
+            }
+            else
+            {
+                //MessageBox.Show("L'articolo "+Cod+" va creato nelle giacenze!");
+                Target2021DataSet.GiacenzeMagazziniRow riga = target2021DataSet.GiacenzeMagazzini.NewGiacenzeMagazziniRow();
+                riga.idMagazzino = 1;
+                riga.idPrime = Cod;
+                riga.GiacenzaComplessiva = 0;
+                riga.GiacenzaDisponibili = 0;
+                riga.GiacenzaImpegnati = 0;
+                riga.DataUltimoMovimento = DateTime.Today;
+                riga.GiacenzaOrdinati = 0;
+                riga.GiacImpegnSuOrd = 0;
+                target2021DataSet.GiacenzeMagazzini.Rows.Add(riga);
+                giacenzeMagazziniTableAdapter.Update(target2021DataSet.GiacenzeMagazzini);
             }
         }
 

@@ -422,6 +422,12 @@ namespace Target2021
             EliminaSuperCommessa.Show();
         }
 
+        private void splittaCommessaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SplittaCommessa SC = new SplittaCommessa();
+            SC.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

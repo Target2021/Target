@@ -336,6 +336,12 @@
     <Compile Include="Fase2\PianificaStampo.Designer.cs">
       <DependentUpon>PianificaStampo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fase2\SplittaCommessa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase2\SplittaCommessa.Designer.cs">
+      <DependentUpon>SplittaCommessa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fase3\SelezionaCommessaDaStampare.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -732,6 +738,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fase2\PianificaStampo.resx">
       <DependentUpon>PianificaStampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fase2\SplittaCommessa.resx">
+      <DependentUpon>SplittaCommessa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fase3\SelezionaCommessaDaStampare.resx">
       <DependentUpon>SelezionaCommessaDaStampare.cs</DependentUpon>

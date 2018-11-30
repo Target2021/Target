@@ -47,7 +47,6 @@ namespace Target2021.Fornitori
 
         private void imposta()
         {
-            statoTextBox.Text = "2";
             dataConsegnaEffettivaDateTimePicker.Text = DateTime.Today.ToString();
             risultato = 1;
         }
@@ -86,6 +85,7 @@ namespace Target2021.Fornitori
 
         private void button1_Click(object sender, EventArgs e)
         {
+            statoTextBox.Text = "2";
             risultato = 2;
             this.Validate();
             this.ordFornDettBindingSource.EndEdit();
