@@ -115,7 +115,7 @@ namespace Target2021
             {
                 try
                 {
-                    int IdMagazzino, qta;
+                    int IdMagazzino, qta, AMagazzino=0;
                     double peso=0, prezzo=0;
                     string CodArt, CS="X", BarCode, NrOrdine;
                     DateTime datamov;
@@ -127,6 +127,7 @@ namespace Target2021
                     qta = Convert.ToInt32(textBox2.Text);
                     BarCode = textBox3.Text;
                     NrOrdine = textBox4.Text;
+                    if (textBox7.Visible==true) AMagazzino = Convert.ToInt32(textBox7.Text);
                     datamov = dateTimePicker1.Value;
                     if (textBox5.Text != "") peso = Convert.ToDouble(textBox5.Text);
                     if (textBox6.Text != "") prezzo = Convert.ToDouble(textBox6.Text);
@@ -136,9 +137,19 @@ namespace Target2021
                     if (IdMagazzino == 4) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", CodArt, "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
                     if (IdMagazzino == 5) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", "", CodArt, CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
                     movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
-                    if (CS=="C") AggiornaGiacenzeC(qta, CodArt, CS);
-                    if (CS=="S") AggiornaGiacenzeS(qta, CodArt, CS);
-                    MessageBox.Show("Movimento registrato correttamente!");
+                    if (CS=="C")
+                    {
+                        AggiornaGiacenzeC(qta, CodArt, CS);
+                        MessageBox.Show("Movimento registrato correttamente!");
+                    }
+
+                    if (CS == "S" && qta <= AMagazzino)
+                    {
+                        AggiornaGiacenzeS(qta, CodArt, CS);
+                        MessageBox.Show("Movimento registrato correttamente!");
+                    }
+                    if (CS == "S" && qta > AMagazzino)
+                        MessageBox.Show("Non hai disponibili la quantità richiesta!");
                 }
                 catch (Exception ex)
                 {
@@ -160,20 +171,17 @@ namespace Target2021
             try
             {
                 numero = (int) comando1.ExecuteScalar();
-                if (numero>0)   // articolo già presente nelle giacenze
-                {
-                    query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
-                    comando2 = new SqlCommand(query2, conn);
-                    disponibili = (int)comando2.ExecuteScalar();
-                    numero = numero + q;
-                    disponibili = disponibili + q;
-                    // update
-                    ora = DateTime.Now;
-                    query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = "+numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '"+ora.ToString()+"' WHERE idPrime='" + Cod + "'";
-                    comando2 = new SqlCommand(query2, conn);
-                    comando2.ExecuteNonQuery();
-                    MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
-                }
+                query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+                comando2 = new SqlCommand(query2, conn);
+                disponibili = (int)comando2.ExecuteScalar();
+                numero = numero + q;
+                disponibili = disponibili + q;
+                // update
+                ora = DateTime.Now;
+                query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = "+numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '"+ora.ToString()+"' WHERE idPrime='" + Cod + "'";
+                comando2 = new SqlCommand(query2, conn);
+                comando2.ExecuteNonQuery();
+                MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
             }
             catch
             {

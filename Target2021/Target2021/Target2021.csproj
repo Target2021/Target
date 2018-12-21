@@ -287,6 +287,12 @@
     <Compile Include="Anagrafiche\Dettaglio_Articoli.Designer.cs">
       <DependentUpon>Dettaglio_Articoli.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControllaAbbinamenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControllaAbbinamenti.Designer.cs">
+      <DependentUpon>ControllaAbbinamenti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dett_Riepilogo_Commesse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -714,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\Dettaglio_Articoli.resx">
       <DependentUpon>Dettaglio_Articoli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControllaAbbinamenti.resx">
+      <DependentUpon>ControllaAbbinamenti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dett_Riepilogo_Commesse.resx">
       <DependentUpon>Dett_Riepilogo_Commesse.cs</DependentUpon>

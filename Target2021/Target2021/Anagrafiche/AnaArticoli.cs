@@ -228,6 +228,10 @@ namespace Target2021.Anagrafiche
                 comboBox8.Refresh();
                 textBox12.Text = Fase2[0].Field<int>("AbbinamentoStampo").ToString();
                 textBox12.Refresh();
+                textBox26.Text = Fase2[0].Field<int>("NrPezziAStampo").ToString();
+                textBox26.Refresh();
+                textBox27.Text = Fase2[0].Field<int>("TempoStampaggio").ToString();
+                textBox27.Refresh();
                 comboBox7_SelectedIndexChanged(new object(), new EventArgs());
                 DataRow[] riga;
                 riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox6.Text + "'");

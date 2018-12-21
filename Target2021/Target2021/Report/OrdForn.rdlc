@@ -818,7 +818,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Peso totale</Value>
+                                  <Value>Peso totale (Kg)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>

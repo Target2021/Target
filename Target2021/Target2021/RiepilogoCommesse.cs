@@ -133,5 +133,11 @@ namespace Target2021
             Dett_Riepilogo_Commesse dett = new Dett_Riepilogo_Commesse(i);
             dett.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            ControllaAbbinamenti abbina = new ControllaAbbinamenti();
+            abbina.Show();
+        }
     }
 }
