@@ -160,7 +160,7 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Data Source=DESKTOP-CSQ69NN\SQLEXPRESS;Initial Catalog=Target2021;Integrated Security=True.
+        ///   Cerca una stringa localizzata simile a Data Source=DESKTOP-CSQ69NN;Initial Catalog=Target2021;User ID=TargetSql;Password=Vitto3110.
         /// </summary>
         internal static string StringaConnessione {
             get {

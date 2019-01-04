@@ -294,7 +294,7 @@ namespace Target2021.Fornitori
                 DataCons = Convert.ToDateTime(riga.Cells[3].Value);
                 Peso = Convert.ToDouble(riga.Cells[4].Value);
                 Peso = Peso * Qta;
-                ordFornDettTableAdapter.Insert(NrOrdine, CodArt, Descr, Qta, DataCons, DataCons, 0, 0, 0, Peso, 0, 0,DataCons);
+                ordFornDettTableAdapter.Insert(NrOrdine, CodArt, Descr, Qta, DataCons, DataCons, 0, 0, 0, Peso, 0, 0,DataCons, null, "0");
                 ordFornDettTableAdapter.Fill(target2021DataSet.OrdFornDett);
             }
         }

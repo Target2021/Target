@@ -78,12 +78,20 @@ namespace Target2021.SelezAna
         {
             string codice;
             double ps,peso;
-            double x, y, z;
+            double x=1, y=1, z=1;
+            try
+            {
             x = Convert.ToDouble(dimXTextBox.Text);
             y = Convert.ToDouble(dimYTextBox.Text);
             z = Convert.ToDouble(dimZTextBox.Text);
-            //try
-            //{
+            }
+            catch
+            {
+                MessageBox.Show("Ricordati di compilare le dimesioni!");
+            }
+
+            try
+            {
                 codice = materialeTextBox.Text;
                 DataRow[] riga;
                 DataTable TabellaMateriali;
@@ -92,8 +100,11 @@ namespace Target2021.SelezAna
                 ps = Convert.ToDouble (riga[0]["PesoSpecifico"]);
                 peso = (ps * x * y * z) / 1000000;
                 pesoTextBox.Text = peso.ToString("N"+3);
-            //}
-            //catch { }
+            }
+            catch
+            {
+                MessageBox.Show("Inserire il tipo di materiale");
+            }
         }
 
         private void Salvare(object sender, FormClosingEventArgs e)
@@ -109,6 +120,11 @@ namespace Target2021.SelezAna
             {
                 //do something else
             }
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void SelPrime_Load(object sender, EventArgs e)

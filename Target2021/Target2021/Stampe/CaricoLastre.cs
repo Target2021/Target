@@ -20,6 +20,8 @@ namespace Target2021.Stampe
 
         private void CaricoLastre_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
+            this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet9.MovimentiMagazzino'. È possibile spostarla o rimuoverla se necessario.
             this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet9.MovimentiMagazzino);
             filtra();
@@ -50,7 +52,8 @@ namespace Target2021.Stampe
         {
             int nrmov, qta, nrordine;
             double p;
-            string CodLas;
+            string[] dimensioni = new string[3];
+            string CodLas, Descrizione="";
             DateTime data;
             try
             {
@@ -59,12 +62,59 @@ namespace Target2021.Stampe
                 p = Convert.ToDouble(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[12].Value);
                 qta = Convert.ToInt32(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[8].Value);
                 data =Convert.ToDateTime( movimentiMagazzinoDataGridView.SelectedRows[0].Cells[11].Value);
-                nrordine = Convert.ToInt32(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[10].Value);
-
-                WFCaricoLastra cl = new WFCaricoLastra(nrmov, CodLas, p, qta, data, nrordine);
+                try
+                {
+                    nrordine = Convert.ToInt32(movimentiMagazzinoDataGridView.SelectedRows[0].Cells[10].Value);
+                }
+                catch
+                {
+                    nrordine = 0;
+                }
+                Descrizione = RecuperaDescrizioneLastra(CodLas);
+                dimensioni = RecuperaDimensioniLastra(CodLas);
+                
+                WFCaricoLastra cl = new WFCaricoLastra(nrmov, CodLas, p, qta, data, nrordine, Descrizione, dimensioni[0], dimensioni[1], dimensioni[2]);
                 cl.Show();
             }
             catch { }
+        }
+
+        private string[] RecuperaDimensioniLastra(string cod)
+        {
+            string[] d = new string[3];
+
+            DataRow[] RigaTrovata;
+            RigaTrovata = target2021DataSet.Tables["Prime"].Select("codice = '" + cod + "'");
+
+            if (RigaTrovata.Length != 0)
+            {
+                d[0] = RigaTrovata[0][10].ToString();
+                d[1] = RigaTrovata[0][11].ToString();
+                d[2] = RigaTrovata[0][12].ToString();
+            }
+            else
+            {
+                MessageBox.Show("L'articolo " + cod + " non esiste nelle'anagrafica lastre");
+            }
+            return d;
+        }
+
+        private string RecuperaDescrizioneLastra(string cod)
+        {
+            string des="";
+
+            DataRow[] RigaTrovata;
+            RigaTrovata = target2021DataSet.Tables["Prime"].Select("codice = '" + cod + "'");
+
+            if (RigaTrovata.Length != 0)
+            {
+                des = RigaTrovata[0][2].ToString();
+            }
+            else
+            {
+                MessageBox.Show("L'articolo "+cod+" non esiste nelle'anagrafica lastre");
+            }
+            return des;
         }
     }
 }

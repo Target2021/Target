@@ -428,6 +428,20 @@ namespace Target2021
             SC.Show();
         }
 
+        private void valorizzaMagazziniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ValorizzaMagazzini vm = new ValorizzaMagazzini();
+            vm.MdiParent = this;
+            vm.Show();
+        }
+
+        private void stampaSchedaCommessaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            stampacommessa sc = new stampacommessa();
+            sc.MdiParent = this;
+            sc.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

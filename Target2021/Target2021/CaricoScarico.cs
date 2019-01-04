@@ -117,11 +117,12 @@ namespace Target2021
                 {
                     int IdMagazzino, qta, AMagazzino=0;
                     double peso=0, prezzo=0;
-                    string CodArt, CS="X", BarCode, NrOrdine;
+                    string CodArt, CS="X", BarCode, NrOrdine, Causale;
                     DateTime datamov;
 
                     IdMagazzino = Convert.ToInt32(comboBox1.SelectedValue);
                     CodArt = textBox1.Text;
+                    Causale = textBox8.Text;
                     if (radioButton1.Checked == true) CS = "C";
                     if (radioButton2.Checked == true) CS = "S";
                     qta = Convert.ToInt32(textBox2.Text);
@@ -131,11 +132,11 @@ namespace Target2021
                     datamov = dateTimePicker1.Value;
                     if (textBox5.Text != "") peso = Convert.ToDouble(textBox5.Text);
                     if (textBox6.Text != "") prezzo = Convert.ToDouble(textBox6.Text);
-                    if (IdMagazzino == 1) movimentiMagazzinoTableAdapter.Insert(IdMagazzino,CodArt,"","","","", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
-                    if (IdMagazzino == 2) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", CodArt, "", "", "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
-                    if (IdMagazzino == 3) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", CodArt, "", "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
-                    if (IdMagazzino == 4) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", CodArt, "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
-                    if (IdMagazzino == 5) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", "", CodArt, CS, qta, BarCode, NrOrdine, datamov, peso, prezzo);
+                    if (IdMagazzino == 1) movimentiMagazzinoTableAdapter.Insert(IdMagazzino,CodArt,"","","","", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
+                    if (IdMagazzino == 2) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", CodArt, "", "", "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
+                    if (IdMagazzino == 3) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", CodArt, "", "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
+                    if (IdMagazzino == 4) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", CodArt, "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
+                    if (IdMagazzino == 5) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", "", CodArt, CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
                     movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
                     if (CS=="C")
                     {

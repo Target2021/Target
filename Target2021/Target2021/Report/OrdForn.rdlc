@@ -877,7 +877,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -984,10 +983,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!PesoTotale.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>0.00;(0.00)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>PesoTotale</rd:DefaultName>
@@ -1056,13 +1059,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>10in</Height>
+        <Height>9.5in</Height>
         <Style />
       </Body>
       <Width>7.03509in</Width>
       <Page>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>2.5cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>

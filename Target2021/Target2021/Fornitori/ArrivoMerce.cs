@@ -17,6 +17,7 @@ namespace Target2021.Fornitori
         int IdDettaglio, NrOrdine, Riga;
         double PesoTot, PrezzoTot;
         string CodArt;
+        int PezziArrivat;
 
         public ArrivoMerce()
         {
@@ -90,6 +91,7 @@ namespace Target2021.Fornitori
             ris = CD.risultato;
             PesoTot = CD.Peso;
             PrezzoTot = CD.Prezzo;
+            PezziArrivat = CD.PezziArrivati;
             return ris;
         }
 
@@ -168,7 +170,7 @@ namespace Target2021.Fornitori
             int gc, gd, gi, go, gso;
 
             ordinate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[3].Value);
-            arrivate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[8].Value);
+            arrivate = PezziArrivat;
             impegnate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[12].Value);
 
             //DataRow[] RigaGiacenza;
@@ -203,7 +205,7 @@ namespace Target2021.Fornitori
         {
             int arrivate, NrO;
             DateTime adesso;
-            arrivate = Convert.ToInt32(ordFornDettDataGridView.Rows[nriga].Cells[8].Value);
+            arrivate = PezziArrivat;
             adesso = DateTime.Now;
             NrO = Convert.ToInt32(ordFornTestDataGridView.Rows[Riga].Cells[2].Value);
 

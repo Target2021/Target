@@ -17,6 +17,7 @@ namespace Target2021.Fornitori
         public double Peso { get; set; }
         public double Prezzo { get; set; }
         private int Origine;
+        public int PezziArrivati;
 
         public ChiudiDettaglio(int IdDett, int o)
         {
@@ -87,6 +88,7 @@ namespace Target2021.Fornitori
         {
             statoTextBox.Text = "2";
             risultato = 2;
+            PezziArrivati = Convert.ToInt32(qtaEffettivaTextBox.Text);
             this.Validate();
             this.ordFornDettBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
@@ -111,6 +113,13 @@ namespace Target2021.Fornitori
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
             MessageBox.Show("Riga aggiornata correttamente!");
             this.Close();
+        }
+
+        private void Calcolo(object sender, MouseEventArgs e)
+        {
+            CalcoloPrezzoKg calcola = new CalcoloPrezzoKg();
+            calcola.ShowDialog();
+            prezzoKgTextBox.Text = calcola.prezzo.ToString();
         }
     }
 }

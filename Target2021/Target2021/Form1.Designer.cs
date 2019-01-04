@@ -65,6 +65,7 @@
             this.interrogazioneMovimentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posizioniStampiEDimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valorizzaMagazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -315,21 +316,21 @@
             // nuovoToolStripMenuItem1
             // 
             this.nuovoToolStripMenuItem1.Name = "nuovoToolStripMenuItem1";
-            this.nuovoToolStripMenuItem1.Size = new System.Drawing.Size(269, 30);
+            this.nuovoToolStripMenuItem1.Size = new System.Drawing.Size(465, 30);
             this.nuovoToolStripMenuItem1.Text = "Nuovo";
             this.nuovoToolStripMenuItem1.Click += new System.EventHandler(this.nuovoToolStripMenuItem1_Click);
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(269, 30);
-            this.consultaToolStripMenuItem.Text = "Consulta / Modifica";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(465, 30);
+            this.consultaToolStripMenuItem.Text = "Consulta / Modifica / Conferma d\'ordine";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // arrivoMerceToolStripMenuItem
             // 
             this.arrivoMerceToolStripMenuItem.Name = "arrivoMerceToolStripMenuItem";
-            this.arrivoMerceToolStripMenuItem.Size = new System.Drawing.Size(269, 30);
+            this.arrivoMerceToolStripMenuItem.Size = new System.Drawing.Size(465, 30);
             this.arrivoMerceToolStripMenuItem.Text = "Arrivo merce";
             this.arrivoMerceToolStripMenuItem.Click += new System.EventHandler(this.arrivoMerceToolStripMenuItem_Click);
             // 
@@ -353,7 +354,8 @@
             this.interrogazioneGiacenzeToolStripMenuItem,
             this.interrogazioneMovimentiToolStripMenuItem,
             this.caricoscaricoToolStripMenuItem,
-            this.posizioniStampiEDimeToolStripMenuItem});
+            this.posizioniStampiEDimeToolStripMenuItem,
+            this.valorizzaMagazziniToolStripMenuItem});
             this.magazziniToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.magazziniToolStripMenuItem.Name = "magazziniToolStripMenuItem";
             this.magazziniToolStripMenuItem.Size = new System.Drawing.Size(122, 30);
@@ -394,6 +396,13 @@
             this.posizioniStampiEDimeToolStripMenuItem.Size = new System.Drawing.Size(329, 30);
             this.posizioniStampiEDimeToolStripMenuItem.Text = "Posizioni Stampi e Dime";
             this.posizioniStampiEDimeToolStripMenuItem.Click += new System.EventHandler(this.posizioniStampiEDimeToolStripMenuItem_Click);
+            // 
+            // valorizzaMagazziniToolStripMenuItem
+            // 
+            this.valorizzaMagazziniToolStripMenuItem.Name = "valorizzaMagazziniToolStripMenuItem";
+            this.valorizzaMagazziniToolStripMenuItem.Size = new System.Drawing.Size(329, 30);
+            this.valorizzaMagazziniToolStripMenuItem.Text = "Valorizza magazzini";
+            this.valorizzaMagazziniToolStripMenuItem.Click += new System.EventHandler(this.valorizzaMagazziniToolStripMenuItem_Click);
             // 
             // impostazioniToolStripMenuItem
             // 
@@ -539,6 +548,7 @@
             this.stampaSchedaCommessaToolStripMenuItem.Name = "stampaSchedaCommessaToolStripMenuItem";
             this.stampaSchedaCommessaToolStripMenuItem.Size = new System.Drawing.Size(342, 30);
             this.stampaSchedaCommessaToolStripMenuItem.Text = "Stampa scheda commessa";
+            this.stampaSchedaCommessaToolStripMenuItem.Click += new System.EventHandler(this.stampaSchedaCommessaToolStripMenuItem_Click_1);
             // 
             // disconnettiUtenteToolStripMenuItem
             // 
@@ -611,6 +621,7 @@
             this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
             this.tableAdapterManager.CodModPagamentoTableAdapter = null;
@@ -737,6 +748,7 @@
         private System.Windows.Forms.ToolStripMenuItem pianificazioneTemporaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminaSuperCommessaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem splittaCommessaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem valorizzaMagazziniToolStripMenuItem;
     }
 }
 

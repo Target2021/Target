@@ -88,30 +88,45 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
+            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
             this.tableAdapterManager.CommesseTableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
             this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
             this.tableAdapterManager.MacchineTaglioTableAdapter = null;
             this.tableAdapterManager.MinuterieTableAdapter = null;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = this.movimentiMagazzinoTableAdapter;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.SchedulazioneTableAdapter = null;
+            this.tableAdapterManager.StampiDimeTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
@@ -147,7 +162,7 @@
             this.movimentiMagazzinoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.movimentiMagazzinoBindingNavigator.Name = "movimentiMagazzinoBindingNavigator";
             this.movimentiMagazzinoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.movimentiMagazzinoBindingNavigator.Size = new System.Drawing.Size(1482, 27);
+            this.movimentiMagazzinoBindingNavigator.Size = new System.Drawing.Size(931, 27);
             this.movimentiMagazzinoBindingNavigator.TabIndex = 0;
             this.movimentiMagazzinoBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -163,7 +178,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(44, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
             this.bindingNavigatorCountItem.Text = "di {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
             // 
@@ -204,7 +219,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
@@ -269,10 +284,11 @@
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.movimentiMagazzinoDataGridView.DataSource = this.movimentiMagazzinoBindingSource;
-            this.movimentiMagazzinoDataGridView.Location = new System.Drawing.Point(12, 143);
+            this.movimentiMagazzinoDataGridView.Location = new System.Drawing.Point(0, 94);
+            this.movimentiMagazzinoDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.movimentiMagazzinoDataGridView.Name = "movimentiMagazzinoDataGridView";
             this.movimentiMagazzinoDataGridView.RowTemplate.Height = 24;
-            this.movimentiMagazzinoDataGridView.Size = new System.Drawing.Size(1470, 513);
+            this.movimentiMagazzinoDataGridView.Size = new System.Drawing.Size(920, 417);
             this.movimentiMagazzinoDataGridView.TabIndex = 1;
             this.movimentiMagazzinoDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.movimentiMagazzinoDataGridView_DataError);
             // 
@@ -281,6 +297,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "idMovimento";
             this.dataGridViewTextBoxColumn1.HeaderText = "idMovimento";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -375,9 +392,10 @@
             "Semilavorati",
             "Articoli",
             "NrOrdine"});
-            this.Filter.Location = new System.Drawing.Point(79, 76);
+            this.Filter.Location = new System.Drawing.Point(74, 52);
+            this.Filter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(162, 33);
+            this.Filter.Size = new System.Drawing.Size(122, 28);
             this.Filter.TabIndex = 2;
             // 
             // textBox1
@@ -385,23 +403,25 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(300, 79);
+            this.textBox1.Location = new System.Drawing.Point(225, 54);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.MinimumSize = new System.Drawing.Size(6, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(198, 30);
+            this.textBox1.Size = new System.Drawing.Size(150, 26);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // RiepilogoMovimenti
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1482, 668);
+            this.ClientSize = new System.Drawing.Size(931, 543);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.movimentiMagazzinoDataGridView);
             this.Controls.Add(this.movimentiMagazzinoBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RiepilogoMovimenti";
             this.Text = "RiepilogoMovimenti";
             this.Load += new System.EventHandler(this.RiepilogoMovimenti_Load);

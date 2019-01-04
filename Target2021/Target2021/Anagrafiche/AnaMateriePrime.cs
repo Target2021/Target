@@ -53,5 +53,11 @@ namespace Target2021.Anagrafiche
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SelPrime selez = new SelPrime(1, comboBox1.Text, textBox1.Text);
+            selez.ShowDialog();
+        }
     }
 }

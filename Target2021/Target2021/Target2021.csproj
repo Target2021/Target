@@ -366,6 +366,12 @@
     <Compile Include="Fornitori\ArrivoMerce.Designer.cs">
       <DependentUpon>ArrivoMerce.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fornitori\CalcoloPrezzoKg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fornitori\CalcoloPrezzoKg.Designer.cs">
+      <DependentUpon>CalcoloPrezzoKg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fornitori\ChiudiDettaglio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -643,6 +649,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Target2021DataSet9.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ValorizzaMagazzini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValorizzaMagazzini.Designer.cs">
+      <DependentUpon>ValorizzaMagazzini.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Anagrafiche\AnaAbbinamentoStampi.resx">
       <DependentUpon>AnaAbbinamentoStampi.cs</DependentUpon>
     </EmbeddedResource>
@@ -759,6 +771,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fornitori\ArrivoMerce.resx">
       <DependentUpon>ArrivoMerce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fornitori\CalcoloPrezzoKg.resx">
+      <DependentUpon>CalcoloPrezzoKg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fornitori\ChiudiDettaglio.resx">
       <DependentUpon>ChiudiDettaglio.cs</DependentUpon>
@@ -884,6 +899,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stampe\StampaOrdFor.resx">
       <DependentUpon>StampaOrdFor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValorizzaMagazzini.resx">
+      <DependentUpon>ValorizzaMagazzini.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
