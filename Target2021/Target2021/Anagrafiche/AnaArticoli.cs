@@ -48,6 +48,8 @@ namespace Target2021.Anagrafiche
 
         private void AnaArticoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.StampiDime'. È possibile spostarla o rimuoverla se necessario.
             this.stampiDimeTableAdapter.Fill(this.target2021DataSet.StampiDime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MacchineTaglio'. È possibile spostarla o rimuoverla se necessario.
@@ -65,7 +67,7 @@ namespace Target2021.Anagrafiche
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet1.Fasi'. È possibile spostarla o rimuoverla se necessario.
             this.fasiTableAdapter1.Fill(this.target2021DataSet1.Fasi);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
-            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
+            //this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
             this.fornitoriTableAdapter.Fill(this.target2021DataSet.Fornitori);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
@@ -240,8 +242,8 @@ namespace Target2021.Anagrafiche
                 textBox21.Text = riga[0]["Corsia"].ToString();
                 textBox22.Text = Fase2[0].Field<string>("ProgStampaggio").ToString();
                 textBox22.Refresh();
-            }  
-             
+            }
+
             catch
             {
                 comboBox5.Text = "0";
@@ -302,7 +304,7 @@ namespace Target2021.Anagrafiche
         {
             //string filtro = "codice_articolo='" + codice + "' AND lavorazione=4";
             //DataRow[] Fase4 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
-            dettArticoliBindingSource1.Filter = "codice_articolo = '" + codice + "' AND lavorazione=4";
+            dettArticoliBindingSource.Filter = "codice_articolo = '" + codice + "' AND lavorazione=4";
         }
 
             private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
@@ -375,11 +377,27 @@ namespace Target2021.Anagrafiche
 
         private void button3_Click(object sender, EventArgs e)
         {
+            int IdFase1, IdFase2, IdFase3;
+            string codice = textBox2.Text;
+
+            IdFase1 = RecuperaIdFase(codice, 1);
+            IdFase2 = RecuperaIdFase(codice, 2);
+            IdFase3 = RecuperaIdFase(codice, 3);
+
             SalvaGenerale();
-            //SalvaTab1();
-            //SalvaTab2();
-            //SalvaTab3();
+            SalvaTab1(IdFase1);
+            SalvaTab2(IdFase2);
+            SalvaTab3(IdFase3);
             MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
+        }
+
+        private int RecuperaIdFase(string cod, int fase)
+        {
+            int ID;
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + cod + "' AND lavorazione="+fase.ToString());
+            ID = Convert.ToInt32(riga[0]["IDDettaglioArticolo"]);
+            return ID;
         }
 
         private void AggiornaTabulato(object sender, EventArgs e)
@@ -432,7 +450,7 @@ namespace Target2021.Anagrafiche
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Funzione non ancora implementata");
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -509,7 +527,7 @@ namespace Target2021.Anagrafiche
             articoli_sempliciTableAdapter.Update(target2021DataSet);
         }
 
-        private void SalvaTab1()
+        private void SalvaTab1(int Id)
         {
             // Per Tab1 aggiorna ....
             string codice, CodMateriaPrima, CodFornitoreLastra, CodIn, CodOut;
@@ -520,33 +538,168 @@ namespace Target2021.Anagrafiche
             CodFornitoreLastra  = comboBox4.Text;
             CodIn = textBox6.Text;
             CodOut = textBox7.Text;
-            LottoMinimo = Convert.ToInt32(textBox8.Text);
+            try
+            {
+                LottoMinimo = Convert.ToInt32(textBox8.Text);
+            }
+            catch
+            {
+                LottoMinimo = 0;
+                MessageBox.Show("Lotto minimo non corretto!");
+            }
 
-            DataRow[] riga;
-            DataTable TabellaFasi;
-            TabellaFasi = target2021DataSet.Tables["DettArticoli"];
 
-            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + codice + "' AND lavorazione=1");
+            DataRow riga;
+            DataTable TArticoli;
+            TArticoli = target2021DataSet.Tables["DettArticoli"];
 
-            riga[0].BeginEdit();
-            riga[0]["codicePrimaStampoDima"] = CodMateriaPrima;
-            riga[0]["codice_fornitore"] = CodFornitoreLastra;
-            riga[0]["CodiceInput"] = CodIn;
-            riga[0]["CodiceOutput"] = CodOut;
-            riga[0]["LottoMinimoRiordino"] = LottoMinimo;
-            riga[0].EndEdit();
+            riga = TArticoli.Rows.Find(Id);
+
+            riga.BeginEdit();
+            riga["codicePrimaStampoDima"] = CodMateriaPrima;
+            riga["codice_fornitore"] = CodFornitoreLastra;
+            riga["CodiceInput"] = CodIn;
+            riga["CodiceOutput"] = CodOut;
+            riga["LottoMinimoRiordino"] = LottoMinimo;
+            riga.EndEdit();
 
             dettArticoliTableAdapter.Update(target2021DataSet);
         }
 
-        private void SalvaTab2()
+        private void SalvaTab2(int Id)
         {
+            //Per Tab2 aggiorna....
+            string codice, ProgrStamp, CodStampo, DescrStampo, CodForn, CodIn, CodOut;
+            int NrImpronte, Tempo, MachPred, PercLastra;
 
+            codice = textBox2.Text;
+            ProgrStamp = textBox22.Text;
+            MachPred =Convert .ToInt32 (comboBox8.Text);
+            CodStampo = comboBox6.Text;
+            DescrStampo = label15.Text;
+            CodForn = comboBox7.Text;
+            CodIn = textBox9.Text;
+            CodOut = textBox10.Text;
+            try
+            {
+                NrImpronte = Convert.ToInt32(textBox26.Text);
+            }
+            catch
+            {
+                NrImpronte = 0;
+                MessageBox.Show("Numero impronte a stampo non corretto!");
+            }
+            try
+            {
+                Tempo = Convert.ToInt32(textBox27.Text);
+            }
+            catch
+            {
+                Tempo = 0;
+                MessageBox.Show("Tempo stampaggio non corretto!");
+            }
+            try
+            {
+                PercLastra = Convert.ToInt32(textBox11.Text);
+            }
+            catch
+            {
+                PercLastra = 0;
+                MessageBox.Show("Percentuale utilizzo lastra non corretto!");
+            }
+
+            DataRow riga;
+            DataTable TArticoli;
+            TArticoli = target2021DataSet.Tables["DettArticoli"];
+
+            riga = TArticoli.Rows.Find(Id);
+            riga.BeginEdit();
+            riga["ProgStampaggio"] = ProgrStamp;
+            riga["NrPezziAStampo"] = NrImpronte;
+            riga["TempoStampaggio"] = Tempo;
+            riga["MacPredefStampo"] = MachPred;
+            riga["codicePrimaStampoDima"] = CodStampo;
+            riga["descrizionePrimaStampoDima"] = DescrStampo;
+            riga["codice_fornitore"] = CodForn;
+            riga["CodiceInput"] = CodIn;
+            riga["CodiceOutput"] = CodOut;
+            riga["Percentualelastra"] = PercLastra;
+            riga.EndEdit();
+
+            dettArticoliTableAdapter.Update(target2021DataSet);
+            double p3=0;
+            try
+            {
+                p3 = Convert.ToDouble(textBox19.Text);
+            }
+            catch
+            {
+                p3 = 0;
+                MessageBox.Show("Posizione stampo non corretta!");
+            }
+            AggiornaPosizioneStampo(CodStampo, textBox21.Text, textBox20.Text, p3);
         }
 
-        private void SalvaTab3()
+        private void SalvaTab3(int Id)
         {
+            int MachP;
+            string CodDima, DescDim, CodIn, CodOut, CodForn, Prog1, Prog2;
 
+            MachP = Convert.ToInt32(comboBox9.Text);
+            CodDima = comboBox11.Text;
+            DescDim = label34.Text;
+            CodForn = comboBox10.Text;
+            CodIn = label15.Text;
+            CodOut = label16.Text;
+            Prog1 = label13.Text;
+            Prog2 = label24.Text;
+
+            DataRow riga;
+            DataTable TArticoli;
+            TArticoli = target2021DataSet.Tables["DettArticoli"];
+
+            riga = TArticoli.Rows.Find(Id);
+            riga.BeginEdit();
+            riga["MacPredefTaglio"] = MachP;
+            riga["codicePrimaStampoDima"] = CodDima;
+            riga["descrizionePrimaStampoDima"] = MachP;
+            riga["codice_fornitore"] = CodForn;
+            riga["CodiceInput"] = CodIn;
+            riga["CodiceOutput"] = CodOut;
+            riga["ProgrTaglio1"] = Prog1;
+            riga["ProgrTaglio2"] = Prog2;
+            riga.EndEdit();
+
+            dettArticoliTableAdapter.Update(target2021DataSet);
+
+            double p3;
+            try
+            {
+                p3 = Convert.ToDouble(textBox25.Text);
+            }
+            catch
+            {
+                p3 = 0;
+                MessageBox.Show("Errore nella posizione dello stampo. Posizione 3");
+            }
+            AggiornaPosizioneStampo(CodDima, textBox23.Text, textBox24.Text, p3);
+        }
+
+        private void AggiornaPosizioneStampo(string cod, string p1, string p2, double p3)
+        {
+            DataRow riga;
+            DataTable TPosizioni;
+            TPosizioni = target2021DataSet.Tables["StampiDime"];
+
+            riga = TPosizioni.Rows.Find(cod);
+
+            riga.BeginEdit();
+            riga["Corsia"] = p1;
+            riga["Campata"] = p2;
+            riga["Posizione"] = p3;
+            riga.EndEdit();
+
+            stampiDimeTableAdapter.Update(target2021DataSet);
         }
     }
 }
