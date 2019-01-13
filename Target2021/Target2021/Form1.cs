@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Target2021.Anagrafiche;
 using Target2021.Stampe;
 using Target2021.Fornitori;
+using Target2021.Anagrafiche.Fornitore;
 using Target2021.Fase2;
 
 namespace Target2021
@@ -440,6 +441,41 @@ namespace Target2021
             stampacommessa sc = new stampacommessa();
             sc.MdiParent = this;
             sc.Show();
+        }
+
+        private void consultaOrdiniImportatiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaOrdiniImportati ordimp = new AnaOrdiniImportati();
+            ordimp.MdiParent = this;
+            ordimp.Show();
+        }
+
+        private void stampiDimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaStampiDime asd = new AnaStampiDime();
+            asd.MdiParent = this;
+            asd.Show();
+        }
+
+        private void modalitàPagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModalitaPagamento mp = new ModalitaPagamento();
+            mp.MdiParent = this;
+            mp.Show();
+        }
+
+        private void terminiPagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TerminiPagamento tp = new TerminiPagamento();
+            tp.MdiParent = this;
+            tp.Show();
+        }
+
+        private void spedizioneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CodiciSpedizione cs = new CodiciSpedizione();
+            cs.MdiParent = this;
+            cs.Show();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)

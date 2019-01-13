@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,106 @@ namespace Target2021
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniImportati'. È possibile spostarla o rimuoverla se necessario.
+            this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
+            DataTable tabella;
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
+            this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
+            button1_Click(sender, e);
+            tabella=CreaTabellaOrdini();
+            PopolaTabellaOrdini(comboBox1.Text, tabella);
+        }
 
+        private DataTable CreaTabellaOrdini()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add(new DataColumn("Importato", typeof(bool)));
+            dt.Columns.Add(new DataColumn("Num", typeof(Int32)));
+            dt.Columns.Add(new DataColumn("Data", typeof(DateTime)));
+            dt.Columns.Add(new DataColumn("Articolo", typeof(string)));
+            dt.Columns.Add(new DataColumn("Descrizione", typeof(string)));
+            dataGridView2.DataSource = dt;
+            this.dataGridView2.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            return dt;
+        }
+
+        private void PopolaTabellaOrdini(string anno, DataTable tabella)
+        {
+            RiempiDettaglioOrdini(anno, tabella);
+            RiempiCheckOrdinato(anno);
+            DisabilitaImportati();
+            //NascondiImportati();
+        }
+
+        private void NascondiImportati()
+        {
+            foreach (DataGridViewRow riga in dataGridView2.Rows)
+            {
+                if (Convert.ToBoolean(riga.Cells[0].Value))
+                {
+                    dataGridView2.Rows.RemoveAt(riga.Index);
+                }
+            }
+        }
+
+        private void DisabilitaImportati()
+        {
+            foreach (DataGridViewRow riga in dataGridView2.Rows)
+            {
+                if (Convert.ToBoolean(riga.Cells[0].Value))
+                {
+                    riga.Cells[0].ReadOnly = true;
+                }
+            }
+            dataGridView2.Refresh();
+        }
+
+        private void RiempiDettaglioOrdini(string anno, DataTable tabella)
+        {
+            string data;
+            data = anno+"0000";
+            DataTable DettaglioOrdini;
+            DettaglioOrdini = target2021DataSet.Tables["dettaglio_ordini_multiriga"];
+
+            string selezione = "data_ordine > '"+data+"'";
+            DataRow[] rows = DettaglioOrdini.Select(selezione);
+
+            foreach(DataRow riga in rows)
+            {
+                DataRow rig = tabella.NewRow();
+                rig["Num"] = riga[1];
+                rig["Data"] = DateTime.ParseExact(riga[0].ToString(),"yyyyMMdd",CultureInfo.InvariantCulture);
+                rig["Articolo"] = riga[3];
+                rig["Descrizione"] = riga[4];
+                tabella.Rows.Add(rig);
+            }
+        } 
+
+        private void RiempiCheckOrdinato(string anno)
+        {
+            int NumOrdine;
+            bool presente;
+            foreach (DataGridViewRow riga in dataGridView2.Rows)
+            {
+                NumOrdine = Convert .ToInt32(riga.Cells[1].Value);
+                DataTable OrdiniImportati;
+                OrdiniImportati = target2021DataSet.Tables["OrdiniImportati"];
+
+                string selezione = "Anno = " + anno + " AND Numero = " + NumOrdine.ToString();
+                DataRow[] rows = OrdiniImportati.Select(selezione);
+
+                if (rows.Length == 0)
+                    presente = false;
+                else
+                    presente = true;
+
+                riga.Cells[0].Value = presente;
+                riga.ReadOnly = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,8 +141,7 @@ namespace Target2021
             {
                 label4.Text = "Ci sono " + neworder.ToString() + " nuovi ordini!";
                 button2.Enabled = true;
-            }
-                
+            }               
         }
 
         private int RecuperaUltimoOrdine()
@@ -196,7 +291,7 @@ namespace Target2021
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
             } while (IDOrdine + 1 < IDOrdine+1);  //UltimoID
-            commesseDataGridView.Update();
+            //commesseDataGridView.Update();
         }
 
         private int RecuperaMacchinaStampa(string ca)
@@ -233,7 +328,7 @@ namespace Target2021
             return DesArticolo;
         }
 
-        private int NumeroFasi(string codart)
+        private int NumeroFasi(string codart)  // Da rivedere
         {
             string stringaconnessione, sql;
             int NumFasi;
@@ -412,7 +507,14 @@ namespace Target2021
             if (lato == 2) sql = "SELECT ProgrTaglio2 FROM DettArticoli WHERE codice_articolo='" + codart + "' AND lavorazione=3";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            progt = comando.ExecuteScalar().ToString();
+            try
+            {
+                progt = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                progt = "Non presente";
+            }
             connessione.Close();
             return progt;
         }

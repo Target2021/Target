@@ -39,6 +39,7 @@ namespace Target2021.Fornitori
                 button1.Visible = false;
                 qtaEffettivaTextBox.Enabled = false;
                 pesoTotaleTextBox.Enabled = false;
+                dataConsegnaRichiestaDateTimePicker.Enabled = true;
                 dataConsegnaConfermataDateTimePicker.Enabled = true;
                 dataConsegnaEffettivaDateTimePicker.Enabled = false;
                 button2.Visible = true;

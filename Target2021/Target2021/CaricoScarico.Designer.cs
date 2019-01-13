@@ -63,6 +63,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
             quantitaLabel = new System.Windows.Forms.Label();
             barcodeLabel = new System.Windows.Forms.Label();
             nrOrdineLabel = new System.Windows.Forms.Label();
@@ -71,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // quantitaLabel
@@ -171,6 +175,8 @@
             this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.TempStampTableAdapter = null;
+            this.tableAdapterManager.TempTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -396,11 +402,32 @@
             this.textBox8.TabIndex = 48;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(374, 315);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(84, 24);
+            this.button3.TabIndex = 50;
+            this.button3.Text = "Proponi";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // primeBindingSource
+            // 
+            this.primeBindingSource.DataMember = "Prime";
+            this.primeBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // primeTableAdapter
+            // 
+            this.primeTableAdapter.ClearBeforeFill = true;
+            // 
             // CaricoScarico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 454);
+            this.ClientSize = new System.Drawing.Size(468, 464);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.button2);
@@ -435,6 +462,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,5 +500,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource primeBindingSource;
+        private Target2021DataSetTableAdapters.PrimeTableAdapter primeTableAdapter;
     }
 }

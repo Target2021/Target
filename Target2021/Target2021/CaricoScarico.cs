@@ -28,6 +28,8 @@ namespace Target2021
 
         private void CaricoScarico_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
+            this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
             this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
             this.anaMagazziniTableAdapter.Fill(this.target2021DataSet.AnaMagazzini);
@@ -286,6 +288,46 @@ namespace Target2021
             }
             catch { }
             return numero;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            double PesoSingolaLastra, PesoComplessivo;
+            int qta;
+            string codice;
+            codice = textBox1.Text;
+            PesoSingolaLastra = RecuperaPesoLastra(codice);
+            try
+            {
+                qta = Convert.ToInt32(textBox2.Text);
+            }
+            catch
+            {
+                qta = 0;
+            }
+
+            PesoComplessivo = PesoSingolaLastra * qta;
+            textBox5.Text = PesoComplessivo.ToString();
+        }
+
+        private double RecuperaPesoLastra(string cod)
+        {
+            DataRow riga;
+            double peso;
+            DataTable TabellaLastre;
+            TabellaLastre = target2021DataSet.Tables["Prime"];
+
+            try
+            {
+                riga = TabellaLastre.Rows.Find(cod);
+                peso = Convert.ToDouble(riga["Peso"]);
+            }
+            catch
+            {
+                peso = 0;
+            }
+
+            return peso;
         }
     }
 }

@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
-    <PublishUrl>D:\Beta target\</PublishUrl>
+    <PublishUrl>C:\Beta\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -38,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +65,7 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
     <Reference Include="DataGridViewAutoFilter">
@@ -196,6 +198,12 @@
     <Compile Include="Anagrafiche\AnaMTaglio.Designer.cs">
       <DependentUpon>AnaMTaglio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\AnaOrdiniImportati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaOrdiniImportati.Designer.cs">
+      <DependentUpon>AnaOrdiniImportati.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anagrafiche\AnaPesiSpecifici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +215,12 @@
     </Compile>
     <Compile Include="Anagrafiche\AnaStampi.Designer.cs">
       <DependentUpon>AnaStampi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaStampiDime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaStampiDime.Designer.cs">
+      <DependentUpon>AnaStampiDime.cs</DependentUpon>
     </Compile>
     <Compile Include="Anagrafiche\CercaArticolo.cs">
       <SubType>Form</SubType>
@@ -225,6 +239,24 @@
     </Compile>
     <Compile Include="Anagrafiche\DettAbbinamStampo.Designer.cs">
       <DependentUpon>DettAbbinamStampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\Fornitore\CodiciSpedizione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\Fornitore\CodiciSpedizione.Designer.cs">
+      <DependentUpon>CodiciSpedizione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\Fornitore\ModalitaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\Fornitore\ModalitaPagamento.Designer.cs">
+      <DependentUpon>ModalitaPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anagrafiche\Fornitore\TerminiPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\Fornitore\TerminiPagamento.Designer.cs">
+      <DependentUpon>TerminiPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Anagrafiche\NuovoArticolo.cs">
       <SubType>Form</SubType>
@@ -688,11 +720,17 @@
     <EmbeddedResource Include="Anagrafiche\AnaMTaglio.resx">
       <DependentUpon>AnaMTaglio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaOrdiniImportati.resx">
+      <DependentUpon>AnaOrdiniImportati.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaPesiSpecifici.resx">
       <DependentUpon>AnaPesiSpecifici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaStampi.resx">
       <DependentUpon>AnaStampi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaStampiDime.resx">
+      <DependentUpon>AnaStampiDime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\CercaArticolo.resx">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
@@ -702,6 +740,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\DettAbbinamStampo.resx">
       <DependentUpon>DettAbbinamStampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\Fornitore\CodiciSpedizione.resx">
+      <DependentUpon>CodiciSpedizione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\Fornitore\ModalitaPagamento.resx">
+      <DependentUpon>ModalitaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\Fornitore\TerminiPagamento.resx">
+      <DependentUpon>TerminiPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\NuovoArticolo.resx">
       <DependentUpon>NuovoArticolo.cs</DependentUpon>

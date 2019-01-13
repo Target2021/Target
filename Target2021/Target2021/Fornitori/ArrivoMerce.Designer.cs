@@ -111,6 +111,7 @@
             this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
             this.tableAdapterManager.CodModPagamentoTableAdapter = null;
@@ -146,6 +147,8 @@
             this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.TempStampTableAdapter = null;
+            this.tableAdapterManager.TempTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -189,6 +192,7 @@
             this.ordFornTestDataGridView.Size = new System.Drawing.Size(1046, 191);
             this.ordFornTestDataGridView.TabIndex = 2;
             this.ordFornTestDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selezionata);
+            this.ordFornTestDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ordFornTestDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 

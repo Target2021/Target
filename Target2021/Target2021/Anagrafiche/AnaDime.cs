@@ -29,6 +29,8 @@ namespace Target2021.Anagrafiche
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Dime'. È possibile spostarla o rimuoverla se necessario.
             this.dimeTableAdapter.Fill(this.target2021DataSet.Dime);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Dime'. È possibile spostarla o rimuoverla se necessario.
+            this.dimeTableAdapter.Fill(this.target2021DataSet.Dime);
 
         }
 
@@ -41,6 +43,14 @@ namespace Target2021.Anagrafiche
         {
             if (comboBox1.Text == "Codice") dimeBindingSource.Filter = "codice LIKE '*" + textBox1.Text + "*'";
             if (comboBox1.Text == "Descrizione") dimeBindingSource.Filter = "descrizione LIKE '*" + textBox1.Text + "*'";
+        }
+
+        private void dimeBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.dimeBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
         }
     }
 }

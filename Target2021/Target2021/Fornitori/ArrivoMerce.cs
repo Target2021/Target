@@ -163,6 +163,11 @@ namespace Target2021.Fornitori
             }
         }
 
+        private void ordFornTestDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void AggiornaMagazzini(int nriga)
         {
             SeNonEsisteCrea(CodArt);

@@ -28,6 +28,8 @@ namespace Target2021.Anagrafiche
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Stampi'. È possibile spostarla o rimuoverla se necessario.
             this.stampiTableAdapter.Fill(this.target2021DataSet.Stampi);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Stampi'. È possibile spostarla o rimuoverla se necessario.
+            this.stampiTableAdapter.Fill(this.target2021DataSet.Stampi);
 
         }
 
@@ -40,6 +42,14 @@ namespace Target2021.Anagrafiche
         {
             if (comboBox1.Text == "Codice") stampiBindingSource.Filter = "codice LIKE '*" + textBox1.Text + "*'";
             if (comboBox1.Text == "Descrizione") stampiBindingSource.Filter = "descrizione LIKE '*" + textBox1.Text + "*'";
+        }
+
+        private void stampiBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.stampiBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
         }
     }
 }

@@ -106,13 +106,19 @@ namespace Target2021.Anagrafiche
             {
                 pictureBox1.Image = new Bitmap(immagine);
             }
-            catch { pictureBox1.Image = new Bitmap("C:\\Users\\targe\\Source\\Repos\\Target\\Target2021\\Target2021\\Immagini\\question-mark.jpg"); }
+            catch
+            {
+                //pictureBox1.Image = new Bitmap("C:\\Temp\\question-mark.jpg");
+            }
             AggiornaTab(codice);
         }
 
         private void articoli_sempliciDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CambiataSelezione(e.RowIndex);
+            DataGridViewRow riga;
+            riga = articoli_sempliciDataGridView.CurrentRow;
+            if (riga != null) CambiataSelezione(riga.Index);
+            //CambiataSelezione(e.RowIndex);
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -228,7 +234,14 @@ namespace Target2021.Anagrafiche
                 textBox11.Refresh();
                 comboBox8.Text = Fase2[0].Field<int>("MacPredefStampo").ToString();
                 comboBox8.Refresh();
-                textBox12.Text = Fase2[0].Field<int>("AbbinamentoStampo").ToString();
+                try
+                {
+                    textBox12.Text = Fase2[0].Field<int>("AbbinamentoStampo").ToString();
+                }
+                catch
+                {
+                    textBox12.Text = "0";
+                }
                 textBox12.Refresh();
                 textBox26.Text = Fase2[0].Field<int>("NrPezziAStampo").ToString();
                 textBox26.Refresh();
@@ -237,9 +250,15 @@ namespace Target2021.Anagrafiche
                 comboBox7_SelectedIndexChanged(new object(), new EventArgs());
                 DataRow[] riga;
                 riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox6.Text + "'");
-                textBox19.Text = riga[0]["Posizione"].ToString();
-                textBox20.Text = riga[0]["Campata"].ToString();
-                textBox21.Text = riga[0]["Corsia"].ToString();
+                if (riga.Length == 0)
+                    MessageBox.Show("Inserire lo Stampo nell'anagrafica stampi");
+                try
+                {
+                    textBox19.Text = riga[0]["Posizione"].ToString();
+                    textBox20.Text = riga[0]["Campata"].ToString();
+                    textBox21.Text = riga[0]["Corsia"].ToString();
+                }
+                catch { }
                 textBox22.Text = Fase2[0].Field<string>("ProgStampaggio").ToString();
                 textBox22.Refresh();
             }
@@ -472,19 +491,6 @@ namespace Target2021.Anagrafiche
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.articoli_sempliciTableAdapter.FillBy(this.target2021DataSet.articoli_semplici);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void controllaNumero(object sender, EventArgs e)
         {
             double numero;
@@ -621,8 +627,10 @@ namespace Target2021.Anagrafiche
             riga["codicePrimaStampoDima"] = CodStampo;
             riga["descrizionePrimaStampoDima"] = DescrStampo;
             riga["codice_fornitore"] = CodForn;
-            riga["CodiceInput"] = CodIn;
-            riga["CodiceOutput"] = CodOut;
+            if (CodIn.Length > 10) riga["CodiceInput"] = CodIn.Substring(0, 10);
+            else riga["CodiceInput"] = CodIn;
+            if (CodOut.Length > 10) riga["CodiceOutput"] = CodOut.Substring(0, 10);
+            else riga["CodiceOutput"] = CodOut;
             riga["Percentualelastra"] = PercLastra;
             riga.EndEdit();
 
@@ -649,10 +657,10 @@ namespace Target2021.Anagrafiche
             CodDima = comboBox11.Text;
             DescDim = label34.Text;
             CodForn = comboBox10.Text;
-            CodIn = label15.Text;
-            CodOut = label16.Text;
-            Prog1 = label13.Text;
-            Prog2 = label24.Text;
+            CodIn = textBox15.Text;
+            CodOut = textBox16.Text;
+            Prog1 = textBox13.Text;
+            Prog2 = textBox14.Text;
 
             DataRow riga;
             DataTable TArticoli;
@@ -661,11 +669,14 @@ namespace Target2021.Anagrafiche
             riga = TArticoli.Rows.Find(Id);
             riga.BeginEdit();
             riga["MacPredefTaglio"] = MachP;
-            riga["codicePrimaStampoDima"] = CodDima;
+            if (CodDima.Length > 10) riga["codicePrimaStampoDima"] = CodDima.Substring(0, 10);
+            else riga["codicePrimaStampoDima"] = CodDima;
             riga["descrizionePrimaStampoDima"] = MachP;
             riga["codice_fornitore"] = CodForn;
-            riga["CodiceInput"] = CodIn;
-            riga["CodiceOutput"] = CodOut;
+            if (CodIn.Length > 10) riga["CodiceInput"] = CodIn.Substring(0, 10);
+            else riga["CodiceInput"] = CodIn;
+            if (CodOut.Length > 10) riga["CodiceOutput"] = CodOut.Substring(0, 10);
+            else riga["CodiceOutput"] = CodOut;
             riga["ProgrTaglio1"] = Prog1;
             riga["ProgrTaglio2"] = Prog2;
             riga.EndEdit();
