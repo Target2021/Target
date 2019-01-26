@@ -478,6 +478,13 @@ namespace Target2021
             cs.Show();
         }
 
+        private void nuovoArticoloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuovoArticolo nuovo = new NuovoArticolo();
+            nuovo.MdiParent = this;
+            nuovo.Show();
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

@@ -54,8 +54,8 @@ namespace Target2021
         {
             RiempiDettaglioOrdini(anno, tabella);
             RiempiCheckOrdinato(anno);
-            DisabilitaImportati();
-            //NascondiImportati();
+            //DisabilitaImportati();
+            NascondiImportati();
         }
 
         private void NascondiImportati()
@@ -64,7 +64,9 @@ namespace Target2021
             {
                 if (Convert.ToBoolean(riga.Cells[0].Value))
                 {
-                    dataGridView2.Rows.RemoveAt(riga.Index);
+                    dataGridView2.CurrentRow.ReadOnly = true;
+                    //riga.Visible = false;
+                    //dataGridView2.Rows.RemoveAt(riga.Index);
                 }
             }
         }
@@ -121,7 +123,7 @@ namespace Target2021
                     presente = true;
 
                 riga.Cells[0].Value = presente;
-                riga.ReadOnly = true;
+                
             }
         }
 

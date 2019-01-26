@@ -42,10 +42,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.target2021DataSet9 = new Target2021.Target2021DataSet9();
             this.movimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSet9TableAdapters.MovimentiMagazzinoTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSet9TableAdapters.TableAdapterManager();
+            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.movimentiMagazzinoDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +65,7 @@
             this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
             this.tableAdapterManager1 = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
@@ -105,15 +104,10 @@
             this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // target2021DataSet9
-            // 
-            this.target2021DataSet9.DataSetName = "Target2021DataSet9";
-            this.target2021DataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // movimentiMagazzinoBindingSource
             // 
             this.movimentiMagazzinoBindingSource.DataMember = "MovimentiMagazzino";
-            this.movimentiMagazzinoBindingSource.DataSource = this.target2021DataSet9;
+            this.movimentiMagazzinoBindingSource.DataSource = this.target2021DataSet;
             // 
             // movimentiMagazzinoTableAdapter
             // 
@@ -124,7 +118,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = this.movimentiMagazzinoTableAdapter;
             this.tableAdapterManager.PrimeTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSet9TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // movimentiMagazzinoDataGridView
             // 
@@ -404,7 +398,7 @@
             this.Name = "CaricoLastre";
             this.Text = "Stampo etichette di carico lastre a magazzino";
             this.Load += new System.EventHandler(this.CaricoLastre_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
@@ -418,10 +412,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private Target2021DataSet9 target2021DataSet9;
         private System.Windows.Forms.BindingSource movimentiMagazzinoBindingSource;
-        private Target2021DataSet9TableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
-        private Target2021DataSet9TableAdapters.TableAdapterManager tableAdapterManager;
+        private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
+        private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView movimentiMagazzinoDataGridView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

@@ -29,6 +29,16 @@ namespace Target2021.Anagrafiche.Fornitore
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.CodModPagamento'. È possibile spostarla o rimuoverla se necessario.
             this.codModPagamentoTableAdapter.Fill(this.target2021DataSet.CodModPagamento);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.CodModPagamento'. È possibile spostarla o rimuoverla se necessario.
+            this.codModPagamentoTableAdapter.Fill(this.target2021DataSet.CodModPagamento);
+
+        }
+
+        private void codModPagamentoBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.codModPagamentoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
 
         }
     }

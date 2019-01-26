@@ -36,7 +36,7 @@ namespace Target2021.Report
         private void WFCaricoLastra_Load(object sender, EventArgs e)
         {
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
-            this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet9.MovimentiMagazzino);
+            this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
             this.reportViewer1.RefreshReport();
             imposta();
         }

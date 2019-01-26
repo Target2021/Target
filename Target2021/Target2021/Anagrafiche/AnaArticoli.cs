@@ -48,24 +48,24 @@ namespace Target2021.Anagrafiche
 
         private void AnaArticoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Stampi'. È possibile spostarla o rimuoverla se necessario.
+            this.stampiTableAdapter1.Fill(this.target2021DataSet.Stampi);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.StampiDime'. È possibile spostarla o rimuoverla se necessario.
-            this.stampiDimeTableAdapter.Fill(this.target2021DataSet.StampiDime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MacchineTaglio'. È possibile spostarla o rimuoverla se necessario.
             this.macchineTaglioTableAdapter1.Fill(this.target2021DataSet.MacchineTaglio);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Dime'. È possibile spostarla o rimuoverla se necessario.
             this.dimeTableAdapter.Fill(this.target2021DataSet.Dime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet8.MacchineTaglio'. È possibile spostarla o rimuoverla se necessario.
-            this.macchineTaglioTableAdapter.Fill(this.target2021DataSet8.MacchineTaglio);
+            this.macchineTaglioTableAdapter.Fill(this.target2021DataSet.MacchineTaglio);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet4.MacchineStampo'. È possibile spostarla o rimuoverla se necessario.
-            this.macchineStampoTableAdapter.Fill(this.target2021DataSet4.MacchineStampo);
+            this.macchineStampoTableAdapter.Fill(this.target2021DataSet.MacchineStampo);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet3.Fornitori'. È possibile spostarla o rimuoverla se necessario.
-            this.fornitoriTableAdapter1.Fill(this.target2021DataSet3.Fornitori);
+            this.fornitoriTableAdapter1.Fill(this.target2021DataSet.Fornitori);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet2.Stampi'. È possibile spostarla o rimuoverla se necessario.
-            this.stampiTableAdapter.Fill(this.target2021DataSet2.Stampi);
+            this.stampiTableAdapter.Fill(this.target2021DataSet.Stampi);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet1.Fasi'. È possibile spostarla o rimuoverla se necessario.
-            this.fasiTableAdapter1.Fill(this.target2021DataSet1.Fasi);
+            this.fasiTableAdapter1.Fill(this.target2021DataSet.Fasi);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             //this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
@@ -108,7 +108,7 @@ namespace Target2021.Anagrafiche
             }
             catch
             {
-                //pictureBox1.Image = new Bitmap("C:\\Temp\\question-mark.jpg");
+                pictureBox1.Image = Properties.Resources.question_mark;
             }
             AggiornaTab(codice);
         }
@@ -249,14 +249,14 @@ namespace Target2021.Anagrafiche
                 textBox27.Refresh();
                 comboBox7_SelectedIndexChanged(new object(), new EventArgs());
                 DataRow[] riga;
-                riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox6.Text + "'");
+                riga = target2021DataSet.Tables["Stampi"].Select("codice='" + comboBox6.Text + "'");
                 if (riga.Length == 0)
                     MessageBox.Show("Inserire lo Stampo nell'anagrafica stampi");
                 try
                 {
-                    textBox19.Text = riga[0]["Posizione"].ToString();
+                    textBox19.Text = riga[0]["Corsia"].ToString();
                     textBox20.Text = riga[0]["Campata"].ToString();
-                    textBox21.Text = riga[0]["Corsia"].ToString();
+                    textBox21.Text = riga[0]["Posizione"].ToString();
                 }
                 catch { }
                 textBox22.Text = Fase2[0].Field<string>("ProgStampaggio").ToString();
@@ -301,10 +301,10 @@ namespace Target2021.Anagrafiche
                 comboBox11_SelectedIndexChanged(new object(), new EventArgs());
                 comboBox10_SelectedIndexChanged(new object(), new EventArgs());
                 DataRow[] riga;
-                riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox11.Text + "'");
-                textBox23.Text = riga[0]["Posizione"].ToString();
+                riga = target2021DataSet.Tables["Dime"].Select("codice='" + comboBox11.Text + "'");
+                textBox23.Text = riga[0]["Corsia"].ToString();
                 textBox24.Text = riga[0]["Campata"].ToString();
-                textBox25.Text = riga[0]["Corsia"].ToString();
+                textBox25.Text = riga[0]["Posizione"].ToString();
             }
             catch
             {
@@ -342,13 +342,13 @@ namespace Target2021.Anagrafiche
             try
             {
                 string filtro = "codice='" + comboBox6.SelectedValue + "'";
-                DataRow[] Stampo = target2021DataSet2.Tables["Stampi"].Select(filtro);
+                DataRow[] Stampo = target2021DataSet.Tables["Stampi"].Select(filtro);
                 label15.Text = Stampo[0].Field<String>("descrizione");
                 DataRow[] riga;
-                riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox6.Text + "'");
-                textBox19.Text = riga[0]["Posizione"].ToString();
+                riga = target2021DataSet.Tables["Stampi"].Select("codice='" + comboBox6.Text + "'");
+                textBox19.Text = riga[0]["Corsia"].ToString();
                 textBox20.Text = riga[0]["Campata"].ToString();
-                textBox21.Text = riga[0]["Corsia"].ToString();
+                textBox21.Text = riga[0]["Posizione"].ToString();
             }
             catch { }
         }
@@ -358,7 +358,7 @@ namespace Target2021.Anagrafiche
             try
             {
                 string filtro = "codice='" + comboBox7.SelectedValue + "'";
-                DataRow[] Fornitore = target2021DataSet3.Tables["Fornitori"].Select(filtro);
+                DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
                 label18.Text = Fornitore[0].Field<String>("ragione_sociale");
             }
             catch { }
@@ -369,7 +369,7 @@ namespace Target2021.Anagrafiche
             try
             {
                 string filtro = "IdStampa='" + comboBox8.SelectedValue + "'";
-                DataRow[] MPredef = target2021DataSet4.Tables["MacchineStampo"].Select(filtro);
+                DataRow[] MPredef = target2021DataSet.Tables["MacchineStampo"].Select(filtro);
                 label25.Text = MPredef[0].Field<String>("Descrizione");
             }
             catch { }
@@ -435,10 +435,10 @@ namespace Target2021.Anagrafiche
                 DataRow[] Dima = target2021DataSet.Tables["Dime"].Select(filtro);
                 label34.Text = Dima[0].Field<String>("descrizione");
                 DataRow[] riga;
-                riga = target2021DataSet.Tables["StampiDime"].Select("codice='" + comboBox11.Text + "'");
-                textBox23.Text = riga[0]["Posizione"].ToString();
+                riga = target2021DataSet.Tables["Dime"].Select("codice='" + comboBox11.Text + "'");
+                textBox23.Text = riga[0]["Corsia"].ToString();
                 textBox24.Text = riga[0]["Campata"].ToString();
-                textBox25.Text = riga[0]["Corsia"].ToString();
+                textBox25.Text = riga[0]["Posizione"].ToString();
             }
             catch (Exception ex) { //MessageBox.Show(ex.Message); 
             }
@@ -449,7 +449,7 @@ namespace Target2021.Anagrafiche
             try
             {
                 string filtro = "codice='" + comboBox10.SelectedValue + "'";
-                DataRow[] Fornitore = target2021DataSet3.Tables["Fornitori"].Select(filtro);
+                DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
                 label32.Text = Fornitore[0].Field<String>("ragione_sociale");
             }
             catch { }
@@ -469,7 +469,9 @@ namespace Target2021.Anagrafiche
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funzione non ancora implementata");
+            MessageBox.Show("Funzione in corso di implementazione");
+            NuovoArticolo nuovo = new NuovoArticolo();
+            nuovo.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -693,14 +695,14 @@ namespace Target2021.Anagrafiche
                 p3 = 0;
                 MessageBox.Show("Errore nella posizione dello stampo. Posizione 3");
             }
-            AggiornaPosizioneStampo(CodDima, textBox23.Text, textBox24.Text, p3);
+            AggiornaPosizioneDima(CodDima, textBox23.Text, textBox24.Text, p3);
         }
 
         private void AggiornaPosizioneStampo(string cod, string p1, string p2, double p3)
         {
             DataRow riga;
             DataTable TPosizioni;
-            TPosizioni = target2021DataSet.Tables["StampiDime"];
+            TPosizioni = target2021DataSet.Tables["Stampi"];
 
             riga = TPosizioni.Rows.Find(cod);
 
@@ -710,7 +712,24 @@ namespace Target2021.Anagrafiche
             riga["Posizione"] = p3;
             riga.EndEdit();
 
-            stampiDimeTableAdapter.Update(target2021DataSet);
+            stampiTableAdapter.Update(target2021DataSet);
+        }
+
+        private void AggiornaPosizioneDima(string cod, string p1, string p2, double p3)
+        {
+            DataRow riga;
+            DataTable TPosizioni;
+            TPosizioni = target2021DataSet.Tables["Dime"];
+
+            riga = TPosizioni.Rows.Find(cod);
+
+            riga.BeginEdit();
+            riga["Corsia"] = p1;
+            riga["Campata"] = p2;
+            riga["Posizione"] = p3;
+            riga.EndEdit();
+
+            dimeTableAdapter.Update(target2021DataSet);
         }
     }
 }

@@ -29,6 +29,16 @@ namespace Target2021.Anagrafiche.Fornitore
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.CodSpedizioni'. È possibile spostarla o rimuoverla se necessario.
             this.codSpedizioniTableAdapter.Fill(this.target2021DataSet.CodSpedizioni);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.CodSpedizioni'. È possibile spostarla o rimuoverla se necessario.
+            this.codSpedizioniTableAdapter.Fill(this.target2021DataSet.CodSpedizioni);
+
+        }
+
+        private void codSpedizioniBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.codSpedizioniBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
 
         }
     }

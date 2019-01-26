@@ -32,16 +32,15 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.MovimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet9 = new Target2021.Target2021DataSet9();
             this.target2021DataSet9BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSet9TableAdapters.MovimentiMagazzinoTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSet9TableAdapters.TableAdapterManager();
+            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.MovimentiMagazzinoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet9BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
@@ -50,16 +49,11 @@
             // MovimentiMagazzinoBindingSource
             // 
             this.MovimentiMagazzinoBindingSource.DataMember = "MovimentiMagazzino";
-            this.MovimentiMagazzinoBindingSource.DataSource = this.target2021DataSet9;
-            // 
-            // target2021DataSet9
-            // 
-            this.target2021DataSet9.DataSetName = "Target2021DataSet9";
-            this.target2021DataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.MovimentiMagazzinoBindingSource.DataSource = this.target2021DataSet;
             // 
             // target2021DataSet9BindingSource
             // 
-            this.target2021DataSet9BindingSource.DataSource = this.target2021DataSet9;
+            this.target2021DataSet9BindingSource.DataSource = this.target2021DataSet;
             this.target2021DataSet9BindingSource.Position = 0;
             // 
             // movimentiMagazzinoTableAdapter
@@ -71,7 +65,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = this.movimentiMagazzinoTableAdapter;
             this.tableAdapterManager.PrimeTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSet9TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // reportViewer1
             // 
@@ -113,7 +107,7 @@
             this.Text = "Stampa";
             this.Load += new System.EventHandler(this.WFCaricoLastra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MovimentiMagazzinoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet9BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
@@ -123,10 +117,9 @@
 
         #endregion
         private System.Windows.Forms.BindingSource target2021DataSet9BindingSource;
-        private Target2021DataSet9 target2021DataSet9;
         private System.Windows.Forms.BindingSource MovimentiMagazzinoBindingSource;
-        private Target2021DataSet9TableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
-        private Target2021DataSet9TableAdapters.TableAdapterManager tableAdapterManager;
+        private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
+        private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private Target2021DataSet target2021DataSet;
         private System.Windows.Forms.BindingSource primeBindingSource;

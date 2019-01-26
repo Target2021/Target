@@ -52,9 +52,6 @@ namespace Target2021
             textBox4.Text = NrPezzi.ToString(); ;
 
             conn.Close();
-
-            this.CommesseTableAdapter.FillByNr(this.Target2021DataSet.Commesse, ((int)(System.Convert.ChangeType(numeroToolStripTextBox.Text, typeof(int)))));
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,7 +81,7 @@ namespace Target2021
         {
             try
             {
-                this.CommesseTableAdapter.FillByNr(this.Target2021DataSet.Commesse, ((int)(System.Convert.ChangeType(numeroToolStripTextBox.Text, typeof(int)))));
+
             }
             catch (System.Exception ex)
             {

@@ -63,19 +63,15 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.target2021DataSet5 = new Target2021.Target2021DataSet5();
             this.primeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.primeTableAdapter = new Target2021.Target2021DataSet5TableAdapters.PrimeTableAdapter();
-            this.target2021DataSet7 = new Target2021.Target2021DataSet7();
+            this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
             this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fornitoriTableAdapter = new Target2021.Target2021DataSet7TableAdapters.FornitoriTableAdapter();
+            this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articolisempliciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -363,29 +359,19 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // target2021DataSet5
-            // 
-            this.target2021DataSet5.DataSetName = "Target2021DataSet5";
-            this.target2021DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // primeBindingSource
             // 
             this.primeBindingSource.DataMember = "Prime";
-            this.primeBindingSource.DataSource = this.target2021DataSet5;
+            this.primeBindingSource.DataSource = this.target2021DataSet;
             // 
             // primeTableAdapter
             // 
             this.primeTableAdapter.ClearBeforeFill = true;
             // 
-            // target2021DataSet7
-            // 
-            this.target2021DataSet7.DataSetName = "Target2021DataSet7";
-            this.target2021DataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // fornitoriBindingSource
             // 
             this.fornitoriBindingSource.DataMember = "Fornitori";
-            this.fornitoriBindingSource.DataSource = this.target2021DataSet7;
+            this.fornitoriBindingSource.DataSource = this.target2021DataSet;
             // 
             // fornitoriTableAdapter
             // 
@@ -426,9 +412,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articolisempliciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.primeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -468,11 +452,9 @@
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Button button2;
-        private Target2021DataSet5 target2021DataSet5;
         private System.Windows.Forms.BindingSource primeBindingSource;
-        private Target2021DataSet5TableAdapters.PrimeTableAdapter primeTableAdapter;
-        private Target2021DataSet7 target2021DataSet7;
+        private Target2021DataSetTableAdapters.PrimeTableAdapter primeTableAdapter;
         private System.Windows.Forms.BindingSource fornitoriBindingSource;
-        private Target2021DataSet7TableAdapters.FornitoriTableAdapter fornitoriTableAdapter;
+        private Target2021DataSetTableAdapters.FornitoriTableAdapter fornitoriTableAdapter;
     }
 }

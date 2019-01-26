@@ -47,7 +47,7 @@ namespace Target2021.Anagrafiche
         {
             try
             {
-                this.abbinamentiArticoliTableAdapter.FillBy(this.target2021DataSet.AbbinamentiArticoli, new System.Nullable<int>(((int)(System.Convert.ChangeType(cAToolStripTextBox.Text, typeof(int))))));
+
             }
             catch (System.Exception ex)
             {
@@ -59,7 +59,7 @@ namespace Target2021.Anagrafiche
         {
             try
             {
-                this.abbinamentiArticoliTableAdapter.FillBy(this.target2021DataSet.AbbinamentiArticoli, new System.Nullable<int>(((int)(System.Convert.ChangeType(cAToolStripTextBox.Text, typeof(int))))));
+
             }
             catch (System.Exception ex)
             {

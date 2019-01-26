@@ -103,7 +103,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.comboBox8 = new System.Windows.Forms.ComboBox();
             this.macchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet4 = new Target2021.Target2021DataSet4();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -114,18 +113,15 @@
             this.label18 = new System.Windows.Forms.Label();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.fornitoriBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet3 = new Target2021.Target2021DataSet3();
             this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet2 = new Target2021.Target2021DataSet2();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.fasiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet1 = new Target2021.Target2021DataSet1();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox24 = new System.Windows.Forms.TextBox();
@@ -158,7 +154,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.macchineTaglioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet8 = new Target2021.Target2021DataSet8();
             this.dimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.fasiTableAdapter = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
@@ -173,11 +168,11 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.fasiTableAdapter1 = new Target2021.Target2021DataSet1TableAdapters.FasiTableAdapter();
-            this.stampiTableAdapter = new Target2021.Target2021DataSet2TableAdapters.StampiTableAdapter();
-            this.fornitoriTableAdapter1 = new Target2021.Target2021DataSet3TableAdapters.FornitoriTableAdapter();
-            this.macchineStampoTableAdapter = new Target2021.Target2021DataSet4TableAdapters.MacchineStampoTableAdapter();
-            this.macchineTaglioTableAdapter = new Target2021.Target2021DataSet8TableAdapters.MacchineTaglioTableAdapter();
+            this.fasiTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
+            this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
+            this.fornitoriTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
+            this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
+            this.macchineTaglioTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
             this.dimeTableAdapter = new Target2021.Target2021DataSetTableAdapters.DimeTableAdapter();
             this.fasiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.macchineTaglioTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
@@ -188,10 +183,10 @@
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.textBox18 = new System.Windows.Forms.TextBox();
-            this.stampiDimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stampiDimeTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiDimeTableAdapter();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
+            this.stampiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.stampiTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingNavigator)).BeginInit();
@@ -205,13 +200,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource2)).BeginInit();
@@ -220,12 +211,11 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stampiDimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // target2021DataSet
@@ -320,7 +310,7 @@
             this.articoli_sempliciBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.articoli_sempliciBindingNavigator.Name = "articoli_sempliciBindingNavigator";
             this.articoli_sempliciBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.articoli_sempliciBindingNavigator.Size = new System.Drawing.Size(1228, 25);
+            this.articoli_sempliciBindingNavigator.Size = new System.Drawing.Size(1244, 25);
             this.articoli_sempliciBindingNavigator.TabIndex = 0;
             this.articoli_sempliciBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -466,7 +456,7 @@
             this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.articoli_sempliciDataGridView.RowHeadersVisible = false;
             this.articoli_sempliciDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(582, 269);
+            this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(582, 161);
             this.articoli_sempliciDataGridView.TabIndex = 1;
             this.articoli_sempliciDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.articoli_sempliciDataGridView_CellContentClick);
             this.articoli_sempliciDataGridView.SelectionChanged += new System.EventHandler(this.articoli_sempliciDataGridView_SelectionChanged);
@@ -539,14 +529,14 @@
             this.groupBox1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(763, 59);
+            this.groupBox1.Size = new System.Drawing.Size(581, 59);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtra";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(283, 16);
+            this.textBox1.Location = new System.Drawing.Point(235, 24);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(327, 28);
             this.textBox1.TabIndex = 1;
@@ -558,7 +548,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Codice",
             "Descrizione"});
-            this.comboBox1.Location = new System.Drawing.Point(71, 16);
+            this.comboBox1.Location = new System.Drawing.Point(23, 24);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(206, 29);
             this.comboBox1.TabIndex = 0;
@@ -569,7 +559,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(587, 231);
+            this.label1.Location = new System.Drawing.Point(592, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 18);
             this.label1.TabIndex = 3;
@@ -582,7 +572,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(0, 422);
+            this.tabControl1.Location = new System.Drawing.Point(6, 314);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(816, 238);
@@ -984,12 +974,7 @@
             // macchineStampoBindingSource
             // 
             this.macchineStampoBindingSource.DataMember = "MacchineStampo";
-            this.macchineStampoBindingSource.DataSource = this.target2021DataSet4;
-            // 
-            // target2021DataSet4
-            // 
-            this.target2021DataSet4.DataSetName = "Target2021DataSet4";
-            this.target2021DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.macchineStampoBindingSource.DataSource = this.target2021DataSet;
             // 
             // label23
             // 
@@ -1081,12 +1066,7 @@
             // fornitoriBindingSource1
             // 
             this.fornitoriBindingSource1.DataMember = "Fornitori";
-            this.fornitoriBindingSource1.DataSource = this.target2021DataSet3;
-            // 
-            // target2021DataSet3
-            // 
-            this.target2021DataSet3.DataSetName = "Target2021DataSet3";
-            this.target2021DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fornitoriBindingSource1.DataSource = this.target2021DataSet;
             // 
             // label19
             // 
@@ -1124,12 +1104,7 @@
             // stampiBindingSource
             // 
             this.stampiBindingSource.DataMember = "Stampi";
-            this.stampiBindingSource.DataSource = this.target2021DataSet2;
-            // 
-            // target2021DataSet2
-            // 
-            this.target2021DataSet2.DataSetName = "Target2021DataSet2";
-            this.target2021DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.stampiBindingSource.DataSource = this.target2021DataSet;
             // 
             // label17
             // 
@@ -1178,12 +1153,7 @@
             // fasiBindingSource1
             // 
             this.fasiBindingSource1.DataMember = "Fasi";
-            this.fasiBindingSource1.DataSource = this.target2021DataSet1;
-            // 
-            // target2021DataSet1
-            // 
-            this.target2021DataSet1.DataSetName = "Target2021DataSet1";
-            this.target2021DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.fasiBindingSource1.DataSource = this.target2021DataSet;
             // 
             // tabPage3
             // 
@@ -1526,12 +1496,7 @@
             // macchineTaglioBindingSource
             // 
             this.macchineTaglioBindingSource.DataMember = "MacchineTaglio";
-            this.macchineTaglioBindingSource.DataSource = this.target2021DataSet8;
-            // 
-            // target2021DataSet8
-            // 
-            this.target2021DataSet8.DataSetName = "Target2021DataSet8";
-            this.target2021DataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.macchineTaglioBindingSource.DataSource = this.target2021DataSet;
             // 
             // dimeBindingSource
             // 
@@ -1543,7 +1508,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 371);
+            this.label2.Location = new System.Drawing.Point(3, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 18);
             this.label2.TabIndex = 4;
@@ -1564,11 +1529,11 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(817, 53);
+            this.button1.Location = new System.Drawing.Point(1009, 490);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 34);
+            this.button1.Size = new System.Drawing.Size(82, 58);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Nuovo";
+            this.button1.Text = "Nuovo articolo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -1576,11 +1541,11 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1115, 617);
+            this.button3.Location = new System.Drawing.Point(828, 490);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 43);
+            this.button3.Size = new System.Drawing.Size(85, 58);
             this.button3.TabIndex = 7;
-            this.button3.Text = "Salva";
+            this.button3.Text = "Salva modifiche";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -1594,7 +1559,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(652, 228);
+            this.textBox2.Location = new System.Drawing.Point(657, 93);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(159, 24);
             this.textBox2.TabIndex = 9;
@@ -1604,7 +1569,7 @@
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(100, 368);
+            this.textBox3.Location = new System.Drawing.Point(100, 260);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(481, 24);
             this.textBox3.TabIndex = 10;
@@ -1614,7 +1579,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(587, 261);
+            this.label9.Location = new System.Drawing.Point(592, 126);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 18);
             this.label9.TabIndex = 11;
@@ -1624,7 +1589,7 @@
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(717, 255);
+            this.textBox4.Location = new System.Drawing.Point(722, 120);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(94, 24);
             this.textBox4.TabIndex = 12;
@@ -1636,7 +1601,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(717, 318);
+            this.label16.Location = new System.Drawing.Point(722, 183);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 18);
             this.label16.TabIndex = 13;
@@ -1647,7 +1612,7 @@
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(763, 315);
+            this.textBox5.Location = new System.Drawing.Point(768, 180);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(48, 24);
             this.textBox5.TabIndex = 14;
@@ -1691,9 +1656,9 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(822, 93);
+            this.pictureBox1.Location = new System.Drawing.Point(828, 93);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(394, 345);
+            this.pictureBox1.Size = new System.Drawing.Size(410, 391);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -1702,9 +1667,9 @@
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(741, 356);
+            this.button4.Location = new System.Drawing.Point(919, 490);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 49);
+            this.button4.Size = new System.Drawing.Size(84, 58);
             this.button4.TabIndex = 16;
             this.button4.Text = "Cambia foto";
             this.button4.UseVisualStyleBackColor = true;
@@ -1720,7 +1685,7 @@
             this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(587, 288);
+            this.label38.Location = new System.Drawing.Point(592, 153);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(113, 18);
             this.label38.TabIndex = 18;
@@ -1730,7 +1695,7 @@
             // 
             this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(706, 285);
+            this.textBox17.Location = new System.Drawing.Point(711, 150);
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(105, 24);
             this.textBox17.TabIndex = 19;
@@ -1741,7 +1706,7 @@
             this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(3, 398);
+            this.label39.Location = new System.Drawing.Point(3, 290);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(86, 18);
             this.label39.TabIndex = 20;
@@ -1751,20 +1716,11 @@
             // 
             this.textBox18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(100, 395);
+            this.textBox18.Location = new System.Drawing.Point(100, 287);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(616, 21);
             this.textBox18.TabIndex = 21;
-            // 
-            // stampiDimeBindingSource
-            // 
-            this.stampiDimeBindingSource.DataMember = "StampiDime";
-            this.stampiDimeBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // stampiDimeTableAdapter
-            // 
-            this.stampiDimeTableAdapter.ClearBeforeFill = true;
             // 
             // dettArticoliBindingSource
             // 
@@ -1775,11 +1731,20 @@
             // 
             this.dettArticoliTableAdapter.ClearBeforeFill = true;
             // 
+            // stampiBindingSource1
+            // 
+            this.stampiBindingSource1.DataMember = "Stampi";
+            this.stampiBindingSource1.DataSource = this.target2021DataSet;
+            // 
+            // stampiTableAdapter1
+            // 
+            this.stampiTableAdapter1.ClearBeforeFill = true;
+            // 
             // AnaArticoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 663);
+            this.ClientSize = new System.Drawing.Size(1244, 563);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox18);
             this.Controls.Add(this.label39);
@@ -1820,13 +1785,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource1)).EndInit();
@@ -1836,12 +1797,11 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stampiDimeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1907,23 +1867,20 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox5;
-        private Target2021DataSet1 target2021DataSet1;
         private System.Windows.Forms.BindingSource fasiBindingSource1;
-        private Target2021DataSet1TableAdapters.FasiTableAdapter fasiTableAdapter1;
+        private Target2021DataSetTableAdapters.FasiTableAdapter fasiTableAdapter1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.Label label17;
-        private Target2021DataSet2 target2021DataSet2;
         private System.Windows.Forms.BindingSource stampiBindingSource;
-        private Target2021DataSet2TableAdapters.StampiTableAdapter stampiTableAdapter;
+        private Target2021DataSetTableAdapters.StampiTableAdapter stampiTableAdapter;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label19;
-        private Target2021DataSet3 target2021DataSet3;
         private System.Windows.Forms.BindingSource fornitoriBindingSource1;
-        private Target2021DataSet3TableAdapters.FornitoriTableAdapter fornitoriTableAdapter1;
+        private Target2021DataSetTableAdapters.FornitoriTableAdapter fornitoriTableAdapter1;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label20;
@@ -1932,9 +1889,8 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox comboBox8;
-        private Target2021DataSet4 target2021DataSet4;
         private System.Windows.Forms.BindingSource macchineStampoBindingSource;
-        private Target2021DataSet4TableAdapters.MacchineStampoTableAdapter macchineStampoTableAdapter;
+        private Target2021DataSetTableAdapters.MacchineStampoTableAdapter macchineStampoTableAdapter;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox12;
@@ -1959,9 +1915,8 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox13;
-        private Target2021DataSet8 target2021DataSet8;
         private System.Windows.Forms.BindingSource macchineTaglioBindingSource;
-        private Target2021DataSet8TableAdapters.MacchineTaglioTableAdapter macchineTaglioTableAdapter;
+        private Target2021DataSetTableAdapters.MacchineTaglioTableAdapter macchineTaglioTableAdapter;
         private System.Windows.Forms.BindingSource dimeBindingSource;
         private Target2021DataSetTableAdapters.DimeTableAdapter dimeTableAdapter;
         private System.Windows.Forms.BindingSource fasiBindingSource2;
@@ -1988,8 +1943,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.BindingSource stampiDimeBindingSource;
-        private Target2021DataSetTableAdapters.StampiDimeTableAdapter stampiDimeTableAdapter;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox22;
@@ -2005,5 +1958,7 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.BindingSource dettArticoliBindingSource;
         private Target2021DataSetTableAdapters.DettArticoliTableAdapter dettArticoliTableAdapter;
+        private System.Windows.Forms.BindingSource stampiBindingSource1;
+        private Target2021DataSetTableAdapters.StampiTableAdapter stampiTableAdapter1;
     }
 }

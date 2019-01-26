@@ -23,7 +23,7 @@ namespace Target2021.Stampe
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet9.MovimentiMagazzino'. È possibile spostarla o rimuoverla se necessario.
-            this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet9.MovimentiMagazzino);
+            this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
             filtra();
         }
 
@@ -31,7 +31,7 @@ namespace Target2021.Stampe
         {
             this.Validate();
             this.movimentiMagazzinoBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet9);
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
         }
 
         private void filtra()
