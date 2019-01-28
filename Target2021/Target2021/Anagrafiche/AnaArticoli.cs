@@ -28,10 +28,10 @@ namespace Target2021.Anagrafiche
 
         private void pulisci()
         {
-            comboBox2.Text = "0";
+            //comboBox2.Text = "0";
             comboBox3.Text = "LAS.00.000";
             comboBox4.Text = "";
-            comboBox5.Text = "0";
+            //comboBox5.Text = "0";
             comboBox6.Text = "STA.00.000";
             textBox6.Text = "";
             textBox7.Text = "";
@@ -40,7 +40,7 @@ namespace Target2021.Anagrafiche
             comboBox9.Text = "0";
             comboBox10.Text = "AAA";
             comboBox11.Text = "AAA.02.001";
-            comboBox12.Text = "0";
+            //comboBox12.Text = "0";
             textBox17.Text = "0";
             textBox23.Text = textBox24.Text = textBox25.Text = "0";
             textBox19.Text = textBox20.Text = textBox21.Text = "0";
@@ -156,16 +156,7 @@ namespace Target2021.Anagrafiche
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string filtro = "IDFase='" + comboBox2.SelectedValue.ToString() + "'";
-                DataRow[] Fase = target2021DataSet.Tables["Fasi"].Select(filtro);
-                label8.Text = Fase[0].Field<String>("Descrizione");
-            }
-            catch
-            {
-                label8.Text = " ";
-            }
+
         }
 
         private void AggiornaTab(string codice)
@@ -189,8 +180,12 @@ namespace Target2021.Anagrafiche
             {
                 string filtro = "codice_articolo='" + codice + "' AND lavorazione=1";
                 DataRow[] Fase1 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
-                comboBox2.Text = Fase1[0].Field<int>("lavorazione").ToString();
-                comboBox2.Refresh();
+                if (Fase1.Length > 0)
+                    comboBox2.Text = "Presente";
+                else
+                    comboBox2.Text = "Assente";
+                //comboBox2.Text = Fase1[0].Field<int>("lavorazione").ToString();
+                //comboBox2.Refresh();
                 comboBox3.Text = Fase1[0].Field<string>("codicePrimaStampoDima");
                 comboBox3.Refresh();
                 comboBox4.Text = Fase1[0].Field<string>("codice_fornitore");
@@ -205,12 +200,12 @@ namespace Target2021.Anagrafiche
             }
             catch
             {
-                comboBox2.Text = "0";
+                //comboBox2.Text = "0";
                 comboBox3.Text = "LAS.00.000";
                 comboBox4.Text = "AAA";
                 label6.Text = "";
                 label7.Text = "";
-                label8.Text = "";
+                //label8.Text = "";
             }
         }
 
@@ -220,7 +215,10 @@ namespace Target2021.Anagrafiche
             {
                 string filtro = "codice_articolo='" + codice + "' AND lavorazione=2";
                 DataRow[] Fase2 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
-                comboBox5.Text = Fase2[0].Field<int>("lavorazione").ToString();
+                if (Fase2.Length > 0)
+                    comboBox5.Text = "Presente";
+                else
+                    comboBox5.Text = "Assente";
                 comboBox5.Refresh();
                 comboBox6.Text = Fase2[0].Field<string>("codicePrimaStampoDima");
                 comboBox6.Refresh();
@@ -265,11 +263,11 @@ namespace Target2021.Anagrafiche
 
             catch
             {
-                comboBox5.Text = "0";
+                //comboBox5.Text = "0";
                 comboBox6.Text = "AAA.01.001";
                 comboBox7.Text = "AAA";
                 comboBox8.Text = "0";
-                label13.Text = "";
+                //label13.Text = "";
                 label15.Text = "";
                 label18.Text = "";
                 label25.Text = "";
@@ -282,7 +280,10 @@ namespace Target2021.Anagrafiche
             {
                 string filtro = "codice_articolo='" + codice + "' AND lavorazione=3";
                 DataRow[] Fase3 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
-                comboBox12.Text = Fase3[0].Field<int>("lavorazione").ToString();
+                if (Fase3.Length > 0)
+                    comboBox12.Text = "Presente";
+                else
+                    comboBox12.Text = "Assente";
                 comboBox12.Refresh();
                 comboBox11.Text = Fase3[0].Field<string>("codicePrimaStampoDima");
                 comboBox11.Refresh();
@@ -311,11 +312,11 @@ namespace Target2021.Anagrafiche
                 comboBox9.Text = "0";
                 comboBox10.Text = "AAA";
                 comboBox11.Text = "AAA.02.001";
-                comboBox12.Text = "0";
+                //comboBox12.Text = "0";
                 label26.Text = "";
                 label32.Text = "";
                 label34.Text = "";
-                label37.Text = "";
+                //label37.Text = "";
             }
         }
 
@@ -326,15 +327,9 @@ namespace Target2021.Anagrafiche
             dettArticoliBindingSource.Filter = "codice_articolo = '" + codice + "' AND lavorazione=4";
         }
 
-            private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string filtro = "IDFase='" + comboBox5.SelectedValue.ToString() + "'";
-                DataRow[] Fase = target2021DataSet.Tables["Fasi"].Select(filtro);
-                label13.Text = Fase[0].Field<String>("Descrizione");
-            }
-            catch { }
+
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
@@ -385,13 +380,7 @@ namespace Target2021.Anagrafiche
 
         private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string filtro = "IDFase='" + comboBox12.SelectedValue.ToString() + "'";
-                DataRow[] Fase = target2021DataSet.Tables["Fasi"].Select(filtro);
-                label37.Text = Fase[0].Field<String>("Descrizione");
-            }
-            catch { }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -469,7 +458,6 @@ namespace Target2021.Anagrafiche
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funzione in corso di implementazione");
             NuovoArticolo nuovo = new NuovoArticolo();
             nuovo.Show();
         }
