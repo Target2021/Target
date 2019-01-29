@@ -164,9 +164,9 @@ namespace Target2021
         private void AggiornaGiacenzeC(int q, string Cod, string cs)
         {
             int numero, disponibili;
-            string query2, query3;
+            string query2;
             DateTime ora;
-            SqlCommand comando2, comando3;
+            SqlCommand comando2;
             SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
             conn.Open();
             string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
@@ -204,9 +204,9 @@ namespace Target2021
         private void AggiornaGiacenzeS(int q, string Cod, string cs)
         {
             int numero, disponibili;
-            string query2, query3;
+            string query2;
             DateTime ora;
-            SqlCommand comando2, comando3;
+            SqlCommand comando2;
             SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
             conn.Open();
             string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";

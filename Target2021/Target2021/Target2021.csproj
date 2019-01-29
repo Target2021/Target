@@ -216,12 +216,6 @@
     <Compile Include="Anagrafiche\AnaStampi.Designer.cs">
       <DependentUpon>AnaStampi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Anagrafiche\AnaStampiDime.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Anagrafiche\AnaStampiDime.Designer.cs">
-      <DependentUpon>AnaStampiDime.cs</DependentUpon>
-    </Compile>
     <Compile Include="Anagrafiche\CercaArticolo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -683,9 +677,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaStampi.resx">
       <DependentUpon>AnaStampi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Anagrafiche\AnaStampiDime.resx">
-      <DependentUpon>AnaStampiDime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\CercaArticolo.resx">
       <DependentUpon>CercaArticolo.cs</DependentUpon>

@@ -27,7 +27,9 @@ namespace Target2021.Anagrafiche
 
         private void AnaMateriePrime_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
+
         }
 
         private void Seleziona(object sender, DataGridViewCellEventArgs e)
@@ -58,6 +60,14 @@ namespace Target2021.Anagrafiche
         {
             SelPrime selez = new SelPrime(1, comboBox1.Text, textBox1.Text);
             selez.ShowDialog();
+        }
+
+        private void primeBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.primeBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
         }
     }
 }

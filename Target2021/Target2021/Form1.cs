@@ -450,13 +450,6 @@ namespace Target2021
             ordimp.Show();
         }
 
-        private void stampiDimeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AnaStampiDime asd = new AnaStampiDime();
-            asd.MdiParent = this;
-            asd.Show();
-        }
-
         private void modalitàPagamentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ModalitaPagamento mp = new ModalitaPagamento();

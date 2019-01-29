@@ -374,7 +374,6 @@
             this.tableAdapterManager1.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager1.PrimeTableAdapter = this.primeTableAdapter;
             this.tableAdapterManager1.SchedulazioneTableAdapter = null;
-            this.tableAdapterManager1.StampiDimeTableAdapter = null;
             this.tableAdapterManager1.StampiTableAdapter = null;
             this.tableAdapterManager1.SuperCommessaTableAdapter = null;
             this.tableAdapterManager1.sysdiagramsTableAdapter = null;

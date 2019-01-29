@@ -82,7 +82,6 @@
             this.tableAdapterManager1.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager1.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager1.PrimeTableAdapter = null;
-            this.tableAdapterManager1.StampiDimeTableAdapter = null;
             this.tableAdapterManager1.StampiTableAdapter = null;
             this.tableAdapterManager1.SuperCommessaTableAdapter = null;
             this.tableAdapterManager1.sysdiagramsTableAdapter = null;
