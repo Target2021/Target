@@ -29,7 +29,9 @@ namespace Target2021
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MovimentiMagazzino'. È possibile spostarla o rimuoverla se necessario.
             this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
-
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MovimentiMagazzino'. È possibile spostarla o rimuoverla se necessario.
+            this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -66,6 +68,14 @@ namespace Target2021
         private void movimentiMagazzinoDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
+        }
+
+        private void movimentiMagazzinoBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.movimentiMagazzinoBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
         }
     }
 }

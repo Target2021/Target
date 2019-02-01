@@ -44,6 +44,8 @@ namespace Target2021.Anagrafiche
             textBox17.Text = "0";
             textBox23.Text = textBox24.Text = textBox25.Text = "0";
             textBox19.Text = textBox20.Text = textBox21.Text = "0";
+            label25.Text = "";
+            label26.Text = "";
         }
 
         private void AnaArticoli_Load(object sender, EventArgs e)
@@ -66,8 +68,6 @@ namespace Target2021.Anagrafiche
             this.stampiTableAdapter.Fill(this.target2021DataSet.Stampi);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet1.Fasi'. È possibile spostarla o rimuoverla se necessario.
             this.fasiTableAdapter1.Fill(this.target2021DataSet.Fasi);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
-            //this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
             this.fornitoriTableAdapter.Fill(this.target2021DataSet.Fornitori);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
@@ -77,6 +77,7 @@ namespace Target2021.Anagrafiche
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.articoli_semplici'. È possibile spostarla o rimuoverla se necessario.
             this.articoli_sempliciTableAdapter.Fill(this.target2021DataSet.articoli_semplici);
             pulisci();
+            this.ActiveControl = textBox1;
         }
 
         private void Filtra(object sender, EventArgs e)
@@ -88,7 +89,7 @@ namespace Target2021.Anagrafiche
         private void CambiataSelezione(int numero)
         {
             pulisci();
-            int NumeroFasi = 0;
+            int NumeroFasi = 0, lottominimo=0;
             string codice = articoli_sempliciDataGridView.Rows[numero].Cells[0].Value.ToString();
             textBox2.Text = codice;
             string descrizione = articoli_sempliciDataGridView.Rows[numero].Cells[1].Value.ToString();
@@ -101,6 +102,15 @@ namespace Target2021.Anagrafiche
             textBox5.Text = NumeroFasi.ToString();
             string imballaggio = articoli_sempliciDataGridView.Rows[numero].Cells[5].Value.ToString();
             textBox18.Text = imballaggio;
+            try
+            {
+                lottominimo =Convert.ToInt32(articoli_sempliciDataGridView.Rows[numero].Cells[7].Value);
+            }
+            catch
+            {
+                lottominimo = 0;
+            }
+            textBox28.Text = lottominimo.ToString();
             string immagine = articoli_sempliciDataGridView.Rows[numero].Cells[6].Value.ToString();
             try
             {
@@ -118,7 +128,6 @@ namespace Target2021.Anagrafiche
             DataGridViewRow riga;
             riga = articoli_sempliciDataGridView.CurrentRow;
             if (riga != null) CambiataSelezione(riga.Index);
-            //CambiataSelezione(e.RowIndex);
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -271,6 +280,7 @@ namespace Target2021.Anagrafiche
                 label15.Text = "";
                 label18.Text = "";
                 label25.Text = "";
+                label26.Text = "";
             }
         }
 
@@ -363,9 +373,11 @@ namespace Target2021.Anagrafiche
         {
             try
             {
-                string filtro = "IdStampa='" + comboBox8.SelectedValue + "'";
-                DataRow[] MPredef = target2021DataSet.Tables["MacchineStampo"].Select(filtro);
-                label25.Text = MPredef[0].Field<String>("Descrizione");
+                //string filtro = "IdStampa='" + comboBox8.SelectedValue + "'";
+                //DataRow[] MPredef = target2021DataSet.Tables["MacchineStampo"].Select(filtro);
+                //label25.Text = MPredef[0].Field<String>("Descrizione");
+                label25.Text = comboBox8.Text;
+                SelectNextControl(ActiveControl, true, true, true, true);
             }
             catch { }
         }
@@ -375,7 +387,8 @@ namespace Target2021.Anagrafiche
             int CodAbb;
             CodAbb = Convert.ToInt32(textBox12.Text);
             DettAbbinamStampo DAS = new DettAbbinamStampo(CodAbb, textBox2.Text);
-            DAS.Show();
+            DAS.ShowDialog();
+            textBox12.Text = DAS.CA.ToString();
         }
 
         private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
@@ -393,9 +406,9 @@ namespace Target2021.Anagrafiche
             IdFase3 = RecuperaIdFase(codice, 3);
 
             SalvaGenerale();
-            SalvaTab1(IdFase1);
-            SalvaTab2(IdFase2);
-            SalvaTab3(IdFase3);
+            if (IdFase1 >= 0) SalvaTab1(IdFase1);
+            if (IdFase2 >= 0) SalvaTab2(IdFase2);
+            if (IdFase3 >= 0) SalvaTab3(IdFase3);
             MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
         }
 
@@ -404,16 +417,20 @@ namespace Target2021.Anagrafiche
             int ID;
             DataRow[] riga;
             riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + cod + "' AND lavorazione="+fase.ToString());
-            ID = Convert.ToInt32(riga[0]["IDDettaglioArticolo"]);
-            return ID;
+            try
+            {
+                ID = Convert.ToInt32(riga[0]["IDDettaglioArticolo"]);
+                return ID;
+            }
+            catch { return -1; }
         }
 
         private void AggiornaTabulato(object sender, EventArgs e)
         {
-            //DataGridViewRow riga;
-            //riga = articoli_sempliciDataGridView.CurrentRow;
-            //string codice = articoli_sempliciDataGridView.Rows[riga.Index].Cells[0].Value.ToString();
-            //AggiornaTab(codice);
+            DataGridViewRow riga;
+            riga = articoli_sempliciDataGridView.CurrentRow;
+            string codice = articoli_sempliciDataGridView.Rows[riga.Index].Cells[0].Value.ToString();
+            AggiornaTab(codice);
         }
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
@@ -448,9 +465,11 @@ namespace Target2021.Anagrafiche
         {
             try
             {
-                string filtro = "IDTaglio='" + comboBox9.SelectedValue + "'";
-                DataRow[] MPredef = target2021DataSet.Tables["MacchineTaglio"].Select(filtro);
-                label26.Text = MPredef[0].Field<String>("Descrizione");
+                //string filtro = "IDTaglio='" + comboBox9.SelectedValue + "'";
+                //DataRow[] MPredef = target2021DataSet.Tables["MacchineTaglio"].Select(filtro);
+                //label26.Text = MPredef[0].Field<String>("Descrizione");
+                label26.Text = comboBox9.Text;
+                SelectNextControl(ActiveControl, true, true, true, true);
             }
             catch (Exception ex) { //MessageBox.Show(ex.Message); 
             }
@@ -501,12 +520,22 @@ namespace Target2021.Anagrafiche
             // Per la testata articoli aggiorna solo Descrizione e Costo Base Produzione
             string codice, descrizione, imballaggio;
             double costo, prezzo;
+            int LottoMinimoProduzione;
 
             codice = textBox2.Text;
             descrizione = textBox3.Text;
             imballaggio = textBox18.Text;
             costo = Convert.ToDouble(textBox4.Text);
             prezzo = Convert.ToDouble(textBox17.Text);
+            try
+            {
+                LottoMinimoProduzione = Convert.ToInt32(textBox28.Text);
+            }
+            catch
+            {
+                LottoMinimoProduzione = 0;
+            }
+
 
             DataRow riga;
             DataTable TabellaArticoli;
@@ -518,6 +547,7 @@ namespace Target2021.Anagrafiche
             riga["costo_standard"] = costo;
             riga["prezzo_b"] = prezzo;
             riga["note"] = imballaggio;
+            riga["LottoMinimoProduzione"] = LottoMinimoProduzione;
             riga.EndEdit();
 
             articoli_sempliciTableAdapter.Update(target2021DataSet);
@@ -570,7 +600,7 @@ namespace Target2021.Anagrafiche
 
             codice = textBox2.Text;
             ProgrStamp = textBox22.Text;
-            MachPred =Convert .ToInt32 (comboBox8.Text);
+            MachPred = Convert.ToInt32(comboBox8.SelectedValue);
             CodStampo = comboBox6.Text;
             DescrStampo = label15.Text;
             CodForn = comboBox7.Text;
@@ -628,14 +658,14 @@ namespace Target2021.Anagrafiche
             double p3=0;
             try
             {
-                p3 = Convert.ToDouble(textBox19.Text);
+                p3 = Convert.ToDouble(textBox21.Text);
             }
             catch
             {
                 p3 = 0;
                 MessageBox.Show("Posizione stampo non corretta!");
             }
-            AggiornaPosizioneStampo(CodStampo, textBox21.Text, textBox20.Text, p3);
+            AggiornaPosizioneStampo(CodStampo, textBox19.Text, textBox20.Text, p3);
         }
 
         private void SalvaTab3(int Id)
@@ -643,7 +673,7 @@ namespace Target2021.Anagrafiche
             int MachP;
             string CodDima, DescDim, CodIn, CodOut, CodForn, Prog1, Prog2;
 
-            MachP = Convert.ToInt32(comboBox9.Text);
+            MachP = Convert.ToInt32(comboBox9.SelectedValue);
             CodDima = comboBox11.Text;
             DescDim = label34.Text;
             CodForn = comboBox10.Text;
@@ -661,7 +691,7 @@ namespace Target2021.Anagrafiche
             riga["MacPredefTaglio"] = MachP;
             if (CodDima.Length > 10) riga["codicePrimaStampoDima"] = CodDima.Substring(0, 10);
             else riga["codicePrimaStampoDima"] = CodDima;
-            riga["descrizionePrimaStampoDima"] = MachP;
+            riga["descrizionePrimaStampoDima"] = DescDim;
             riga["codice_fornitore"] = CodForn;
             if (CodIn.Length > 10) riga["CodiceInput"] = CodIn.Substring(0, 10);
             else riga["CodiceInput"] = CodIn;

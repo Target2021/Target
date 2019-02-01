@@ -13,7 +13,8 @@ namespace Target2021.Report
 {
     public partial class WFCaricoLastra : Form
     {
-        int numero, qta, nrordine;
+        int numero, qta, nrordine, Npagine;
+        int[] Stampe = new int[6];
         double peso;
         DateTime datacarico;
         string CodLas, Descrizione, x2, y2, z2;
@@ -38,10 +39,30 @@ namespace Target2021.Report
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
             this.reportViewer1.RefreshReport();
-            imposta();
+            ConfermaN();
+            stampa();
         }
 
-        private void imposta()
+        private void ConfermaN()
+        {
+            int i;
+            ConfermaNumero CN = new ConfermaNumero(qta);
+            CN.ShowDialog();
+            for (i=0;i<6;i++)
+                Stampe[i]= CN.NumeriBancali[i];
+            Npagine = CN.NBanc;
+        }
+
+        private void stampa()
+        {
+            int i;
+            for (i=0;i<Npagine;i++)
+            {
+                if (Stampe[i]>0) imposta(Stampe[i]);
+            }
+        }
+
+        private void imposta(int nr)
         {
             int anno;
             string no;
@@ -51,7 +72,7 @@ namespace Target2021.Report
             ReportParameter id = new ReportParameter("idMovimento", numero.ToString());
             ReportParameter CL = new ReportParameter("CodLas", CodLas);
             ReportParameter p = new ReportParameter("peso", peso.ToString());
-            ReportParameter q = new ReportParameter("qta", qta.ToString());
+            ReportParameter q = new ReportParameter("qta", nr.ToString());
             ReportParameter d = new ReportParameter("data", datacarico.ToString());
             ReportParameter n = new ReportParameter("nrordine", no);
             ReportParameter des = new ReportParameter("des", Descrizione);
@@ -59,8 +80,8 @@ namespace Target2021.Report
             ReportParameter y = new ReportParameter("y", y2);
             ReportParameter z = new ReportParameter("z", z2);
 
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { id, CL, p, q, d, n, des, x, y, z });
-            this.reportViewer1.RefreshReport();
+            reportViewer1.LocalReport.SetParameters(new ReportParameter[] { id, CL, p, q, d, n, des, x, y, z });
+            reportViewer1.RefreshReport();
         }
     }
 }

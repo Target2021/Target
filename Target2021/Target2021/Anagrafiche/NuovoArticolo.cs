@@ -200,7 +200,7 @@ namespace Target2021.Anagrafiche
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.articoli_semplici'. È possibile spostarla o rimuoverla se necessario.
             this.articoli_sempliciTableAdapter.Fill(this.target2021DataSet.articoli_semplici);
-
+            MessageBox.Show("Ricordati che per inserire un nuovo articolo serve che siano presenti Stampi e Dime nelle rispettive anagrafiche");
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -227,6 +227,12 @@ namespace Target2021.Anagrafiche
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox1.BackColor = Color.White;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Ottieni max colonna IdAbbinamento da Tabella AbbinamentiArticoli
+            // e incrementa di 1
         }
     }
 }

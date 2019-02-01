@@ -84,7 +84,9 @@ namespace Target2021
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            int pezzi;
+            pezzi = aggiornagiacenza(textBox1.Text);
+            textBox7.Text = pezzi.ToString();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,12 +146,14 @@ namespace Target2021
                     {
                         AggiornaGiacenzeC(qta, CodArt, CS);
                         MessageBox.Show("Movimento registrato correttamente!");
+                        Pulisci();
                     }
 
                     if (CS == "S" && qta <= AMagazzino)
                     {
                         AggiornaGiacenzeS(qta, CodArt, CS);
                         MessageBox.Show("Movimento registrato correttamente!");
+                        Pulisci();
                     }
                     if (CS == "S" && qta > AMagazzino)
                         MessageBox.Show("Non hai disponibili la quantità richiesta!");
@@ -159,6 +163,20 @@ namespace Target2021
                     MessageBox.Show("Insert Failed");
                 }
             }
+        }
+
+        private void Pulisci()
+        {
+            textBox1.Text = "";
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox8.Text = "";
+            this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
         }
 
         private void AggiornaGiacenzeC(int q, string Cod, string cs)
@@ -251,7 +269,7 @@ namespace Target2021
                 label6.Visible = false;
                 textBox7.Visible = false;
             }
-            if (radioButton1.Checked == false)
+            if (radioButton2.Checked == true)
             {
                 label6.Visible = true;
                 textBox7.Visible = true;

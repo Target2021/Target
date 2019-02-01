@@ -41,19 +41,19 @@
             this.articoli_sempliciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idAbbinamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codicearticoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.cAToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.cAToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.abbinamentiArticoliDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abbinamentiArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.abbinamentiArticoliDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // target2021DataSet
@@ -113,10 +113,12 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = this.abbinamentiArticoliTableAdapter;
+            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = this.articoli_sempliciTableAdapter;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
             this.tableAdapterManager.CodModPagamentoTableAdapter = null;
@@ -129,10 +131,12 @@
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
             this.tableAdapterManager.DimeTableAdapter = null;
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
             this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
@@ -141,10 +145,17 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.SchedulazioneTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.TempStampTableAdapter = null;
+            this.tableAdapterManager.TempTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -171,7 +182,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(399, 121);
+            this.button1.Location = new System.Drawing.Point(471, 104);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 34);
             this.button1.TabIndex = 7;
@@ -179,78 +190,111 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // abbinamentiArticoliDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDADataGridViewTextBoxColumn,
-            this.idAbbinamentoDataGridViewTextBoxColumn,
-            this.codicearticoloDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.abbinamentiArticoliBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 121);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(393, 179);
-            this.dataGridView1.TabIndex = 8;
+            this.abbinamentiArticoliDataGridView.AllowUserToAddRows = false;
+            this.abbinamentiArticoliDataGridView.AllowUserToDeleteRows = false;
+            this.abbinamentiArticoliDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.abbinamentiArticoliDataGridView.AutoGenerateColumns = false;
+            this.abbinamentiArticoliDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.abbinamentiArticoliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.abbinamentiArticoliDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.abbinamentiArticoliDataGridView.DataSource = this.abbinamentiArticoliBindingSource;
+            this.abbinamentiArticoliDataGridView.Location = new System.Drawing.Point(4, 144);
+            this.abbinamentiArticoliDataGridView.Name = "abbinamentiArticoliDataGridView";
+            this.abbinamentiArticoliDataGridView.Size = new System.Drawing.Size(604, 237);
+            this.abbinamentiArticoliDataGridView.TabIndex = 9;
             // 
-            // iDADataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.iDADataGridViewTextBoxColumn.DataPropertyName = "IDA";
-            this.iDADataGridViewTextBoxColumn.HeaderText = "IDA";
-            this.iDADataGridViewTextBoxColumn.Name = "iDADataGridViewTextBoxColumn";
-            this.iDADataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDA";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IDA";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 50;
             // 
-            // idAbbinamentoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.idAbbinamentoDataGridViewTextBoxColumn.DataPropertyName = "IdAbbinamento";
-            this.idAbbinamentoDataGridViewTextBoxColumn.HeaderText = "IdAbbinamento";
-            this.idAbbinamentoDataGridViewTextBoxColumn.Name = "idAbbinamentoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IdAbbinamento";
+            this.dataGridViewTextBoxColumn2.HeaderText = "IdAbbinamento";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 103;
             // 
-            // codicearticoloDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.codicearticoloDataGridViewTextBoxColumn.DataPropertyName = "codice_articolo";
-            this.codicearticoloDataGridViewTextBoxColumn.HeaderText = "codice_articolo";
-            this.codicearticoloDataGridViewTextBoxColumn.Name = "codicearticoloDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "codice_articolo";
+            this.dataGridViewTextBoxColumn3.HeaderText = "codice_articolo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 104;
             // 
-            // fillByToolStrip
+            // dataGridViewTextBoxColumn4
             // 
-            this.fillByToolStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cAToolStripLabel,
-            this.cAToolStripTextBox,
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 303);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(546, 25);
-            this.fillByToolStrip.TabIndex = 9;
-            this.fillByToolStrip.Text = "fillByToolStrip";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Qta";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Qta";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 49;
             // 
-            // cAToolStripLabel
+            // dataGridViewTextBoxColumn5
             // 
-            this.cAToolStripLabel.Name = "cAToolStripLabel";
-            this.cAToolStripLabel.Size = new System.Drawing.Size(26, 22);
-            this.cAToolStripLabel.Text = "CA:";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Descrizione";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Descrizione";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 87;
             // 
-            // cAToolStripTextBox
+            // button2
             // 
-            this.cAToolStripTextBox.Name = "cAToolStripTextBox";
-            this.cAToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.button2.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(317, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 24);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Assegna nuovo codice";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // fillByToolStripButton
+            // label3
             // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 18);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Quantità:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(173, 109);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(118, 24);
+            this.textBox4.TabIndex = 12;
+            this.textBox4.Text = "1";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DettAbbinamStampo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 328);
-            this.Controls.Add(this.fillByToolStrip);
-            this.Controls.Add(this.dataGridView1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(610, 383);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.abbinamentiArticoliDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -263,9 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abbinamentiArticoliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.abbinamentiArticoliDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,13 +326,14 @@
         private System.Windows.Forms.BindingSource articoli_sempliciBindingSource;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripLabel cAToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox cAToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idAbbinamentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codicearticoloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView abbinamentiArticoliDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
