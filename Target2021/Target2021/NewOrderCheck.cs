@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.Integration;
 
 namespace Target2021
 {
     public partial class NewOrderCheck : Form
     {
         private int NumOrd, NumTest, percentuale;
+        private string IDPrima;
 
         public NewOrderCheck()
         {
@@ -53,34 +55,8 @@ namespace Target2021
         private void PopolaTabellaOrdini(string anno, DataTable tabella)
         {
             RiempiDettaglioOrdini(anno, tabella);
+            RiempiSyncDettaglioOrdini(anno, tabella);
             RiempiCheckOrdinato(anno);
-            //DisabilitaImportati();
-            NascondiImportati();
-        }
-
-        private void NascondiImportati()
-        {
-            foreach (DataGridViewRow riga in dataGridView2.Rows)
-            {
-                if (Convert.ToBoolean(riga.Cells[0].Value))
-                {
-                    dataGridView2.CurrentRow.ReadOnly = true;
-                    //riga.Visible = false;
-                    //dataGridView2.Rows.RemoveAt(riga.Index);
-                }
-            }
-        }
-
-        private void DisabilitaImportati()
-        {
-            foreach (DataGridViewRow riga in dataGridView2.Rows)
-            {
-                if (Convert.ToBoolean(riga.Cells[0].Value))
-                {
-                    riga.Cells[0].ReadOnly = true;
-                }
-            }
-            dataGridView2.Refresh();
         }
 
         private void RiempiDettaglioOrdini(string anno, DataTable tabella)
@@ -102,7 +78,37 @@ namespace Target2021
                 rig["Descrizione"] = riga[4];
                 tabella.Rows.Add(rig);
             }
-        } 
+        }
+
+        private void RiempiSyncDettaglioOrdini(string anno, DataTable tabolla)
+        {
+            DataTable tab = new DataTable();
+            tab.Columns.Add(new DataColumn("Importato", typeof(bool)));
+            tab.Columns.Add(new DataColumn("Num", typeof(Int32)));
+            tab.Columns.Add(new DataColumn("Data", typeof(DateTime)));
+            tab.Columns.Add(new DataColumn("Articolo", typeof(string)));
+            tab.Columns.Add(new DataColumn("Descrizione", typeof(string)));
+            gridDataBoundGrid1.DataSource = tab;
+            //this.dataGridView2.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            string data;
+            data = anno + "0000";
+            DataTable DettaglioOrdini;
+            DettaglioOrdini = target2021DataSet.Tables["dettaglio_ordini_multiriga"];
+
+            string selezione = "data_ordine > '" + data + "'";
+            DataRow[] rows = DettaglioOrdini.Select(selezione);
+
+            foreach (DataRow riga in rows)
+            {
+                DataRow rig = tab.NewRow();
+                rig["Num"] = riga[1];
+                rig["Data"] = DateTime.ParseExact(riga[0].ToString(), "yyyyMMdd", CultureInfo.InvariantCulture);
+                rig["Articolo"] = riga[3];
+                rig["Descrizione"] = riga[4];
+                tab.Rows.Add(rig);
+            }
+        }
 
         private void RiempiCheckOrdinato(string anno)
         {
@@ -123,7 +129,7 @@ namespace Target2021
                     presente = true;
 
                 riga.Cells[0].Value = presente;
-                
+                if (presente == true) dataGridView2.Rows[riga.Index].DefaultCellStyle.ForeColor = Color.GreenYellow;
             }
         }
 
@@ -142,7 +148,6 @@ namespace Target2021
             else
             {
                 label4.Text = "Ci sono " + neworder.ToString() + " nuovi ordini!";
-                button2.Enabled = true;
             }               
         }
 
@@ -213,7 +218,7 @@ namespace Target2021
             connessione.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Importa(int n)
         {
             int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi, NrLastreRichieste, MachStamp;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
@@ -221,10 +226,11 @@ namespace Target2021
             SqlDataReader fasi;
             BindingSource SorgenteDati = new BindingSource();
 
-            do { 
-                IDOrdine = RecuperaUltimoOrdine();
-                UltimoID = RecuperaUltimoTestata();
-                IDOrdine++;
+            do {
+                //IDOrdine = RecuperaUltimoOrdine();
+                //UltimoID = RecuperaUltimoTestata();
+                //IDOrdine++;
+                IDOrdine = n;
                 CodiceArticolo = CodiceArt(IDOrdine);
                 textBox4.Text = textBox4.Text + "Ordine numero: " + IDOrdine + "\r\n";
                 textBox4.Text = textBox4.Text + "Articolo: " + CodiceArticolo+ "\r\n";
@@ -280,6 +286,7 @@ namespace Target2021
                     com.IDFornitore = IdFornitore;
                     IDMatPrima = RecuperaIDMatPri(CodiceArticolo, i);
                     com.IDMateriaPrima = IDMatPrima;
+                    if (progressivo == 1) IDPrima = IDMatPrima;
                     NrLastreRichieste = RecuperaNrLasRic(CodiceArticolo, i, IDOrdine);
                     com.NrLastreRichieste = NrLastreRichieste;
                     PT1 = RecuperaProgTaglio(CodiceArticolo, i, 1);
@@ -521,19 +528,52 @@ namespace Target2021
             return progt;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int[] import = new int[100];
+            int i = 0, j;
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                if (Convert .ToBoolean(row.Cells["Importato"].Value) == true)
+                {
+                    import[i] =Convert.ToInt32(row.Cells["Num"].Value);
+                    i++;
+                }
+            }
+            for (j=0;j<i;j++)
+            {
+                Importa(import[j]);
+                AggiornaOrdiniImportati(import[j]);
+                MessageBox.Show("Importato ordine nr. " + import[j].ToString());
+            }
+        }
+
+        private void AggiornaOrdiniImportati(int nord)
+        {
+            //MessageBox.Show("L'articolo "+Cod+" va creato nelle giacenze!");
+            Target2021DataSet.OrdiniImportatiRow riga = target2021DataSet.OrdiniImportati.NewOrdiniImportatiRow();
+            riga.Anno = Convert.ToInt32(comboBox1.Text);
+            riga.Importato = true;
+            riga.Numero = nord;
+            riga.Data = DateTime.Today;
+            riga.Articolo = CodiceArt(nord);
+            riga.Descrizione = RecuperaDescrizioneArticolo(nord);
+            target2021DataSet.OrdiniImportati.Rows.Add(riga);
+            ordiniImportatiTableAdapter.Update(target2021DataSet.OrdiniImportati);
+        }
+
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.commesseBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
         }
 
         private void InserisciCommessa(Commessa com)
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore,IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDStampo, IDDima, IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@ids,@idd,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -546,7 +586,9 @@ namespace Target2021
             comando.Parameters.AddWithValue("@codart", com.CodArticolo);
             comando.Parameters.AddWithValue("@desart", com.DescrArticolo);
             comando.Parameters.AddWithValue("@idf", com.IDFornitore);
-            comando.Parameters.AddWithValue("@idmp", com.IDMateriaPrima);
+            comando.Parameters.AddWithValue("@ids", com.IDMateriaPrima);
+            comando.Parameters.AddWithValue("@idd", com.IDMateriaPrima);
+            comando.Parameters.AddWithValue("@idmp", IDPrima);
             comando.Parameters.AddWithValue("@NrLastreRichieste", com.NrLastreRichieste);
             comando.Parameters.AddWithValue("@npo", 0);
             comando.Parameters.AddWithValue("@no", 'N');

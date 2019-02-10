@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,11 +37,12 @@ namespace Target2021.Fase2
             DataView CPianifM2 = new DataView(target2021DataSet.Commesse);
             DataView CPianifM3 = new DataView(target2021DataSet.Commesse);
             CNonPianif.RowFilter = "Stato = 2";
-            CPianifM1.RowFilter = "Stato = 3 AND SchedMach = 1";
+            CPianifM1.RowFilter = "Stato = 3 AND SchedMach = 1"; // AND TipoCommessa = 2";
             CPianifM2.RowFilter = "Stato = 3 AND SchedMach = 2";
             CPianifM3.RowFilter = "Stato = 3 AND SchedMach = 3";
             commesseDataGridView.DataSource = CNonPianif;
             commesseDataGridView1.DataSource = CPianifM1;
+            commesseDataGridView1.Columns["ShedOra"].DefaultCellStyle.Format = "HH:mm:ss";
             commesseDataGridView2.DataSource = CPianifM2;
             commesseDataGridView3.DataSource = CPianifM3;
             NascondiColonne();
@@ -191,7 +193,7 @@ namespace Target2021.Fase2
         private void AggiornaValori (object mittente)
         {
 
-            string ora;
+            DateTime ora;
             int durata;
             DateTime data;
             DataGridView Griglia = mittente as DataGridView;
@@ -207,8 +209,9 @@ namespace Target2021.Fase2
                     data = Convert.ToDateTime("1/1/2000");
                 }
 
-                ora = Convert.ToString(Griglia.SelectedCells[58].Value);
-                if (ora == "") ora = "00:00";
+                //ora = DateTime.ParseExact(Griglia.SelectedCells[58].Value.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
+                ora = Convert.ToDateTime(Griglia.SelectedCells[58].Value);
+                if (ora == null) ora = DateTime.Now;
 
                 try
                 {
@@ -224,6 +227,8 @@ namespace Target2021.Fase2
                 Griglia.SelectedCells[57].Value = DP.data;
                 Griglia.SelectedCells[58].Value = DP.ora;
                 Griglia.SelectedCells[59].Value = DP.durata;
+                Griglia.SelectedCells[61].Value = DP.dataf;
+                Griglia.SelectedCells[62].Value = DP.oraf;
                 if (DP.elimina == 1)
                 {
                     Griglia.SelectedCells[56].Value = 0;
@@ -272,6 +277,11 @@ namespace Target2021.Fase2
         }
 
         private void commesseDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void commesseDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

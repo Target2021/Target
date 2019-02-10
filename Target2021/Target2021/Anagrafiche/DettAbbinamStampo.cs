@@ -63,7 +63,7 @@ namespace Target2021.Anagrafiche
         private void Aggiorna()
         {
             this.abbinamentiArticoliTableAdapter.Fill(this.target2021DataSet.AbbinamentiArticoli);
-            abbinamentiArticoliDataGridView.Refresh();
+            Filtra();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -77,7 +77,6 @@ namespace Target2021.Anagrafiche
             AggiornaRecordDettArticolo();
             MessageBox.Show("Creato nuovo gruppo abbinamento e aggiornato valore articolo");
             Aggiorna();
-            this.Refresh();
         }
 
         private int RecuperaNuovoId()

@@ -39,7 +39,7 @@ namespace Target2021.Fase3
             foreach (DataGridViewColumn col in commesseDataGridView1.Columns)
             {
                 if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
-                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
+                if (col.HeaderText == "CodCommessa" || col.HeaderText== "DataCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
                     col.Visible = true;
                 else
                     col.Visible = false;
@@ -56,9 +56,46 @@ namespace Target2021.Fase3
 
         private void commesseDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //IDSC = Convert.ToInt32(superCommessaDataGridView.SelectedRows[0].Cells[0].Value);
-            //abbinamentiSuperCommesseBindingSource.Filter = "IdSuperCommessa = " + IDSC.ToString();
-            //abbinamentiSuperCommesseDataGridView.ClearSelection();
+            int IdCommessa;
+            int chiave,anno=0;
+            DateTime datac;
+
+            IdCommessa = Convert.ToInt32(commesseDataGridView1.SelectedRows[0].Cells[2].Value);
+            //MessageBox.Show("Vado a tagliare la commessa: " + IdCommessa.ToString());
+            datac= Convert.ToDateTime(commesseDataGridView1.SelectedRows[0].Cells[3].Value);
+            anno = datac.Year;
+            //MessageBox.Show("Vado anno: " + anno.ToString());
+            chiave = Cerca(IdCommessa, anno);
+            //MessageBox.Show("Vado chiave: " + chiave.ToString());
+            LavoraStampaggio stampa = new LavoraStampaggio(chiave.ToString());
+            stampa.Show();
+        }
+
+        private int Cerca(int idc, int anno)
+        {
+            DataRow riga;
+            DataTable Commesse;
+            DateTime data;
+
+            data = new DateTime(anno, 1, 1);
+            Commesse = target2021DataSet.Tables["Commesse"];
+
+            DataTable Filtrata = Commesse.AsEnumerable()
+            .Where(row => row.Field<Int32>("NrCommessa") == idc
+                   && row.Field<DateTime>("DataCommessa") > data
+                   && row.Field<Int32>("TipoCommessa") == 2)
+            .CopyToDataTable();
+
+            Object cellValue = Filtrata.Rows[0][0];
+
+            return Convert.ToInt32(cellValue);
+        }
+
+        private void commesseDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //int IdCommessa;
+            //IdCommessa = Convert.ToInt32(commesseDataGridView1.SelectedRows[0].Cells[0].Value);
+
         }
     }
 }

@@ -27,6 +27,8 @@ namespace Target2021.Anagrafiche
 
         private void AnaAbbinamentoStampi_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AbbinamentiArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.abbinamentiArticoliTableAdapter.Fill(this.target2021DataSet.AbbinamentiArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AbbinamentiArticoli'. È possibile spostarla o rimuoverla se necessario.
@@ -57,8 +59,41 @@ namespace Target2021.Anagrafiche
 
         private void abbinamentiArticoliDataGridView_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
-
-    
+            abbinamentiArticoliDataGridView.Rows[e.RowIndex].Selected = true;
         }
+
+        private void eliminaRigaToolStripMenuItem_Click(object sender, EventArgs e)
+        {       
+            Elimina();
+        }
+
+        private void Elimina()
+        {
+            // Imposta nella tabella DettArticoli per l'articolo selezionato il campo AbbinamentoStampo=0
+            string CodArt = abbinamentiArticoliDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+            DataRow[] RigaTrovata;
+            RigaTrovata = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo = '" + CodArt + "'");
+
+            if (RigaTrovata.Length == 0)
+            {
+                MessageBox.Show("Articolo "+CodArt+" non trovato");
+            }
+            else
+            {
+                foreach (DataRow riga in RigaTrovata)
+                {
+                    riga.BeginEdit();
+                    riga["AbbinamentoStampo"] = 0;
+                    riga.EndEdit();
+                    dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+                }
+            }
+            // Elimina la riga selezionata dalla Tabella AbbinamentiArticoli
+            int nriga = abbinamentiArticoliDataGridView.SelectedRows[0].Index;
+            target2021DataSet.Tables["AbbinamentiArticoli"].Rows[nriga].Delete();
+            abbinamentiArticoliTableAdapter.Update(target2021DataSet.AbbinamentiArticoli);
+            MessageBox.Show("Riga eliminata correttamente!");
+        }
+
     }
 }

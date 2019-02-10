@@ -29,7 +29,24 @@ namespace Target2021
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Configurazione'. È possibile spostarla o rimuoverla se necessario.
             this.configurazioneTableAdapter.Fill(this.target2021DataSet.Configurazione);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Configurazione'. È possibile spostarla o rimuoverla se necessario.
+            this.configurazioneTableAdapter.Fill(this.target2021DataSet.Configurazione);
 
+        }
+
+        private void configurazioneBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.configurazioneBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.configurazioneBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            MessageBox.Show("Modifiche salvate!");
         }
     }
 }

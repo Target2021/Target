@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Target2021.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Target2021"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <local:Target2021DataSet x:Key="target2021DataSet"/>
+        <CollectionViewSource x:Key="ordiniImportatiViewSource" Source="{Binding OrdiniImportati, Source={StaticResource target2021DataSet}}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource ordiniImportatiViewSource}">
+        <DataGrid x:Name="ordiniImportatiDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="39,69,59,28" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="annoColumn" Binding="{Binding Anno}" Header="Anno" Width="SizeToHeader"/>
+                <DataGridCheckBoxColumn x:Name="importatoColumn" Binding="{Binding Importato}" Header="Importato" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="numeroColumn" Binding="{Binding Numero}" Header="Numero" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="dataColumn" Header="Data" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Data, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="articoloColumn" Binding="{Binding Articolo}" Header="Articolo" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="descrizioneColumn" Binding="{Binding Descrizione}" Header="Descrizione" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

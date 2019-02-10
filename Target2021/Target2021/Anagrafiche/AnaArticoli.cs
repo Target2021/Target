@@ -385,10 +385,17 @@ namespace Target2021.Anagrafiche
         private void button2_Click(object sender, EventArgs e)
         {
             int CodAbb;
-            CodAbb = Convert.ToInt32(textBox12.Text);
-            DettAbbinamStampo DAS = new DettAbbinamStampo(CodAbb, textBox2.Text);
-            DAS.ShowDialog();
-            textBox12.Text = DAS.CA.ToString();
+            try
+            {
+                CodAbb = Convert.ToInt32(textBox12.Text);
+                DettAbbinamStampo DAS = new DettAbbinamStampo(CodAbb, textBox2.Text);
+                DAS.ShowDialog();
+                textBox12.Text = DAS.CA.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Errore! Forse non esiste la fase 2 per questo articolo!");
+            }
         }
 
         private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
