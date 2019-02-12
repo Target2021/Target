@@ -570,7 +570,7 @@ namespace Target2021.Anagrafiche
             CodMateriaPrima  = comboBox3.Text;
             CodFornitoreLastra  = comboBox4.Text;
             CodIn = textBox6.Text;
-            CodOut = textBox7.Text;
+            CodOut = textBox7.Text.Replace(" ", string.Empty);
             try
             {
                 LottoMinimo = Convert.ToInt32(textBox8.Text);
@@ -611,8 +611,8 @@ namespace Target2021.Anagrafiche
             CodStampo = comboBox6.Text;
             DescrStampo = label15.Text;
             CodForn = comboBox7.Text;
-            CodIn = textBox9.Text;
-            CodOut = textBox10.Text;
+            CodIn = textBox9.Text.Replace(" ", string.Empty); ;
+            CodOut = textBox10.Text.Replace(" ", string.Empty); ;
             try
             {
                 NrImpronte = Convert.ToInt32(textBox26.Text);
@@ -684,10 +684,10 @@ namespace Target2021.Anagrafiche
             CodDima = comboBox11.Text;
             DescDim = label34.Text;
             CodForn = comboBox10.Text;
-            CodIn = textBox15.Text;
-            CodOut = textBox16.Text;
-            Prog1 = textBox13.Text;
-            Prog2 = textBox14.Text;
+            CodIn = textBox15.Text.Replace(" ", string.Empty); ;
+            CodOut = textBox16.Text.Replace(" ", string.Empty); ;
+            Prog1 = textBox13.Text.Replace(" ", string.Empty); ;
+            Prog2 = textBox14.Text.Replace(" ", string.Empty); ;
 
             DataRow riga;
             DataTable TArticoli;

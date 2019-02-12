@@ -56,6 +56,7 @@
             System.Windows.Forms.Label attG2Label;
             System.Windows.Forms.Label oISG2Label;
             System.Windows.Forms.Label oFSG2Label;
+            System.Windows.Forms.Label progStampaLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -87,6 +88,7 @@
             this.oISG1DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG1TextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.oFSG2DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG2DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG2TextBox = new System.Windows.Forms.TextBox();
@@ -98,7 +100,12 @@
             this.schedMachTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.progStampaTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -126,11 +133,13 @@
             attG2Label = new System.Windows.Forms.Label();
             oISG2Label = new System.Windows.Forms.Label();
             oFSG2Label = new System.Windows.Forms.Label();
+            progStampaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // iDCommessaLabel
@@ -237,7 +246,7 @@
             // 
             fotoLabel.AutoSize = true;
             fotoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fotoLabel.Location = new System.Drawing.Point(86, 346);
+            fotoLabel.Location = new System.Drawing.Point(94, 280);
             fotoLabel.Name = "fotoLabel";
             fotoLabel.Size = new System.Drawing.Size(34, 15);
             fotoLabel.TabIndex = 25;
@@ -287,7 +296,7 @@
             // 
             dataTermineLabel.AutoSize = true;
             dataTermineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataTermineLabel.Location = new System.Drawing.Point(35, 373);
+            dataTermineLabel.Location = new System.Drawing.Point(430, 397);
             dataTermineLabel.Name = "dataTermineLabel";
             dataTermineLabel.Size = new System.Drawing.Size(85, 15);
             dataTermineLabel.TabIndex = 35;
@@ -492,6 +501,7 @@
             this.iDCommessaTextBox.Size = new System.Drawing.Size(100, 21);
             this.iDCommessaTextBox.TabIndex = 2;
             this.iDCommessaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.iDCommessaTextBox.TextChanged += new System.EventHandler(this.iDCommessaTextBox_TextChanged);
             // 
             // codCommessaTextBox
             // 
@@ -595,7 +605,7 @@
             this.fotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "Foto", true));
             this.fotoTextBox.Enabled = false;
             this.fotoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fotoTextBox.Location = new System.Drawing.Point(123, 343);
+            this.fotoTextBox.Location = new System.Drawing.Point(131, 277);
             this.fotoTextBox.Name = "fotoTextBox";
             this.fotoTextBox.Size = new System.Drawing.Size(100, 21);
             this.fotoTextBox.TabIndex = 26;
@@ -633,6 +643,7 @@
             this.iDStampoTextBox.Size = new System.Drawing.Size(100, 21);
             this.iDStampoTextBox.TabIndex = 32;
             this.iDStampoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.iDStampoTextBox.TextChanged += new System.EventHandler(this.iDStampoTextBox_TextChanged);
             // 
             // iDMateriaPrimaTextBox
             // 
@@ -649,7 +660,7 @@
             // 
             this.dataTermineDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataTermine", true));
             this.dataTermineDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataTermineDateTimePicker.Location = new System.Drawing.Point(123, 368);
+            this.dataTermineDateTimePicker.Location = new System.Drawing.Point(518, 392);
             this.dataTermineDateTimePicker.Name = "dataTermineDateTimePicker";
             this.dataTermineDateTimePicker.Size = new System.Drawing.Size(200, 21);
             this.dataTermineDateTimePicker.TabIndex = 36;
@@ -739,6 +750,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giorno 2:";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(201, 19);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(82, 19);
+            this.button4.TabIndex = 55;
+            this.button4.Text = "CHIUDI";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // oFSG2DateTimePicker
             // 
             this.oFSG2DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG2", true));
@@ -824,7 +844,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(109, 426);
+            this.button1.Location = new System.Drawing.Point(351, 418);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 43);
             this.button1.TabIndex = 52;
@@ -834,28 +854,92 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(331, 426);
+            this.button2.Location = new System.Drawing.Point(356, 478);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(196, 60);
             this.button2.TabIndex = 53;
             this.button2.Text = "Chiudi commessa di taglio e aggiorna magazzini";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // progStampaLabel
             // 
-            this.button4.Location = new System.Drawing.Point(201, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 19);
-            this.button4.TabIndex = 55;
-            this.button4.Text = "CHIUDI";
-            this.button4.UseVisualStyleBackColor = true;
+            progStampaLabel.AutoSize = true;
+            progStampaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progStampaLabel.Location = new System.Drawing.Point(259, 226);
+            progStampaLabel.Name = "progStampaLabel";
+            progStampaLabel.Size = new System.Drawing.Size(82, 15);
+            progStampaLabel.TabIndex = 53;
+            progStampaLabel.Text = "Prog Stampa:";
+            // 
+            // progStampaTextBox
+            // 
+            this.progStampaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "ProgStampa", true));
+            this.progStampaTextBox.Enabled = false;
+            this.progStampaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progStampaTextBox.Location = new System.Drawing.Point(347, 223);
+            this.progStampaTextBox.Name = "progStampaTextBox";
+            this.progStampaTextBox.Size = new System.Drawing.Size(100, 21);
+            this.progStampaTextBox.TabIndex = 54;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(462, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Posizione:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(533, 225);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(29, 21);
+            this.textBox1.TabIndex = 56;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(568, 225);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(29, 21);
+            this.textBox2.TabIndex = 57;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(603, 225);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(29, 21);
+            this.textBox3.TabIndex = 58;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(16, 321);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(316, 216);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
             // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1022, 560);
+            this.ClientSize = new System.Drawing.Size(1036, 560);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(progStampaLabel);
+            this.Controls.Add(this.progStampaTextBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(schedMachLabel);
@@ -917,6 +1001,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -967,5 +1052,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox progStampaTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

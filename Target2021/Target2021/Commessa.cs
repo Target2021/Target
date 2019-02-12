@@ -50,6 +50,8 @@ namespace Target2021
         public string ProgrTaglio2 { get; set; }
         public int PercentualeUtilizzoLastra { get; set; }
         public int Mps { get; set; }
+        public string ProgStampa { get; set; }
+        public int PezziOra { get; set; }
 
         public Commessa(int id)
         {

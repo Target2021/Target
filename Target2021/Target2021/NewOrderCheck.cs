@@ -88,7 +88,7 @@ namespace Target2021
             tab.Columns.Add(new DataColumn("Data", typeof(DateTime)));
             tab.Columns.Add(new DataColumn("Articolo", typeof(string)));
             tab.Columns.Add(new DataColumn("Descrizione", typeof(string)));
-            gridDataBoundGrid1.DataSource = tab;
+            //gridDataBoundGrid1.DataSource = tab;
             //this.dataGridView2.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             string data;
@@ -295,12 +295,42 @@ namespace Target2021
                     com.ProgrTaglio2 = PT2;
                     com.PercentualeUtilizzoLastra = percentuale;
                     MachStamp = RecuperaMacchinaStampa(CodiceArticolo);
-                    com.Mps = MachStamp; 
+                    com.Mps = MachStamp;
+                    com.ProgStampa = RecuperaProgrammaStampaggio(CodiceArticolo);
+                    com.PezziOra = RecuperaNumeroPezziStampatiOra(CodiceArticolo);
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
             } while (IDOrdine + 1 < IDOrdine+1);  //UltimoID
             //commesseDataGridView.Update();
+        }
+
+        private string RecuperaProgrammaStampaggio(string ca)
+        {
+            string stringaconnessione, sql = "", progt;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT ProgStampa FROM DettArticoli WHERE codice_articolo='" + ca + "' AND lavorazione=2";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                progt = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                progt = "Non presente";
+            }
+            connessione.Close();
+            return progt;
+        }
+
+        private int RecuperaNumeroPezziStampatiOra(string ca)
+        {
+            int risultato;
+            string filtro = "codice_articolo = '" + ca + "'";
+            risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(PezziOra)", filtro);
+            return risultato; ;
         }
 
         private int RecuperaMacchinaStampa(string ca)
@@ -573,7 +603,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDStampo, IDDima, IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@ids,@idd,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDStampo, IDDima, IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa, ProgStampa, PezziOra) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@ids,@idd,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps,@progsta,@pezziora)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -598,6 +628,8 @@ namespace Target2021
             comando.Parameters.AddWithValue("@prt2", com.ProgrTaglio2);
             comando.Parameters.AddWithValue("@percent", com.PercentualeUtilizzoLastra);
             comando.Parameters.AddWithValue("@mps", com.Mps);
+            comando.Parameters.AddWithValue("@progsta", com.ProgStampa);
+            comando.Parameters.AddWithValue("@pezziora", com.PezziOra);
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();
