@@ -60,9 +60,22 @@ namespace Target2021.SelezAna
         private void button3_Click(object sender, EventArgs e)
         {
             comboBox2.Visible = true;
+            comboBox2.Focus();
+            string codice;
+            try
+            {
+                codice = comboBox2.SelectedValue.ToString();
+                materialeTextBox.Text = codice;
+            }
+            catch { }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Seleziona();
+        }
+
+        private void Seleziona()
         {
             string codice;
             try

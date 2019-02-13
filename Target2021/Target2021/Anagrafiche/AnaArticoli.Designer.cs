@@ -73,6 +73,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.fasiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.textBox27 = new System.Windows.Forms.TextBox();
@@ -178,9 +180,6 @@
             this.label47 = new System.Windows.Forms.Label();
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label48 = new System.Windows.Forms.Label();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciDataGridView)).BeginInit();
@@ -659,7 +658,6 @@
             this.tabPage2.AutoScroll = true;
             this.tabPage2.Controls.Add(this.textBox29);
             this.tabPage2.Controls.Add(this.label49);
-            this.tabPage2.Controls.Add(this.label48);
             this.tabPage2.Controls.Add(this.label45);
             this.tabPage2.Controls.Add(this.textBox26);
             this.tabPage2.Controls.Add(this.textBox27);
@@ -699,6 +697,24 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Fase 2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox29
+            // 
+            this.textBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox29.Location = new System.Drawing.Point(663, 165);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(90, 24);
+            this.textBox29.TabIndex = 39;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(582, 165);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(75, 18);
+            this.label49.TabIndex = 38;
+            this.label49.Text = "Pezzi ora:";
             // 
             // label45
             // 
@@ -1663,34 +1679,6 @@
             this.textBox28.TabIndex = 24;
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(340, 97);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(129, 18);
-            this.label48.TabIndex = 37;
-            this.label48.Text = "Prog. stampaggio:";
-            // 
-            // textBox29
-            // 
-            this.textBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox29.Location = new System.Drawing.Point(663, 165);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(90, 24);
-            this.textBox29.TabIndex = 39;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(582, 165);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(75, 18);
-            this.label49.TabIndex = 38;
-            this.label49.Text = "Pezzi ora:";
-            // 
             // AnaArticoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1905,6 +1893,5 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label48;
     }
 }

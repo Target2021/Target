@@ -298,6 +298,7 @@ namespace Target2021
                     com.Mps = MachStamp;
                     com.ProgStampa = RecuperaProgrammaStampaggio(CodiceArticolo);
                     com.PezziOra = RecuperaNumeroPezziStampatiOra(CodiceArticolo);
+                    com.Foto = RecuperaFoto(CodiceArticolo);
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -325,12 +326,39 @@ namespace Target2021
             return progt;
         }
 
+        private string RecuperaFoto(string ca)
+        {
+            string stringaconnessione, sql = "", foto;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT indirizzo_immagine FROM articoli_semplici WHERE codice='" + ca + "'";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                foto = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                foto = null;
+            }
+            connessione.Close();
+            return foto;
+        }
+
         private int RecuperaNumeroPezziStampatiOra(string ca)
         {
-            int risultato;
+            int risultato=0;
             string filtro = "codice_articolo = '" + ca + "'";
-            risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(PezziOra)", filtro);
-            return risultato; ;
+            try
+            {
+                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(PezziOra)", filtro);
+            }
+            catch
+            {
+                risultato = 0;
+            }
+            return risultato;
         }
 
         private int RecuperaMacchinaStampa(string ca)
@@ -603,7 +631,7 @@ namespace Target2021
         {
             string stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDStampo, IDDima, IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa, ProgStampa, PezziOra) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@ids,@idd,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps,@progsta,@pezziora)";
+            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDStampo, IDDima, IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa, ProgStampa, PezziOra, Foto) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@ids,@idd,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps,@progsta,@pezziora,@foto)";
             SqlCommand comando = new SqlCommand(sql, connessione);
             comando.Parameters.AddWithValue("@cod", com.CodCommessa);
             comando.Parameters.AddWithValue("@nr", com.NrCommessa);
@@ -630,6 +658,7 @@ namespace Target2021
             comando.Parameters.AddWithValue("@mps", com.Mps);
             comando.Parameters.AddWithValue("@progsta", com.ProgStampa);
             comando.Parameters.AddWithValue("@pezziora", com.PezziOra);
+            comando.Parameters.AddWithValue("@foto", com.Foto);
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();

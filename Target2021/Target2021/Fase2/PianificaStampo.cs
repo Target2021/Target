@@ -210,8 +210,14 @@ namespace Target2021.Fase2
                 }
 
                 //ora = DateTime.ParseExact(Griglia.SelectedCells[58].Value.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
-                ora = Convert.ToDateTime(Griglia.SelectedCells[58].Value);
-                if (ora == null) ora = DateTime.Now;
+                try
+                {
+                    ora = Convert.ToDateTime(Griglia.SelectedCells[58].Value);
+                }
+                catch
+                {
+                    ora = DateTime.Now;
+                }
 
                 try
                 {

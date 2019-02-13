@@ -57,6 +57,7 @@
             System.Windows.Forms.Label oISG2Label;
             System.Windows.Forms.Label oFSG2Label;
             System.Windows.Forms.Label progStampaLabel;
+            System.Windows.Forms.Label nrLastreRichiesteLabel;
             this.label1 = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -106,6 +107,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.nrLastreRichiesteTextBox = new System.Windows.Forms.TextBox();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -134,6 +136,7 @@
             oISG2Label = new System.Windows.Forms.Label();
             oFSG2Label = new System.Windows.Forms.Label();
             progStampaLabel = new System.Windows.Forms.Label();
+            nrLastreRichiesteLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
@@ -306,7 +309,7 @@
             // 
             nrPezziCorrettiLabel.AutoSize = true;
             nrPezziCorrettiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziCorrettiLabel.Location = new System.Drawing.Point(414, 261);
+            nrPezziCorrettiLabel.Location = new System.Drawing.Point(252, 277);
             nrPezziCorrettiLabel.Name = "nrPezziCorrettiLabel";
             nrPezziCorrettiLabel.Size = new System.Drawing.Size(98, 15);
             nrPezziCorrettiLabel.TabIndex = 37;
@@ -316,7 +319,7 @@
             // 
             nrPezziScartatiLabel.AutoSize = true;
             nrPezziScartatiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziScartatiLabel.Location = new System.Drawing.Point(411, 287);
+            nrPezziScartatiLabel.Location = new System.Drawing.Point(461, 277);
             nrPezziScartatiLabel.Name = "nrPezziScartatiLabel";
             nrPezziScartatiLabel.Size = new System.Drawing.Size(100, 15);
             nrPezziScartatiLabel.TabIndex = 39;
@@ -405,6 +408,16 @@
             oFSG2Label.Size = new System.Drawing.Size(30, 13);
             oFSG2Label.TabIndex = 4;
             oFSG2Label.Text = "Fine:";
+            // 
+            // progStampaLabel
+            // 
+            progStampaLabel.AutoSize = true;
+            progStampaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progStampaLabel.Location = new System.Drawing.Point(259, 226);
+            progStampaLabel.Name = "progStampaLabel";
+            progStampaLabel.Size = new System.Drawing.Size(82, 15);
+            progStampaLabel.TabIndex = 53;
+            progStampaLabel.Text = "Prog Stampa:";
             // 
             // label1
             // 
@@ -669,7 +682,7 @@
             // 
             this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
             this.nrPezziCorrettiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(518, 261);
+            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(356, 277);
             this.nrPezziCorrettiTextBox.Name = "nrPezziCorrettiTextBox";
             this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(100, 21);
             this.nrPezziCorrettiTextBox.TabIndex = 38;
@@ -679,7 +692,7 @@
             // 
             this.nrPezziScartatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziScartati", true));
             this.nrPezziScartatiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(518, 287);
+            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(568, 277);
             this.nrPezziScartatiTextBox.Name = "nrPezziScartatiTextBox";
             this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(100, 21);
             this.nrPezziScartatiTextBox.TabIndex = 40;
@@ -861,16 +874,6 @@
             this.button2.Text = "Chiudi commessa di taglio e aggiorna magazzini";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // progStampaLabel
-            // 
-            progStampaLabel.AutoSize = true;
-            progStampaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            progStampaLabel.Location = new System.Drawing.Point(259, 226);
-            progStampaLabel.Name = "progStampaLabel";
-            progStampaLabel.Size = new System.Drawing.Size(82, 15);
-            progStampaLabel.TabIndex = 53;
-            progStampaLabel.Text = "Prog Stampa:";
-            // 
             // progStampaTextBox
             // 
             this.progStampaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "ProgStampa", true));
@@ -927,12 +930,33 @@
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
             // 
+            // nrLastreRichiesteLabel
+            // 
+            nrLastreRichiesteLabel.AutoSize = true;
+            nrLastreRichiesteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrLastreRichiesteLabel.Location = new System.Drawing.Point(241, 255);
+            nrLastreRichiesteLabel.Name = "nrLastreRichiesteLabel";
+            nrLastreRichiesteLabel.Size = new System.Drawing.Size(114, 15);
+            nrLastreRichiesteLabel.TabIndex = 59;
+            nrLastreRichiesteLabel.Text = "Nr Lastre Richieste:";
+            // 
+            // nrLastreRichiesteTextBox
+            // 
+            this.nrLastreRichiesteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrLastreRichieste", true));
+            this.nrLastreRichiesteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nrLastreRichiesteTextBox.Location = new System.Drawing.Point(356, 252);
+            this.nrLastreRichiesteTextBox.Name = "nrLastreRichiesteTextBox";
+            this.nrLastreRichiesteTextBox.Size = new System.Drawing.Size(100, 21);
+            this.nrLastreRichiesteTextBox.TabIndex = 60;
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1036, 560);
+            this.Controls.Add(nrLastreRichiesteLabel);
+            this.Controls.Add(this.nrLastreRichiesteTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -1058,5 +1082,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox nrLastreRichiesteTextBox;
     }
 }

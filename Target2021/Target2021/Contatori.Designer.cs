@@ -32,7 +32,10 @@
             System.Windows.Forms.Label nrUltimoOrdineLettoLabel;
             System.Windows.Forms.Label dataUltimoOrdineLabel;
             System.Windows.Forms.Label nrOrdineFornitoreLabel;
+            System.Windows.Forms.Label label2;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Contatori));
+            System.Windows.Forms.Label oraInizioLabel;
+            System.Windows.Forms.Label oraFineLabel;
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.configurazioneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.configurazioneTableAdapter = new Target2021.Target2021DataSetTableAdapters.ConfigurazioneTableAdapter();
@@ -55,9 +58,14 @@
             this.nrOrdineFornitoreTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.oraInizioTextBox = new System.Windows.Forms.TextBox();
+            this.oraFineTextBox = new System.Windows.Forms.TextBox();
             nrUltimoOrdineLettoLabel = new System.Windows.Forms.Label();
             dataUltimoOrdineLabel = new System.Windows.Forms.Label();
             nrOrdineFornitoreLabel = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            oraInizioLabel = new System.Windows.Forms.Label();
+            oraFineLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.configurazioneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.configurazioneBindingNavigator)).BeginInit();
@@ -67,7 +75,7 @@
             // nrUltimoOrdineLettoLabel
             // 
             nrUltimoOrdineLettoLabel.AutoSize = true;
-            nrUltimoOrdineLettoLabel.Location = new System.Drawing.Point(41, 118);
+            nrUltimoOrdineLettoLabel.Location = new System.Drawing.Point(52, 96);
             nrUltimoOrdineLettoLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             nrUltimoOrdineLettoLabel.Name = "nrUltimoOrdineLettoLabel";
             nrUltimoOrdineLettoLabel.Size = new System.Drawing.Size(198, 25);
@@ -77,7 +85,7 @@
             // dataUltimoOrdineLabel
             // 
             dataUltimoOrdineLabel.AutoSize = true;
-            dataUltimoOrdineLabel.Location = new System.Drawing.Point(69, 170);
+            dataUltimoOrdineLabel.Location = new System.Drawing.Point(80, 148);
             dataUltimoOrdineLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             dataUltimoOrdineLabel.Name = "dataUltimoOrdineLabel";
             dataUltimoOrdineLabel.Size = new System.Drawing.Size(171, 25);
@@ -87,12 +95,22 @@
             // nrOrdineFornitoreLabel
             // 
             nrOrdineFornitoreLabel.AutoSize = true;
-            nrOrdineFornitoreLabel.Location = new System.Drawing.Point(69, 218);
+            nrOrdineFornitoreLabel.Location = new System.Drawing.Point(80, 196);
             nrOrdineFornitoreLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             nrOrdineFornitoreLabel.Name = "nrOrdineFornitoreLabel";
             nrOrdineFornitoreLabel.Size = new System.Drawing.Size(167, 25);
             nrOrdineFornitoreLabel.TabIndex = 5;
             nrOrdineFornitoreLabel.Text = "Nr Ordine Fornitore:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(80, 248);
+            label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(133, 25);
+            label2.TabIndex = 9;
+            label2.Text = "Orario di lavoro:";
             // 
             // target2021DataSet
             // 
@@ -179,7 +197,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.configurazioneBindingNavigatorSaveItem});
-            this.configurazioneBindingNavigator.Location = new System.Drawing.Point(0, 364);
+            this.configurazioneBindingNavigator.Location = new System.Drawing.Point(0, 351);
             this.configurazioneBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.configurazioneBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.configurazioneBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -288,7 +306,7 @@
             // nrUltimoOrdineLettoTextBox
             // 
             this.nrUltimoOrdineLettoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.configurazioneBindingSource, "NrUltimoOrdineLetto", true));
-            this.nrUltimoOrdineLettoTextBox.Location = new System.Drawing.Point(261, 112);
+            this.nrUltimoOrdineLettoTextBox.Location = new System.Drawing.Point(272, 90);
             this.nrUltimoOrdineLettoTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.nrUltimoOrdineLettoTextBox.Name = "nrUltimoOrdineLettoTextBox";
             this.nrUltimoOrdineLettoTextBox.Size = new System.Drawing.Size(180, 31);
@@ -298,26 +316,27 @@
             // dataUltimoOrdineDateTimePicker
             // 
             this.dataUltimoOrdineDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.configurazioneBindingSource, "DataUltimoOrdine", true));
-            this.dataUltimoOrdineDateTimePicker.Location = new System.Drawing.Point(261, 162);
+            this.dataUltimoOrdineDateTimePicker.Location = new System.Drawing.Point(272, 140);
             this.dataUltimoOrdineDateTimePicker.Margin = new System.Windows.Forms.Padding(6);
             this.dataUltimoOrdineDateTimePicker.Name = "dataUltimoOrdineDateTimePicker";
-            this.dataUltimoOrdineDateTimePicker.Size = new System.Drawing.Size(363, 31);
+            this.dataUltimoOrdineDateTimePicker.Size = new System.Drawing.Size(311, 31);
             this.dataUltimoOrdineDateTimePicker.TabIndex = 4;
             // 
             // nrOrdineFornitoreTextBox
             // 
             this.nrOrdineFornitoreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.configurazioneBindingSource, "NrOrdineFornitore", true));
-            this.nrOrdineFornitoreTextBox.Location = new System.Drawing.Point(261, 212);
+            this.nrOrdineFornitoreTextBox.Location = new System.Drawing.Point(272, 190);
             this.nrOrdineFornitoreTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.nrOrdineFornitoreTextBox.Name = "nrOrdineFornitoreTextBox";
             this.nrOrdineFornitoreTextBox.Size = new System.Drawing.Size(180, 31);
             this.nrOrdineFornitoreTextBox.TabIndex = 6;
+            this.nrOrdineFornitoreTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(104, 31);
+            this.label1.Location = new System.Drawing.Point(140, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(432, 39);
@@ -326,7 +345,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(261, 274);
+            this.button1.Location = new System.Drawing.Point(272, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 34);
             this.button1.TabIndex = 8;
@@ -334,12 +353,53 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // oraInizioLabel
+            // 
+            oraInizioLabel.AutoSize = true;
+            oraInizioLabel.Location = new System.Drawing.Point(222, 248);
+            oraInizioLabel.Name = "oraInizioLabel";
+            oraInizioLabel.Size = new System.Drawing.Size(95, 25);
+            oraInizioLabel.TabIndex = 12;
+            oraInizioLabel.Text = "Ora Inizio:";
+            // 
+            // oraInizioTextBox
+            // 
+            this.oraInizioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.configurazioneBindingSource, "OraInizio", true));
+            this.oraInizioTextBox.Location = new System.Drawing.Point(323, 245);
+            this.oraInizioTextBox.Name = "oraInizioTextBox";
+            this.oraInizioTextBox.Size = new System.Drawing.Size(100, 31);
+            this.oraInizioTextBox.TabIndex = 13;
+            this.oraInizioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // oraFineLabel
+            // 
+            oraFineLabel.AutoSize = true;
+            oraFineLabel.Location = new System.Drawing.Point(445, 248);
+            oraFineLabel.Name = "oraFineLabel";
+            oraFineLabel.Size = new System.Drawing.Size(84, 25);
+            oraFineLabel.TabIndex = 13;
+            oraFineLabel.Text = "Ora Fine:";
+            // 
+            // oraFineTextBox
+            // 
+            this.oraFineTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.configurazioneBindingSource, "OraFine", true));
+            this.oraFineTextBox.Location = new System.Drawing.Point(535, 245);
+            this.oraFineTextBox.Name = "oraFineTextBox";
+            this.oraFineTextBox.Size = new System.Drawing.Size(100, 31);
+            this.oraFineTextBox.TabIndex = 14;
+            this.oraFineTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Contatori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(704, 389);
+            this.ClientSize = new System.Drawing.Size(704, 376);
+            this.Controls.Add(oraFineLabel);
+            this.Controls.Add(this.oraFineTextBox);
+            this.Controls.Add(oraInizioLabel);
+            this.Controls.Add(this.oraInizioTextBox);
+            this.Controls.Add(label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(nrOrdineFornitoreLabel);
@@ -388,5 +448,7 @@
         private System.Windows.Forms.TextBox nrOrdineFornitoreTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox oraInizioTextBox;
+        private System.Windows.Forms.TextBox oraFineTextBox;
     }
 }
