@@ -32,5 +32,17 @@ namespace Target2021
             SelezionaCommessaDaStampare C = new SelezionaCommessaDaStampare(1);
             C.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SelezionaCommessaDaStampare C = new SelezionaCommessaDaStampare(2);
+            C.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SelezionaCommessaDaStampare C = new SelezionaCommessaDaStampare(3);
+            C.Show();
+        }
     }
 }

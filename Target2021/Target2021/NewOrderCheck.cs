@@ -113,7 +113,6 @@ namespace Target2021
         private void RiempiCheckOrdinato(string anno)
         {
             int NumOrdine;
-            bool presente;
             foreach (DataGridViewRow riga in dataGridView2.Rows)
             {
                 NumOrdine = Convert .ToInt32(riga.Cells[1].Value);
@@ -124,12 +123,12 @@ namespace Target2021
                 DataRow[] rows = OrdiniImportati.Select(selezione);
 
                 if (rows.Length == 0)
-                    presente = false;
+                    riga.Cells[0].Value = false;
                 else
-                    presente = true;
-
-                riga.Cells[0].Value = presente;
-                if (presente == true) dataGridView2.Rows[riga.Index].DefaultCellStyle.ForeColor = Color.GreenYellow;
+                {
+                    riga.Cells[0].Value = true;
+                    riga.Visible = false;
+                }
             }
         }
 

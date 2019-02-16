@@ -23,14 +23,25 @@ namespace Target2021.Fase3
 
         private void SelezionaCommessaDaStampare_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MacchineStampo'. È possibile spostarla o rimuoverla se necessario.
+            this.macchineStampoTableAdapter.Fill(this.target2021DataSet.MacchineStampo);
+            string NomeMacchina;
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             DataView CPianifM1 = new DataView(target2021DataSet.Commesse);
-            CPianifM1.RowFilter = "Stato = 3 AND SchedMach = 1";
+            CPianifM1.RowFilter = "Stato = 3 AND SchedMach = " + textBox1.Text;
             commesseDataGridView1.DataSource = CPianifM1;
             NascondiColonne();
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["MacchineStampo"].Select("IdStampa=" + textBox1.Text);
+            try
+            {
+                NomeMacchina = riga[0]["Descrizione"].ToString();
+            }
+            catch { NomeMacchina = "Non trovata!"; }
+            label2.Text = NomeMacchina;
         }
 
 
@@ -39,7 +50,14 @@ namespace Target2021.Fase3
             foreach (DataGridViewColumn col in commesseDataGridView1.Columns)
             {
                 if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
-                if (col.HeaderText == "CodCommessa" || col.HeaderText== "DataCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
+                if (col.HeaderText == "CodCommessa") col.HeaderText = "Commessa";
+                if (col.HeaderText == "DataCommessa") col.HeaderText = "Data Commessa";
+                if (col.HeaderText == "SchedData") col.HeaderText = "Data";
+                if (col.HeaderText == "ShedOra") col.HeaderText = "Ora";
+                if (col.HeaderText == "Ora") col.DefaultCellStyle.Format = "HH:mm:ss tt";
+                if (col.HeaderText == "SchedDurata") col.HeaderText = "Durata";
+                if (col.HeaderText == "CodArticolo") col.HeaderText = "Articolo";
+                if (col.HeaderText == "Commessa" || col.HeaderText== "Data Commessa" || col.HeaderText == "IDCliente" || col.HeaderText == "Articolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "Data" || col.HeaderText == "Ora" || col.HeaderText == "Durata")
                     col.Visible = true;
                 else
                     col.Visible = false;
@@ -56,7 +74,7 @@ namespace Target2021.Fase3
 
         private void commesseDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int IdCommessa;
+            int IdCommessa, macchina=0;
             int chiave,anno=0;
             DateTime datac;
 
@@ -67,7 +85,15 @@ namespace Target2021.Fase3
             //MessageBox.Show("Vado anno: " + anno.ToString());
             chiave = Cerca(IdCommessa, anno);
             //MessageBox.Show("Vado chiave: " + chiave.ToString());
-            LavoraStampaggio stampa = new LavoraStampaggio(chiave.ToString());
+            try
+            {
+                macchina = Convert.ToInt32(textBox1.Text);
+            }
+            catch
+            {
+                macchina = 0;
+            }
+            LavoraStampaggio stampa = new LavoraStampaggio(chiave.ToString(), macchina);
             stampa.Show();
         }
 

@@ -52,6 +52,7 @@
             this.tableAdapterManager1.ArtFornTableAdapter = null;
             this.tableAdapterManager1.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager1.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager1.AvvisiAbbinamentiTableAdapter = null;
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.clientiTableAdapter = null;
             this.tableAdapterManager1.CodModPagamentoTableAdapter = null;
@@ -79,13 +80,17 @@
             this.tableAdapterManager1.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager1.OrdFornDettTableAdapter = null;
             this.tableAdapterManager1.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager1.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager1.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager1.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager1.PrimeTableAdapter = null;
+            this.tableAdapterManager1.SchedulazioneTableAdapter = null;
             this.tableAdapterManager1.StampiTableAdapter = null;
             this.tableAdapterManager1.SuperCommessaTableAdapter = null;
             this.tableAdapterManager1.sysdiagramsTableAdapter = null;
             this.tableAdapterManager1.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager1.TempStampTableAdapter = null;
+            this.tableAdapterManager1.TempTableAdapter = null;
             this.tableAdapterManager1.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager1.TipoCommessaTableAdapter = null;
             this.tableAdapterManager1.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -124,6 +129,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Perros";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -134,6 +140,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Cannon";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
