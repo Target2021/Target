@@ -27,7 +27,7 @@ namespace Target2021
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniImportati'. È possibile spostarla o rimuoverla se necessario.
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
-            DataTable tabella;
+            DataTable tabella, tabellavecchi;
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
             this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
@@ -36,7 +36,8 @@ namespace Target2021
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             button1_Click(sender, e);
             tabella=CreaTabellaOrdini();
-            PopolaTabellaOrdini(comboBox1.Text, tabella);
+            tabellavecchi=CreaTabellaOrdiniVecchi();
+            PopolaTabellaOrdini(comboBox1.Text, tabella, tabellavecchi);
         }
 
         private DataTable CreaTabellaOrdini()
@@ -52,14 +53,27 @@ namespace Target2021
             return dt;
         }
 
-        private void PopolaTabellaOrdini(string anno, DataTable tabella)
+        private DataTable CreaTabellaOrdiniVecchi()
         {
-            RiempiDettaglioOrdini(anno, tabella);
-            RiempiSyncDettaglioOrdini(anno, tabella);
-            RiempiCheckOrdinato(anno);
+            DataTable dt = new DataTable();
+            dt.Columns.Add(new DataColumn("Importato", typeof(bool)));
+            dt.Columns.Add(new DataColumn("Num", typeof(Int32)));
+            dt.Columns.Add(new DataColumn("Data", typeof(DateTime)));
+            dt.Columns.Add(new DataColumn("Articolo", typeof(string)));
+            dt.Columns.Add(new DataColumn("Descrizione", typeof(string)));
+            //dataGridView3.DataSource = dt;
+            //this.dataGridView3.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //
+            return dt;
         }
 
-        private void RiempiDettaglioOrdini(string anno, DataTable tabella)
+        private void PopolaTabellaOrdini(string anno, DataTable tabella, DataTable vecchi)
+        {
+            RiempiDettaglioOrdini(anno, tabella, vecchi);
+            RiempiCheckOrdinato(anno, vecchi);
+        }
+
+        private void RiempiDettaglioOrdini(string anno, DataTable tabella, DataTable vecchi)
         {
             string data;
             data = anno+"0000";
@@ -80,39 +94,10 @@ namespace Target2021
             }
         }
 
-        private void RiempiSyncDettaglioOrdini(string anno, DataTable tabolla)
+        private void RiempiCheckOrdinato(string anno, DataTable vecchi)
         {
-            DataTable tab = new DataTable();
-            tab.Columns.Add(new DataColumn("Importato", typeof(bool)));
-            tab.Columns.Add(new DataColumn("Num", typeof(Int32)));
-            tab.Columns.Add(new DataColumn("Data", typeof(DateTime)));
-            tab.Columns.Add(new DataColumn("Articolo", typeof(string)));
-            tab.Columns.Add(new DataColumn("Descrizione", typeof(string)));
-            //gridDataBoundGrid1.DataSource = tab;
-            //this.dataGridView2.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            string data;
-            data = anno + "0000";
-            DataTable DettaglioOrdini;
-            DettaglioOrdini = target2021DataSet.Tables["dettaglio_ordini_multiriga"];
-
-            string selezione = "data_ordine > '" + data + "'";
-            DataRow[] rows = DettaglioOrdini.Select(selezione);
-
-            foreach (DataRow riga in rows)
-            {
-                DataRow rig = tab.NewRow();
-                rig["Num"] = riga[1];
-                rig["Data"] = DateTime.ParseExact(riga[0].ToString(), "yyyyMMdd", CultureInfo.InvariantCulture);
-                rig["Articolo"] = riga[3];
-                rig["Descrizione"] = riga[4];
-                tab.Rows.Add(rig);
-            }
-        }
-
-        private void RiempiCheckOrdinato(string anno)
-        {
-            int NumOrdine;
+            int NumOrdine, i=0, j;
+            int[] rimuovi = new int[2000];
             foreach (DataGridViewRow riga in dataGridView2.Rows)
             {
                 NumOrdine = Convert .ToInt32(riga.Cells[1].Value);
@@ -127,8 +112,19 @@ namespace Target2021
                 else
                 {
                     riga.Cells[0].Value = true;
-                    riga.Visible = false;
+                    DataGridViewRow vecchia = (DataGridViewRow)riga.Clone();
+                    for (Int32 index = 0; index < riga.Cells.Count; index++)
+                    {
+                        vecchia.Cells[index].Value = riga.Cells[index].Value;
+                    }
+                    dataGridView3.Rows.Add(vecchia);
+                    rimuovi[i] = riga.Index;
+                    i++;
                 }
+            }
+            for (j=0;j<i;j++)  // Si potrebbe sostituire questro codice con ciclo "rimuovi se spuntata"
+            {
+                dataGridView2.Rows.RemoveAt(rimuovi[j]-j);
             }
         }
 

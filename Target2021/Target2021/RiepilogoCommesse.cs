@@ -98,8 +98,8 @@ namespace Target2021
         {
             string query_of1,query_of2,query_of3,query_s1,query_s2,query_s3,query_t1,query_t2,query_t3;
             query_of1 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND Stato=0";
-            query_of2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND Stato=1";
-            query_of3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND Stato=2";
+            query_of2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato=1 OR Stato=2)";
+            query_of3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato>2)";
             query_s1 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 2 AND Stato=0";
             query_s2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 2 AND Stato=1";
             query_s3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 2 AND Stato=2";

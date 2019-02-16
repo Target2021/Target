@@ -78,6 +78,7 @@ namespace Target2021.Anagrafiche
             this.articoli_sempliciTableAdapter.Fill(this.target2021DataSet.articoli_semplici);
             pulisci();
             this.ActiveControl = textBox1;
+            WindowState = FormWindowState.Maximized;
         }
 
         private void Filtra(object sender, EventArgs e)

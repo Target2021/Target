@@ -27,6 +27,8 @@ namespace Target2021
 
         private void LavoraStampaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MovimentiMagazzino'. È possibile spostarla o rimuoverla se necessario.
+            this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MacchineStampo'. È possibile spostarla o rimuoverla se necessario.
             this.macchineStampoTableAdapter.Fill(this.target2021DataSet.MacchineStampo);
             this.stampiTableAdapter.Fill(this.target2021DataSet.Stampi);
@@ -56,6 +58,30 @@ namespace Target2021
             {
                Disabilita(2);
             }
+            try
+            {
+                risultato = (int)target2021DataSet.Commesse.Select(filtro)[0]["AttG3"];
+            }
+            catch
+            {
+                Disabilita(3);
+            }
+            try
+            {
+                risultato = (int)target2021DataSet.Commesse.Select(filtro)[0]["AttG4"];
+            }
+            catch
+            {
+                Disabilita(4);
+            }
+            try
+            {
+                risultato = (int)target2021DataSet.Commesse.Select(filtro)[0]["AttG5"];
+            }
+            catch
+            {
+                Disabilita(5);
+            }
         }
 
         private void Disabilita(int gruppo)
@@ -69,6 +95,33 @@ namespace Target2021
                 dateTimePicker3.Enabled = false;
                 dateTimePicker4.Enabled = false;
             }
+            if (gruppo == 3)
+            {
+                button9.Text = "APRI";
+                attG3TextBox.Enabled = false;
+                oISG3DateTimePicker.Enabled = false;
+                oSFG3DateTimePicker.Enabled = false;
+                dateTimePicker5.Enabled = false;
+                dateTimePicker6.Enabled = false;
+            }
+            if (gruppo == 4)
+            {
+                button10.Text = "APRI";
+                attG4TextBox.Enabled = false;
+                oISG4DateTimePicker.Enabled = false;
+                oFSG4DateTimePicker.Enabled = false;
+                dateTimePicker7.Enabled = false;
+                dateTimePicker8.Enabled = false;
+            }
+            if (gruppo == 5)
+            {
+                button11.Text = "APRI";
+                attG5TextBox.Enabled = false;
+                oISG5DateTimePicker.Enabled = false;
+                oFSG5DateTimePicker.Enabled = false;
+                dateTimePicker9.Enabled = false;
+                dateTimePicker10.Enabled = false;
+            }
         }
 
         private void iDStampoTextBox_TextChanged(object sender, EventArgs e)
@@ -78,9 +131,7 @@ namespace Target2021
                 AggiornaPosizione(iDStampoTextBox.Text);
             }
             catch
-            {
-
-            }
+            { }
         }
 
         private void AggiornaPosizione(string stampo)
@@ -188,6 +239,283 @@ namespace Target2021
             }
             catch { NomeMacchina = "Non trovata!"; }
             label4.Text = NomeMacchina;
+        }
+
+        private void nrPezziCorrettiTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int PzDaLavorare=0, PzLavorati=0, PzResidui;
+            try
+            {
+                PzDaLavorare = Convert.ToInt32(nrPezziDaLavorareTextBox.Text);
+                PzLavorati = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+            }
+            catch
+            {}
+            PzResidui = PzDaLavorare - PzLavorati;
+            nrPezziResiduiTextBox.Text = PzResidui.ToString();
+            if (PzLavorati > 0)
+            {
+                evasoParzialeCheckBox.Checked = true;
+                statoTextBox.Text = "1";
+            }             
+            else
+            {
+                evasoParzialeCheckBox.Checked = false;
+                statoTextBox.Text = "0";
+            }       
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button5.Visible = true;
+            button6.Visible = true;
+            button7.Visible = true;
+            button8.Visible = true;
+            int PzDaLavorare = 0, PzLavorati = 0, PzResidui;
+            try
+            {
+                PzDaLavorare = Convert.ToInt32(nrPezziDaLavorareTextBox.Text);
+                PzLavorati = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+            }
+            catch
+            { }
+            PzResidui = PzDaLavorare - PzLavorati;
+            if (PzResidui > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Stai chiudendo la fase di stampaggio senza aver stampato tutti i pezzi richiesti! Sei sicuro di voler procedere?", "Sei sicuro?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ChiudiFase();
+
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    // non fa nulla
+                }
+            }
+            else
+            {
+                ChiudiFase();
+            }
+        }
+
+        private void ChiudiFase()
+        {
+            RigaStampaStato2();
+            RigaOFStato4();
+            CaricoMagazzino();
+            ScaricoLastre();
+        }
+
+        private void RigaStampaStato2()
+        {
+            // Metto la riga (TipoCommessa = 2) in stato = 2 (chiusa)
+            statoTextBox.Text = "2";
+            Salva();
+            button5.BackColor = Color.Green;
+        }
+
+        private void RigaOFStato4()
+        {
+            // Metto la riga di OF (TipoCommessa = 1) in stato=4
+            int NrCom;
+            NrCom = Convert.ToInt32(nrCommessaTextBox.Text);
+            string stringaconnessione, sql;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "UPDATE Commesse SET Stato = 4 WHERE TipoCommessa = 1 AND NrCommessa = "+NrCom.ToString();
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            comando.ExecuteNonQuery();
+            connessione.Close();
+            button6.BackColor = Color.Green;
+        }
+
+        private void CaricoMagazzino()
+        {
+            // Carico a magazzino i semilavorati (nr = NrPezziCorretti)
+            string CodDopoStampo;
+            CodDopoStampo = codArtiDopoStampoTextBox.Text;
+            if (CodDopoStampo.Length <3)
+            {
+                MessageBox.Show("L'anagrafica di quest'articolo era incompleta! Devi caricare manualmente a magazzino il semilavorato.");
+            }
+            else
+            {
+                MovimentoCS();
+                Giacenza();
+                button7.BackColor = Color.Green;
+            }
+        }
+
+        private void MovimentoCS()
+        {
+            // Registro il Carico in 'MovimentiMagazzino'
+            try
+            {
+                int IdMagazzino, qta, AMagazzino = 0;
+                double peso = 0, prezzo = 0;
+                string CodArt, CS = "X", BarCode, NrOrdine, Causale;
+                DateTime datamov;
+
+                IdMagazzino = 4;
+                CodArt = codArtiDopoStampoTextBox.Text;
+                Causale = codCommessaTextBox.Text;
+                CS = "C";
+                qta = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+                BarCode = codCommessaTextBox.Text;
+                NrOrdine = nrCommessaTextBox.Text;
+                datamov = dataTermineDateTimePicker.Value;
+                if (IdMagazzino == 4) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", CodArt, "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
+                movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
+            }
+            catch
+            {
+                MessageBox.Show("Aggiornamento movimento di magazzino fallito!");
+            }
+        }
+
+        private void Giacenza()
+        {
+            // Vario la giacenza in 'GiacenzeMagazzini'
+            int pezzi = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+            AggiornaGiacenzeC(pezzi, codArtiDopoStampoTextBox.Text);
+        }
+
+        private void AggiornaGiacenzeC(int q, string Cod)
+        {
+            int numero;
+            string query2;
+            DateTime ora;
+            SqlCommand comando2;
+            SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
+            conn.Open();
+            string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
+            SqlCommand comando1 = new SqlCommand(query1, conn);
+            try
+            {
+                numero = (int)comando1.ExecuteScalar();
+                numero = numero + q;
+                // update
+                ora = DateTime.Now;
+                query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idSemilavorati='" + Cod + "'";
+                comando2 = new SqlCommand(query2, conn);
+                comando2.ExecuteNonQuery();
+                MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString());
+            }
+            catch
+            {
+                numero = q;
+                // insert
+                ora = DateTime.Now;
+                query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idSemilavorati, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + numero.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                comando2 = new SqlCommand(query2, conn);
+                comando2.ExecuteNonQuery();
+                MessageBox.Show("Materia prima non presente in magazzino. Creata.");
+                MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString());
+            }
+            conn.Close();
+        }
+
+        private void ScaricoLastre()
+        {
+            // Scarico da magazzino il nr delle lastre usate (nr = ?)
+            // Movimento + Giacenza
+            MovimentoScaricoLastre();
+            GiacenzaLastre();
+            button8.BackColor = Color.Green;
+        }
+
+        private void MovimentoScaricoLastre()
+        {
+            try
+            {
+                int IdMagazzino, qta=0;
+                double peso = 0, prezzo = 0;
+                string CodArt, CS = "X", BarCode, NrOrdine, Causale;
+                DateTime datamov;
+
+                IdMagazzino = 1;
+                CodArt = iDMateriaPrimaTextBox.Text;
+                Causale = codCommessaTextBox.Text;
+                CS = "S";
+                qta = Convert.ToInt32(textBox4.Text);
+                BarCode = codCommessaTextBox.Text;
+                NrOrdine = nrCommessaTextBox.Text;
+                datamov = dataTermineDateTimePicker.Value;
+                if (IdMagazzino == 1) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, CodArt, "", "", "", "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
+                movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
+            }
+            catch
+            {
+                MessageBox.Show("Aggiornamento movimento di magazzino fallito!");
+            }
+        }
+
+        private void GiacenzaLastre()
+        {
+            int qta = Convert.ToInt32(textBox4.Text);
+            string CodArt = iDMateriaPrimaTextBox.Text;
+            AggiornaGiacenzeS(qta, CodArt);
+        }
+
+        private void AggiornaGiacenzeS(int q, string Cod)
+        {
+            int numero, disponibili;
+            string query2;
+            DateTime ora;
+            SqlCommand comando2;
+            SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
+            conn.Open();
+            string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+            SqlCommand comando1 = new SqlCommand(query1, conn);
+            try
+            {
+                numero = (int)comando1.ExecuteScalar();
+                if (numero > 0)   // articolo già presente nelle giacenze
+                {
+                    query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+                    comando2 = new SqlCommand(query2, conn);
+                    disponibili = (int)comando2.ExecuteScalar();
+                    numero = numero - q;
+                    disponibili = disponibili - q;
+                    // update
+                    ora = DateTime.Now;
+                    query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";
+                    comando2 = new SqlCommand(query2, conn);
+                    comando2.ExecuteNonQuery();
+                    MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
+                }
+            }
+            catch
+            {
+                numero = 0;
+                disponibili = 0;
+                // insert
+                ora = DateTime.Now;
+                query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idPrime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                comando2 = new SqlCommand(query2, conn);
+                comando2.ExecuteNonQuery();
+                MessageBox.Show("Materia prima non presente in magazzino. Creata. Scarico = 0!");
+                MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
+            }
+            conn.Close();
+        }
+
+        private void nrPezziCorrettiTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

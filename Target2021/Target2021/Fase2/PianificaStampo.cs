@@ -28,6 +28,7 @@ namespace Target2021.Fase2
             this.superCommessaTableAdapter.Fill(this.target2021DataSet.SuperCommessa);
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             superCommessaBindingSource.Filter = "Stato = 0";
+            WindowState = FormWindowState.Maximized;
         }
 
         private void AssociaDGV()
@@ -241,7 +242,7 @@ namespace Target2021.Fase2
                     Griglia.SelectedCells[57].Value = "1/1/1980";
                     Griglia.SelectedCells[58].Value = "00:00";
                     Griglia.SelectedCells[59].Value = 0;
-                    Griglia.SelectedCells[48].Value = 2;
+                    Griglia.SelectedCells[49].Value = 2;
                 }
             }
             this.commesseDataGridView1.Sort(commesseDataGridView1.Columns[57], ListSortDirection.Ascending);

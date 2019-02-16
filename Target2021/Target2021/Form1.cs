@@ -382,24 +382,28 @@ namespace Target2021
         private void nuovoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             NuovoOrdineForn NOF = new NuovoOrdineForn();
+            NOF.MdiParent = this;
             NOF.Show();
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaOrdine CO = new ConsultaOrdine();
+            CO.MdiParent = this;
             CO.Show();
         }
 
         private void arrivoMerceToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ArrivoMerce AM = new ArrivoMerce();
+            AM.MdiParent = this;
             AM.Show();
         }
 
         private void confermaDordineToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConfermaOrdine CO = new ConfermaOrdine();
+            CO.MdiParent = this;
             CO.Show();
         }
 
@@ -420,12 +424,14 @@ namespace Target2021
         private void eliminaSuperCommessaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EliminaSC EliminaSuperCommessa = new EliminaSC();
+            EliminaSuperCommessa.MdiParent = this;
             EliminaSuperCommessa.Show();
         }
 
         private void splittaCommessaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SplittaCommessa SC = new SplittaCommessa();
+            SC.MdiParent = this;
             SC.Show();
         }
 
