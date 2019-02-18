@@ -12,7 +12,8 @@ namespace Target2021
 {
     public partial class Login : Form
     {
-        string NomeUtente, Password;
+        public string NomeUtente;
+        public int livello;    // 1 = admin 2=stampa
         public Login()
         {
             InitializeComponent();
@@ -34,10 +35,8 @@ namespace Target2021
                 if (dt.Rows.Count == 1)
                 {            
                     NomeUtente = textBox1.Text;
-                    Password = textBox2.Text;
-                    Form1 inizia = new Form1();
-                    inizia.Show();
-                    this.Hide();
+                    livello =Convert .ToInt32(dt.Rows[0][3]);
+                    this.Close();
                 }
                 else
                 {
@@ -58,12 +57,23 @@ namespace Target2021
             }
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 button1_Click(sender, e);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            livello = 0;
+            this.Close();
         }
     }
 }

@@ -19,8 +19,7 @@ namespace Target2021
 {
     public partial class Form1 : Form
     {
-        public object Livello;
-        public string user, pass;
+        public string user;
         public Form1()
         {
             InitializeComponent();          
@@ -28,16 +27,13 @@ namespace Target2021
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string strconn = Properties.Resources.StringaConnessione;
-            SqlConnection con = new SqlConnection(strconn);
-            string query = "SELECT Livello FROM Utenti WHERE Nome='" + user + "'";
-            SqlCommand sqlCommand = new SqlCommand(query, con);
-            con.Open();
-            Livello = sqlCommand.ExecuteScalar();
-            Livello = "Amministratore";
-            this.Text = "Target 2.0 - Utente: " + user + " - Livello: " + Livello.ToString();
-            con.Close();
-            //CheckPrivilege(Livello.ToString());
+            int livello;
+            Login logga = new Login();
+            logga.ShowDialog();
+            user = logga.NomeUtente;
+            livello = logga.livello;
+            if (livello == 0) Application.Exit();
+            this.Text = "Target 2.0 - Utente: " + user + " - Livello: " + livello.ToString();
             this.WindowState = FormWindowState.Maximized;
         }
        

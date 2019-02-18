@@ -294,6 +294,7 @@ namespace Target2021
                     com.ProgStampa = RecuperaProgrammaStampaggio(CodiceArticolo);
                     com.PezziOra = RecuperaNumeroPezziStampatiOra(CodiceArticolo);
                     com.Foto = RecuperaFoto(CodiceArticolo);
+                    com.CodArtiDopoStampo = RecuperaCodiceArticoloDopoStampo(CodiceArticolo);
                     InserisciCommessa(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -362,6 +363,19 @@ namespace Target2021
             string filtro = "codice_articolo = '" + ca + "'";
             risultato=(int) target2021DataSet.DettArticoli.Compute("MAX(MacPredefStampo)", filtro);
             return risultato; ;
+        }
+
+        private string RecuperaCodiceArticoloDopoStampo(string Cod)
+        {
+            string outp="";
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + Cod + "' AND lavorazione=2");
+            try
+            {
+                outp = riga[0]["CodiceOutput"].ToString();
+                return outp;
+            }
+            catch { return "NN"; }
         }
 
         private string CodiceArt(int numord)

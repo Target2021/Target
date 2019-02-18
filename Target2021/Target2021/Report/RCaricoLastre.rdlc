@@ -255,7 +255,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>7.60001cm</Top>
+            <Top>7.29573cm</Top>
             <Left>12.89967cm</Left>
             <Height>1.14212cm</Height>
             <Width>4.03459cm</Width>
@@ -287,7 +287,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox4</rd:DefaultName>
-            <Top>9.73243cm</Top>
+            <Top>9.2722cm</Top>
             <Left>0.34078cm</Left>
             <Height>1.48167cm</Height>
             <Width>7.24486cm</Width>
@@ -319,7 +319,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>11.95655cm</Top>
+            <Top>11.49632cm</Top>
             <Left>0.34078cm</Left>
             <Height>1.41111cm</Height>
             <Width>7.24486cm</Width>
@@ -354,7 +354,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>qta</rd:DefaultName>
-            <Top>7.21196cm</Top>
+            <Top>6.90768cm</Top>
             <Left>17.04009cm</Left>
             <Height>1.83445cm</Height>
             <Width>6.15901cm</Width>
@@ -390,7 +390,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>data</rd:DefaultName>
-            <Top>9.48549cm</Top>
+            <Top>9.06215cm</Top>
             <Left>10.48315cm</Left>
             <Height>1.83445cm</Height>
             <Width>10.42762cm</Width>
@@ -425,7 +425,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>nrordine</rd:DefaultName>
-            <Top>11.49632cm</Top>
+            <Top>11.07298cm</Top>
             <Left>10.48315cm</Left>
             <Height>1.83445cm</Height>
             <Width>10.42762cm</Width>
@@ -457,7 +457,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
-            <Top>7.60001cm</Top>
+            <Top>7.29573cm</Top>
             <Left>0.34078cm</Left>
             <Height>1.14212cm</Height>
             <Width>4.03459cm</Width>
@@ -492,7 +492,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>peso</rd:DefaultName>
-            <Top>7.21196cm</Top>
+            <Top>6.90768cm</Top>
             <Left>4.4812cm</Left>
             <Height>1.86973cm</Height>
             <Width>5.98262cm</Width>
@@ -558,7 +558,7 @@
             <rd:DefaultName>des</rd:DefaultName>
             <Top>3.03742cm</Top>
             <Left>8.9662cm</Left>
-            <Height>1.09361cm</Height>
+            <Height>1.48166cm</Height>
             <Width>16.01139cm</Width>
             <ZIndex>11</ZIndex>
             <Style>
@@ -729,7 +729,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>nrordine</rd:DefaultName>
-            <Top>13.40133cm</Top>
+            <Top>12.97799cm</Top>
             <Left>10.48315cm</Left>
             <Height>3.61667cm</Height>
             <Width>10.42762cm</Width>
@@ -756,9 +756,9 @@
             </Style>
           </Line>
           <Line Name="Line3">
-            <Top>9.18752cm</Top>
+            <Top>8.88324cm</Top>
             <Left>8.53299cm</Left>
-            <Height>8.08448cm</Height>
+            <Height>8.38876cm</Height>
             <Width>0cm</Width>
             <ZIndex>18</ZIndex>
             <Style>
@@ -768,7 +768,7 @@
             </Style>
           </Line>
           <Line Name="Line4">
-            <Top>9.18752cm</Top>
+            <Top>8.88324cm</Top>
             <Height>0cm</Height>
             <Width>25.4cm</Width>
             <ZIndex>19</ZIndex>
@@ -790,10 +790,10 @@
       <Page>
         <PageHeight>21cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
-        <LeftMargin>1.5cm</LeftMargin>
-        <RightMargin>1.5cm</RightMargin>
-        <TopMargin>1.5cm</TopMargin>
-        <BottomMargin>1.5cm</BottomMargin>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
