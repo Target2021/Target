@@ -37,15 +37,33 @@ namespace Target2021.Anagrafiche
 
         private void stampiBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.stampiBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            try
+            {
+                this.Validate();
+                this.stampiBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             if (comboBox1.Text == "Codice") stampiBindingSource.Filter = "codice LIKE '*" + textBox1.Text + "*'";
             if (comboBox1.Text == "Descrizione") stampiBindingSource.Filter = "descrizione LIKE '*" + textBox1.Text + "*'";
+        }
+
+        private void stampiDataGridView_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // If the data source raises an exception when a cell value is 
+            // commited, display an error message.
+            if (e.Exception != null &&
+                e.Context == DataGridViewDataErrorContexts.Commit)
+            {
+                MessageBox.Show("Il Codice dello Stampo è già presente!");
+            }
         }
     }
 }

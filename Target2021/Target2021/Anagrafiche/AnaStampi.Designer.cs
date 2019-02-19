@@ -194,7 +194,7 @@
             this.stampiBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.stampiBindingNavigator.Name = "stampiBindingNavigator";
             this.stampiBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.stampiBindingNavigator.Size = new System.Drawing.Size(913, 25);
+            this.stampiBindingNavigator.Size = new System.Drawing.Size(937, 25);
             this.stampiBindingNavigator.TabIndex = 9;
             this.stampiBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -314,8 +314,9 @@
             this.stampiDataGridView.DataSource = this.stampiBindingSource;
             this.stampiDataGridView.Location = new System.Drawing.Point(0, 112);
             this.stampiDataGridView.Name = "stampiDataGridView";
-            this.stampiDataGridView.Size = new System.Drawing.Size(913, 325);
+            this.stampiDataGridView.Size = new System.Drawing.Size(937, 325);
             this.stampiDataGridView.TabIndex = 9;
+            this.stampiDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.stampiDataGridView_DataError_1);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -411,7 +412,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(913, 465);
+            this.ClientSize = new System.Drawing.Size(937, 465);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.stampiDataGridView);

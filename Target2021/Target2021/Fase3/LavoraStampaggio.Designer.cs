@@ -110,8 +110,26 @@
             this.oISG2DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG2TextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.oSFG3DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.oISG3DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.attG3TextBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.button10 = new System.Windows.Forms.Button();
+            this.oFSG4DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.oISG4DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.attG4TextBox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
+            this.button11 = new System.Windows.Forms.Button();
+            this.oFSG5DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.oISG5DateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.attG5TextBox = new System.Windows.Forms.TextBox();
             this.statoTextBox = new System.Windows.Forms.TextBox();
             this.evasoParzialeCheckBox = new System.Windows.Forms.CheckBox();
             this.schedMachTextBox = new System.Windows.Forms.TextBox();
@@ -136,24 +154,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.attG3TextBox = new System.Windows.Forms.TextBox();
-            this.oISG3DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.oSFG3DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.attG4TextBox = new System.Windows.Forms.TextBox();
-            this.oISG4DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.oFSG4DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.attG5TextBox = new System.Windows.Forms.TextBox();
-            this.oISG5DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.oFSG5DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -212,7 +212,7 @@
             // 
             iDCommessaLabel.AutoSize = true;
             iDCommessaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            iDCommessaLabel.Location = new System.Drawing.Point(56, 93);
+            iDCommessaLabel.Location = new System.Drawing.Point(43, 93);
             iDCommessaLabel.Name = "iDCommessaLabel";
             iDCommessaLabel.Size = new System.Drawing.Size(85, 15);
             iDCommessaLabel.TabIndex = 1;
@@ -242,7 +242,7 @@
             // 
             dataCommessaLabel.AutoSize = true;
             dataCommessaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataCommessaLabel.Location = new System.Drawing.Point(39, 120);
+            dataCommessaLabel.Location = new System.Drawing.Point(26, 120);
             dataCommessaLabel.Name = "dataCommessaLabel";
             dataCommessaLabel.Size = new System.Drawing.Size(102, 15);
             dataCommessaLabel.TabIndex = 7;
@@ -262,7 +262,7 @@
             // 
             dataConsegnaLabel.AutoSize = true;
             dataConsegnaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataConsegnaLabel.Location = new System.Drawing.Point(46, 147);
+            dataConsegnaLabel.Location = new System.Drawing.Point(33, 147);
             dataConsegnaLabel.Name = "dataConsegnaLabel";
             dataConsegnaLabel.Size = new System.Drawing.Size(95, 15);
             dataConsegnaLabel.TabIndex = 15;
@@ -292,7 +292,7 @@
             // 
             descrArticoloLabel.AutoSize = true;
             descrArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descrArticoloLabel.Location = new System.Drawing.Point(248, 172);
+            descrArticoloLabel.Location = new System.Drawing.Point(265, 172);
             descrArticoloLabel.Name = "descrArticoloLabel";
             descrArticoloLabel.Size = new System.Drawing.Size(85, 15);
             descrArticoloLabel.TabIndex = 21;
@@ -512,6 +512,97 @@
             codArtiDopoStampoLabel.TabIndex = 62;
             codArtiDopoStampoLabel.Text = "Cod Arti Dopo Stampo:";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.Location = new System.Drawing.Point(463, 256);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(111, 15);
+            label5.TabIndex = 68;
+            label5.Text = "Nr Lastre utilizzate:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(9, 18);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(139, 13);
+            label6.TabIndex = 57;
+            label6.Text = "Tempo di attrezzaggio (min):";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(9, 19);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(139, 13);
+            label7.TabIndex = 57;
+            label7.Text = "Tempo di attrezzaggio (min):";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(9, 20);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(139, 13);
+            label8.TabIndex = 57;
+            label8.Text = "Tempo di attrezzaggio (min):";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(9, 71);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(30, 13);
+            label9.TabIndex = 59;
+            label9.Text = "Fine:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(9, 45);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(34, 13);
+            label10.TabIndex = 58;
+            label10.Text = "Inizio:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(9, 78);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(30, 13);
+            label11.TabIndex = 59;
+            label11.Text = "Fine:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(9, 52);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(34, 13);
+            label12.TabIndex = 58;
+            label12.Text = "Inizio:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new System.Drawing.Point(9, 76);
+            label13.Name = "label13";
+            label13.Size = new System.Drawing.Size(30, 13);
+            label13.TabIndex = 59;
+            label13.Text = "Fine:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(9, 50);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(34, 13);
+            label14.TabIndex = 58;
+            label14.Text = "Inizio:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -602,7 +693,7 @@
             this.iDCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCommessa", true));
             this.iDCommessaTextBox.Enabled = false;
             this.iDCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iDCommessaTextBox.Location = new System.Drawing.Point(147, 90);
+            this.iDCommessaTextBox.Location = new System.Drawing.Point(134, 90);
             this.iDCommessaTextBox.Name = "iDCommessaTextBox";
             this.iDCommessaTextBox.Size = new System.Drawing.Size(100, 21);
             this.iDCommessaTextBox.TabIndex = 2;
@@ -636,7 +727,7 @@
             this.dataCommessaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataCommessa", true));
             this.dataCommessaDateTimePicker.Enabled = false;
             this.dataCommessaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataCommessaDateTimePicker.Location = new System.Drawing.Point(147, 115);
+            this.dataCommessaDateTimePicker.Location = new System.Drawing.Point(133, 115);
             this.dataCommessaDateTimePicker.Name = "dataCommessaDateTimePicker";
             this.dataCommessaDateTimePicker.Size = new System.Drawing.Size(200, 21);
             this.dataCommessaDateTimePicker.TabIndex = 8;
@@ -657,7 +748,7 @@
             this.dataConsegnaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataConsegna", true));
             this.dataConsegnaDateTimePicker.Enabled = false;
             this.dataConsegnaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataConsegnaDateTimePicker.Location = new System.Drawing.Point(147, 142);
+            this.dataConsegnaDateTimePicker.Location = new System.Drawing.Point(133, 142);
             this.dataConsegnaDateTimePicker.Name = "dataConsegnaDateTimePicker";
             this.dataConsegnaDateTimePicker.Size = new System.Drawing.Size(200, 21);
             this.dataConsegnaDateTimePicker.TabIndex = 16;
@@ -689,9 +780,9 @@
             this.descrArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "DescrArticolo", true));
             this.descrArticoloTextBox.Enabled = false;
             this.descrArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descrArticoloTextBox.Location = new System.Drawing.Point(339, 169);
+            this.descrArticoloTextBox.Location = new System.Drawing.Point(356, 169);
             this.descrArticoloTextBox.Name = "descrArticoloTextBox";
-            this.descrArticoloTextBox.Size = new System.Drawing.Size(258, 21);
+            this.descrArticoloTextBox.Size = new System.Drawing.Size(276, 21);
             this.descrArticoloTextBox.TabIndex = 22;
             this.descrArticoloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -961,6 +1052,61 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Giorno 3:";
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(246, 15);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(71, 19);
+            this.button9.TabIndex = 62;
+            this.button9.Text = "SALVA";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OSFG3", true));
+            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker6.Location = new System.Drawing.Point(246, 64);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.ShowUpDown = true;
+            this.dateTimePicker6.Size = new System.Drawing.Size(71, 20);
+            this.dateTimePicker6.TabIndex = 61;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG3", true));
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker5.Location = new System.Drawing.Point(246, 41);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.ShowUpDown = true;
+            this.dateTimePicker5.Size = new System.Drawing.Size(71, 20);
+            this.dateTimePicker5.TabIndex = 60;
+            // 
+            // oSFG3DateTimePicker
+            // 
+            this.oSFG3DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OSFG3", true));
+            this.oSFG3DateTimePicker.Location = new System.Drawing.Point(55, 65);
+            this.oSFG3DateTimePicker.Name = "oSFG3DateTimePicker";
+            this.oSFG3DateTimePicker.Size = new System.Drawing.Size(185, 20);
+            this.oSFG3DateTimePicker.TabIndex = 5;
+            // 
+            // oISG3DateTimePicker
+            // 
+            this.oISG3DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG3", true));
+            this.oISG3DateTimePicker.Location = new System.Drawing.Point(55, 41);
+            this.oISG3DateTimePicker.Name = "oISG3DateTimePicker";
+            this.oISG3DateTimePicker.Size = new System.Drawing.Size(185, 20);
+            this.oISG3DateTimePicker.TabIndex = 3;
+            // 
+            // attG3TextBox
+            // 
+            this.attG3TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "AttG3", true));
+            this.attG3TextBox.Location = new System.Drawing.Point(154, 15);
+            this.attG3TextBox.Name = "attG3TextBox";
+            this.attG3TextBox.Size = new System.Drawing.Size(86, 20);
+            this.attG3TextBox.TabIndex = 1;
+            this.attG3TextBox.Text = "0";
+            this.attG3TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dateTimePicker8);
@@ -979,6 +1125,61 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Giorno 4:";
             // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG4", true));
+            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker8.Location = new System.Drawing.Point(246, 70);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.ShowUpDown = true;
+            this.dateTimePicker8.Size = new System.Drawing.Size(71, 20);
+            this.dateTimePicker8.TabIndex = 65;
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG4", true));
+            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker7.Location = new System.Drawing.Point(246, 45);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.ShowUpDown = true;
+            this.dateTimePicker7.Size = new System.Drawing.Size(71, 20);
+            this.dateTimePicker7.TabIndex = 64;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(246, 16);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(71, 19);
+            this.button10.TabIndex = 63;
+            this.button10.Text = "SALVA";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // oFSG4DateTimePicker
+            // 
+            this.oFSG4DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG4", true));
+            this.oFSG4DateTimePicker.Location = new System.Drawing.Point(55, 70);
+            this.oFSG4DateTimePicker.Name = "oFSG4DateTimePicker";
+            this.oFSG4DateTimePicker.Size = new System.Drawing.Size(185, 20);
+            this.oFSG4DateTimePicker.TabIndex = 5;
+            // 
+            // oISG4DateTimePicker
+            // 
+            this.oISG4DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG4", true));
+            this.oISG4DateTimePicker.Location = new System.Drawing.Point(55, 44);
+            this.oISG4DateTimePicker.Name = "oISG4DateTimePicker";
+            this.oISG4DateTimePicker.Size = new System.Drawing.Size(185, 20);
+            this.oISG4DateTimePicker.TabIndex = 3;
+            // 
+            // attG4TextBox
+            // 
+            this.attG4TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "AttG4", true));
+            this.attG4TextBox.Location = new System.Drawing.Point(154, 16);
+            this.attG4TextBox.Name = "attG4TextBox";
+            this.attG4TextBox.Size = new System.Drawing.Size(86, 20);
+            this.attG4TextBox.TabIndex = 1;
+            this.attG4TextBox.Text = "0";
+            this.attG4TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dateTimePicker10);
@@ -996,6 +1197,61 @@
             this.groupBox5.TabIndex = 45;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Giorno 5:";
+            // 
+            // dateTimePicker10
+            // 
+            this.dateTimePicker10.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG5", true));
+            this.dateTimePicker10.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker10.Location = new System.Drawing.Point(246, 70);
+            this.dateTimePicker10.Name = "dateTimePicker10";
+            this.dateTimePicker10.ShowUpDown = true;
+            this.dateTimePicker10.Size = new System.Drawing.Size(71, 20);
+            this.dateTimePicker10.TabIndex = 65;
+            // 
+            // dateTimePicker9
+            // 
+            this.dateTimePicker9.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG5", true));
+            this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker9.Location = new System.Drawing.Point(246, 44);
+            this.dateTimePicker9.Name = "dateTimePicker9";
+            this.dateTimePicker9.ShowUpDown = true;
+            this.dateTimePicker9.Size = new System.Drawing.Size(71, 20);
+            this.dateTimePicker9.TabIndex = 64;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(246, 17);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(71, 19);
+            this.button11.TabIndex = 63;
+            this.button11.Text = "SALVA";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // oFSG5DateTimePicker
+            // 
+            this.oFSG5DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG5", true));
+            this.oFSG5DateTimePicker.Location = new System.Drawing.Point(55, 70);
+            this.oFSG5DateTimePicker.Name = "oFSG5DateTimePicker";
+            this.oFSG5DateTimePicker.Size = new System.Drawing.Size(185, 20);
+            this.oFSG5DateTimePicker.TabIndex = 5;
+            // 
+            // oISG5DateTimePicker
+            // 
+            this.oISG5DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG5", true));
+            this.oISG5DateTimePicker.Location = new System.Drawing.Point(55, 44);
+            this.oISG5DateTimePicker.Name = "oISG5DateTimePicker";
+            this.oISG5DateTimePicker.Size = new System.Drawing.Size(185, 20);
+            this.oISG5DateTimePicker.TabIndex = 3;
+            // 
+            // attG5TextBox
+            // 
+            this.attG5TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "AttG5", true));
+            this.attG5TextBox.Location = new System.Drawing.Point(154, 17);
+            this.attG5TextBox.Name = "attG5TextBox";
+            this.attG5TextBox.Size = new System.Drawing.Size(86, 20);
+            this.attG5TextBox.TabIndex = 1;
+            this.attG5TextBox.Text = "0";
+            this.attG5TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // statoTextBox
             // 
@@ -1215,16 +1471,6 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Visible = false;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(463, 256);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(111, 15);
-            label5.TabIndex = 68;
-            label5.Text = "Nr Lastre utilizzate:";
-            // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1235,252 +1481,6 @@
             this.textBox4.Text = "0";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
-            // 
-            // attG3TextBox
-            // 
-            this.attG3TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "AttG3", true));
-            this.attG3TextBox.Location = new System.Drawing.Point(154, 15);
-            this.attG3TextBox.Name = "attG3TextBox";
-            this.attG3TextBox.Size = new System.Drawing.Size(86, 20);
-            this.attG3TextBox.TabIndex = 1;
-            this.attG3TextBox.Text = "0";
-            this.attG3TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // oISG3DateTimePicker
-            // 
-            this.oISG3DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG3", true));
-            this.oISG3DateTimePicker.Location = new System.Drawing.Point(55, 41);
-            this.oISG3DateTimePicker.Name = "oISG3DateTimePicker";
-            this.oISG3DateTimePicker.Size = new System.Drawing.Size(185, 20);
-            this.oISG3DateTimePicker.TabIndex = 3;
-            // 
-            // oSFG3DateTimePicker
-            // 
-            this.oSFG3DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OSFG3", true));
-            this.oSFG3DateTimePicker.Location = new System.Drawing.Point(55, 65);
-            this.oSFG3DateTimePicker.Name = "oSFG3DateTimePicker";
-            this.oSFG3DateTimePicker.Size = new System.Drawing.Size(185, 20);
-            this.oSFG3DateTimePicker.TabIndex = 5;
-            // 
-            // attG4TextBox
-            // 
-            this.attG4TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "AttG4", true));
-            this.attG4TextBox.Location = new System.Drawing.Point(154, 16);
-            this.attG4TextBox.Name = "attG4TextBox";
-            this.attG4TextBox.Size = new System.Drawing.Size(86, 20);
-            this.attG4TextBox.TabIndex = 1;
-            this.attG4TextBox.Text = "0";
-            this.attG4TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // oISG4DateTimePicker
-            // 
-            this.oISG4DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG4", true));
-            this.oISG4DateTimePicker.Location = new System.Drawing.Point(55, 44);
-            this.oISG4DateTimePicker.Name = "oISG4DateTimePicker";
-            this.oISG4DateTimePicker.Size = new System.Drawing.Size(185, 20);
-            this.oISG4DateTimePicker.TabIndex = 3;
-            // 
-            // oFSG4DateTimePicker
-            // 
-            this.oFSG4DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG4", true));
-            this.oFSG4DateTimePicker.Location = new System.Drawing.Point(55, 70);
-            this.oFSG4DateTimePicker.Name = "oFSG4DateTimePicker";
-            this.oFSG4DateTimePicker.Size = new System.Drawing.Size(185, 20);
-            this.oFSG4DateTimePicker.TabIndex = 5;
-            // 
-            // attG5TextBox
-            // 
-            this.attG5TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "AttG5", true));
-            this.attG5TextBox.Location = new System.Drawing.Point(154, 17);
-            this.attG5TextBox.Name = "attG5TextBox";
-            this.attG5TextBox.Size = new System.Drawing.Size(86, 20);
-            this.attG5TextBox.TabIndex = 1;
-            this.attG5TextBox.Text = "0";
-            this.attG5TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // oISG5DateTimePicker
-            // 
-            this.oISG5DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG5", true));
-            this.oISG5DateTimePicker.Location = new System.Drawing.Point(55, 44);
-            this.oISG5DateTimePicker.Name = "oISG5DateTimePicker";
-            this.oISG5DateTimePicker.Size = new System.Drawing.Size(185, 20);
-            this.oISG5DateTimePicker.TabIndex = 3;
-            // 
-            // oFSG5DateTimePicker
-            // 
-            this.oFSG5DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG5", true));
-            this.oFSG5DateTimePicker.Location = new System.Drawing.Point(55, 70);
-            this.oFSG5DateTimePicker.Name = "oFSG5DateTimePicker";
-            this.oFSG5DateTimePicker.Size = new System.Drawing.Size(185, 20);
-            this.oFSG5DateTimePicker.TabIndex = 5;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(9, 18);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(139, 13);
-            label6.TabIndex = 57;
-            label6.Text = "Tempo di attrezzaggio (min):";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(9, 19);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(139, 13);
-            label7.TabIndex = 57;
-            label7.Text = "Tempo di attrezzaggio (min):";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(9, 20);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(139, 13);
-            label8.TabIndex = 57;
-            label8.Text = "Tempo di attrezzaggio (min):";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(9, 71);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(30, 13);
-            label9.TabIndex = 59;
-            label9.Text = "Fine:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(9, 45);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(34, 13);
-            label10.TabIndex = 58;
-            label10.Text = "Inizio:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(9, 78);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(30, 13);
-            label11.TabIndex = 59;
-            label11.Text = "Fine:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(9, 52);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(34, 13);
-            label12.TabIndex = 58;
-            label12.Text = "Inizio:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new System.Drawing.Point(9, 76);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(30, 13);
-            label13.TabIndex = 59;
-            label13.Text = "Fine:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(9, 50);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(34, 13);
-            label14.TabIndex = 58;
-            label14.Text = "Inizio:";
-            // 
-            // dateTimePicker5
-            // 
-            this.dateTimePicker5.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG3", true));
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker5.Location = new System.Drawing.Point(246, 41);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.ShowUpDown = true;
-            this.dateTimePicker5.Size = new System.Drawing.Size(71, 20);
-            this.dateTimePicker5.TabIndex = 60;
-            // 
-            // dateTimePicker6
-            // 
-            this.dateTimePicker6.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OSFG3", true));
-            this.dateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker6.Location = new System.Drawing.Point(246, 64);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.ShowUpDown = true;
-            this.dateTimePicker6.Size = new System.Drawing.Size(71, 20);
-            this.dateTimePicker6.TabIndex = 61;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(246, 15);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(71, 19);
-            this.button9.TabIndex = 62;
-            this.button9.Text = "SALVA";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(246, 16);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(71, 19);
-            this.button10.TabIndex = 63;
-            this.button10.Text = "SALVA";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(246, 17);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(71, 19);
-            this.button11.TabIndex = 63;
-            this.button11.Text = "SALVA";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker7
-            // 
-            this.dateTimePicker7.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG4", true));
-            this.dateTimePicker7.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker7.Location = new System.Drawing.Point(246, 45);
-            this.dateTimePicker7.Name = "dateTimePicker7";
-            this.dateTimePicker7.ShowUpDown = true;
-            this.dateTimePicker7.Size = new System.Drawing.Size(71, 20);
-            this.dateTimePicker7.TabIndex = 64;
-            // 
-            // dateTimePicker8
-            // 
-            this.dateTimePicker8.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG4", true));
-            this.dateTimePicker8.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker8.Location = new System.Drawing.Point(246, 70);
-            this.dateTimePicker8.Name = "dateTimePicker8";
-            this.dateTimePicker8.ShowUpDown = true;
-            this.dateTimePicker8.Size = new System.Drawing.Size(71, 20);
-            this.dateTimePicker8.TabIndex = 65;
-            // 
-            // dateTimePicker9
-            // 
-            this.dateTimePicker9.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OISG5", true));
-            this.dateTimePicker9.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker9.Location = new System.Drawing.Point(246, 44);
-            this.dateTimePicker9.Name = "dateTimePicker9";
-            this.dateTimePicker9.ShowUpDown = true;
-            this.dateTimePicker9.Size = new System.Drawing.Size(71, 20);
-            this.dateTimePicker9.TabIndex = 64;
-            // 
-            // dateTimePicker10
-            // 
-            this.dateTimePicker10.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG5", true));
-            this.dateTimePicker10.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker10.Location = new System.Drawing.Point(246, 70);
-            this.dateTimePicker10.Name = "dateTimePicker10";
-            this.dateTimePicker10.ShowUpDown = true;
-            this.dateTimePicker10.Size = new System.Drawing.Size(71, 20);
-            this.dateTimePicker10.TabIndex = 65;
             // 
             // LavoraStampaggio
             // 
