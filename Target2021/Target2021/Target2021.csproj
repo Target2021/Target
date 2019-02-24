@@ -301,10 +301,10 @@
     <Compile Include="CheckStampaggio.Designer.cs">
       <DependentUpon>CheckStampaggio.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckTaglio.cs">
+    <Compile Include="Fase4\CheckTaglio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckTaglio.Designer.cs">
+    <Compile Include="Fase4\CheckTaglio.Designer.cs">
       <DependentUpon>CheckTaglio.cs</DependentUpon>
     </Compile>
     <Compile Include="Anagrafiche\Clienti.cs">
@@ -453,10 +453,10 @@
     <Compile Include="Fase3\LavoraStampaggio.Designer.cs">
       <DependentUpon>LavoraStampaggio.cs</DependentUpon>
     </Compile>
-    <Compile Include="LavoraTaglio.cs">
+    <Compile Include="Fase4\LavoraTaglio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LavoraTaglio.Designer.cs">
+    <Compile Include="Fase4\LavoraTaglio.Designer.cs">
       <DependentUpon>LavoraTaglio.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -736,7 +736,7 @@
     <EmbeddedResource Include="CheckStampaggio.resx">
       <DependentUpon>CheckStampaggio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckTaglio.resx">
+    <EmbeddedResource Include="Fase4\CheckTaglio.resx">
       <DependentUpon>CheckTaglio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\Clienti.resx">
@@ -811,7 +811,7 @@
     <EmbeddedResource Include="Fase3\LavoraStampaggio.resx">
       <DependentUpon>LavoraStampaggio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LavoraTaglio.resx">
+    <EmbeddedResource Include="Fase4\LavoraTaglio.resx">
       <DependentUpon>LavoraTaglio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">

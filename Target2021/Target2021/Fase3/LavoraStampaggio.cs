@@ -27,6 +27,8 @@ namespace Target2021
 
         private void LavoraStampaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.clienti'. È possibile spostarla o rimuoverla se necessario.
+            this.clientiTableAdapter.Fill(this.target2021DataSet.clienti);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MovimentiMagazzino'. È possibile spostarla o rimuoverla se necessario.
             this.movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MacchineStampo'. È possibile spostarla o rimuoverla se necessario.
@@ -36,6 +38,21 @@ namespace Target2021
             commesseBindingSource.Filter = "IDCommessa = '" + IDCommessa + "'";
             ControllaDate();
             schedMachTextBox.Text = macchina.ToString();
+            ImpostaSchedaLavorazione();
+        }
+
+        private void ImpostaSchedaLavorazione()
+        {
+            string CodArt, Allegato;
+            CodArt = codArticoloTextBox.Text;
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + CodArt + "' AND lavorazione=2");
+            try
+            {
+                Allegato  = Convert.ToString(riga[0]["Allegato"]);
+                textBox5.Text = Allegato.ToString();
+            }
+            catch { textBox5.Text = "Scheda non trovata"; }
         }
 
         private void ControllaDate()
@@ -225,7 +242,14 @@ namespace Target2021
                 dateTimePicker3.Enabled = true;
                 dateTimePicker4.Enabled = true;
             }
-
+            if (gruppo == 3)
+            {
+                attG3TextBox.Enabled = true;
+                oISG3DateTimePicker.Enabled = true;
+                oSFG3DateTimePicker.Enabled = true;
+                dateTimePicker5.Enabled = true;
+                dateTimePicker6.Enabled = true;
+            }
         }
 
         private void schedMachTextBox_TextChanged(object sender, EventArgs e)
@@ -262,11 +286,32 @@ namespace Target2021
             {
                 evasoParzialeCheckBox.Checked = false;
                 statoTextBox.Text = "0";
-            }       
+            }
+            nrPezziCorrettiTextBox.BackColor = Color.White;
+        }
+
+        private int RecuperaStatoRiga()
+        {
+            int ID;
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["Commesse"].Select("IDCommessa=" + iDCommessaTextBox .Text);
+            try
+            {
+                ID = Convert.ToInt32(riga[0]["Stato"]);
+                return ID;
+            }
+            catch { return -1; }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int statoriga;
+            statoriga = RecuperaStatoRiga();
+            if (statoriga == 2)
+            {
+                MessageBox.Show("Fase già chiusa!");
+                return;
+            }
             button5.Visible = true;
             button6.Visible = true;
             button7.Visible = true;
@@ -516,6 +561,59 @@ namespace Target2021
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            textBox4.BackColor = Color.White;
+        }
+
+        private void nrPezziScartatiTextBox_TextChanged(object sender, EventArgs e)
+        {
+            nrPezziScartatiTextBox.BackColor = Color.White;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(textBox5.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Non riesco ad aprire questo file!");
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (button9.Text == "APRI")
+            {
+                Abilita(3);
+                button9.Text = "SALVA";
+                oISG3DateTimePicker.Value = DateTime.Now;
+            }
+            else
+                Salva();
+        }
+
+        private void iDClienteTextBox_TextChanged(object sender, EventArgs e)
+        {
+            DataRow[] riga;
+            string NomeCliente, filtro;
+            try
+            {
+                filtro = "codice='" + iDClienteTextBox.Text.Replace(" ", string.Empty) + "'";
+                riga = target2021DataSet.Tables["clienti"].Select(filtro);
+                NomeCliente = riga[0]["ragione_sociale"].ToString();
+            }
+            catch { NomeCliente = "Non trovato!"; }
+            label16.Text = NomeCliente;
+        }
+
+        private void fotoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

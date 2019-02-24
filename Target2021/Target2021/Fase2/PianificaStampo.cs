@@ -54,7 +54,9 @@ namespace Target2021.Fase2
             foreach (DataGridViewColumn col in commesseDataGridView.Columns)
             {
                 if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
-                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi")
+                if (col.HeaderText == "IDMachStampa") col.HeaderText = "Macchina";
+                if (col.HeaderText == "CodCommessa") col.HeaderText = "Comm.";
+                if (col.HeaderText == "Comm." || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "Macchina")
                     col.Visible = true;
                 else
                     col.Visible = false;
@@ -150,7 +152,7 @@ namespace Target2021.Fase2
         {
             int IdC;
             IdC = Convert.ToInt32(CodiceCommessa);
-            if (e.Effect == DragDropEffects.Move)
+            if (e.Effect == DragDropEffects.Move && CodiceCommessa != null)
             {
                 Target2021DataSet.CommesseRow Riga;
                 Riga = target2021DataSet.Commesse.FindByIDCommessa(IdC);
@@ -207,7 +209,7 @@ namespace Target2021.Fase2
                 }
                 catch
                 {
-                    data = Convert.ToDateTime("1/1/2000");
+                    data = Convert.ToDateTime("1/1/2019");
                 }
 
                 //ora = DateTime.ParseExact(Griglia.SelectedCells[58].Value.ToString(), "HH:mm:ss", CultureInfo.InvariantCulture);
@@ -239,7 +241,7 @@ namespace Target2021.Fase2
                 if (DP.elimina == 1)
                 {
                     Griglia.SelectedCells[56].Value = 0;
-                    Griglia.SelectedCells[57].Value = "1/1/1980";
+                    Griglia.SelectedCells[57].Value = "1/1/2019";
                     Griglia.SelectedCells[58].Value = "00:00";
                     Griglia.SelectedCells[59].Value = 0;
                     Griglia.SelectedCells[49].Value = 2;

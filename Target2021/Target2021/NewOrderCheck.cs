@@ -24,17 +24,28 @@ namespace Target2021
         }
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
-        {
+        {            
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniImportati'. È possibile spostarla o rimuoverla se necessario.
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
-            DataTable tabella, tabellavecchi;
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
             this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-            button1_Click(sender, e);
+            carica();
+            try
+            {
+                dataGridView3.Sort(dataGridView3.Columns["Column2"], ListSortDirection.Descending);
+            }
+            catch
+            {   }
+        }
+
+        private void carica()
+        {
+            DataTable tabella, tabellavecchi;
+            aggiorna();
             tabella=CreaTabellaOrdini();
             tabellavecchi=CreaTabellaOrdiniVecchi();
             PopolaTabellaOrdini(comboBox1.Text, tabella, tabellavecchi);
@@ -130,6 +141,11 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            aggiorna();
+        }
+
+        private void aggiorna()
+        {
             int NumDet, neworder=0;
             NumOrd = RecuperaUltimoOrdine();
             textBox1.Text = NumOrd.ToString();
@@ -143,7 +159,7 @@ namespace Target2021
             else
             {
                 label4.Text = "Ci sono " + neworder.ToString() + " nuovi ordini!";
-            }               
+            }      
         }
 
         private int RecuperaUltimoOrdine()
@@ -295,11 +311,27 @@ namespace Target2021
                     com.PezziOra = RecuperaNumeroPezziStampatiOra(CodiceArticolo);
                     com.Foto = RecuperaFoto(CodiceArticolo);
                     com.CodArtiDopoStampo = RecuperaCodiceArticoloDopoStampo(CodiceArticolo);
-                    InserisciCommessa(com);
+                    com.IDMachStampa = RecuperaMacchinaStampaPredefinita(CodiceArticolo);
+                    InserisciCommessa1(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
             } while (IDOrdine + 1 < IDOrdine+1);  //UltimoID
             //commesseDataGridView.Update();
+        }
+
+        private int RecuperaMacchinaStampaPredefinita(string ca)
+        {
+            int risultato = 0;
+            string filtro = "codice_articolo = '" + ca + "'";
+            try
+            {
+                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(MacPredefTaglio)", filtro);
+            }
+            catch
+            {
+                risultato = 0;
+            }
+            return risultato;
         }
 
         private string RecuperaProgrammaStampaggio(string ca)
@@ -560,7 +592,14 @@ namespace Target2021
             string query = "Select PercentualeLastra From DettArticoli Where codice_articolo='" + codart + "' AND lavorazione=1";
             SqlCommand comando = new SqlCommand(query, conn);
             conn.Open();
-            percentuale = Convert.ToInt32(comando.ExecuteScalar());
+            try
+            {
+                percentuale = Convert.ToInt32(comando.ExecuteScalar());
+            }
+            catch
+            {
+                percentuale = 100;
+            }
             try
             {
                 double n = 100 / percentuale;
@@ -613,6 +652,7 @@ namespace Target2021
                 AggiornaOrdiniImportati(import[j]);
                 MessageBox.Show("Importato ordine nr. " + import[j].ToString());
             }
+            carica();
         }
 
         private void AggiornaOrdiniImportati(int nord)
@@ -636,42 +676,80 @@ namespace Target2021
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
         }
 
-        private void InserisciCommessa(Commessa com)
-        {
-            string stringaconnessione = Properties.Resources.StringaConnessione;
-            SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDStampo, IDDima, IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa, ProgStampa, PezziOra, Foto) VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@ids,@idd,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps,@progsta,@pezziora,@foto)";
-            SqlCommand comando = new SqlCommand(sql, connessione);
-            comando.Parameters.AddWithValue("@cod", com.CodCommessa);
-            comando.Parameters.AddWithValue("@nr", com.NrCommessa);
-            comando.Parameters.AddWithValue("@data", com.DataCommessa);
-            comando.Parameters.AddWithValue("@tipo", com.TipoCommessa);
-            comando.Parameters.AddWithValue("@idc", com.IDCliente);
-            comando.Parameters.AddWithValue("@oc", com.OrdCliente);
-            comando.Parameters.AddWithValue("@dtc", com.DataConsegna);
-            comando.Parameters.AddWithValue("@npdl", com.NrPezziDaLavorare);
-            comando.Parameters.AddWithValue("@codart", com.CodArticolo);
-            comando.Parameters.AddWithValue("@desart", com.DescrArticolo);
-            comando.Parameters.AddWithValue("@idf", com.IDFornitore);
-            comando.Parameters.AddWithValue("@ids", com.IDMateriaPrima);
-            comando.Parameters.AddWithValue("@idd", com.IDMateriaPrima);
-            comando.Parameters.AddWithValue("@idmp", IDPrima);
-            comando.Parameters.AddWithValue("@NrLastreRichieste", com.NrLastreRichieste);
-            comando.Parameters.AddWithValue("@npo", 0);
-            comando.Parameters.AddWithValue("@no", 'N');
-            comando.Parameters.AddWithValue("@stato", 0);
-            comando.Parameters.AddWithValue("@imatpri", 0);
-            comando.Parameters.AddWithValue("@prt1", com.ProgrTaglio1);
-            comando.Parameters.AddWithValue("@prt2", com.ProgrTaglio2);
-            comando.Parameters.AddWithValue("@percent", com.PercentualeUtilizzoLastra);
-            comando.Parameters.AddWithValue("@mps", com.Mps);
-            comando.Parameters.AddWithValue("@progsta", com.ProgStampa);
-            comando.Parameters.AddWithValue("@pezziora", com.PezziOra);
-            comando.Parameters.AddWithValue("@foto", com.Foto);
-            connessione.Open();
-            comando.ExecuteNonQuery();
-            connessione.Close();
-        }
+        //private void InserisciCommessa(Commessa com)
+        //{
+        //    string stringaconnessione = Properties.Resources.StringaConnessione;
+        //    SqlConnection connessione = new SqlConnection(stringaconnessione);
+        //    string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDStampo, IDDima, IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa, ProgStampa, PezziOra, Foto) " +
+        //        "VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@ids,@idd,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps,@progsta,@pezziora,@foto)";
+        //    SqlCommand comando = new SqlCommand(sql, connessione);
+        //    comando.Parameters.AddWithValue("@cod", com.CodCommessa);
+        //    comando.Parameters.AddWithValue("@nr", com.NrCommessa);
+        //    comando.Parameters.AddWithValue("@data", com.DataCommessa);
+        //    comando.Parameters.AddWithValue("@tipo", com.TipoCommessa);
+        //    comando.Parameters.AddWithValue("@idc", com.IDCliente);
+        //    comando.Parameters.AddWithValue("@oc", com.OrdCliente);
+        //    comando.Parameters.AddWithValue("@dtc", com.DataConsegna);
+        //    comando.Parameters.AddWithValue("@npdl", com.NrPezziDaLavorare);
+        //    comando.Parameters.AddWithValue("@codart", com.CodArticolo);
+        //    comando.Parameters.AddWithValue("@desart", com.DescrArticolo);
+        //    comando.Parameters.AddWithValue("@idf", com.IDFornitore);
+        //    comando.Parameters.AddWithValue("@ids", com.IDMateriaPrima);
+        //    comando.Parameters.AddWithValue("@idd", com.IDMateriaPrima);
+        //    comando.Parameters.AddWithValue("@idmp", com.IDMateriaPrima);
+        //    comando.Parameters.AddWithValue("@NrLastreRichieste", com.NrLastreRichieste);
+        //    comando.Parameters.AddWithValue("@npo", 0);
+        //    comando.Parameters.AddWithValue("@no", 'N');
+        //    comando.Parameters.AddWithValue("@stato", 0);
+        //    comando.Parameters.AddWithValue("@imatpri", 0);
+        //    comando.Parameters.AddWithValue("@prt1", com.ProgrTaglio1);
+        //    comando.Parameters.AddWithValue("@prt2", com.ProgrTaglio2);
+        //    comando.Parameters.AddWithValue("@percent", com.PercentualeUtilizzoLastra);
+        //    comando.Parameters.AddWithValue("@mps", com.Mps);
+        //    comando.Parameters.AddWithValue("@progsta", com.ProgStampa);
+        //    comando.Parameters.AddWithValue("@pezziora", com.PezziOra);
+        //    comando.Parameters.AddWithValue("@foto", com.Foto);
+        //    connessione.Open();
+        //    comando.ExecuteNonQuery();
+        //    connessione.Close();
+        //}
 
+        private void InserisciCommessa1(Commessa com)
+        {
+            Target2021DataSet.CommesseRow riga = target2021DataSet.Commesse.NewCommesseRow();
+
+            riga.CodCommessa = com.CodCommessa;
+            riga.NrCommessa = com.NrCommessa;
+            riga.DataCommessa = com.DataCommessa;
+            riga.TipoCommessa = com.TipoCommessa;
+            riga.IDCliente = com.IDCliente;
+            riga.OrdCliente = com.OrdCliente;
+            riga.DataConsegna = com.DataConsegna;
+            riga.NrPezziDaLavorare = com.NrPezziDaLavorare;
+            riga.CodArticolo = com.CodArticolo;
+            riga.DescrArticolo = com.DescrArticolo;
+            riga.IDFornitore = com.IDFornitore;
+            riga.IDStampo = com.IDMateriaPrima;
+            riga.IDDima = com.IDMateriaPrima;
+            riga.IDMateriaPrima = IDPrima;
+            riga.NrLastreRichieste = com.NrLastreRichieste;
+            riga.NrPezziOrdinati = 0;
+            riga.NrOrdine = "N";
+            riga.Stato = 0;
+            riga.ImpegnataMatPrima = 0;
+            riga.ProgrTaglio1 = com.ProgrTaglio1;
+            riga.ProgrTaglio2 = com.ProgrTaglio2;
+            riga.PercentualeUtilizzoLastra = com.PercentualeUtilizzoLastra;
+            riga.InSupercommessa = 0;
+            riga.NrPezziDaLavorare = com.NrPezziDaLavorare;
+            riga.IDMachStampa = com.IDMachStampa;
+            riga.ProgStampa = com.ProgStampa;
+            riga.PezziOra = com.PezziOra;
+            riga.Foto = com.Foto;
+            riga.CodArtiDopoStampo = com.CodArtiDopoStampo;
+    
+            target2021DataSet.Commesse.Rows.Add(riga); 
+            commesseTableAdapter.Update(target2021DataSet.Commesse);
+        }
     }
 }

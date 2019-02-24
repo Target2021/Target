@@ -164,11 +164,6 @@ namespace Target2021.Anagrafiche
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void AggiornaTab(string codice)
         {
             Tab1(codice);
@@ -255,6 +250,8 @@ namespace Target2021.Anagrafiche
                 textBox26.Refresh();
                 textBox27.Text = Fase2[0].Field<int>("TempoStampaggio").ToString();
                 textBox27.Refresh();
+                textBox30.Text = Fase2[0].Field<string>("Allegato").ToString();
+                textBox30.Refresh();
                 comboBox7_SelectedIndexChanged(new object(), new EventArgs());
                 DataRow[] riga;
                 riga = target2021DataSet.Tables["Stampi"].Select("codice='" + comboBox6.Text + "'");
@@ -306,9 +303,9 @@ namespace Target2021.Anagrafiche
                 textBox16.Refresh();
                 comboBox9.Text = Fase3[0].Field<int>("MacPredefTaglio").ToString();
                 comboBox9.Refresh();
-                textBox13.Text = Fase3[0].Field<string>("ProgrTaglio1");
+                textBox13.Text = Fase3[0].Field<string>("ProgrTaglio1").Replace(" ", string.Empty); 
                 textBox13.Refresh();
-                textBox14.Text = Fase3[0].Field<string>("ProgrTaglio2");
+                textBox14.Text = Fase3[0].Field<string>("ProgrTaglio2").Replace(" ", string.Empty);
                 textBox14.Refresh();
                 comboBox11_SelectedIndexChanged(new object(), new EventArgs());
                 comboBox10_SelectedIndexChanged(new object(), new EventArgs());
@@ -564,11 +561,12 @@ namespace Target2021.Anagrafiche
         private void SalvaTab1(int Id)
         {
             // Per Tab1 aggiorna ....
-            string codice, CodMateriaPrima, CodFornitoreLastra, CodIn, CodOut;
+            string codice, CodMateriaPrima, CodFornitoreLastra, CodIn, CodOut, DescrMatPrima;
             int LottoMinimo;
 
             codice = textBox2.Text;
             CodMateriaPrima  = comboBox3.Text;
+            DescrMatPrima = label6.Text;
             CodFornitoreLastra  = comboBox4.Text;
             CodIn = textBox6.Text;
             CodOut = textBox7.Text.Replace(" ", string.Empty);
@@ -591,6 +589,7 @@ namespace Target2021.Anagrafiche
 
             riga.BeginEdit();
             riga["codicePrimaStampoDima"] = CodMateriaPrima;
+            riga["descrizionePrimaStampoDima"] = DescrMatPrima;
             riga["codice_fornitore"] = CodFornitoreLastra;
             riga["CodiceInput"] = CodIn;
             riga["CodiceOutput"] = CodOut;
@@ -603,7 +602,7 @@ namespace Target2021.Anagrafiche
         private void SalvaTab2(int Id)
         {
             //Per Tab2 aggiorna....
-            string codice, ProgrStamp, CodStampo, DescrStampo, CodForn, CodIn, CodOut;
+            string codice, ProgrStamp, CodStampo, DescrStampo, CodForn, CodIn, CodOut, Allegato;
             int NrImpronte, Tempo, MachPred, PercLastra;
 
             codice = textBox2.Text;
@@ -612,8 +611,9 @@ namespace Target2021.Anagrafiche
             CodStampo = comboBox6.Text;
             DescrStampo = label15.Text;
             CodForn = comboBox7.Text;
-            CodIn = textBox9.Text.Replace(" ", string.Empty); ;
-            CodOut = textBox10.Text.Replace(" ", string.Empty); ;
+            CodIn = textBox9.Text.Replace(" ", string.Empty);
+            CodOut = textBox10.Text.Replace(" ", string.Empty);
+            Allegato = textBox30.Text.Replace(" ", string.Empty);
             try
             {
                 NrImpronte = Convert.ToInt32(textBox26.Text);
@@ -660,6 +660,7 @@ namespace Target2021.Anagrafiche
             if (CodOut.Length > 10) riga["CodiceOutput"] = CodOut.Substring(0, 10);
             else riga["CodiceOutput"] = CodOut;
             riga["Percentualelastra"] = PercLastra;
+            riga["Allegato"] = Allegato;
             riga.EndEdit();
 
             dettArticoliTableAdapter.Update(target2021DataSet);
@@ -685,10 +686,10 @@ namespace Target2021.Anagrafiche
             CodDima = comboBox11.Text;
             DescDim = label34.Text;
             CodForn = comboBox10.Text;
-            CodIn = textBox15.Text.Replace(" ", string.Empty); ;
-            CodOut = textBox16.Text.Replace(" ", string.Empty); ;
-            Prog1 = textBox13.Text.Replace(" ", string.Empty); ;
-            Prog2 = textBox14.Text.Replace(" ", string.Empty); ;
+            CodIn = textBox15.Text.Replace(" ", string.Empty); 
+            CodOut = textBox16.Text.Replace(" ", string.Empty); 
+            Prog1 = textBox13.Text.Replace(" ", string.Empty); 
+            Prog2 = textBox14.Text.Replace(" ", string.Empty);
 
             DataRow riga;
             DataTable TArticoli;
@@ -756,6 +757,88 @@ namespace Target2021.Anagrafiche
             riga.EndEdit();
 
             dimeTableAdapter.Update(target2021DataSet);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string file = openFileDialog1.FileName;
+                textBox30.Text = file;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(textBox30.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Non riesco ad aprire questo file!");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Sei sicuro di voler eliminare l'articolo "+textBox2 .Text +"?", "Eliminazione Articolo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string CodArt = textBox2.Text;
+                // Elimino le righe da DettArticolo
+                DataRow[] Riga = target2021DataSet.DettArticoli.Select("codice_articolo = '" + CodArt + "'");
+                foreach (DataRow R in Riga)
+                {
+                    R.Delete();
+                }
+                dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+                // Elimino le righe la artioli_semplici
+                DataRow[] Riga2 = target2021DataSet.articoli_semplici.Select("codice = '" + CodArt + "'");
+                foreach (DataRow R in Riga2)
+                {
+                    R.Delete();
+                }
+                articoli_sempliciTableAdapter.Update(target2021DataSet.articoli_semplici);
+                MessageBox.Show("Articolo eliminato con successo!");
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+        }
+
+        private void comboBox2_Click(object sender, EventArgs e)
+        {
+            if (comboBox2 .Text == "Assente")
+            {
+                DialogResult dialogResult = MessageBox.Show("Vuoi creare una fase 1 per questo articolo?", "Nuova fase", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    CreaFase1(textBox2 .Text);
+                    comboBox2.Text = "Presente";
+                    tabControl1.Refresh();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+        }
+
+        private void CreaFase1(string CodArt)
+        {
+            Target2021DataSet.DettArticoliRow riga = target2021DataSet.DettArticoli.NewDettArticoliRow();
+            riga.codice_articolo = CodArt;
+            riga.progressivo = 1;
+            riga.lavorazione = 1;
+            target2021DataSet.DettArticoli.Rows.Add(riga);
+            dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

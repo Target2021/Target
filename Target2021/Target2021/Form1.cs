@@ -35,6 +35,14 @@ namespace Target2021
             if (livello == 0) Application.Exit();
             this.Text = "Target 2.0 - Utente: " + user + " - Livello: " + livello.ToString();
             this.WindowState = FormWindowState.Maximized;
+            if (livello == 2)
+            {
+                menuStrip1.Visible = false;
+                CheckStampaggio checkStampaggio = new CheckStampaggio();
+                checkStampaggio.MdiParent = this;
+                checkStampaggio.Show();
+            }
+
         }
        
         private void dettaglioToolStripMenuItem_Click(object sender, EventArgs e)

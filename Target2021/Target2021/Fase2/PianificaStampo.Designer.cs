@@ -138,7 +138,7 @@
             this.commesseDataGridView.ReadOnly = true;
             this.commesseDataGridView.RowHeadersVisible = false;
             this.commesseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.commesseDataGridView.Size = new System.Drawing.Size(479, 236);
+            this.commesseDataGridView.Size = new System.Drawing.Size(495, 236);
             this.commesseDataGridView.TabIndex = 3;
             this.commesseDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.commesseDataGridView_DataBindingComplete);
             this.commesseDataGridView.DragEnter += new System.Windows.Forms.DragEventHandler(this.Effetto);
@@ -200,7 +200,7 @@
             this.superCommessaDataGridView.ReadOnly = true;
             this.superCommessaDataGridView.RowHeadersVisible = false;
             this.superCommessaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.superCommessaDataGridView.Size = new System.Drawing.Size(479, 267);
+            this.superCommessaDataGridView.Size = new System.Drawing.Size(495, 267);
             this.superCommessaDataGridView.TabIndex = 3;
             this.superCommessaDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.superCommessaDataGridView_CellClick);
             this.superCommessaDataGridView.DragEnter += new System.Windows.Forms.DragEventHandler(this.Effetto);
@@ -422,11 +422,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(750, 19);
+            this.label3.Location = new System.Drawing.Point(764, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 18);
+            this.label3.Size = new System.Drawing.Size(226, 18);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Macchina di stampaggio: M05";
+            this.label3.Text = "Macchina di stampaggio: 1 - M05";
             // 
             // commesseBindingSource
             // 
@@ -508,7 +508,7 @@
             this.commesseDataGridView1.AllowUserToDeleteRows = false;
             this.commesseDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.commesseDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.commesseDataGridView1.Location = new System.Drawing.Point(514, 40);
+            this.commesseDataGridView1.Location = new System.Drawing.Point(528, 40);
             this.commesseDataGridView1.MultiSelect = false;
             this.commesseDataGridView1.Name = "commesseDataGridView1";
             this.commesseDataGridView1.ReadOnly = true;
@@ -525,7 +525,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(511, 9);
+            this.label4.Location = new System.Drawing.Point(525, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(180, 18);
@@ -535,20 +535,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(750, 200);
+            this.label5.Location = new System.Drawing.Point(764, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(221, 18);
+            this.label5.Size = new System.Drawing.Size(238, 18);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Macchina di stampaggio: Perros";
+            this.label5.Text = "Macchina di stampaggio: 2 -Perros";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(736, 386);
+            this.label6.Location = new System.Drawing.Point(750, 386);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(228, 18);
+            this.label6.Size = new System.Drawing.Size(249, 18);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Macchina di stampaggio: Cannon";
+            this.label6.Text = "Macchina di stampaggio: 3 - Cannon";
             // 
             // commesseDataGridView2
             // 
@@ -557,7 +557,7 @@
             this.commesseDataGridView2.AllowUserToDeleteRows = false;
             this.commesseDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.commesseDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.commesseDataGridView2.Location = new System.Drawing.Point(514, 221);
+            this.commesseDataGridView2.Location = new System.Drawing.Point(528, 221);
             this.commesseDataGridView2.Name = "commesseDataGridView2";
             this.commesseDataGridView2.ReadOnly = true;
             this.commesseDataGridView2.RowHeadersVisible = false;
@@ -576,7 +576,7 @@
             this.commesseDataGridView3.AllowUserToDeleteRows = false;
             this.commesseDataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.commesseDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.commesseDataGridView3.Location = new System.Drawing.Point(514, 407);
+            this.commesseDataGridView3.Location = new System.Drawing.Point(528, 407);
             this.commesseDataGridView3.Name = "commesseDataGridView3";
             this.commesseDataGridView3.ReadOnly = true;
             this.commesseDataGridView3.RowHeadersVisible = false;
@@ -592,7 +592,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1298, 571);
+            this.ClientSize = new System.Drawing.Size(1311, 571);
             this.Controls.Add(this.commesseDataGridView3);
             this.Controls.Add(this.commesseDataGridView2);
             this.Controls.Add(this.label6);

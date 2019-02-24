@@ -70,6 +70,7 @@
             System.Windows.Forms.Label label12;
             System.Windows.Forms.Label label13;
             System.Windows.Forms.Label label14;
+            System.Windows.Forms.Label label15;
             this.label1 = new System.Windows.Forms.Label();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -154,6 +155,11 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientiTableAdapter = new Target2021.Target2021DataSetTableAdapters.clientiTableAdapter();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -195,6 +201,7 @@
             label12 = new System.Windows.Forms.Label();
             label13 = new System.Windows.Forms.Label();
             label14 = new System.Windows.Forms.Label();
+            label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
@@ -206,6 +213,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iDCommessaLabel
@@ -232,7 +240,7 @@
             // 
             nrCommessaLabel.AutoSize = true;
             nrCommessaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrCommessaLabel.Location = new System.Drawing.Point(473, 93);
+            nrCommessaLabel.Location = new System.Drawing.Point(431, 93);
             nrCommessaLabel.Name = "nrCommessaLabel";
             nrCommessaLabel.Size = new System.Drawing.Size(89, 15);
             nrCommessaLabel.TabIndex = 5;
@@ -272,7 +280,7 @@
             // 
             nrPezziDaLavorareLabel.AutoSize = true;
             nrPezziDaLavorareLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(365, 147);
+            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(337, 285);
             nrPezziDaLavorareLabel.Name = "nrPezziDaLavorareLabel";
             nrPezziDaLavorareLabel.Size = new System.Drawing.Size(126, 15);
             nrPezziDaLavorareLabel.TabIndex = 17;
@@ -361,30 +369,30 @@
             // dataTermineLabel
             // 
             dataTermineLabel.AutoSize = true;
-            dataTermineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataTermineLabel.Location = new System.Drawing.Point(362, 424);
+            dataTermineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataTermineLabel.Location = new System.Drawing.Point(349, 424);
             dataTermineLabel.Name = "dataTermineLabel";
-            dataTermineLabel.Size = new System.Drawing.Size(85, 15);
+            dataTermineLabel.Size = new System.Drawing.Size(98, 15);
             dataTermineLabel.TabIndex = 35;
             dataTermineLabel.Text = "Data Termine:";
             // 
             // nrPezziCorrettiLabel
             // 
             nrPezziCorrettiLabel.AutoSize = true;
-            nrPezziCorrettiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrPezziCorrettiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nrPezziCorrettiLabel.Location = new System.Drawing.Point(350, 312);
             nrPezziCorrettiLabel.Name = "nrPezziCorrettiLabel";
-            nrPezziCorrettiLabel.Size = new System.Drawing.Size(98, 15);
+            nrPezziCorrettiLabel.Size = new System.Drawing.Size(116, 15);
             nrPezziCorrettiLabel.TabIndex = 37;
             nrPezziCorrettiLabel.Text = "Nr Pezzi Corretti:";
             // 
             // nrPezziScartatiLabel
             // 
             nrPezziScartatiLabel.AutoSize = true;
-            nrPezziScartatiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziScartatiLabel.Location = new System.Drawing.Point(350, 336);
+            nrPezziScartatiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrPezziScartatiLabel.Location = new System.Drawing.Point(350, 342);
             nrPezziScartatiLabel.Name = "nrPezziScartatiLabel";
-            nrPezziScartatiLabel.Size = new System.Drawing.Size(100, 15);
+            nrPezziScartatiLabel.Size = new System.Drawing.Size(118, 15);
             nrPezziScartatiLabel.TabIndex = 39;
             nrPezziScartatiLabel.Text = "Nr Pezzi Scartati:";
             // 
@@ -419,7 +427,7 @@
             // 
             statoLabel.AutoSize = true;
             statoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            statoLabel.Location = new System.Drawing.Point(524, 120);
+            statoLabel.Location = new System.Drawing.Point(583, 93);
             statoLabel.Name = "statoLabel";
             statoLabel.Size = new System.Drawing.Size(38, 15);
             statoLabel.TabIndex = 46;
@@ -429,7 +437,7 @@
             // 
             evasoParzialeLabel.AutoSize = true;
             evasoParzialeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            evasoParzialeLabel.Location = new System.Drawing.Point(350, 393);
+            evasoParzialeLabel.Location = new System.Drawing.Point(582, 285);
             evasoParzialeLabel.Name = "evasoParzialeLabel";
             evasoParzialeLabel.Size = new System.Drawing.Size(91, 15);
             evasoParzialeLabel.TabIndex = 48;
@@ -439,7 +447,7 @@
             // 
             schedMachLabel.AutoSize = true;
             schedMachLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            schedMachLabel.Location = new System.Drawing.Point(271, 282);
+            schedMachLabel.Location = new System.Drawing.Point(349, 145);
             schedMachLabel.Name = "schedMachLabel";
             schedMachLabel.Size = new System.Drawing.Size(79, 15);
             schedMachLabel.TabIndex = 50;
@@ -496,7 +504,7 @@
             // 
             nrPezziResiduiLabel.AutoSize = true;
             nrPezziResiduiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziResiduiLabel.Location = new System.Drawing.Point(347, 364);
+            nrPezziResiduiLabel.Location = new System.Drawing.Point(360, 366);
             nrPezziResiduiLabel.Name = "nrPezziResiduiLabel";
             nrPezziResiduiLabel.Size = new System.Drawing.Size(101, 15);
             nrPezziResiduiLabel.TabIndex = 61;
@@ -515,10 +523,10 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label5.Location = new System.Drawing.Point(463, 256);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(111, 15);
+            label5.Size = new System.Drawing.Size(132, 15);
             label5.TabIndex = 68;
             label5.Text = "Nr Lastre utilizzate:";
             // 
@@ -602,6 +610,16 @@
             label14.Size = new System.Drawing.Size(34, 13);
             label14.TabIndex = 58;
             label14.Text = "Inizio:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label15.Location = new System.Drawing.Point(343, 394);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(118, 15);
+            label15.TabIndex = 70;
+            label15.Text = "Scheda lavorazione:";
             // 
             // label1
             // 
@@ -707,7 +725,7 @@
             this.codCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codCommessaTextBox.Location = new System.Drawing.Point(363, 90);
             this.codCommessaTextBox.Name = "codCommessaTextBox";
-            this.codCommessaTextBox.Size = new System.Drawing.Size(100, 21);
+            this.codCommessaTextBox.Size = new System.Drawing.Size(53, 21);
             this.codCommessaTextBox.TabIndex = 4;
             this.codCommessaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -716,9 +734,9 @@
             this.nrCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrCommessa", true));
             this.nrCommessaTextBox.Enabled = false;
             this.nrCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrCommessaTextBox.Location = new System.Drawing.Point(568, 90);
+            this.nrCommessaTextBox.Location = new System.Drawing.Point(526, 90);
             this.nrCommessaTextBox.Name = "nrCommessaTextBox";
-            this.nrCommessaTextBox.Size = new System.Drawing.Size(100, 21);
+            this.nrCommessaTextBox.Size = new System.Drawing.Size(50, 21);
             this.nrCommessaTextBox.TabIndex = 6;
             this.nrCommessaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -739,9 +757,10 @@
             this.iDClienteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iDClienteTextBox.Location = new System.Drawing.Point(434, 117);
             this.iDClienteTextBox.Name = "iDClienteTextBox";
-            this.iDClienteTextBox.Size = new System.Drawing.Size(77, 21);
+            this.iDClienteTextBox.Size = new System.Drawing.Size(62, 21);
             this.iDClienteTextBox.TabIndex = 12;
             this.iDClienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.iDClienteTextBox.TextChanged += new System.EventHandler(this.iDClienteTextBox_TextChanged);
             // 
             // dataConsegnaDateTimePicker
             // 
@@ -758,7 +777,7 @@
             this.nrPezziDaLavorareTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziDaLavorare", true));
             this.nrPezziDaLavorareTextBox.Enabled = false;
             this.nrPezziDaLavorareTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(497, 144);
+            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(476, 285);
             this.nrPezziDaLavorareTextBox.Name = "nrPezziDaLavorareTextBox";
             this.nrPezziDaLavorareTextBox.Size = new System.Drawing.Size(100, 21);
             this.nrPezziDaLavorareTextBox.TabIndex = 18;
@@ -804,9 +823,10 @@
             this.fotoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fotoTextBox.Location = new System.Drawing.Point(49, 277);
             this.fotoTextBox.Name = "fotoTextBox";
-            this.fotoTextBox.Size = new System.Drawing.Size(182, 21);
+            this.fotoTextBox.Size = new System.Drawing.Size(282, 21);
             this.fotoTextBox.TabIndex = 26;
             this.fotoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fotoTextBox.TextChanged += new System.EventHandler(this.fotoTextBox_TextChanged);
             // 
             // iDFornitoreTextBox
             // 
@@ -864,9 +884,10 @@
             // 
             // nrPezziCorrettiTextBox
             // 
+            this.nrPezziCorrettiTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
             this.nrPezziCorrettiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(457, 309);
+            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(476, 312);
             this.nrPezziCorrettiTextBox.Name = "nrPezziCorrettiTextBox";
             this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(100, 21);
             this.nrPezziCorrettiTextBox.TabIndex = 38;
@@ -876,13 +897,15 @@
             // 
             // nrPezziScartatiTextBox
             // 
+            this.nrPezziScartatiTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.nrPezziScartatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziScartati", true));
             this.nrPezziScartatiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(457, 336);
+            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(476, 339);
             this.nrPezziScartatiTextBox.Name = "nrPezziScartatiTextBox";
             this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(100, 21);
             this.nrPezziScartatiTextBox.TabIndex = 40;
             this.nrPezziScartatiTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nrPezziScartatiTextBox.TextChanged += new System.EventHandler(this.nrPezziScartatiTextBox_TextChanged);
             // 
             // groupBox1
             // 
@@ -1060,6 +1083,7 @@
             this.button9.TabIndex = 62;
             this.button9.Text = "SALVA";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // dateTimePicker6
             // 
@@ -1258,9 +1282,9 @@
             this.statoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "Stato", true));
             this.statoTextBox.Enabled = false;
             this.statoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statoTextBox.Location = new System.Drawing.Point(568, 117);
+            this.statoTextBox.Location = new System.Drawing.Point(627, 90);
             this.statoTextBox.Name = "statoTextBox";
-            this.statoTextBox.Size = new System.Drawing.Size(100, 21);
+            this.statoTextBox.Size = new System.Drawing.Size(46, 21);
             this.statoTextBox.TabIndex = 47;
             this.statoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1268,9 +1292,9 @@
             // 
             this.evasoParzialeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.commesseBindingSource, "EvasoParziale", true));
             this.evasoParzialeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.evasoParzialeCheckBox.Location = new System.Drawing.Point(457, 389);
+            this.evasoParzialeCheckBox.Location = new System.Drawing.Point(585, 303);
             this.evasoParzialeCheckBox.Name = "evasoParzialeCheckBox";
-            this.evasoParzialeCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.evasoParzialeCheckBox.Size = new System.Drawing.Size(91, 24);
             this.evasoParzialeCheckBox.TabIndex = 49;
             this.evasoParzialeCheckBox.Text = "Vero/Falso";
             this.evasoParzialeCheckBox.UseVisualStyleBackColor = true;
@@ -1280,9 +1304,9 @@
             this.schedMachTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "SchedMach", true));
             this.schedMachTextBox.Enabled = false;
             this.schedMachTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.schedMachTextBox.Location = new System.Drawing.Point(356, 279);
+            this.schedMachTextBox.Location = new System.Drawing.Point(434, 142);
             this.schedMachTextBox.Name = "schedMachTextBox";
-            this.schedMachTextBox.Size = new System.Drawing.Size(100, 21);
+            this.schedMachTextBox.Size = new System.Drawing.Size(62, 21);
             this.schedMachTextBox.TabIndex = 51;
             this.schedMachTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.schedMachTextBox.TextChanged += new System.EventHandler(this.schedMachTextBox_TextChanged);
@@ -1358,9 +1382,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 321);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 309);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(316, 251);
+            this.pictureBox1.Size = new System.Drawing.Size(316, 263);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 59;
             this.pictureBox1.TabStop = false;
@@ -1380,7 +1404,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(462, 282);
+            this.label4.Location = new System.Drawing.Point(501, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 61;
@@ -1399,7 +1423,7 @@
             // 
             this.nrPezziResiduiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziResidui", true));
             this.nrPezziResiduiTextBox.Enabled = false;
-            this.nrPezziResiduiTextBox.Location = new System.Drawing.Point(457, 363);
+            this.nrPezziResiduiTextBox.Location = new System.Drawing.Point(476, 366);
             this.nrPezziResiduiTextBox.Name = "nrPezziResiduiTextBox";
             this.nrPezziResiduiTextBox.Size = new System.Drawing.Size(100, 20);
             this.nrPezziResiduiTextBox.TabIndex = 62;
@@ -1409,7 +1433,7 @@
             // 
             this.codArtiDopoStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
             this.codArtiDopoStampoTextBox.Enabled = false;
-            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(484, 448);
+            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(476, 448);
             this.codArtiDopoStampoTextBox.Name = "codArtiDopoStampoTextBox";
             this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codArtiDopoStampoTextBox.TabIndex = 63;
@@ -1473,21 +1497,65 @@
             // 
             // textBox4
             // 
+            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(580, 253);
+            this.textBox4.Location = new System.Drawing.Point(601, 253);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(53, 21);
+            this.textBox4.Size = new System.Drawing.Size(32, 21);
             this.textBox4.TabIndex = 69;
             this.textBox4.Text = "0";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(476, 393);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(154, 20);
+            this.textBox5.TabIndex = 71;
+            // 
+            // button12
+            // 
+            this.button12.BackgroundImage = global::Target2021.Properties.Resources.Excel;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button12.Location = new System.Drawing.Point(636, 371);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(50, 47);
+            this.button12.TabIndex = 72;
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(502, 120);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 15);
+            this.label16.TabIndex = 73;
+            this.label16.Text = "Cliente";
+            // 
+            // clientiBindingSource
+            // 
+            this.clientiBindingSource.DataMember = "clienti";
+            this.clientiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // clientiTableAdapter
+            // 
+            this.clientiTableAdapter.ClearBeforeFill = true;
             // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1028, 583);
+            this.ClientSize = new System.Drawing.Size(1036, 592);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(label15);
             this.Controls.Add(label5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button8);
@@ -1578,6 +1646,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1669,5 +1738,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker7;
         private System.Windows.Forms.DateTimePicker dateTimePicker10;
         private System.Windows.Forms.DateTimePicker dateTimePicker9;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.BindingSource clientiBindingSource;
+        private Target2021DataSetTableAdapters.clientiTableAdapter clientiTableAdapter;
     }
 }

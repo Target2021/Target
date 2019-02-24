@@ -12,10 +12,10 @@ namespace Target2021.Fase2
 {
     public partial class DettPianifica : Form
     {
-        public DateTime data= new DateTime(1980, 1, 1,0,0,0);
-        public DateTime dataf = new DateTime(1980, 1, 1,0,0,0);
-        public DateTime ora = new DateTime(1980, 1, 1,0,0,0);
-        public DateTime oraf = new DateTime(1980, 1, 1,0,0,0);
+        public DateTime data= new DateTime(2019, 1, 1,0,0,0);
+        public DateTime dataf = new DateTime(2019, 1, 1,0,0,0);
+        public DateTime ora = new DateTime(2019, 1, 1,0,0,0);
+        public DateTime oraf = new DateTime(2019, 1, 1,0,0,0);
         public int durata;
         public int elimina = 0;
 
