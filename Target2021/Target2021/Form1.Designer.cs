@@ -311,22 +311,22 @@
             // commesseToolStripMenuItem1
             // 
             this.commesseToolStripMenuItem1.Name = "commesseToolStripMenuItem1";
-            this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(319, 30);
+            this.commesseToolStripMenuItem1.Size = new System.Drawing.Size(398, 30);
             this.commesseToolStripMenuItem1.Text = "Riepilogo Commesse";
             this.commesseToolStripMenuItem1.Click += new System.EventHandler(this.commesseToolStripMenuItem1_Click);
             // 
             // controllaNuoviOrdiniToolStripMenuItem
             // 
             this.controllaNuoviOrdiniToolStripMenuItem.Name = "controllaNuoviOrdiniToolStripMenuItem";
-            this.controllaNuoviOrdiniToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.controllaNuoviOrdiniToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
             this.controllaNuoviOrdiniToolStripMenuItem.Text = "Controlla nuovi ordini";
             this.controllaNuoviOrdiniToolStripMenuItem.Click += new System.EventHandler(this.controllaNuoviOrdiniToolStripMenuItem_Click);
             // 
             // consultaOrdiniImportatiToolStripMenuItem
             // 
             this.consultaOrdiniImportatiToolStripMenuItem.Name = "consultaOrdiniImportatiToolStripMenuItem";
-            this.consultaOrdiniImportatiToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
-            this.consultaOrdiniImportatiToolStripMenuItem.Text = "Consulta ordini importati";
+            this.consultaOrdiniImportatiToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
+            this.consultaOrdiniImportatiToolStripMenuItem.Text = "Consulta/Elimina ordini importati";
             this.consultaOrdiniImportatiToolStripMenuItem.Click += new System.EventHandler(this.consultaOrdiniImportatiToolStripMenuItem_Click);
             // 
             // ordiniAFornitoreToolStripMenuItem
@@ -336,7 +336,7 @@
             this.consultaToolStripMenuItem,
             this.arrivoMerceToolStripMenuItem});
             this.ordiniAFornitoreToolStripMenuItem.Name = "ordiniAFornitoreToolStripMenuItem";
-            this.ordiniAFornitoreToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.ordiniAFornitoreToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
             this.ordiniAFornitoreToolStripMenuItem.Text = "Ordini a fornitore";
             this.ordiniAFornitoreToolStripMenuItem.Click += new System.EventHandler(this.ordiniAFornitoreToolStripMenuItem_Click);
             // 
@@ -364,13 +364,13 @@
             // superCommesseToolStripMenuItem
             // 
             this.superCommesseToolStripMenuItem.Name = "superCommesseToolStripMenuItem";
-            this.superCommesseToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.superCommesseToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
             this.superCommesseToolStripMenuItem.Text = "SuperCommesse";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(319, 30);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 

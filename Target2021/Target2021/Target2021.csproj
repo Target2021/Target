@@ -283,23 +283,29 @@
     <Compile Include="CaricoScarico.Designer.cs">
       <DependentUpon>CaricoScarico.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckImpiegato.cs">
+    <Compile Include="Fase1\CheckImpiegato.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckImpiegato.Designer.cs">
+    <Compile Include="Fase1\CheckImpiegato.Designer.cs">
       <DependentUpon>CheckImpiegato.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckPianificazione.cs">
+    <Compile Include="Fase2\CheckPianificazione.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckPianificazione.Designer.cs">
+    <Compile Include="Fase2\CheckPianificazione.Designer.cs">
       <DependentUpon>CheckPianificazione.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckStampaggio.cs">
+    <Compile Include="Fase3\CheckStampaggio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckStampaggio.Designer.cs">
+    <Compile Include="Fase3\CheckStampaggio.Designer.cs">
       <DependentUpon>CheckStampaggio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fase1\DisimpegnaLastre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase1\DisimpegnaLastre.Designer.cs">
+      <DependentUpon>DisimpegnaLastre.cs</DependentUpon>
     </Compile>
     <Compile Include="Fase4\CheckTaglio.cs">
       <SubType>Form</SubType>
@@ -727,13 +733,16 @@
     <EmbeddedResource Include="CaricoScarico.resx">
       <DependentUpon>CaricoScarico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckImpiegato.resx">
+    <EmbeddedResource Include="Fase1\CheckImpiegato.resx">
       <DependentUpon>CheckImpiegato.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckPianificazione.resx">
+    <EmbeddedResource Include="Fase1\DisimpegnaLastre.resx">
+      <DependentUpon>DisimpegnaLastre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fase2\CheckPianificazione.resx">
       <DependentUpon>CheckPianificazione.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckStampaggio.resx">
+    <EmbeddedResource Include="Fase3\CheckStampaggio.resx">
       <DependentUpon>CheckStampaggio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fase4\CheckTaglio.resx">

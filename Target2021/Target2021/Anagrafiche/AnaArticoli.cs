@@ -396,11 +396,6 @@ namespace Target2021.Anagrafiche
             }
         }
 
-        private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             int IdFase1, IdFase2, IdFase3;
@@ -818,6 +813,22 @@ namespace Target2021.Anagrafiche
                     CreaFase1(textBox2 .Text);
                     comboBox2.Text = "Presente";
                     tabControl1.Refresh();
+                    MessageBox.Show("Fase creata!");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+            if (comboBox2.Text == "Presente")
+            {
+                DialogResult dialogResult = MessageBox.Show("Vuoi eliminare la fase 1 per questo articolo?", "Eliminazione fase", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    EliminaFase1(textBox2.Text);
+                    comboBox2.Text = "Assente";
+                    tabControl1.Refresh();
+                    MessageBox.Show("Fase eliminata!");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -836,9 +847,118 @@ namespace Target2021.Anagrafiche
             dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void EliminaFase1(string CodArt)
         {
+            DataRow[] Riga = target2021DataSet.DettArticoli.Select("codice_articolo = '" + CodArt + "' AND lavorazione = 1");
+            foreach (DataRow R in Riga)
+            {
+                R.Delete();
+            }
+            dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+        }
 
+        private void comboBox5_Click(object sender, EventArgs e)
+        {
+            if (comboBox5.Text == "Assente")
+            {
+                DialogResult dialogResult = MessageBox.Show("Vuoi creare una fase 2 per questo articolo?", "Nuova fase", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    CreaFase2(textBox2.Text);
+                    comboBox5.Text = "Presente";
+                    MessageBox.Show("Fase creata!");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+            if (comboBox5.Text == "Presente")
+            {
+                DialogResult dialogResult = MessageBox.Show("Vuoi eliminare la fase 2 per questo articolo?", "Eliminazione fase", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    EliminaFase2(textBox2.Text);
+                    comboBox5.Text = "Assente";
+                    MessageBox.Show("Fase eliminata!");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+        }
+
+        private void CreaFase2(string CodArt)
+        {
+            Target2021DataSet.DettArticoliRow riga = target2021DataSet.DettArticoli.NewDettArticoliRow();
+            riga.codice_articolo = CodArt;
+            riga.progressivo = 1;
+            riga.lavorazione = 2;
+            target2021DataSet.DettArticoli.Rows.Add(riga);
+            dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+        }
+
+        private void EliminaFase2(string CodArt)
+        {
+            DataRow[] Riga = target2021DataSet.DettArticoli.Select("codice_articolo = '" + CodArt + "' AND lavorazione = 2");
+            foreach (DataRow R in Riga)
+            {
+                R.Delete();
+            }
+            dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+        }
+
+        private void comboBox12_Click(object sender, EventArgs e)
+        {
+            if (comboBox12.Text == "Assente")
+            {
+                DialogResult dialogResult = MessageBox.Show("Vuoi creare una fase 3 per questo articolo?", "Nuova fase", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    CreaFase3(textBox2.Text);
+                    comboBox12.Text = "Presente";
+                    MessageBox.Show("Fase creata!");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+            if (comboBox12.Text == "Presente")
+            {
+                DialogResult dialogResult = MessageBox.Show("Vuoi eliminare la fase 3 per questo articolo?", "Eliminazione fase", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    EliminaFase3(textBox2.Text);
+                    comboBox12.Text = "Assente";
+                    MessageBox.Show("Fase eliminata!");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+        }
+
+        private void CreaFase3(string CodArt)
+        {
+            Target2021DataSet.DettArticoliRow riga = target2021DataSet.DettArticoli.NewDettArticoliRow();
+            riga.codice_articolo = CodArt;
+            riga.progressivo = 1;
+            riga.lavorazione = 3;
+            target2021DataSet.DettArticoli.Rows.Add(riga);
+            dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+        }
+
+        private void EliminaFase3(string CodArt)
+        {
+            DataRow[] Riga = target2021DataSet.DettArticoli.Select("codice_articolo = '" + CodArt + "' AND lavorazione = 3");
+            foreach (DataRow R in Riga)
+            {
+                R.Delete();
+            }
+            dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
         }
     }
 }
