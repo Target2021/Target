@@ -24,7 +24,9 @@ namespace Target2021
         }
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
-        {            
+        {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
+            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniImportati'. È possibile spostarla o rimuoverla se necessario.
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
@@ -158,19 +160,27 @@ namespace Target2021
             if (neworder == 0) label4.Text = "Non ci sono nuovi ordini!";
             else
             {
-                label4.Text = "Ci sono " + neworder.ToString() + " nuovi ordini!";
+                label4.Text = "Ci sono " + neworder.ToString() + " ordini ancora da importare!";
             }      
         }
 
         private int RecuperaUltimoOrdine()
         {
+            int NrUltOrd=0;
             string stringaconnessione, sql;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "select NrUltimoOrdineLetto from Configurazione";
+            sql = "select COUNT(Id) from OrdiniImportati";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            int NrUltOrd = Convert.ToInt32(comando.ExecuteScalar());
+            try
+            {
+                NrUltOrd = Convert.ToInt32(comando.ExecuteScalar());
+            }
+            catch
+            {
+                NrUltOrd = 0;
+            }
             connessione.Close();
             return NrUltOrd;
         }
@@ -229,24 +239,26 @@ namespace Target2021
             connessione.Close();
         }
 
-        private void Importa(int n)
+        private int Importa(int n)
         {
             int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi, NrLastreRichieste, MachStamp;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
             string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo, IdFornitore, IDMatPrima,PT1,PT2;
             SqlDataReader fasi;
             BindingSource SorgenteDati = new BindingSource();
-
-            do {
-                //IDOrdine = RecuperaUltimoOrdine();
-                //UltimoID = RecuperaUltimoTestata();
-                //IDOrdine++;
-                IDOrdine = n;
-                CodiceArticolo = CodiceArt(IDOrdine);
-                textBox4.Text = textBox4.Text + "Ordine numero: " + IDOrdine + "\r\n";
-                textBox4.Text = textBox4.Text + "Articolo: " + CodiceArticolo+ "\r\n";
-                NumFasi = NumeroFasi(CodiceArticolo);
-                textBox4.Text = textBox4.Text + "Questo articolo ha: " + NumFasi.ToString() + " fasi di lavorazione. \r\n";
+            IDOrdine = n;
+            CodiceArticolo = CodiceArt(IDOrdine);
+            textBox4.Text = textBox4.Text + "Ordine numero: " + IDOrdine + "\r\n";
+            textBox4.Text = textBox4.Text + "Articolo: " + CodiceArticolo + "\r\n";
+            NumFasi = NumeroFasi(CodiceArticolo);
+            textBox4.Text = textBox4.Text + "Questo articolo ha: " + NumFasi.ToString() + " fasi di lavorazione. \r\n";
+            if (NumFasi == 0)
+            {
+                MessageBox.Show("Non ho nulla da importare! Questo articolo ha 0 fasi!");
+                return 1;
+            }   
+            else
+            {
                 fasi = ControllaFasi(CodiceArticolo);
                 SorgenteDati.DataSource = fasi;
                 dataGridView1.DataSource = SorgenteDati;
@@ -279,7 +291,7 @@ namespace Target2021
                     DataOrdine = RecuperaDataOrdine(IDOrdine);
                     com.DataCommessa = DataOrdine;
                     textBox4.Text = textBox4.Text + "CodCommessa: " + com.CodCommessa + "\r\n";
-                    textBox4.Text = textBox4.Text + "NrCommessa: " + com.NrCommessa  + "\r\n";
+                    textBox4.Text = textBox4.Text + "NrCommessa: " + com.NrCommessa + "\r\n";
                     textBox4.Text = textBox4.Text + "Data Commessa: " + com.DataCommessa + "\r\n";
                     textBox4.Text = textBox4.Text + "Tipo Commessa: " + com.TipoCommessa + "\r\n";
                     IDCliente = RecuperaIDCliente(IDOrdine);
@@ -289,7 +301,7 @@ namespace Target2021
                     DataConsegna = RecuperaDataConsegna(IDOrdine);
                     com.DataConsegna = DataConsegna;
                     NrPezzi = RecuperaNrPezzi(IDOrdine);
-                    com.NrPezziDaLavorare=NrPezzi;
+                    com.NrPezziDaLavorare = NrPezzi;
                     com.CodArticolo = CodiceArticolo;
                     DescrArticolo = RecuperaDescrizioneArticolo(IDOrdine);
                     com.DescrArticolo = DescrArticolo;
@@ -312,11 +324,48 @@ namespace Target2021
                     com.Foto = RecuperaFoto(CodiceArticolo);
                     com.CodArtiDopoStampo = RecuperaCodiceArticoloDopoStampo(CodiceArticolo);
                     com.IDMachStampa = RecuperaMacchinaStampaPredefinita(CodiceArticolo);
+                    com.Note = RecuperaNote(CodiceArticolo);
+                    com.IDMachTaglio = RecuperaMacchinaTaglio(CodiceArticolo);
                     InserisciCommessa1(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
-            } while (IDOrdine + 1 < IDOrdine+1);  //UltimoID
-            //commesseDataGridView.Update();
+                return 0;
+            }
+        }
+
+        private int RecuperaMacchinaTaglio(string ca)
+        {
+            int risultato = 0;
+            string filtro = "codice_articolo = '" + ca + "'";
+            try
+            {
+                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(MacPredefTaglio)", filtro);
+            }
+            catch
+            {
+                risultato = 0;
+            }
+            return risultato;
+        }
+
+        private string RecuperaNote(string ca)
+        {
+            string stringaconnessione, sql = "", note;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT note FROM articoli_semplici WHERE codice='" + ca + "'";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                note = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                note = null;
+            }
+            connessione.Close();
+            return note;
         }
 
         private int RecuperaMacchinaStampaPredefinita(string ca)
@@ -325,7 +374,7 @@ namespace Target2021
             string filtro = "codice_articolo = '" + ca + "'";
             try
             {
-                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(MacPredefTaglio)", filtro);
+                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(MacPredefStampo)", filtro);
             }
             catch
             {
@@ -478,7 +527,7 @@ namespace Target2021
             int Fase;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT lavorazione FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND progressivo="+i;
+            sql = "SELECT lavorazione FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND lavorazione="+i;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             Fase = Convert.ToInt32(comando.ExecuteScalar());
@@ -560,7 +609,7 @@ namespace Target2021
             string idf;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT codice_fornitore FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND progressivo=" + i;
+            sql = "SELECT codice_fornitore FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND lavorazione=" + i;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             idf = comando.ExecuteScalar().ToString();
@@ -574,7 +623,7 @@ namespace Target2021
             string idmp;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT codicePrimaStampoDima FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND progressivo=" + i;
+            sql = "SELECT codicePrimaStampoDima FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND lavorazione=" + i;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             idmp = comando.ExecuteScalar().ToString();
@@ -584,26 +633,25 @@ namespace Target2021
 
         private int RecuperaNrLasRic(string codart, int i, int NrOrd)
         {
-            int NrPezziRichiesti, Lastre=0;
+            int NrPezziRichiesti, Lastre=0, NrPezziAStampo;
             NrPezziRichiesti = RecuperaNrPezzi(NrOrd);
             string stringa_connessione;
             stringa_connessione = Properties.Resources.StringaConnessione;
             SqlConnection conn = new SqlConnection(stringa_connessione);
-            string query = "Select PercentualeLastra From DettArticoli Where codice_articolo='" + codart + "' AND lavorazione=1";
+            string query = "Select NrPezziAStampo From DettArticoli Where codice_articolo='" + codart + "' AND lavorazione=2";
             SqlCommand comando = new SqlCommand(query, conn);
             conn.Open();
             try
             {
-                percentuale = Convert.ToInt32(comando.ExecuteScalar());
+                NrPezziAStampo = Convert.ToInt32(comando.ExecuteScalar());
             }
             catch
             {
-                percentuale = 100;
+                NrPezziAStampo = 1;
             }
             try
             {
-                double n = 100 / percentuale;
-                Lastre = (int)Math.Floor(NrPezziRichiesti / n);
+                Lastre = (int)Math.Ceiling((double)(NrPezziRichiesti / NrPezziAStampo));
             }
             catch (DivideByZeroException e)
             {
@@ -747,7 +795,14 @@ namespace Target2021
             riga.PezziOra = com.PezziOra;
             riga.Foto = com.Foto;
             riga.CodArtiDopoStampo = com.CodArtiDopoStampo;
-    
+            riga.AttG1 = 0;
+            riga.AttG2 = 0;
+            riga.AttG3 = 0;
+            riga.AttG4 = 0;
+            riga.AttG5 = 0;
+            riga.Note = com.Note;
+            riga.IDMachTaglio = com.IDMachTaglio;
+
             target2021DataSet.Commesse.Rows.Add(riga); 
             commesseTableAdapter.Update(target2021DataSet.Commesse);
         }

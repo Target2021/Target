@@ -23,6 +23,11 @@ namespace Target2021.Fase3
 
         private void SelezionaCommessaDaStampare_Load(object sender, EventArgs e)
         {
+            aggiorna();
+        }
+
+        private void aggiorna()
+        {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MacchineStampo'. È possibile spostarla o rimuoverla se necessario.
             this.macchineStampoTableAdapter.Fill(this.target2021DataSet.MacchineStampo);
             string NomeMacchina;
@@ -43,7 +48,6 @@ namespace Target2021.Fase3
             catch { NomeMacchina = "Non trovata!"; }
             label2.Text = NomeMacchina;
         }
-
 
         private void NascondiColonne()
         {
@@ -69,7 +73,6 @@ namespace Target2021.Fase3
             this.Validate();
             this.commesseBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
         }
 
         private void commesseDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -94,7 +97,8 @@ namespace Target2021.Fase3
                 macchina = 0;
             }
             LavoraStampaggio stampa = new LavoraStampaggio(chiave.ToString(), macchina);
-            stampa.Show();
+            stampa.ShowDialog();
+            aggiorna();
         }
 
         private int Cerca(int idc, int anno)
@@ -121,7 +125,11 @@ namespace Target2021.Fase3
         {
             //int IdCommessa;
             //IdCommessa = Convert.ToInt32(commesseDataGridView1.SelectedRows[0].Cells[0].Value);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            aggiorna();
         }
     }
 }

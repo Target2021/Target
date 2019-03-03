@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.macchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
@@ -185,11 +186,23 @@
             // 
             this.macchineStampoTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(666, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(225, 29);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "AGGIORNA";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SelezionaCommessaDaStampare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 422);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.commesseDataGridView1);
@@ -218,5 +231,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource macchineStampoBindingSource;
         private Target2021DataSetTableAdapters.MacchineStampoTableAdapter macchineStampoTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }

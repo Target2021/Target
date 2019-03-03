@@ -52,6 +52,11 @@ namespace Target2021
         public int Mps { get; set; }
         public string ProgStampa { get; set; }
         public int PezziOra { get; set; }
+        public int AttG1 { get; set; }
+        public int AttG2 { get; set; }
+        public int AttG3 { get; set; }
+        public int AttG4 { get; set; }
+        public int AttG5 { get; set; }
 
         public Commessa(int id)
         {

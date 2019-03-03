@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewOrderCheck));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,27 +45,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.commesseBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.commesseBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
@@ -81,16 +65,16 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).BeginInit();
-            this.commesseBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniImportatiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,9 +83,9 @@
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 21);
+            this.label1.Size = new System.Drawing.Size(167, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ultimo ordine presente:";
+            this.label1.Text = "Nr. ordini importati:";
             // 
             // label2
             // 
@@ -109,9 +93,9 @@
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 21);
+            this.label2.Size = new System.Drawing.Size(228, 21);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Ultimo ordine in testata:";
+            this.label2.Text = "Nr. ultimo ordine in GalArt:";
             // 
             // label3
             // 
@@ -122,14 +106,15 @@
             this.label3.Size = new System.Drawing.Size(215, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Ultimo ordine in dettaglio:";
+            this.label3.Visible = false;
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(221, 54);
+            this.textBox1.Location = new System.Drawing.Point(252, 54);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 26);
+            this.textBox1.Size = new System.Drawing.Size(147, 26);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -137,9 +122,9 @@
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(221, 81);
+            this.textBox2.Location = new System.Drawing.Point(252, 81);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 26);
+            this.textBox2.Size = new System.Drawing.Size(147, 26);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -152,6 +137,7 @@
             this.textBox3.Size = new System.Drawing.Size(178, 26);
             this.textBox3.TabIndex = 5;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.Visible = false;
             // 
             // button1
             // 
@@ -184,7 +170,7 @@
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(912, 90);
+            this.textBox4.Size = new System.Drawing.Size(933, 90);
             this.textBox4.TabIndex = 9;
             // 
             // dataGridView1
@@ -211,144 +197,13 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(572, 163);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(340, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(361, 348);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // commesseBindingNavigator
-            // 
-            this.commesseBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.commesseBindingNavigator.BindingSource = this.commesseBindingSource;
-            this.commesseBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.commesseBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.commesseBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.commesseBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.commesseBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.commesseBindingNavigatorSaveItem});
-            this.commesseBindingNavigator.Location = new System.Drawing.Point(0, 610);
-            this.commesseBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.commesseBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.commesseBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.commesseBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.commesseBindingNavigator.Name = "commesseBindingNavigator";
-            this.commesseBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.commesseBindingNavigator.Size = new System.Drawing.Size(912, 27);
-            this.commesseBindingNavigator.TabIndex = 11;
-            this.commesseBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
-            // 
-            // commesseBindingSource
-            // 
-            this.commesseBindingSource.DataMember = "Commesse";
-            this.commesseBindingSource.DataSource = this.target2021DataSet;
             // 
             // target2021DataSet
             // 
             this.target2021DataSet.DataSetName = "Target2021DataSet";
             this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 24);
-            this.bindingNavigatorCountItem.Text = "di {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Elimina";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Sposta in prima posizione";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Sposta indietro";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posizione";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Sposta avanti";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Sposta in ultima posizione";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // commesseBindingNavigatorSaveItem
-            // 
-            this.commesseBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.commesseBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("commesseBindingNavigatorSaveItem.Image")));
-            this.commesseBindingNavigatorSaveItem.Name = "commesseBindingNavigatorSaveItem";
-            this.commesseBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
-            this.commesseBindingNavigatorSaveItem.Text = "Salva dati";
-            this.commesseBindingNavigatorSaveItem.Click += new System.EventHandler(this.commesseBindingNavigatorSaveItem_Click);
             // 
             // dataGridView2
             // 
@@ -409,10 +264,6 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Ordini ancora da importare:";
             // 
-            // commesseTableAdapter
-            // 
-            this.commesseTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
@@ -427,10 +278,11 @@
             this.tableAdapterManager.CodModPagamentoTableAdapter = null;
             this.tableAdapterManager.CodSpedizioniTableAdapter = null;
             this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
-            this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
+            this.tableAdapterManager.CommesseTableAdapter = null;
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -564,12 +416,21 @@
             this.Column5.ReadOnly = true;
             this.Column5.Width = 87;
             // 
+            // commesseBindingSource
+            // 
+            this.commesseBindingSource.DataMember = "Commesse";
+            this.commesseBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // commesseTableAdapter
+            // 
+            this.commesseTableAdapter.ClearBeforeFill = true;
+            // 
             // NewOrderCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(912, 637);
+            this.ClientSize = new System.Drawing.Size(933, 637);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -577,7 +438,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.commesseBindingNavigator);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
@@ -592,16 +452,13 @@
             this.Text = "Controllo nuovi ordini";
             this.Load += new System.EventHandler(this.NewOrderCheck_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingNavigator)).EndInit();
-            this.commesseBindingNavigator.ResumeLayout(false);
-            this.commesseBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniImportatiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -620,22 +477,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Target2021DataSet target2021DataSet;
-        private System.Windows.Forms.BindingSource commesseBindingSource;
-        private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator commesseBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton commesseBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
         private System.Windows.Forms.BindingSource dettArticoliBindingSource;
@@ -656,5 +498,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.BindingSource commesseBindingSource;
+        private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
     }
 }

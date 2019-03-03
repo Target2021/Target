@@ -537,9 +537,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(764, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(238, 18);
+            this.label5.Size = new System.Drawing.Size(242, 18);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Macchina di stampaggio: 2 -Perros";
+            this.label5.Text = "Macchina di stampaggio: 2 - Perros";
             // 
             // label6
             // 

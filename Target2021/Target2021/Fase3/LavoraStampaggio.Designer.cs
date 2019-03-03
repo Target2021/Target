@@ -160,6 +160,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientiTableAdapter = new Target2021.Target2021DataSetTableAdapters.clientiTableAdapter();
+            this.button13 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -214,6 +218,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iDCommessaLabel
@@ -370,7 +375,7 @@
             // 
             dataTermineLabel.AutoSize = true;
             dataTermineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataTermineLabel.Location = new System.Drawing.Point(349, 424);
+            dataTermineLabel.Location = new System.Drawing.Point(368, 370);
             dataTermineLabel.Name = "dataTermineLabel";
             dataTermineLabel.Size = new System.Drawing.Size(98, 15);
             dataTermineLabel.TabIndex = 35;
@@ -504,7 +509,7 @@
             // 
             nrPezziResiduiLabel.AutoSize = true;
             nrPezziResiduiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziResiduiLabel.Location = new System.Drawing.Point(360, 366);
+            nrPezziResiduiLabel.Location = new System.Drawing.Point(364, 395);
             nrPezziResiduiLabel.Name = "nrPezziResiduiLabel";
             nrPezziResiduiLabel.Size = new System.Drawing.Size(101, 15);
             nrPezziResiduiLabel.TabIndex = 61;
@@ -516,9 +521,9 @@
             codArtiDopoStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             codArtiDopoStampoLabel.Location = new System.Drawing.Point(347, 449);
             codArtiDopoStampoLabel.Name = "codArtiDopoStampoLabel";
-            codArtiDopoStampoLabel.Size = new System.Drawing.Size(131, 15);
+            codArtiDopoStampoLabel.Size = new System.Drawing.Size(104, 15);
             codArtiDopoStampoLabel.TabIndex = 62;
-            codArtiDopoStampoLabel.Text = "Cod Arti Dopo Stampo:";
+            codArtiDopoStampoLabel.Text = "Articolo stampato:";
             // 
             // label5
             // 
@@ -615,7 +620,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label15.Location = new System.Drawing.Point(343, 394);
+            label15.Location = new System.Drawing.Point(342, 422);
             label15.Name = "label15";
             label15.Size = new System.Drawing.Size(118, 15);
             label15.TabIndex = 70;
@@ -877,7 +882,7 @@
             // 
             this.dataTermineDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataTermine", true));
             this.dataTermineDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataTermineDateTimePicker.Location = new System.Drawing.Point(457, 419);
+            this.dataTermineDateTimePicker.Location = new System.Drawing.Point(476, 365);
             this.dataTermineDateTimePicker.Name = "dataTermineDateTimePicker";
             this.dataTermineDateTimePicker.Size = new System.Drawing.Size(200, 21);
             this.dataTermineDateTimePicker.TabIndex = 36;
@@ -918,7 +923,7 @@
             this.groupBox1.Controls.Add(this.oISG1DateTimePicker);
             this.groupBox1.Controls.Add(attG1Label);
             this.groupBox1.Controls.Add(this.attG1TextBox);
-            this.groupBox1.Location = new System.Drawing.Point(693, 21);
+            this.groupBox1.Location = new System.Drawing.Point(691, 50);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(323, 98);
             this.groupBox1.TabIndex = 41;
@@ -993,7 +998,7 @@
             this.groupBox2.Controls.Add(oISG2Label);
             this.groupBox2.Controls.Add(this.oISG2DateTimePicker);
             this.groupBox2.Controls.Add(this.attG2TextBox);
-            this.groupBox2.Location = new System.Drawing.Point(693, 128);
+            this.groupBox2.Location = new System.Drawing.Point(691, 157);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(323, 98);
             this.groupBox2.TabIndex = 42;
@@ -1068,7 +1073,7 @@
             this.groupBox3.Controls.Add(this.oSFG3DateTimePicker);
             this.groupBox3.Controls.Add(this.oISG3DateTimePicker);
             this.groupBox3.Controls.Add(this.attG3TextBox);
-            this.groupBox3.Location = new System.Drawing.Point(693, 232);
+            this.groupBox3.Location = new System.Drawing.Point(691, 261);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(323, 98);
             this.groupBox3.TabIndex = 43;
@@ -1142,7 +1147,7 @@
             this.groupBox4.Controls.Add(this.oFSG4DateTimePicker);
             this.groupBox4.Controls.Add(this.oISG4DateTimePicker);
             this.groupBox4.Controls.Add(this.attG4TextBox);
-            this.groupBox4.Location = new System.Drawing.Point(693, 336);
+            this.groupBox4.Location = new System.Drawing.Point(691, 365);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(323, 98);
             this.groupBox4.TabIndex = 44;
@@ -1215,7 +1220,7 @@
             this.groupBox5.Controls.Add(this.oFSG5DateTimePicker);
             this.groupBox5.Controls.Add(this.oISG5DateTimePicker);
             this.groupBox5.Controls.Add(this.attG5TextBox);
-            this.groupBox5.Location = new System.Drawing.Point(693, 440);
+            this.groupBox5.Location = new System.Drawing.Point(691, 469);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(323, 103);
             this.groupBox5.TabIndex = 45;
@@ -1423,7 +1428,7 @@
             // 
             this.nrPezziResiduiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziResidui", true));
             this.nrPezziResiduiTextBox.Enabled = false;
-            this.nrPezziResiduiTextBox.Location = new System.Drawing.Point(476, 366);
+            this.nrPezziResiduiTextBox.Location = new System.Drawing.Point(475, 394);
             this.nrPezziResiduiTextBox.Name = "nrPezziResiduiTextBox";
             this.nrPezziResiduiTextBox.Size = new System.Drawing.Size(100, 20);
             this.nrPezziResiduiTextBox.TabIndex = 62;
@@ -1433,7 +1438,7 @@
             // 
             this.codArtiDopoStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
             this.codArtiDopoStampoTextBox.Enabled = false;
-            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(476, 448);
+            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(457, 448);
             this.codArtiDopoStampoTextBox.Name = "codArtiDopoStampoTextBox";
             this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codArtiDopoStampoTextBox.TabIndex = 63;
@@ -1511,16 +1516,16 @@
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(476, 393);
+            this.textBox5.Location = new System.Drawing.Point(457, 422);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(154, 20);
+            this.textBox5.Size = new System.Drawing.Size(82, 20);
             this.textBox5.TabIndex = 71;
             // 
             // button12
             // 
             this.button12.BackgroundImage = global::Target2021.Properties.Resources.Excel;
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.Location = new System.Drawing.Point(636, 371);
+            this.button12.Location = new System.Drawing.Point(635, 421);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(50, 47);
             this.button12.TabIndex = 72;
@@ -1546,12 +1551,37 @@
             // 
             this.clientiTableAdapter.ClearBeforeFill = true;
             // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(545, 420);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(88, 22);
+            this.button13.TabIndex = 74;
+            this.button13.Text = "MODIFICA";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // dettArticoliBindingSource
+            // 
+            this.dettArticoliBindingSource.DataMember = "DettArticoli";
+            this.dettArticoliBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // dettArticoliTableAdapter
+            // 
+            this.dettArticoliTableAdapter.ClearBeforeFill = true;
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1036, 592);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.textBox5);
@@ -1647,6 +1677,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1743,5 +1774,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.BindingSource clientiBindingSource;
         private Target2021DataSetTableAdapters.clientiTableAdapter clientiTableAdapter;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.BindingSource dettArticoliBindingSource;
+        private Target2021DataSetTableAdapters.DettArticoliTableAdapter dettArticoliTableAdapter;
     }
 }

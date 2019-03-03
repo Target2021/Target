@@ -31,7 +31,6 @@ namespace Target2021.Anagrafiche
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniImportati'. È possibile spostarla o rimuoverla se necessario.
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,7 +47,14 @@ namespace Target2021.Anagrafiche
                     textBox1.AppendText("Ordine numero: " + row.Index.ToString() + Environment .NewLine);
                     int risultato;
                     string filtro = "NrCommessa = " + NumOrd;
-                    risultato = (int)target2021DataSet.Commesse.Compute("MAX(Stato)", filtro);
+                    try
+                    {
+                        risultato = (int)target2021DataSet.Commesse.Compute("MAX(Stato)", filtro);
+                    }
+                    catch
+                    {
+                        risultato = 0;
+                    }
                     if (risultato>0)
                     {
                         MessageBox.Show("Impossibile eliminare l'importazione dell'ordine " + NumOrd.ToString() + "! Non tutte le righe sono in Stato 0!");
@@ -78,6 +84,15 @@ namespace Target2021.Anagrafiche
             {
                 //do something else
             }
+        }
+
+        private void ordiniImportatiDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            try
+            {
+                ordiniImportatiDataGridView.Sort(this.ordiniImportatiDataGridView.Columns["Numero"], ListSortDirection.Descending);
+            }
+            catch { }
         }
     }
 }

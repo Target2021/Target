@@ -120,6 +120,8 @@
             // 
             // ordiniImportatiDataGridView
             // 
+            this.ordiniImportatiDataGridView.AllowUserToAddRows = false;
+            this.ordiniImportatiDataGridView.AllowUserToDeleteRows = false;
             this.ordiniImportatiDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -137,9 +139,11 @@
             this.ordiniImportatiDataGridView.DataSource = this.ordiniImportatiBindingSource;
             this.ordiniImportatiDataGridView.Location = new System.Drawing.Point(0, 66);
             this.ordiniImportatiDataGridView.Name = "ordiniImportatiDataGridView";
+            this.ordiniImportatiDataGridView.ReadOnly = true;
             this.ordiniImportatiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ordiniImportatiDataGridView.Size = new System.Drawing.Size(607, 328);
             this.ordiniImportatiDataGridView.TabIndex = 1;
+            this.ordiniImportatiDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.ordiniImportatiDataGridView_DataBindingComplete);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -154,6 +158,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Anno";
             this.dataGridViewTextBoxColumn2.HeaderText = "Anno";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 57;
             // 
             // dataGridViewCheckBoxColumn1
@@ -161,6 +166,8 @@
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "Importato";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Importato";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Visible = false;
             this.dataGridViewCheckBoxColumn1.Width = 57;
             // 
             // dataGridViewTextBoxColumn3
@@ -168,6 +175,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Numero";
             this.dataGridViewTextBoxColumn3.HeaderText = "Numero";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 69;
             // 
             // dataGridViewTextBoxColumn4
@@ -175,6 +183,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Data";
             this.dataGridViewTextBoxColumn4.HeaderText = "Data";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 55;
             // 
             // dataGridViewTextBoxColumn5
@@ -182,6 +191,7 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Articolo";
             this.dataGridViewTextBoxColumn5.HeaderText = "Articolo";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 67;
             // 
             // dataGridViewTextBoxColumn6
@@ -189,6 +199,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Descrizione";
             this.dataGridViewTextBoxColumn6.HeaderText = "Descrizione";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Width = 87;
             // 
             // label1
@@ -207,7 +218,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(633, 66);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 86);
+            this.button1.Size = new System.Drawing.Size(192, 76);
             this.button1.TabIndex = 3;
             this.button1.Text = "Elimina l\'importazione degli ordini selezionati";
             this.button1.UseVisualStyleBackColor = true;
@@ -218,12 +229,13 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(638, 163);
+            this.label2.Location = new System.Drawing.Point(638, 155);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 77);
+            this.label2.Size = new System.Drawing.Size(186, 85);
             this.label2.TabIndex = 4;
             this.label2.Text = "N.B.: E\' possibile eliminare l\'importazione di un ordine solo se non è stata iniz" +
     "iata ancora la sua lavorazione!";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox1
             // 
@@ -274,6 +286,12 @@
         private Target2021DataSetTableAdapters.OrdiniImportatiTableAdapter ordiniImportatiTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView ordiniImportatiDataGridView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource commesseBindingSource;
+        private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
@@ -281,11 +299,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.BindingSource commesseBindingSource;
-        private Target2021DataSetTableAdapters.CommesseTableAdapter commesseTableAdapter;
     }
 }

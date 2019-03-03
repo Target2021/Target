@@ -37,10 +37,10 @@ namespace Target2021.Fase2
             DataView CPianifM1 = new DataView(target2021DataSet.Commesse);
             DataView CPianifM2 = new DataView(target2021DataSet.Commesse);
             DataView CPianifM3 = new DataView(target2021DataSet.Commesse);
-            CNonPianif.RowFilter = "Stato = 2";
-            CPianifM1.RowFilter = "Stato = 3 AND SchedMach = 1"; // AND TipoCommessa = 2";
-            CPianifM2.RowFilter = "Stato = 3 AND SchedMach = 2";
-            CPianifM3.RowFilter = "Stato = 3 AND SchedMach = 3";
+            CNonPianif.RowFilter = "TipoCommessa = 1 AND Stato = 2";
+            CPianifM1.RowFilter = "TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1"; // AND TipoCommessa = 2";
+            CPianifM2.RowFilter = "TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2";
+            CPianifM3.RowFilter = "TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3";
             commesseDataGridView.DataSource = CNonPianif;
             commesseDataGridView1.DataSource = CPianifM1;
             commesseDataGridView1.Columns["ShedOra"].DefaultCellStyle.Format = "HH:mm:ss";

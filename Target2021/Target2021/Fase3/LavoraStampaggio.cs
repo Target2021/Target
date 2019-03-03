@@ -27,6 +27,8 @@ namespace Target2021
 
         private void LavoraStampaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.clienti'. È possibile spostarla o rimuoverla se necessario.
             this.clientiTableAdapter.Fill(this.target2021DataSet.clienti);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MovimentiMagazzino'. È possibile spostarla o rimuoverla se necessario.
@@ -206,6 +208,7 @@ namespace Target2021
         private void button1_Click(object sender, EventArgs e)
         {
             Salva();
+            SalvaSchedaInAnArticolo();
         }
 
         private void Salva()
@@ -456,7 +459,7 @@ namespace Target2021
                 query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idSemilavorati, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + numero.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
                 comando2 = new SqlCommand(query2, conn);
                 comando2.ExecuteNonQuery();
-                MessageBox.Show("Materia prima non presente in magazzino. Creata.");
+                MessageBox.Show("Semilavorato non presente in magazzino. Creato.");
                 MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString());
             }
             conn.Close();
@@ -506,7 +509,7 @@ namespace Target2021
 
         private void AggiornaGiacenzeS(int q, string Cod)
         {
-            int numero, disponibili;
+            int numero, impegnati;
             string query2;
             DateTime ora;
             SqlCommand comando2;
@@ -519,23 +522,23 @@ namespace Target2021
                 numero = (int)comando1.ExecuteScalar();
                 if (numero > 0)   // articolo già presente nelle giacenze
                 {
-                    query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+                    query2 = "SELECT SUM(GiacenzaImpegnati) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
                     comando2 = new SqlCommand(query2, conn);
-                    disponibili = (int)comando2.ExecuteScalar();
+                    impegnati = (int)comando2.ExecuteScalar();
                     numero = numero - q;
-                    disponibili = disponibili - q;
+                    impegnati = impegnati - q;
                     // update
                     ora = DateTime.Now;
-                    query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";
+                    query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaImpegnati = " + impegnati.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";
                     comando2 = new SqlCommand(query2, conn);
                     comando2.ExecuteNonQuery();
-                    MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
+                    MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString());
                 }
             }
             catch
             {
                 numero = 0;
-                disponibili = 0;
+                int disponibili = 0;
                 // insert
                 ora = DateTime.Now;
                 query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idPrime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
@@ -614,6 +617,32 @@ namespace Target2021
         private void fotoTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string file = openFileDialog1.FileName;
+                textBox5.Text = file;
+            }
+            SalvaSchedaInAnArticolo();
+        }
+
+        private void SalvaSchedaInAnArticolo()
+        {
+            string PercorsoScheda;
+            PercorsoScheda = textBox5.Text;
+            int ID;
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + codArticoloTextBox.Text + "' AND lavorazione=2");
+            try
+            {
+                riga[0]["Allegato"] = PercorsoScheda;
+                riga[0].EndEdit();
+                dettArticoliTableAdapter.Update(target2021DataSet);
+            }
+            catch { }
         }
     }
 }
