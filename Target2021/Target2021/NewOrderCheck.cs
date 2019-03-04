@@ -63,6 +63,7 @@ namespace Target2021
             dt.Columns.Add(new DataColumn("Descrizione", typeof(string)));
             dataGridView2.DataSource = dt;
             this.dataGridView2.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView2.Sort(this.dataGridView2.Columns["Num"], ListSortDirection.Ascending);
             return dt;
         }
 
@@ -111,6 +112,8 @@ namespace Target2021
         {
             int NumOrdine, i=0, j;
             int[] rimuovi = new int[2000];
+            dataGridView3.Rows.Clear();
+            dataGridView3.Refresh();
             foreach (DataGridViewRow riga in dataGridView2.Rows)
             {
                 NumOrdine = Convert .ToInt32(riga.Cells[1].Value);
@@ -120,11 +123,11 @@ namespace Target2021
                 string selezione = "Anno = " + anno + " AND Numero = " + NumOrdine.ToString();
                 DataRow[] rows = OrdiniImportati.Select(selezione);
 
-                if (rows.Length == 0)
-                    riga.Cells[0].Value = false;
+                if (rows.Length == 0) ;
+                //riga.Cells[0].Value = false;
                 else
                 {
-                    riga.Cells[0].Value = true;
+                    //riga.Cells[0].Value = true;
                     DataGridViewRow vecchia = (DataGridViewRow)riga.Clone();
                     for (Int32 index = 0; index < riga.Cells.Count; index++)
                     {
@@ -323,6 +326,7 @@ namespace Target2021
                     com.PezziOra = RecuperaNumeroPezziStampatiOra(CodiceArticolo);
                     com.Foto = RecuperaFoto(CodiceArticolo);
                     com.CodArtiDopoStampo = RecuperaCodiceArticoloDopoStampo(CodiceArticolo);
+                    com.CodArtiDopoTaglio = RecuperaCodiceArticoloDopoTaglio(CodiceArticolo);
                     com.IDMachStampa = RecuperaMacchinaStampaPredefinita(CodiceArticolo);
                     com.Note = RecuperaNote(CodiceArticolo);
                     com.IDMachTaglio = RecuperaMacchinaTaglio(CodiceArticolo);
@@ -451,6 +455,19 @@ namespace Target2021
             string outp="";
             DataRow[] riga;
             riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + Cod + "' AND lavorazione=2");
+            try
+            {
+                outp = riga[0]["CodiceOutput"].ToString();
+                return outp;
+            }
+            catch { return "NN"; }
+        }
+
+        private string RecuperaCodiceArticoloDopoTaglio(string Cod)
+        {
+            string outp = "";
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + Cod + "' AND lavorazione=3");
             try
             {
                 outp = riga[0]["CodiceOutput"].ToString();
@@ -685,14 +702,21 @@ namespace Target2021
         private void button3_Click(object sender, EventArgs e)
         {
             int[] import = new int[100];
-            int i = 0, j;
+            int i = 0, j,x=0;
+            progressBarAdv1.Maximum = dataGridView2.Rows.Count;
             foreach (DataGridViewRow row in dataGridView2.Rows)
             {
-                if (Convert .ToBoolean(row.Cells["Importato"].Value) == true)
+                try
                 {
-                    import[i] =Convert.ToInt32(row.Cells["Num"].Value);
-                    i++;
+                    if ((bool)(row.Cells["Importato"].Value) == true)
+                    {
+                        import[i] =Convert.ToInt32(row.Cells["Num"].Value);
+                        i++;
+                    }
                 }
+                catch { }
+                x++;
+                progressBarAdv1.Value = x;
             }
             for (j=0;j<i;j++)
             {
@@ -795,6 +819,7 @@ namespace Target2021
             riga.PezziOra = com.PezziOra;
             riga.Foto = com.Foto;
             riga.CodArtiDopoStampo = com.CodArtiDopoStampo;
+            riga.CodArtiDopoTaglio = com.CodArtiDopoTaglio;
             riga.AttG1 = 0;
             riga.AttG2 = 0;
             riga.AttG3 = 0;

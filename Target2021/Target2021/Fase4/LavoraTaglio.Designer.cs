@@ -50,6 +50,8 @@
             System.Windows.Forms.Label statoLabel;
             System.Windows.Forms.Label evasoParzialeLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label progrTaglio1Label;
+            System.Windows.Forms.Label progrTaglio2Label;
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
@@ -89,6 +91,12 @@
             this.macchineTaglioTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
             this.dimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dimeTableAdapter = new Target2021.Target2021DataSetTableAdapters.DimeTableAdapter();
+            this.label6 = new System.Windows.Forms.Label();
+            this.progrTaglio1TextBox = new System.Windows.Forms.TextBox();
+            this.progrTaglio2TextBox = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             codCommessaLabel = new System.Windows.Forms.Label();
             dataCommessaLabel = new System.Windows.Forms.Label();
             iDClienteLabel = new System.Windows.Forms.Label();
@@ -110,6 +118,8 @@
             statoLabel = new System.Windows.Forms.Label();
             evasoParzialeLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            progrTaglio1Label = new System.Windows.Forms.Label();
+            progrTaglio2Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -162,7 +172,7 @@
             // 
             nrPezziDaLavorareLabel.AutoSize = true;
             nrPezziDaLavorareLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(775, 156);
+            nrPezziDaLavorareLabel.Location = new System.Drawing.Point(770, 248);
             nrPezziDaLavorareLabel.Name = "nrPezziDaLavorareLabel";
             nrPezziDaLavorareLabel.Size = new System.Drawing.Size(138, 16);
             nrPezziDaLavorareLabel.TabIndex = 17;
@@ -172,7 +182,7 @@
             // 
             codArticoloLabel.AutoSize = true;
             codArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codArticoloLabel.Location = new System.Drawing.Point(16, 221);
+            codArticoloLabel.Location = new System.Drawing.Point(16, 242);
             codArticoloLabel.Name = "codArticoloLabel";
             codArticoloLabel.Size = new System.Drawing.Size(84, 16);
             codArticoloLabel.TabIndex = 19;
@@ -182,7 +192,7 @@
             // 
             descrArticoloLabel.AutoSize = true;
             descrArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descrArticoloLabel.Location = new System.Drawing.Point(16, 249);
+            descrArticoloLabel.Location = new System.Drawing.Point(16, 270);
             descrArticoloLabel.Name = "descrArticoloLabel";
             descrArticoloLabel.Size = new System.Drawing.Size(95, 16);
             descrArticoloLabel.TabIndex = 21;
@@ -192,7 +202,7 @@
             // 
             noteLabel.AutoSize = true;
             noteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            noteLabel.Location = new System.Drawing.Point(16, 283);
+            noteLabel.Location = new System.Drawing.Point(16, 320);
             noteLabel.Name = "noteLabel";
             noteLabel.Size = new System.Drawing.Size(40, 16);
             noteLabel.TabIndex = 23;
@@ -202,7 +212,7 @@
             // 
             fotoLabel.AutoSize = true;
             fotoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fotoLabel.Location = new System.Drawing.Point(71, 18);
+            fotoLabel.Location = new System.Drawing.Point(9, 29);
             fotoLabel.Name = "fotoLabel";
             fotoLabel.Size = new System.Drawing.Size(38, 16);
             fotoLabel.TabIndex = 25;
@@ -213,7 +223,7 @@
             // 
             codArtiDopoStampoLabel.AutoSize = true;
             codArtiDopoStampoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codArtiDopoStampoLabel.Location = new System.Drawing.Point(16, 193);
+            codArtiDopoStampoLabel.Location = new System.Drawing.Point(16, 214);
             codArtiDopoStampoLabel.Name = "codArtiDopoStampoLabel";
             codArtiDopoStampoLabel.Size = new System.Drawing.Size(126, 16);
             codArtiDopoStampoLabel.TabIndex = 35;
@@ -243,7 +253,7 @@
             // 
             codArtiDopoTaglioLabel.AutoSize = true;
             codArtiDopoTaglioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codArtiDopoTaglioLabel.Location = new System.Drawing.Point(775, 128);
+            codArtiDopoTaglioLabel.Location = new System.Drawing.Point(776, 168);
             codArtiDopoTaglioLabel.Name = "codArtiDopoTaglioLabel";
             codArtiDopoTaglioLabel.Size = new System.Drawing.Size(137, 16);
             codArtiDopoTaglioLabel.TabIndex = 41;
@@ -253,7 +263,7 @@
             // 
             dataTermineLabel.AutoSize = true;
             dataTermineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataTermineLabel.Location = new System.Drawing.Point(776, 185);
+            dataTermineLabel.Location = new System.Drawing.Point(771, 277);
             dataTermineLabel.Name = "dataTermineLabel";
             dataTermineLabel.Size = new System.Drawing.Size(93, 16);
             dataTermineLabel.TabIndex = 57;
@@ -263,7 +273,7 @@
             // 
             nrPezziCorrettiLabel.AutoSize = true;
             nrPezziCorrettiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziCorrettiLabel.Location = new System.Drawing.Point(776, 265);
+            nrPezziCorrettiLabel.Location = new System.Drawing.Point(774, 303);
             nrPezziCorrettiLabel.Name = "nrPezziCorrettiLabel";
             nrPezziCorrettiLabel.Size = new System.Drawing.Size(103, 16);
             nrPezziCorrettiLabel.TabIndex = 59;
@@ -273,7 +283,7 @@
             // 
             nrPezziScartatiLabel.AutoSize = true;
             nrPezziScartatiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nrPezziScartatiLabel.Location = new System.Drawing.Point(776, 236);
+            nrPezziScartatiLabel.Location = new System.Drawing.Point(883, 303);
             nrPezziScartatiLabel.Name = "nrPezziScartatiLabel";
             nrPezziScartatiLabel.Size = new System.Drawing.Size(106, 16);
             nrPezziScartatiLabel.TabIndex = 61;
@@ -283,7 +293,7 @@
             // 
             secondiCicloTaglioLabel.AutoSize = true;
             secondiCicloTaglioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            secondiCicloTaglioLabel.Location = new System.Drawing.Point(776, 291);
+            secondiCicloTaglioLabel.Location = new System.Drawing.Point(771, 381);
             secondiCicloTaglioLabel.Name = "secondiCicloTaglioLabel";
             secondiCicloTaglioLabel.Size = new System.Drawing.Size(136, 16);
             secondiCicloTaglioLabel.TabIndex = 93;
@@ -293,7 +303,7 @@
             // 
             minutiAttrezzaggioLabel.AutoSize = true;
             minutiAttrezzaggioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            minutiAttrezzaggioLabel.Location = new System.Drawing.Point(776, 317);
+            minutiAttrezzaggioLabel.Location = new System.Drawing.Point(771, 353);
             minutiAttrezzaggioLabel.Name = "minutiAttrezzaggioLabel";
             minutiAttrezzaggioLabel.Size = new System.Drawing.Size(122, 16);
             minutiAttrezzaggioLabel.TabIndex = 95;
@@ -303,7 +313,7 @@
             // 
             statoLabel.AutoSize = true;
             statoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            statoLabel.Location = new System.Drawing.Point(776, 346);
+            statoLabel.Location = new System.Drawing.Point(1002, 353);
             statoLabel.Name = "statoLabel";
             statoLabel.Size = new System.Drawing.Size(42, 16);
             statoLabel.TabIndex = 97;
@@ -313,7 +323,7 @@
             // 
             evasoParzialeLabel.AutoSize = true;
             evasoParzialeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            evasoParzialeLabel.Location = new System.Drawing.Point(914, 346);
+            evasoParzialeLabel.Location = new System.Drawing.Point(990, 381);
             evasoParzialeLabel.Name = "evasoParzialeLabel";
             evasoParzialeLabel.Size = new System.Drawing.Size(102, 16);
             evasoParzialeLabel.TabIndex = 101;
@@ -323,7 +333,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.Location = new System.Drawing.Point(776, 210);
+            label1.Location = new System.Drawing.Point(1007, 303);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(102, 16);
             label1.TabIndex = 104;
@@ -399,10 +409,11 @@
             this.codCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodCommessa", true));
             this.codCommessaTextBox.Enabled = false;
             this.codCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codCommessaTextBox.Location = new System.Drawing.Point(102, 76);
+            this.codCommessaTextBox.Location = new System.Drawing.Point(134, 76);
             this.codCommessaTextBox.Name = "codCommessaTextBox";
             this.codCommessaTextBox.Size = new System.Drawing.Size(49, 22);
             this.codCommessaTextBox.TabIndex = 4;
+            this.codCommessaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.codCommessaTextBox.TextChanged += new System.EventHandler(this.codCommessaTextBox_TextChanged);
             // 
             // nrCommessaTextBox
@@ -410,10 +421,11 @@
             this.nrCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrCommessa", true));
             this.nrCommessaTextBox.Enabled = false;
             this.nrCommessaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrCommessaTextBox.Location = new System.Drawing.Point(157, 76);
+            this.nrCommessaTextBox.Location = new System.Drawing.Point(189, 76);
             this.nrCommessaTextBox.Name = "nrCommessaTextBox";
-            this.nrCommessaTextBox.Size = new System.Drawing.Size(72, 22);
+            this.nrCommessaTextBox.Size = new System.Drawing.Size(50, 22);
             this.nrCommessaTextBox.TabIndex = 6;
+            this.nrCommessaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dataCommessaDateTimePicker
             // 
@@ -434,6 +446,7 @@
             this.iDClienteTextBox.Name = "iDClienteTextBox";
             this.iDClienteTextBox.Size = new System.Drawing.Size(49, 22);
             this.iDClienteTextBox.TabIndex = 12;
+            this.iDClienteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.iDClienteTextBox.TextChanged += new System.EventHandler(this.iDClienteTextBox_TextChanged);
             // 
             // dataConsegnaDateTimePicker
@@ -451,29 +464,32 @@
             this.nrPezziDaLavorareTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziDaLavorare", true));
             this.nrPezziDaLavorareTextBox.Enabled = false;
             this.nrPezziDaLavorareTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(916, 153);
+            this.nrPezziDaLavorareTextBox.Location = new System.Drawing.Point(911, 245);
             this.nrPezziDaLavorareTextBox.Name = "nrPezziDaLavorareTextBox";
             this.nrPezziDaLavorareTextBox.Size = new System.Drawing.Size(200, 22);
             this.nrPezziDaLavorareTextBox.TabIndex = 18;
+            this.nrPezziDaLavorareTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // codArticoloTextBox
             // 
             this.codArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArticolo", true));
             this.codArticoloTextBox.Enabled = false;
             this.codArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codArticoloTextBox.Location = new System.Drawing.Point(148, 218);
+            this.codArticoloTextBox.Location = new System.Drawing.Point(148, 239);
             this.codArticoloTextBox.Name = "codArticoloTextBox";
             this.codArticoloTextBox.Size = new System.Drawing.Size(186, 22);
             this.codArticoloTextBox.TabIndex = 20;
+            this.codArticoloTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // descrArticoloTextBox
             // 
             this.descrArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "DescrArticolo", true));
             this.descrArticoloTextBox.Enabled = false;
             this.descrArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descrArticoloTextBox.Location = new System.Drawing.Point(148, 246);
+            this.descrArticoloTextBox.Location = new System.Drawing.Point(148, 267);
+            this.descrArticoloTextBox.Multiline = true;
             this.descrArticoloTextBox.Name = "descrArticoloTextBox";
-            this.descrArticoloTextBox.Size = new System.Drawing.Size(186, 22);
+            this.descrArticoloTextBox.Size = new System.Drawing.Size(186, 54);
             this.descrArticoloTextBox.TabIndex = 22;
             // 
             // noteTextBox
@@ -481,7 +497,7 @@
             this.noteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "Note", true));
             this.noteTextBox.Enabled = false;
             this.noteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteTextBox.Location = new System.Drawing.Point(148, 274);
+            this.noteTextBox.Location = new System.Drawing.Point(148, 327);
             this.noteTextBox.Multiline = true;
             this.noteTextBox.Name = "noteTextBox";
             this.noteTextBox.Size = new System.Drawing.Size(186, 132);
@@ -491,7 +507,7 @@
             // 
             this.fotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "Foto", true));
             this.fotoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fotoTextBox.Location = new System.Drawing.Point(115, 12);
+            this.fotoTextBox.Location = new System.Drawing.Point(53, 23);
             this.fotoTextBox.Name = "fotoTextBox";
             this.fotoTextBox.Size = new System.Drawing.Size(179, 22);
             this.fotoTextBox.TabIndex = 26;
@@ -502,20 +518,22 @@
             this.codArtiDopoStampoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
             this.codArtiDopoStampoTextBox.Enabled = false;
             this.codArtiDopoStampoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(148, 190);
+            this.codArtiDopoStampoTextBox.Location = new System.Drawing.Point(148, 211);
             this.codArtiDopoStampoTextBox.Name = "codArtiDopoStampoTextBox";
             this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(186, 22);
             this.codArtiDopoStampoTextBox.TabIndex = 36;
+            this.codArtiDopoStampoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // iDMachTaglioTextBox
             // 
             this.iDMachTaglioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDMachTaglio", true));
             this.iDMachTaglioTextBox.Enabled = false;
             this.iDMachTaglioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iDMachTaglioTextBox.Location = new System.Drawing.Point(916, 76);
+            this.iDMachTaglioTextBox.Location = new System.Drawing.Point(880, 73);
             this.iDMachTaglioTextBox.Name = "iDMachTaglioTextBox";
             this.iDMachTaglioTextBox.Size = new System.Drawing.Size(60, 22);
             this.iDMachTaglioTextBox.TabIndex = 38;
+            this.iDMachTaglioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.iDMachTaglioTextBox.TextChanged += new System.EventHandler(this.iDMachTaglioTextBox_TextChanged);
             // 
             // iDDimaTextBox
@@ -523,10 +541,11 @@
             this.iDDimaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDDima", true));
             this.iDDimaTextBox.Enabled = false;
             this.iDDimaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iDDimaTextBox.Location = new System.Drawing.Point(836, 99);
+            this.iDDimaTextBox.Location = new System.Drawing.Point(880, 99);
             this.iDDimaTextBox.Name = "iDDimaTextBox";
-            this.iDDimaTextBox.Size = new System.Drawing.Size(84, 22);
+            this.iDDimaTextBox.Size = new System.Drawing.Size(108, 22);
             this.iDDimaTextBox.TabIndex = 40;
+            this.iDDimaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.iDDimaTextBox.TextChanged += new System.EventHandler(this.iDDimaTextBox_TextChanged);
             // 
             // codArtiDopoTaglioTextBox
@@ -534,16 +553,17 @@
             this.codArtiDopoTaglioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoTaglio", true));
             this.codArtiDopoTaglioTextBox.Enabled = false;
             this.codArtiDopoTaglioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codArtiDopoTaglioTextBox.Location = new System.Drawing.Point(916, 125);
+            this.codArtiDopoTaglioTextBox.Location = new System.Drawing.Point(917, 165);
             this.codArtiDopoTaglioTextBox.Name = "codArtiDopoTaglioTextBox";
-            this.codArtiDopoTaglioTextBox.Size = new System.Drawing.Size(200, 22);
+            this.codArtiDopoTaglioTextBox.Size = new System.Drawing.Size(194, 22);
             this.codArtiDopoTaglioTextBox.TabIndex = 42;
+            this.codArtiDopoTaglioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dataTermineDateTimePicker
             // 
             this.dataTermineDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataTermine", true));
             this.dataTermineDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataTermineDateTimePicker.Location = new System.Drawing.Point(917, 181);
+            this.dataTermineDateTimePicker.Location = new System.Drawing.Point(912, 273);
             this.dataTermineDateTimePicker.Name = "dataTermineDateTimePicker";
             this.dataTermineDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dataTermineDateTimePicker.TabIndex = 58;
@@ -552,44 +572,53 @@
             // 
             this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
             this.nrPezziCorrettiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(917, 259);
+            this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(775, 322);
             this.nrPezziCorrettiTextBox.Name = "nrPezziCorrettiTextBox";
-            this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(200, 22);
+            this.nrPezziCorrettiTextBox.Size = new System.Drawing.Size(98, 22);
             this.nrPezziCorrettiTextBox.TabIndex = 60;
+            this.nrPezziCorrettiTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nrPezziCorrettiTextBox.TextChanged += new System.EventHandler(this.nrPezziCorrettiTextBox_TextChanged);
+            this.nrPezziCorrettiTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nrPezziCorrettiTextBox_KeyPress);
             // 
             // nrPezziScartatiTextBox
             // 
             this.nrPezziScartatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziScartati", true));
             this.nrPezziScartatiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(917, 233);
+            this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(886, 322);
             this.nrPezziScartatiTextBox.Name = "nrPezziScartatiTextBox";
-            this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(200, 22);
+            this.nrPezziScartatiTextBox.Size = new System.Drawing.Size(103, 22);
             this.nrPezziScartatiTextBox.TabIndex = 62;
+            this.nrPezziScartatiTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nrPezziScartatiTextBox.TextChanged += new System.EventHandler(this.nrPezziScartatiTextBox_TextChanged);
+            this.nrPezziScartatiTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nrPezziScartatiTextBox_KeyPress);
             // 
             // secondiCicloTaglioTextBox
             // 
             this.secondiCicloTaglioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "SecondiCicloTaglio", true));
             this.secondiCicloTaglioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondiCicloTaglioTextBox.Location = new System.Drawing.Point(917, 285);
+            this.secondiCicloTaglioTextBox.Location = new System.Drawing.Point(911, 378);
             this.secondiCicloTaglioTextBox.Name = "secondiCicloTaglioTextBox";
-            this.secondiCicloTaglioTextBox.Size = new System.Drawing.Size(200, 22);
+            this.secondiCicloTaglioTextBox.Size = new System.Drawing.Size(74, 22);
             this.secondiCicloTaglioTextBox.TabIndex = 94;
+            this.secondiCicloTaglioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // minutiAttrezzaggioTextBox
             // 
             this.minutiAttrezzaggioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "MinutiAttrezzaggio", true));
             this.minutiAttrezzaggioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minutiAttrezzaggioTextBox.Location = new System.Drawing.Point(917, 314);
+            this.minutiAttrezzaggioTextBox.Location = new System.Drawing.Point(911, 350);
             this.minutiAttrezzaggioTextBox.Name = "minutiAttrezzaggioTextBox";
-            this.minutiAttrezzaggioTextBox.Size = new System.Drawing.Size(200, 22);
+            this.minutiAttrezzaggioTextBox.Size = new System.Drawing.Size(74, 22);
             this.minutiAttrezzaggioTextBox.TabIndex = 96;
+            this.minutiAttrezzaggioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.minutiAttrezzaggioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.minutiAttrezzaggioTextBox_KeyPress);
             // 
             // statoTextBox
             // 
             this.statoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "Stato", true));
+            this.statoTextBox.Enabled = false;
             this.statoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statoTextBox.Location = new System.Drawing.Point(836, 343);
+            this.statoTextBox.Location = new System.Drawing.Point(1050, 350);
             this.statoTextBox.Name = "statoTextBox";
             this.statoTextBox.Size = new System.Drawing.Size(33, 22);
             this.statoTextBox.TabIndex = 98;
@@ -598,9 +627,9 @@
             // 
             this.evasoParzialeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.commesseBindingSource, "EvasoParziale", true));
             this.evasoParzialeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.evasoParzialeCheckBox.Location = new System.Drawing.Point(1022, 341);
+            this.evasoParzialeCheckBox.Location = new System.Drawing.Point(1098, 376);
             this.evasoParzialeCheckBox.Name = "evasoParzialeCheckBox";
-            this.evasoParzialeCheckBox.Size = new System.Drawing.Size(88, 24);
+            this.evasoParzialeCheckBox.Size = new System.Drawing.Size(30, 24);
             this.evasoParzialeCheckBox.TabIndex = 102;
             this.evasoParzialeCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -608,7 +637,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(917, 426);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 23);
+            this.button1.Size = new System.Drawing.Size(200, 33);
             this.button1.TabIndex = 103;
             this.button1.Text = "Vedi lavorazione";
             this.button1.UseVisualStyleBackColor = true;
@@ -617,17 +646,19 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(917, 208);
+            this.textBox1.Location = new System.Drawing.Point(1004, 322);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 22);
+            this.textBox1.Size = new System.Drawing.Size(105, 22);
             this.textBox1.TabIndex = 105;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(366, 73);
+            this.pictureBox1.Location = new System.Drawing.Point(340, 73);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(392, 386);
+            this.pictureBox1.Size = new System.Drawing.Size(430, 386);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 106;
             this.pictureBox1.TabStop = false;
@@ -636,7 +667,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(189, 165);
+            this.label2.Location = new System.Drawing.Point(83, 187);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 107;
@@ -665,10 +696,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(926, 102);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(877, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 109;
             this.label4.Text = "descr";
             // 
@@ -676,7 +707,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(996, 76);
+            this.label5.Location = new System.Drawing.Point(946, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 16);
             this.label5.TabIndex = 110;
@@ -711,13 +742,103 @@
             // 
             this.dimeTableAdapter.ClearBeforeFill = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(775, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 16);
+            this.label6.TabIndex = 112;
+            this.label6.Text = "Posizione Dima:";
+            // 
+            // progrTaglio1Label
+            // 
+            progrTaglio1Label.AutoSize = true;
+            progrTaglio1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progrTaglio1Label.Location = new System.Drawing.Point(812, 194);
+            progrTaglio1Label.Name = "progrTaglio1Label";
+            progrTaglio1Label.Size = new System.Drawing.Size(93, 16);
+            progrTaglio1Label.TabIndex = 112;
+            progrTaglio1Label.Text = "Progr Taglio1:";
+            // 
+            // progrTaglio1TextBox
+            // 
+            this.progrTaglio1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "ProgrTaglio1", true));
+            this.progrTaglio1TextBox.Enabled = false;
+            this.progrTaglio1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progrTaglio1TextBox.Location = new System.Drawing.Point(911, 193);
+            this.progrTaglio1TextBox.Name = "progrTaglio1TextBox";
+            this.progrTaglio1TextBox.Size = new System.Drawing.Size(200, 22);
+            this.progrTaglio1TextBox.TabIndex = 113;
+            this.progrTaglio1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // progrTaglio2Label
+            // 
+            progrTaglio2Label.AutoSize = true;
+            progrTaglio2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progrTaglio2Label.Location = new System.Drawing.Point(812, 220);
+            progrTaglio2Label.Name = "progrTaglio2Label";
+            progrTaglio2Label.Size = new System.Drawing.Size(93, 16);
+            progrTaglio2Label.TabIndex = 113;
+            progrTaglio2Label.Text = "Progr Taglio2:";
+            // 
+            // progrTaglio2TextBox
+            // 
+            this.progrTaglio2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "ProgrTaglio2", true));
+            this.progrTaglio2TextBox.Enabled = false;
+            this.progrTaglio2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progrTaglio2TextBox.Location = new System.Drawing.Point(911, 219);
+            this.progrTaglio2TextBox.Name = "progrTaglio2TextBox";
+            this.progrTaglio2TextBox.Size = new System.Drawing.Size(200, 22);
+            this.progrTaglio2TextBox.TabIndex = 114;
+            this.progrTaglio2TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(880, 137);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(51, 22);
+            this.textBox2.TabIndex = 115;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(937, 137);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(51, 22);
+            this.textBox3.TabIndex = 116;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(999, 136);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(51, 22);
+            this.textBox4.TabIndex = 117;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // LavoraTaglio_cs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1144, 479);
+            this.ClientSize = new System.Drawing.Size(1154, 479);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(progrTaglio2Label);
+            this.Controls.Add(this.progrTaglio2TextBox);
+            this.Controls.Add(progrTaglio1Label);
+            this.Controls.Add(this.progrTaglio1TextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -823,5 +944,11 @@
         private Target2021DataSetTableAdapters.MacchineTaglioTableAdapter macchineTaglioTableAdapter;
         private System.Windows.Forms.BindingSource dimeBindingSource;
         private Target2021DataSetTableAdapters.DimeTableAdapter dimeTableAdapter;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox progrTaglio1TextBox;
+        private System.Windows.Forms.TextBox progrTaglio2TextBox;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

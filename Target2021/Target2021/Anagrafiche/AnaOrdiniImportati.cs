@@ -90,9 +90,12 @@ namespace Target2021.Anagrafiche
         {
             try
             {
-                ordiniImportatiDataGridView.Sort(this.ordiniImportatiDataGridView.Columns["Numero"], ListSortDirection.Descending);
+                this.ordiniImportatiDataGridView.Sort(this.ordiniImportatiDataGridView.Columns["dataGridViewTextBoxColumn3"], ListSortDirection.Descending);
             }
-            catch { }
+            catch
+            {
+                this.ordiniImportatiDataGridView.Sort(this.ordiniImportatiDataGridView.Columns["dataGridViewTextBoxColumn3"], ListSortDirection.Descending);
+            }
         }
     }
 }

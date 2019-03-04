@@ -250,8 +250,15 @@ namespace Target2021.Anagrafiche
                 textBox26.Refresh();
                 textBox27.Text = Fase2[0].Field<int>("TempoStampaggio").ToString();
                 textBox27.Refresh();
-                textBox30.Text = Fase2[0].Field<string>("Allegato").ToString();
-                textBox30.Refresh();
+                try
+                {
+                    textBox30.Text = Fase2[0].Field<string>("Allegato").ToString();
+                    textBox30.Refresh();
+                }
+                catch
+                {
+                    textBox30.Text = "Non presente";
+                }
                 comboBox7_SelectedIndexChanged(new object(), new EventArgs());
                 DataRow[] riga;
                 riga = target2021DataSet.Tables["Stampi"].Select("codice='" + comboBox6.Text + "'");
@@ -386,7 +393,7 @@ namespace Target2021.Anagrafiche
             try
             {
                 CodAbb = Convert.ToInt32(textBox12.Text);
-                DettAbbinamStampo DAS = new DettAbbinamStampo(CodAbb, textBox2.Text);
+                DettAbbinamStampo DAS = new DettAbbinamStampo(CodAbb, textBox2.Text, textBox11.Text, textBox22.Text);
                 DAS.ShowDialog();
                 textBox12.Text = DAS.CA.ToString();
             }

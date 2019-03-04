@@ -32,6 +32,8 @@ namespace Target2021.Anagrafiche
 
         private void CercaArticolo_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AbbinamentiArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.abbinamentiArticoliTableAdapter.Fill(this.target2021DataSet.AbbinamentiArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.articoli_semplici'. È possibile spostarla o rimuoverla se necessario.
@@ -60,13 +62,15 @@ namespace Target2021.Anagrafiche
 
         private void InserisciAbbinamento()
         {
-            int IDAbb, Qta;
-            String Descrizione;
+            int IDAbb, Qta, Perc=0;
+            String Descrizione, Prog="";
 
             IDAbb = ida;
             Qta = Convert.ToInt32(textBox2.Text);
             Codice = articoli_sempliciDataGridView.SelectedRows[0].Cells[0].Value.ToString();
             Descrizione = articoli_sempliciDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+            Perc = RecuperaPercentuale(Codice);
+            Prog = RecuperaProgramma(Codice);
 
             Target2021DataSet.AbbinamentiArticoliRow riga = target2021DataSet.AbbinamentiArticoli.NewAbbinamentiArticoliRow();
 
@@ -74,9 +78,37 @@ namespace Target2021.Anagrafiche
             riga.Qta = Qta;
             riga.codice_articolo = Codice;
             riga.Descrizione = Descrizione;
+            riga.PercentualeLastra = (Perc * Qta);
+            riga.ProgrammaStampaggio = Prog;
 
             target2021DataSet.AbbinamentiArticoli.Rows.Add(riga);
             abbinamentiArticoliTableAdapter.Update(target2021DataSet.AbbinamentiArticoli);
+        }
+
+        private int RecuperaPercentuale(string Cod)
+        {
+            int Perc;
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + Cod + "' AND lavorazione=2");
+            try
+            {
+                Perc = Convert.ToInt32(riga[0]["PercentualeLastra"]);
+                return Perc;
+            }
+            catch { return -1; }
+        }
+
+        private string RecuperaProgramma(string Cod)
+        {
+            string Prg;
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + Cod + "' AND lavorazione=2");
+            try
+            {
+                Prg = riga[0]["ProgStampaggio"].ToString();
+                return Prg;
+            }
+            catch { return "Non trovato"; }
         }
 
         private void AggiornaCodAbbinamento()

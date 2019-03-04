@@ -13,14 +13,16 @@ namespace Target2021.Anagrafiche
 {
     public partial class DettAbbinamStampo : Form
     {
-        public int CA;
-        String Codice;
+        public int CA, Percentuale;
+        String Codice, Prog;
 
-        public DettAbbinamStampo(int CodAbbinamento, string CodArt)
+        public DettAbbinamStampo(int CodAbbinamento, string CodArt, string PercLastra, string Programma)
         {
             InitializeComponent();
             CA = CodAbbinamento;
             Codice = CodArt;
+            Percentuale = Convert.ToInt32(PercLastra);
+            Prog = Programma;
         }
 
         private void DettAbbinamStampo_Load(object sender, EventArgs e)
@@ -31,7 +33,8 @@ namespace Target2021.Anagrafiche
             this.abbinamentiArticoliTableAdapter.Fill(this.target2021DataSet.AbbinamentiArticoli);
             textBox1.Text = CA.ToString();
             textBox2.Text = Codice;
-
+            textBox6.Text = Percentuale.ToString();
+            textBox7.Text = Prog;
             try
             {
                 string filtro = "codice='" + Codice + "'";
@@ -41,8 +44,18 @@ namespace Target2021.Anagrafiche
             }
             catch { };
             Filtra();
-            if (textBox1.Text == "0") button2.Enabled = true;
-            else button2.Enabled = false;
+            if (textBox1.Text == "0")
+            {
+                button2.Enabled = true;
+                button1.Enabled = false;
+                textBox4.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+                button1.Enabled = true;
+                textBox4.Enabled = false;
+            }
         }
 
         private void Filtra()
@@ -116,7 +129,8 @@ namespace Target2021.Anagrafiche
             riga.Qta = Qta;
             riga.codice_articolo = Codice;
             riga.Descrizione = Descrizione;
-
+            riga.PercentualeLastra = (Convert.ToInt32(textBox6.Text) * Qta);
+            riga.ProgrammaStampaggio = Prog;
             target2021DataSet.AbbinamentiArticoli.Rows.Add(riga);
             abbinamentiArticoliTableAdapter.Update(target2021DataSet.AbbinamentiArticoli);
         }
@@ -131,6 +145,75 @@ namespace Target2021.Anagrafiche
             connessione.Open();
             comando.ExecuteNonQuery();
             connessione.Close();
+        }
+
+        private void abbinamentiArticoliDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void abbinamentiArticoliDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            AggiornaPercentuale();
+        }
+
+        private void abbinamentiArticoliDataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            AggiornaPercentuale();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "0")
+            {
+                button2.Enabled = true;
+                button1.Enabled = false;
+                textBox4.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+                button1.Enabled = true;
+                textBox4.Enabled = false;
+            }
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            int Numero;
+            Numero = Convert.ToInt32(textBox5.Text);
+            if (Numero > 100) textBox5.BackColor = Color.Orange;
+            else textBox5.BackColor = Color.LightGreen;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            abbinamentiArticoliTableAdapter.Update(target2021DataSet.AbbinamentiArticoli);
+            this.Close();
+        }
+
+        private void abbinamentiArticoliDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow riga = abbinamentiArticoliDataGridView.SelectedRows[0];
+            EliminaAbbinamento EA = new EliminaAbbinamento(riga);
+            EA.ShowDialog();
+            this.abbinamentiArticoliTableAdapter.Fill(this.target2021DataSet.AbbinamentiArticoli);
+            abbinamentiArticoliDataGridView.Refresh();
+        }
+
+        private void AggiornaPercentuale()
+        {
+            int perc=0;
+            foreach (DataGridViewRow row in abbinamentiArticoliDataGridView.Rows)
+            {
+                perc = perc + Convert .ToInt32(row.Cells["PercentualeLastra"].Value);
+            }
+            textBox5.Text = perc.ToString();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

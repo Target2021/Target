@@ -50,20 +50,53 @@ namespace Target2021
             catch { }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            bottone2();
+            bottone3();
         }
 
-        private void bottone2()
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            IntPtr subWindow = getSubWindow();
-            IntPtr sxCounterWindow = getSxCounterWindow(subWindow);
-            IntPtr dxCounterWindow = getDxCounterWindow(subWindow);
-
-            SetText(sxCounterWindow, textBox1.Text);
-            SetText(dxCounterWindow, textBox2.Text);
+            bottone1();
+            //bottone3();
         }
+
+        private void Scanna_Load(object sender, EventArgs e)
+        {
+            timer1.Interval = 6000;
+            timer1.Start();
+            //this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void bottone3()
+        {
+            int sxPezzi = 0, dxPezzi = 0, sxSecondi = 0, dxSecondi = 0;
+            string sxProgramma, dxProgramma;
+            try
+            {
+                sxPezzi = Convert.ToInt32(textBox1.Text);
+                dxPezzi = Convert.ToInt32(textBox2.Text);
+                sxSecondi = Convert.ToInt32(textBox5.Text);
+                dxSecondi = Convert.ToInt32(textBox6.Text);
+            }
+            catch { }
+
+            sxProgramma = textBox3.Text;
+            dxProgramma = textBox4.Text;
+
+            string strconn = Properties.Resources.StringaConnessione;
+            SqlConnection con = new SqlConnection(strconn);
+
+            //string stringaconnessione = "Data Source = DESKTOP-CSQ69NN\\SQLEXPRESS; Initial Catalog = Target2021; Integrated Security = True";
+            //SqlConnection connessione = new SqlConnection(stringaconnessione);
+            string query = "UPDATE TaglioOnLine SET ProgTaglio1='" + sxProgramma + "', SecondiCiclo1=" + Convert.ToString(sxSecondi) + ", NumPezzi1=" + Convert.ToString(sxPezzi) + ", ProgTaglio2='" + dxProgramma + "', SecondiCiclo2=" + Convert.ToString(dxSecondi) + ", NumPezzi2=" + Convert.ToString(dxPezzi) + " WHERE IDT=1";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
         private IntPtr getSubWindow()
         {
             IntPtr mainWindow = FindWindow("WindowsForms10.Window.8.app.0.378734a", "CMS Operator Interfacev.5.3.0 - NC Name: 192.168.139.1");
@@ -165,7 +198,7 @@ namespace Target2021
         const int WM_GETTEXTLENGTH = 0x0E;
 
         // FOR DEBUG ONLY - REMOVE!!
-        const int WM_SETTEXT = 0x000c; 
+        const int WM_SETTEXT = 0x000c;
 
         [DllImport("user32.dll", SetLastError = true)]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
@@ -179,40 +212,5 @@ namespace Target2021
         // FOR DEBUG ONLY -- REMOVE!!
         [DllImport("user32.dll")]
         static extern IntPtr GetDlgItem(IntPtr hDlg, int nIDDlgItem);
-
-        private void Scanna_Load(object sender, EventArgs e)
-        {
-            timer1.Interval = 60000;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            int sxPezzi=0, dxPezzi=0, sxSecondi=0, dxSecondi=0;
-            string sxProgramma, dxProgramma;
-            try {
-            sxPezzi = Convert.ToInt32(textBox1.Text);
-            dxPezzi = Convert.ToInt32(textBox2.Text);
-            sxSecondi = Convert.ToInt32(textBox5.Text);
-            dxSecondi = Convert.ToInt32(textBox6.Text);
-            } catch { }
-
-            sxProgramma = textBox3.Text;
-            dxProgramma = textBox4.Text;
-
-            string stringaconnessione = Properties.Resources.StringaConnessione;
-            SqlConnection connessione = new SqlConnection(stringaconnessione);
-            string query = "UPDATE TaglioOnLine SET ProgTaglio1='" + sxProgramma + "', SecondiCiclo1=" + Convert.ToString(sxSecondi) + ", NumPezzi1=" + Convert.ToString(sxPezzi) + ", ProgTaglio2='" + dxProgramma + "', SecondiCiclo2=" + Convert.ToString(dxSecondi) + ", NumPezzi2=" + Convert.ToString(dxPezzi) + " WHERE IDT=1";
-            SqlCommand cmd = new SqlCommand(query, connessione);
-            connessione.Open();
-            cmd.ExecuteNonQuery();
-            connessione.Close();
-            //MessageBox.Show("Operazione completata con successo");
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            bottone1();
-            bottone2();
-        }
     }
 }

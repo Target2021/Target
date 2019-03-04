@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -96,7 +97,7 @@ namespace Target2021
             DataRow[] riga;
             try
             {
-                riga = target2021DataSet.Tables["MacchineTaglio"].Select("IdStampa=" + IdMachT.ToString());
+                riga = target2021DataSet.Tables["MacchineTaglio"].Select("IDTaglio=" + IdMachT.ToString());
                 DescrMachT = riga[0]["Descrizione"].ToString();
             }
             catch { DescrMachT = "Non trovata!"; }
@@ -133,6 +134,35 @@ namespace Target2021
             string CodDima = iDDimaTextBox.Text;
             string DescDima = RecuperaDescDima(CodDima);
             label4.Text = DescDima;
+            try
+            {
+                AggiornaPosizione(CodDima);
+            }
+            catch
+            { }
+        }
+
+        private void AggiornaPosizione(string dima)
+        {
+            string stringaconnessione, sql, corsia, campata;
+            int posizione;
+            SqlCommand comando;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            connessione.Open();
+            sql = "SELECT Corsia FROM Dime WHERE codice ='" + dima + "'";
+            comando = new SqlCommand(sql, connessione);
+            corsia = comando.ExecuteScalar().ToString();
+            sql = "SELECT Campata FROM Dime WHERE codice ='" + dima + "'";
+            comando = new SqlCommand(sql, connessione);
+            campata = comando.ExecuteScalar().ToString();
+            sql = "SELECT Posizione FROM Dime WHERE codice ='" + dima + "'";
+            comando = new SqlCommand(sql, connessione);
+            posizione = Convert.ToInt32(comando.ExecuteScalar());
+            connessione.Close();
+            textBox2.Text = corsia;
+            textBox3.Text = campata;
+            textBox4.Text = posizione.ToString();
         }
 
         private string RecuperaDescDima(string Cod)
@@ -146,6 +176,44 @@ namespace Target2021
             }
             catch { Desc = "Non trovata!"; }
             return Desc;
+        }
+
+        private void nrPezziCorrettiTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void nrPezziCorrettiTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void nrPezziScartatiTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void minutiAttrezzaggioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

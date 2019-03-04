@@ -60,11 +60,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.abbinamentiArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.abbinamentiArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.AbbinamentiArticoliTableAdapter();
+            this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abbinamentiArticoliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -344,7 +347,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(246, 297);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(287, 31);
@@ -370,6 +373,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(123, 28);
             this.textBox2.TabIndex = 8;
+            this.textBox2.Text = "1";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // abbinamentiArticoliBindingSource
@@ -381,12 +385,21 @@
             // 
             this.abbinamentiArticoliTableAdapter.ClearBeforeFill = true;
             // 
+            // dettArticoliBindingSource
+            // 
+            this.dettArticoliBindingSource.DataMember = "DettArticoli";
+            this.dettArticoliBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // dettArticoliTableAdapter
+            // 
+            this.dettArticoliTableAdapter.ClearBeforeFill = true;
+            // 
             // CercaArticolo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(553, 340);
+            this.ClientSize = new System.Drawing.Size(553, 348);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -401,6 +414,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.abbinamentiArticoliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,5 +453,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.BindingSource abbinamentiArticoliBindingSource;
         private Target2021DataSetTableAdapters.AbbinamentiArticoliTableAdapter abbinamentiArticoliTableAdapter;
+        private System.Windows.Forms.BindingSource dettArticoliBindingSource;
+        private Target2021DataSetTableAdapters.DettArticoliTableAdapter dettArticoliTableAdapter;
     }
 }

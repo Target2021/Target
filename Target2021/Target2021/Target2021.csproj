@@ -247,6 +247,12 @@
     <Compile Include="Anagrafiche\DettAbbinamStampo.Designer.cs">
       <DependentUpon>DettAbbinamStampo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\EliminaAbbinamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\EliminaAbbinamento.Designer.cs">
+      <DependentUpon>EliminaAbbinamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anagrafiche\Fornitore\CodiciSpedizione.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -714,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\DettAbbinamStampo.resx">
       <DependentUpon>DettAbbinamStampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\EliminaAbbinamento.resx">
+      <DependentUpon>EliminaAbbinamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\Fornitore\CodiciSpedizione.resx">
       <DependentUpon>CodiciSpedizione.cs</DependentUpon>
