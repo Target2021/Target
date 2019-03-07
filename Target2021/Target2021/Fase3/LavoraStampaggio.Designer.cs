@@ -60,7 +60,6 @@
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label nrPezziResiduiLabel;
             System.Windows.Forms.Label codArtiDopoStampoLabel;
-            System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label8;
@@ -71,14 +70,11 @@
             System.Windows.Forms.Label label13;
             System.Windows.Forms.Label label14;
             System.Windows.Forms.Label label15;
+            System.Windows.Forms.Label nrLastreUtilizzateLabel;
             this.label1 = new System.Windows.Forms.Label();
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
-            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.iDCommessaTextBox = new System.Windows.Forms.TextBox();
+            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
             this.codCommessaTextBox = new System.Windows.Forms.TextBox();
             this.nrCommessaTextBox = new System.Windows.Forms.TextBox();
             this.dataCommessaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -144,26 +140,31 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nrLastreRichiesteTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.macchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
             this.nrPezziResiduiTextBox = new System.Windows.Forms.TextBox();
             this.codArtiDopoStampoTextBox = new System.Windows.Forms.TextBox();
-            this.movimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientiTableAdapter = new Target2021.Target2021DataSetTableAdapters.clientiTableAdapter();
             this.button13 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button14 = new System.Windows.Forms.Button();
+            this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
+            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.macchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
+            this.movimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
+            this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientiTableAdapter = new Target2021.Target2021DataSetTableAdapters.clientiTableAdapter();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
+            this.nrLastreUtilizzateTextBox = new System.Windows.Forms.TextBox();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -195,7 +196,6 @@
             label3 = new System.Windows.Forms.Label();
             nrPezziResiduiLabel = new System.Windows.Forms.Label();
             codArtiDopoStampoLabel = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -206,15 +206,16 @@
             label13 = new System.Windows.Forms.Label();
             label14 = new System.Windows.Forms.Label();
             label15 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
+            nrLastreUtilizzateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
@@ -525,16 +526,6 @@
             codArtiDopoStampoLabel.TabIndex = 62;
             codArtiDopoStampoLabel.Text = "Articolo stampato:";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(463, 256);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(132, 15);
-            label5.TabIndex = 68;
-            label5.Text = "Nr Lastre utilizzate:";
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -626,6 +617,16 @@
             label15.TabIndex = 70;
             label15.Text = "Scheda lavorazione:";
             // 
+            // nrLastreUtilizzateLabel
+            // 
+            nrLastreUtilizzateLabel.AutoSize = true;
+            nrLastreUtilizzateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nrLastreUtilizzateLabel.Location = new System.Drawing.Point(461, 254);
+            nrLastreUtilizzateLabel.Name = "nrLastreUtilizzateLabel";
+            nrLastreUtilizzateLabel.Size = new System.Drawing.Size(134, 15);
+            nrLastreUtilizzateLabel.TabIndex = 76;
+            nrLastreUtilizzateLabel.Text = "Nr Lastre Utilizzate:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -636,80 +637,6 @@
             this.label1.Size = new System.Drawing.Size(435, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reparto STAMPAGGIO";
-            // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stampiBindingSource
-            // 
-            this.stampiBindingSource.DataMember = "Stampi";
-            this.stampiBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // stampiTableAdapter
-            // 
-            this.stampiTableAdapter.ClearBeforeFill = true;
-            // 
-            // commesseBindingSource
-            // 
-            this.commesseBindingSource.DataMember = "Commesse";
-            this.commesseBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // commesseTableAdapter
-            // 
-            this.commesseTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
-            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
-            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
-            this.tableAdapterManager.ArtFornTableAdapter = null;
-            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
-            this.tableAdapterManager.ArticoliBCTableAdapter = null;
-            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientiTableAdapter = null;
-            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
-            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
-            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
-            this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
-            this.tableAdapterManager.CompatibStampaTableAdapter = null;
-            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
-            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.DettArticoliTableAdapter = null;
-            this.tableAdapterManager.dimensioniTableAdapter = null;
-            this.tableAdapterManager.DimeTableAdapter = null;
-            this.tableAdapterManager.FasiTableAdapter = null;
-            this.tableAdapterManager.FornitoriTableAdapter = null;
-            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
-            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
-            this.tableAdapterManager.LavorazioniTableAdapter = null;
-            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
-            this.tableAdapterManager.MacchineStampoTableAdapter = null;
-            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
-            this.tableAdapterManager.MinuterieTableAdapter = null;
-            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
-            this.tableAdapterManager.OrdFornDettTableAdapter = null;
-            this.tableAdapterManager.OrdFornTestTableAdapter = null;
-            this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
-            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
-            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
-            this.tableAdapterManager.PrimeTableAdapter = null;
-            this.tableAdapterManager.SchedulazioneTableAdapter = null;
-            this.tableAdapterManager.StampiTableAdapter = this.stampiTableAdapter;
-            this.tableAdapterManager.SuperCommessaTableAdapter = null;
-            this.tableAdapterManager.sysdiagramsTableAdapter = null;
-            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
-            this.tableAdapterManager.TempStampTableAdapter = null;
-            this.tableAdapterManager.TempTableAdapter = null;
-            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.TipoCommessaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // iDCommessaTextBox
             // 
@@ -722,6 +649,16 @@
             this.iDCommessaTextBox.TabIndex = 2;
             this.iDCommessaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.iDCommessaTextBox.TextChanged += new System.EventHandler(this.iDCommessaTextBox_TextChanged);
+            // 
+            // commesseBindingSource
+            // 
+            this.commesseBindingSource.DataMember = "Commesse";
+            this.commesseBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // codCommessaTextBox
             // 
@@ -1415,15 +1352,6 @@
             this.label4.TabIndex = 61;
             this.label4.Text = "Macchina";
             // 
-            // macchineStampoBindingSource
-            // 
-            this.macchineStampoBindingSource.DataMember = "MacchineStampo";
-            this.macchineStampoBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // macchineStampoTableAdapter
-            // 
-            this.macchineStampoTableAdapter.ClearBeforeFill = true;
-            // 
             // nrPezziResiduiTextBox
             // 
             this.nrPezziResiduiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziResidui", true));
@@ -1443,20 +1371,11 @@
             this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(100, 20);
             this.codArtiDopoStampoTextBox.TabIndex = 63;
             // 
-            // movimentiMagazzinoBindingSource
-            // 
-            this.movimentiMagazzinoBindingSource.DataMember = "MovimentiMagazzino";
-            this.movimentiMagazzinoBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // movimentiMagazzinoTableAdapter
-            // 
-            this.movimentiMagazzinoTableAdapter.ClearBeforeFill = true;
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Red;
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(559, 490);
+            this.button5.Location = new System.Drawing.Point(352, 573);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(98, 22);
             this.button5.TabIndex = 64;
@@ -1468,7 +1387,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.Red;
             this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(559, 509);
+            this.button6.Location = new System.Drawing.Point(449, 573);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(98, 22);
             this.button6.TabIndex = 65;
@@ -1480,7 +1399,7 @@
             // 
             this.button7.BackColor = System.Drawing.Color.Red;
             this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(559, 528);
+            this.button7.Location = new System.Drawing.Point(545, 573);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(98, 22);
             this.button7.TabIndex = 66;
@@ -1492,7 +1411,7 @@
             // 
             this.button8.BackColor = System.Drawing.Color.Red;
             this.button8.Enabled = false;
-            this.button8.Location = new System.Drawing.Point(559, 546);
+            this.button8.Location = new System.Drawing.Point(636, 573);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(98, 22);
             this.button8.TabIndex = 67;
@@ -1500,23 +1419,10 @@
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Visible = false;
             // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(601, 253);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(32, 21);
-            this.textBox4.TabIndex = 69;
-            this.textBox4.Text = "0";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
-            // 
             // textBox5
             // 
             this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(457, 422);
+            this.textBox5.Location = new System.Drawing.Point(466, 421);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(82, 20);
             this.textBox5.TabIndex = 71;
@@ -1525,7 +1431,7 @@
             // 
             this.button12.BackgroundImage = global::Target2021.Properties.Resources.Excel;
             this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.Location = new System.Drawing.Point(635, 421);
+            this.button12.Location = new System.Drawing.Point(635, 416);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(50, 47);
             this.button12.TabIndex = 72;
@@ -1542,21 +1448,12 @@
             this.label16.TabIndex = 73;
             this.label16.Text = "Cliente";
             // 
-            // clientiBindingSource
-            // 
-            this.clientiBindingSource.DataMember = "clienti";
-            this.clientiBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // clientiTableAdapter
-            // 
-            this.clientiTableAdapter.ClearBeforeFill = true;
-            // 
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(545, 420);
+            this.button13.Location = new System.Drawing.Point(553, 420);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(88, 22);
+            this.button13.Size = new System.Drawing.Size(80, 22);
             this.button13.TabIndex = 74;
             this.button13.Text = "MODIFICA";
             this.button13.UseVisualStyleBackColor = true;
@@ -1565,6 +1462,108 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button14
+            // 
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(553, 510);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(114, 62);
+            this.button14.TabIndex = 75;
+            this.button14.Text = "Stampa etichetta";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // stampiBindingSource
+            // 
+            this.stampiBindingSource.DataMember = "Stampi";
+            this.stampiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // stampiTableAdapter
+            // 
+            this.stampiTableAdapter.ClearBeforeFill = true;
+            // 
+            // commesseTableAdapter
+            // 
+            this.commesseTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
+            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
+            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
+            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
+            this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
+            this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
+            this.tableAdapterManager.CompatibStampaTableAdapter = null;
+            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
+            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
+            this.tableAdapterManager.DimeTableAdapter = null;
+            this.tableAdapterManager.FasiTableAdapter = null;
+            this.tableAdapterManager.FornitoriTableAdapter = null;
+            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
+            this.tableAdapterManager.MacchineStampoTableAdapter = null;
+            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
+            this.tableAdapterManager.MinuterieTableAdapter = null;
+            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
+            this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.SchedulazioneTableAdapter = null;
+            this.tableAdapterManager.StampiTableAdapter = this.stampiTableAdapter;
+            this.tableAdapterManager.SuperCommessaTableAdapter = null;
+            this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.TempStampTableAdapter = null;
+            this.tableAdapterManager.TempTableAdapter = null;
+            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.TipoCommessaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
+            // 
+            // macchineStampoBindingSource
+            // 
+            this.macchineStampoBindingSource.DataMember = "MacchineStampo";
+            this.macchineStampoBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // macchineStampoTableAdapter
+            // 
+            this.macchineStampoTableAdapter.ClearBeforeFill = true;
+            // 
+            // movimentiMagazzinoBindingSource
+            // 
+            this.movimentiMagazzinoBindingSource.DataMember = "MovimentiMagazzino";
+            this.movimentiMagazzinoBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // movimentiMagazzinoTableAdapter
+            // 
+            this.movimentiMagazzinoTableAdapter.ClearBeforeFill = true;
+            // 
+            // clientiBindingSource
+            // 
+            this.clientiBindingSource.DataMember = "clienti";
+            this.clientiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // clientiTableAdapter
+            // 
+            this.clientiTableAdapter.ClearBeforeFill = true;
             // 
             // dettArticoliBindingSource
             // 
@@ -1575,19 +1574,32 @@
             // 
             this.dettArticoliTableAdapter.ClearBeforeFill = true;
             // 
+            // nrLastreUtilizzateTextBox
+            // 
+            this.nrLastreUtilizzateTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.nrLastreUtilizzateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrLastreUtilizzate", true));
+            this.nrLastreUtilizzateTextBox.Location = new System.Drawing.Point(601, 252);
+            this.nrLastreUtilizzateTextBox.Name = "nrLastreUtilizzateTextBox";
+            this.nrLastreUtilizzateTextBox.Size = new System.Drawing.Size(32, 20);
+            this.nrLastreUtilizzateTextBox.TabIndex = 77;
+            this.nrLastreUtilizzateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nrLastreUtilizzateTextBox.TextChanged += new System.EventHandler(this.nrLastreUtilizzateTextBox_TextChanged);
+            this.nrLastreUtilizzateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nrLastreUtilizzateTextBox_KeyPress);
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1036, 592);
+            this.ClientSize = new System.Drawing.Size(1036, 615);
+            this.Controls.Add(nrLastreUtilizzateLabel);
+            this.Controls.Add(this.nrLastreUtilizzateTextBox);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(label15);
-            this.Controls.Add(label5);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -1660,9 +1672,8 @@
             this.Name = "LavoraStampaggio";
             this.Text = "Fase di lavorazione: stampaggio";
             this.Load += new System.EventHandler(this.LavoraStampaggio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1674,6 +1685,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineStampoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).EndInit();
@@ -1750,7 +1762,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.DateTimePicker oSFG3DateTimePicker;
         private System.Windows.Forms.DateTimePicker oISG3DateTimePicker;
         private System.Windows.Forms.TextBox attG3TextBox;
@@ -1778,5 +1789,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource dettArticoliBindingSource;
         private Target2021DataSetTableAdapters.DettArticoliTableAdapter dettArticoliTableAdapter;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TextBox nrLastreUtilizzateTextBox;
     }
 }

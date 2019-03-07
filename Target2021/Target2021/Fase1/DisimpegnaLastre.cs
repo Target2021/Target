@@ -29,7 +29,7 @@ namespace Target2021.Fase1
         private void PopolaGridView()
         {
             // Popola il GV con elenco commesse (in qualsiasi stato) con ImpegnataMatPrima > 0 e TipoCommessa = 1
-            commesseBindingSource.Filter = "ImpegnataMatPrima > 0 AND TipoCommessa = 1";
+            commesseBindingSource.Filter = "ImpegnataMatPrima > 0 AND TipoCommessa = 1 AND Stato<4";
         }
 
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)

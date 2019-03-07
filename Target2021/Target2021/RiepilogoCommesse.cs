@@ -58,7 +58,7 @@ namespace Target2021
 
         private void button3_Click(object sender, EventArgs e)
         {
-            i = 1;
+            i = 0;
             passaggio();
         }
 
@@ -70,7 +70,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            i = 3;
+            i = 13;
             passaggio();
         }
 
@@ -96,10 +96,12 @@ namespace Target2021
 
         private void Calcolo()
         {
-            string query_of1,query_of2,query_of3,query_s1,query_s2,query_s3,query_t1,query_t2,query_t3;
+            string query_of1,query_of2,query_of3,query_s1,query_s2,query_s3,query_t1,query_t2,query_t3, query_of11, query_of12;
             query_of1 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND Stato=0";
-            query_of2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato=1 OR Stato=2)";
-            query_of3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato>2)";
+            query_of2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato=2)";
+            query_of3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato>3)";
+            query_of11 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato=3)";
+            query_of12 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato=1)";
             query_s1 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 2 AND Stato=0";
             query_s2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 2 AND Stato=1";
             query_s3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 2 AND Stato=2";
@@ -116,6 +118,8 @@ namespace Target2021
             SqlCommand comando6 = new SqlCommand(query_t1, connessione);
             SqlCommand comando7 = new SqlCommand(query_t2, connessione);
             SqlCommand comando8 = new SqlCommand(query_t3, connessione);
+            SqlCommand comando11 = new SqlCommand(query_of11, connessione);
+            SqlCommand comando12 = new SqlCommand(query_of12, connessione);
             connessione.Open();
             button1.Text = Convert.ToString(comando.ExecuteScalar());
             button2.Text = Convert.ToString(comando1.ExecuteScalar());
@@ -126,8 +130,11 @@ namespace Target2021
             button7.Text = Convert.ToString(comando6.ExecuteScalar());
             button8.Text = Convert.ToString(comando7.ExecuteScalar());
             button9.Text = Convert.ToString(comando8.ExecuteScalar());
+            button11.Text = Convert.ToString(comando11.ExecuteScalar());
+            button12.Text = Convert.ToString(comando12.ExecuteScalar());
             connessione.Close();
         }
+
         private void passaggio()
         {
             Dett_Riepilogo_Commesse dett = new Dett_Riepilogo_Commesse(i);
@@ -138,6 +145,18 @@ namespace Target2021
         {
             ControllaAbbinamenti abbina = new ControllaAbbinamenti();
             abbina.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            i = 1;
+            passaggio();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            i = 3;
+            passaggio();
         }
     }
 }

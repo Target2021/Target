@@ -19,6 +19,11 @@ namespace Target2021.Report
         DateTime datacarico;
         string CodLas, Descrizione, x2, y2, z2;
 
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void reportViewer1_RenderingComplete(object sender, RenderingCompleteEventArgs e)
         {
             reportViewer1.PrintDialog();

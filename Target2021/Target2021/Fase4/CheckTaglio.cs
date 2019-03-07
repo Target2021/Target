@@ -22,6 +22,7 @@ namespace Target2021
         private void CheckTaglio_Load(object sender, EventArgs e)
         {
             aggiorna();
+            WindowState = FormWindowState.Maximized;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,11 +33,14 @@ namespace Target2021
         private void aggiorna()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT taglio.CodCommessa, taglio.NrCommessa, taglio.DataCommessa, taglio.IDCliente, taglio.DescrArticolo, taglio.IDMachTaglio, taglio.IDDima " +
+            string query = "SELECT taglio.CodCommessa AS Codice, taglio.NrCommessa AS Numero, taglio.DataCommessa AS Data, taglio.IDCliente, taglio.DescrArticolo, taglio.IDMachTaglio, macchina.Descrizione AS Macchinario, taglio.IDDima " +
                 "FROM Commesse AS taglio " +
                 "INNER JOIN Commesse AS stampo " +
                 "ON taglio.NrCommessa = stampo.NrCommessa " +
-                "WHERE stampo.TipoCommessa = 2 AND taglio.TipoCommessa = 3 AND(taglio.Stato = 0 OR taglio.Stato = 1) AND (stampo.Stato = 0 OR stampo.Stato = 1 OR stampo.Stato = 2)";
+                "INNER JOIN MacchineTaglio AS macchina " +
+                "ON taglio.IDMachTaglio = macchina.IDTaglio " +
+                "WHERE stampo.TipoCommessa = 2 AND taglio.TipoCommessa = 3 AND(taglio.Stato = 0 OR taglio.Stato = 1) AND (stampo.Stato = 0 OR stampo.Stato = 1 OR stampo.Stato = 2)" +
+                "ORDER BY stampo.Stato DESC";
             SqlConnection con = new SqlConnection(stringa);
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
@@ -57,11 +61,11 @@ namespace Target2021
 
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
-                numcom = Convert.ToInt32(riga.Cells["NrCommessa"].Value);
+                numcom = Convert.ToInt32(riga.Cells["Numero"].Value);
                 stato=ControllaStatoStampo(numcom);
                 if (stato == 0)
                 {
-                    riga.DefaultCellStyle.BackColor = Color.Red;
+                    riga.DefaultCellStyle.BackColor = Color.Orange;
                 }
                 if (stato == 1)
                 {
@@ -69,7 +73,7 @@ namespace Target2021
                 }
                 if (stato == 2)
                 {
-                    riga.DefaultCellStyle.BackColor = Color.Green;
+                    riga.DefaultCellStyle.BackColor = Color.LightGreen;
                 }
             }
             dataGridView1 .Update();
@@ -102,11 +106,12 @@ namespace Target2021
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string idcommessa = "T12";
-            idcommessa = dataGridView1.Rows[e.RowIndex].Cells["CodCommessa"].Value.ToString();
+            string idcommessa;
+            idcommessa = dataGridView1.Rows[e.RowIndex].Cells["Codice"].Value.ToString();
 
             LavoraTaglio_cs LavTag = new LavoraTaglio_cs(idcommessa);
-            LavTag.Show();
+            LavTag.ShowDialog();
+            aggiorna();
         }
     }
 }

@@ -644,6 +644,12 @@
     <Compile Include="Stampe\SEtichette.Designer.cs">
       <DependentUpon>SEtichette.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stampe\SSemilavorati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stampe\SSemilavorati.Designer.cs">
+      <DependentUpon>SSemilavorati.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stampe\StampaOrdFor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -873,6 +879,7 @@
     <EmbeddedResource Include="Report\RCaricoLastre.rdlc" />
     <EmbeddedResource Include="Report\RCommessa.rdlc" />
     <EmbeddedResource Include="Report\REtichetta.rdlc" />
+    <EmbeddedResource Include="Report\RSemilavorati.rdlc" />
     <EmbeddedResource Include="Report\WFCaricoLastra.resx">
       <DependentUpon>WFCaricoLastra.cs</DependentUpon>
     </EmbeddedResource>
@@ -932,6 +939,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stampe\SEtichette.resx">
       <DependentUpon>SEtichette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stampe\SSemilavorati.resx">
+      <DependentUpon>SSemilavorati.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stampe\StampaOrdFor.resx">
       <DependentUpon>StampaOrdFor.cs</DependentUpon>

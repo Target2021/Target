@@ -97,6 +97,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.movimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
+            this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
             codCommessaLabel = new System.Windows.Forms.Label();
             dataCommessaLabel = new System.Windows.Forms.Label();
             iDClienteLabel = new System.Windows.Forms.Label();
@@ -126,6 +131,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // codCommessaLabel
@@ -263,7 +270,7 @@
             // 
             dataTermineLabel.AutoSize = true;
             dataTermineLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataTermineLabel.Location = new System.Drawing.Point(771, 277);
+            dataTermineLabel.Location = new System.Drawing.Point(812, 278);
             dataTermineLabel.Name = "dataTermineLabel";
             dataTermineLabel.Size = new System.Drawing.Size(93, 16);
             dataTermineLabel.TabIndex = 57;
@@ -338,6 +345,26 @@
             label1.Size = new System.Drawing.Size(102, 16);
             label1.TabIndex = 104;
             label1.Text = "Nr Pezzi tagliati:";
+            // 
+            // progrTaglio1Label
+            // 
+            progrTaglio1Label.AutoSize = true;
+            progrTaglio1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progrTaglio1Label.Location = new System.Drawing.Point(812, 194);
+            progrTaglio1Label.Name = "progrTaglio1Label";
+            progrTaglio1Label.Size = new System.Drawing.Size(93, 16);
+            progrTaglio1Label.TabIndex = 112;
+            progrTaglio1Label.Text = "Progr Taglio1:";
+            // 
+            // progrTaglio2Label
+            // 
+            progrTaglio2Label.AutoSize = true;
+            progrTaglio2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            progrTaglio2Label.Location = new System.Drawing.Point(812, 220);
+            progrTaglio2Label.Name = "progrTaglio2Label";
+            progrTaglio2Label.Size = new System.Drawing.Size(93, 16);
+            progrTaglio2Label.TabIndex = 113;
+            progrTaglio2Label.Text = "Progr Taglio2:";
             // 
             // target2021DataSet
             // 
@@ -561,6 +588,7 @@
             // 
             // dataTermineDateTimePicker
             // 
+            this.dataTermineDateTimePicker.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataTermineDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "DataTermine", true));
             this.dataTermineDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataTermineDateTimePicker.Location = new System.Drawing.Point(912, 273);
@@ -570,6 +598,7 @@
             // 
             // nrPezziCorrettiTextBox
             // 
+            this.nrPezziCorrettiTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.nrPezziCorrettiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziCorretti", true));
             this.nrPezziCorrettiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrPezziCorrettiTextBox.Location = new System.Drawing.Point(775, 322);
@@ -582,6 +611,7 @@
             // 
             // nrPezziScartatiTextBox
             // 
+            this.nrPezziScartatiTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.nrPezziScartatiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "NrPezziScartati", true));
             this.nrPezziScartatiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nrPezziScartatiTextBox.Location = new System.Drawing.Point(886, 322);
@@ -594,6 +624,7 @@
             // 
             // secondiCicloTaglioTextBox
             // 
+            this.secondiCicloTaglioTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.secondiCicloTaglioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "SecondiCicloTaglio", true));
             this.secondiCicloTaglioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.secondiCicloTaglioTextBox.Location = new System.Drawing.Point(911, 378);
@@ -604,6 +635,7 @@
             // 
             // minutiAttrezzaggioTextBox
             // 
+            this.minutiAttrezzaggioTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.minutiAttrezzaggioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "MinutiAttrezzaggio", true));
             this.minutiAttrezzaggioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.minutiAttrezzaggioTextBox.Location = new System.Drawing.Point(911, 350);
@@ -635,9 +667,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(917, 426);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(987, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 33);
+            this.button1.Size = new System.Drawing.Size(124, 33);
             this.button1.TabIndex = 103;
             this.button1.Text = "Vedi lavorazione";
             this.button1.UseVisualStyleBackColor = true;
@@ -645,6 +678,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(1004, 322);
             this.textBox1.Name = "textBox1";
@@ -658,7 +692,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(340, 73);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(430, 386);
+            this.pictureBox1.Size = new System.Drawing.Size(425, 386);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 106;
             this.pictureBox1.TabStop = false;
@@ -716,11 +750,11 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(999, 16);
+            this.button2.Location = new System.Drawing.Point(771, 423);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 36);
             this.button2.TabIndex = 111;
-            this.button2.Text = "SALVA";
+            this.button2.Text = "SALVA DATI";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -752,16 +786,6 @@
             this.label6.TabIndex = 112;
             this.label6.Text = "Posizione Dima:";
             // 
-            // progrTaglio1Label
-            // 
-            progrTaglio1Label.AutoSize = true;
-            progrTaglio1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            progrTaglio1Label.Location = new System.Drawing.Point(812, 194);
-            progrTaglio1Label.Name = "progrTaglio1Label";
-            progrTaglio1Label.Size = new System.Drawing.Size(93, 16);
-            progrTaglio1Label.TabIndex = 112;
-            progrTaglio1Label.Text = "Progr Taglio1:";
-            // 
             // progrTaglio1TextBox
             // 
             this.progrTaglio1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "ProgrTaglio1", true));
@@ -772,16 +796,6 @@
             this.progrTaglio1TextBox.Size = new System.Drawing.Size(200, 22);
             this.progrTaglio1TextBox.TabIndex = 113;
             this.progrTaglio1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // progrTaglio2Label
-            // 
-            progrTaglio2Label.AutoSize = true;
-            progrTaglio2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            progrTaglio2Label.Location = new System.Drawing.Point(812, 220);
-            progrTaglio2Label.Name = "progrTaglio2Label";
-            progrTaglio2Label.Size = new System.Drawing.Size(93, 16);
-            progrTaglio2Label.TabIndex = 113;
-            progrTaglio2Label.Text = "Progr Taglio2:";
             // 
             // progrTaglio2TextBox
             // 
@@ -824,13 +838,43 @@
             this.textBox4.TabIndex = 117;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(895, 423);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(188, 36);
+            this.button3.TabIndex = 118;
+            this.button3.Text = "CHIUDI COMMESSA";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // movimentiMagazzinoBindingSource
+            // 
+            this.movimentiMagazzinoBindingSource.DataMember = "MovimentiMagazzino";
+            this.movimentiMagazzinoBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // movimentiMagazzinoTableAdapter
+            // 
+            this.movimentiMagazzinoTableAdapter.ClearBeforeFill = true;
+            // 
+            // giacenzeMagazziniBindingSource
+            // 
+            this.giacenzeMagazziniBindingSource.DataMember = "GiacenzeMagazzini";
+            this.giacenzeMagazziniBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // giacenzeMagazziniTableAdapter
+            // 
+            this.giacenzeMagazziniTableAdapter.ClearBeforeFill = true;
+            // 
             // LavoraTaglio_cs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1154, 479);
+            this.ClientSize = new System.Drawing.Size(1148, 485);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -898,6 +942,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -950,5 +996,10 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource movimentiMagazzinoBindingSource;
+        private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
+        private System.Windows.Forms.BindingSource giacenzeMagazziniBindingSource;
+        private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
     }
 }

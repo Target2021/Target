@@ -37,7 +37,17 @@ namespace Target2021
         }
         private void RegistraUtenti_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
             this.utentiTableAdapter.Fill(this.target2021DataSet.Utenti);
+            this.utentiTableAdapter.Fill(this.target2021DataSet.Utenti);
+        }
+
+        private void utentiBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.utentiBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+
         }
     }
 }

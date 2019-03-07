@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Target2021.Stampe;
 
 namespace Target2021
 {
@@ -487,7 +488,7 @@ namespace Target2021
                 CodArt = iDMateriaPrimaTextBox.Text;
                 Causale = codCommessaTextBox.Text;
                 CS = "S";
-                qta = Convert.ToInt32(textBox4.Text);
+                qta = Convert.ToInt32(nrLastreRichiesteTextBox.Text);   //textBox4.Text);
                 BarCode = codCommessaTextBox.Text;
                 NrOrdine = nrCommessaTextBox.Text;
                 datamov = dataTermineDateTimePicker.Value;
@@ -502,7 +503,7 @@ namespace Target2021
 
         private void GiacenzaLastre()
         {
-            int qta = Convert.ToInt32(textBox4.Text);
+            int qta = Convert.ToInt32(nrLastreUtilizzateTextBox.Text);  //textBox4.Text);
             string CodArt = iDMateriaPrimaTextBox.Text;
             AggiornaGiacenzeS(qta, CodArt);
         }
@@ -556,19 +557,6 @@ namespace Target2021
             {
                 e.Handled = true;
             }
-        }
-
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            textBox4.BackColor = Color.White;
         }
 
         private void nrPezziScartatiTextBox_TextChanged(object sender, EventArgs e)
@@ -643,6 +631,35 @@ namespace Target2021
                 dettArticoliTableAdapter.Update(target2021DataSet);
             }
             catch { }
+        }
+
+        private void nrLastreUtilizzateTextBox_TextChanged(object sender, EventArgs e)
+        {
+            nrLastreUtilizzateTextBox.BackColor = Color.White;
+        }
+
+        private void nrLastreUtilizzateTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            // Formato A4
+            // CodCommessa (ad es. S55)
+            // CodArticolo uscita fase stampaggio (ad es. ITA.04.033) (+ grande)
+            // Descrizione articolo -> (ad es. pinco pallino)
+            // Quantità -> far inserire manualmente all'operatore (>0) + grande)
+            string CodCommessa = codCommessaTextBox.Text;
+            string CodArticolo = codArtiDopoStampoTextBox.Text;
+            string DescArticolo = descrArticoloTextBox.Text;
+            //string Qta = nrPezziCorrettiTextBox.Text;
+            string Qta = Microsoft.VisualBasic.Interaction.InputBox("Quantità pezzi sul bancale?", "NUMERO PEZZI", "1", -1, -1);
+            SSemilavorati stampa = new SSemilavorati(CodCommessa, CodArticolo, DescArticolo, Qta);
+            stampa.Show();
         }
     }
 }

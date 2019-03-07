@@ -39,11 +39,11 @@
             this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.movimentiMagazzinoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -200,6 +200,13 @@
             this.movimentiMagazzinoBindingNavigator.TabIndex = 4;
             this.movimentiMagazzinoBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
+            this.bindingNavigatorCountItem.Text = "di {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -232,16 +239,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posizione corrente";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(34, 22);
-            this.bindingNavigatorCountItem.Text = "di {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Numero totale di elementi";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -264,7 +264,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // movimentiMagazzinoDataGridView
@@ -352,15 +352,15 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
-            this.dataGridViewTextBoxColumn2.Width = 128;
+            this.dataGridViewTextBoxColumn2.Width = 123;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "idPrime";
-            this.dataGridViewTextBoxColumn3.HeaderText = "idPrime";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID Prime";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 87;
+            this.dataGridViewTextBoxColumn3.Width = 94;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -369,7 +369,7 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
-            this.dataGridViewTextBoxColumn4.Width = 98;
+            this.dataGridViewTextBoxColumn4.Width = 95;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -378,24 +378,23 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 85;
+            this.dataGridViewTextBoxColumn5.Width = 82;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "idSemilavorati";
-            this.dataGridViewTextBoxColumn6.HeaderText = "idSemilavorati";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ID Semilavorati";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 139;
+            this.dataGridViewTextBoxColumn6.Width = 130;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "idArticoli";
-            this.dataGridViewTextBoxColumn7.HeaderText = "idArticoli";
+            this.dataGridViewTextBoxColumn7.HeaderText = "ID Articoli";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 96;
+            this.dataGridViewTextBoxColumn7.Width = 95;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -420,7 +419,7 @@
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Visible = false;
-            this.dataGridViewTextBoxColumn10.Width = 96;
+            this.dataGridViewTextBoxColumn10.Width = 93;
             // 
             // dataGridViewTextBoxColumn11
             // 

@@ -42,7 +42,13 @@ namespace Target2021
                 checkStampaggio.MdiParent = this;
                 checkStampaggio.Show();
             }
-
+            if (livello == 3)
+            {
+                menuStrip1.Visible = false;
+                CheckTaglio taglia = new CheckTaglio();
+                taglia.MdiParent = this;
+                taglia.Show();
+            }
         }
        
         private void dettaglioToolStripMenuItem_Click(object sender, EventArgs e)

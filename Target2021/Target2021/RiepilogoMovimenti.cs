@@ -41,7 +41,7 @@ namespace Target2021
             if (Filter.Text == "Materia prima")  movimentiMagazzinoBindingSource.Filter = "idPrime LIKE '*" + textBox1.Text + "*'";
             if (Filter.Text == "Stampi") movimentiMagazzinoBindingSource.Filter = "idStampi ='" + textBox1.Text + "'";
             if (Filter.Text == "Dime") movimentiMagazzinoBindingSource.Filter = "idDime ='" + textBox1.Text + "'";
-            if (Filter.Text == "Semilavorati") movimentiMagazzinoBindingSource.Filter = "idSemilavorati LIKE ='" + textBox1.Text + "'";
+            if (Filter.Text == "Semilavorati") movimentiMagazzinoBindingSource.Filter = "idSemilavorati LIKE '*" + textBox1.Text + "*'";
             if (Filter.Text == "Articoli") movimentiMagazzinoBindingSource.Filter = "idArticoli LIKE '*" + textBox1.Text + "*'";
             if (textBox1.Text == "") { movimentiMagazzinoBindingSource.Filter = ""; }
 

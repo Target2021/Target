@@ -38,7 +38,9 @@ namespace Target2021.Anagrafiche
 
         private void filtra(object sender, EventArgs e)
         {
-            giacenzeMagazziniBindingSource.Filter = "idPrime LIKE '*" + textBox1.Text + "*'";
+            if (comboBox1.Text == "Materie prime") giacenzeMagazziniBindingSource.Filter = "idPrime LIKE '*" + textBox1.Text + "*'";
+            if (comboBox1.Text == "Semilavorati") giacenzeMagazziniBindingSource.Filter = "idSemilavorati LIKE '*" + textBox1.Text + "*'";
+            if (comboBox1.Text == "Prodotti finiti") giacenzeMagazziniBindingSource.Filter = "idArticoli LIKE '*" + textBox1.Text + "*'";
         }
     }
 }

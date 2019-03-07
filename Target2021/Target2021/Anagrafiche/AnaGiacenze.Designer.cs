@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaGiacenze));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
@@ -51,6 +51,8 @@
             this.giacenzeMagazziniBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.giacenzeMagazziniDataGridView = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,8 +69,7 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingNavigator)).BeginInit();
@@ -125,6 +126,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
@@ -133,6 +135,8 @@
             this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.TempStampTableAdapter = null;
+            this.tableAdapterManager.TempTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -281,14 +285,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.giacenzeMagazziniDataGridView.AutoGenerateColumns = false;
             this.giacenzeMagazziniDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.giacenzeMagazziniDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.giacenzeMagazziniDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.giacenzeMagazziniDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.giacenzeMagazziniDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -308,18 +312,37 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
             this.giacenzeMagazziniDataGridView.DataSource = this.giacenzeMagazziniBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.giacenzeMagazziniDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.giacenzeMagazziniDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.giacenzeMagazziniDataGridView.Location = new System.Drawing.Point(0, 81);
             this.giacenzeMagazziniDataGridView.Name = "giacenzeMagazziniDataGridView";
             this.giacenzeMagazziniDataGridView.Size = new System.Drawing.Size(1258, 339);
             this.giacenzeMagazziniDataGridView.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(131, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Cod. Articolo:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(396, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(141, 24);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.filtra);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -328,6 +351,7 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 107;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -349,6 +373,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "idStampi";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Visible = false;
+            this.dataGridViewTextBoxColumn4.Width = 90;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -356,20 +381,21 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "idDime";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 79;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "idSemilavorati";
             this.dataGridViewTextBoxColumn6.HeaderText = "idSemilavorati";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
+            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "idArticoli";
             this.dataGridViewTextBoxColumn7.HeaderText = "idArticoli";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
+            this.dataGridViewTextBoxColumn7.Width = 88;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -405,6 +431,7 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "PosizioneA";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Visible = false;
+            this.dataGridViewTextBoxColumn12.Width = 108;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -412,6 +439,7 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "PosizioneB";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.Visible = false;
+            this.dataGridViewTextBoxColumn13.Width = 109;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -419,6 +447,7 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "PosizioneC";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Visible = false;
+            this.dataGridViewTextBoxColumn14.Width = 110;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -434,24 +463,19 @@
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.Width = 155;
             // 
-            // label2
+            // comboBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(131, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Cod. Articolo:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(235, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 24);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextChanged += new System.EventHandler(this.filtra);
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Materie prime",
+            "Semilavorati",
+            "Prodotti finiti"});
+            this.comboBox1.Location = new System.Drawing.Point(235, 51);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(155, 26);
+            this.comboBox1.TabIndex = 5;
+            this.comboBox1.Text = "Materie prime";
             // 
             // AnaGiacenze
             // 
@@ -459,6 +483,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1258, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.giacenzeMagazziniDataGridView);
@@ -517,5 +542,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
