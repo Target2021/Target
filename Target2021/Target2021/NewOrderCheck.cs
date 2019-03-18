@@ -319,6 +319,7 @@ namespace Target2021
                     com.ProgrTaglio1 = PT1;
                     PT2 = RecuperaProgTaglio(CodiceArticolo, i, 2);
                     com.ProgrTaglio2 = PT2;
+                    percentuale = RecuperaPercentualeLastra(CodiceArticolo);
                     com.PercentualeUtilizzoLastra = percentuale;
                     MachStamp = RecuperaMacchinaStampa(CodiceArticolo);
                     com.Mps = MachStamp;
@@ -335,6 +336,21 @@ namespace Target2021
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
                 return 0;
             }
+        }
+
+        private int RecuperaPercentualeLastra(string ca)
+        {
+            int risultato = 0;
+            string filtro = "lavorazione = 2 AND codice_articolo = '" + ca + "'";
+            try
+            {
+                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(PercentualeLastra)", filtro);
+            }
+            catch
+            {
+                risultato = 100;
+            }
+            return risultato;
         }
 
         private int RecuperaMacchinaTaglio(string ca)
@@ -650,8 +666,8 @@ namespace Target2021
 
         private int RecuperaNrLasRic(string codart, int i, int NrOrd)
         {
-            int NrPezziRichiesti, Lastre=0, NrPezziAStampo;
-            NrPezziRichiesti = RecuperaNrPezzi(NrOrd);
+            int AbbinamentoStampo = 0, NrPezziAStampo;
+            AbbinamentoStampo = RecuperaAbbinamentoStampo(codart);
             string stringa_connessione;
             stringa_connessione = Properties.Resources.StringaConnessione;
             SqlConnection conn = new SqlConnection(stringa_connessione);
@@ -666,16 +682,60 @@ namespace Target2021
             {
                 NrPezziAStampo = 1;
             }
+            conn.Close();
+            if (AbbinamentoStampo == 0)
+            { 
+                int NrPezziRichiesti, Lastre = 0;
+                NrPezziRichiesti = RecuperaNrPezzi(NrOrd);
+                try
+                {
+                    Lastre = (int)Math.Ceiling((double)(NrPezziRichiesti / NrPezziAStampo));
+                }
+                catch (DivideByZeroException e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return Lastre;
+            }
+            else
+            {
+                int NrPezziRichiesti, Lastre = 0, PercLastra;
+                double percentuale;
+                NrPezziRichiesti = RecuperaNrPezzi(NrOrd);
+                PercLastra = RecuperaPercentualeLastra(codart);
+                try
+                {
+                    percentuale = (double)PercLastra / 100;
+                    Lastre = (int)Math.Ceiling(NrPezziRichiesti * percentuale);
+                    Lastre = (int)Math.Ceiling((double)(Lastre / NrPezziAStampo));
+                }
+                catch (DivideByZeroException e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                return Lastre;
+            }
+        }
+
+        private int RecuperaAbbinamentoStampo(string codart)
+        {
+            int AbbStamp = 0;
+            string stringaconnessione, sql;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "select MAX(AbbinamentoStampo) from DettARticoli WHERE codice_articolo = '"+codart+"'";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
             try
             {
-                Lastre = (int)Math.Ceiling((double)(NrPezziRichiesti / NrPezziAStampo));
+                AbbStamp = Convert.ToInt32(comando.ExecuteScalar());
             }
-            catch (DivideByZeroException e)
+            catch
             {
-                MessageBox.Show(e.Message);
+                AbbStamp = 0;
             }
-            conn.Close();
-            return Lastre;
+            connessione.Close();
+            return AbbStamp;
         }
 
         private string RecuperaProgTaglio(string codart, int i, int lato)

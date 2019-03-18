@@ -328,6 +328,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 140);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1326, 234);
             this.dataGridView1.TabIndex = 1;
@@ -356,10 +357,12 @@
             // tableAdapterManager
             // 
             this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
+            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
             this.tableAdapterManager.AnaMagazziniTableAdapter = null;
             this.tableAdapterManager.ArtFornTableAdapter = null;
             this.tableAdapterManager.articoli_sempliciTableAdapter = null;
             this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.clientiTableAdapter = null;
             this.tableAdapterManager.CodModPagamentoTableAdapter = null;
@@ -377,6 +380,7 @@
             this.tableAdapterManager.FasiTableAdapter = null;
             this.tableAdapterManager.FornitoriTableAdapter = null;
             this.tableAdapterManager.GiacenzeMagazziniTableAdapter = this.giacenzeMagazziniTableAdapter;
+            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
             this.tableAdapterManager.LavorazioniTableAdapter = null;
             this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
             this.tableAdapterManager.MacchineStampoTableAdapter = null;
@@ -385,12 +389,17 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.SchedulazioneTableAdapter = null;
             this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.TempStampTableAdapter = null;
+            this.tableAdapterManager.TempTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -501,6 +510,7 @@
             this.impegnataMatPrimaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.impegnataMatPrimaDataGridViewTextBoxColumn.HeaderText = "Lastre impegnate su magazzino";
             this.impegnataMatPrimaDataGridViewTextBoxColumn.Name = "impegnataMatPrimaDataGridViewTextBoxColumn";
+            this.impegnataMatPrimaDataGridViewTextBoxColumn.ReadOnly = true;
             this.impegnataMatPrimaDataGridViewTextBoxColumn.Width = 190;
             // 
             // NrPezziOrdinati
@@ -511,6 +521,7 @@
             this.NrPezziOrdinati.DefaultCellStyle = dataGridViewCellStyle11;
             this.NrPezziOrdinati.HeaderText = "Lastre impegnate su ordinato";
             this.NrPezziOrdinati.Name = "NrPezziOrdinati";
+            this.NrPezziOrdinati.ReadOnly = true;
             this.NrPezziOrdinati.Width = 190;
             // 
             // evasoParzialeDataGridViewCheckBoxColumn
@@ -527,6 +538,7 @@
             this.Stato.DataPropertyName = "Stato";
             this.Stato.HeaderText = "Stato";
             this.Stato.Name = "Stato";
+            this.Stato.ReadOnly = true;
             this.Stato.Visible = false;
             this.Stato.Width = 76;
             // 

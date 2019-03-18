@@ -44,7 +44,7 @@ namespace Target2021
 
         private void carica()
         {
-            commesseBindingSource.Filter = "Stato = 2";
+            commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 2";
         }
 
         private void SelezionaRiga(object sender, DataGridViewCellEventArgs e)
@@ -67,7 +67,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int IdSC, percentuale = 0;
+            int IdSC, percentuale = 0, NrLastre;
             if (textBox1.Text == "")
             {
                 IdSC = AssegnaIdSuperCommessa();
@@ -78,11 +78,13 @@ namespace Target2021
             percentuale = Convert.ToInt32(textBox3.Text) + Convert.ToInt32(commesseDataGridView.SelectedRows[0].Cells[16].Value);
             textBox3.Text = percentuale.ToString();
             Colora(sender,e);
-            textBox4.Text = commesseDataGridView.SelectedRows[0].Cells[22].Value.ToString();
+            NrLastre = Convert.ToInt32(textBox4.Text);
+            NrLastre = NrLastre + Convert.ToInt32(commesseDataGridView.SelectedRows[0].Cells[22].Value);
+            textBox4.Text = NrLastre.ToString();
             if (textBox2.Text=="")
             {
                 textBox2.Text = Convert.ToString(commesseDataGridView.SelectedRows[0].Cells[21].Value);
-                commesseBindingSource.Filter = "IDMateriaPrima = '" + textBox2.Text + "'";
+                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 2 AND IDMateriaPrima = '" + textBox2.Text + "'";
             }
         }
 
@@ -162,7 +164,7 @@ namespace Target2021
             {
                 textBox2.Text = "";
                 commesseBindingSource.RemoveFilter();
-                commesseBindingSource.Filter = "Stato = 2";
+                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 2";
             }
 
         }
@@ -184,14 +186,14 @@ namespace Target2021
         }
 
         private void AggiornaStatoRiga()
-        {   // metto le righe in stato = 4 e compilo campo 'InSupercommessa' e 'NrPezziResidui'
+        {   // metto le righe in stato = 9 e compilo campo 'InSupercommessa' e 'NrPezziResidui'
             Target2021DataSet.CommesseRow Riga;
             int IdC, residui;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 IdC= Convert.ToInt32(row.Cells[0].Value);
                 Riga = target2021DataSet.Commesse.FindByIDCommessa(IdC);
-                Riga.Stato = 4;
+                Riga.Stato = 9;
                 Riga.InSupercommessa= Convert.ToInt32(textBox1.Text);
                 residui = Convert.ToInt32(textBox4.Text) - Convert.ToInt32(row.Cells[8].Value);
                 Riga.NrPezziResidui = residui;

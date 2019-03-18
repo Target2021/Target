@@ -510,13 +510,14 @@ namespace Target2021
 
         private void AggiornaGiacenzeS(int q, string Cod)
         {
-            int numero, impegnati;
+            int numero, impegnati, ImpegnataMateriaPrima ;
             string query2;
             DateTime ora;
             SqlCommand comando2;
             SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
             conn.Open();
             string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+            ImpegnataMateriaPrima = RecuperaNrLastreImpegnate();
             SqlCommand comando1 = new SqlCommand(query1, conn);
             try
             {
@@ -527,7 +528,7 @@ namespace Target2021
                     comando2 = new SqlCommand(query2, conn);
                     impegnati = (int)comando2.ExecuteScalar();
                     numero = numero - q;
-                    impegnati = impegnati - q;
+                    impegnati = impegnati - ImpegnataMateriaPrima;
                     // update
                     ora = DateTime.Now;
                     query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaImpegnati = " + impegnati.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";
@@ -549,6 +550,15 @@ namespace Target2021
                 MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
             }
             conn.Close();
+        }
+
+        private int RecuperaNrLastreImpegnate()
+        {
+            string CodCommessa = codCommessaTextBox.Text;
+            int risultato;
+            string filtro = "CodCommessa = '" + CodCommessa + "'";
+            risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(ImpegnataMatPrima)", filtro);
+            return risultato;
         }
 
         private void nrPezziCorrettiTextBox_KeyPress(object sender, KeyPressEventArgs e)

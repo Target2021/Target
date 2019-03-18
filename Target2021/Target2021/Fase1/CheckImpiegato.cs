@@ -40,6 +40,7 @@ namespace Target2021
             inserimento_iniziale();
             verifica_commesse();
             SoloInOrdine();
+            WindowState = FormWindowState.Maximized;
         }
 
         public void inserimento_iniziale()
@@ -129,6 +130,11 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            aggiorna();
+        }
+
+        private void aggiorna()
+        {
             dataTable.Columns.Remove("Disponibilità Lastre Magazzino");
             dataTable.Columns.Remove("Disponibilità Lastre Ordinato");
             dataTable.Columns.Remove("Descrizione materia prima");
@@ -151,7 +157,8 @@ namespace Target2021
                 DescrizioneLastra = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
             }
             ImpegnaMatPrima Impegna = new ImpegnaMatPrima(CodiceLastra,DescrizioneLastra);
-            Impegna.Show();
+            Impegna.ShowDialog();
+            aggiorna();
         }
 
         private void button2_Click_1(object sender, EventArgs e)

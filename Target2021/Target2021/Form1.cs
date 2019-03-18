@@ -357,7 +357,7 @@ namespace Target2021
                 // Stato 51 = Evasione parziale + Ordino (impegnato su ordinato)
                 // Stato 2 = Approvigionamento materia prima completato
                 // Stato 3 = Pianificato
-                // Stato 4 = Inserito in SuperCommessa
+                // Stato 9 = Inserito in SuperCommessa
                 // Stato 5 = Stampato
             // TipoCommessa = 2 // Stampaggio
             

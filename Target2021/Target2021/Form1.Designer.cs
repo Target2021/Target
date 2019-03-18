@@ -479,8 +479,8 @@
             // pianificazioneToolStripMenuItem
             // 
             this.pianificazioneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.splittaCommessaToolStripMenuItem,
             this.creaSuperCommessaToolStripMenuItem,
+            this.splittaCommessaToolStripMenuItem,
             this.eliminaSuperCommessaToolStripMenuItem,
             this.pianificazioneTemporaleToolStripMenuItem});
             this.pianificazioneToolStripMenuItem.Name = "pianificazioneToolStripMenuItem";
