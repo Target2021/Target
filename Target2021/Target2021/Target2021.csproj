@@ -301,6 +301,12 @@
     <Compile Include="Fase2\CheckPianificazione.Designer.cs">
       <DependentUpon>CheckPianificazione.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fase2\ElencoCommesseInSC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase2\ElencoCommesseInSC.Designer.cs">
+      <DependentUpon>ElencoCommesseInSC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fase3\CheckStampaggio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -756,6 +762,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fase2\CheckPianificazione.resx">
       <DependentUpon>CheckPianificazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fase2\ElencoCommesseInSC.resx">
+      <DependentUpon>ElencoCommesseInSC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fase3\CheckStampaggio.resx">
       <DependentUpon>CheckStampaggio.cs</DependentUpon>

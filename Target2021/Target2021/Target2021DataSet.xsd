@@ -4247,6 +4247,33 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VistaSuperCommesseTableAdapter" GeneratorDataComponentClassName="VistaSuperCommesseTableAdapter" Name="VistaSuperCommesse" UserDataComponentName="VistaSuperCommesseTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Target2021ConnectionString (Settings)" DbObjectName="Target2021.dbo.VistaSuperCommesse" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdAbbinamento, IdSuperCommessa, IDCommessa, NrLastre, CodLastra, CodCommessa, DataCommessa, IDCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, PercentualeUtilizzoLastra FROM dbo.VistaSuperCommesse</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAbbinamento" DataSetColumn="IdAbbinamento" />
+              <Mapping SourceColumn="IdSuperCommessa" DataSetColumn="IdSuperCommessa" />
+              <Mapping SourceColumn="IDCommessa" DataSetColumn="IDCommessa" />
+              <Mapping SourceColumn="NrLastre" DataSetColumn="NrLastre" />
+              <Mapping SourceColumn="CodLastra" DataSetColumn="CodLastra" />
+              <Mapping SourceColumn="CodCommessa" DataSetColumn="CodCommessa" />
+              <Mapping SourceColumn="DataCommessa" DataSetColumn="DataCommessa" />
+              <Mapping SourceColumn="IDCliente" DataSetColumn="IDCliente" />
+              <Mapping SourceColumn="DataConsegna" DataSetColumn="DataConsegna" />
+              <Mapping SourceColumn="NrPezziDaLavorare" DataSetColumn="NrPezziDaLavorare" />
+              <Mapping SourceColumn="CodArticolo" DataSetColumn="CodArticolo" />
+              <Mapping SourceColumn="PercentualeUtilizzoLastra" DataSetColumn="PercentualeUtilizzoLastra" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -4255,7 +4282,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
   <xs:element name="Target2021DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Target2021DataSet" msprop:Generator_UserDSName="Target2021DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="AbbinamentiArticoli" msprop:Generator_TableClassName="AbbinamentiArticoliDataTable" msprop:Generator_TableVarName="tableAbbinamentiArticoli" msprop:Generator_TablePropName="AbbinamentiArticoli" msprop:Generator_RowDeletingName="AbbinamentiArticoliRowDeleting" msprop:Generator_RowChangingName="AbbinamentiArticoliRowChanging" msprop:Generator_RowEvHandlerName="AbbinamentiArticoliRowChangeEventHandler" msprop:Generator_RowDeletedName="AbbinamentiArticoliRowDeleted" msprop:Generator_UserTableName="AbbinamentiArticoli" msprop:Generator_RowChangedName="AbbinamentiArticoliRowChanged" msprop:Generator_RowEvArgName="AbbinamentiArticoliRowChangeEvent" msprop:Generator_RowClassName="AbbinamentiArticoliRow">
+        <xs:element name="AbbinamentiArticoli" msprop:Generator_TableClassName="AbbinamentiArticoliDataTable" msprop:Generator_TableVarName="tableAbbinamentiArticoli" msprop:Generator_RowChangedName="AbbinamentiArticoliRowChanged" msprop:Generator_TablePropName="AbbinamentiArticoli" msprop:Generator_RowDeletingName="AbbinamentiArticoliRowDeleting" msprop:Generator_RowChangingName="AbbinamentiArticoliRowChanging" msprop:Generator_RowEvHandlerName="AbbinamentiArticoliRowChangeEventHandler" msprop:Generator_RowDeletedName="AbbinamentiArticoliRowDeleted" msprop:Generator_RowClassName="AbbinamentiArticoliRow" msprop:Generator_UserTableName="AbbinamentiArticoli" msprop:Generator_RowEvArgName="AbbinamentiArticoliRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDA" msprop:Generator_ColumnPropNameInRow="IDA" msprop:Generator_ColumnPropNameInTable="IDAColumn" msprop:Generator_UserColumnName="IDA" type="xs:int" />
@@ -4286,7 +4313,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AbbinamentiSuperCommesse" msprop:Generator_TableClassName="AbbinamentiSuperCommesseDataTable" msprop:Generator_TableVarName="tableAbbinamentiSuperCommesse" msprop:Generator_TablePropName="AbbinamentiSuperCommesse" msprop:Generator_RowDeletingName="AbbinamentiSuperCommesseRowDeleting" msprop:Generator_RowChangingName="AbbinamentiSuperCommesseRowChanging" msprop:Generator_RowEvHandlerName="AbbinamentiSuperCommesseRowChangeEventHandler" msprop:Generator_RowDeletedName="AbbinamentiSuperCommesseRowDeleted" msprop:Generator_UserTableName="AbbinamentiSuperCommesse" msprop:Generator_RowChangedName="AbbinamentiSuperCommesseRowChanged" msprop:Generator_RowEvArgName="AbbinamentiSuperCommesseRowChangeEvent" msprop:Generator_RowClassName="AbbinamentiSuperCommesseRow">
+        <xs:element name="AbbinamentiSuperCommesse" msprop:Generator_TableClassName="AbbinamentiSuperCommesseDataTable" msprop:Generator_TableVarName="tableAbbinamentiSuperCommesse" msprop:Generator_RowChangedName="AbbinamentiSuperCommesseRowChanged" msprop:Generator_TablePropName="AbbinamentiSuperCommesse" msprop:Generator_RowDeletingName="AbbinamentiSuperCommesseRowDeleting" msprop:Generator_RowChangingName="AbbinamentiSuperCommesseRowChanging" msprop:Generator_RowEvHandlerName="AbbinamentiSuperCommesseRowChangeEventHandler" msprop:Generator_RowDeletedName="AbbinamentiSuperCommesseRowDeleted" msprop:Generator_RowClassName="AbbinamentiSuperCommesseRow" msprop:Generator_UserTableName="AbbinamentiSuperCommesse" msprop:Generator_RowEvArgName="AbbinamentiSuperCommesseRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdAbbinamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdAbbinamento" msprop:Generator_ColumnPropNameInRow="IdAbbinamento" msprop:Generator_ColumnPropNameInTable="IdAbbinamentoColumn" msprop:Generator_UserColumnName="IdAbbinamento" type="xs:int" />
@@ -4303,7 +4330,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AnaMagazzini" msprop:Generator_TableClassName="AnaMagazziniDataTable" msprop:Generator_TableVarName="tableAnaMagazzini" msprop:Generator_TablePropName="AnaMagazzini" msprop:Generator_RowDeletingName="AnaMagazziniRowDeleting" msprop:Generator_RowChangingName="AnaMagazziniRowChanging" msprop:Generator_RowEvHandlerName="AnaMagazziniRowChangeEventHandler" msprop:Generator_RowDeletedName="AnaMagazziniRowDeleted" msprop:Generator_UserTableName="AnaMagazzini" msprop:Generator_RowChangedName="AnaMagazziniRowChanged" msprop:Generator_RowEvArgName="AnaMagazziniRowChangeEvent" msprop:Generator_RowClassName="AnaMagazziniRow">
+        <xs:element name="AnaMagazzini" msprop:Generator_TableClassName="AnaMagazziniDataTable" msprop:Generator_TableVarName="tableAnaMagazzini" msprop:Generator_RowChangedName="AnaMagazziniRowChanged" msprop:Generator_TablePropName="AnaMagazzini" msprop:Generator_RowDeletingName="AnaMagazziniRowDeleting" msprop:Generator_RowChangingName="AnaMagazziniRowChanging" msprop:Generator_RowEvHandlerName="AnaMagazziniRowChangeEventHandler" msprop:Generator_RowDeletedName="AnaMagazziniRowDeleted" msprop:Generator_RowClassName="AnaMagazziniRow" msprop:Generator_UserTableName="AnaMagazzini" msprop:Generator_RowEvArgName="AnaMagazziniRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDMagazzino" msprop:Generator_ColumnVarNameInTable="columnIDMagazzino" msprop:Generator_ColumnPropNameInRow="IDMagazzino" msprop:Generator_ColumnPropNameInTable="IDMagazzinoColumn" msprop:Generator_UserColumnName="IDMagazzino" type="xs:int" />
@@ -4317,7 +4344,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ArtForn" msprop:Generator_TableClassName="ArtFornDataTable" msprop:Generator_TableVarName="tableArtForn" msprop:Generator_TablePropName="ArtForn" msprop:Generator_RowDeletingName="ArtFornRowDeleting" msprop:Generator_RowChangingName="ArtFornRowChanging" msprop:Generator_RowEvHandlerName="ArtFornRowChangeEventHandler" msprop:Generator_RowDeletedName="ArtFornRowDeleted" msprop:Generator_UserTableName="ArtForn" msprop:Generator_RowChangedName="ArtFornRowChanged" msprop:Generator_RowEvArgName="ArtFornRowChangeEvent" msprop:Generator_RowClassName="ArtFornRow">
+        <xs:element name="ArtForn" msprop:Generator_TableClassName="ArtFornDataTable" msprop:Generator_TableVarName="tableArtForn" msprop:Generator_RowChangedName="ArtFornRowChanged" msprop:Generator_TablePropName="ArtForn" msprop:Generator_RowDeletingName="ArtFornRowDeleting" msprop:Generator_RowChangingName="ArtFornRowChanging" msprop:Generator_RowEvHandlerName="ArtFornRowChangeEventHandler" msprop:Generator_RowDeletedName="ArtFornRowDeleted" msprop:Generator_RowClassName="ArtFornRow" msprop:Generator_UserTableName="ArtForn" msprop:Generator_RowEvArgName="ArtFornRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDArtForn" msprop:Generator_ColumnVarNameInTable="columnIDArtForn" msprop:Generator_ColumnPropNameInRow="IDArtForn" msprop:Generator_ColumnPropNameInTable="IDArtFornColumn" msprop:Generator_UserColumnName="IDArtForn" type="xs:int" />
@@ -4354,7 +4381,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="articoli_semplici" msprop:Generator_TableClassName="articoli_sempliciDataTable" msprop:Generator_TableVarName="tablearticoli_semplici" msprop:Generator_TablePropName="articoli_semplici" msprop:Generator_RowDeletingName="articoli_sempliciRowDeleting" msprop:Generator_RowChangingName="articoli_sempliciRowChanging" msprop:Generator_RowEvHandlerName="articoli_sempliciRowChangeEventHandler" msprop:Generator_RowDeletedName="articoli_sempliciRowDeleted" msprop:Generator_UserTableName="articoli_semplici" msprop:Generator_RowChangedName="articoli_sempliciRowChanged" msprop:Generator_RowEvArgName="articoli_sempliciRowChangeEvent" msprop:Generator_RowClassName="articoli_sempliciRow">
+        <xs:element name="articoli_semplici" msprop:Generator_TableClassName="articoli_sempliciDataTable" msprop:Generator_TableVarName="tablearticoli_semplici" msprop:Generator_RowChangedName="articoli_sempliciRowChanged" msprop:Generator_TablePropName="articoli_semplici" msprop:Generator_RowDeletingName="articoli_sempliciRowDeleting" msprop:Generator_RowChangingName="articoli_sempliciRowChanging" msprop:Generator_RowEvHandlerName="articoli_sempliciRowChangeEventHandler" msprop:Generator_RowDeletedName="articoli_sempliciRowDeleted" msprop:Generator_RowClassName="articoli_sempliciRow" msprop:Generator_UserTableName="articoli_semplici" msprop:Generator_RowEvArgName="articoli_sempliciRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codice" msprop:Generator_ColumnVarNameInTable="columncodice" msprop:Generator_ColumnPropNameInRow="codice" msprop:Generator_ColumnPropNameInTable="codiceColumn" msprop:Generator_UserColumnName="codice">
@@ -4464,7 +4491,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ArticoliBC" msprop:Generator_TableClassName="ArticoliBCDataTable" msprop:Generator_TableVarName="tableArticoliBC" msprop:Generator_TablePropName="ArticoliBC" msprop:Generator_RowDeletingName="ArticoliBCRowDeleting" msprop:Generator_RowChangingName="ArticoliBCRowChanging" msprop:Generator_RowEvHandlerName="ArticoliBCRowChangeEventHandler" msprop:Generator_RowDeletedName="ArticoliBCRowDeleted" msprop:Generator_UserTableName="ArticoliBC" msprop:Generator_RowChangedName="ArticoliBCRowChanged" msprop:Generator_RowEvArgName="ArticoliBCRowChangeEvent" msprop:Generator_RowClassName="ArticoliBCRow">
+        <xs:element name="ArticoliBC" msprop:Generator_TableClassName="ArticoliBCDataTable" msprop:Generator_TableVarName="tableArticoliBC" msprop:Generator_RowChangedName="ArticoliBCRowChanged" msprop:Generator_TablePropName="ArticoliBC" msprop:Generator_RowDeletingName="ArticoliBCRowDeleting" msprop:Generator_RowChangingName="ArticoliBCRowChanging" msprop:Generator_RowEvHandlerName="ArticoliBCRowChangeEventHandler" msprop:Generator_RowDeletedName="ArticoliBCRowDeleted" msprop:Generator_RowClassName="ArticoliBCRow" msprop:Generator_UserTableName="ArticoliBC" msprop:Generator_RowEvArgName="ArticoliBCRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codice_articolo" msprop:Generator_ColumnVarNameInTable="columncodice_articolo" msprop:Generator_ColumnPropNameInRow="codice_articolo" msprop:Generator_ColumnPropNameInTable="codice_articoloColumn" msprop:Generator_UserColumnName="codice_articolo">
@@ -4506,7 +4533,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AvvisiAbbinamenti" msprop:Generator_TableClassName="AvvisiAbbinamentiDataTable" msprop:Generator_TableVarName="tableAvvisiAbbinamenti" msprop:Generator_TablePropName="AvvisiAbbinamenti" msprop:Generator_RowDeletingName="AvvisiAbbinamentiRowDeleting" msprop:Generator_RowChangingName="AvvisiAbbinamentiRowChanging" msprop:Generator_RowEvHandlerName="AvvisiAbbinamentiRowChangeEventHandler" msprop:Generator_RowDeletedName="AvvisiAbbinamentiRowDeleted" msprop:Generator_UserTableName="AvvisiAbbinamenti" msprop:Generator_RowChangedName="AvvisiAbbinamentiRowChanged" msprop:Generator_RowEvArgName="AvvisiAbbinamentiRowChangeEvent" msprop:Generator_RowClassName="AvvisiAbbinamentiRow">
+        <xs:element name="AvvisiAbbinamenti" msprop:Generator_TableClassName="AvvisiAbbinamentiDataTable" msprop:Generator_TableVarName="tableAvvisiAbbinamenti" msprop:Generator_RowChangedName="AvvisiAbbinamentiRowChanged" msprop:Generator_TablePropName="AvvisiAbbinamenti" msprop:Generator_RowDeletingName="AvvisiAbbinamentiRowDeleting" msprop:Generator_RowChangingName="AvvisiAbbinamentiRowChanging" msprop:Generator_RowEvHandlerName="AvvisiAbbinamentiRowChangeEventHandler" msprop:Generator_RowDeletedName="AvvisiAbbinamentiRowDeleted" msprop:Generator_RowClassName="AvvisiAbbinamentiRow" msprop:Generator_UserTableName="AvvisiAbbinamenti" msprop:Generator_RowEvArgName="AvvisiAbbinamentiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDAvviso" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDAvviso" msprop:Generator_ColumnPropNameInRow="IDAvviso" msprop:Generator_ColumnPropNameInTable="IDAvvisoColumn" msprop:Generator_UserColumnName="IDAvviso" type="xs:int" />
@@ -4524,7 +4551,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="clienti" msprop:Generator_TableClassName="clientiDataTable" msprop:Generator_TableVarName="tableclienti" msprop:Generator_TablePropName="clienti" msprop:Generator_RowDeletingName="clientiRowDeleting" msprop:Generator_RowChangingName="clientiRowChanging" msprop:Generator_RowEvHandlerName="clientiRowChangeEventHandler" msprop:Generator_RowDeletedName="clientiRowDeleted" msprop:Generator_UserTableName="clienti" msprop:Generator_RowChangedName="clientiRowChanged" msprop:Generator_RowEvArgName="clientiRowChangeEvent" msprop:Generator_RowClassName="clientiRow">
+        <xs:element name="clienti" msprop:Generator_TableClassName="clientiDataTable" msprop:Generator_TableVarName="tableclienti" msprop:Generator_RowChangedName="clientiRowChanged" msprop:Generator_TablePropName="clienti" msprop:Generator_RowDeletingName="clientiRowDeleting" msprop:Generator_RowChangingName="clientiRowChanging" msprop:Generator_RowEvHandlerName="clientiRowChangeEventHandler" msprop:Generator_RowDeletedName="clientiRowDeleted" msprop:Generator_RowClassName="clientiRow" msprop:Generator_UserTableName="clienti" msprop:Generator_RowEvArgName="clientiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codice" msprop:Generator_ColumnVarNameInTable="columncodice" msprop:Generator_ColumnPropNameInRow="codice" msprop:Generator_ColumnPropNameInTable="codiceColumn" msprop:Generator_UserColumnName="codice">
@@ -5218,7 +5245,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CodSpedizioni" msprop:Generator_TableClassName="CodSpedizioniDataTable" msprop:Generator_TableVarName="tableCodSpedizioni" msprop:Generator_TablePropName="CodSpedizioni" msprop:Generator_RowDeletingName="CodSpedizioniRowDeleting" msprop:Generator_RowChangingName="CodSpedizioniRowChanging" msprop:Generator_RowEvHandlerName="CodSpedizioniRowChangeEventHandler" msprop:Generator_RowDeletedName="CodSpedizioniRowDeleted" msprop:Generator_UserTableName="CodSpedizioni" msprop:Generator_RowChangedName="CodSpedizioniRowChanged" msprop:Generator_RowEvArgName="CodSpedizioniRowChangeEvent" msprop:Generator_RowClassName="CodSpedizioniRow">
+        <xs:element name="CodSpedizioni" msprop:Generator_TableClassName="CodSpedizioniDataTable" msprop:Generator_TableVarName="tableCodSpedizioni" msprop:Generator_RowChangedName="CodSpedizioniRowChanged" msprop:Generator_TablePropName="CodSpedizioni" msprop:Generator_RowDeletingName="CodSpedizioniRowDeleting" msprop:Generator_RowChangingName="CodSpedizioniRowChanging" msprop:Generator_RowEvHandlerName="CodSpedizioniRowChangeEventHandler" msprop:Generator_RowDeletedName="CodSpedizioniRowDeleted" msprop:Generator_RowClassName="CodSpedizioniRow" msprop:Generator_UserTableName="CodSpedizioni" msprop:Generator_RowEvArgName="CodSpedizioniRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCodSped" msprop:Generator_ColumnVarNameInTable="columnidCodSped" msprop:Generator_ColumnPropNameInRow="idCodSped" msprop:Generator_ColumnPropNameInTable="idCodSpedColumn" msprop:Generator_UserColumnName="idCodSped" type="xs:int" />
@@ -5239,7 +5266,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CodTermPagamento" msprop:Generator_TableClassName="CodTermPagamentoDataTable" msprop:Generator_TableVarName="tableCodTermPagamento" msprop:Generator_TablePropName="CodTermPagamento" msprop:Generator_RowDeletingName="CodTermPagamentoRowDeleting" msprop:Generator_RowChangingName="CodTermPagamentoRowChanging" msprop:Generator_RowEvHandlerName="CodTermPagamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="CodTermPagamentoRowDeleted" msprop:Generator_UserTableName="CodTermPagamento" msprop:Generator_RowChangedName="CodTermPagamentoRowChanged" msprop:Generator_RowEvArgName="CodTermPagamentoRowChangeEvent" msprop:Generator_RowClassName="CodTermPagamentoRow">
+        <xs:element name="CodTermPagamento" msprop:Generator_TableClassName="CodTermPagamentoDataTable" msprop:Generator_TableVarName="tableCodTermPagamento" msprop:Generator_RowChangedName="CodTermPagamentoRowChanged" msprop:Generator_TablePropName="CodTermPagamento" msprop:Generator_RowDeletingName="CodTermPagamentoRowDeleting" msprop:Generator_RowChangingName="CodTermPagamentoRowChanging" msprop:Generator_RowEvHandlerName="CodTermPagamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="CodTermPagamentoRowDeleted" msprop:Generator_RowClassName="CodTermPagamentoRow" msprop:Generator_UserTableName="CodTermPagamento" msprop:Generator_RowEvArgName="CodTermPagamentoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCodTermPag" msprop:Generator_ColumnVarNameInTable="columnidCodTermPag" msprop:Generator_ColumnPropNameInRow="idCodTermPag" msprop:Generator_ColumnPropNameInTable="idCodTermPagColumn" msprop:Generator_UserColumnName="idCodTermPag" type="xs:int" />
@@ -5260,7 +5287,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CompatibStampa" msprop:Generator_TableClassName="CompatibStampaDataTable" msprop:Generator_TableVarName="tableCompatibStampa" msprop:Generator_TablePropName="CompatibStampa" msprop:Generator_RowDeletingName="CompatibStampaRowDeleting" msprop:Generator_RowChangingName="CompatibStampaRowChanging" msprop:Generator_RowEvHandlerName="CompatibStampaRowChangeEventHandler" msprop:Generator_RowDeletedName="CompatibStampaRowDeleted" msprop:Generator_UserTableName="CompatibStampa" msprop:Generator_RowChangedName="CompatibStampaRowChanged" msprop:Generator_RowEvArgName="CompatibStampaRowChangeEvent" msprop:Generator_RowClassName="CompatibStampaRow">
+        <xs:element name="CompatibStampa" msprop:Generator_TableClassName="CompatibStampaDataTable" msprop:Generator_TableVarName="tableCompatibStampa" msprop:Generator_RowChangedName="CompatibStampaRowChanged" msprop:Generator_TablePropName="CompatibStampa" msprop:Generator_RowDeletingName="CompatibStampaRowDeleting" msprop:Generator_RowChangingName="CompatibStampaRowChanging" msprop:Generator_RowEvHandlerName="CompatibStampaRowChangeEventHandler" msprop:Generator_RowDeletedName="CompatibStampaRowDeleted" msprop:Generator_RowClassName="CompatibStampaRow" msprop:Generator_UserTableName="CompatibStampa" msprop:Generator_RowEvArgName="CompatibStampaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCompStampo" msprop:Generator_ColumnVarNameInTable="columnIDCompStampo" msprop:Generator_ColumnPropNameInRow="IDCompStampo" msprop:Generator_ColumnPropNameInTable="IDCompStampoColumn" msprop:Generator_UserColumnName="IDCompStampo" type="xs:int" />
@@ -5275,7 +5302,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CompatibTaglio" msprop:Generator_TableClassName="CompatibTaglioDataTable" msprop:Generator_TableVarName="tableCompatibTaglio" msprop:Generator_TablePropName="CompatibTaglio" msprop:Generator_RowDeletingName="CompatibTaglioRowDeleting" msprop:Generator_RowChangingName="CompatibTaglioRowChanging" msprop:Generator_RowEvHandlerName="CompatibTaglioRowChangeEventHandler" msprop:Generator_RowDeletedName="CompatibTaglioRowDeleted" msprop:Generator_UserTableName="CompatibTaglio" msprop:Generator_RowChangedName="CompatibTaglioRowChanged" msprop:Generator_RowEvArgName="CompatibTaglioRowChangeEvent" msprop:Generator_RowClassName="CompatibTaglioRow">
+        <xs:element name="CompatibTaglio" msprop:Generator_TableClassName="CompatibTaglioDataTable" msprop:Generator_TableVarName="tableCompatibTaglio" msprop:Generator_RowChangedName="CompatibTaglioRowChanged" msprop:Generator_TablePropName="CompatibTaglio" msprop:Generator_RowDeletingName="CompatibTaglioRowDeleting" msprop:Generator_RowChangingName="CompatibTaglioRowChanging" msprop:Generator_RowEvHandlerName="CompatibTaglioRowChangeEventHandler" msprop:Generator_RowDeletedName="CompatibTaglioRowDeleted" msprop:Generator_RowClassName="CompatibTaglioRow" msprop:Generator_UserTableName="CompatibTaglio" msprop:Generator_RowEvArgName="CompatibTaglioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDTaglio" msprop:Generator_ColumnVarNameInTable="columnIDTaglio" msprop:Generator_ColumnPropNameInRow="IDTaglio" msprop:Generator_ColumnPropNameInTable="IDTaglioColumn" msprop:Generator_UserColumnName="IDTaglio" type="xs:int" />
@@ -5290,7 +5317,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dettaglio_ordini_acquisto" msprop:Generator_TableClassName="dettaglio_ordini_acquistoDataTable" msprop:Generator_TableVarName="tabledettaglio_ordini_acquisto" msprop:Generator_TablePropName="dettaglio_ordini_acquisto" msprop:Generator_RowDeletingName="dettaglio_ordini_acquistoRowDeleting" msprop:Generator_RowChangingName="dettaglio_ordini_acquistoRowChanging" msprop:Generator_RowEvHandlerName="dettaglio_ordini_acquistoRowChangeEventHandler" msprop:Generator_RowDeletedName="dettaglio_ordini_acquistoRowDeleted" msprop:Generator_UserTableName="dettaglio_ordini_acquisto" msprop:Generator_RowChangedName="dettaglio_ordini_acquistoRowChanged" msprop:Generator_RowEvArgName="dettaglio_ordini_acquistoRowChangeEvent" msprop:Generator_RowClassName="dettaglio_ordini_acquistoRow">
+        <xs:element name="dettaglio_ordini_acquisto" msprop:Generator_TableClassName="dettaglio_ordini_acquistoDataTable" msprop:Generator_TableVarName="tabledettaglio_ordini_acquisto" msprop:Generator_RowChangedName="dettaglio_ordini_acquistoRowChanged" msprop:Generator_TablePropName="dettaglio_ordini_acquisto" msprop:Generator_RowDeletingName="dettaglio_ordini_acquistoRowDeleting" msprop:Generator_RowChangingName="dettaglio_ordini_acquistoRowChanging" msprop:Generator_RowEvHandlerName="dettaglio_ordini_acquistoRowChangeEventHandler" msprop:Generator_RowDeletedName="dettaglio_ordini_acquistoRowDeleted" msprop:Generator_RowClassName="dettaglio_ordini_acquistoRow" msprop:Generator_UserTableName="dettaglio_ordini_acquisto" msprop:Generator_RowEvArgName="dettaglio_ordini_acquistoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="data_ordine" msprop:Generator_ColumnVarNameInTable="columndata_ordine" msprop:Generator_ColumnPropNameInRow="data_ordine" msprop:Generator_ColumnPropNameInTable="data_ordineColumn" msprop:Generator_UserColumnName="data_ordine" type="xs:int" minOccurs="0" />
@@ -5430,7 +5457,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dettaglio_ordini_multiriga" msprop:Generator_TableClassName="dettaglio_ordini_multirigaDataTable" msprop:Generator_TableVarName="tabledettaglio_ordini_multiriga" msprop:Generator_TablePropName="dettaglio_ordini_multiriga" msprop:Generator_RowDeletingName="dettaglio_ordini_multirigaRowDeleting" msprop:Generator_RowChangingName="dettaglio_ordini_multirigaRowChanging" msprop:Generator_RowEvHandlerName="dettaglio_ordini_multirigaRowChangeEventHandler" msprop:Generator_RowDeletedName="dettaglio_ordini_multirigaRowDeleted" msprop:Generator_UserTableName="dettaglio_ordini_multiriga" msprop:Generator_RowChangedName="dettaglio_ordini_multirigaRowChanged" msprop:Generator_RowEvArgName="dettaglio_ordini_multirigaRowChangeEvent" msprop:Generator_RowClassName="dettaglio_ordini_multirigaRow">
+        <xs:element name="dettaglio_ordini_multiriga" msprop:Generator_TableClassName="dettaglio_ordini_multirigaDataTable" msprop:Generator_TableVarName="tabledettaglio_ordini_multiriga" msprop:Generator_RowChangedName="dettaglio_ordini_multirigaRowChanged" msprop:Generator_TablePropName="dettaglio_ordini_multiriga" msprop:Generator_RowDeletingName="dettaglio_ordini_multirigaRowDeleting" msprop:Generator_RowChangingName="dettaglio_ordini_multirigaRowChanging" msprop:Generator_RowEvHandlerName="dettaglio_ordini_multirigaRowChangeEventHandler" msprop:Generator_RowDeletedName="dettaglio_ordini_multirigaRowDeleted" msprop:Generator_RowClassName="dettaglio_ordini_multirigaRow" msprop:Generator_UserTableName="dettaglio_ordini_multiriga" msprop:Generator_RowEvArgName="dettaglio_ordini_multirigaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="data_ordine" msprop:Generator_ColumnVarNameInTable="columndata_ordine" msprop:Generator_ColumnPropNameInRow="data_ordine" msprop:Generator_ColumnPropNameInTable="data_ordineColumn" msprop:Generator_UserColumnName="data_ordine" type="xs:int" minOccurs="0" />
@@ -5624,7 +5651,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Dime" msprop:Generator_TableClassName="DimeDataTable" msprop:Generator_TableVarName="tableDime" msprop:Generator_TablePropName="Dime" msprop:Generator_RowDeletingName="DimeRowDeleting" msprop:Generator_RowChangingName="DimeRowChanging" msprop:Generator_RowEvHandlerName="DimeRowChangeEventHandler" msprop:Generator_RowDeletedName="DimeRowDeleted" msprop:Generator_UserTableName="Dime" msprop:Generator_RowChangedName="DimeRowChanged" msprop:Generator_RowEvArgName="DimeRowChangeEvent" msprop:Generator_RowClassName="DimeRow">
+        <xs:element name="Dime" msprop:Generator_TableClassName="DimeDataTable" msprop:Generator_TableVarName="tableDime" msprop:Generator_RowChangedName="DimeRowChanged" msprop:Generator_TablePropName="Dime" msprop:Generator_RowDeletingName="DimeRowDeleting" msprop:Generator_RowChangingName="DimeRowChanging" msprop:Generator_RowEvHandlerName="DimeRowChangeEventHandler" msprop:Generator_RowDeletedName="DimeRowDeleted" msprop:Generator_RowClassName="DimeRow" msprop:Generator_UserTableName="Dime" msprop:Generator_RowEvArgName="DimeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codice" msprop:Generator_ColumnVarNameInTable="columncodice" msprop:Generator_ColumnPropNameInRow="codice" msprop:Generator_ColumnPropNameInTable="codiceColumn" msprop:Generator_UserColumnName="codice">
@@ -5688,7 +5715,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="dimensioni" msprop:Generator_TableClassName="dimensioniDataTable" msprop:Generator_TableVarName="tabledimensioni" msprop:Generator_TablePropName="dimensioni" msprop:Generator_RowDeletingName="dimensioniRowDeleting" msprop:Generator_RowChangingName="dimensioniRowChanging" msprop:Generator_RowEvHandlerName="dimensioniRowChangeEventHandler" msprop:Generator_RowDeletedName="dimensioniRowDeleted" msprop:Generator_UserTableName="dimensioni" msprop:Generator_RowChangedName="dimensioniRowChanged" msprop:Generator_RowEvArgName="dimensioniRowChangeEvent" msprop:Generator_RowClassName="dimensioniRow">
+        <xs:element name="dimensioni" msprop:Generator_TableClassName="dimensioniDataTable" msprop:Generator_TableVarName="tabledimensioni" msprop:Generator_RowChangedName="dimensioniRowChanged" msprop:Generator_TablePropName="dimensioni" msprop:Generator_RowDeletingName="dimensioniRowDeleting" msprop:Generator_RowChangingName="dimensioniRowChanging" msprop:Generator_RowEvHandlerName="dimensioniRowChangeEventHandler" msprop:Generator_RowDeletedName="dimensioniRowDeleted" msprop:Generator_RowClassName="dimensioniRow" msprop:Generator_UserTableName="dimensioni" msprop:Generator_RowEvArgName="dimensioniRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NewCodice" msprop:Generator_ColumnVarNameInTable="columnNewCodice" msprop:Generator_ColumnPropNameInRow="NewCodice" msprop:Generator_ColumnPropNameInTable="NewCodiceColumn" msprop:Generator_UserColumnName="NewCodice" minOccurs="0">
@@ -5712,7 +5739,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Fasi" msprop:Generator_TableClassName="FasiDataTable" msprop:Generator_TableVarName="tableFasi" msprop:Generator_TablePropName="Fasi" msprop:Generator_RowDeletingName="FasiRowDeleting" msprop:Generator_RowChangingName="FasiRowChanging" msprop:Generator_RowEvHandlerName="FasiRowChangeEventHandler" msprop:Generator_RowDeletedName="FasiRowDeleted" msprop:Generator_UserTableName="Fasi" msprop:Generator_RowChangedName="FasiRowChanged" msprop:Generator_RowEvArgName="FasiRowChangeEvent" msprop:Generator_RowClassName="FasiRow">
+        <xs:element name="Fasi" msprop:Generator_TableClassName="FasiDataTable" msprop:Generator_TableVarName="tableFasi" msprop:Generator_RowChangedName="FasiRowChanged" msprop:Generator_TablePropName="Fasi" msprop:Generator_RowDeletingName="FasiRowDeleting" msprop:Generator_RowChangingName="FasiRowChanging" msprop:Generator_RowEvHandlerName="FasiRowChangeEventHandler" msprop:Generator_RowDeletedName="FasiRowDeleted" msprop:Generator_RowClassName="FasiRow" msprop:Generator_UserTableName="Fasi" msprop:Generator_RowEvArgName="FasiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDFase" msprop:Generator_ColumnVarNameInTable="columnIDFase" msprop:Generator_ColumnPropNameInRow="IDFase" msprop:Generator_ColumnPropNameInTable="IDFaseColumn" msprop:Generator_UserColumnName="IDFase" type="xs:int" />
@@ -5726,7 +5753,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Fornitori" msprop:Generator_TableClassName="FornitoriDataTable" msprop:Generator_TableVarName="tableFornitori" msprop:Generator_TablePropName="Fornitori" msprop:Generator_RowDeletingName="FornitoriRowDeleting" msprop:Generator_RowChangingName="FornitoriRowChanging" msprop:Generator_RowEvHandlerName="FornitoriRowChangeEventHandler" msprop:Generator_RowDeletedName="FornitoriRowDeleted" msprop:Generator_UserTableName="Fornitori" msprop:Generator_RowChangedName="FornitoriRowChanged" msprop:Generator_RowEvArgName="FornitoriRowChangeEvent" msprop:Generator_RowClassName="FornitoriRow">
+        <xs:element name="Fornitori" msprop:Generator_TableClassName="FornitoriDataTable" msprop:Generator_TableVarName="tableFornitori" msprop:Generator_RowChangedName="FornitoriRowChanged" msprop:Generator_TablePropName="Fornitori" msprop:Generator_RowDeletingName="FornitoriRowDeleting" msprop:Generator_RowChangingName="FornitoriRowChanging" msprop:Generator_RowEvHandlerName="FornitoriRowChangeEventHandler" msprop:Generator_RowDeletedName="FornitoriRowDeleted" msprop:Generator_RowClassName="FornitoriRow" msprop:Generator_UserTableName="Fornitori" msprop:Generator_RowEvArgName="FornitoriRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codice" msprop:Generator_ColumnVarNameInTable="columncodice" msprop:Generator_ColumnPropNameInRow="codice" msprop:Generator_ColumnPropNameInTable="codiceColumn" msprop:Generator_UserColumnName="codice">
@@ -5838,7 +5865,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GiacenzeMagazzini" msprop:Generator_TableClassName="GiacenzeMagazziniDataTable" msprop:Generator_TableVarName="tableGiacenzeMagazzini" msprop:Generator_TablePropName="GiacenzeMagazzini" msprop:Generator_RowDeletingName="GiacenzeMagazziniRowDeleting" msprop:Generator_RowChangingName="GiacenzeMagazziniRowChanging" msprop:Generator_RowEvHandlerName="GiacenzeMagazziniRowChangeEventHandler" msprop:Generator_RowDeletedName="GiacenzeMagazziniRowDeleted" msprop:Generator_UserTableName="GiacenzeMagazzini" msprop:Generator_RowChangedName="GiacenzeMagazziniRowChanged" msprop:Generator_RowEvArgName="GiacenzeMagazziniRowChangeEvent" msprop:Generator_RowClassName="GiacenzeMagazziniRow">
+        <xs:element name="GiacenzeMagazzini" msprop:Generator_TableClassName="GiacenzeMagazziniDataTable" msprop:Generator_TableVarName="tableGiacenzeMagazzini" msprop:Generator_RowChangedName="GiacenzeMagazziniRowChanged" msprop:Generator_TablePropName="GiacenzeMagazzini" msprop:Generator_RowDeletingName="GiacenzeMagazziniRowDeleting" msprop:Generator_RowChangingName="GiacenzeMagazziniRowChanging" msprop:Generator_RowEvHandlerName="GiacenzeMagazziniRowChangeEventHandler" msprop:Generator_RowDeletedName="GiacenzeMagazziniRowDeleted" msprop:Generator_RowClassName="GiacenzeMagazziniRow" msprop:Generator_UserTableName="GiacenzeMagazzini" msprop:Generator_RowEvArgName="GiacenzeMagazziniRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdGiacenza" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdGiacenza" msprop:Generator_ColumnPropNameInRow="IdGiacenza" msprop:Generator_ColumnPropNameInTable="IdGiacenzaColumn" msprop:Generator_UserColumnName="IdGiacenza" type="xs:int" />
@@ -5903,7 +5930,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ImpegnateOrdinato" msprop:Generator_TableClassName="ImpegnateOrdinatoDataTable" msprop:Generator_TableVarName="tableImpegnateOrdinato" msprop:Generator_TablePropName="ImpegnateOrdinato" msprop:Generator_RowDeletingName="ImpegnateOrdinatoRowDeleting" msprop:Generator_RowChangingName="ImpegnateOrdinatoRowChanging" msprop:Generator_RowEvHandlerName="ImpegnateOrdinatoRowChangeEventHandler" msprop:Generator_RowDeletedName="ImpegnateOrdinatoRowDeleted" msprop:Generator_UserTableName="ImpegnateOrdinato" msprop:Generator_RowChangedName="ImpegnateOrdinatoRowChanged" msprop:Generator_RowEvArgName="ImpegnateOrdinatoRowChangeEvent" msprop:Generator_RowClassName="ImpegnateOrdinatoRow">
+        <xs:element name="ImpegnateOrdinato" msprop:Generator_TableClassName="ImpegnateOrdinatoDataTable" msprop:Generator_TableVarName="tableImpegnateOrdinato" msprop:Generator_RowChangedName="ImpegnateOrdinatoRowChanged" msprop:Generator_TablePropName="ImpegnateOrdinato" msprop:Generator_RowDeletingName="ImpegnateOrdinatoRowDeleting" msprop:Generator_RowChangingName="ImpegnateOrdinatoRowChanging" msprop:Generator_RowEvHandlerName="ImpegnateOrdinatoRowChangeEventHandler" msprop:Generator_RowDeletedName="ImpegnateOrdinatoRowDeleted" msprop:Generator_RowClassName="ImpegnateOrdinatoRow" msprop:Generator_UserTableName="ImpegnateOrdinato" msprop:Generator_RowEvArgName="ImpegnateOrdinatoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdImpegno" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdImpegno" msprop:Generator_ColumnPropNameInRow="IdImpegno" msprop:Generator_ColumnPropNameInTable="IdImpegnoColumn" msprop:Generator_UserColumnName="IdImpegno" type="xs:int" />
@@ -5920,7 +5947,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Lavorazioni" msprop:Generator_TableClassName="LavorazioniDataTable" msprop:Generator_TableVarName="tableLavorazioni" msprop:Generator_TablePropName="Lavorazioni" msprop:Generator_RowDeletingName="LavorazioniRowDeleting" msprop:Generator_RowChangingName="LavorazioniRowChanging" msprop:Generator_RowEvHandlerName="LavorazioniRowChangeEventHandler" msprop:Generator_RowDeletedName="LavorazioniRowDeleted" msprop:Generator_UserTableName="Lavorazioni" msprop:Generator_RowChangedName="LavorazioniRowChanged" msprop:Generator_RowEvArgName="LavorazioniRowChangeEvent" msprop:Generator_RowClassName="LavorazioniRow">
+        <xs:element name="Lavorazioni" msprop:Generator_TableClassName="LavorazioniDataTable" msprop:Generator_TableVarName="tableLavorazioni" msprop:Generator_RowChangedName="LavorazioniRowChanged" msprop:Generator_TablePropName="Lavorazioni" msprop:Generator_RowDeletingName="LavorazioniRowDeleting" msprop:Generator_RowChangingName="LavorazioniRowChanging" msprop:Generator_RowEvHandlerName="LavorazioniRowChangeEventHandler" msprop:Generator_RowDeletedName="LavorazioniRowDeleted" msprop:Generator_RowClassName="LavorazioniRow" msprop:Generator_UserTableName="Lavorazioni" msprop:Generator_RowEvArgName="LavorazioniRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDL" msprop:Generator_ColumnVarNameInTable="columnIDL" msprop:Generator_ColumnPropNameInRow="IDL" msprop:Generator_ColumnPropNameInTable="IDLColumn" msprop:Generator_UserColumnName="IDL" type="xs:int" />
@@ -5930,7 +5957,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LivelliUtenza" msprop:Generator_TableClassName="LivelliUtenzaDataTable" msprop:Generator_TableVarName="tableLivelliUtenza" msprop:Generator_TablePropName="LivelliUtenza" msprop:Generator_RowDeletingName="LivelliUtenzaRowDeleting" msprop:Generator_RowChangingName="LivelliUtenzaRowChanging" msprop:Generator_RowEvHandlerName="LivelliUtenzaRowChangeEventHandler" msprop:Generator_RowDeletedName="LivelliUtenzaRowDeleted" msprop:Generator_UserTableName="LivelliUtenza" msprop:Generator_RowChangedName="LivelliUtenzaRowChanged" msprop:Generator_RowEvArgName="LivelliUtenzaRowChangeEvent" msprop:Generator_RowClassName="LivelliUtenzaRow">
+        <xs:element name="LivelliUtenza" msprop:Generator_TableClassName="LivelliUtenzaDataTable" msprop:Generator_TableVarName="tableLivelliUtenza" msprop:Generator_RowChangedName="LivelliUtenzaRowChanged" msprop:Generator_TablePropName="LivelliUtenza" msprop:Generator_RowDeletingName="LivelliUtenzaRowDeleting" msprop:Generator_RowChangingName="LivelliUtenzaRowChanging" msprop:Generator_RowEvHandlerName="LivelliUtenzaRowChangeEventHandler" msprop:Generator_RowDeletedName="LivelliUtenzaRowDeleted" msprop:Generator_RowClassName="LivelliUtenzaRow" msprop:Generator_UserTableName="LivelliUtenza" msprop:Generator_RowEvArgName="LivelliUtenzaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDLivello" msprop:Generator_ColumnVarNameInTable="columnIDLivello" msprop:Generator_ColumnPropNameInRow="IDLivello" msprop:Generator_ColumnPropNameInTable="IDLivelloColumn" msprop:Generator_UserColumnName="IDLivello" type="xs:int" />
@@ -5945,7 +5972,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MacchineTaglio" msprop:Generator_TableClassName="MacchineTaglioDataTable" msprop:Generator_TableVarName="tableMacchineTaglio" msprop:Generator_TablePropName="MacchineTaglio" msprop:Generator_RowDeletingName="MacchineTaglioRowDeleting" msprop:Generator_RowChangingName="MacchineTaglioRowChanging" msprop:Generator_RowEvHandlerName="MacchineTaglioRowChangeEventHandler" msprop:Generator_RowDeletedName="MacchineTaglioRowDeleted" msprop:Generator_UserTableName="MacchineTaglio" msprop:Generator_RowChangedName="MacchineTaglioRowChanged" msprop:Generator_RowEvArgName="MacchineTaglioRowChangeEvent" msprop:Generator_RowClassName="MacchineTaglioRow">
+        <xs:element name="MacchineTaglio" msprop:Generator_TableClassName="MacchineTaglioDataTable" msprop:Generator_TableVarName="tableMacchineTaglio" msprop:Generator_RowChangedName="MacchineTaglioRowChanged" msprop:Generator_TablePropName="MacchineTaglio" msprop:Generator_RowDeletingName="MacchineTaglioRowDeleting" msprop:Generator_RowChangingName="MacchineTaglioRowChanging" msprop:Generator_RowEvHandlerName="MacchineTaglioRowChangeEventHandler" msprop:Generator_RowDeletedName="MacchineTaglioRowDeleted" msprop:Generator_RowClassName="MacchineTaglioRow" msprop:Generator_UserTableName="MacchineTaglio" msprop:Generator_RowEvArgName="MacchineTaglioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDTaglio" msprop:Generator_ColumnVarNameInTable="columnIDTaglio" msprop:Generator_ColumnPropNameInRow="IDTaglio" msprop:Generator_ColumnPropNameInTable="IDTaglioColumn" msprop:Generator_UserColumnName="IDTaglio" type="xs:int" />
@@ -5960,7 +5987,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Minuterie" msprop:Generator_TableClassName="MinuterieDataTable" msprop:Generator_TableVarName="tableMinuterie" msprop:Generator_TablePropName="Minuterie" msprop:Generator_RowDeletingName="MinuterieRowDeleting" msprop:Generator_RowChangingName="MinuterieRowChanging" msprop:Generator_RowEvHandlerName="MinuterieRowChangeEventHandler" msprop:Generator_RowDeletedName="MinuterieRowDeleted" msprop:Generator_UserTableName="Minuterie" msprop:Generator_RowChangedName="MinuterieRowChanged" msprop:Generator_RowEvArgName="MinuterieRowChangeEvent" msprop:Generator_RowClassName="MinuterieRow">
+        <xs:element name="Minuterie" msprop:Generator_TableClassName="MinuterieDataTable" msprop:Generator_TableVarName="tableMinuterie" msprop:Generator_RowChangedName="MinuterieRowChanged" msprop:Generator_TablePropName="Minuterie" msprop:Generator_RowDeletingName="MinuterieRowDeleting" msprop:Generator_RowChangingName="MinuterieRowChanging" msprop:Generator_RowEvHandlerName="MinuterieRowChangeEventHandler" msprop:Generator_RowDeletedName="MinuterieRowDeleted" msprop:Generator_RowClassName="MinuterieRow" msprop:Generator_UserTableName="Minuterie" msprop:Generator_RowEvArgName="MinuterieRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codice" msprop:Generator_ColumnVarNameInTable="columncodice" msprop:Generator_ColumnPropNameInRow="codice" msprop:Generator_ColumnPropNameInTable="codiceColumn" msprop:Generator_UserColumnName="codice">
@@ -6047,7 +6074,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MovimentiMagazzino" msprop:Generator_TableClassName="MovimentiMagazzinoDataTable" msprop:Generator_TableVarName="tableMovimentiMagazzino" msprop:Generator_TablePropName="MovimentiMagazzino" msprop:Generator_RowDeletingName="MovimentiMagazzinoRowDeleting" msprop:Generator_RowChangingName="MovimentiMagazzinoRowChanging" msprop:Generator_RowEvHandlerName="MovimentiMagazzinoRowChangeEventHandler" msprop:Generator_RowDeletedName="MovimentiMagazzinoRowDeleted" msprop:Generator_UserTableName="MovimentiMagazzino" msprop:Generator_RowChangedName="MovimentiMagazzinoRowChanged" msprop:Generator_RowEvArgName="MovimentiMagazzinoRowChangeEvent" msprop:Generator_RowClassName="MovimentiMagazzinoRow">
+        <xs:element name="MovimentiMagazzino" msprop:Generator_TableClassName="MovimentiMagazzinoDataTable" msprop:Generator_TableVarName="tableMovimentiMagazzino" msprop:Generator_RowChangedName="MovimentiMagazzinoRowChanged" msprop:Generator_TablePropName="MovimentiMagazzino" msprop:Generator_RowDeletingName="MovimentiMagazzinoRowDeleting" msprop:Generator_RowChangingName="MovimentiMagazzinoRowChanging" msprop:Generator_RowEvHandlerName="MovimentiMagazzinoRowChangeEventHandler" msprop:Generator_RowDeletedName="MovimentiMagazzinoRowDeleted" msprop:Generator_RowClassName="MovimentiMagazzinoRow" msprop:Generator_UserTableName="MovimentiMagazzino" msprop:Generator_RowEvArgName="MovimentiMagazzinoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idMovimento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidMovimento" msprop:Generator_ColumnPropNameInRow="idMovimento" msprop:Generator_ColumnPropNameInTable="idMovimentoColumn" msprop:Generator_UserColumnName="idMovimento" type="xs:int" />
@@ -6122,7 +6149,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OrdFornDett" msprop:Generator_TableClassName="OrdFornDettDataTable" msprop:Generator_TableVarName="tableOrdFornDett" msprop:Generator_TablePropName="OrdFornDett" msprop:Generator_RowDeletingName="OrdFornDettRowDeleting" msprop:Generator_RowChangingName="OrdFornDettRowChanging" msprop:Generator_RowEvHandlerName="OrdFornDettRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdFornDettRowDeleted" msprop:Generator_UserTableName="OrdFornDett" msprop:Generator_RowChangedName="OrdFornDettRowChanged" msprop:Generator_RowEvArgName="OrdFornDettRowChangeEvent" msprop:Generator_RowClassName="OrdFornDettRow">
+        <xs:element name="OrdFornDett" msprop:Generator_TableClassName="OrdFornDettDataTable" msprop:Generator_TableVarName="tableOrdFornDett" msprop:Generator_RowChangedName="OrdFornDettRowChanged" msprop:Generator_TablePropName="OrdFornDett" msprop:Generator_RowDeletingName="OrdFornDettRowDeleting" msprop:Generator_RowChangingName="OrdFornDettRowChanging" msprop:Generator_RowEvHandlerName="OrdFornDettRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdFornDettRowDeleted" msprop:Generator_RowClassName="OrdFornDettRow" msprop:Generator_UserTableName="OrdFornDett" msprop:Generator_RowEvArgName="OrdFornDettRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idOFDett" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidOFDett" msprop:Generator_ColumnPropNameInRow="idOFDett" msprop:Generator_ColumnPropNameInTable="idOFDettColumn" msprop:Generator_UserColumnName="idOFDett" type="xs:int" />
@@ -6169,7 +6196,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OrdFornTest" msprop:Generator_TableClassName="OrdFornTestDataTable" msprop:Generator_TableVarName="tableOrdFornTest" msprop:Generator_TablePropName="OrdFornTest" msprop:Generator_RowDeletingName="OrdFornTestRowDeleting" msprop:Generator_RowChangingName="OrdFornTestRowChanging" msprop:Generator_RowEvHandlerName="OrdFornTestRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdFornTestRowDeleted" msprop:Generator_UserTableName="OrdFornTest" msprop:Generator_RowChangedName="OrdFornTestRowChanged" msprop:Generator_RowEvArgName="OrdFornTestRowChangeEvent" msprop:Generator_RowClassName="OrdFornTestRow">
+        <xs:element name="OrdFornTest" msprop:Generator_TableClassName="OrdFornTestDataTable" msprop:Generator_TableVarName="tableOrdFornTest" msprop:Generator_RowChangedName="OrdFornTestRowChanged" msprop:Generator_TablePropName="OrdFornTest" msprop:Generator_RowDeletingName="OrdFornTestRowDeleting" msprop:Generator_RowChangingName="OrdFornTestRowChanging" msprop:Generator_RowEvHandlerName="OrdFornTestRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdFornTestRowDeleted" msprop:Generator_RowClassName="OrdFornTestRow" msprop:Generator_UserTableName="OrdFornTest" msprop:Generator_RowEvArgName="OrdFornTestRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idOFTestata" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidOFTestata" msprop:Generator_ColumnPropNameInRow="idOFTestata" msprop:Generator_ColumnPropNameInTable="idOFTestataColumn" msprop:Generator_UserColumnName="idOFTestata" type="xs:int" />
@@ -6193,7 +6220,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OrdiniImportati" msprop:Generator_TableClassName="OrdiniImportatiDataTable" msprop:Generator_TableVarName="tableOrdiniImportati" msprop:Generator_TablePropName="OrdiniImportati" msprop:Generator_RowDeletingName="OrdiniImportatiRowDeleting" msprop:Generator_RowChangingName="OrdiniImportatiRowChanging" msprop:Generator_RowEvHandlerName="OrdiniImportatiRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdiniImportatiRowDeleted" msprop:Generator_UserTableName="OrdiniImportati" msprop:Generator_RowChangedName="OrdiniImportatiRowChanged" msprop:Generator_RowEvArgName="OrdiniImportatiRowChangeEvent" msprop:Generator_RowClassName="OrdiniImportatiRow">
+        <xs:element name="OrdiniImportati" msprop:Generator_TableClassName="OrdiniImportatiDataTable" msprop:Generator_TableVarName="tableOrdiniImportati" msprop:Generator_RowChangedName="OrdiniImportatiRowChanged" msprop:Generator_TablePropName="OrdiniImportati" msprop:Generator_RowDeletingName="OrdiniImportatiRowDeleting" msprop:Generator_RowChangingName="OrdiniImportatiRowChanging" msprop:Generator_RowEvHandlerName="OrdiniImportatiRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdiniImportatiRowDeleted" msprop:Generator_RowClassName="OrdiniImportatiRow" msprop:Generator_UserTableName="OrdiniImportati" msprop:Generator_RowEvArgName="OrdiniImportatiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -6218,7 +6245,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PesiSpecifici" msprop:Generator_TableClassName="PesiSpecificiDataTable" msprop:Generator_TableVarName="tablePesiSpecifici" msprop:Generator_TablePropName="PesiSpecifici" msprop:Generator_RowDeletingName="PesiSpecificiRowDeleting" msprop:Generator_RowChangingName="PesiSpecificiRowChanging" msprop:Generator_RowEvHandlerName="PesiSpecificiRowChangeEventHandler" msprop:Generator_RowDeletedName="PesiSpecificiRowDeleted" msprop:Generator_UserTableName="PesiSpecifici" msprop:Generator_RowChangedName="PesiSpecificiRowChanged" msprop:Generator_RowEvArgName="PesiSpecificiRowChangeEvent" msprop:Generator_RowClassName="PesiSpecificiRow">
+        <xs:element name="PesiSpecifici" msprop:Generator_TableClassName="PesiSpecificiDataTable" msprop:Generator_TableVarName="tablePesiSpecifici" msprop:Generator_RowChangedName="PesiSpecificiRowChanged" msprop:Generator_TablePropName="PesiSpecifici" msprop:Generator_RowDeletingName="PesiSpecificiRowDeleting" msprop:Generator_RowChangingName="PesiSpecificiRowChanging" msprop:Generator_RowEvHandlerName="PesiSpecificiRowChangeEventHandler" msprop:Generator_RowDeletedName="PesiSpecificiRowDeleted" msprop:Generator_RowClassName="PesiSpecificiRow" msprop:Generator_UserTableName="PesiSpecifici" msprop:Generator_RowEvArgName="PesiSpecificiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDPS" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDPS" msprop:Generator_ColumnPropNameInRow="IDPS" msprop:Generator_ColumnPropNameInTable="IDPSColumn" msprop:Generator_UserColumnName="IDPS" type="xs:int" />
@@ -6240,7 +6267,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PosizioniDimeStampi" msprop:Generator_TableClassName="PosizioniDimeStampiDataTable" msprop:Generator_TableVarName="tablePosizioniDimeStampi" msprop:Generator_TablePropName="PosizioniDimeStampi" msprop:Generator_RowDeletingName="PosizioniDimeStampiRowDeleting" msprop:Generator_RowChangingName="PosizioniDimeStampiRowChanging" msprop:Generator_RowEvHandlerName="PosizioniDimeStampiRowChangeEventHandler" msprop:Generator_RowDeletedName="PosizioniDimeStampiRowDeleted" msprop:Generator_UserTableName="PosizioniDimeStampi" msprop:Generator_RowChangedName="PosizioniDimeStampiRowChanged" msprop:Generator_RowEvArgName="PosizioniDimeStampiRowChangeEvent" msprop:Generator_RowClassName="PosizioniDimeStampiRow">
+        <xs:element name="PosizioniDimeStampi" msprop:Generator_TableClassName="PosizioniDimeStampiDataTable" msprop:Generator_TableVarName="tablePosizioniDimeStampi" msprop:Generator_RowChangedName="PosizioniDimeStampiRowChanged" msprop:Generator_TablePropName="PosizioniDimeStampi" msprop:Generator_RowDeletingName="PosizioniDimeStampiRowDeleting" msprop:Generator_RowChangingName="PosizioniDimeStampiRowChanging" msprop:Generator_RowEvHandlerName="PosizioniDimeStampiRowChangeEventHandler" msprop:Generator_RowDeletedName="PosizioniDimeStampiRowDeleted" msprop:Generator_RowClassName="PosizioniDimeStampiRow" msprop:Generator_UserTableName="PosizioniDimeStampi" msprop:Generator_RowEvArgName="PosizioniDimeStampiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CLIENTE" msprop:Generator_ColumnVarNameInTable="columnCLIENTE" msprop:Generator_ColumnPropNameInRow="CLIENTE" msprop:Generator_ColumnPropNameInTable="CLIENTEColumn" msprop:Generator_UserColumnName="CLIENTE" minOccurs="0">
@@ -6289,7 +6316,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Schedulazione" msprop:Generator_TableClassName="SchedulazioneDataTable" msprop:Generator_TableVarName="tableSchedulazione" msprop:Generator_TablePropName="Schedulazione" msprop:Generator_RowDeletingName="SchedulazioneRowDeleting" msprop:Generator_RowChangingName="SchedulazioneRowChanging" msprop:Generator_RowEvHandlerName="SchedulazioneRowChangeEventHandler" msprop:Generator_RowDeletedName="SchedulazioneRowDeleted" msprop:Generator_UserTableName="Schedulazione" msprop:Generator_RowChangedName="SchedulazioneRowChanged" msprop:Generator_RowEvArgName="SchedulazioneRowChangeEvent" msprop:Generator_RowClassName="SchedulazioneRow">
+        <xs:element name="Schedulazione" msprop:Generator_TableClassName="SchedulazioneDataTable" msprop:Generator_TableVarName="tableSchedulazione" msprop:Generator_RowChangedName="SchedulazioneRowChanged" msprop:Generator_TablePropName="Schedulazione" msprop:Generator_RowDeletingName="SchedulazioneRowDeleting" msprop:Generator_RowChangingName="SchedulazioneRowChanging" msprop:Generator_RowEvHandlerName="SchedulazioneRowChangeEventHandler" msprop:Generator_RowDeletedName="SchedulazioneRowDeleted" msprop:Generator_RowClassName="SchedulazioneRow" msprop:Generator_UserTableName="Schedulazione" msprop:Generator_RowEvArgName="SchedulazioneRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdS" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdS" msprop:Generator_ColumnPropNameInRow="IdS" msprop:Generator_ColumnPropNameInTable="IdSColumn" msprop:Generator_UserColumnName="IdS" type="xs:int" />
@@ -6309,7 +6336,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Stampi" msprop:Generator_TableClassName="StampiDataTable" msprop:Generator_TableVarName="tableStampi" msprop:Generator_TablePropName="Stampi" msprop:Generator_RowDeletingName="StampiRowDeleting" msprop:Generator_RowChangingName="StampiRowChanging" msprop:Generator_RowEvHandlerName="StampiRowChangeEventHandler" msprop:Generator_RowDeletedName="StampiRowDeleted" msprop:Generator_UserTableName="Stampi" msprop:Generator_RowChangedName="StampiRowChanged" msprop:Generator_RowEvArgName="StampiRowChangeEvent" msprop:Generator_RowClassName="StampiRow">
+        <xs:element name="Stampi" msprop:Generator_TableClassName="StampiDataTable" msprop:Generator_TableVarName="tableStampi" msprop:Generator_RowChangedName="StampiRowChanged" msprop:Generator_TablePropName="Stampi" msprop:Generator_RowDeletingName="StampiRowDeleting" msprop:Generator_RowChangingName="StampiRowChanging" msprop:Generator_RowEvHandlerName="StampiRowChangeEventHandler" msprop:Generator_RowDeletedName="StampiRowDeleted" msprop:Generator_RowClassName="StampiRow" msprop:Generator_UserTableName="Stampi" msprop:Generator_RowEvArgName="StampiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codice" msprop:Generator_ColumnVarNameInTable="columncodice" msprop:Generator_ColumnPropNameInRow="codice" msprop:Generator_ColumnPropNameInTable="codiceColumn" msprop:Generator_UserColumnName="codice">
@@ -6373,7 +6400,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SuperCommessa" msprop:Generator_TableClassName="SuperCommessaDataTable" msprop:Generator_TableVarName="tableSuperCommessa" msprop:Generator_TablePropName="SuperCommessa" msprop:Generator_RowDeletingName="SuperCommessaRowDeleting" msprop:Generator_RowChangingName="SuperCommessaRowChanging" msprop:Generator_RowEvHandlerName="SuperCommessaRowChangeEventHandler" msprop:Generator_RowDeletedName="SuperCommessaRowDeleted" msprop:Generator_UserTableName="SuperCommessa" msprop:Generator_RowChangedName="SuperCommessaRowChanged" msprop:Generator_RowEvArgName="SuperCommessaRowChangeEvent" msprop:Generator_RowClassName="SuperCommessaRow">
+        <xs:element name="SuperCommessa" msprop:Generator_TableClassName="SuperCommessaDataTable" msprop:Generator_TableVarName="tableSuperCommessa" msprop:Generator_RowChangedName="SuperCommessaRowChanged" msprop:Generator_TablePropName="SuperCommessa" msprop:Generator_RowDeletingName="SuperCommessaRowDeleting" msprop:Generator_RowChangingName="SuperCommessaRowChanging" msprop:Generator_RowEvHandlerName="SuperCommessaRowChangeEventHandler" msprop:Generator_RowDeletedName="SuperCommessaRowDeleted" msprop:Generator_RowClassName="SuperCommessaRow" msprop:Generator_UserTableName="SuperCommessa" msprop:Generator_RowEvArgName="SuperCommessaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdSuperCommessa" msprop:Generator_ColumnVarNameInTable="columnIdSuperCommessa" msprop:Generator_ColumnPropNameInRow="IdSuperCommessa" msprop:Generator_ColumnPropNameInTable="IdSuperCommessaColumn" msprop:Generator_UserColumnName="IdSuperCommessa" type="xs:int" />
@@ -6414,7 +6441,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sysdiagrams" msprop:Generator_TableClassName="sysdiagramsDataTable" msprop:Generator_TableVarName="tablesysdiagrams" msprop:Generator_TablePropName="sysdiagrams" msprop:Generator_RowDeletingName="sysdiagramsRowDeleting" msprop:Generator_RowChangingName="sysdiagramsRowChanging" msprop:Generator_RowEvHandlerName="sysdiagramsRowChangeEventHandler" msprop:Generator_RowDeletedName="sysdiagramsRowDeleted" msprop:Generator_UserTableName="sysdiagrams" msprop:Generator_RowChangedName="sysdiagramsRowChanged" msprop:Generator_RowEvArgName="sysdiagramsRowChangeEvent" msprop:Generator_RowClassName="sysdiagramsRow">
+        <xs:element name="sysdiagrams" msprop:Generator_TableClassName="sysdiagramsDataTable" msprop:Generator_TableVarName="tablesysdiagrams" msprop:Generator_RowChangedName="sysdiagramsRowChanged" msprop:Generator_TablePropName="sysdiagrams" msprop:Generator_RowDeletingName="sysdiagramsRowDeleting" msprop:Generator_RowChangingName="sysdiagramsRowChanging" msprop:Generator_RowEvHandlerName="sysdiagramsRowChangeEventHandler" msprop:Generator_RowDeletedName="sysdiagramsRowDeleted" msprop:Generator_RowClassName="sysdiagramsRow" msprop:Generator_UserTableName="sysdiagrams" msprop:Generator_RowEvArgName="sysdiagramsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name">
@@ -6431,7 +6458,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TaglioOnLine" msprop:Generator_TableClassName="TaglioOnLineDataTable" msprop:Generator_TableVarName="tableTaglioOnLine" msprop:Generator_TablePropName="TaglioOnLine" msprop:Generator_RowDeletingName="TaglioOnLineRowDeleting" msprop:Generator_RowChangingName="TaglioOnLineRowChanging" msprop:Generator_RowEvHandlerName="TaglioOnLineRowChangeEventHandler" msprop:Generator_RowDeletedName="TaglioOnLineRowDeleted" msprop:Generator_UserTableName="TaglioOnLine" msprop:Generator_RowChangedName="TaglioOnLineRowChanged" msprop:Generator_RowEvArgName="TaglioOnLineRowChangeEvent" msprop:Generator_RowClassName="TaglioOnLineRow">
+        <xs:element name="TaglioOnLine" msprop:Generator_TableClassName="TaglioOnLineDataTable" msprop:Generator_TableVarName="tableTaglioOnLine" msprop:Generator_RowChangedName="TaglioOnLineRowChanged" msprop:Generator_TablePropName="TaglioOnLine" msprop:Generator_RowDeletingName="TaglioOnLineRowDeleting" msprop:Generator_RowChangingName="TaglioOnLineRowChanging" msprop:Generator_RowEvHandlerName="TaglioOnLineRowChangeEventHandler" msprop:Generator_RowDeletedName="TaglioOnLineRowDeleted" msprop:Generator_RowClassName="TaglioOnLineRow" msprop:Generator_UserTableName="TaglioOnLine" msprop:Generator_RowEvArgName="TaglioOnLineRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDT" msprop:Generator_ColumnVarNameInTable="columnIDT" msprop:Generator_ColumnPropNameInRow="IDT" msprop:Generator_ColumnPropNameInTable="IDTColumn" msprop:Generator_UserColumnName="IDT" type="xs:int" />
@@ -6456,7 +6483,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Temp" msprop:Generator_TableClassName="TempDataTable" msprop:Generator_TableVarName="tableTemp" msprop:Generator_TablePropName="Temp" msprop:Generator_RowDeletingName="TempRowDeleting" msprop:Generator_RowChangingName="TempRowChanging" msprop:Generator_RowEvHandlerName="TempRowChangeEventHandler" msprop:Generator_RowDeletedName="TempRowDeleted" msprop:Generator_UserTableName="Temp" msprop:Generator_RowChangedName="TempRowChanged" msprop:Generator_RowEvArgName="TempRowChangeEvent" msprop:Generator_RowClassName="TempRow">
+        <xs:element name="Temp" msprop:Generator_TableClassName="TempDataTable" msprop:Generator_TableVarName="tableTemp" msprop:Generator_RowChangedName="TempRowChanged" msprop:Generator_TablePropName="Temp" msprop:Generator_RowDeletingName="TempRowDeleting" msprop:Generator_RowChangingName="TempRowChanging" msprop:Generator_RowEvHandlerName="TempRowChangeEventHandler" msprop:Generator_RowDeletedName="TempRowDeleted" msprop:Generator_RowClassName="TempRow" msprop:Generator_UserTableName="Temp" msprop:Generator_RowEvArgName="TempRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Codice" msprop:Generator_ColumnVarNameInTable="columnCodice" msprop:Generator_ColumnPropNameInRow="Codice" msprop:Generator_ColumnPropNameInTable="CodiceColumn" msprop:Generator_UserColumnName="Codice" minOccurs="0">
@@ -6471,7 +6498,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TempStamp" msprop:Generator_TableClassName="TempStampDataTable" msprop:Generator_TableVarName="tableTempStamp" msprop:Generator_TablePropName="TempStamp" msprop:Generator_RowDeletingName="TempStampRowDeleting" msprop:Generator_RowChangingName="TempStampRowChanging" msprop:Generator_RowEvHandlerName="TempStampRowChangeEventHandler" msprop:Generator_RowDeletedName="TempStampRowDeleted" msprop:Generator_UserTableName="TempStamp" msprop:Generator_RowChangedName="TempStampRowChanged" msprop:Generator_RowEvArgName="TempStampRowChangeEvent" msprop:Generator_RowClassName="TempStampRow">
+        <xs:element name="TempStamp" msprop:Generator_TableClassName="TempStampDataTable" msprop:Generator_TableVarName="tableTempStamp" msprop:Generator_RowChangedName="TempStampRowChanged" msprop:Generator_TablePropName="TempStamp" msprop:Generator_RowDeletingName="TempStampRowDeleting" msprop:Generator_RowChangingName="TempStampRowChanging" msprop:Generator_RowEvHandlerName="TempStampRowChangeEventHandler" msprop:Generator_RowDeletedName="TempStampRowDeleted" msprop:Generator_RowClassName="TempStampRow" msprop:Generator_UserTableName="TempStamp" msprop:Generator_RowEvArgName="TempStampRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODICE" msprop:Generator_ColumnVarNameInTable="columnCODICE" msprop:Generator_ColumnPropNameInRow="CODICE" msprop:Generator_ColumnPropNameInTable="CODICEColumn" msprop:Generator_UserColumnName="CODICE">
@@ -6485,7 +6512,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="testata_ordini_multiriga" msprop:Generator_TableClassName="testata_ordini_multirigaDataTable" msprop:Generator_TableVarName="tabletestata_ordini_multiriga" msprop:Generator_TablePropName="testata_ordini_multiriga" msprop:Generator_RowDeletingName="testata_ordini_multirigaRowDeleting" msprop:Generator_RowChangingName="testata_ordini_multirigaRowChanging" msprop:Generator_RowEvHandlerName="testata_ordini_multirigaRowChangeEventHandler" msprop:Generator_RowDeletedName="testata_ordini_multirigaRowDeleted" msprop:Generator_UserTableName="testata_ordini_multiriga" msprop:Generator_RowChangedName="testata_ordini_multirigaRowChanged" msprop:Generator_RowEvArgName="testata_ordini_multirigaRowChangeEvent" msprop:Generator_RowClassName="testata_ordini_multirigaRow">
+        <xs:element name="testata_ordini_multiriga" msprop:Generator_TableClassName="testata_ordini_multirigaDataTable" msprop:Generator_TableVarName="tabletestata_ordini_multiriga" msprop:Generator_RowChangedName="testata_ordini_multirigaRowChanged" msprop:Generator_TablePropName="testata_ordini_multiriga" msprop:Generator_RowDeletingName="testata_ordini_multirigaRowDeleting" msprop:Generator_RowChangingName="testata_ordini_multirigaRowChanging" msprop:Generator_RowEvHandlerName="testata_ordini_multirigaRowChangeEventHandler" msprop:Generator_RowDeletedName="testata_ordini_multirigaRowDeleted" msprop:Generator_RowClassName="testata_ordini_multirigaRow" msprop:Generator_UserTableName="testata_ordini_multiriga" msprop:Generator_RowEvArgName="testata_ordini_multirigaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="data_ordine" msprop:Generator_ColumnVarNameInTable="columndata_ordine" msprop:Generator_ColumnPropNameInRow="data_ordine" msprop:Generator_ColumnPropNameInTable="data_ordineColumn" msprop:Generator_UserColumnName="data_ordine" type="xs:int" minOccurs="0" />
@@ -6581,7 +6608,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TipoCommessa" msprop:Generator_TableClassName="TipoCommessaDataTable" msprop:Generator_TableVarName="tableTipoCommessa" msprop:Generator_TablePropName="TipoCommessa" msprop:Generator_RowDeletingName="TipoCommessaRowDeleting" msprop:Generator_RowChangingName="TipoCommessaRowChanging" msprop:Generator_RowEvHandlerName="TipoCommessaRowChangeEventHandler" msprop:Generator_RowDeletedName="TipoCommessaRowDeleted" msprop:Generator_UserTableName="TipoCommessa" msprop:Generator_RowChangedName="TipoCommessaRowChanged" msprop:Generator_RowEvArgName="TipoCommessaRowChangeEvent" msprop:Generator_RowClassName="TipoCommessaRow">
+        <xs:element name="TipoCommessa" msprop:Generator_TableClassName="TipoCommessaDataTable" msprop:Generator_TableVarName="tableTipoCommessa" msprop:Generator_RowChangedName="TipoCommessaRowChanged" msprop:Generator_TablePropName="TipoCommessa" msprop:Generator_RowDeletingName="TipoCommessaRowDeleting" msprop:Generator_RowChangingName="TipoCommessaRowChanging" msprop:Generator_RowEvHandlerName="TipoCommessaRowChangeEventHandler" msprop:Generator_RowDeletedName="TipoCommessaRowDeleted" msprop:Generator_RowClassName="TipoCommessaRow" msprop:Generator_UserTableName="TipoCommessa" msprop:Generator_RowEvArgName="TipoCommessaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDTipo" msprop:Generator_ColumnVarNameInTable="columnIDTipo" msprop:Generator_ColumnPropNameInRow="IDTipo" msprop:Generator_ColumnPropNameInTable="IDTipoColumn" msprop:Generator_UserColumnName="IDTipo" type="xs:int" />
@@ -6595,7 +6622,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CodModPagamento" msprop:Generator_TableClassName="CodModPagamentoDataTable" msprop:Generator_TableVarName="tableCodModPagamento" msprop:Generator_RowChangedName="CodModPagamentoRowChanged" msprop:Generator_TablePropName="CodModPagamento" msprop:Generator_RowDeletingName="CodModPagamentoRowDeleting" msprop:Generator_RowChangingName="CodModPagamentoRowChanging" msprop:Generator_RowEvHandlerName="CodModPagamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="CodModPagamentoRowDeleted" msprop:Generator_RowClassName="CodModPagamentoRow" msprop:Generator_UserTableName="CodModPagamento" msprop:Generator_RowEvArgName="CodModPagamentoRowChangeEvent">
+        <xs:element name="CodModPagamento" msprop:Generator_TableClassName="CodModPagamentoDataTable" msprop:Generator_TableVarName="tableCodModPagamento" msprop:Generator_TablePropName="CodModPagamento" msprop:Generator_RowDeletingName="CodModPagamentoRowDeleting" msprop:Generator_RowChangingName="CodModPagamentoRowChanging" msprop:Generator_RowEvHandlerName="CodModPagamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="CodModPagamentoRowDeleted" msprop:Generator_UserTableName="CodModPagamento" msprop:Generator_RowChangedName="CodModPagamentoRowChanged" msprop:Generator_RowEvArgName="CodModPagamentoRowChangeEvent" msprop:Generator_RowClassName="CodModPagamentoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdCodModPag" msprop:Generator_ColumnVarNameInTable="columnIdCodModPag" msprop:Generator_ColumnPropNameInRow="IdCodModPag" msprop:Generator_ColumnPropNameInTable="IdCodModPagColumn" msprop:Generator_UserColumnName="IdCodModPag" type="xs:int" />
@@ -6616,7 +6643,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DettArticoli" msprop:Generator_TableClassName="DettArticoliDataTable" msprop:Generator_TableVarName="tableDettArticoli" msprop:Generator_RowChangedName="DettArticoliRowChanged" msprop:Generator_TablePropName="DettArticoli" msprop:Generator_RowDeletingName="DettArticoliRowDeleting" msprop:Generator_RowChangingName="DettArticoliRowChanging" msprop:Generator_RowEvHandlerName="DettArticoliRowChangeEventHandler" msprop:Generator_RowDeletedName="DettArticoliRowDeleted" msprop:Generator_RowClassName="DettArticoliRow" msprop:Generator_UserTableName="DettArticoli" msprop:Generator_RowEvArgName="DettArticoliRowChangeEvent">
+        <xs:element name="DettArticoli" msprop:Generator_TableClassName="DettArticoliDataTable" msprop:Generator_TableVarName="tableDettArticoli" msprop:Generator_TablePropName="DettArticoli" msprop:Generator_RowDeletingName="DettArticoliRowDeleting" msprop:Generator_RowChangingName="DettArticoliRowChanging" msprop:Generator_RowEvHandlerName="DettArticoliRowChangeEventHandler" msprop:Generator_RowDeletedName="DettArticoliRowDeleted" msprop:Generator_UserTableName="DettArticoli" msprop:Generator_RowChangedName="DettArticoliRowChanged" msprop:Generator_RowEvArgName="DettArticoliRowChangeEvent" msprop:Generator_RowClassName="DettArticoliRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDDettaglioArticolo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDDettaglioArticolo" msprop:Generator_ColumnPropNameInRow="IDDettaglioArticolo" msprop:Generator_ColumnPropNameInTable="IDDettaglioArticoloColumn" msprop:Generator_UserColumnName="IDDettaglioArticolo" type="xs:int" />
@@ -6731,7 +6758,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Prime" msprop:Generator_TableClassName="PrimeDataTable" msprop:Generator_TableVarName="tablePrime" msprop:Generator_RowChangedName="PrimeRowChanged" msprop:Generator_TablePropName="Prime" msprop:Generator_RowDeletingName="PrimeRowDeleting" msprop:Generator_RowChangingName="PrimeRowChanging" msprop:Generator_RowEvHandlerName="PrimeRowChangeEventHandler" msprop:Generator_RowDeletedName="PrimeRowDeleted" msprop:Generator_RowClassName="PrimeRow" msprop:Generator_UserTableName="Prime" msprop:Generator_RowEvArgName="PrimeRowChangeEvent">
+        <xs:element name="Prime" msprop:Generator_TableClassName="PrimeDataTable" msprop:Generator_TableVarName="tablePrime" msprop:Generator_TablePropName="Prime" msprop:Generator_RowDeletingName="PrimeRowDeleting" msprop:Generator_RowChangingName="PrimeRowChanging" msprop:Generator_RowEvHandlerName="PrimeRowChangeEventHandler" msprop:Generator_RowDeletedName="PrimeRowDeleted" msprop:Generator_UserTableName="Prime" msprop:Generator_RowChangedName="PrimeRowChanged" msprop:Generator_RowEvArgName="PrimeRowChangeEvent" msprop:Generator_RowClassName="PrimeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="codice" msprop:Generator_ColumnVarNameInTable="columncodice" msprop:Generator_ColumnPropNameInRow="codice" msprop:Generator_ColumnPropNameInTable="codiceColumn" msprop:Generator_UserColumnName="codice">
@@ -6820,7 +6847,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Configurazione" msprop:Generator_TableClassName="ConfigurazioneDataTable" msprop:Generator_TableVarName="tableConfigurazione" msprop:Generator_RowChangedName="ConfigurazioneRowChanged" msprop:Generator_TablePropName="Configurazione" msprop:Generator_RowDeletingName="ConfigurazioneRowDeleting" msprop:Generator_RowChangingName="ConfigurazioneRowChanging" msprop:Generator_RowEvHandlerName="ConfigurazioneRowChangeEventHandler" msprop:Generator_RowDeletedName="ConfigurazioneRowDeleted" msprop:Generator_RowClassName="ConfigurazioneRow" msprop:Generator_UserTableName="Configurazione" msprop:Generator_RowEvArgName="ConfigurazioneRowChangeEvent">
+        <xs:element name="Configurazione" msprop:Generator_TableClassName="ConfigurazioneDataTable" msprop:Generator_TableVarName="tableConfigurazione" msprop:Generator_TablePropName="Configurazione" msprop:Generator_RowDeletingName="ConfigurazioneRowDeleting" msprop:Generator_RowChangingName="ConfigurazioneRowChanging" msprop:Generator_RowEvHandlerName="ConfigurazioneRowChangeEventHandler" msprop:Generator_RowDeletedName="ConfigurazioneRowDeleted" msprop:Generator_UserTableName="Configurazione" msprop:Generator_RowChangedName="ConfigurazioneRowChanged" msprop:Generator_RowEvArgName="ConfigurazioneRowChangeEvent" msprop:Generator_RowClassName="ConfigurazioneRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDAzienda" msprop:Generator_ColumnVarNameInTable="columnIDAzienda" msprop:Generator_ColumnPropNameInRow="IDAzienda" msprop:Generator_ColumnPropNameInTable="IDAziendaColumn" msprop:Generator_UserColumnName="IDAzienda" type="xs:int" />
@@ -6848,7 +6875,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Commesse" msprop:Generator_TableClassName="CommesseDataTable" msprop:Generator_TableVarName="tableCommesse" msprop:Generator_RowChangedName="CommesseRowChanged" msprop:Generator_TablePropName="Commesse" msprop:Generator_RowDeletingName="CommesseRowDeleting" msprop:Generator_RowChangingName="CommesseRowChanging" msprop:Generator_RowEvHandlerName="CommesseRowChangeEventHandler" msprop:Generator_RowDeletedName="CommesseRowDeleted" msprop:Generator_RowClassName="CommesseRow" msprop:Generator_UserTableName="Commesse" msprop:Generator_RowEvArgName="CommesseRowChangeEvent">
+        <xs:element name="Commesse" msprop:Generator_TableClassName="CommesseDataTable" msprop:Generator_TableVarName="tableCommesse" msprop:Generator_TablePropName="Commesse" msprop:Generator_RowDeletingName="CommesseRowDeleting" msprop:Generator_RowChangingName="CommesseRowChanging" msprop:Generator_RowEvHandlerName="CommesseRowChangeEventHandler" msprop:Generator_RowDeletedName="CommesseRowDeleted" msprop:Generator_UserTableName="Commesse" msprop:Generator_RowChangedName="CommesseRowChanged" msprop:Generator_RowEvArgName="CommesseRowChangeEvent" msprop:Generator_RowClassName="CommesseRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDCommessa" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDCommessa" msprop:Generator_ColumnPropNameInRow="IDCommessa" msprop:Generator_ColumnPropNameInTable="IDCommessaColumn" msprop:Generator_UserColumnName="IDCommessa" type="xs:int" />
@@ -7034,7 +7061,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Utenti" msprop:Generator_TableClassName="UtentiDataTable" msprop:Generator_TableVarName="tableUtenti" msprop:Generator_RowChangedName="UtentiRowChanged" msprop:Generator_TablePropName="Utenti" msprop:Generator_RowDeletingName="UtentiRowDeleting" msprop:Generator_RowChangingName="UtentiRowChanging" msprop:Generator_RowEvHandlerName="UtentiRowChangeEventHandler" msprop:Generator_RowDeletedName="UtentiRowDeleted" msprop:Generator_RowClassName="UtentiRow" msprop:Generator_UserTableName="Utenti" msprop:Generator_RowEvArgName="UtentiRowChangeEvent">
+        <xs:element name="Utenti" msprop:Generator_TableClassName="UtentiDataTable" msprop:Generator_TableVarName="tableUtenti" msprop:Generator_TablePropName="Utenti" msprop:Generator_RowDeletingName="UtentiRowDeleting" msprop:Generator_RowChangingName="UtentiRowChanging" msprop:Generator_RowEvHandlerName="UtentiRowChangeEventHandler" msprop:Generator_RowDeletedName="UtentiRowDeleted" msprop:Generator_UserTableName="Utenti" msprop:Generator_RowChangedName="UtentiRowChanged" msprop:Generator_RowEvArgName="UtentiRowChangeEvent" msprop:Generator_RowClassName="UtentiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDutente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIDutente" msprop:Generator_ColumnPropNameInRow="IDutente" msprop:Generator_ColumnPropNameInTable="IDutenteColumn" msprop:Generator_UserColumnName="IDutente" type="xs:int" />
@@ -7069,7 +7096,7 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MacchineStampo" msprop:Generator_TableClassName="MacchineStampoDataTable" msprop:Generator_TableVarName="tableMacchineStampo" msprop:Generator_TablePropName="MacchineStampo" msprop:Generator_RowDeletingName="MacchineStampoRowDeleting" msprop:Generator_RowChangingName="MacchineStampoRowChanging" msprop:Generator_RowEvHandlerName="MacchineStampoRowChangeEventHandler" msprop:Generator_RowDeletedName="MacchineStampoRowDeleted" msprop:Generator_UserTableName="MacchineStampo" msprop:Generator_RowChangedName="MacchineStampoRowChanged" msprop:Generator_RowEvArgName="MacchineStampoRowChangeEvent" msprop:Generator_RowClassName="MacchineStampoRow">
+        <xs:element name="MacchineStampo" msprop:Generator_TableClassName="MacchineStampoDataTable" msprop:Generator_TableVarName="tableMacchineStampo" msprop:Generator_RowChangedName="MacchineStampoRowChanged" msprop:Generator_TablePropName="MacchineStampo" msprop:Generator_RowDeletingName="MacchineStampoRowDeleting" msprop:Generator_RowChangingName="MacchineStampoRowChanging" msprop:Generator_RowEvHandlerName="MacchineStampoRowChangeEventHandler" msprop:Generator_RowDeletedName="MacchineStampoRowDeleted" msprop:Generator_RowClassName="MacchineStampoRow" msprop:Generator_UserTableName="MacchineStampo" msprop:Generator_RowEvArgName="MacchineStampoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdStampa" msprop:Generator_ColumnVarNameInTable="columnIdStampa" msprop:Generator_ColumnPropNameInRow="IdStampa" msprop:Generator_ColumnPropNameInTable="IdStampaColumn" msprop:Generator_UserColumnName="IdStampa" type="xs:int" />
@@ -7088,6 +7115,48 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
               <xs:element name="CostoFascia3" msprop:Generator_ColumnVarNameInTable="columnCostoFascia3" msprop:Generator_ColumnPropNameInRow="CostoFascia3" msprop:Generator_ColumnPropNameInTable="CostoFascia3Column" msprop:Generator_UserColumnName="CostoFascia3" type="xs:double" minOccurs="0" />
               <xs:element name="Fascia4m2" msprop:Generator_ColumnVarNameInTable="columnFascia4m2" msprop:Generator_ColumnPropNameInRow="Fascia4m2" msprop:Generator_ColumnPropNameInTable="Fascia4m2Column" msprop:Generator_UserColumnName="Fascia4m2" type="xs:double" minOccurs="0" />
               <xs:element name="CostoFascia4" msprop:Generator_ColumnVarNameInTable="columnCostoFascia4" msprop:Generator_ColumnPropNameInRow="CostoFascia4" msprop:Generator_ColumnPropNameInTable="CostoFascia4Column" msprop:Generator_UserColumnName="CostoFascia4" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VistaSuperCommesse" msprop:Generator_TableClassName="VistaSuperCommesseDataTable" msprop:Generator_TableVarName="tableVistaSuperCommesse" msprop:Generator_TablePropName="VistaSuperCommesse" msprop:Generator_RowDeletingName="VistaSuperCommesseRowDeleting" msprop:Generator_RowChangingName="VistaSuperCommesseRowChanging" msprop:Generator_RowEvHandlerName="VistaSuperCommesseRowChangeEventHandler" msprop:Generator_RowDeletedName="VistaSuperCommesseRowDeleted" msprop:Generator_UserTableName="VistaSuperCommesse" msprop:Generator_RowChangedName="VistaSuperCommesseRowChanged" msprop:Generator_RowEvArgName="VistaSuperCommesseRowChangeEvent" msprop:Generator_RowClassName="VistaSuperCommesseRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdAbbinamento" msprop:Generator_ColumnVarNameInTable="columnIdAbbinamento" msprop:Generator_ColumnPropNameInRow="IdAbbinamento" msprop:Generator_ColumnPropNameInTable="IdAbbinamentoColumn" msprop:Generator_UserColumnName="IdAbbinamento" type="xs:int" />
+              <xs:element name="IdSuperCommessa" msprop:Generator_ColumnVarNameInTable="columnIdSuperCommessa" msprop:Generator_ColumnPropNameInRow="IdSuperCommessa" msprop:Generator_ColumnPropNameInTable="IdSuperCommessaColumn" msprop:Generator_UserColumnName="IdSuperCommessa" type="xs:int" minOccurs="0" />
+              <xs:element name="IDCommessa" msprop:Generator_ColumnVarNameInTable="columnIDCommessa" msprop:Generator_ColumnPropNameInRow="IDCommessa" msprop:Generator_ColumnPropNameInTable="IDCommessaColumn" msprop:Generator_UserColumnName="IDCommessa" type="xs:int" minOccurs="0" />
+              <xs:element name="NrLastre" msprop:Generator_ColumnVarNameInTable="columnNrLastre" msprop:Generator_ColumnPropNameInRow="NrLastre" msprop:Generator_ColumnPropNameInTable="NrLastreColumn" msprop:Generator_UserColumnName="NrLastre" type="xs:int" minOccurs="0" />
+              <xs:element name="CodLastra" msprop:Generator_ColumnVarNameInTable="columnCodLastra" msprop:Generator_ColumnPropNameInRow="CodLastra" msprop:Generator_ColumnPropNameInTable="CodLastraColumn" msprop:Generator_UserColumnName="CodLastra" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodCommessa" msprop:Generator_ColumnVarNameInTable="columnCodCommessa" msprop:Generator_ColumnPropNameInRow="CodCommessa" msprop:Generator_ColumnPropNameInTable="CodCommessaColumn" msprop:Generator_UserColumnName="CodCommessa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataCommessa" msprop:Generator_ColumnVarNameInTable="columnDataCommessa" msprop:Generator_ColumnPropNameInRow="DataCommessa" msprop:Generator_ColumnPropNameInTable="DataCommessaColumn" msprop:Generator_UserColumnName="DataCommessa" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IDCliente" msprop:Generator_ColumnVarNameInTable="columnIDCliente" msprop:Generator_ColumnPropNameInRow="IDCliente" msprop:Generator_ColumnPropNameInTable="IDClienteColumn" msprop:Generator_UserColumnName="IDCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataConsegna" msprop:Generator_ColumnVarNameInTable="columnDataConsegna" msprop:Generator_ColumnPropNameInRow="DataConsegna" msprop:Generator_ColumnPropNameInTable="DataConsegnaColumn" msprop:Generator_UserColumnName="DataConsegna" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NrPezziDaLavorare" msprop:Generator_ColumnVarNameInTable="columnNrPezziDaLavorare" msprop:Generator_ColumnPropNameInRow="NrPezziDaLavorare" msprop:Generator_ColumnPropNameInTable="NrPezziDaLavorareColumn" msprop:Generator_UserColumnName="NrPezziDaLavorare" type="xs:int" minOccurs="0" />
+              <xs:element name="CodArticolo" msprop:Generator_ColumnVarNameInTable="columnCodArticolo" msprop:Generator_ColumnPropNameInRow="CodArticolo" msprop:Generator_ColumnPropNameInTable="CodArticoloColumn" msprop:Generator_UserColumnName="CodArticolo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PercentualeUtilizzoLastra" msprop:Generator_ColumnVarNameInTable="columnPercentualeUtilizzoLastra" msprop:Generator_ColumnPropNameInRow="PercentualeUtilizzoLastra" msprop:Generator_ColumnPropNameInTable="PercentualeUtilizzoLastraColumn" msprop:Generator_UserColumnName="PercentualeUtilizzoLastra" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -7193,5 +7262,14 @@ SELECT IdStampa, Descrizione, Fascia1m2, CostoFascia1, Fascia2m2, CostoFascia2, 
       <xs:selector xpath=".//mstns:MacchineStampo" />
       <xs:field xpath="mstns:IdStampa" />
     </xs:unique>
+    <xs:unique name="VistaSuperCommesse_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VistaSuperCommesse" />
+      <xs:field xpath="mstns:IdAbbinamento" />
+    </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_AbbinamentiSuperCommesse_Commesse" msdata:parent="Commesse" msdata:child="AbbinamentiSuperCommesse" msdata:parentkey="IDCommessa" msdata:childkey="IDCommessa" msprop:Generator_UserChildTable="AbbinamentiSuperCommesse" msprop:Generator_ChildPropName="GetAbbinamentiSuperCommesseRows" msprop:Generator_UserRelationName="FK_AbbinamentiSuperCommesse_Commesse" msprop:Generator_RelationVarName="relationFK_AbbinamentiSuperCommesse_Commesse" msprop:Generator_UserParentTable="Commesse" msprop:Generator_ParentPropName="CommesseRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

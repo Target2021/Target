@@ -46,7 +46,17 @@ namespace Target2021.Fase2
             EliminaSuperCommessa();
             // Da Tabella AbbinamentiSuperCommessa elimina tutte le righe con IdSuperCommessa = ...
             EliminaAbbinamenti();
+            // Da Tabella Commesse elimina 1 riga
+            EliminaSS();
             MessageBox.Show("SuperCommessa di stampaggio eliminata correttamente!");
+        }
+
+        private void EliminaSS()
+        {
+            DataRow[] Riga = target2021DataSet.Commesse.Select("CodCommessa = 'SC" + IDSC.ToString()+"'");
+            Riga[0].Delete();
+            Riga[1].Delete();
+            commesseTableAdapter.Update(target2021DataSet.Commesse);
         }
 
         private void AggiornaStatoCommesse()

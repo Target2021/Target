@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Target2021.Stampe;
+using Target2021.Fase2;
 
 namespace Target2021
 {
@@ -350,10 +351,18 @@ namespace Target2021
 
         private void ChiudiFase()
         {
-            RigaStampaStato2();
-            RigaOFStato4();
-            CaricoMagazzino();
-            ScaricoLastre();
+            int stato = Convert.ToInt32(statoTextBox.Text);
+            if (stato!=10)
+            {
+                RigaStampaStato2();
+                RigaOFStato4();
+                CaricoMagazzino();
+                ScaricoLastre();
+            }
+            else
+            {
+                MessageBox.Show("Chiudere la supercommessa e tutte le commesse sottostanti");
+            }
         }
 
         private void RigaStampaStato2()
@@ -670,6 +679,23 @@ namespace Target2021
             string Qta = Microsoft.VisualBasic.Interaction.InputBox("Quantità pezzi sul bancale?", "NUMERO PEZZI", "1", -1, -1);
             SSemilavorati stampa = new SSemilavorati(CodCommessa, CodArticolo, DescArticolo, Qta);
             stampa.Show();
+        }
+
+        private void statoTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int stato = Convert.ToInt32(statoTextBox.Text);
+            if (stato == 10)
+            {
+                button15.Visible = true;
+            }
+            else
+                button15.Visible = false;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            ElencoCommesseInSC elenco = new ElencoCommesseInSC(codCommessaTextBox.Text);
+            elenco.ShowDialog();
         }
     }
 }

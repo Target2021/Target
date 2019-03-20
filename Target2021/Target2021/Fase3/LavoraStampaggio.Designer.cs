@@ -165,6 +165,7 @@
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
             this.nrLastreUtilizzateTextBox = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -1229,6 +1230,7 @@
             this.statoTextBox.Size = new System.Drawing.Size(46, 21);
             this.statoTextBox.TabIndex = 47;
             this.statoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.statoTextBox.TextChanged += new System.EventHandler(this.statoTextBox_TextChanged);
             // 
             // evasoParzialeCheckBox
             // 
@@ -1586,12 +1588,24 @@
             this.nrLastreUtilizzateTextBox.TextChanged += new System.EventHandler(this.nrLastreUtilizzateTextBox_TextChanged);
             this.nrLastreUtilizzateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nrLastreUtilizzateTextBox_KeyPress);
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(496, 65);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(179, 24);
+            this.button15.TabIndex = 78;
+            this.button15.Text = "DETTAGLIO SUPERCOMMESSA";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Visible = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1036, 615);
+            this.Controls.Add(this.button15);
             this.Controls.Add(nrLastreUtilizzateLabel);
             this.Controls.Add(this.nrLastreUtilizzateTextBox);
             this.Controls.Add(this.button14);
@@ -1791,5 +1805,6 @@
         private Target2021DataSetTableAdapters.DettArticoliTableAdapter dettArticoliTableAdapter;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.TextBox nrLastreUtilizzateTextBox;
+        private System.Windows.Forms.Button button15;
     }
 }

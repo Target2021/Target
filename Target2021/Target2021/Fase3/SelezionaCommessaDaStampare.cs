@@ -77,11 +77,12 @@ namespace Target2021.Fase3
 
         private void commesseDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int IdCommessa, macchina=0;
+            int macchina=0;
             int chiave,anno=0;
+            string IdCommessa;
             DateTime datac;
 
-            IdCommessa = Convert.ToInt32(commesseDataGridView1.SelectedRows[0].Cells[2].Value);
+            IdCommessa = commesseDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             //MessageBox.Show("Vado a tagliare la commessa: " + IdCommessa.ToString());
             datac= Convert.ToDateTime(commesseDataGridView1.SelectedRows[0].Cells[3].Value);
             anno = datac.Year;
@@ -101,24 +102,31 @@ namespace Target2021.Fase3
             aggiorna();
         }
 
-        private int Cerca(int idc, int anno)
+        private int Cerca(string idc, int anno)
         {
-            DataRow riga;
-            DataTable Commesse;
             DateTime data;
-
             data = new DateTime(anno, 1, 1);
-            Commesse = target2021DataSet.Tables["Commesse"];
+            idc = idc.Replace("OF", "S");
 
-            DataTable Filtrata = Commesse.AsEnumerable()
-            .Where(row => row.Field<Int32>("NrCommessa") == idc
-                   && row.Field<DateTime>("DataCommessa") > data
-                   && row.Field<Int32>("TipoCommessa") == 2)
-            .CopyToDataTable();
-
-            Object cellValue = Filtrata.Rows[0][0];
-
-            return Convert.ToInt32(cellValue);
+            //DataRow riga;
+            //DataTable Commesse;
+            //Commesse = target2021DataSet.Tables["Commesse"];
+            //DataTable Filtrata = Commesse.AsEnumerable()
+            //.Where(row => row.Field<String>("CodCommessa") == idc
+            //       && row.Field<DateTime>("DataCommessa") > data
+            //       && row.Field<Int32>("TipoCommessa") == 2)
+            //.CopyToDataTable();
+            //Object cellValue = Filtrata.Rows[0][0];
+            //return Convert.ToInt32(cellValue);
+            int ID;
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["Commesse"].Select("CodCommessa='" + idc + "' AND TipoCommessa=2 AND DataCommessa>'" + data.ToString()+"'");
+            try
+            {
+                ID = Convert.ToInt32(riga[0]["IDCommessa"]);
+                return ID;
+            }
+            catch { return -1; }
         }
 
         private void commesseDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

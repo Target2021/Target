@@ -37,7 +37,7 @@ namespace Target2021.Fase2
             DataView CPianifM1 = new DataView(target2021DataSet.Commesse);
             DataView CPianifM2 = new DataView(target2021DataSet.Commesse);
             DataView CPianifM3 = new DataView(target2021DataSet.Commesse);
-            CNonPianif.RowFilter = "TipoCommessa = 1 AND Stato = 2";
+            CNonPianif.RowFilter = "TipoCommessa = 1 AND (Stato = 2 OR Stato=10)";
             CPianifM1.RowFilter = "TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1"; // AND TipoCommessa = 2";
             CPianifM2.RowFilter = "TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2";
             CPianifM3.RowFilter = "TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3";
@@ -45,7 +45,9 @@ namespace Target2021.Fase2
             commesseDataGridView1.DataSource = CPianifM1;
             commesseDataGridView1.Columns["ShedOra"].DefaultCellStyle.Format = "HH:mm:ss";
             commesseDataGridView2.DataSource = CPianifM2;
+            commesseDataGridView2.Columns["ShedOra"].DefaultCellStyle.Format = "HH:mm:ss";
             commesseDataGridView3.DataSource = CPianifM3;
+            commesseDataGridView3.Columns["ShedOra"].DefaultCellStyle.Format = "HH:mm:ss";
             NascondiColonne();
         }
 
@@ -97,42 +99,32 @@ namespace Target2021.Fase2
 
         private void Copia(object sender, MouseEventArgs e)
         {
-            var colpito = commesseDataGridView.HitTest(e.X, e.Y);
-            commesseDataGridView.DoDragDrop(commesseDataGridView.SelectedRows, DragDropEffects.Move);
-            if (colpito.RowIndex != -1 && colpito.ColumnIndex != -1)
+            if (e.Button == MouseButtons.Left)
             {
-                try
+                var colpito = commesseDataGridView.HitTest(e.X, e.Y);
+                commesseDataGridView.DoDragDrop(commesseDataGridView.SelectedRows, DragDropEffects.Move);
+                if (colpito.RowIndex != -1 && colpito.ColumnIndex != -1)
                 {
-                    var riga = commesseDataGridView.Rows[colpito.RowIndex];
-                    if (riga != null)
+                    try
                     {
-                        CodiceCommessa = riga.Cells[0].Value.ToString();
+                        var riga = commesseDataGridView.Rows[colpito.RowIndex];
+                        if (riga != null)
+                        {
+                            CodiceCommessa = riga.Cells[0].Value.ToString();
+                        }
                     }
+                    catch { }
                 }
-                catch { }
+            }
+            if (e.Button == MouseButtons.Right)
+            {
+                dettaglio(e);
             }
         }
 
         private void commesseDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             commesseDataGridView.ClearSelection();
-        }
-
-        private void superCommessaDataGridView_MouseDown(object sender, MouseEventArgs e)
-        {
-            var colpito = superCommessaDataGridView.HitTest(e.X, e.Y);
-            if (e.Clicks == 1)
-            {
-                superCommessaDataGridView.DoDragDrop(superCommessaDataGridView.SelectedRows, DragDropEffects.Move);
-                if (colpito.RowIndex != -1 && colpito.ColumnIndex != -1)
-                {
-                    var riga = superCommessaDataGridView.Rows[colpito.RowIndex];
-                    if (riga != null)
-                    {
-                        CodiceCommessa = riga.Cells[1].Value.ToString();
-                    }
-                }
-            }
         }
 
         private void commesseDataGridView1_DragEnter(object sender, DragEventArgs e)
@@ -167,15 +159,6 @@ namespace Target2021.Fase2
         {
             commesseDataGridView.Refresh();
             commesseDataGridView1.Refresh();
-        }
-
-        private void superCommessaDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int selectedrowindex = superCommessaDataGridView.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = superCommessaDataGridView.Rows[selectedrowindex];
-            int Id = Convert.ToInt32(selectedRow.Cells["dataGridViewTextBoxColumn56"].Value);
-            DettaglioSC Dett = new DettaglioSC(Id);
-            Dett.Show();
         }
 
         private void commesseDataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -291,6 +274,43 @@ namespace Target2021.Fase2
         }
 
         private void commesseDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void commesseDataGridView4_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void commesseDataGridView4_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void dettaglio(MouseEventArgs e)
+        {
+            string TipoCommessa;
+            // Controlla se hai fatto click su una supercommessa
+            var hti = commesseDataGridView.HitTest(e.X, e.Y);
+            commesseDataGridView.ClearSelection();
+            commesseDataGridView.Rows[hti.RowIndex].Selected = true;
+            if (commesseDataGridView.CurrentRow!=null)
+            {
+                string CodCom = (commesseDataGridView.SelectedRows[0].Cells[1].Value).ToString();
+                //MessageBox.Show(CodCom);
+                TipoCommessa = CodCom.Substring(0, 2);
+                if (TipoCommessa == "SC") MostraCommesse(CodCom);
+            }
+        }
+
+        private void MostraCommesse(string Cod)
+        {
+            ElencoCommesseInSC elenco = new ElencoCommesseInSC(Cod);
+            elenco.ShowDialog();
+        }
+
+        private void commesseDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

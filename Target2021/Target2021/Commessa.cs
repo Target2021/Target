@@ -46,6 +46,7 @@ namespace Target2021
         public int SecondiCicloTaglio { get; set; }
         public int MinutiAttrezzaggio { get; set; }
         public int Stato { get; set; }
+        public int ImpegnataMatPrima { get; set; }
         public string ProgrTaglio1 { get; set; }
         public string ProgrTaglio2 { get; set; }
         public int PercentualeUtilizzoLastra { get; set; }
