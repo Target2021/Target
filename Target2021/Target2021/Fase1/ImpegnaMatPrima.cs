@@ -136,7 +136,7 @@ namespace Target2021.Fase1
             catch { }
             if (evento==8)
             {
-                if (nlastre > disponibili)
+                if (nlastre > disponibili+10)
                 {
                     MessageBox.Show("Non hai disponibili tutte quelle lastre!");
                     dataGridView1.Rows[e.RowIndex].Cells[8].Value = 0;
@@ -151,7 +151,7 @@ namespace Target2021.Fase1
                     dataGridView1.Rows[e.RowIndex].Cells[8].Value = nlastre;
                     riga[0]["GiacenzaDisponibili"] = disponibili - nlastre;
                     riga[0]["GiacenzaImpegnati"] = impegnate + nlastre;
-                    if (nlastre == nrichieste)
+                    if (nlastre >= nrichieste)
                     {
                         dataGridView1.Rows[e.RowIndex].Cells[10].Value = false;
                         dataGridView1.Rows[e.RowIndex].Cells[11].Value = 2;

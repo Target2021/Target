@@ -75,9 +75,6 @@ namespace Target2021
             dt.Columns.Add(new DataColumn("Data", typeof(DateTime)));
             dt.Columns.Add(new DataColumn("Articolo", typeof(string)));
             dt.Columns.Add(new DataColumn("Descrizione", typeof(string)));
-            //dataGridView3.DataSource = dt;
-            //this.dataGridView3.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //
             return dt;
         }
 
@@ -331,11 +328,41 @@ namespace Target2021
                     com.IDMachStampa = RecuperaMacchinaStampaPredefinita(CodiceArticolo);
                     com.Note = RecuperaNote(CodiceArticolo);
                     com.IDMachTaglio = RecuperaMacchinaTaglio(CodiceArticolo);
+                    com.IDMinuteria = RecuperaMinuteria(CodiceArticolo);
+                    com.Qtaminuteria = RecuperaQtaMinuteria(CodiceArticolo);
                     InserisciCommessa1(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
                 return 0;
             }
+        }
+
+        private string RecuperaMinuteria(string Cod)
+        {
+            string outp = "";
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + Cod + "' AND lavorazione=4");
+            try
+            {
+                outp = riga[0]["CodiceInput"].ToString();
+                return outp;
+            }
+            catch { return "NN"; }
+        }
+
+        private int RecuperaQtaMinuteria(string ca)
+        {
+            int risultato = 0;
+            string filtro = "lavorazione = 4 AND codice_articolo = '" + ca + "'";
+            try
+            {
+                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(Quantita)", filtro);
+            }
+            catch
+            {
+                risultato = 1;
+            }
+            return risultato;
         }
 
         private int RecuperaPercentualeLastra(string ca)
@@ -560,7 +587,7 @@ namespace Target2021
             int Fase;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT lavorazione FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND lavorazione="+i;
+            sql = "SELECT lavorazione FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND progressivo="+i;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             Fase = Convert.ToInt32(comando.ExecuteScalar());
@@ -645,7 +672,14 @@ namespace Target2021
             sql = "SELECT codice_fornitore FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND lavorazione=" + i;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            idf = comando.ExecuteScalar().ToString();
+            try
+            {
+                idf = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                idf = "";
+            }
             connessione.Close();
             return idf;
         }
@@ -659,7 +693,14 @@ namespace Target2021
             sql = "SELECT codicePrimaStampoDima FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "' AND lavorazione=" + i;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            idmp = comando.ExecuteScalar().ToString();
+            try
+            {
+                idmp = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                idmp = "LAS.00.000";
+            }
             connessione.Close();
             return idmp;
         }
@@ -693,7 +734,7 @@ namespace Target2021
                 }
                 catch (DivideByZeroException e)
                 {
-                    MessageBox.Show(e.Message);
+                    //MessageBox.Show(e.Message);
                 }
                 return Lastre;
             }
@@ -887,6 +928,8 @@ namespace Target2021
             riga.AttG5 = 0;
             riga.Note = com.Note;
             riga.IDMachTaglio = com.IDMachTaglio;
+            riga.IDMinuteria = com.IDMinuteria;
+            riga.Qtaminuteria = com.Qtaminuteria;
 
             target2021DataSet.Commesse.Rows.Add(riga); 
             commesseTableAdapter.Update(target2021DataSet.Commesse);

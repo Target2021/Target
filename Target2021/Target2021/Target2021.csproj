@@ -235,10 +235,10 @@
     <Compile Include="Anagrafiche\CercaArticolo.Designer.cs">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Anagrafiche\CheckAssemblaggio.cs">
+    <Compile Include="Fase5\CheckAssemblaggio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Anagrafiche\CheckAssemblaggio.Designer.cs">
+    <Compile Include="Fase5\CheckAssemblaggio.Designer.cs">
       <DependentUpon>CheckAssemblaggio.cs</DependentUpon>
     </Compile>
     <Compile Include="Anagrafiche\DettAbbinamStampo.cs">
@@ -318,6 +318,12 @@
     </Compile>
     <Compile Include="Fase1\DisimpegnaLastre.Designer.cs">
       <DependentUpon>DisimpegnaLastre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fase3\PezziSottocommesse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase3\PezziSottocommesse.Designer.cs">
+      <DependentUpon>PezziSottocommesse.cs</DependentUpon>
     </Compile>
     <Compile Include="Fase4\CheckTaglio.cs">
       <SubType>Form</SubType>
@@ -727,7 +733,7 @@
     <EmbeddedResource Include="Anagrafiche\CercaArticolo.resx">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Anagrafiche\CheckAssemblaggio.resx">
+    <EmbeddedResource Include="Fase5\CheckAssemblaggio.resx">
       <DependentUpon>CheckAssemblaggio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\DettAbbinamStampo.resx">
@@ -768,6 +774,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fase3\CheckStampaggio.resx">
       <DependentUpon>CheckStampaggio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fase3\PezziSottocommesse.resx">
+      <DependentUpon>PezziSottocommesse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fase4\CheckTaglio.resx">
       <DependentUpon>CheckTaglio.cs</DependentUpon>

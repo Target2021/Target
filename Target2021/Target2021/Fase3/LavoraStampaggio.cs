@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Target2021.Stampe;
 using Target2021.Fase2;
+using Target2021.Fase3;
 
 namespace Target2021
 {
@@ -29,6 +30,8 @@ namespace Target2021
 
         private void LavoraStampaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
+            this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.clienti'. È possibile spostarla o rimuoverla se necessario.
@@ -310,7 +313,7 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int statoriga;
+            int statoriga, stato = 0;
             statoriga = RecuperaStatoRiga();
             if (statoriga == 2)
             {
@@ -330,7 +333,8 @@ namespace Target2021
             catch
             { }
             PzResidui = PzDaLavorare - PzLavorati;
-            if (PzResidui > 0)
+            stato = Convert.ToInt32(statoTextBox.Text);
+            if (PzResidui > 0 && stato!=10)
             {
                 DialogResult dialogResult = MessageBox.Show("Stai chiudendo la fase di stampaggio senza aver stampato tutti i pezzi richiesti! Sei sicuro di voler procedere?", "Sei sicuro?", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -361,7 +365,9 @@ namespace Target2021
             }
             else
             {
-                MessageBox.Show("Chiudere la supercommessa e tutte le commesse sottostanti");
+                //MessageBox.Show("Chiudere la supercommessa e tutte le commesse sottostanti");
+                PezziSottocommesse ps = new PezziSottocommesse(codCommessaTextBox.Text);
+                ps.ShowDialog();
             }
         }
 
@@ -497,7 +503,7 @@ namespace Target2021
                 CodArt = iDMateriaPrimaTextBox.Text;
                 Causale = codCommessaTextBox.Text;
                 CS = "S";
-                qta = Convert.ToInt32(nrLastreRichiesteTextBox.Text);   //textBox4.Text);
+                qta = Convert.ToInt32(nrLastreUtilizzateTextBox.Text);   //textBox4.Text);
                 BarCode = codCommessaTextBox.Text;
                 NrOrdine = nrCommessaTextBox.Text;
                 datamov = dataTermineDateTimePicker.Value;
@@ -519,13 +525,14 @@ namespace Target2021
 
         private void AggiornaGiacenzeS(int q, string Cod)
         {
-            int numero, impegnati, ImpegnataMateriaPrima ;
+            int numero, impegnati, ImpegnataMateriaPrima, disponibili;
             string query2;
             DateTime ora;
             SqlCommand comando2;
             SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
             conn.Open();
             string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+            disponibili = RecuperaLastreDisponibili();
             ImpegnataMateriaPrima = RecuperaNrLastreImpegnate();
             SqlCommand comando1 = new SqlCommand(query1, conn);
             try
@@ -538,9 +545,10 @@ namespace Target2021
                     impegnati = (int)comando2.ExecuteScalar();
                     numero = numero - q;
                     impegnati = impegnati - ImpegnataMateriaPrima;
+                    disponibili = disponibili + ImpegnataMateriaPrima - q;
                     // update
                     ora = DateTime.Now;
-                    query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaImpegnati = " + impegnati.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";
+                    query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaImpegnati = " + impegnati.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";
                     comando2 = new SqlCommand(query2, conn);
                     comando2.ExecuteNonQuery();
                     MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString());
@@ -549,7 +557,7 @@ namespace Target2021
             catch
             {
                 numero = 0;
-                int disponibili = 0;
+                disponibili = 0;
                 // insert
                 ora = DateTime.Now;
                 query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idPrime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
@@ -564,9 +572,20 @@ namespace Target2021
         private int RecuperaNrLastreImpegnate()
         {
             string CodCommessa = codCommessaTextBox.Text;
+            CodCommessa = CodCommessa.Replace("S", "OF");
+            CodCommessa = CodCommessa.Trim();
             int risultato;
             string filtro = "CodCommessa = '" + CodCommessa + "'";
-            risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(ImpegnataMatPrima)", filtro);
+            risultato = (int)target2021DataSet.Commesse.Compute("MAX(ImpegnataMatPrima)", filtro);
+            return risultato;
+        }
+
+        private int RecuperaLastreDisponibili()
+        {
+            string CodLastra = iDMateriaPrimaTextBox.Text;
+            int risultato;
+            string filtro = "idPrime = '" + CodLastra + "'";
+            risultato = (int)target2021DataSet.GiacenzeMagazzini.Compute("MAX(GiacenzaDisponibili)", filtro);
             return risultato;
         }
 
@@ -687,9 +706,16 @@ namespace Target2021
             if (stato == 10)
             {
                 button15.Visible = true;
+                nrPezziCorrettiTextBox.Visible = false;
+                nrPezziScartatiTextBox.Visible = false;
             }
             else
+            {
                 button15.Visible = false;
+                nrPezziCorrettiTextBox.Visible = true;
+                nrPezziScartatiTextBox.Visible = true;
+            }
+
         }
 
         private void button15_Click(object sender, EventArgs e)

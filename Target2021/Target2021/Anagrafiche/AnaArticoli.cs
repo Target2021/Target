@@ -337,8 +337,14 @@ namespace Target2021.Anagrafiche
 
         private void Tab4(string codice)
         {
-            //string filtro = "codice_articolo='" + codice + "' AND lavorazione=4";
-            //DataRow[] Fase4 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
+            string filtro = "codice_articolo='" + codice + "' AND lavorazione=4";
+            DataRow[] Fase4 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
+            
+            if (Fase4.Length > 0)
+                comboBox13.Text = "Presente";
+            else
+                comboBox13.Text = "Assente";
+            //dataGridView1.DataSource = Fase4;
             dettArticoliBindingSource.Filter = "codice_articolo = '" + codice + "' AND lavorazione=4";
         }
 
@@ -405,17 +411,19 @@ namespace Target2021.Anagrafiche
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int IdFase1, IdFase2, IdFase3;
+            int IdFase1, IdFase2, IdFase3, IdFase4;
             string codice = textBox2.Text;
 
             IdFase1 = RecuperaIdFase(codice, 1);
             IdFase2 = RecuperaIdFase(codice, 2);
             IdFase3 = RecuperaIdFase(codice, 3);
+            IdFase4 = RecuperaIdFase(codice, 4);
 
             SalvaGenerale();
             if (IdFase1 >= 0) SalvaTab1(IdFase1);
             if (IdFase2 >= 0) SalvaTab2(IdFase2);
             if (IdFase3 >= 0) SalvaTab3(IdFase3);
+            if (IdFase4 >= 0) SalvaTab4(IdFase4);
             MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
         }
 
@@ -725,6 +733,14 @@ namespace Target2021.Anagrafiche
                 MessageBox.Show("Errore nella posizione dello stampo. Posizione 3");
             }
             AggiornaPosizioneDima(CodDima, textBox23.Text, textBox24.Text, p3);
+        }
+
+        private void SalvaTab4(int Id)
+        {   
+            // DA TESTARE *****************************
+            this.Validate();
+            this.dettArticoliBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
         }
 
         private void AggiornaPosizioneStampo(string cod, string p1, string p2, double p3)

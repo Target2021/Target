@@ -67,7 +67,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int IdSC, percentuale = 0, NrLastre;
+            int IdSC, percentuale = 0, NrLastre, NuoveLastre;
             string Cliente;
             if (textBox1.Text == "")
             {
@@ -80,7 +80,9 @@ namespace Target2021
             textBox3.Text = percentuale.ToString();
             Colora(sender,e);
             NrLastre = Convert.ToInt32(textBox4.Text);
-            NrLastre = NrLastre + Convert.ToInt32(commesseDataGridView.SelectedRows[0].Cells[22].Value);
+            NuoveLastre = Convert.ToInt32(commesseDataGridView.SelectedRows[0].Cells[22].Value);
+            if (NrLastre > NuoveLastre) NrLastre = NrLastre;
+            else NrLastre = NuoveLastre;
             textBox4.Text = NrLastre.ToString();
             Cliente =Convert.ToString(commesseDataGridView.SelectedRows[0].Cells[5].Value);
             textBox5.Text = Cliente;

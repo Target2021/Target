@@ -166,6 +166,8 @@
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
             this.nrLastreUtilizzateTextBox = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
+            this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -221,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iDCommessaLabel
@@ -1599,6 +1602,15 @@
             this.button15.Visible = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // giacenzeMagazziniBindingSource
+            // 
+            this.giacenzeMagazziniBindingSource.DataMember = "GiacenzeMagazzini";
+            this.giacenzeMagazziniBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // giacenzeMagazziniTableAdapter
+            // 
+            this.giacenzeMagazziniTableAdapter.ClearBeforeFill = true;
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1704,6 +1716,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.movimentiMagazzinoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1806,5 +1819,7 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.TextBox nrLastreUtilizzateTextBox;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.BindingSource giacenzeMagazziniBindingSource;
+        private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
     }
 }

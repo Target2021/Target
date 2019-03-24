@@ -39,9 +39,9 @@ namespace Target2021.Report
             datacarico = data;
             nrordine = nro;
             Descrizione = Des;
-            x2 = x1;
-            y2 = y1;
-            z2 = z1;
+            if (x1 == "") x2 = "0"; else x2 = x1;
+            if (y1 == "") y2 = "0"; else y2 = y1;
+            if (z1 == "") z2 = "0"; else z2 = z1;
         }
 
         private void WFCaricoLastra_Load(object sender, EventArgs e)

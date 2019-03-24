@@ -58,7 +58,9 @@ namespace Target2021.Fase2
                 if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
                 if (col.HeaderText == "IDMachStampa") col.HeaderText = "Macchina";
                 if (col.HeaderText == "CodCommessa") col.HeaderText = "Comm.";
-                if (col.HeaderText == "Comm." || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "Macchina")
+                if (col.HeaderText == "DataConsegna") col.HeaderText = "Data Consegna";
+                if (col.HeaderText == "CodArticolo") col.HeaderText = "Articolo";
+                if (col.HeaderText == "Comm." || col.HeaderText == "IDCliente" || col.HeaderText == "Articolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "Macchina" || col.HeaderText == "Data Consegna")
                     col.Visible = true;
                 else
                     col.Visible = false;
@@ -67,7 +69,8 @@ namespace Target2021.Fase2
             foreach (DataGridViewColumn col in commesseDataGridView1.Columns)
             {
                 if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
-                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
+                if (col.HeaderText == "DataConsegna") col.HeaderText = "Data Consegna";
+                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata" || col.HeaderText == "Data Consegna")
                     col.Visible = true;
                 else
                     col.Visible = false;
@@ -76,7 +79,8 @@ namespace Target2021.Fase2
             foreach (DataGridViewColumn col in commesseDataGridView2.Columns)
             {
                 if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
-                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
+                if (col.HeaderText == "DataConsegna") col.HeaderText = "Data Consegna";
+                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata" || col.HeaderText == "Data Consegna")
                     col.Visible = true;
                 else
                     col.Visible = false;
@@ -85,7 +89,8 @@ namespace Target2021.Fase2
             foreach (DataGridViewColumn col in commesseDataGridView3.Columns)
             {
                 if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
-                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata")
+                if (col.HeaderText == "DataConsegna") col.HeaderText = "Data Consegna";
+                if (col.HeaderText == "CodCommessa" || col.HeaderText == "IDCliente" || col.HeaderText == "CodArticolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "SchedData" || col.HeaderText == "ShedOra" || col.HeaderText == "SchedDurata" || col.HeaderText == "Data Consegna")
                     col.Visible = true;
                 else
                     col.Visible = false;
