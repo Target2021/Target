@@ -47,12 +47,45 @@ namespace Target2021.Fase3
             catch { return -1; }
         }
 
-        private void superCommessaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void Salva()
         {
             this.Validate();
-            this.superCommessaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            this.commesseBindingSource.EndEdit();
+            commesseTableAdapter.Update(target2021DataSet.Commesse);
+            MessageBox.Show("Salvataggio effettuato!");
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Controlla che siano state compilate le quantità
+            int NrPezziCorretti=0, NrPezziScartati = 0, Corretto = 0;
+            foreach (DataGridViewRow row in commesseDataGridView.Rows)
+            {
+                try
+                {
+                    NrPezziCorretti = Convert .ToInt32(row.Cells["dataGridViewTextBoxColumn36"].Value);
+                }
+                catch
+                {
+                    NrPezziCorretti = -1;
+                    Corretto = -1;
+                }
+                try
+                {
+                    NrPezziScartati = Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn37"].Value);
+                }
+                catch
+                {
+                    NrPezziScartati = -1;
+                    Corretto = -1;
+                }
+            }
+
+            if (Corretto == -1) MessageBox.Show("Non tutte le quantità sono state compilate correttamente!");
+            else
+            {
+                Salva();
+            }
         }
     }
 }

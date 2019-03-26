@@ -45,7 +45,6 @@
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.commesseDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,6 +111,7 @@
             this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn69 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn70 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.superCommessaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.abbinamentiSuperCommesseBindingSource)).BeginInit();
@@ -327,18 +327,9 @@
             this.commesseDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.commesseDataGridView.Location = new System.Drawing.Point(0, 103);
             this.commesseDataGridView.Name = "commesseDataGridView";
+            this.commesseDataGridView.RowHeadersVisible = false;
             this.commesseDataGridView.Size = new System.Drawing.Size(1018, 282);
             this.commesseDataGridView.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(367, 391);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 35);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "CHIUDI LE COMMESSE";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -870,6 +861,17 @@
             this.dataGridViewTextBoxColumn70.Name = "dataGridViewTextBoxColumn70";
             this.dataGridViewTextBoxColumn70.Visible = false;
             this.dataGridViewTextBoxColumn70.Width = 153;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(367, 391);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 35);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "CHIUDI LE COMMESSE";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // PezziSottocommesse
             // 

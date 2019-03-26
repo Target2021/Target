@@ -615,12 +615,12 @@ namespace Target2021.Anagrafiche
             string codice, ProgrStamp, CodStampo, DescrStampo, CodForn, CodIn, CodOut, Allegato;
             int NrImpronte, Tempo, MachPred, PercLastra;
 
-            codice = textBox2.Text;
-            ProgrStamp = textBox22.Text;
+            codice = textBox2.Text.Trim();
+            ProgrStamp = textBox22.Text.Trim();
             MachPred = Convert.ToInt32(comboBox8.SelectedValue);
-            CodStampo = comboBox6.Text;
-            DescrStampo = label15.Text;
-            CodForn = comboBox7.Text;
+            CodStampo = comboBox6.Text.Trim();
+            DescrStampo = label15.Text.Trim();
+            CodForn = comboBox7.Text.Trim();
             CodIn = textBox9.Text.Replace(" ", string.Empty);
             CodOut = textBox10.Text.Replace(" ", string.Empty);
             Allegato = textBox30.Text.Replace(" ", string.Empty);

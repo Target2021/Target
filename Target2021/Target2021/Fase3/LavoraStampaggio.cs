@@ -368,6 +368,11 @@ namespace Target2021
                 //MessageBox.Show("Chiudere la supercommessa e tutte le commesse sottostanti");
                 PezziSottocommesse ps = new PezziSottocommesse(codCommessaTextBox.Text);
                 ps.ShowDialog();
+                // Chiudi riga SC (Stato=2) (Lavorazione=1) stampaggio supercommessa
+                // Chiudi riga (Stato=2) stampaggio tutte sottocommesse
+                // (Recuperare da (CodCommessaTextBox) elenco sottocommesse
+                // Chiudi riga SC (Lavorazione=1 OF) 
+                // Chiudi riga (Lavorazione=1) sottocommesse ImpegnataMateriaPrima=(calcolo)
             }
         }
 
