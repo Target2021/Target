@@ -30,6 +30,8 @@ namespace Target2021
 
         private void LavoraStampaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AbbinamentiSuperCommesse'. È possibile spostarla o rimuoverla se necessario.
+            this.abbinamentiSuperCommesseTableAdapter.Fill(this.target2021DataSet.AbbinamentiSuperCommesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
             this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
@@ -368,11 +370,17 @@ namespace Target2021
                 //MessageBox.Show("Chiudere la supercommessa e tutte le commesse sottostanti");
                 PezziSottocommesse ps = new PezziSottocommesse(codCommessaTextBox.Text);
                 ps.ShowDialog();
-                // Chiudi riga SC (Stato=2) (Lavorazione=1) stampaggio supercommessa
+                // Chiudi riga SC (Stato=2) (TipoCommessa=2) stampaggio supercommessa
+                RigaStampaStato2(); 
                 // Chiudi riga (Stato=2) stampaggio tutte sottocommesse
-                // (Recuperare da (CodCommessaTextBox) elenco sottocommesse
-                // Chiudi riga SC (Lavorazione=1 OF) 
-                // Chiudi riga (Lavorazione=1) sottocommesse ImpegnataMateriaPrima=(calcolo)
+                RigaStampaStato2Sottocommesse(nrCommessaTextBox.Text);
+                // Chiudi riga SC (Lavorazione=1 OF) Mettere in Stato 4
+                RigaOFStato4();
+                // Chiudi riga (Lavorazione=1) sottocommesse ImpegnataMateriaPrima=(calcolo) Mettere in Stato 4
+                RigaOFStato4Sottocommesse(nrCommessaTextBox.Text);
+                // Carichi semilavorarti a magazzino -> in RigaStampaStato2Sottocommesse
+                // Scarico lastre materia prima
+                ScaricoLastre();
             }
         }
 
@@ -382,6 +390,189 @@ namespace Target2021
             statoTextBox.Text = "2";
             Salva();
             button5.BackColor = Color.Green;
+        }
+
+        private void RigaStampaStato2Sottocommesse(string IDCom)
+        {
+            // Chiudi riga (Stato=2) stampaggio (TipoCommessa=2) tutte sottocommesse
+            int[] IDSottocommesse = new int[30];
+            int i = 0, j, IdS;
+            DataRow[] SottoCommesse;
+            SottoCommesse = target2021DataSet.Tables["AbbinamentiSuperCommesse"].Select("IdSuperCommessa = " + IDCom.ToString());
+            foreach (DataRow Commessa in SottoCommesse)
+            {
+                // Estrai IDCommessa
+                IDSottocommesse[i] = Convert .ToInt32(Commessa[2]);
+                i++;
+            }
+            // recuperare fase2 // Per ora va bene così poi testare
+            for (j=0;j<i;j++)
+            {
+                IdS = IDSottocommesse[j] + 1;
+                RiportaTempiStampaggio(IdS);
+                RiportaPezziStampati(IdS);
+                SottocommessaStampaggioInStato2(IdS);
+            }
+            return;
+        }
+
+        private void SottocommessaStampaggioInStato2(int id)
+        {
+            DataRow riga;
+            DataTable TabellaCommesse = target2021DataSet.Tables["Commesse"];
+            riga = TabellaCommesse.Rows.Find(id);
+            riga.BeginEdit();
+            riga["Stato"] = 2;
+            riga.EndEdit();
+            commesseTableAdapter.Update(target2021DataSet);
+        }
+
+        private void RiportaTempiStampaggio(int id)
+        {
+            int IdSC;
+            int Atg1, Atg2, Atg3, Atg4, Atg5;
+            DateTime IG1 = new DateTime(2000, 01, 01), FG1 = new DateTime(2000, 01, 01), IG2 = new DateTime(2000, 01, 01), FG2 = new DateTime(2000, 01, 01), IG3 = new DateTime(2000, 01, 01), FG3 = new DateTime(2000, 01, 01);
+            DateTime IG4 = new DateTime(2000, 01, 01), FG4 = new DateTime(2000, 01, 01), IG5 = new DateTime(2000, 01, 01), FG5 = new DateTime(2000, 01, 01);
+            IdSC = Convert.ToInt32(iDCommessaTextBox.Text);
+            // Copiare da SuperCommessa
+            DataRow riga;
+            DataTable TabellaCommesse = target2021DataSet.Tables["Commesse"];
+            riga = TabellaCommesse.Rows.Find(IdSC);
+            Atg1 = Convert.ToInt32(riga["AttG1"]);
+            Atg2 = Convert.ToInt32(riga["AttG2"]);
+            Atg3 = Convert.ToInt32(riga["AttG3"]);
+            Atg4 = Convert.ToInt32(riga["AttG4"]);
+            Atg5 = Convert.ToInt32(riga["AttG5"]);
+            try
+            {
+                IG1 = Convert.ToDateTime(riga["OISG1"]);
+            }
+            catch { }
+            try
+            {
+                FG1 = Convert.ToDateTime(riga["OFSG1"]);
+            }
+            catch { }
+            try
+            {
+                IG2= Convert.ToDateTime(riga["OISG2"]);
+            }
+            catch { }
+            try
+            {
+                FG2 = Convert.ToDateTime(riga["OFSG2"]);
+            }
+            catch { }
+            try
+            {
+                IG3 = Convert.ToDateTime(riga["OISG3"]);
+            }
+            catch { }
+            try
+            {
+                FG3 = Convert.ToDateTime(riga["OSFG3"]);
+            }
+            catch { }
+            try
+            {
+                IG4 = Convert.ToDateTime(riga["OISG4"]);
+            }
+            catch { }
+            try
+            {
+                FG4 = Convert.ToDateTime(riga["OFSG4"]);
+            }
+            catch { }
+            try
+            {
+                IG5 = Convert.ToDateTime(riga["OISG5"]);
+            }
+            catch { }
+            try
+            {
+                FG5 = Convert.ToDateTime(riga["OFSG5"]);
+            }
+            catch { }
+            // Copiare in SottoCommesse
+
+            DataRow riga1;
+            DataTable TabellaCommesse1 = target2021DataSet.Tables["Commesse"];
+
+            riga1 = TabellaCommesse1.Rows.Find(id);
+            riga1.BeginEdit();
+            riga1["AttG1"] = Atg1;
+            riga1["AttG2"] = Atg2;
+            riga1["AttG3"] = Atg3;
+            riga1["AttG4"] = Atg4;
+            riga1["AttG5"] = Atg5;
+            riga1["OISG1"] = IG1;
+            riga1["OFSG1"] = FG1;
+            riga1["OISG2"] = IG2;
+            riga1["OFSG2"] = FG2;
+            riga1["OISG3"] = IG3;
+            riga1["OSFG3"] = FG3;
+            riga1["OISG4"] = IG4;
+            riga1["OFSG4"] = FG4;
+            riga1["OISG5"] = IG5;
+            riga1["OFSG5"] = FG5;
+            riga1.EndEdit();
+            commesseTableAdapter.Update(target2021DataSet);
+        }
+
+        private void RiportaPezziStampati(int id)
+        {
+            int PezziCorretti, PezziScartati;
+            string CodArtDopoStampo;
+            // Copiare da Fase1
+            DataRow riga;
+            DataTable TabellaCommesse = target2021DataSet.Tables["Commesse"];
+            riga = TabellaCommesse.Rows.Find(id-1);
+            PezziCorretti = Convert.ToInt32(riga["NrPezziCorretti"]);
+            PezziScartati = Convert.ToInt32(riga["NrPezziScartati"]);
+            CodArtDopoStampo = riga["CodArtiDopoStampo"].ToString();
+            // Copiare in Fase2
+            DataRow riga1;
+            DataTable TabellaCommesse1 = target2021DataSet.Tables["Commesse"];
+            riga1 = TabellaCommesse1.Rows.Find(id);
+            riga1.BeginEdit();
+            riga1["NrPezziCorretti"] = PezziCorretti;
+            riga1["NrPezziScartati"] = PezziScartati;
+            riga1.EndEdit();
+            commesseTableAdapter.Update(target2021DataSet);
+            // MOVIMENTAZIONI MAGAZZINO
+            // Registrare Movimento Magazzino
+            MovimentoCS(CodArtDopoStampo, PezziCorretti);
+            // Registrare Carico Magazzino (Giacenza)
+            AggiornaGiacenzeC(PezziCorretti, CodArtDopoStampo);
+        }
+
+        private void RigaOFStato4Sottocommesse(string IDCom)
+        {
+            // Chiudi riga (Stato=4) OF (TipoCommessa=1) tutte sottocommesse
+            int[] IDSottocommesse = new int[30];
+            int i = 0;
+            DataRow[] SottoCommesse;
+            SottoCommesse = target2021DataSet.Tables["AbbinamentiSuperCommesse"].Select("IdSuperCommessa = " + IDCom.ToString());
+            foreach (DataRow Commessa in SottoCommesse)
+            {
+                // Estrai IDCommessa
+                IDSottocommesse[i] = Convert.ToInt32(Commessa[2]);
+                RigaOFStato4S(IDSottocommesse[i]);
+                i++;
+            }
+            return;
+        }
+        
+        private void RigaOFStato4S(int Id)
+        {
+            DataRow riga;
+            DataTable TCommesse = target2021DataSet.Tables["Commesse"];
+
+            riga = TCommesse.Rows.Find(Id);
+            riga.BeginEdit();
+            riga["Stato"] = 4;
+            riga.EndEdit();
+            commesseTableAdapter.Update(target2021DataSet);
         }
 
         private void RigaOFStato4()
@@ -411,27 +602,27 @@ namespace Target2021
             }
             else
             {
-                MovimentoCS();
+                string CodArt = codArtiDopoStampoTextBox.Text;
+                int qta = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+                MovimentoCS(CodArt, qta);
                 Giacenza();
                 button7.BackColor = Color.Green;
             }
         }
 
-        private void MovimentoCS()
+        private void MovimentoCS(string CodArt, int qta)
         {
             // Registro il Carico in 'MovimentiMagazzino'
             try
             {
-                int IdMagazzino, qta, AMagazzino = 0;
+                int IdMagazzino, AMagazzino = 0;
                 double peso = 0, prezzo = 0;
-                string CodArt, CS = "X", BarCode, NrOrdine, Causale;
+                string CS = "X", BarCode, NrOrdine, Causale;
                 DateTime datamov;
-
                 IdMagazzino = 4;
                 CodArt = codArtiDopoStampoTextBox.Text;
                 Causale = codCommessaTextBox.Text;
                 CS = "C";
-                qta = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
                 BarCode = codCommessaTextBox.Text;
                 NrOrdine = nrCommessaTextBox.Text;
                 datamov = dataTermineDateTimePicker.Value;
