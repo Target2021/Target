@@ -56,6 +56,7 @@
             this.commesseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.controllaNuoviOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaOrdiniImportatiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.riincludiOrdiniEsclusiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordiniAFornitoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuovoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,8 +76,8 @@
             this.ruoliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impiegataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pianificazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splittaCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splittaCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pianificazioneTemporaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stampaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,6 +98,7 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.allineaDDTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -299,6 +301,7 @@
             this.commesseToolStripMenuItem1,
             this.controllaNuoviOrdiniToolStripMenuItem,
             this.consultaOrdiniImportatiToolStripMenuItem,
+            this.riincludiOrdiniEsclusiToolStripMenuItem,
             this.ordiniAFornitoreToolStripMenuItem,
             this.superCommesseToolStripMenuItem,
             this.helpToolStripMenuItem});
@@ -328,6 +331,13 @@
             this.consultaOrdiniImportatiToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
             this.consultaOrdiniImportatiToolStripMenuItem.Text = "Consulta/Elimina ordini importati";
             this.consultaOrdiniImportatiToolStripMenuItem.Click += new System.EventHandler(this.consultaOrdiniImportatiToolStripMenuItem_Click);
+            // 
+            // riincludiOrdiniEsclusiToolStripMenuItem
+            // 
+            this.riincludiOrdiniEsclusiToolStripMenuItem.Name = "riincludiOrdiniEsclusiToolStripMenuItem";
+            this.riincludiOrdiniEsclusiToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
+            this.riincludiOrdiniEsclusiToolStripMenuItem.Text = "Ri-includi ordini esclusi";
+            this.riincludiOrdiniEsclusiToolStripMenuItem.Click += new System.EventHandler(this.riincludiOrdiniEsclusiToolStripMenuItem_Click);
             // 
             // ordiniAFornitoreToolStripMenuItem
             // 
@@ -382,7 +392,8 @@
             this.interrogazioneMovimentiToolStripMenuItem,
             this.caricoscaricoToolStripMenuItem,
             this.posizioniStampiEDimeToolStripMenuItem,
-            this.valorizzaMagazziniToolStripMenuItem});
+            this.valorizzaMagazziniToolStripMenuItem,
+            this.allineaDDTToolStripMenuItem});
             this.magazziniToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.magazziniToolStripMenuItem.Name = "magazziniToolStripMenuItem";
             this.magazziniToolStripMenuItem.Size = new System.Drawing.Size(122, 30);
@@ -488,19 +499,19 @@
             this.pianificazioneToolStripMenuItem.Text = "Pianificazione";
             this.pianificazioneToolStripMenuItem.Click += new System.EventHandler(this.pianificazioneToolStripMenuItem_Click);
             // 
-            // splittaCommessaToolStripMenuItem
-            // 
-            this.splittaCommessaToolStripMenuItem.Name = "splittaCommessaToolStripMenuItem";
-            this.splittaCommessaToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
-            this.splittaCommessaToolStripMenuItem.Text = "Splitta Commessa";
-            this.splittaCommessaToolStripMenuItem.Click += new System.EventHandler(this.splittaCommessaToolStripMenuItem_Click);
-            // 
             // creaSuperCommessaToolStripMenuItem
             // 
             this.creaSuperCommessaToolStripMenuItem.Name = "creaSuperCommessaToolStripMenuItem";
             this.creaSuperCommessaToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
             this.creaSuperCommessaToolStripMenuItem.Text = "Crea SuperCommessa";
             this.creaSuperCommessaToolStripMenuItem.Click += new System.EventHandler(this.creaSuperCommessaToolStripMenuItem_Click);
+            // 
+            // splittaCommessaToolStripMenuItem
+            // 
+            this.splittaCommessaToolStripMenuItem.Name = "splittaCommessaToolStripMenuItem";
+            this.splittaCommessaToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
+            this.splittaCommessaToolStripMenuItem.Text = "Splitta Commessa";
+            this.splittaCommessaToolStripMenuItem.Click += new System.EventHandler(this.splittaCommessaToolStripMenuItem_Click);
             // 
             // eliminaSuperCommessaToolStripMenuItem
             // 
@@ -658,6 +669,7 @@
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ddtTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -675,6 +687,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
             this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
@@ -690,6 +703,13 @@
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
+            // 
+            // allineaDDTToolStripMenuItem
+            // 
+            this.allineaDDTToolStripMenuItem.Name = "allineaDDTToolStripMenuItem";
+            this.allineaDDTToolStripMenuItem.Size = new System.Drawing.Size(329, 30);
+            this.allineaDDTToolStripMenuItem.Text = "Allinea DDT - GALART";
+            this.allineaDDTToolStripMenuItem.Click += new System.EventHandler(this.allineaDDTToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -781,6 +801,8 @@
         private System.Windows.Forms.ToolStripMenuItem terminiPagamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spedizioneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuovoArticoloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem riincludiOrdiniEsclusiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allineaDDTToolStripMenuItem;
     }
 }
 

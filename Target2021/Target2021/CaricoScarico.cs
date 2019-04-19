@@ -298,9 +298,14 @@ namespace Target2021
         {
             DataRow[] riga;
             int numero=0;
+            string selezione = "";
             try
             {
-                string selezione = "idPrime = '" + codice + "'";
+                if (comboBox1.SelectedIndex == 0) selezione = "idPrime = '" + codice + "'";
+                if (comboBox1.SelectedIndex == 1) selezione = "idStampi = '" + codice + "'";
+                if (comboBox1.SelectedIndex == 2) selezione = "idDime = '" + codice + "'";
+                if (comboBox1.SelectedIndex == 3) selezione = "idSemilavorati = '" + codice + "'";
+                if (comboBox1.SelectedIndex == 4) selezione = "idArticoli = '" + codice + "'";
                 riga = target2021DataSet.Tables["GiacenzeMagazzini"].Select(selezione);
                 numero = Convert.ToInt32(riga[0]["GiacenzaComplessiva"]);
             }

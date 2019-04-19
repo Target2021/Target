@@ -12,22 +12,19 @@ namespace Target2021.SelezAna
 {
     public partial class SelPrime : Form
     {
-        public int ID;
-        public string c, v;
+        public string Codice;
 
-        public SelPrime(int idArt, string campo, string valore)
+        public SelPrime(string idArt)
         {
             InitializeComponent();
-            ID = idArt;
-            c = campo;
-            v = valore;
+            Codice = idArt;
         }
 
         private void primeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.primeBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            this.primeTableAdapter.Update(this.target2021DataSet);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -142,15 +139,14 @@ namespace Target2021.SelezAna
 
         private void SelPrime_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.PesiSpecifici'. È possibile spostarla o rimuoverla se necessario.
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.PesiSpecifici'.
             this.pesiSpecificiTableAdapter.Fill(this.target2021DataSet.PesiSpecifici);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'. È possibile spostarla o rimuoverla se necessario.
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fornitori'.
             this.fornitoriTableAdapter.Fill(this.target2021DataSet.Fornitori);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. 
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
-            if (c == "Codice") primeBindingSource.Filter = "codice='" + v + "'";
-            if (c == "Descrizione") primeBindingSource.Filter = "descrizione LIKE '*" + v + "*'";
-            primeBindingSource.Position = ID;
+            if (Codice == "-1") this.primeBindingSource.AddNew();
+            else primeBindingSource.Filter = "codice = '" + Codice +"'";
         }
     }
 }

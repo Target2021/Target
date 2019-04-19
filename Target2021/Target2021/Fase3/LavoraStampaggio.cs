@@ -371,16 +371,21 @@ namespace Target2021
                 PezziSottocommesse ps = new PezziSottocommesse(codCommessaTextBox.Text);
                 ps.ShowDialog();
                 // Chiudi riga SC (Stato=2) (TipoCommessa=2) stampaggio supercommessa
-                RigaStampaStato2(); 
+                RigaStampaStato2();
+                //MessageBox.Show("Fine RigaStampaStato2");
                 // Chiudi riga (Stato=2) stampaggio tutte sottocommesse
                 RigaStampaStato2Sottocommesse(nrCommessaTextBox.Text);
+                //MessageBox.Show("RigaStampaStato2Sottocommesse");
                 // Chiudi riga SC (Lavorazione=1 OF) Mettere in Stato 4
                 RigaOFStato4();
+                //MessageBox.Show("RigaOFStato4");
                 // Chiudi riga (Lavorazione=1) sottocommesse ImpegnataMateriaPrima=(calcolo) Mettere in Stato 4
                 RigaOFStato4Sottocommesse(nrCommessaTextBox.Text);
+                //MessageBox.Show("RigaOFStato4Sottocommesse");
                 // Carichi semilavorarti a magazzino -> in RigaStampaStato2Sottocommesse
                 // Scarico lastre materia prima
                 ScaricoLastre();
+                //MessageBox.Show("ScaricoLastre");
             }
         }
 
@@ -620,7 +625,7 @@ namespace Target2021
                 string CS = "X", BarCode, NrOrdine, Causale;
                 DateTime datamov;
                 IdMagazzino = 4;
-                CodArt = codArtiDopoStampoTextBox.Text;
+                //CodArt = codArtiDopoStampoTextBox.Text;
                 Causale = codCommessaTextBox.Text;
                 CS = "C";
                 BarCode = codCommessaTextBox.Text;
@@ -768,7 +773,7 @@ namespace Target2021
         private int RecuperaNrLastreImpegnate()
         {
             string CodCommessa = codCommessaTextBox.Text;
-            CodCommessa = CodCommessa.Replace("S", "OF");
+            if (CodCommessa.Substring(0,2)!="SC") CodCommessa.Replace("S", "OF");
             CodCommessa = CodCommessa.Trim();
             int risultato;
             string filtro = "CodCommessa = '" + CodCommessa + "'";

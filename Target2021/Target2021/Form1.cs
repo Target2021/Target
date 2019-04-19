@@ -14,6 +14,7 @@ using Target2021.Stampe;
 using Target2021.Fornitori;
 using Target2021.Anagrafiche.Fornitore;
 using Target2021.Fase2;
+using Target2021.Magazzino;
 
 namespace Target2021
 {
@@ -497,6 +498,20 @@ namespace Target2021
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void riincludiOrdiniEsclusiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnaOrdiniEsclusi esclusi = new AnaOrdiniEsclusi();
+            esclusi.MdiParent = this;
+            esclusi.Show();
+        }
+
+        private void allineaDDTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllineaDDT allinea = new AllineaDDT();
+            allinea.MdiParent = this;
+            allinea.Show();
         }
     }
 }

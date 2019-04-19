@@ -354,6 +354,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(68, 24);
             this.textBox7.TabIndex = 45;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox7.Visible = false;
             // 
             // label6

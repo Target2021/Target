@@ -211,6 +211,12 @@
     <Compile Include="Anagrafiche\AnaMTaglio.Designer.cs">
       <DependentUpon>AnaMTaglio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\AnaOrdiniEsclusi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\AnaOrdiniEsclusi.Designer.cs">
+      <DependentUpon>AnaOrdiniEsclusi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anagrafiche\AnaOrdiniImportati.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -489,6 +495,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Magazzino\AllineaDDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Magazzino\AllineaDDT.Designer.cs">
+      <DependentUpon>AllineaDDT.cs</DependentUpon>
+    </Compile>
     <Compile Include="MascheraTaglio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -721,6 +733,9 @@
     <EmbeddedResource Include="Anagrafiche\AnaMTaglio.resx">
       <DependentUpon>AnaMTaglio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\AnaOrdiniEsclusi.resx">
+      <DependentUpon>AnaOrdiniEsclusi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\AnaOrdiniImportati.resx">
       <DependentUpon>AnaOrdiniImportati.cs</DependentUpon>
     </EmbeddedResource>
@@ -858,6 +873,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Magazzino\AllineaDDT.resx">
+      <DependentUpon>AllineaDDT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MascheraTaglio.resx">
       <DependentUpon>MascheraTaglio.cs</DependentUpon>

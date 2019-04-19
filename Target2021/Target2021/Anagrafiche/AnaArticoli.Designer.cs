@@ -72,6 +72,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox30 = new System.Windows.Forms.TextBox();
@@ -143,49 +144,6 @@
             this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.fasiBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.fasiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.macchineTaglioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.fasiTableAdapter = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
-            this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
-            this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.fasiTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
-            this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
-            this.fornitoriTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
-            this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
-            this.macchineTaglioTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
-            this.dimeTableAdapter = new Target2021.Target2021DataSetTableAdapters.DimeTableAdapter();
-            this.fasiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.macchineTaglioTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label38 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
-            this.stampiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.stampiTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button7 = new System.Windows.Forms.Button();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.comboBox13 = new System.Windows.Forms.ComboBox();
             this.dettArticoliDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,6 +176,49 @@
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label48 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.comboBox13 = new System.Windows.Forms.ComboBox();
+            this.fasiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.macchineTaglioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.fasiTableAdapter = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
+            this.primeTableAdapter = new Target2021.Target2021DataSetTableAdapters.PrimeTableAdapter();
+            this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.fasiTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.FasiTableAdapter();
+            this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
+            this.fornitoriTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
+            this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
+            this.macchineTaglioTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
+            this.dimeTableAdapter = new Target2021.Target2021DataSetTableAdapters.DimeTableAdapter();
+            this.fasiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.macchineTaglioTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.MacchineTaglioTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label38 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
+            this.stampiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.stampiTableAdapter1 = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button7 = new System.Windows.Forms.Button();
             allegatoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
@@ -238,14 +239,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource3)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // allegatoLabel
@@ -290,6 +291,7 @@
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ddtTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -307,6 +309,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
             this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
@@ -619,8 +622,11 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox4.DataSource = this.fornitoriBindingSource;
             this.comboBox4.DisplayMember = "codice";
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(167, 89);
@@ -647,8 +653,11 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox3.DataSource = this.primeBindingSource;
             this.comboBox3.DisplayMember = "codice";
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(167, 51);
@@ -699,6 +708,7 @@
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.button8);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.textBox30);
@@ -745,6 +755,17 @@
             this.tabPage2.Text = "Fase 2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(629, 209);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(125, 24);
+            this.button8.TabIndex = 43;
+            this.button8.Text = "Rimuovi allegato";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // button6
             // 
             this.button6.BackgroundImage = global::Target2021.Properties.Resources.Excel;
@@ -760,7 +781,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(628, 200);
+            this.button5.Location = new System.Drawing.Point(629, 186);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(125, 24);
             this.button5.TabIndex = 41;
@@ -780,7 +801,7 @@
             // textBox29
             // 
             this.textBox29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox29.Location = new System.Drawing.Point(663, 165);
+            this.textBox29.Location = new System.Drawing.Point(667, 162);
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(90, 24);
             this.textBox29.TabIndex = 39;
@@ -789,7 +810,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(582, 165);
+            this.label49.Location = new System.Drawing.Point(586, 162);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(75, 18);
             this.label49.TabIndex = 38;
@@ -843,6 +864,7 @@
             // 
             // textBox22
             // 
+            this.textBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox22.Location = new System.Drawing.Point(377, 15);
             this.textBox22.Name = "textBox22";
@@ -1451,331 +1473,6 @@
             this.tabPage4.Text = "Fase 4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // fasiBindingSource
-            // 
-            this.fasiBindingSource.DataMember = "Fasi";
-            this.fasiBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // macchineTaglioBindingSource
-            // 
-            this.macchineTaglioBindingSource.DataMember = "MacchineTaglio";
-            this.macchineTaglioBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // dimeBindingSource
-            // 
-            this.dimeBindingSource.DataMember = "Dime";
-            this.dimeBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 263);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Descrizione:";
-            // 
-            // fasiTableAdapter
-            // 
-            this.fasiTableAdapter.ClearBeforeFill = true;
-            // 
-            // primeTableAdapter
-            // 
-            this.primeTableAdapter.ClearBeforeFill = true;
-            // 
-            // fornitoriTableAdapter
-            // 
-            this.fornitoriTableAdapter.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1009, 490);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 58);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Nuovo articolo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(828, 490);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 58);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Salva modifiche";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(659, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 24);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(100, 260);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(481, 24);
-            this.textBox3.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(594, 99);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(129, 18);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Costo produz. (€):";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(724, 93);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(93, 24);
-            this.textBox4.TabIndex = 12;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.Leave += new System.EventHandler(this.controllaNumero);
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(724, 156);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 18);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "Fasi:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(770, 153);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(47, 24);
-            this.textBox5.TabIndex = 14;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // fasiTableAdapter1
-            // 
-            this.fasiTableAdapter1.ClearBeforeFill = true;
-            // 
-            // stampiTableAdapter
-            // 
-            this.stampiTableAdapter.ClearBeforeFill = true;
-            // 
-            // fornitoriTableAdapter1
-            // 
-            this.fornitoriTableAdapter1.ClearBeforeFill = true;
-            // 
-            // macchineStampoTableAdapter
-            // 
-            this.macchineStampoTableAdapter.ClearBeforeFill = true;
-            // 
-            // macchineTaglioTableAdapter
-            // 
-            this.macchineTaglioTableAdapter.ClearBeforeFill = true;
-            // 
-            // dimeTableAdapter
-            // 
-            this.dimeTableAdapter.ClearBeforeFill = true;
-            // 
-            // fasiBindingSource2
-            // 
-            this.fasiBindingSource2.DataMember = "Fasi";
-            this.fasiBindingSource2.DataSource = this.target2021DataSet;
-            // 
-            // macchineTaglioTableAdapter1
-            // 
-            this.macchineTaglioTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(828, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(410, 456);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(919, 490);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 58);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Cambia foto";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // label38
-            // 
-            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(594, 126);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(132, 18);
-            this.label38.TabIndex = 18;
-            this.label38.Text = "Prezzo vendita (€):";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(724, 123);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(93, 24);
-            this.textBox17.TabIndex = 19;
-            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label39
-            // 
-            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(594, 215);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(54, 18);
-            this.label39.TabIndex = 20;
-            this.label39.Text = "Imball.:";
-            // 
-            // textBox18
-            // 
-            this.textBox18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(654, 215);
-            this.textBox18.Multiline = true;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(163, 69);
-            this.textBox18.TabIndex = 21;
-            // 
-            // dettArticoliBindingSource
-            // 
-            this.dettArticoliBindingSource.DataMember = "DettArticoli";
-            this.dettArticoliBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // dettArticoliTableAdapter
-            // 
-            this.dettArticoliTableAdapter.ClearBeforeFill = true;
-            // 
-            // stampiBindingSource1
-            // 
-            this.stampiBindingSource1.DataMember = "Stampi";
-            this.stampiBindingSource1.DataSource = this.target2021DataSet;
-            // 
-            // stampiTableAdapter1
-            // 
-            this.stampiTableAdapter1.ClearBeforeFill = true;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(555, 9);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(251, 43);
-            this.label46.TabIndex = 22;
-            this.label46.Text = "Anagrafica articoli";
-            // 
-            // label47
-            // 
-            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(594, 186);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(177, 18);
-            this.label47.TabIndex = 23;
-            this.label47.Text = "Lotto minimo produzione:";
-            // 
-            // textBox28
-            // 
-            this.textBox28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox28.Location = new System.Drawing.Point(770, 183);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(47, 24);
-            this.textBox28.TabIndex = 24;
-            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(1097, 490);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(82, 58);
-            this.button7.TabIndex = 25;
-            this.button7.Text = "Elimina articolo";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(6, 14);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(62, 18);
-            this.label48.TabIndex = 31;
-            this.label48.Text = "FASE 4:";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(192, 14);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(101, 18);
-            this.label50.TabIndex = 30;
-            this.label50.Text = "Assemblaggio";
-            // 
-            // comboBox13
-            // 
-            this.comboBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox13.FormattingEnabled = true;
-            this.comboBox13.Location = new System.Drawing.Point(74, 11);
-            this.comboBox13.Name = "comboBox13";
-            this.comboBox13.Size = new System.Drawing.Size(112, 26);
-            this.comboBox13.TabIndex = 29;
-            // 
             // dettArticoliDataGridView
             // 
             this.dettArticoliDataGridView.AutoGenerateColumns = false;
@@ -2080,6 +1777,331 @@
             this.dataGridViewTextBoxColumn35.Visible = false;
             this.dataGridViewTextBoxColumn35.Width = 92;
             // 
+            // dettArticoliBindingSource
+            // 
+            this.dettArticoliBindingSource.DataMember = "DettArticoli";
+            this.dettArticoliBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(6, 14);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(62, 18);
+            this.label48.TabIndex = 31;
+            this.label48.Text = "FASE 4:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(192, 14);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(101, 18);
+            this.label50.TabIndex = 30;
+            this.label50.Text = "Assemblaggio";
+            // 
+            // comboBox13
+            // 
+            this.comboBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox13.FormattingEnabled = true;
+            this.comboBox13.Location = new System.Drawing.Point(74, 11);
+            this.comboBox13.Name = "comboBox13";
+            this.comboBox13.Size = new System.Drawing.Size(112, 26);
+            this.comboBox13.TabIndex = 29;
+            // 
+            // fasiBindingSource
+            // 
+            this.fasiBindingSource.DataMember = "Fasi";
+            this.fasiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // macchineTaglioBindingSource
+            // 
+            this.macchineTaglioBindingSource.DataMember = "MacchineTaglio";
+            this.macchineTaglioBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // dimeBindingSource
+            // 
+            this.dimeBindingSource.DataMember = "Dime";
+            this.dimeBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 263);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 18);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Descrizione:";
+            // 
+            // fasiTableAdapter
+            // 
+            this.fasiTableAdapter.ClearBeforeFill = true;
+            // 
+            // primeTableAdapter
+            // 
+            this.primeTableAdapter.ClearBeforeFill = true;
+            // 
+            // fornitoriTableAdapter
+            // 
+            this.fornitoriTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1009, 490);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 58);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Nuovo articolo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(828, 490);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 58);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Salva modifiche";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(659, 66);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(158, 24);
+            this.textBox2.TabIndex = 9;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(100, 260);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(481, 24);
+            this.textBox3.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(594, 99);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(129, 18);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Costo produz. (€):";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(724, 93);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(93, 24);
+            this.textBox4.TabIndex = 12;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.Leave += new System.EventHandler(this.controllaNumero);
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(724, 156);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 18);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Fasi:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox5.Enabled = false;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(770, 153);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(47, 24);
+            this.textBox5.TabIndex = 14;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // fasiTableAdapter1
+            // 
+            this.fasiTableAdapter1.ClearBeforeFill = true;
+            // 
+            // stampiTableAdapter
+            // 
+            this.stampiTableAdapter.ClearBeforeFill = true;
+            // 
+            // fornitoriTableAdapter1
+            // 
+            this.fornitoriTableAdapter1.ClearBeforeFill = true;
+            // 
+            // macchineStampoTableAdapter
+            // 
+            this.macchineStampoTableAdapter.ClearBeforeFill = true;
+            // 
+            // macchineTaglioTableAdapter
+            // 
+            this.macchineTaglioTableAdapter.ClearBeforeFill = true;
+            // 
+            // dimeTableAdapter
+            // 
+            this.dimeTableAdapter.ClearBeforeFill = true;
+            // 
+            // fasiBindingSource2
+            // 
+            this.fasiBindingSource2.DataMember = "Fasi";
+            this.fasiBindingSource2.DataSource = this.target2021DataSet;
+            // 
+            // macchineTaglioTableAdapter1
+            // 
+            this.macchineTaglioTableAdapter1.ClearBeforeFill = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(828, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(410, 456);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(919, 490);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(84, 58);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Cambia foto";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // label38
+            // 
+            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(594, 126);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(132, 18);
+            this.label38.TabIndex = 18;
+            this.label38.Text = "Prezzo vendita (€):";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.Location = new System.Drawing.Point(724, 123);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(93, 24);
+            this.textBox17.TabIndex = 19;
+            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label39
+            // 
+            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(594, 215);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(54, 18);
+            this.label39.TabIndex = 20;
+            this.label39.Text = "Imball.:";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox18.Location = new System.Drawing.Point(654, 215);
+            this.textBox18.Multiline = true;
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(163, 69);
+            this.textBox18.TabIndex = 21;
+            // 
+            // dettArticoliTableAdapter
+            // 
+            this.dettArticoliTableAdapter.ClearBeforeFill = true;
+            // 
+            // stampiBindingSource1
+            // 
+            this.stampiBindingSource1.DataMember = "Stampi";
+            this.stampiBindingSource1.DataSource = this.target2021DataSet;
+            // 
+            // stampiTableAdapter1
+            // 
+            this.stampiTableAdapter1.ClearBeforeFill = true;
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(555, 9);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(251, 43);
+            this.label46.TabIndex = 22;
+            this.label46.Text = "Anagrafica articoli";
+            // 
+            // label47
+            // 
+            this.label47.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(594, 186);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(177, 18);
+            this.label47.TabIndex = 23;
+            this.label47.Text = "Lotto minimo produzione:";
+            // 
+            // textBox28
+            // 
+            this.textBox28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox28.Location = new System.Drawing.Point(770, 183);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(47, 24);
+            this.textBox28.TabIndex = 24;
+            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(1097, 490);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(82, 58);
+            this.button7.TabIndex = 25;
+            this.button7.Text = "Elimina articolo";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // AnaArticoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2136,14 +2158,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource3)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.macchineTaglioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fasiBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettArticoliDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2334,5 +2356,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.Button button8;
     }
 }

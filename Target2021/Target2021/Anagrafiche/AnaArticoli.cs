@@ -983,5 +983,10 @@ namespace Target2021.Anagrafiche
             }
             dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBox30.Text = "";
+        }
     }
 }

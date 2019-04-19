@@ -39,8 +39,14 @@ namespace Target2021
             this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
             inserimento_iniziale();
             verifica_commesse();
-            SoloInOrdine();
+            SoloInOrdine();         // Non fa nulla
+            Colora();               // Colora di rosso o verde illa colonna "Lastre richieste"
             WindowState = FormWindowState.Maximized;
+        }
+
+        private void Colora()
+        {
+
         }
 
         public void inserimento_iniziale()

@@ -123,7 +123,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(823, 345);
+            this.button1.Location = new System.Drawing.Point(1113, 345);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 44);
             this.button1.TabIndex = 4;
@@ -180,6 +180,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
             this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
@@ -293,7 +294,7 @@
             this.commesseDataGridView.Location = new System.Drawing.Point(3, 32);
             this.commesseDataGridView.Name = "commesseDataGridView";
             this.commesseDataGridView.ReadOnly = true;
-            this.commesseDataGridView.Size = new System.Drawing.Size(953, 307);
+            this.commesseDataGridView.Size = new System.Drawing.Size(1243, 307);
             this.commesseDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
@@ -882,7 +883,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(957, 439);
+            this.ClientSize = new System.Drawing.Size(1247, 439);
             this.Controls.Add(this.commesseDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);

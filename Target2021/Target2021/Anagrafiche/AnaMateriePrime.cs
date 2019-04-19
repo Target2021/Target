@@ -29,15 +29,6 @@ namespace Target2021.Anagrafiche
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
-
-        }
-
-        private void Seleziona(object sender, DataGridViewCellEventArgs e)
-        {
-            int id;
-            id = primeBindingSource.Position;
-            SelPrime Seleziona = new SelPrime(id, comboBox1 .Text, textBox1 .Text);
-            Seleziona.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -51,15 +42,12 @@ namespace Target2021.Anagrafiche
             try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
         }
 
-        private void primeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            SelPrime selez = new SelPrime(1, comboBox1.Text, textBox1.Text);
+            string nuovo = "-1";
+            SelPrime selez = new SelPrime(nuovo);
             selez.ShowDialog();
+            Aggiorna();
         }
 
         private void primeBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -68,6 +56,25 @@ namespace Target2021.Anagrafiche
             this.primeBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
 
+        }
+
+        private void primeDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (primeDataGridView.SelectedCells.Count > 0)
+            {
+                int rowindex = primeDataGridView.SelectedCells[0].RowIndex;
+                DataGridViewRow riga = primeDataGridView.Rows[rowindex];
+                string cod = Convert.ToString(riga.Cells["dataGridViewTextBoxColumn1"].Value);
+                SelPrime selez = new SelPrime(cod);
+                selez.ShowDialog();
+                Aggiorna();
+            }
+        }
+
+        private void Aggiorna()
+        {
+            this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
+            primeDataGridView.Refresh();
         }
     }
 }

@@ -25,6 +25,8 @@ namespace Target2021
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniEsclusi'. È possibile spostarla o rimuoverla se necessario.
+            this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniImportati'. È possibile spostarla o rimuoverla se necessario.
@@ -56,7 +58,7 @@ namespace Target2021
         private DataTable CreaTabellaOrdini()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add(new DataColumn("Importato", typeof(bool)));
+            dt.Columns.Add(new DataColumn("Seleziona", typeof(bool)));
             dt.Columns.Add(new DataColumn("Num", typeof(Int32)));
             dt.Columns.Add(new DataColumn("Data", typeof(DateTime)));
             dt.Columns.Add(new DataColumn("Articolo", typeof(string)));
@@ -70,7 +72,7 @@ namespace Target2021
         private DataTable CreaTabellaOrdiniVecchi()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add(new DataColumn("Importato", typeof(bool)));
+            dt.Columns.Add(new DataColumn("Seleziona", typeof(bool)));
             dt.Columns.Add(new DataColumn("Num", typeof(Int32)));
             dt.Columns.Add(new DataColumn("Data", typeof(DateTime)));
             dt.Columns.Add(new DataColumn("Articolo", typeof(string)));
@@ -91,7 +93,7 @@ namespace Target2021
             DataTable DettaglioOrdini;
             DettaglioOrdini = target2021DataSet.Tables["dettaglio_ordini_multiriga"];
 
-            string selezione = "data_ordine > '"+data+"'";
+            string selezione = "data_ordine > '"+data+"' AND aliquota_iva = 0" ;
             DataRow[] rows = DettaglioOrdini.Select(selezione);
 
             foreach(DataRow riga in rows)
@@ -809,7 +811,7 @@ namespace Target2021
             {
                 try
                 {
-                    if ((bool)(row.Cells["Importato"].Value) == true)
+                    if ((bool)(row.Cells["Seleziona"].Value) == true)
                     {
                         import[i] =Convert.ToInt32(row.Cells["Num"].Value);
                         i++;
@@ -840,6 +842,78 @@ namespace Target2021
             riga.Descrizione = RecuperaDescrizioneArticolo(nord);
             target2021DataSet.OrdiniImportati.Rows.Add(riga);
             ordiniImportatiTableAdapter.Update(target2021DataSet.OrdiniImportati);
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int[] esclusi = new int[100];
+            int i = 0, j, x = 0;
+            progressBarAdv1.Maximum = dataGridView2.Rows.Count;
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                try
+                {
+                    if ((bool)(row.Cells["Seleziona"].Value) == true)
+                    {
+                        esclusi[i] = Convert.ToInt32(row.Cells["Num"].Value);
+                        i++;
+                    }
+                }
+                catch { }
+                x++;
+                progressBarAdv1.Value = x;
+            }
+            for (j = 0; j < i; j++)
+            {
+                AggiornaOrdiniEsclusi(esclusi[j]);
+            }
+            MessageBox.Show("Ho escluso gli ordini selezionati");
+            //carica();
+            //this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
+        }
+
+        private void AggiornaOrdiniEsclusi(int nord)
+        {
+            //MessageBox.Show("L'articolo "+Cod+" va creato nelle giacenze!");
+            Target2021DataSet.OrdiniEsclusiRow riga = target2021DataSet.OrdiniEsclusi.NewOrdiniEsclusiRow();
+            riga.Anno = Convert.ToInt32(comboBox1.Text);
+            riga.Stato = 2;  // 2 = escluso
+            riga.Numero = nord;
+            riga.Data = DateTime.Today;  // Data nel quale è stato escluso
+            riga.Articolo = CodiceArt(nord);
+            riga.Descrizione = RecuperaDescrizioneArticolo(nord);
+            target2021DataSet.OrdiniEsclusi.Rows.Add(riga);
+            ordiniEsclusiTableAdapter.Update(target2021DataSet.OrdiniEsclusi);
+            ImpostaAliquotaIva2(Convert.ToInt32(comboBox1.Text), nord);
+        }
+
+        private void ImpostaAliquotaIva2(int anno,int num)
+        {
+            string data = anno.ToString() + "0000";
+            //int ID;
+            //DataRow[] riga;
+            //riga = target2021DataSet.Tables["dettaglio_ordini_multiriga"].Select("data_ordine>'" + data + "' AND numero_ordine=" + num.ToString());
+            //try
+            //{
+            //    riga[0].BeginEdit();
+            //    riga[0]["aliquota_iva"] = 2;
+            //    riga[0].EndEdit();
+            //    dettaglio_ordini_multirigaTableAdapter.Update(target2021DataSet);
+            //}
+            //catch { }
+            string stringaconnessione, sql, DesArticolo;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "UPDATE dettaglio_ordini_multiriga SET aliquota_iva=2 WHERE numero_ordine=" + num.ToString() + " AND data_ordine>'"+data+"'";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            comando.ExecuteNonQuery();
+            connessione.Close();
         }
 
         private void commesseBindingNavigatorSaveItem_Click(object sender, EventArgs e)
