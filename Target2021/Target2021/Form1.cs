@@ -513,5 +513,12 @@ namespace Target2021
             allinea.MdiParent = this;
             allinea.Show();
         }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Test t = new Test();
+            t.MdiParent = this;
+            t.Show();
+        }
     }
 }

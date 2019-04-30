@@ -44,5 +44,10 @@ namespace Target2021.Magazzino
         {
             filtra();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

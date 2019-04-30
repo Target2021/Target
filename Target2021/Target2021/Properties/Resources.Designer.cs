@@ -90,6 +90,15 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Dati\CopiaGalart\DBORDINI.MDB.
+        /// </summary>
+        internal static string ConnessioneAccess {
+            get {
+                return ResourceManager.GetString("ConnessioneAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap elenco_iscritti_new {

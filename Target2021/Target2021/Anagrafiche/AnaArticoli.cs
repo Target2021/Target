@@ -740,7 +740,8 @@ namespace Target2021.Anagrafiche
             // DA TESTARE *****************************
             this.Validate();
             this.dettArticoliBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+            //this.tableAdapterManager.UpdateAll(this.target2021DataSet);
         }
 
         private void AggiornaPosizioneStampo(string cod, string p1, string p2, double p3)

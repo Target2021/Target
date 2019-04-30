@@ -241,6 +241,11 @@
     <Compile Include="Anagrafiche\CercaArticolo.Designer.cs">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBORDINIDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBORDINIDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Fase5\CheckAssemblaggio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -691,6 +696,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Target2021DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
@@ -982,11 +993,25 @@
     <EmbeddedResource Include="Stampe\StampaOrdFor.resx">
       <DependentUpon>StampaOrdFor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ValorizzaMagazzini.resx">
       <DependentUpon>ValorizzaMagazzini.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
+    <None Include="DBORDINIDataSet.xsc">
+      <DependentUpon>DBORDINIDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBORDINIDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBORDINIDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBORDINIDataSet.xss">
+      <DependentUpon>DBORDINIDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

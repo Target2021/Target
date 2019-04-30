@@ -63,6 +63,15 @@ namespace Target2021
                 case 13:
                     query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMateriaPrima,IDFornitore,ImpegnataMatPrima FROM Commesse WHERE TipoCommessa=1 AND Stato=4";
                     break;
+                case 41:
+                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMinuteria,Qtaminuteria FROM Commesse WHERE TipoCommessa=4 AND Stato=0";
+                    break;
+                case 42:
+                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMinuteria,Qtaminuteria FROM Commesse WHERE TipoCommessa=4 AND Stato=1";
+                    break;
+                case 43:
+                    query = "Select CodCommessa,DataCommessa,IDCliente,DataConsegna,NRPezziDaLavorare,CodArticolo,IDMinuteria,Qtaminuteria FROM Commesse WHERE TipoCommessa=4 AND Stato=2";
+                    break;
             }
             SqlConnection conn = new SqlConnection(stringa_connessione);
             SqlCommand comando = new SqlCommand(query, conn);

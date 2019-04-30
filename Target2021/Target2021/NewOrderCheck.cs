@@ -330,8 +330,8 @@ namespace Target2021
                     com.IDMachStampa = RecuperaMacchinaStampaPredefinita(CodiceArticolo);
                     com.Note = RecuperaNote(CodiceArticolo);
                     com.IDMachTaglio = RecuperaMacchinaTaglio(CodiceArticolo);
-                    com.IDMinuteria = RecuperaMinuteria(CodiceArticolo);
-                    com.Qtaminuteria = RecuperaQtaMinuteria(CodiceArticolo);
+                    com.IDMinuteria = RecuperaMinuteria(CodiceArticolo, i);
+                    com.Qtaminuteria = RecuperaQtaMinuteria(CodiceArticolo, i);
                     InserisciCommessa1(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
@@ -339,32 +339,30 @@ namespace Target2021
             }
         }
 
-        private string RecuperaMinuteria(string Cod)
+        private string RecuperaMinuteria(string Cod, int pos)
         {
             string outp = "";
             DataRow[] riga;
             riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + Cod + "' AND lavorazione=4");
             try
             {
-                outp = riga[0]["CodiceInput"].ToString();
+                outp = riga[pos-1]["CodiceInput"].ToString();
                 return outp;
             }
             catch { return "NN"; }
         }
 
-        private int RecuperaQtaMinuteria(string ca)
+        private int RecuperaQtaMinuteria(string ca, int pos)
         {
-            int risultato = 0;
-            string filtro = "lavorazione = 4 AND codice_articolo = '" + ca + "'";
+            int numero = 1;
+            DataRow[] riga;
+            riga = target2021DataSet.Tables["DettArticoli"].Select("codice_articolo='" + ca + "' AND lavorazione=4");
             try
             {
-                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(Quantita)", filtro);
+                numero =Convert .ToInt32(riga[pos - 1]["Quantita"]);
+                return numero;
             }
-            catch
-            {
-                risultato = 1;
-            }
-            return risultato;
+            catch { return numero; }
         }
 
         private int RecuperaPercentualeLastra(string ca)
@@ -523,10 +521,12 @@ namespace Target2021
 
         private string CodiceArt(int numord)
         {
-            string stringaconnessione, sql, CodArticolo;
+            string stringaconnessione, sql, CodArticolo, data;
             stringaconnessione = Properties.Resources.StringaConnessione;
+            data = comboBox1.Text;
+            data = data + "0000";
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT codice_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine="+numord.ToString()+" AND data_ordine>20190000";
+            sql = "SELECT codice_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine="+numord.ToString()+" AND data_ordine>"+data;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             CodArticolo = comando.ExecuteScalar().ToString();
@@ -895,17 +895,6 @@ namespace Target2021
         private void ImpostaAliquotaIva2(int anno,int num)
         {
             string data = anno.ToString() + "0000";
-            //int ID;
-            //DataRow[] riga;
-            //riga = target2021DataSet.Tables["dettaglio_ordini_multiriga"].Select("data_ordine>'" + data + "' AND numero_ordine=" + num.ToString());
-            //try
-            //{
-            //    riga[0].BeginEdit();
-            //    riga[0]["aliquota_iva"] = 2;
-            //    riga[0].EndEdit();
-            //    dettaglio_ordini_multirigaTableAdapter.Update(target2021DataSet);
-            //}
-            //catch { }
             string stringaconnessione, sql, DesArticolo;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
@@ -922,44 +911,6 @@ namespace Target2021
             this.commesseBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
         }
-
-        //private void InserisciCommessa(Commessa com)
-        //{
-        //    string stringaconnessione = Properties.Resources.StringaConnessione;
-        //    SqlConnection connessione = new SqlConnection(stringaconnessione);
-        //    string sql = "INSERT INTO Commesse (CodCommessa, NrCommessa, DataCommessa, TipoCommessa, IDCliente, OrdCliente, DataConsegna, NrPezziDaLavorare, CodArticolo, DescrArticolo, IDFornitore, IDStampo, IDDima, IDMateriaPrima, NrLastreRichieste, NrPezziOrdinati, NrOrdine, Stato, ImpegnataMatPrima, ProgrTaglio1, ProgrTaglio2, InSupercommessa, NrPezziResidui, PercentualeUtilizzoLastra, IDMachStampa, ProgStampa, PezziOra, Foto) " +
-        //        "VALUES (@cod,@nr,@data,@tipo,@idc,@oc,@dtc,@npdl,@codart,@desart,@idf,@ids,@idd,@idmp,@NrLastreRichieste,@npo,@no,@stato,@imatpri,@prt1,@prt2,0,@npdl,@percent,@mps,@progsta,@pezziora,@foto)";
-        //    SqlCommand comando = new SqlCommand(sql, connessione);
-        //    comando.Parameters.AddWithValue("@cod", com.CodCommessa);
-        //    comando.Parameters.AddWithValue("@nr", com.NrCommessa);
-        //    comando.Parameters.AddWithValue("@data", com.DataCommessa);
-        //    comando.Parameters.AddWithValue("@tipo", com.TipoCommessa);
-        //    comando.Parameters.AddWithValue("@idc", com.IDCliente);
-        //    comando.Parameters.AddWithValue("@oc", com.OrdCliente);
-        //    comando.Parameters.AddWithValue("@dtc", com.DataConsegna);
-        //    comando.Parameters.AddWithValue("@npdl", com.NrPezziDaLavorare);
-        //    comando.Parameters.AddWithValue("@codart", com.CodArticolo);
-        //    comando.Parameters.AddWithValue("@desart", com.DescrArticolo);
-        //    comando.Parameters.AddWithValue("@idf", com.IDFornitore);
-        //    comando.Parameters.AddWithValue("@ids", com.IDMateriaPrima);
-        //    comando.Parameters.AddWithValue("@idd", com.IDMateriaPrima);
-        //    comando.Parameters.AddWithValue("@idmp", com.IDMateriaPrima);
-        //    comando.Parameters.AddWithValue("@NrLastreRichieste", com.NrLastreRichieste);
-        //    comando.Parameters.AddWithValue("@npo", 0);
-        //    comando.Parameters.AddWithValue("@no", 'N');
-        //    comando.Parameters.AddWithValue("@stato", 0);
-        //    comando.Parameters.AddWithValue("@imatpri", 0);
-        //    comando.Parameters.AddWithValue("@prt1", com.ProgrTaglio1);
-        //    comando.Parameters.AddWithValue("@prt2", com.ProgrTaglio2);
-        //    comando.Parameters.AddWithValue("@percent", com.PercentualeUtilizzoLastra);
-        //    comando.Parameters.AddWithValue("@mps", com.Mps);
-        //    comando.Parameters.AddWithValue("@progsta", com.ProgStampa);
-        //    comando.Parameters.AddWithValue("@pezziora", com.PezziOra);
-        //    comando.Parameters.AddWithValue("@foto", com.Foto);
-        //    connessione.Open();
-        //    comando.ExecuteNonQuery();
-        //    connessione.Close();
-        //}
 
         private void InserisciCommessa1(Commessa com)
         {

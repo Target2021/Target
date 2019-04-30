@@ -70,6 +70,7 @@
             this.caricoscaricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.posizioniStampiEDimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.valorizzaMagazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allineaDDTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,7 +99,7 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.allineaDDTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -304,7 +305,8 @@
             this.riincludiOrdiniEsclusiToolStripMenuItem,
             this.ordiniAFornitoreToolStripMenuItem,
             this.superCommesseToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.ordiniToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordiniToolStripMenuItem.Name = "ordiniToolStripMenuItem";
             this.ordiniToolStripMenuItem.Size = new System.Drawing.Size(82, 30);
@@ -441,6 +443,13 @@
             this.valorizzaMagazziniToolStripMenuItem.Size = new System.Drawing.Size(329, 30);
             this.valorizzaMagazziniToolStripMenuItem.Text = "Valorizza magazzini";
             this.valorizzaMagazziniToolStripMenuItem.Click += new System.EventHandler(this.valorizzaMagazziniToolStripMenuItem_Click);
+            // 
+            // allineaDDTToolStripMenuItem
+            // 
+            this.allineaDDTToolStripMenuItem.Name = "allineaDDTToolStripMenuItem";
+            this.allineaDDTToolStripMenuItem.Size = new System.Drawing.Size(329, 30);
+            this.allineaDDTToolStripMenuItem.Text = "Allinea DDT - GALART";
+            this.allineaDDTToolStripMenuItem.Click += new System.EventHandler(this.allineaDDTToolStripMenuItem_Click);
             // 
             // impostazioniToolStripMenuItem
             // 
@@ -704,12 +713,12 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // allineaDDTToolStripMenuItem
+            // testToolStripMenuItem
             // 
-            this.allineaDDTToolStripMenuItem.Name = "allineaDDTToolStripMenuItem";
-            this.allineaDDTToolStripMenuItem.Size = new System.Drawing.Size(329, 30);
-            this.allineaDDTToolStripMenuItem.Text = "Allinea DDT - GALART";
-            this.allineaDDTToolStripMenuItem.Click += new System.EventHandler(this.allineaDDTToolStripMenuItem_Click);
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
+            this.testToolStripMenuItem.Text = "test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -803,6 +812,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuovoArticoloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem riincludiOrdiniEsclusiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allineaDDTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
     }
 }
 

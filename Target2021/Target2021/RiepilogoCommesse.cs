@@ -96,7 +96,7 @@ namespace Target2021
 
         private void Calcolo()
         {
-            string query_of1,query_of2,query_of3,query_s1,query_s2,query_s3,query_t1,query_t2,query_t3, query_of11, query_of12;
+            string query_of1, query_of2, query_of3, query_s1, query_s2, query_s3, query_t1, query_t2, query_t3, query_of11, query_of12, query_ass1, query_ass2, query_ass3;
             query_of1 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND Stato=0";
             query_of2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato=2)";
             query_of3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 1 AND (Stato>3)";
@@ -108,6 +108,9 @@ namespace Target2021
             query_t1 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 3 AND Stato=0";
             query_t2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 3 AND Stato=1";
             query_t3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 3 AND Stato=2";
+            query_ass1 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 4 AND Stato=0";
+            query_ass2 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 4 AND Stato=1";
+            query_ass3 = "Select Count(IDcommessa) From Commesse WHERE TipoCommessa = 4 AND Stato=2";
             SqlConnection connessione = new SqlConnection(stringa_connessione);
             SqlCommand comando2 = new SqlCommand(query_of1, connessione);
             SqlCommand comando1 = new SqlCommand(query_of2, connessione);
@@ -120,6 +123,9 @@ namespace Target2021
             SqlCommand comando8 = new SqlCommand(query_t3, connessione);
             SqlCommand comando11 = new SqlCommand(query_of11, connessione);
             SqlCommand comando12 = new SqlCommand(query_of12, connessione);
+            SqlCommand comando13 = new SqlCommand(query_ass1, connessione);
+            SqlCommand comando14 = new SqlCommand(query_ass2, connessione);
+            SqlCommand comando15 = new SqlCommand(query_ass3, connessione);
             connessione.Open();
             button1.Text = Convert.ToString(comando.ExecuteScalar());
             button2.Text = Convert.ToString(comando1.ExecuteScalar());
@@ -132,6 +138,9 @@ namespace Target2021
             button9.Text = Convert.ToString(comando8.ExecuteScalar());
             button11.Text = Convert.ToString(comando11.ExecuteScalar());
             button12.Text = Convert.ToString(comando12.ExecuteScalar());
+            button13.Text = Convert.ToString(comando15.ExecuteScalar());
+            button14.Text = Convert.ToString(comando14.ExecuteScalar());
+            button15.Text = Convert.ToString(comando13.ExecuteScalar());
             connessione.Close();
         }
 
@@ -156,6 +165,24 @@ namespace Target2021
         private void button11_Click(object sender, EventArgs e)
         {
             i = 3;
+            passaggio();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            i = 43;
+            passaggio();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            i = 41;
+            passaggio();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            i = 42;
             passaggio();
         }
     }
