@@ -46,7 +46,6 @@
     <Shape ID="DesignTable:testata_ordini_multiriga" ZOrder="11" X="12554" Y="70" Height="305" Width="282" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:TipoCommessa" ZOrder="10" X="12906" Y="70" Height="115" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:CodModPagamento" ZOrder="8" X="13459" Y="70" Height="134" Width="261" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:DettArticoli" ZOrder="1" X="13777" Y="70" Height="305" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Prime" ZOrder="7" X="14072" Y="70" Height="305" Width="178" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Configurazione" ZOrder="38" X="4033" Y="70" Height="267" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:Commesse" ZOrder="6" X="14320" Y="70" Height="305" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
@@ -55,6 +54,7 @@
     <Shape ID="DesignTable:VistaSuperCommesse" ZOrder="5" X="14596" Y="70" Height="305" Width="269" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:OrdiniEsclusi" ZOrder="3" X="14935" Y="70" Height="210" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:dettaglio_ddt" ZOrder="2" X="415" Y="286" Height="305" Width="222" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:DettArticoli" ZOrder="1" X="13777" Y="70" Height="305" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_AbbinamentiSuperCommesse_Commesse" ZOrder="4" LineWidth="11">

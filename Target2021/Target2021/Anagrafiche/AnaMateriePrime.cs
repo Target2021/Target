@@ -76,5 +76,10 @@ namespace Target2021.Anagrafiche
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             primeDataGridView.Refresh();
         }
+
+        private void primeDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

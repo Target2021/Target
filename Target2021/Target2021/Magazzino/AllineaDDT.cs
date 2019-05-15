@@ -47,7 +47,19 @@ namespace Target2021.Magazzino
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            // Controlla Le nuove importazioni (per ogni riga)
+            // Se importato: data_preventivo_prov = 1 altrimenti = 0
+            // Se è = 0
+                // Crea: A) Moviemento di Scarico in 'MovimentiMagazzino' valorizzando Data, Numero e progressivo DDT
+                //       B) Aggiorna GiacenzeMagazzino (se non esiste lo crea)
+            // Se è = 1
+            // Recupera da 'dettagio_ddt' Codice Articolo, Data, Numero, Progressivo e quantità
+                // Cerca in 'MovimentiMagazzino' se c'è una riga che contiene quei dati (se non c'è nulla)
+                // Se la riga c'è confronta se la quantità della riga è uguale
+                    // Se è uguale OK (non fare nulla)
+                    // Se è diversa: A) Modificare il valore qta della riga di MovimentiMagazzino
+                                   //B) Modificare la giacenza per quell'articolo
+            // Visualizza in un messagebox info su attività di importazione effettuate
         }
     }
 }

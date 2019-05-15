@@ -631,7 +631,7 @@ namespace Target2021
                 BarCode = codCommessaTextBox.Text;
                 NrOrdine = nrCommessaTextBox.Text;
                 datamov = dataTermineDateTimePicker.Value;
-                if (IdMagazzino == 4) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", CodArt, "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
+                if (IdMagazzino == 4) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, "", "", "", CodArt, "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale,0,0,0);
                 movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
             }
             catch
@@ -708,7 +708,7 @@ namespace Target2021
                 BarCode = codCommessaTextBox.Text;
                 NrOrdine = nrCommessaTextBox.Text;
                 datamov = dataTermineDateTimePicker.Value;
-                if (IdMagazzino == 1) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, CodArt, "", "", "", "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale);
+                if (IdMagazzino == 1) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, CodArt, "", "", "", "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale,0,0,0);
                 movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
             }
             catch

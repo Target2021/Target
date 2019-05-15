@@ -90,7 +90,7 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Dati\CopiaGalart\DBORDINI.MDB.
+        ///   Cerca una stringa localizzata simile a Provider=Microsoft.ace.OLEDB.12.0;Data Source=C:\Dati\OriginaliGalart\DBORDINI.MDB.
         /// </summary>
         internal static string ConnessioneAccess {
             get {

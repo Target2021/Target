@@ -516,9 +516,9 @@ namespace Target2021
 
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Test t = new Test();
-            t.MdiParent = this;
-            t.Show();
+            Test nok = new Test();
+            nok.MdiParent = this;
+            nok.Show();
         }
     }
 }

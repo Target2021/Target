@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
@@ -25,48 +26,53 @@ namespace Target2021
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniEsclusi'. È possibile spostarla o rimuoverla se necessario.
             this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniImportati'. È possibile spostarla o rimuoverla se necessario.
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
             this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.DettArticoli'. È possibile spostarla o rimuoverla se necessario.
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-            carica();
+            //carica();
+            aggiornaVisualizzazione(comboBox1.Text);
+        }
+
+        private void aggiornaVisualizzazione(string anno)
+        {
+            anno = anno + "0000";
+            dettaglio_ordini_multirigaBindingSource.Filter = "peso = 1 ";
+            dettaglioordinimultirigaBindingSource.Filter = "peso = 0";
+            dettaglioordinimultirigaBindingSource1.Filter = "peso = 2 AND data_ordine > '"+anno+"'";
             try
             {
-                dataGridView3.Sort(dataGridView3.Columns["Column2"], ListSortDirection.Descending);
+                dettaglio_ordini_multirigaDataGridView.Sort(dettaglio_ordini_multirigaDataGridView.Columns["dataGridViewTextBoxColumn9"], ListSortDirection.Descending);
+                dataGridView5.Sort(dataGridView5.Columns["Numero"], ListSortDirection.Descending);
+                dataGridView4.Sort(dataGridView4.Columns["dataGridViewTextBoxColumn99"], ListSortDirection.Descending);
             }
             catch
-            {   }
+            { }
         }
 
         private void carica()
         {
             DataTable tabella, tabellavecchi;
             aggiorna();
-            tabella=CreaTabellaOrdini();
-            tabellavecchi=CreaTabellaOrdiniVecchi();
-            PopolaTabellaOrdini(comboBox1.Text, tabella, tabellavecchi);
+            //tabella=CreaTabellaOrdini();
+            //tabellavecchi=CreaTabellaOrdiniVecchi();
+            //PopolaTabellaOrdini(comboBox1.Text, tabella, tabellavecchi);
         }
 
-        private DataTable CreaTabellaOrdini()
+        private void CreaTabellaOrdini()  // restituiva il tipo DataTable
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add(new DataColumn("Seleziona", typeof(bool)));
-            dt.Columns.Add(new DataColumn("Num", typeof(Int32)));
-            dt.Columns.Add(new DataColumn("Data", typeof(DateTime)));
-            dt.Columns.Add(new DataColumn("Articolo", typeof(string)));
-            dt.Columns.Add(new DataColumn("Descrizione", typeof(string)));
-            dataGridView2.DataSource = dt;
-            this.dataGridView2.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView2.Sort(this.dataGridView2.Columns["Num"], ListSortDirection.Ascending);
-            return dt;
+            //DataTable dt = new DataTable();
+            //dt.Columns.Add(new DataColumn("Seleziona", typeof(bool)));
+            //dt.Columns.Add(new DataColumn("Num", typeof(Int32)));
+            //dt.Columns.Add(new DataColumn("Data", typeof(DateTime)));
+            //dt.Columns.Add(new DataColumn("Articolo", typeof(string)));
+            //dt.Columns.Add(new DataColumn("Descrizione", typeof(string)));
+            //dataGridView2.DataSource = dt;
+            //this.dataGridView2.Columns["Num"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //this.dataGridView2.Sort(this.dataGridView2.Columns["Num"], ListSortDirection.Ascending);
+            //return dt;
         }
 
         private DataTable CreaTabellaOrdiniVecchi()
@@ -109,38 +115,38 @@ namespace Target2021
 
         private void RiempiCheckOrdinato(string anno, DataTable vecchi)
         {
-            int NumOrdine, i=0, j;
-            int[] rimuovi = new int[2000];
-            dataGridView3.Rows.Clear();
-            dataGridView3.Refresh();
-            foreach (DataGridViewRow riga in dataGridView2.Rows)
-            {
-                NumOrdine = Convert .ToInt32(riga.Cells[1].Value);
-                DataTable OrdiniImportati;
-                OrdiniImportati = target2021DataSet.Tables["OrdiniImportati"];
+            //int NumOrdine, i=0, j;
+            //int[] rimuovi = new int[2000];
+            //dataGridView3.Rows.Clear();
+            //dataGridView3.Refresh();
+            //foreach (DataGridViewRow riga in dataGridView2.Rows)
+            //{
+            //    NumOrdine = Convert .ToInt32(riga.Cells[1].Value);
+            //    DataTable OrdiniImportati;
+            //    OrdiniImportati = target2021DataSet.Tables["OrdiniImportati"];
 
-                string selezione = "Anno = " + anno + " AND Numero = " + NumOrdine.ToString();
-                DataRow[] rows = OrdiniImportati.Select(selezione);
+            //    string selezione = "Anno = " + anno + " AND Numero = " + NumOrdine.ToString();
+            //    DataRow[] rows = OrdiniImportati.Select(selezione);
 
-                if (rows.Length == 0) ;
-                //riga.Cells[0].Value = false;
-                else
-                {
-                    //riga.Cells[0].Value = true;
-                    DataGridViewRow vecchia = (DataGridViewRow)riga.Clone();
-                    for (Int32 index = 0; index < riga.Cells.Count; index++)
-                    {
-                        vecchia.Cells[index].Value = riga.Cells[index].Value;
-                    }
-                    dataGridView3.Rows.Add(vecchia);
-                    rimuovi[i] = riga.Index;
-                    i++;
-                }
-            }
-            for (j=0;j<i;j++)  // Si potrebbe sostituire questro codice con ciclo "rimuovi se spuntata"
-            {
-                dataGridView2.Rows.RemoveAt(rimuovi[j]-j);
-            }
+            //    if (rows.Length == 0) ;
+            //    //riga.Cells[0].Value = false;
+            //    else
+            //    {
+            //        //riga.Cells[0].Value = true;
+            //        DataGridViewRow vecchia = (DataGridViewRow)riga.Clone();
+            //        for (Int32 index = 0; index < riga.Cells.Count; index++)
+            //        {
+            //            vecchia.Cells[index].Value = riga.Cells[index].Value;
+            //        }
+            //        dataGridView3.Rows.Add(vecchia);
+            //        rimuovi[i] = riga.Index;
+            //        i++;
+            //    }
+            //}
+            //for (j=0;j<i;j++)  // Si potrebbe sostituire questro codice con ciclo "rimuovi se spuntata"
+            //{
+            //    dataGridView2.Rows.RemoveAt(rimuovi[j]-j);
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -163,7 +169,9 @@ namespace Target2021
             else
             {
                 label4.Text = "Ci sono " + neworder.ToString() + " ordini ancora da importare!";
-            }      
+            }
+            this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
+            dataGridView5.Refresh();
         }
 
         private int RecuperaUltimoOrdine()
@@ -241,9 +249,9 @@ namespace Target2021
             connessione.Close();
         }
 
-        private int Importa(int n)
+        private int Importa(int n, int data)
         {
-            int i, IDOrdine, UltimoID, NumFasi, progressivo, NrPezzi, NrLastreRichieste, MachStamp;
+            int i, IDOrdine, NumFasi, progressivo, NrPezzi, NrLastreRichieste, MachStamp;
             DateTime DataOrdine = DateTime.Now, DataConsegna=DateTime.Now;
             string CodiceArticolo, IDCliente, OrdineCliente, DescrArticolo, IdFornitore, IDMatPrima,PT1,PT2;
             SqlDataReader fasi;
@@ -257,6 +265,9 @@ namespace Target2021
             if (NumFasi == 0)
             {
                 MessageBox.Show("Non ho nulla da importare! Questo articolo ha 0 fasi!");
+                AggiornaUltimoOrdine(IDOrdine, DataOrdine);
+                ImpostaPesoCliente(n, data,1);  // usa il campo peso per settare stato ordine (0=da importare, 1=importato, 2=scontato)
+                AggiornaStatoTemporaneo(n, data,1);  // Aggiorno anche la tabella locale
                 return 1;
             }   
             else
@@ -335,8 +346,48 @@ namespace Target2021
                     InserisciCommessa1(com);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
+                ImpostaPesoCliente(n, data,1);  // usa il campo peso per settare stato ordine (0=da importare, 1=importato, 2=scontato)
+                AggiornaStatoTemporaneo(n, data,1);  // Aggiorno anche la tabella locale
                 return 0;
             }
+        }
+
+        private void AggiornaStatoTemporaneo(int n, int data, int stato)
+        {
+            string stringaconnessione, sql;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "UPDATE dettaglio_ordini_multiriga SET peso = "+stato+" WHERE data_ordine = " + data + " AND numero_ordine=" + n;
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch
+            {
+            }
+            connessione.Close();
+        }
+
+        private void ImpostaPesoCliente(int n, int data, int stato)
+        {
+            string stringaconnessione, sql = "", note;
+            stringaconnessione = Properties.Resources.ConnessioneAccess;
+            OleDbConnection connessione = new OleDbConnection(stringaconnessione);
+            sql = "UPDATE dettaglio_ordini_multiriga SET peso="+stato+" WHERE numero_ordine=" + n + " AND data_ordine = " + data;
+            OleDbCommand comando = new OleDbCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                note = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                note = null;
+            }
+            connessione.Close();
+            //MessageBox.Show("Bingo!");
         }
 
         private string RecuperaMinuteria(string Cod, int pos)
@@ -805,15 +856,17 @@ namespace Target2021
         private void button3_Click(object sender, EventArgs e)
         {
             int[] import = new int[100];
+            int[] date = new int[100];
             int i = 0, j,x=0;
-            progressBarAdv1.Maximum = dataGridView2.Rows.Count;
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            progressBarAdv1.Maximum = dataGridView5.Rows.Count;
+            foreach (DataGridViewRow row in dataGridView5.Rows)
             {
                 try
                 {
                     if ((bool)(row.Cells["Seleziona"].Value) == true)
                     {
-                        import[i] =Convert.ToInt32(row.Cells["Num"].Value);
+                        import[i] =Convert.ToInt32(row.Cells["Numero"].Value);
+                        date[i] = Convert.ToInt32(row.Cells["Data"].Value);
                         i++;
                     }
                 }
@@ -823,7 +876,7 @@ namespace Target2021
             }
             for (j=0;j<i;j++)
             {
-                Importa(import[j]);
+                Importa(import[j], date[j]);
                 AggiornaOrdiniImportati(import[j]);
                 MessageBox.Show("Importato ordine nr. " + import[j].ToString());
             }
@@ -852,15 +905,17 @@ namespace Target2021
         private void button2_Click(object sender, EventArgs e)
         {
             int[] esclusi = new int[100];
+            int[] data = new int[100];
             int i = 0, j, x = 0;
-            progressBarAdv1.Maximum = dataGridView2.Rows.Count;
-            foreach (DataGridViewRow row in dataGridView2.Rows)
+            progressBarAdv1.Maximum = dataGridView5.Rows.Count;
+            foreach (DataGridViewRow row in dataGridView5.Rows)
             {
                 try
                 {
                     if ((bool)(row.Cells["Seleziona"].Value) == true)
                     {
-                        esclusi[i] = Convert.ToInt32(row.Cells["Num"].Value);
+                        esclusi[i] = Convert.ToInt32(row.Cells["Numero"].Value);
+                        data[i] = Convert.ToInt32(row.Cells["Data"].Value);
                         i++;
                     }
                 }
@@ -870,10 +925,13 @@ namespace Target2021
             }
             for (j = 0; j < i; j++)
             {
-                AggiornaOrdiniEsclusi(esclusi[j]);
+                //AggiornaOrdiniEsclusi(esclusi[j]);
+                ImpostaPesoCliente(esclusi[j], data[j], 2);  // usa il campo peso per settare stato ordine (0=da importare, 1=importato, 2=scontato)
+                AggiornaStatoTemporaneo(esclusi[j], data[j], 2);  // Aggiorno anche la tabella locale
+
             }
             MessageBox.Show("Ho escluso gli ordini selezionati");
-            //carica();
+            carica();
             //this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
         }
 
@@ -898,7 +956,7 @@ namespace Target2021
             string stringaconnessione, sql, DesArticolo;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "UPDATE dettaglio_ordini_multiriga SET aliquota_iva=2 WHERE numero_ordine=" + num.ToString() + " AND data_ordine>'"+data+"'";
+            sql = "UPDATE dettaglio_ordini_multiriga SET peso=2 WHERE numero_ordine=" + num.ToString() + " AND data_ordine>'"+data+"'";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             comando.ExecuteNonQuery();

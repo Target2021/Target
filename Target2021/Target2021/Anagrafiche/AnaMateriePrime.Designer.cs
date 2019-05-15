@@ -172,6 +172,7 @@
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ddtTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -189,6 +190,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
             this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
@@ -247,6 +249,7 @@
             this.primeDataGridView.Size = new System.Drawing.Size(934, 358);
             this.primeDataGridView.TabIndex = 8;
             this.primeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.primeDataGridView_CellClick);
+            this.primeDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.primeDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
