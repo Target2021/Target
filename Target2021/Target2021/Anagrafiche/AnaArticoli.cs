@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Target2021.SelezAna;
 
 namespace Target2021.Anagrafiche
 {
@@ -988,6 +989,23 @@ namespace Target2021.Anagrafiche
         private void button8_Click(object sender, EventArgs e)
         {
             textBox30.Text = "";
+        }
+
+        private void comboBox13_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SelSemilavorato semi = new SelSemilavorato();
+            semi.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            SelMinuteria minu = new SelMinuteria();
+            minu.Show();
         }
     }
 }

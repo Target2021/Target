@@ -43,5 +43,15 @@ namespace Target2021.Properties {
                 return ((string)(this["DBORDINIConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Dati\\OriginaliGalart\\dbddt.mdb")]
+        public string ddtConnectionString {
+            get {
+                return ((string)(this["ddtConnectionString"]));
+            }
+        }
     }
 }

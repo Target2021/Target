@@ -241,6 +241,11 @@
     <Compile Include="Anagrafiche\CercaArticolo.Designer.cs">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
     </Compile>
+    <Compile Include="dbddtDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbddtDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBORDINIDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -593,11 +598,23 @@
     <Compile Include="SelezAna\SelLav.Designer.cs">
       <DependentUpon>SelLav.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelezAna\SelMinuteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelezAna\SelMinuteria.Designer.cs">
+      <DependentUpon>SelMinuteria.cs</DependentUpon>
+    </Compile>
     <Compile Include="SelezAna\SelPrime.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SelezAna\SelPrime.Designer.cs">
       <DependentUpon>SelPrime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelezAna\SelSemilavorato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelezAna\SelSemilavorato.Designer.cs">
+      <DependentUpon>SelSemilavorato.cs</DependentUpon>
     </Compile>
     <Compile Include="SelezAna\SelStampi.cs">
       <SubType>Form</SubType>
@@ -1001,6 +1018,17 @@
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
+    <None Include="dbddtDataSet.xsc">
+      <DependentUpon>dbddtDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbddtDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbddtDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbddtDataSet.xss">
+      <DependentUpon>dbddtDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DBORDINIDataSet.xsc">
       <DependentUpon>DBORDINIDataSet.xsd</DependentUpon>
     </None>

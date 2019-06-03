@@ -160,4 +160,7 @@
   <data name="ConnessioneAccess" xml:space="preserve">
     <value>Provider=Microsoft.ace.OLEDB.12.0;Data Source=C:\Dati\OriginaliGalart\DBORDINI.MDB</value>
   </data>
+  <data name="ConnessioneAccessDDT" xml:space="preserve">
+    <value>Provider=Microsoft.ace.OLEDB.12.0;Data Source=C:\Dati\OriginaliGalart\dbddt.mdb</value>
+  </data>
 </root>

@@ -99,6 +99,15 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Provider=Microsoft.ace.OLEDB.12.0;Data Source=C:\Dati\OriginaliGalart\dbddt.mdb.
+        /// </summary>
+        internal static string ConnessioneAccessDDT {
+            get {
+                return ResourceManager.GetString("ConnessioneAccessDDT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap elenco_iscritti_new {

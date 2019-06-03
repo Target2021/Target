@@ -93,6 +93,11 @@ namespace Target2021.Fase1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Salva();
+        }
+
+        private void Salva()
+        {
             this.Validate();
             this.commesseBindingSource.EndEdit();
             this.giacenzeMagazziniBindingSource.EndEdit();
@@ -108,6 +113,12 @@ namespace Target2021.Fase1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ImpegnaMatPrima_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Salva
+            Salva();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

@@ -83,7 +83,7 @@ namespace Target2021
             NuoveLastre = Convert.ToInt32(commesseDataGridView.SelectedRows[0].Cells[22].Value);
             if (NrLastre > NuoveLastre) NrLastre = NrLastre;
             else NrLastre = NuoveLastre;
-            textBox4.Text = NrLastre.ToString();
+            textBox4.Text =  NrLastre.ToString();
             Cliente =Convert.ToString(commesseDataGridView.SelectedRows[0].Cells[5].Value);
             textBox5.Text = Cliente;
             if (textBox2.Text=="")
@@ -163,7 +163,7 @@ namespace Target2021
         {
             int percentuale = 0, totperc = 0, nrighe = 100;
             totperc = Convert.ToInt32(textBox3.Text);
-            percentuale = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[5].Value);
+            percentuale = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[7].Value);
             totperc = totperc - percentuale;
             textBox3.Text = totperc.ToString();
             dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
@@ -187,11 +187,15 @@ namespace Target2021
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int NRighe = 1;
             CreaTestataSuperCommessa();
             CreaAbbinamentoSC();
             AggiornaStatoRiga();
-            CreaSuperCommessa(1);
-            CreaSuperCommessa(2);
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    NRighe++;
+                CreaSuperCommessa(NRighe);
+            //}
             MessageBox.Show("SuperCommessa di stampaggio creata correttamente!");
         }
 

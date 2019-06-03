@@ -13,11 +13,13 @@ using iTextSharp.text.pdf;
 using System.IO;
 using Target2021.Fase1;
 using Target2021.Fornitori;
+using System.Threading;
 
 namespace Target2021
 {
     public partial class CheckImpiegato : Form
     {
+        int finito = 0;
         string stringa_connessione = Properties.Resources.StringaConnessione;
         DataTable dataTable = new DataTable();
 
@@ -39,14 +41,34 @@ namespace Target2021
             this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
             inserimento_iniziale();
             verifica_commesse();
-            SoloInOrdine();         // Non fa nulla
-            Colora();               // Colora di rosso o verde illa colonna "Lastre richieste"
             WindowState = FormWindowState.Maximized;
+            finito = 1;
         }
 
         private void Colora()
         {
-
+            int richieste=0, disponibilitot=0, disponibilimagaz=0, disponibiliord = 0;
+            if (finito==1)
+            {
+                foreach (DataGridViewRow riga in dataGridView1.Rows)
+                {
+                    try
+                    {
+                        richieste = Convert.ToInt32(riga.Cells["Lastre Richieste"].Value);
+                        disponibilimagaz = Convert.ToInt32(riga.Cells["Disponibilità Lastre Magazzino"].Value);
+                        disponibiliord = Convert.ToInt32(riga.Cells["Disponibilità Lastre Ordinato"].Value);
+                        disponibilitot = disponibilimagaz + disponibiliord;
+                        if (richieste > disponibilitot)
+                            riga.DefaultCellStyle.BackColor = Color.Orange;
+                        else
+                            riga.DefaultCellStyle.BackColor = Color.LightGreen;
+                    }
+                    catch
+                    {
+                        // Non ci sono dei valori
+                    }
+                }
+            }
         }
 
         public void inserimento_iniziale()
@@ -128,15 +150,10 @@ namespace Target2021
             dataGridView1.DataSource = source;
         }
 
-        public void SoloInOrdine()
-        {
-
-            //giacenzeMagazziniBindingSource.Filter = "idPrime = '" + textBox1.Text + "'";
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             aggiorna();
+            Colora();
         }
 
         private void aggiorna()
@@ -173,15 +190,15 @@ namespace Target2021
             NOF.Show();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             DisimpegnaLastre DL = new DisimpegnaLastre();
             DL.Show();
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            Colora();
         }
     }
 }

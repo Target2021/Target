@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Target2021.Selezioni;
+using Target2021.SelezAna;
 
 namespace Target2021
 {
@@ -126,6 +127,7 @@ namespace Target2021
 
                     IdMagazzino = Convert.ToInt32(comboBox1.SelectedValue);
                     CodArt = textBox1.Text;
+                    if (IdMagazzino == 1) AnaLastre(CodArt);
                     Causale = textBox8.Text;
                     if (radioButton1.Checked == true) CS = "C";
                     if (radioButton2.Checked == true) CS = "S";
@@ -162,6 +164,32 @@ namespace Target2021
                 {
                     MessageBox.Show("Insert Failed");
                 }
+            }
+        }
+        
+        private void AnaLastre(string CodArt)
+        {
+            string stringaconnessione, sql;
+            int num;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT COUNT(codice) FROM Prime WHERE codice ='" + CodArt + "'";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                num =Convert .ToInt32(comando.ExecuteScalar());
+            }
+            catch
+            {
+                num = 0;
+            }
+            connessione.Close();
+            if (num==0)
+            {
+                string nuovo = "-1";
+                SelPrime selez = new SelPrime(nuovo);
+                selez.ShowDialog();
             }
         }
 
