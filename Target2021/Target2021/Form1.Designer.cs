@@ -63,6 +63,7 @@
             this.arrivoMerceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.superCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.magazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anagraficheMagazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interrogazioneGiacenzeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +79,6 @@
             this.impiegataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pianificazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.splittaCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pianificazioneTemporaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stampaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,7 +99,6 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -386,6 +385,13 @@
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
             // magazziniToolStripMenuItem
             // 
             this.magazziniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -486,8 +492,8 @@
             this.schermataTaglioToolStripMenuItem});
             this.ruoliToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ruoliToolStripMenuItem.Name = "ruoliToolStripMenuItem";
-            this.ruoliToolStripMenuItem.Size = new System.Drawing.Size(74, 30);
-            this.ruoliToolStripMenuItem.Text = "Ruoli";
+            this.ruoliToolStripMenuItem.Size = new System.Drawing.Size(182, 30);
+            this.ruoliToolStripMenuItem.Text = "Fasi lavorazione";
             // 
             // impiegataToolStripMenuItem
             // 
@@ -500,7 +506,6 @@
             // 
             this.pianificazioneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.creaSuperCommessaToolStripMenuItem,
-            this.splittaCommessaToolStripMenuItem,
             this.eliminaSuperCommessaToolStripMenuItem,
             this.pianificazioneTemporaleToolStripMenuItem});
             this.pianificazioneToolStripMenuItem.Name = "pianificazioneToolStripMenuItem";
@@ -514,13 +519,6 @@
             this.creaSuperCommessaToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
             this.creaSuperCommessaToolStripMenuItem.Text = "Crea SuperCommessa";
             this.creaSuperCommessaToolStripMenuItem.Click += new System.EventHandler(this.creaSuperCommessaToolStripMenuItem_Click);
-            // 
-            // splittaCommessaToolStripMenuItem
-            // 
-            this.splittaCommessaToolStripMenuItem.Name = "splittaCommessaToolStripMenuItem";
-            this.splittaCommessaToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
-            this.splittaCommessaToolStripMenuItem.Text = "Splitta Commessa";
-            this.splittaCommessaToolStripMenuItem.Click += new System.EventHandler(this.splittaCommessaToolStripMenuItem_Click);
             // 
             // eliminaSuperCommessaToolStripMenuItem
             // 
@@ -713,13 +711,6 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(398, 30);
-            this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -802,7 +793,6 @@
         private System.Windows.Forms.ToolStripMenuItem creaSuperCommessaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pianificazioneTemporaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminaSuperCommessaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem splittaCommessaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem valorizzaMagazziniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaOrdiniImportatiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem condizioniFornitoreToolStripMenuItem;

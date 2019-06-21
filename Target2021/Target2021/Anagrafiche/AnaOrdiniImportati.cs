@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,7 @@ namespace Target2021.Anagrafiche
         private void button1_Click(object sender, EventArgs e)
         {
             int Posizione, NumOrd;
+            DateTime DataOrd;
             DialogResult dialogResult = MessageBox.Show("Sei sicuro di voler eliminare l'importazione  degli ordini selezionati?", "Eliminazione importazione ordine", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -44,6 +46,7 @@ namespace Target2021.Anagrafiche
                     Posizione = row.Index;
                     textBox1.AppendText("Riga: " + Posizione.ToString() + Environment.NewLine);
                     NumOrd = (int)ordiniImportatiDataGridView.Rows[Posizione].Cells[3].Value;
+                    DataOrd = (DateTime)ordiniImportatiDataGridView.Rows[Posizione].Cells[4].Value;
                     textBox1.AppendText("Ordine numero: " + row.Index.ToString() + Environment .NewLine);
                     int risultato;
                     string filtro = "NrCommessa = " + NumOrd;
@@ -75,6 +78,10 @@ namespace Target2021.Anagrafiche
                             R.Delete();
                         }
                         ordiniImportatiTableAdapter.Update(target2021DataSet.OrdiniImportati);
+                        // Poi risetto il flag in ACCESS: DA FARE
+                        int data = DataOrd.Year * 10000 + DataOrd.Month * 100 + DataOrd.Day;
+
+                        ImpostaPesoCliente(NumOrd, data, 0);
                         MessageBox.Show("Importazione ordine "+NumOrd .ToString()+" eliminata con successo!");
                     }
                     
@@ -84,6 +91,26 @@ namespace Target2021.Anagrafiche
             {
                 //do something else
             }
+        }
+
+        private void ImpostaPesoCliente(int n, int data, int stato)
+        {
+            string stringaconnessione, sql = "", note;
+            stringaconnessione = Properties.Resources.ConnessioneAccess;
+            OleDbConnection connessione = new OleDbConnection(stringaconnessione);
+            sql = "UPDATE dettaglio_ordini_multiriga SET peso=" + stato + " WHERE numero_ordine=" + n + " AND data_ordine = " + data;
+            OleDbCommand comando = new OleDbCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                note = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                note = null;
+            }
+            connessione.Close();
+            //MessageBox.Show("Bingo!");
         }
 
         private void ordiniImportatiDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

@@ -486,7 +486,7 @@ namespace Target2021
             string stringaconnessione, sql = "", progt;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT ProgStampa FROM DettArticoli WHERE codice_articolo='" + ca + "' AND lavorazione=2";
+            sql = "SELECT ProgStampaggio FROM DettArticoli WHERE codice_articolo='" + ca + "' AND lavorazione=2";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             try

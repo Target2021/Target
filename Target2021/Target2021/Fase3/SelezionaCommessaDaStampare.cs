@@ -138,6 +138,7 @@ namespace Target2021.Fase3
         private void button1_Click(object sender, EventArgs e)
         {
             aggiorna();
+            //commesseDataGridView1.Sort
         }
     }
 }

@@ -90,7 +90,7 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Provider=Microsoft.ace.OLEDB.12.0;Data Source=C:\Dati\OriginaliGalart\DBORDINI.MDB.
+        ///   Cerca una stringa localizzata simile a Provider=Microsoft.ace.OLEDB.12.0;Data Source=Y:\DBORDINI.MDB.
         /// </summary>
         internal static string ConnessioneAccess {
             get {
@@ -99,7 +99,7 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Provider=Microsoft.ace.OLEDB.12.0;Data Source=C:\Dati\OriginaliGalart\dbddt.mdb.
+        ///   Cerca una stringa localizzata simile a Provider=Microsoft.ace.OLEDB.12.0;Data Source=Y:\dbddt.mdb.
         /// </summary>
         internal static string ConnessioneAccessDDT {
             get {

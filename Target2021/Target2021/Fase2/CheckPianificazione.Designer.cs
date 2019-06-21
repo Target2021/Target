@@ -63,6 +63,12 @@
             this.abbinamentiSuperCommesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.AbbinamentiSuperCommesseTableAdapter();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,6 +123,7 @@
             this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProgStampa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
@@ -208,7 +215,8 @@
             this.dataGridViewCheckBoxColumn1,
             this.dataGridViewTextBoxColumn51,
             this.dataGridViewTextBoxColumn52,
-            this.dataGridViewTextBoxColumn53});
+            this.dataGridViewTextBoxColumn53,
+            this.ProgStampa});
             this.commesseDataGridView.DataSource = this.commesseBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -250,7 +258,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(1, 347);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1281, 35);
+            this.button1.Size = new System.Drawing.Size(1123, 35);
             this.button1.TabIndex = 3;
             this.button1.Text = "↓ Inserisci commesse selezionate nella SuperCommessa Stampaggio ↓";
             this.button1.UseVisualStyleBackColor = true;
@@ -293,7 +301,6 @@
             this.toolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(143, 26);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toolStripMenuItem1
             // 
@@ -324,6 +331,7 @@
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ddtTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -341,6 +349,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
             this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
@@ -410,9 +419,9 @@
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(625, 391);
+            this.textBox3.Location = new System.Drawing.Point(597, 391);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 24);
+            this.textBox3.Size = new System.Drawing.Size(85, 24);
             this.textBox3.TabIndex = 10;
             this.textBox3.Text = "0";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -422,7 +431,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(504, 394);
+            this.label4.Location = new System.Drawing.Point(482, 394);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 18);
             this.label4.TabIndex = 9;
@@ -445,7 +454,7 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1144, 466);
+            this.label5.Location = new System.Drawing.Point(1141, 479);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 18);
             this.label5.TabIndex = 12;
@@ -458,7 +467,7 @@
             this.comboBox1.DisplayMember = "Descrizione";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1147, 487);
+            this.comboBox1.Location = new System.Drawing.Point(1144, 500);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(126, 26);
             this.comboBox1.TabIndex = 13;
@@ -478,7 +487,7 @@
             // 
             this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(996, 391);
+            this.textBox4.Location = new System.Drawing.Point(925, 391);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(82, 24);
             this.textBox4.TabIndex = 15;
@@ -489,7 +498,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(918, 394);
+            this.label6.Location = new System.Drawing.Point(847, 394);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 18);
             this.label6.TabIndex = 14;
@@ -508,7 +517,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(748, 394);
+            this.label7.Location = new System.Drawing.Point(688, 394);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 18);
             this.label7.TabIndex = 16;
@@ -518,12 +527,82 @@
             // 
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(811, 391);
+            this.textBox5.Location = new System.Drawing.Point(751, 391);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(90, 24);
             this.textBox5.TabIndex = 18;
             this.textBox5.Text = "?";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(1018, 394);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 18);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Prima consegna:";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Enabled = false;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(1144, 391);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(102, 24);
+            this.maskedTextBox1.TabIndex = 21;
+            this.maskedTextBox1.Text = "01013000";
+            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1141, 433);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(144, 18);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Programma stampa:";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Enabled = false;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(1144, 454);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(126, 24);
+            this.textBox6.TabIndex = 23;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(1150, 335);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 18);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Filtra per:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Nulla",
+            "Tipo Lastra",
+            "Id Abbinamento"});
+            this.comboBox2.Location = new System.Drawing.Point(1130, 354);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(152, 28);
+            this.comboBox2.TabIndex = 26;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -653,6 +732,7 @@
             this.dataGridViewTextBoxColumn16.HeaderText = "Stampo";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Visible = false;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -989,6 +1069,13 @@
             this.dataGridViewTextBoxColumn53.ReadOnly = true;
             this.dataGridViewTextBoxColumn53.Width = 140;
             // 
+            // ProgStampa
+            // 
+            this.ProgStampa.DataPropertyName = "ProgStampa";
+            this.ProgStampa.HeaderText = "ProgStampa";
+            this.ProgStampa.Name = "ProgStampa";
+            this.ProgStampa.ReadOnly = true;
+            // 
             // CheckPianificazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -996,6 +1083,12 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1294, 603);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox4);
@@ -1060,6 +1153,12 @@
         private Target2021DataSetTableAdapters.AbbinamentiSuperCommesseTableAdapter abbinamentiSuperCommesseTableAdapter;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1114,5 +1213,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn52;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProgStampa;
     }
 }

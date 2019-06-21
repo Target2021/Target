@@ -55,7 +55,14 @@ namespace Target2021.Fase2
         {
             DataRow[] Riga = target2021DataSet.Commesse.Select("CodCommessa = 'SC" + IDSC.ToString()+"'");
             Riga[0].Delete();
-            Riga[1].Delete();
+            try
+            {
+                Riga[1].Delete();
+            }
+            catch
+            {
+
+            }
             commesseTableAdapter.Update(target2021DataSet.Commesse);
         }
 
@@ -67,8 +74,10 @@ namespace Target2021.Fase2
             {
                 IdC = Convert.ToInt32(row.Cells[2].Value);
                 Riga = target2021DataSet.Commesse.FindByIDCommessa(IdC);
+                Riga.BeginEdit();
                 Riga.Stato = 2;
                 Riga.InSupercommessa = 0;
+                Riga.EndEdit();
             }
             commesseTableAdapter.Update(target2021DataSet.Commesse);
         }

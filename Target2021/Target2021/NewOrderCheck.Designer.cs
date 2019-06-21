@@ -50,7 +50,98 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.dettaglio_ordini_multirigaDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dettaglio_ordini_multirigaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn99 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn98 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn100 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn101 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn102 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn103 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn104 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn105 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn106 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn107 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn108 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn109 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn110 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn111 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn112 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn113 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn114 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn115 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn116 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn117 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn118 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn119 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn120 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn121 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn122 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn123 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn124 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn125 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn126 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn127 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn128 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn129 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn130 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn131 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn132 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn133 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn134 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn135 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn136 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn137 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn138 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn139 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn140 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn141 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dettaglioordinimultirigaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.Seleziona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,97 +189,6 @@
             this.dataGridViewTextBoxColumn96 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn97 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dettaglioordinimultirigaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.dataGridViewTextBoxColumn99 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn98 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn100 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn101 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn102 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn103 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn104 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn105 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn106 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn107 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn108 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn109 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn110 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn111 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn112 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn113 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn114 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn115 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn116 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn117 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn118 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn119 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn120 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn121 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn122 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn123 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn124 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn125 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn126 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn127 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn128 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn129 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn130 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn131 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn132 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn133 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn134 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn135 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn136 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn137 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn138 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn139 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn140 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn141 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dettaglioordinimultirigaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dettaglio_ordini_multirigaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordiniEsclusiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -202,12 +202,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarAdv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniEsclusiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniImportatiBindingSource)).BeginInit();
@@ -307,7 +307,7 @@
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(403, 182);
+            this.textBox4.Size = new System.Drawing.Size(403, 146);
             this.textBox4.TabIndex = 9;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -494,6 +494,408 @@
             this.dettaglio_ordini_multirigaDataGridView.Size = new System.Drawing.Size(508, 150);
             this.dettaglio_ordini_multirigaDataGridView.TabIndex = 22;
             // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "numero_ordine";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Numero";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 69;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "data_ordine";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 55;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "progressivo";
+            this.dataGridViewTextBoxColumn10.HeaderText = "progressivo";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            this.dataGridViewTextBoxColumn10.Width = 86;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "codice_articolo";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Articolo";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 67;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "descrizione_articolo";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Descrizione";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 87;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "tipo_articolo";
+            this.dataGridViewTextBoxColumn13.HeaderText = "tipo_articolo";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Visible = false;
+            this.dataGridViewTextBoxColumn13.Width = 89;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "data_consegna";
+            this.dataGridViewTextBoxColumn14.HeaderText = "data_consegna";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Visible = false;
+            this.dataGridViewTextBoxColumn14.Width = 106;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "unita_misura";
+            this.dataGridViewTextBoxColumn15.HeaderText = "unita_misura";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Visible = false;
+            this.dataGridViewTextBoxColumn15.Width = 91;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "mis_1";
+            this.dataGridViewTextBoxColumn16.HeaderText = "mis_1";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Visible = false;
+            this.dataGridViewTextBoxColumn16.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "mis_2";
+            this.dataGridViewTextBoxColumn17.HeaderText = "mis_2";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Visible = false;
+            this.dataGridViewTextBoxColumn17.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "mis_3";
+            this.dataGridViewTextBoxColumn18.HeaderText = "mis_3";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Visible = false;
+            this.dataGridViewTextBoxColumn18.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "mis_4";
+            this.dataGridViewTextBoxColumn19.HeaderText = "mis_4";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Visible = false;
+            this.dataGridViewTextBoxColumn19.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "spessore";
+            this.dataGridViewTextBoxColumn20.HeaderText = "spessore";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Visible = false;
+            this.dataGridViewTextBoxColumn20.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "numero_pezzi";
+            this.dataGridViewTextBoxColumn21.HeaderText = "numero_pezzi";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            this.dataGridViewTextBoxColumn21.Width = 97;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "quantita_evasa";
+            this.dataGridViewTextBoxColumn22.HeaderText = "quantita_evasa";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridViewTextBoxColumn22.Visible = false;
+            this.dataGridViewTextBoxColumn22.Width = 105;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "costo_a";
+            this.dataGridViewTextBoxColumn23.HeaderText = "costo_a";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Visible = false;
+            this.dataGridViewTextBoxColumn23.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "costo_b";
+            this.dataGridViewTextBoxColumn24.HeaderText = "costo_b";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.dataGridViewTextBoxColumn24.Visible = false;
+            this.dataGridViewTextBoxColumn24.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "sconto_cliente";
+            this.dataGridViewTextBoxColumn25.HeaderText = "sconto_cliente";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Visible = false;
+            this.dataGridViewTextBoxColumn25.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "totale_riga_ordine_a";
+            this.dataGridViewTextBoxColumn26.HeaderText = "totale_riga_ordine_a";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.Visible = false;
+            this.dataGridViewTextBoxColumn26.Width = 128;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "totale_riga_ordine_b";
+            this.dataGridViewTextBoxColumn27.HeaderText = "totale_riga_ordine_b";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.Visible = false;
+            this.dataGridViewTextBoxColumn27.Width = 128;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "aliquota_iva";
+            this.dataGridViewTextBoxColumn28.HeaderText = "aliquota_iva";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            this.dataGridViewTextBoxColumn28.Visible = false;
+            this.dataGridViewTextBoxColumn28.Width = 89;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "nota_dettaglio";
+            this.dataGridViewTextBoxColumn29.HeaderText = "nota_dettaglio";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.dataGridViewTextBoxColumn29.Visible = false;
+            this.dataGridViewTextBoxColumn29.Width = 99;
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Flag_Sele";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Flag_Sele";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.ReadOnly = true;
+            this.dataGridViewTextBoxColumn32.Visible = false;
+            this.dataGridViewTextBoxColumn32.Width = 79;
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "stato_riga_ordine";
+            this.dataGridViewTextBoxColumn33.HeaderText = "stato_riga_ordine";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
+            this.dataGridViewTextBoxColumn33.Visible = false;
+            this.dataGridViewTextBoxColumn33.Width = 113;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "sw_scarico_magazzino";
+            this.dataGridViewTextBoxColumn34.HeaderText = "sw_scarico_magazzino";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
+            this.dataGridViewTextBoxColumn34.Visible = false;
+            this.dataGridViewTextBoxColumn34.Width = 141;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "tipo_scarico_magazzino";
+            this.dataGridViewTextBoxColumn35.HeaderText = "tipo_scarico_magazzino";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
+            this.dataGridViewTextBoxColumn35.Visible = false;
+            this.dataGridViewTextBoxColumn35.Width = 145;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "sw_scarico_CL";
+            this.dataGridViewTextBoxColumn36.HeaderText = "sw_scarico_CL";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
+            this.dataGridViewTextBoxColumn36.Visible = false;
+            this.dataGridViewTextBoxColumn36.Width = 104;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "codice_ingresso_articolo_cl";
+            this.dataGridViewTextBoxColumn37.HeaderText = "codice_ingresso_articolo_cl";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.ReadOnly = true;
+            this.dataGridViewTextBoxColumn37.Visible = false;
+            this.dataGridViewTextBoxColumn37.Width = 163;
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "richieste_cliente";
+            this.dataGridViewTextBoxColumn38.HeaderText = "richieste_cliente";
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.ReadOnly = true;
+            this.dataGridViewTextBoxColumn38.Visible = false;
+            this.dataGridViewTextBoxColumn38.Width = 108;
+            // 
+            // dataGridViewTextBoxColumn39
+            // 
+            this.dataGridViewTextBoxColumn39.DataPropertyName = "documento_cl";
+            this.dataGridViewTextBoxColumn39.HeaderText = "documento_cl";
+            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            this.dataGridViewTextBoxColumn39.ReadOnly = true;
+            this.dataGridViewTextBoxColumn39.Visible = false;
+            this.dataGridViewTextBoxColumn39.Width = 99;
+            // 
+            // dataGridViewTextBoxColumn40
+            // 
+            this.dataGridViewTextBoxColumn40.DataPropertyName = "peso";
+            this.dataGridViewTextBoxColumn40.HeaderText = "peso";
+            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+            this.dataGridViewTextBoxColumn40.ReadOnly = true;
+            this.dataGridViewTextBoxColumn40.Visible = false;
+            this.dataGridViewTextBoxColumn40.Width = 55;
+            // 
+            // dataGridViewTextBoxColumn41
+            // 
+            this.dataGridViewTextBoxColumn41.DataPropertyName = "note_anomalie";
+            this.dataGridViewTextBoxColumn41.HeaderText = "note_anomalie";
+            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.dataGridViewTextBoxColumn41.ReadOnly = true;
+            this.dataGridViewTextBoxColumn41.Visible = false;
+            this.dataGridViewTextBoxColumn41.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn42
+            // 
+            this.dataGridViewTextBoxColumn42.DataPropertyName = "sw_anomalie";
+            this.dataGridViewTextBoxColumn42.HeaderText = "sw_anomalie";
+            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            this.dataGridViewTextBoxColumn42.ReadOnly = true;
+            this.dataGridViewTextBoxColumn42.Visible = false;
+            this.dataGridViewTextBoxColumn42.Width = 93;
+            // 
+            // dataGridViewTextBoxColumn43
+            // 
+            this.dataGridViewTextBoxColumn43.DataPropertyName = "tipo_ordine";
+            this.dataGridViewTextBoxColumn43.HeaderText = "tipo_ordine";
+            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.ReadOnly = true;
+            this.dataGridViewTextBoxColumn43.Visible = false;
+            this.dataGridViewTextBoxColumn43.Width = 84;
+            // 
+            // dataGridViewTextBoxColumn44
+            // 
+            this.dataGridViewTextBoxColumn44.DataPropertyName = "descrizione_articolo_2";
+            this.dataGridViewTextBoxColumn44.HeaderText = "descrizione_articolo_2";
+            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            this.dataGridViewTextBoxColumn44.ReadOnly = true;
+            this.dataGridViewTextBoxColumn44.Visible = false;
+            this.dataGridViewTextBoxColumn44.Width = 137;
+            // 
+            // dataGridViewTextBoxColumn45
+            // 
+            this.dataGridViewTextBoxColumn45.DataPropertyName = "commessa_cliente";
+            this.dataGridViewTextBoxColumn45.HeaderText = "commessa_cliente";
+            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+            this.dataGridViewTextBoxColumn45.ReadOnly = true;
+            this.dataGridViewTextBoxColumn45.Visible = false;
+            this.dataGridViewTextBoxColumn45.Width = 119;
+            // 
+            // dataGridViewTextBoxColumn46
+            // 
+            this.dataGridViewTextBoxColumn46.DataPropertyName = "configurazione";
+            this.dataGridViewTextBoxColumn46.HeaderText = "configurazione";
+            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+            this.dataGridViewTextBoxColumn46.ReadOnly = true;
+            this.dataGridViewTextBoxColumn46.Visible = false;
+            this.dataGridViewTextBoxColumn46.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn47
+            // 
+            this.dataGridViewTextBoxColumn47.DataPropertyName = "dettaglio_lavorazione";
+            this.dataGridViewTextBoxColumn47.HeaderText = "dettaglio_lavorazione";
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+            this.dataGridViewTextBoxColumn47.ReadOnly = true;
+            this.dataGridViewTextBoxColumn47.Visible = false;
+            this.dataGridViewTextBoxColumn47.Width = 132;
+            // 
+            // dataGridViewTextBoxColumn48
+            // 
+            this.dataGridViewTextBoxColumn48.DataPropertyName = "sw_urgente";
+            this.dataGridViewTextBoxColumn48.HeaderText = "sw_urgente";
+            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+            this.dataGridViewTextBoxColumn48.ReadOnly = true;
+            this.dataGridViewTextBoxColumn48.Visible = false;
+            this.dataGridViewTextBoxColumn48.Width = 87;
+            // 
+            // dataGridViewTextBoxColumn49
+            // 
+            this.dataGridViewTextBoxColumn49.DataPropertyName = "sw_tipo_anagrafica_articolo";
+            this.dataGridViewTextBoxColumn49.HeaderText = "sw_tipo_anagrafica_articolo";
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            this.dataGridViewTextBoxColumn49.ReadOnly = true;
+            this.dataGridViewTextBoxColumn49.Visible = false;
+            this.dataGridViewTextBoxColumn49.Width = 164;
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.DataPropertyName = "ubicazione";
+            this.dataGridViewTextBoxColumn50.HeaderText = "ubicazione";
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.ReadOnly = true;
+            this.dataGridViewTextBoxColumn50.Visible = false;
+            this.dataGridViewTextBoxColumn50.Width = 83;
+            // 
+            // dataGridViewTextBoxColumn51
+            // 
+            this.dataGridViewTextBoxColumn51.DataPropertyName = "sconto_cliente_dbl";
+            this.dataGridViewTextBoxColumn51.HeaderText = "sconto_cliente_dbl";
+            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            this.dataGridViewTextBoxColumn51.ReadOnly = true;
+            this.dataGridViewTextBoxColumn51.Visible = false;
+            this.dataGridViewTextBoxColumn51.Width = 121;
+            // 
+            // dataGridViewTextBoxColumn52
+            // 
+            this.dataGridViewTextBoxColumn52.DataPropertyName = "fase_lav_macchina_principale";
+            this.dataGridViewTextBoxColumn52.HeaderText = "fase_lav_macchina_principale";
+            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            this.dataGridViewTextBoxColumn52.ReadOnly = true;
+            this.dataGridViewTextBoxColumn52.Visible = false;
+            this.dataGridViewTextBoxColumn52.Width = 175;
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.DataPropertyName = "lavorazione_principale";
+            this.dataGridViewTextBoxColumn53.HeaderText = "lavorazione_principale";
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+            this.dataGridViewTextBoxColumn53.ReadOnly = true;
+            this.dataGridViewTextBoxColumn53.Visible = false;
+            this.dataGridViewTextBoxColumn53.Width = 137;
+            // 
+            // dettaglio_ordini_multirigaBindingSource
+            // 
+            this.dettaglio_ordini_multirigaBindingSource.DataMember = "dettaglio_ordini_multiriga";
+            this.dettaglio_ordini_multirigaBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.AllowUserToAddRows = false;
@@ -553,6 +955,403 @@
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.Size = new System.Drawing.Size(508, 164);
             this.dataGridView4.TabIndex = 23;
+            // 
+            // dataGridViewTextBoxColumn99
+            // 
+            this.dataGridViewTextBoxColumn99.DataPropertyName = "numero_ordine";
+            this.dataGridViewTextBoxColumn99.HeaderText = "Numero";
+            this.dataGridViewTextBoxColumn99.Name = "dataGridViewTextBoxColumn99";
+            this.dataGridViewTextBoxColumn99.ReadOnly = true;
+            this.dataGridViewTextBoxColumn99.Width = 69;
+            // 
+            // dataGridViewTextBoxColumn98
+            // 
+            this.dataGridViewTextBoxColumn98.DataPropertyName = "data_ordine";
+            this.dataGridViewTextBoxColumn98.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
+            this.dataGridViewTextBoxColumn98.ReadOnly = true;
+            this.dataGridViewTextBoxColumn98.Width = 55;
+            // 
+            // dataGridViewTextBoxColumn100
+            // 
+            this.dataGridViewTextBoxColumn100.DataPropertyName = "progressivo";
+            this.dataGridViewTextBoxColumn100.HeaderText = "progressivo";
+            this.dataGridViewTextBoxColumn100.Name = "dataGridViewTextBoxColumn100";
+            this.dataGridViewTextBoxColumn100.ReadOnly = true;
+            this.dataGridViewTextBoxColumn100.Visible = false;
+            this.dataGridViewTextBoxColumn100.Width = 86;
+            // 
+            // dataGridViewTextBoxColumn101
+            // 
+            this.dataGridViewTextBoxColumn101.DataPropertyName = "codice_articolo";
+            this.dataGridViewTextBoxColumn101.HeaderText = "Articolo";
+            this.dataGridViewTextBoxColumn101.Name = "dataGridViewTextBoxColumn101";
+            this.dataGridViewTextBoxColumn101.ReadOnly = true;
+            this.dataGridViewTextBoxColumn101.Width = 67;
+            // 
+            // dataGridViewTextBoxColumn102
+            // 
+            this.dataGridViewTextBoxColumn102.DataPropertyName = "descrizione_articolo";
+            this.dataGridViewTextBoxColumn102.HeaderText = "Descrizione";
+            this.dataGridViewTextBoxColumn102.Name = "dataGridViewTextBoxColumn102";
+            this.dataGridViewTextBoxColumn102.ReadOnly = true;
+            this.dataGridViewTextBoxColumn102.Width = 87;
+            // 
+            // dataGridViewTextBoxColumn103
+            // 
+            this.dataGridViewTextBoxColumn103.DataPropertyName = "tipo_articolo";
+            this.dataGridViewTextBoxColumn103.HeaderText = "tipo_articolo";
+            this.dataGridViewTextBoxColumn103.Name = "dataGridViewTextBoxColumn103";
+            this.dataGridViewTextBoxColumn103.ReadOnly = true;
+            this.dataGridViewTextBoxColumn103.Visible = false;
+            this.dataGridViewTextBoxColumn103.Width = 89;
+            // 
+            // dataGridViewTextBoxColumn104
+            // 
+            this.dataGridViewTextBoxColumn104.DataPropertyName = "data_consegna";
+            this.dataGridViewTextBoxColumn104.HeaderText = "data_consegna";
+            this.dataGridViewTextBoxColumn104.Name = "dataGridViewTextBoxColumn104";
+            this.dataGridViewTextBoxColumn104.ReadOnly = true;
+            this.dataGridViewTextBoxColumn104.Visible = false;
+            this.dataGridViewTextBoxColumn104.Width = 106;
+            // 
+            // dataGridViewTextBoxColumn105
+            // 
+            this.dataGridViewTextBoxColumn105.DataPropertyName = "unita_misura";
+            this.dataGridViewTextBoxColumn105.HeaderText = "unita_misura";
+            this.dataGridViewTextBoxColumn105.Name = "dataGridViewTextBoxColumn105";
+            this.dataGridViewTextBoxColumn105.ReadOnly = true;
+            this.dataGridViewTextBoxColumn105.Visible = false;
+            this.dataGridViewTextBoxColumn105.Width = 91;
+            // 
+            // dataGridViewTextBoxColumn106
+            // 
+            this.dataGridViewTextBoxColumn106.DataPropertyName = "mis_1";
+            this.dataGridViewTextBoxColumn106.HeaderText = "mis_1";
+            this.dataGridViewTextBoxColumn106.Name = "dataGridViewTextBoxColumn106";
+            this.dataGridViewTextBoxColumn106.ReadOnly = true;
+            this.dataGridViewTextBoxColumn106.Visible = false;
+            this.dataGridViewTextBoxColumn106.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn107
+            // 
+            this.dataGridViewTextBoxColumn107.DataPropertyName = "mis_2";
+            this.dataGridViewTextBoxColumn107.HeaderText = "mis_2";
+            this.dataGridViewTextBoxColumn107.Name = "dataGridViewTextBoxColumn107";
+            this.dataGridViewTextBoxColumn107.ReadOnly = true;
+            this.dataGridViewTextBoxColumn107.Visible = false;
+            this.dataGridViewTextBoxColumn107.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn108
+            // 
+            this.dataGridViewTextBoxColumn108.DataPropertyName = "mis_3";
+            this.dataGridViewTextBoxColumn108.HeaderText = "mis_3";
+            this.dataGridViewTextBoxColumn108.Name = "dataGridViewTextBoxColumn108";
+            this.dataGridViewTextBoxColumn108.ReadOnly = true;
+            this.dataGridViewTextBoxColumn108.Visible = false;
+            this.dataGridViewTextBoxColumn108.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn109
+            // 
+            this.dataGridViewTextBoxColumn109.DataPropertyName = "mis_4";
+            this.dataGridViewTextBoxColumn109.HeaderText = "mis_4";
+            this.dataGridViewTextBoxColumn109.Name = "dataGridViewTextBoxColumn109";
+            this.dataGridViewTextBoxColumn109.ReadOnly = true;
+            this.dataGridViewTextBoxColumn109.Visible = false;
+            this.dataGridViewTextBoxColumn109.Width = 59;
+            // 
+            // dataGridViewTextBoxColumn110
+            // 
+            this.dataGridViewTextBoxColumn110.DataPropertyName = "spessore";
+            this.dataGridViewTextBoxColumn110.HeaderText = "spessore";
+            this.dataGridViewTextBoxColumn110.Name = "dataGridViewTextBoxColumn110";
+            this.dataGridViewTextBoxColumn110.ReadOnly = true;
+            this.dataGridViewTextBoxColumn110.Visible = false;
+            this.dataGridViewTextBoxColumn110.Width = 74;
+            // 
+            // dataGridViewTextBoxColumn111
+            // 
+            this.dataGridViewTextBoxColumn111.DataPropertyName = "numero_pezzi";
+            this.dataGridViewTextBoxColumn111.HeaderText = "numero_pezzi";
+            this.dataGridViewTextBoxColumn111.Name = "dataGridViewTextBoxColumn111";
+            this.dataGridViewTextBoxColumn111.ReadOnly = true;
+            this.dataGridViewTextBoxColumn111.Visible = false;
+            this.dataGridViewTextBoxColumn111.Width = 97;
+            // 
+            // dataGridViewTextBoxColumn112
+            // 
+            this.dataGridViewTextBoxColumn112.DataPropertyName = "quantita_evasa";
+            this.dataGridViewTextBoxColumn112.HeaderText = "quantita_evasa";
+            this.dataGridViewTextBoxColumn112.Name = "dataGridViewTextBoxColumn112";
+            this.dataGridViewTextBoxColumn112.ReadOnly = true;
+            this.dataGridViewTextBoxColumn112.Visible = false;
+            this.dataGridViewTextBoxColumn112.Width = 105;
+            // 
+            // dataGridViewTextBoxColumn113
+            // 
+            this.dataGridViewTextBoxColumn113.DataPropertyName = "costo_a";
+            this.dataGridViewTextBoxColumn113.HeaderText = "costo_a";
+            this.dataGridViewTextBoxColumn113.Name = "dataGridViewTextBoxColumn113";
+            this.dataGridViewTextBoxColumn113.ReadOnly = true;
+            this.dataGridViewTextBoxColumn113.Visible = false;
+            this.dataGridViewTextBoxColumn113.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn114
+            // 
+            this.dataGridViewTextBoxColumn114.DataPropertyName = "costo_b";
+            this.dataGridViewTextBoxColumn114.HeaderText = "costo_b";
+            this.dataGridViewTextBoxColumn114.Name = "dataGridViewTextBoxColumn114";
+            this.dataGridViewTextBoxColumn114.ReadOnly = true;
+            this.dataGridViewTextBoxColumn114.Visible = false;
+            this.dataGridViewTextBoxColumn114.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn115
+            // 
+            this.dataGridViewTextBoxColumn115.DataPropertyName = "sconto_cliente";
+            this.dataGridViewTextBoxColumn115.HeaderText = "sconto_cliente";
+            this.dataGridViewTextBoxColumn115.Name = "dataGridViewTextBoxColumn115";
+            this.dataGridViewTextBoxColumn115.ReadOnly = true;
+            this.dataGridViewTextBoxColumn115.Visible = false;
+            this.dataGridViewTextBoxColumn115.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn116
+            // 
+            this.dataGridViewTextBoxColumn116.DataPropertyName = "totale_riga_ordine_a";
+            this.dataGridViewTextBoxColumn116.HeaderText = "totale_riga_ordine_a";
+            this.dataGridViewTextBoxColumn116.Name = "dataGridViewTextBoxColumn116";
+            this.dataGridViewTextBoxColumn116.ReadOnly = true;
+            this.dataGridViewTextBoxColumn116.Visible = false;
+            this.dataGridViewTextBoxColumn116.Width = 128;
+            // 
+            // dataGridViewTextBoxColumn117
+            // 
+            this.dataGridViewTextBoxColumn117.DataPropertyName = "totale_riga_ordine_b";
+            this.dataGridViewTextBoxColumn117.HeaderText = "totale_riga_ordine_b";
+            this.dataGridViewTextBoxColumn117.Name = "dataGridViewTextBoxColumn117";
+            this.dataGridViewTextBoxColumn117.ReadOnly = true;
+            this.dataGridViewTextBoxColumn117.Visible = false;
+            this.dataGridViewTextBoxColumn117.Width = 128;
+            // 
+            // dataGridViewTextBoxColumn118
+            // 
+            this.dataGridViewTextBoxColumn118.DataPropertyName = "aliquota_iva";
+            this.dataGridViewTextBoxColumn118.HeaderText = "aliquota_iva";
+            this.dataGridViewTextBoxColumn118.Name = "dataGridViewTextBoxColumn118";
+            this.dataGridViewTextBoxColumn118.ReadOnly = true;
+            this.dataGridViewTextBoxColumn118.Visible = false;
+            this.dataGridViewTextBoxColumn118.Width = 89;
+            // 
+            // dataGridViewTextBoxColumn119
+            // 
+            this.dataGridViewTextBoxColumn119.DataPropertyName = "nota_dettaglio";
+            this.dataGridViewTextBoxColumn119.HeaderText = "nota_dettaglio";
+            this.dataGridViewTextBoxColumn119.Name = "dataGridViewTextBoxColumn119";
+            this.dataGridViewTextBoxColumn119.ReadOnly = true;
+            this.dataGridViewTextBoxColumn119.Visible = false;
+            this.dataGridViewTextBoxColumn119.Width = 99;
+            // 
+            // dataGridViewTextBoxColumn120
+            // 
+            this.dataGridViewTextBoxColumn120.DataPropertyName = "Flag_Sele";
+            this.dataGridViewTextBoxColumn120.HeaderText = "Flag_Sele";
+            this.dataGridViewTextBoxColumn120.Name = "dataGridViewTextBoxColumn120";
+            this.dataGridViewTextBoxColumn120.ReadOnly = true;
+            this.dataGridViewTextBoxColumn120.Visible = false;
+            this.dataGridViewTextBoxColumn120.Width = 79;
+            // 
+            // dataGridViewTextBoxColumn121
+            // 
+            this.dataGridViewTextBoxColumn121.DataPropertyName = "stato_riga_ordine";
+            this.dataGridViewTextBoxColumn121.HeaderText = "stato_riga_ordine";
+            this.dataGridViewTextBoxColumn121.Name = "dataGridViewTextBoxColumn121";
+            this.dataGridViewTextBoxColumn121.ReadOnly = true;
+            this.dataGridViewTextBoxColumn121.Visible = false;
+            this.dataGridViewTextBoxColumn121.Width = 113;
+            // 
+            // dataGridViewTextBoxColumn122
+            // 
+            this.dataGridViewTextBoxColumn122.DataPropertyName = "sw_scarico_magazzino";
+            this.dataGridViewTextBoxColumn122.HeaderText = "sw_scarico_magazzino";
+            this.dataGridViewTextBoxColumn122.Name = "dataGridViewTextBoxColumn122";
+            this.dataGridViewTextBoxColumn122.ReadOnly = true;
+            this.dataGridViewTextBoxColumn122.Visible = false;
+            this.dataGridViewTextBoxColumn122.Width = 141;
+            // 
+            // dataGridViewTextBoxColumn123
+            // 
+            this.dataGridViewTextBoxColumn123.DataPropertyName = "tipo_scarico_magazzino";
+            this.dataGridViewTextBoxColumn123.HeaderText = "tipo_scarico_magazzino";
+            this.dataGridViewTextBoxColumn123.Name = "dataGridViewTextBoxColumn123";
+            this.dataGridViewTextBoxColumn123.ReadOnly = true;
+            this.dataGridViewTextBoxColumn123.Visible = false;
+            this.dataGridViewTextBoxColumn123.Width = 145;
+            // 
+            // dataGridViewTextBoxColumn124
+            // 
+            this.dataGridViewTextBoxColumn124.DataPropertyName = "sw_scarico_CL";
+            this.dataGridViewTextBoxColumn124.HeaderText = "sw_scarico_CL";
+            this.dataGridViewTextBoxColumn124.Name = "dataGridViewTextBoxColumn124";
+            this.dataGridViewTextBoxColumn124.ReadOnly = true;
+            this.dataGridViewTextBoxColumn124.Visible = false;
+            this.dataGridViewTextBoxColumn124.Width = 104;
+            // 
+            // dataGridViewTextBoxColumn125
+            // 
+            this.dataGridViewTextBoxColumn125.DataPropertyName = "codice_ingresso_articolo_cl";
+            this.dataGridViewTextBoxColumn125.HeaderText = "codice_ingresso_articolo_cl";
+            this.dataGridViewTextBoxColumn125.Name = "dataGridViewTextBoxColumn125";
+            this.dataGridViewTextBoxColumn125.ReadOnly = true;
+            this.dataGridViewTextBoxColumn125.Visible = false;
+            this.dataGridViewTextBoxColumn125.Width = 163;
+            // 
+            // dataGridViewTextBoxColumn126
+            // 
+            this.dataGridViewTextBoxColumn126.DataPropertyName = "richieste_cliente";
+            this.dataGridViewTextBoxColumn126.HeaderText = "richieste_cliente";
+            this.dataGridViewTextBoxColumn126.Name = "dataGridViewTextBoxColumn126";
+            this.dataGridViewTextBoxColumn126.ReadOnly = true;
+            this.dataGridViewTextBoxColumn126.Visible = false;
+            this.dataGridViewTextBoxColumn126.Width = 108;
+            // 
+            // dataGridViewTextBoxColumn127
+            // 
+            this.dataGridViewTextBoxColumn127.DataPropertyName = "documento_cl";
+            this.dataGridViewTextBoxColumn127.HeaderText = "documento_cl";
+            this.dataGridViewTextBoxColumn127.Name = "dataGridViewTextBoxColumn127";
+            this.dataGridViewTextBoxColumn127.ReadOnly = true;
+            this.dataGridViewTextBoxColumn127.Visible = false;
+            this.dataGridViewTextBoxColumn127.Width = 99;
+            // 
+            // dataGridViewTextBoxColumn128
+            // 
+            this.dataGridViewTextBoxColumn128.DataPropertyName = "peso";
+            this.dataGridViewTextBoxColumn128.HeaderText = "peso";
+            this.dataGridViewTextBoxColumn128.Name = "dataGridViewTextBoxColumn128";
+            this.dataGridViewTextBoxColumn128.ReadOnly = true;
+            this.dataGridViewTextBoxColumn128.Visible = false;
+            this.dataGridViewTextBoxColumn128.Width = 55;
+            // 
+            // dataGridViewTextBoxColumn129
+            // 
+            this.dataGridViewTextBoxColumn129.DataPropertyName = "note_anomalie";
+            this.dataGridViewTextBoxColumn129.HeaderText = "note_anomalie";
+            this.dataGridViewTextBoxColumn129.Name = "dataGridViewTextBoxColumn129";
+            this.dataGridViewTextBoxColumn129.ReadOnly = true;
+            this.dataGridViewTextBoxColumn129.Visible = false;
+            this.dataGridViewTextBoxColumn129.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn130
+            // 
+            this.dataGridViewTextBoxColumn130.DataPropertyName = "sw_anomalie";
+            this.dataGridViewTextBoxColumn130.HeaderText = "sw_anomalie";
+            this.dataGridViewTextBoxColumn130.Name = "dataGridViewTextBoxColumn130";
+            this.dataGridViewTextBoxColumn130.ReadOnly = true;
+            this.dataGridViewTextBoxColumn130.Visible = false;
+            this.dataGridViewTextBoxColumn130.Width = 93;
+            // 
+            // dataGridViewTextBoxColumn131
+            // 
+            this.dataGridViewTextBoxColumn131.DataPropertyName = "tipo_ordine";
+            this.dataGridViewTextBoxColumn131.HeaderText = "tipo_ordine";
+            this.dataGridViewTextBoxColumn131.Name = "dataGridViewTextBoxColumn131";
+            this.dataGridViewTextBoxColumn131.ReadOnly = true;
+            this.dataGridViewTextBoxColumn131.Visible = false;
+            this.dataGridViewTextBoxColumn131.Width = 84;
+            // 
+            // dataGridViewTextBoxColumn132
+            // 
+            this.dataGridViewTextBoxColumn132.DataPropertyName = "descrizione_articolo_2";
+            this.dataGridViewTextBoxColumn132.HeaderText = "descrizione_articolo_2";
+            this.dataGridViewTextBoxColumn132.Name = "dataGridViewTextBoxColumn132";
+            this.dataGridViewTextBoxColumn132.ReadOnly = true;
+            this.dataGridViewTextBoxColumn132.Visible = false;
+            this.dataGridViewTextBoxColumn132.Width = 137;
+            // 
+            // dataGridViewTextBoxColumn133
+            // 
+            this.dataGridViewTextBoxColumn133.DataPropertyName = "commessa_cliente";
+            this.dataGridViewTextBoxColumn133.HeaderText = "commessa_cliente";
+            this.dataGridViewTextBoxColumn133.Name = "dataGridViewTextBoxColumn133";
+            this.dataGridViewTextBoxColumn133.ReadOnly = true;
+            this.dataGridViewTextBoxColumn133.Visible = false;
+            this.dataGridViewTextBoxColumn133.Width = 119;
+            // 
+            // dataGridViewTextBoxColumn134
+            // 
+            this.dataGridViewTextBoxColumn134.DataPropertyName = "configurazione";
+            this.dataGridViewTextBoxColumn134.HeaderText = "configurazione";
+            this.dataGridViewTextBoxColumn134.Name = "dataGridViewTextBoxColumn134";
+            this.dataGridViewTextBoxColumn134.ReadOnly = true;
+            this.dataGridViewTextBoxColumn134.Visible = false;
+            this.dataGridViewTextBoxColumn134.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn135
+            // 
+            this.dataGridViewTextBoxColumn135.DataPropertyName = "dettaglio_lavorazione";
+            this.dataGridViewTextBoxColumn135.HeaderText = "dettaglio_lavorazione";
+            this.dataGridViewTextBoxColumn135.Name = "dataGridViewTextBoxColumn135";
+            this.dataGridViewTextBoxColumn135.ReadOnly = true;
+            this.dataGridViewTextBoxColumn135.Visible = false;
+            this.dataGridViewTextBoxColumn135.Width = 132;
+            // 
+            // dataGridViewTextBoxColumn136
+            // 
+            this.dataGridViewTextBoxColumn136.DataPropertyName = "sw_urgente";
+            this.dataGridViewTextBoxColumn136.HeaderText = "sw_urgente";
+            this.dataGridViewTextBoxColumn136.Name = "dataGridViewTextBoxColumn136";
+            this.dataGridViewTextBoxColumn136.ReadOnly = true;
+            this.dataGridViewTextBoxColumn136.Visible = false;
+            this.dataGridViewTextBoxColumn136.Width = 87;
+            // 
+            // dataGridViewTextBoxColumn137
+            // 
+            this.dataGridViewTextBoxColumn137.DataPropertyName = "sw_tipo_anagrafica_articolo";
+            this.dataGridViewTextBoxColumn137.HeaderText = "sw_tipo_anagrafica_articolo";
+            this.dataGridViewTextBoxColumn137.Name = "dataGridViewTextBoxColumn137";
+            this.dataGridViewTextBoxColumn137.ReadOnly = true;
+            this.dataGridViewTextBoxColumn137.Visible = false;
+            this.dataGridViewTextBoxColumn137.Width = 164;
+            // 
+            // dataGridViewTextBoxColumn138
+            // 
+            this.dataGridViewTextBoxColumn138.DataPropertyName = "ubicazione";
+            this.dataGridViewTextBoxColumn138.HeaderText = "ubicazione";
+            this.dataGridViewTextBoxColumn138.Name = "dataGridViewTextBoxColumn138";
+            this.dataGridViewTextBoxColumn138.ReadOnly = true;
+            this.dataGridViewTextBoxColumn138.Visible = false;
+            this.dataGridViewTextBoxColumn138.Width = 83;
+            // 
+            // dataGridViewTextBoxColumn139
+            // 
+            this.dataGridViewTextBoxColumn139.DataPropertyName = "sconto_cliente_dbl";
+            this.dataGridViewTextBoxColumn139.HeaderText = "sconto_cliente_dbl";
+            this.dataGridViewTextBoxColumn139.Name = "dataGridViewTextBoxColumn139";
+            this.dataGridViewTextBoxColumn139.ReadOnly = true;
+            this.dataGridViewTextBoxColumn139.Visible = false;
+            this.dataGridViewTextBoxColumn139.Width = 121;
+            // 
+            // dataGridViewTextBoxColumn140
+            // 
+            this.dataGridViewTextBoxColumn140.DataPropertyName = "fase_lav_macchina_principale";
+            this.dataGridViewTextBoxColumn140.HeaderText = "fase_lav_macchina_principale";
+            this.dataGridViewTextBoxColumn140.Name = "dataGridViewTextBoxColumn140";
+            this.dataGridViewTextBoxColumn140.ReadOnly = true;
+            this.dataGridViewTextBoxColumn140.Visible = false;
+            this.dataGridViewTextBoxColumn140.Width = 175;
+            // 
+            // dataGridViewTextBoxColumn141
+            // 
+            this.dataGridViewTextBoxColumn141.DataPropertyName = "lavorazione_principale";
+            this.dataGridViewTextBoxColumn141.HeaderText = "lavorazione_principale";
+            this.dataGridViewTextBoxColumn141.Name = "dataGridViewTextBoxColumn141";
+            this.dataGridViewTextBoxColumn141.ReadOnly = true;
+            this.dataGridViewTextBoxColumn141.Visible = false;
+            this.dataGridViewTextBoxColumn141.Width = 137;
+            // 
+            // dettaglioordinimultirigaBindingSource1
+            // 
+            this.dettaglioordinimultirigaBindingSource1.DataMember = "dettaglio_ordini_multiriga";
+            this.dettaglioordinimultirigaBindingSource1.DataSource = this.target2021DataSet;
             // 
             // dataGridView5
             // 
@@ -973,805 +1772,6 @@
             this.dettaglioordinimultirigaBindingSource.DataMember = "dettaglio_ordini_multiriga";
             this.dettaglioordinimultirigaBindingSource.DataSource = this.target2021DataSet;
             // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn99
-            // 
-            this.dataGridViewTextBoxColumn99.DataPropertyName = "numero_ordine";
-            this.dataGridViewTextBoxColumn99.HeaderText = "Numero";
-            this.dataGridViewTextBoxColumn99.Name = "dataGridViewTextBoxColumn99";
-            this.dataGridViewTextBoxColumn99.ReadOnly = true;
-            this.dataGridViewTextBoxColumn99.Width = 69;
-            // 
-            // dataGridViewTextBoxColumn98
-            // 
-            this.dataGridViewTextBoxColumn98.DataPropertyName = "data_ordine";
-            this.dataGridViewTextBoxColumn98.HeaderText = "Data";
-            this.dataGridViewTextBoxColumn98.Name = "dataGridViewTextBoxColumn98";
-            this.dataGridViewTextBoxColumn98.ReadOnly = true;
-            this.dataGridViewTextBoxColumn98.Width = 55;
-            // 
-            // dataGridViewTextBoxColumn100
-            // 
-            this.dataGridViewTextBoxColumn100.DataPropertyName = "progressivo";
-            this.dataGridViewTextBoxColumn100.HeaderText = "progressivo";
-            this.dataGridViewTextBoxColumn100.Name = "dataGridViewTextBoxColumn100";
-            this.dataGridViewTextBoxColumn100.ReadOnly = true;
-            this.dataGridViewTextBoxColumn100.Visible = false;
-            this.dataGridViewTextBoxColumn100.Width = 86;
-            // 
-            // dataGridViewTextBoxColumn101
-            // 
-            this.dataGridViewTextBoxColumn101.DataPropertyName = "codice_articolo";
-            this.dataGridViewTextBoxColumn101.HeaderText = "Articolo";
-            this.dataGridViewTextBoxColumn101.Name = "dataGridViewTextBoxColumn101";
-            this.dataGridViewTextBoxColumn101.ReadOnly = true;
-            this.dataGridViewTextBoxColumn101.Width = 67;
-            // 
-            // dataGridViewTextBoxColumn102
-            // 
-            this.dataGridViewTextBoxColumn102.DataPropertyName = "descrizione_articolo";
-            this.dataGridViewTextBoxColumn102.HeaderText = "Descrizione";
-            this.dataGridViewTextBoxColumn102.Name = "dataGridViewTextBoxColumn102";
-            this.dataGridViewTextBoxColumn102.ReadOnly = true;
-            this.dataGridViewTextBoxColumn102.Width = 87;
-            // 
-            // dataGridViewTextBoxColumn103
-            // 
-            this.dataGridViewTextBoxColumn103.DataPropertyName = "tipo_articolo";
-            this.dataGridViewTextBoxColumn103.HeaderText = "tipo_articolo";
-            this.dataGridViewTextBoxColumn103.Name = "dataGridViewTextBoxColumn103";
-            this.dataGridViewTextBoxColumn103.ReadOnly = true;
-            this.dataGridViewTextBoxColumn103.Visible = false;
-            this.dataGridViewTextBoxColumn103.Width = 89;
-            // 
-            // dataGridViewTextBoxColumn104
-            // 
-            this.dataGridViewTextBoxColumn104.DataPropertyName = "data_consegna";
-            this.dataGridViewTextBoxColumn104.HeaderText = "data_consegna";
-            this.dataGridViewTextBoxColumn104.Name = "dataGridViewTextBoxColumn104";
-            this.dataGridViewTextBoxColumn104.ReadOnly = true;
-            this.dataGridViewTextBoxColumn104.Visible = false;
-            this.dataGridViewTextBoxColumn104.Width = 106;
-            // 
-            // dataGridViewTextBoxColumn105
-            // 
-            this.dataGridViewTextBoxColumn105.DataPropertyName = "unita_misura";
-            this.dataGridViewTextBoxColumn105.HeaderText = "unita_misura";
-            this.dataGridViewTextBoxColumn105.Name = "dataGridViewTextBoxColumn105";
-            this.dataGridViewTextBoxColumn105.ReadOnly = true;
-            this.dataGridViewTextBoxColumn105.Visible = false;
-            this.dataGridViewTextBoxColumn105.Width = 91;
-            // 
-            // dataGridViewTextBoxColumn106
-            // 
-            this.dataGridViewTextBoxColumn106.DataPropertyName = "mis_1";
-            this.dataGridViewTextBoxColumn106.HeaderText = "mis_1";
-            this.dataGridViewTextBoxColumn106.Name = "dataGridViewTextBoxColumn106";
-            this.dataGridViewTextBoxColumn106.ReadOnly = true;
-            this.dataGridViewTextBoxColumn106.Visible = false;
-            this.dataGridViewTextBoxColumn106.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn107
-            // 
-            this.dataGridViewTextBoxColumn107.DataPropertyName = "mis_2";
-            this.dataGridViewTextBoxColumn107.HeaderText = "mis_2";
-            this.dataGridViewTextBoxColumn107.Name = "dataGridViewTextBoxColumn107";
-            this.dataGridViewTextBoxColumn107.ReadOnly = true;
-            this.dataGridViewTextBoxColumn107.Visible = false;
-            this.dataGridViewTextBoxColumn107.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn108
-            // 
-            this.dataGridViewTextBoxColumn108.DataPropertyName = "mis_3";
-            this.dataGridViewTextBoxColumn108.HeaderText = "mis_3";
-            this.dataGridViewTextBoxColumn108.Name = "dataGridViewTextBoxColumn108";
-            this.dataGridViewTextBoxColumn108.ReadOnly = true;
-            this.dataGridViewTextBoxColumn108.Visible = false;
-            this.dataGridViewTextBoxColumn108.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn109
-            // 
-            this.dataGridViewTextBoxColumn109.DataPropertyName = "mis_4";
-            this.dataGridViewTextBoxColumn109.HeaderText = "mis_4";
-            this.dataGridViewTextBoxColumn109.Name = "dataGridViewTextBoxColumn109";
-            this.dataGridViewTextBoxColumn109.ReadOnly = true;
-            this.dataGridViewTextBoxColumn109.Visible = false;
-            this.dataGridViewTextBoxColumn109.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn110
-            // 
-            this.dataGridViewTextBoxColumn110.DataPropertyName = "spessore";
-            this.dataGridViewTextBoxColumn110.HeaderText = "spessore";
-            this.dataGridViewTextBoxColumn110.Name = "dataGridViewTextBoxColumn110";
-            this.dataGridViewTextBoxColumn110.ReadOnly = true;
-            this.dataGridViewTextBoxColumn110.Visible = false;
-            this.dataGridViewTextBoxColumn110.Width = 74;
-            // 
-            // dataGridViewTextBoxColumn111
-            // 
-            this.dataGridViewTextBoxColumn111.DataPropertyName = "numero_pezzi";
-            this.dataGridViewTextBoxColumn111.HeaderText = "numero_pezzi";
-            this.dataGridViewTextBoxColumn111.Name = "dataGridViewTextBoxColumn111";
-            this.dataGridViewTextBoxColumn111.ReadOnly = true;
-            this.dataGridViewTextBoxColumn111.Visible = false;
-            this.dataGridViewTextBoxColumn111.Width = 97;
-            // 
-            // dataGridViewTextBoxColumn112
-            // 
-            this.dataGridViewTextBoxColumn112.DataPropertyName = "quantita_evasa";
-            this.dataGridViewTextBoxColumn112.HeaderText = "quantita_evasa";
-            this.dataGridViewTextBoxColumn112.Name = "dataGridViewTextBoxColumn112";
-            this.dataGridViewTextBoxColumn112.ReadOnly = true;
-            this.dataGridViewTextBoxColumn112.Visible = false;
-            this.dataGridViewTextBoxColumn112.Width = 105;
-            // 
-            // dataGridViewTextBoxColumn113
-            // 
-            this.dataGridViewTextBoxColumn113.DataPropertyName = "costo_a";
-            this.dataGridViewTextBoxColumn113.HeaderText = "costo_a";
-            this.dataGridViewTextBoxColumn113.Name = "dataGridViewTextBoxColumn113";
-            this.dataGridViewTextBoxColumn113.ReadOnly = true;
-            this.dataGridViewTextBoxColumn113.Visible = false;
-            this.dataGridViewTextBoxColumn113.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn114
-            // 
-            this.dataGridViewTextBoxColumn114.DataPropertyName = "costo_b";
-            this.dataGridViewTextBoxColumn114.HeaderText = "costo_b";
-            this.dataGridViewTextBoxColumn114.Name = "dataGridViewTextBoxColumn114";
-            this.dataGridViewTextBoxColumn114.ReadOnly = true;
-            this.dataGridViewTextBoxColumn114.Visible = false;
-            this.dataGridViewTextBoxColumn114.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn115
-            // 
-            this.dataGridViewTextBoxColumn115.DataPropertyName = "sconto_cliente";
-            this.dataGridViewTextBoxColumn115.HeaderText = "sconto_cliente";
-            this.dataGridViewTextBoxColumn115.Name = "dataGridViewTextBoxColumn115";
-            this.dataGridViewTextBoxColumn115.ReadOnly = true;
-            this.dataGridViewTextBoxColumn115.Visible = false;
-            this.dataGridViewTextBoxColumn115.Width = 101;
-            // 
-            // dataGridViewTextBoxColumn116
-            // 
-            this.dataGridViewTextBoxColumn116.DataPropertyName = "totale_riga_ordine_a";
-            this.dataGridViewTextBoxColumn116.HeaderText = "totale_riga_ordine_a";
-            this.dataGridViewTextBoxColumn116.Name = "dataGridViewTextBoxColumn116";
-            this.dataGridViewTextBoxColumn116.ReadOnly = true;
-            this.dataGridViewTextBoxColumn116.Visible = false;
-            this.dataGridViewTextBoxColumn116.Width = 128;
-            // 
-            // dataGridViewTextBoxColumn117
-            // 
-            this.dataGridViewTextBoxColumn117.DataPropertyName = "totale_riga_ordine_b";
-            this.dataGridViewTextBoxColumn117.HeaderText = "totale_riga_ordine_b";
-            this.dataGridViewTextBoxColumn117.Name = "dataGridViewTextBoxColumn117";
-            this.dataGridViewTextBoxColumn117.ReadOnly = true;
-            this.dataGridViewTextBoxColumn117.Visible = false;
-            this.dataGridViewTextBoxColumn117.Width = 128;
-            // 
-            // dataGridViewTextBoxColumn118
-            // 
-            this.dataGridViewTextBoxColumn118.DataPropertyName = "aliquota_iva";
-            this.dataGridViewTextBoxColumn118.HeaderText = "aliquota_iva";
-            this.dataGridViewTextBoxColumn118.Name = "dataGridViewTextBoxColumn118";
-            this.dataGridViewTextBoxColumn118.ReadOnly = true;
-            this.dataGridViewTextBoxColumn118.Visible = false;
-            this.dataGridViewTextBoxColumn118.Width = 89;
-            // 
-            // dataGridViewTextBoxColumn119
-            // 
-            this.dataGridViewTextBoxColumn119.DataPropertyName = "nota_dettaglio";
-            this.dataGridViewTextBoxColumn119.HeaderText = "nota_dettaglio";
-            this.dataGridViewTextBoxColumn119.Name = "dataGridViewTextBoxColumn119";
-            this.dataGridViewTextBoxColumn119.ReadOnly = true;
-            this.dataGridViewTextBoxColumn119.Visible = false;
-            this.dataGridViewTextBoxColumn119.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn120
-            // 
-            this.dataGridViewTextBoxColumn120.DataPropertyName = "Flag_Sele";
-            this.dataGridViewTextBoxColumn120.HeaderText = "Flag_Sele";
-            this.dataGridViewTextBoxColumn120.Name = "dataGridViewTextBoxColumn120";
-            this.dataGridViewTextBoxColumn120.ReadOnly = true;
-            this.dataGridViewTextBoxColumn120.Visible = false;
-            this.dataGridViewTextBoxColumn120.Width = 79;
-            // 
-            // dataGridViewTextBoxColumn121
-            // 
-            this.dataGridViewTextBoxColumn121.DataPropertyName = "stato_riga_ordine";
-            this.dataGridViewTextBoxColumn121.HeaderText = "stato_riga_ordine";
-            this.dataGridViewTextBoxColumn121.Name = "dataGridViewTextBoxColumn121";
-            this.dataGridViewTextBoxColumn121.ReadOnly = true;
-            this.dataGridViewTextBoxColumn121.Visible = false;
-            this.dataGridViewTextBoxColumn121.Width = 113;
-            // 
-            // dataGridViewTextBoxColumn122
-            // 
-            this.dataGridViewTextBoxColumn122.DataPropertyName = "sw_scarico_magazzino";
-            this.dataGridViewTextBoxColumn122.HeaderText = "sw_scarico_magazzino";
-            this.dataGridViewTextBoxColumn122.Name = "dataGridViewTextBoxColumn122";
-            this.dataGridViewTextBoxColumn122.ReadOnly = true;
-            this.dataGridViewTextBoxColumn122.Visible = false;
-            this.dataGridViewTextBoxColumn122.Width = 141;
-            // 
-            // dataGridViewTextBoxColumn123
-            // 
-            this.dataGridViewTextBoxColumn123.DataPropertyName = "tipo_scarico_magazzino";
-            this.dataGridViewTextBoxColumn123.HeaderText = "tipo_scarico_magazzino";
-            this.dataGridViewTextBoxColumn123.Name = "dataGridViewTextBoxColumn123";
-            this.dataGridViewTextBoxColumn123.ReadOnly = true;
-            this.dataGridViewTextBoxColumn123.Visible = false;
-            this.dataGridViewTextBoxColumn123.Width = 145;
-            // 
-            // dataGridViewTextBoxColumn124
-            // 
-            this.dataGridViewTextBoxColumn124.DataPropertyName = "sw_scarico_CL";
-            this.dataGridViewTextBoxColumn124.HeaderText = "sw_scarico_CL";
-            this.dataGridViewTextBoxColumn124.Name = "dataGridViewTextBoxColumn124";
-            this.dataGridViewTextBoxColumn124.ReadOnly = true;
-            this.dataGridViewTextBoxColumn124.Visible = false;
-            this.dataGridViewTextBoxColumn124.Width = 104;
-            // 
-            // dataGridViewTextBoxColumn125
-            // 
-            this.dataGridViewTextBoxColumn125.DataPropertyName = "codice_ingresso_articolo_cl";
-            this.dataGridViewTextBoxColumn125.HeaderText = "codice_ingresso_articolo_cl";
-            this.dataGridViewTextBoxColumn125.Name = "dataGridViewTextBoxColumn125";
-            this.dataGridViewTextBoxColumn125.ReadOnly = true;
-            this.dataGridViewTextBoxColumn125.Visible = false;
-            this.dataGridViewTextBoxColumn125.Width = 163;
-            // 
-            // dataGridViewTextBoxColumn126
-            // 
-            this.dataGridViewTextBoxColumn126.DataPropertyName = "richieste_cliente";
-            this.dataGridViewTextBoxColumn126.HeaderText = "richieste_cliente";
-            this.dataGridViewTextBoxColumn126.Name = "dataGridViewTextBoxColumn126";
-            this.dataGridViewTextBoxColumn126.ReadOnly = true;
-            this.dataGridViewTextBoxColumn126.Visible = false;
-            this.dataGridViewTextBoxColumn126.Width = 108;
-            // 
-            // dataGridViewTextBoxColumn127
-            // 
-            this.dataGridViewTextBoxColumn127.DataPropertyName = "documento_cl";
-            this.dataGridViewTextBoxColumn127.HeaderText = "documento_cl";
-            this.dataGridViewTextBoxColumn127.Name = "dataGridViewTextBoxColumn127";
-            this.dataGridViewTextBoxColumn127.ReadOnly = true;
-            this.dataGridViewTextBoxColumn127.Visible = false;
-            this.dataGridViewTextBoxColumn127.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn128
-            // 
-            this.dataGridViewTextBoxColumn128.DataPropertyName = "peso";
-            this.dataGridViewTextBoxColumn128.HeaderText = "peso";
-            this.dataGridViewTextBoxColumn128.Name = "dataGridViewTextBoxColumn128";
-            this.dataGridViewTextBoxColumn128.ReadOnly = true;
-            this.dataGridViewTextBoxColumn128.Visible = false;
-            this.dataGridViewTextBoxColumn128.Width = 55;
-            // 
-            // dataGridViewTextBoxColumn129
-            // 
-            this.dataGridViewTextBoxColumn129.DataPropertyName = "note_anomalie";
-            this.dataGridViewTextBoxColumn129.HeaderText = "note_anomalie";
-            this.dataGridViewTextBoxColumn129.Name = "dataGridViewTextBoxColumn129";
-            this.dataGridViewTextBoxColumn129.ReadOnly = true;
-            this.dataGridViewTextBoxColumn129.Visible = false;
-            this.dataGridViewTextBoxColumn129.Width = 101;
-            // 
-            // dataGridViewTextBoxColumn130
-            // 
-            this.dataGridViewTextBoxColumn130.DataPropertyName = "sw_anomalie";
-            this.dataGridViewTextBoxColumn130.HeaderText = "sw_anomalie";
-            this.dataGridViewTextBoxColumn130.Name = "dataGridViewTextBoxColumn130";
-            this.dataGridViewTextBoxColumn130.ReadOnly = true;
-            this.dataGridViewTextBoxColumn130.Visible = false;
-            this.dataGridViewTextBoxColumn130.Width = 93;
-            // 
-            // dataGridViewTextBoxColumn131
-            // 
-            this.dataGridViewTextBoxColumn131.DataPropertyName = "tipo_ordine";
-            this.dataGridViewTextBoxColumn131.HeaderText = "tipo_ordine";
-            this.dataGridViewTextBoxColumn131.Name = "dataGridViewTextBoxColumn131";
-            this.dataGridViewTextBoxColumn131.ReadOnly = true;
-            this.dataGridViewTextBoxColumn131.Visible = false;
-            this.dataGridViewTextBoxColumn131.Width = 84;
-            // 
-            // dataGridViewTextBoxColumn132
-            // 
-            this.dataGridViewTextBoxColumn132.DataPropertyName = "descrizione_articolo_2";
-            this.dataGridViewTextBoxColumn132.HeaderText = "descrizione_articolo_2";
-            this.dataGridViewTextBoxColumn132.Name = "dataGridViewTextBoxColumn132";
-            this.dataGridViewTextBoxColumn132.ReadOnly = true;
-            this.dataGridViewTextBoxColumn132.Visible = false;
-            this.dataGridViewTextBoxColumn132.Width = 137;
-            // 
-            // dataGridViewTextBoxColumn133
-            // 
-            this.dataGridViewTextBoxColumn133.DataPropertyName = "commessa_cliente";
-            this.dataGridViewTextBoxColumn133.HeaderText = "commessa_cliente";
-            this.dataGridViewTextBoxColumn133.Name = "dataGridViewTextBoxColumn133";
-            this.dataGridViewTextBoxColumn133.ReadOnly = true;
-            this.dataGridViewTextBoxColumn133.Visible = false;
-            this.dataGridViewTextBoxColumn133.Width = 119;
-            // 
-            // dataGridViewTextBoxColumn134
-            // 
-            this.dataGridViewTextBoxColumn134.DataPropertyName = "configurazione";
-            this.dataGridViewTextBoxColumn134.HeaderText = "configurazione";
-            this.dataGridViewTextBoxColumn134.Name = "dataGridViewTextBoxColumn134";
-            this.dataGridViewTextBoxColumn134.ReadOnly = true;
-            this.dataGridViewTextBoxColumn134.Visible = false;
-            this.dataGridViewTextBoxColumn134.Width = 101;
-            // 
-            // dataGridViewTextBoxColumn135
-            // 
-            this.dataGridViewTextBoxColumn135.DataPropertyName = "dettaglio_lavorazione";
-            this.dataGridViewTextBoxColumn135.HeaderText = "dettaglio_lavorazione";
-            this.dataGridViewTextBoxColumn135.Name = "dataGridViewTextBoxColumn135";
-            this.dataGridViewTextBoxColumn135.ReadOnly = true;
-            this.dataGridViewTextBoxColumn135.Visible = false;
-            this.dataGridViewTextBoxColumn135.Width = 132;
-            // 
-            // dataGridViewTextBoxColumn136
-            // 
-            this.dataGridViewTextBoxColumn136.DataPropertyName = "sw_urgente";
-            this.dataGridViewTextBoxColumn136.HeaderText = "sw_urgente";
-            this.dataGridViewTextBoxColumn136.Name = "dataGridViewTextBoxColumn136";
-            this.dataGridViewTextBoxColumn136.ReadOnly = true;
-            this.dataGridViewTextBoxColumn136.Visible = false;
-            this.dataGridViewTextBoxColumn136.Width = 87;
-            // 
-            // dataGridViewTextBoxColumn137
-            // 
-            this.dataGridViewTextBoxColumn137.DataPropertyName = "sw_tipo_anagrafica_articolo";
-            this.dataGridViewTextBoxColumn137.HeaderText = "sw_tipo_anagrafica_articolo";
-            this.dataGridViewTextBoxColumn137.Name = "dataGridViewTextBoxColumn137";
-            this.dataGridViewTextBoxColumn137.ReadOnly = true;
-            this.dataGridViewTextBoxColumn137.Visible = false;
-            this.dataGridViewTextBoxColumn137.Width = 164;
-            // 
-            // dataGridViewTextBoxColumn138
-            // 
-            this.dataGridViewTextBoxColumn138.DataPropertyName = "ubicazione";
-            this.dataGridViewTextBoxColumn138.HeaderText = "ubicazione";
-            this.dataGridViewTextBoxColumn138.Name = "dataGridViewTextBoxColumn138";
-            this.dataGridViewTextBoxColumn138.ReadOnly = true;
-            this.dataGridViewTextBoxColumn138.Visible = false;
-            this.dataGridViewTextBoxColumn138.Width = 83;
-            // 
-            // dataGridViewTextBoxColumn139
-            // 
-            this.dataGridViewTextBoxColumn139.DataPropertyName = "sconto_cliente_dbl";
-            this.dataGridViewTextBoxColumn139.HeaderText = "sconto_cliente_dbl";
-            this.dataGridViewTextBoxColumn139.Name = "dataGridViewTextBoxColumn139";
-            this.dataGridViewTextBoxColumn139.ReadOnly = true;
-            this.dataGridViewTextBoxColumn139.Visible = false;
-            this.dataGridViewTextBoxColumn139.Width = 121;
-            // 
-            // dataGridViewTextBoxColumn140
-            // 
-            this.dataGridViewTextBoxColumn140.DataPropertyName = "fase_lav_macchina_principale";
-            this.dataGridViewTextBoxColumn140.HeaderText = "fase_lav_macchina_principale";
-            this.dataGridViewTextBoxColumn140.Name = "dataGridViewTextBoxColumn140";
-            this.dataGridViewTextBoxColumn140.ReadOnly = true;
-            this.dataGridViewTextBoxColumn140.Visible = false;
-            this.dataGridViewTextBoxColumn140.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn141
-            // 
-            this.dataGridViewTextBoxColumn141.DataPropertyName = "lavorazione_principale";
-            this.dataGridViewTextBoxColumn141.HeaderText = "lavorazione_principale";
-            this.dataGridViewTextBoxColumn141.Name = "dataGridViewTextBoxColumn141";
-            this.dataGridViewTextBoxColumn141.ReadOnly = true;
-            this.dataGridViewTextBoxColumn141.Visible = false;
-            this.dataGridViewTextBoxColumn141.Width = 137;
-            // 
-            // dettaglioordinimultirigaBindingSource1
-            // 
-            this.dettaglioordinimultirigaBindingSource1.DataMember = "dettaglio_ordini_multiriga";
-            this.dettaglioordinimultirigaBindingSource1.DataSource = this.target2021DataSet;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "numero_ordine";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Numero";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 69;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "data_ordine";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Data";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 55;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "progressivo";
-            this.dataGridViewTextBoxColumn10.HeaderText = "progressivo";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            this.dataGridViewTextBoxColumn10.Width = 86;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "codice_articolo";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Articolo";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 67;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "descrizione_articolo";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Descrizione";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 87;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "tipo_articolo";
-            this.dataGridViewTextBoxColumn13.HeaderText = "tipo_articolo";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Visible = false;
-            this.dataGridViewTextBoxColumn13.Width = 89;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "data_consegna";
-            this.dataGridViewTextBoxColumn14.HeaderText = "data_consegna";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Visible = false;
-            this.dataGridViewTextBoxColumn14.Width = 106;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "unita_misura";
-            this.dataGridViewTextBoxColumn15.HeaderText = "unita_misura";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Visible = false;
-            this.dataGridViewTextBoxColumn15.Width = 91;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "mis_1";
-            this.dataGridViewTextBoxColumn16.HeaderText = "mis_1";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Visible = false;
-            this.dataGridViewTextBoxColumn16.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "mis_2";
-            this.dataGridViewTextBoxColumn17.HeaderText = "mis_2";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Visible = false;
-            this.dataGridViewTextBoxColumn17.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "mis_3";
-            this.dataGridViewTextBoxColumn18.HeaderText = "mis_3";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Visible = false;
-            this.dataGridViewTextBoxColumn18.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "mis_4";
-            this.dataGridViewTextBoxColumn19.HeaderText = "mis_4";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Visible = false;
-            this.dataGridViewTextBoxColumn19.Width = 59;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "spessore";
-            this.dataGridViewTextBoxColumn20.HeaderText = "spessore";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            this.dataGridViewTextBoxColumn20.Visible = false;
-            this.dataGridViewTextBoxColumn20.Width = 74;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "numero_pezzi";
-            this.dataGridViewTextBoxColumn21.HeaderText = "numero_pezzi";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            this.dataGridViewTextBoxColumn21.Width = 97;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "quantita_evasa";
-            this.dataGridViewTextBoxColumn22.HeaderText = "quantita_evasa";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Visible = false;
-            this.dataGridViewTextBoxColumn22.Width = 105;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "costo_a";
-            this.dataGridViewTextBoxColumn23.HeaderText = "costo_a";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            this.dataGridViewTextBoxColumn23.Visible = false;
-            this.dataGridViewTextBoxColumn23.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "costo_b";
-            this.dataGridViewTextBoxColumn24.HeaderText = "costo_b";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.Visible = false;
-            this.dataGridViewTextBoxColumn24.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "sconto_cliente";
-            this.dataGridViewTextBoxColumn25.HeaderText = "sconto_cliente";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            this.dataGridViewTextBoxColumn25.Visible = false;
-            this.dataGridViewTextBoxColumn25.Width = 101;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "totale_riga_ordine_a";
-            this.dataGridViewTextBoxColumn26.HeaderText = "totale_riga_ordine_a";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            this.dataGridViewTextBoxColumn26.Visible = false;
-            this.dataGridViewTextBoxColumn26.Width = 128;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "totale_riga_ordine_b";
-            this.dataGridViewTextBoxColumn27.HeaderText = "totale_riga_ordine_b";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            this.dataGridViewTextBoxColumn27.Visible = false;
-            this.dataGridViewTextBoxColumn27.Width = 128;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "aliquota_iva";
-            this.dataGridViewTextBoxColumn28.HeaderText = "aliquota_iva";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            this.dataGridViewTextBoxColumn28.Visible = false;
-            this.dataGridViewTextBoxColumn28.Width = 89;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "nota_dettaglio";
-            this.dataGridViewTextBoxColumn29.HeaderText = "nota_dettaglio";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
-            this.dataGridViewTextBoxColumn29.Visible = false;
-            this.dataGridViewTextBoxColumn29.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "Flag_Sele";
-            this.dataGridViewTextBoxColumn32.HeaderText = "Flag_Sele";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.ReadOnly = true;
-            this.dataGridViewTextBoxColumn32.Visible = false;
-            this.dataGridViewTextBoxColumn32.Width = 79;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "stato_riga_ordine";
-            this.dataGridViewTextBoxColumn33.HeaderText = "stato_riga_ordine";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.ReadOnly = true;
-            this.dataGridViewTextBoxColumn33.Visible = false;
-            this.dataGridViewTextBoxColumn33.Width = 113;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "sw_scarico_magazzino";
-            this.dataGridViewTextBoxColumn34.HeaderText = "sw_scarico_magazzino";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.ReadOnly = true;
-            this.dataGridViewTextBoxColumn34.Visible = false;
-            this.dataGridViewTextBoxColumn34.Width = 141;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "tipo_scarico_magazzino";
-            this.dataGridViewTextBoxColumn35.HeaderText = "tipo_scarico_magazzino";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.ReadOnly = true;
-            this.dataGridViewTextBoxColumn35.Visible = false;
-            this.dataGridViewTextBoxColumn35.Width = 145;
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "sw_scarico_CL";
-            this.dataGridViewTextBoxColumn36.HeaderText = "sw_scarico_CL";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.ReadOnly = true;
-            this.dataGridViewTextBoxColumn36.Visible = false;
-            this.dataGridViewTextBoxColumn36.Width = 104;
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "codice_ingresso_articolo_cl";
-            this.dataGridViewTextBoxColumn37.HeaderText = "codice_ingresso_articolo_cl";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.ReadOnly = true;
-            this.dataGridViewTextBoxColumn37.Visible = false;
-            this.dataGridViewTextBoxColumn37.Width = 163;
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "richieste_cliente";
-            this.dataGridViewTextBoxColumn38.HeaderText = "richieste_cliente";
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            this.dataGridViewTextBoxColumn38.ReadOnly = true;
-            this.dataGridViewTextBoxColumn38.Visible = false;
-            this.dataGridViewTextBoxColumn38.Width = 108;
-            // 
-            // dataGridViewTextBoxColumn39
-            // 
-            this.dataGridViewTextBoxColumn39.DataPropertyName = "documento_cl";
-            this.dataGridViewTextBoxColumn39.HeaderText = "documento_cl";
-            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-            this.dataGridViewTextBoxColumn39.ReadOnly = true;
-            this.dataGridViewTextBoxColumn39.Visible = false;
-            this.dataGridViewTextBoxColumn39.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn40
-            // 
-            this.dataGridViewTextBoxColumn40.DataPropertyName = "peso";
-            this.dataGridViewTextBoxColumn40.HeaderText = "peso";
-            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
-            this.dataGridViewTextBoxColumn40.ReadOnly = true;
-            this.dataGridViewTextBoxColumn40.Visible = false;
-            this.dataGridViewTextBoxColumn40.Width = 55;
-            // 
-            // dataGridViewTextBoxColumn41
-            // 
-            this.dataGridViewTextBoxColumn41.DataPropertyName = "note_anomalie";
-            this.dataGridViewTextBoxColumn41.HeaderText = "note_anomalie";
-            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
-            this.dataGridViewTextBoxColumn41.ReadOnly = true;
-            this.dataGridViewTextBoxColumn41.Visible = false;
-            this.dataGridViewTextBoxColumn41.Width = 101;
-            // 
-            // dataGridViewTextBoxColumn42
-            // 
-            this.dataGridViewTextBoxColumn42.DataPropertyName = "sw_anomalie";
-            this.dataGridViewTextBoxColumn42.HeaderText = "sw_anomalie";
-            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
-            this.dataGridViewTextBoxColumn42.ReadOnly = true;
-            this.dataGridViewTextBoxColumn42.Visible = false;
-            this.dataGridViewTextBoxColumn42.Width = 93;
-            // 
-            // dataGridViewTextBoxColumn43
-            // 
-            this.dataGridViewTextBoxColumn43.DataPropertyName = "tipo_ordine";
-            this.dataGridViewTextBoxColumn43.HeaderText = "tipo_ordine";
-            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
-            this.dataGridViewTextBoxColumn43.ReadOnly = true;
-            this.dataGridViewTextBoxColumn43.Visible = false;
-            this.dataGridViewTextBoxColumn43.Width = 84;
-            // 
-            // dataGridViewTextBoxColumn44
-            // 
-            this.dataGridViewTextBoxColumn44.DataPropertyName = "descrizione_articolo_2";
-            this.dataGridViewTextBoxColumn44.HeaderText = "descrizione_articolo_2";
-            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
-            this.dataGridViewTextBoxColumn44.ReadOnly = true;
-            this.dataGridViewTextBoxColumn44.Visible = false;
-            this.dataGridViewTextBoxColumn44.Width = 137;
-            // 
-            // dataGridViewTextBoxColumn45
-            // 
-            this.dataGridViewTextBoxColumn45.DataPropertyName = "commessa_cliente";
-            this.dataGridViewTextBoxColumn45.HeaderText = "commessa_cliente";
-            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-            this.dataGridViewTextBoxColumn45.ReadOnly = true;
-            this.dataGridViewTextBoxColumn45.Visible = false;
-            this.dataGridViewTextBoxColumn45.Width = 119;
-            // 
-            // dataGridViewTextBoxColumn46
-            // 
-            this.dataGridViewTextBoxColumn46.DataPropertyName = "configurazione";
-            this.dataGridViewTextBoxColumn46.HeaderText = "configurazione";
-            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-            this.dataGridViewTextBoxColumn46.ReadOnly = true;
-            this.dataGridViewTextBoxColumn46.Visible = false;
-            this.dataGridViewTextBoxColumn46.Width = 101;
-            // 
-            // dataGridViewTextBoxColumn47
-            // 
-            this.dataGridViewTextBoxColumn47.DataPropertyName = "dettaglio_lavorazione";
-            this.dataGridViewTextBoxColumn47.HeaderText = "dettaglio_lavorazione";
-            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-            this.dataGridViewTextBoxColumn47.ReadOnly = true;
-            this.dataGridViewTextBoxColumn47.Visible = false;
-            this.dataGridViewTextBoxColumn47.Width = 132;
-            // 
-            // dataGridViewTextBoxColumn48
-            // 
-            this.dataGridViewTextBoxColumn48.DataPropertyName = "sw_urgente";
-            this.dataGridViewTextBoxColumn48.HeaderText = "sw_urgente";
-            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
-            this.dataGridViewTextBoxColumn48.ReadOnly = true;
-            this.dataGridViewTextBoxColumn48.Visible = false;
-            this.dataGridViewTextBoxColumn48.Width = 87;
-            // 
-            // dataGridViewTextBoxColumn49
-            // 
-            this.dataGridViewTextBoxColumn49.DataPropertyName = "sw_tipo_anagrafica_articolo";
-            this.dataGridViewTextBoxColumn49.HeaderText = "sw_tipo_anagrafica_articolo";
-            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
-            this.dataGridViewTextBoxColumn49.ReadOnly = true;
-            this.dataGridViewTextBoxColumn49.Visible = false;
-            this.dataGridViewTextBoxColumn49.Width = 164;
-            // 
-            // dataGridViewTextBoxColumn50
-            // 
-            this.dataGridViewTextBoxColumn50.DataPropertyName = "ubicazione";
-            this.dataGridViewTextBoxColumn50.HeaderText = "ubicazione";
-            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-            this.dataGridViewTextBoxColumn50.ReadOnly = true;
-            this.dataGridViewTextBoxColumn50.Visible = false;
-            this.dataGridViewTextBoxColumn50.Width = 83;
-            // 
-            // dataGridViewTextBoxColumn51
-            // 
-            this.dataGridViewTextBoxColumn51.DataPropertyName = "sconto_cliente_dbl";
-            this.dataGridViewTextBoxColumn51.HeaderText = "sconto_cliente_dbl";
-            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
-            this.dataGridViewTextBoxColumn51.ReadOnly = true;
-            this.dataGridViewTextBoxColumn51.Visible = false;
-            this.dataGridViewTextBoxColumn51.Width = 121;
-            // 
-            // dataGridViewTextBoxColumn52
-            // 
-            this.dataGridViewTextBoxColumn52.DataPropertyName = "fase_lav_macchina_principale";
-            this.dataGridViewTextBoxColumn52.HeaderText = "fase_lav_macchina_principale";
-            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
-            this.dataGridViewTextBoxColumn52.ReadOnly = true;
-            this.dataGridViewTextBoxColumn52.Visible = false;
-            this.dataGridViewTextBoxColumn52.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn53
-            // 
-            this.dataGridViewTextBoxColumn53.DataPropertyName = "lavorazione_principale";
-            this.dataGridViewTextBoxColumn53.HeaderText = "lavorazione_principale";
-            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
-            this.dataGridViewTextBoxColumn53.ReadOnly = true;
-            this.dataGridViewTextBoxColumn53.Visible = false;
-            this.dataGridViewTextBoxColumn53.Width = 137;
-            // 
-            // dettaglio_ordini_multirigaBindingSource
-            // 
-            this.dettaglio_ordini_multirigaBindingSource.DataMember = "dettaglio_ordini_multiriga";
-            this.dettaglio_ordini_multirigaBindingSource.DataSource = this.target2021DataSet;
-            // 
             // ordiniEsclusiBindingSource
             // 
             this.ordiniEsclusiBindingSource.DataMember = "OrdiniEsclusi";
@@ -1872,7 +1872,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1035, 700);
+            this.ClientSize = new System.Drawing.Size(1035, 675);
             this.Controls.Add(this.dataGridView5);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.dettaglio_ordini_multirigaDataGridView);
@@ -1900,12 +1900,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarAdv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniEsclusiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniImportatiBindingSource)).EndInit();
