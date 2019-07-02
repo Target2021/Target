@@ -24,7 +24,6 @@ namespace Target2021.Anagrafiche
             this.Validate();
             this.articoli_sempliciBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
-
         }
 
         private void pulisci()
@@ -424,7 +423,8 @@ namespace Target2021.Anagrafiche
             if (IdFase1 >= 0) SalvaTab1(IdFase1);
             if (IdFase2 >= 0) SalvaTab2(IdFase2);
             if (IdFase3 >= 0) SalvaTab3(IdFase3);
-            if (IdFase4 >= 0) SalvaTab4(IdFase4);
+            //if (IdFase4 >= 0) SalvaTab4(IdFase4);
+            SalvaTab4(0);
             MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
         }
 
@@ -445,8 +445,11 @@ namespace Target2021.Anagrafiche
         {
             DataGridViewRow riga;
             riga = articoli_sempliciDataGridView.CurrentRow;
+            try {
             string codice = articoli_sempliciDataGridView.Rows[riga.Index].Cells[0].Value.ToString();
             AggiornaTab(codice);
+            }
+            catch { }
         }
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
@@ -998,14 +1001,71 @@ namespace Target2021.Anagrafiche
 
         private void button9_Click(object sender, EventArgs e)
         {
+            List<DataGridViewRow> semilavorati = new List<DataGridViewRow>();
             SelSemilavorato semi = new SelSemilavorato();
-            semi.Show();
+            semi.ShowDialog();
+            semilavorati = semi.selezionati;
+            aggiungi(semilavorati);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
+            List<DataGridViewRow> minuteria = new List<DataGridViewRow>();
             SelMinuteria minu = new SelMinuteria();
-            minu.Show();
+            minu.ShowDialog();
+            minuteria = minu.selezionati;
+            aggiungi(minuteria);
+        }
+
+        private void aggiungi(List<DataGridViewRow> elenco)
+        {
+            int MaxProgressivo;
+            string progr, descr, cod, CodArt;
+            CodArt = textBox2.Text.Trim();
+            MaxProgressivo = RecuperaMassimo(CodArt);
+            //if (MaxProgressivo == 0) MessageBox.Show("Errore nel recupero nr progressivo massimo");
+            foreach (var elemento in elenco)
+            {
+                MaxProgressivo++;
+                progr = MaxProgressivo.ToString();
+                descr = elemento.Cells[2].Value.ToString();
+                cod = elemento.Cells[0].Value.ToString();
+                DataRow riga = target2021DataSet.DettArticoli.NewRow();
+
+                //riga[0] = 2050+MaxProgressivo;
+                riga[1] = CodArt;
+                riga[2] = progr;
+                riga[3] = cod.Trim();
+                riga[4] = descr;
+                riga[5] = cod.Trim();
+                riga[8] = 4;
+
+                target2021DataSet.DettArticoli.Rows.Add(riga);
+                //this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
+                dettArticoliDataGridView.Refresh();
+            }
+
+        }
+
+        private int RecuperaMassimo(string CodArt)
+        {
+            int NrUltProgressivo = 0;
+            string stringaconnessione, sql;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT MAX(progressivo) FROM DettArticoli WHERE codice_articolo = '"+CodArt+"' AND lavorazione=4";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                NrUltProgressivo = Convert.ToInt32(comando.ExecuteScalar());
+            }
+            catch
+            {
+                return 0;
+            }
+            connessione.Close();
+            return NrUltProgressivo;
         }
     }
 }

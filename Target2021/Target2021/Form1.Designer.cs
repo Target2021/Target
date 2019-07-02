@@ -218,29 +218,29 @@
             // materiePrimeToolStripMenuItem
             // 
             this.materiePrimeToolStripMenuItem.Name = "materiePrimeToolStripMenuItem";
-            this.materiePrimeToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
+            this.materiePrimeToolStripMenuItem.Size = new System.Drawing.Size(247, 30);
             this.materiePrimeToolStripMenuItem.Text = "Materie prime";
             this.materiePrimeToolStripMenuItem.Click += new System.EventHandler(this.materiePrimeToolStripMenuItem_Click);
             // 
             // stampiToolStripMenuItem
             // 
             this.stampiToolStripMenuItem.Name = "stampiToolStripMenuItem";
-            this.stampiToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
+            this.stampiToolStripMenuItem.Size = new System.Drawing.Size(247, 30);
             this.stampiToolStripMenuItem.Text = "Stampi";
             this.stampiToolStripMenuItem.Click += new System.EventHandler(this.stampiToolStripMenuItem_Click);
             // 
             // dimeToolStripMenuItem
             // 
             this.dimeToolStripMenuItem.Name = "dimeToolStripMenuItem";
-            this.dimeToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
+            this.dimeToolStripMenuItem.Size = new System.Drawing.Size(247, 30);
             this.dimeToolStripMenuItem.Text = "Dime";
             this.dimeToolStripMenuItem.Click += new System.EventHandler(this.dimeToolStripMenuItem_Click);
             // 
             // minuterieToolStripMenuItem
             // 
             this.minuterieToolStripMenuItem.Name = "minuterieToolStripMenuItem";
-            this.minuterieToolStripMenuItem.Size = new System.Drawing.Size(217, 30);
-            this.minuterieToolStripMenuItem.Text = "Minuterie";
+            this.minuterieToolStripMenuItem.Size = new System.Drawing.Size(247, 30);
+            this.minuterieToolStripMenuItem.Text = "Componentistica";
             this.minuterieToolStripMenuItem.Click += new System.EventHandler(this.minuterieToolStripMenuItem_Click);
             // 
             // fasiLavorazioneToolStripMenuItem

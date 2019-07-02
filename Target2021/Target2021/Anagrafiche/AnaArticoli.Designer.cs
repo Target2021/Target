@@ -30,11 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label allegatoLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.articoli_sempliciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.articoli_sempliciTableAdapter = new Target2021.Target2021DataSetTableAdapters.articoli_sempliciTableAdapter();
@@ -144,6 +145,8 @@
             this.comboBox12 = new System.Windows.Forms.ComboBox();
             this.fasiBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.dettArticoliDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -219,8 +222,7 @@
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button7 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             allegatoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
@@ -336,14 +338,14 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.articoli_sempliciDataGridView.AutoGenerateColumns = false;
             this.articoli_sempliciDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.articoli_sempliciDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articoli_sempliciDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.articoli_sempliciDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.articoli_sempliciDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -355,26 +357,26 @@
             this.indirizzo_immagine,
             this.LottoMinimoProduzione});
             this.articoli_sempliciDataGridView.DataSource = this.articoli_sempliciBindingSource;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.articoli_sempliciDataGridView.DefaultCellStyle = dataGridViewCellStyle20;
             this.articoli_sempliciDataGridView.Location = new System.Drawing.Point(6, 93);
             this.articoli_sempliciDataGridView.MultiSelect = false;
             this.articoli_sempliciDataGridView.Name = "articoli_sempliciDataGridView";
             this.articoli_sempliciDataGridView.ReadOnly = true;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.articoli_sempliciDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.articoli_sempliciDataGridView.RowHeadersVisible = false;
             this.articoli_sempliciDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.articoli_sempliciDataGridView.Size = new System.Drawing.Size(575, 161);
@@ -1464,6 +1466,7 @@
             // tabPage4
             // 
             this.tabPage4.AutoScroll = true;
+            this.tabPage4.Controls.Add(this.button11);
             this.tabPage4.Controls.Add(this.button10);
             this.tabPage4.Controls.Add(this.button9);
             this.tabPage4.Controls.Add(this.dettArticoliDataGridView);
@@ -1478,20 +1481,42 @@
             this.tabPage4.Text = "Fase 4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(528, 6);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(134, 43);
+            this.button10.TabIndex = 33;
+            this.button10.Text = "Inserisci componentistica";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(388, 6);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(134, 43);
+            this.button9.TabIndex = 32;
+            this.button9.Text = "Inserisci semilavorato";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // dettArticoliDataGridView
             // 
             this.dettArticoliDataGridView.AllowUserToAddRows = false;
             this.dettArticoliDataGridView.AllowUserToDeleteRows = false;
             this.dettArticoliDataGridView.AutoGenerateColumns = false;
             this.dettArticoliDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dettArticoliDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dettArticoliDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dettArticoliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dettArticoliDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
@@ -1526,14 +1551,14 @@
             this.dataGridViewTextBoxColumn34,
             this.dataGridViewTextBoxColumn35});
             this.dettArticoliDataGridView.DataSource = this.dettArticoliBindingSource;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dettArticoliDataGridView.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dettArticoliDataGridView.DefaultCellStyle = dataGridViewCellStyle24;
             this.dettArticoliDataGridView.Location = new System.Drawing.Point(6, 52);
             this.dettArticoliDataGridView.Name = "dettArticoliDataGridView";
             this.dettArticoliDataGridView.RowHeadersVisible = false;
@@ -1547,7 +1572,7 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Visible = false;
-            this.dataGridViewTextBoxColumn3.Width = 50;
+            this.dataGridViewTextBoxColumn3.Width = 29;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -1555,36 +1580,35 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "codice_articolo";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Visible = false;
-            this.dataGridViewTextBoxColumn5.Width = 140;
+            this.dataGridViewTextBoxColumn5.Width = 121;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "progressivo";
             this.dataGridViewTextBoxColumn6.HeaderText = "Progressivo";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 118;
+            this.dataGridViewTextBoxColumn6.Width = 117;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "codicePrimaStampoDima";
-            this.dataGridViewTextBoxColumn7.HeaderText = "codicePrimaStampoDima";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Codice";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            this.dataGridViewTextBoxColumn7.Width = 212;
+            this.dataGridViewTextBoxColumn7.Width = 82;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "descrizionePrimaStampoDima";
             this.dataGridViewTextBoxColumn8.HeaderText = "Descrizione";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 116;
+            this.dataGridViewTextBoxColumn8.Width = 115;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "CodiceInput";
             this.dataGridViewTextBoxColumn9.HeaderText = "Codice Input";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 113;
+            this.dataGridViewTextBoxColumn9.Width = 119;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -1592,7 +1616,7 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "CodiceOutput";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Visible = false;
-            this.dataGridViewTextBoxColumn10.Width = 129;
+            this.dataGridViewTextBoxColumn10.Width = 126;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -1616,7 +1640,7 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "PercentualeLastra";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.Visible = false;
-            this.dataGridViewTextBoxColumn13.Width = 161;
+            this.dataGridViewTextBoxColumn13.Width = 159;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -1624,7 +1648,7 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "LottoMinimoRiordino";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Visible = false;
-            this.dataGridViewTextBoxColumn14.Width = 178;
+            this.dataGridViewTextBoxColumn14.Width = 175;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -1632,7 +1656,7 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "MacPredefStampo";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.Visible = false;
-            this.dataGridViewTextBoxColumn15.Width = 164;
+            this.dataGridViewTextBoxColumn15.Width = 161;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -1640,7 +1664,7 @@
             this.dataGridViewTextBoxColumn16.HeaderText = "MacPredefTaglio";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.Visible = false;
-            this.dataGridViewTextBoxColumn16.Width = 155;
+            this.dataGridViewTextBoxColumn16.Width = 153;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -1648,7 +1672,7 @@
             this.dataGridViewTextBoxColumn17.HeaderText = "CostoBase";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.Visible = false;
-            this.dataGridViewTextBoxColumn17.Width = 112;
+            this.dataGridViewTextBoxColumn17.Width = 109;
             // 
             // dataGridViewTextBoxColumn19
             // 
@@ -1656,7 +1680,7 @@
             this.dataGridViewTextBoxColumn19.HeaderText = "AbbinamentoStampo";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.Visible = false;
-            this.dataGridViewTextBoxColumn19.Width = 179;
+            this.dataGridViewTextBoxColumn19.Width = 177;
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -1664,7 +1688,7 @@
             this.dataGridViewTextBoxColumn20.HeaderText = "ProgrTaglio1";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.Visible = false;
-            this.dataGridViewTextBoxColumn20.Width = 126;
+            this.dataGridViewTextBoxColumn20.Width = 124;
             // 
             // dataGridViewTextBoxColumn21
             // 
@@ -1672,7 +1696,7 @@
             this.dataGridViewTextBoxColumn21.HeaderText = "ProgrTaglio2";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.Visible = false;
-            this.dataGridViewTextBoxColumn21.Width = 126;
+            this.dataGridViewTextBoxColumn21.Width = 124;
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -1680,7 +1704,7 @@
             this.dataGridViewTextBoxColumn22.HeaderText = "CostoStandard";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.Visible = false;
-            this.dataGridViewTextBoxColumn22.Width = 139;
+            this.dataGridViewTextBoxColumn22.Width = 136;
             // 
             // dataGridViewTextBoxColumn23
             // 
@@ -1688,7 +1712,7 @@
             this.dataGridViewTextBoxColumn23.HeaderText = "CostoUltimo";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.Visible = false;
-            this.dataGridViewTextBoxColumn23.Width = 120;
+            this.dataGridViewTextBoxColumn23.Width = 117;
             // 
             // dataGridViewTextBoxColumn24
             // 
@@ -1696,7 +1720,7 @@
             this.dataGridViewTextBoxColumn24.HeaderText = "CostoMedio";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             this.dataGridViewTextBoxColumn24.Visible = false;
-            this.dataGridViewTextBoxColumn24.Width = 119;
+            this.dataGridViewTextBoxColumn24.Width = 116;
             // 
             // dataGridViewTextBoxColumn25
             // 
@@ -1704,7 +1728,7 @@
             this.dataGridViewTextBoxColumn25.HeaderText = "PrezzoVendita";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             this.dataGridViewTextBoxColumn25.Visible = false;
-            this.dataGridViewTextBoxColumn25.Width = 135;
+            this.dataGridViewTextBoxColumn25.Width = 133;
             // 
             // dataGridViewTextBoxColumn26
             // 
@@ -1712,7 +1736,7 @@
             this.dataGridViewTextBoxColumn26.HeaderText = "Margine";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
             this.dataGridViewTextBoxColumn26.Visible = false;
-            this.dataGridViewTextBoxColumn26.Width = 90;
+            this.dataGridViewTextBoxColumn26.Width = 89;
             // 
             // dataGridViewTextBoxColumn27
             // 
@@ -1720,15 +1744,17 @@
             this.dataGridViewTextBoxColumn27.HeaderText = "Immagine";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             this.dataGridViewTextBoxColumn27.Visible = false;
-            this.dataGridViewTextBoxColumn27.Width = 101;
             // 
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn28.DataPropertyName = "Quantita";
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewTextBoxColumn28.HeaderText = "Quantità";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.Width = 91;
+            this.dataGridViewTextBoxColumn28.Width = 90;
             // 
             // dataGridViewTextBoxColumn29
             // 
@@ -1736,7 +1762,7 @@
             this.dataGridViewTextBoxColumn29.HeaderText = "ProgStampaggio";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
             this.dataGridViewTextBoxColumn29.Visible = false;
-            this.dataGridViewTextBoxColumn29.Width = 152;
+            this.dataGridViewTextBoxColumn29.Width = 150;
             // 
             // dataGridViewTextBoxColumn30
             // 
@@ -1744,7 +1770,7 @@
             this.dataGridViewTextBoxColumn30.HeaderText = "NrPezziAStampo";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             this.dataGridViewTextBoxColumn30.Visible = false;
-            this.dataGridViewTextBoxColumn30.Width = 153;
+            this.dataGridViewTextBoxColumn30.Width = 149;
             // 
             // dataGridViewTextBoxColumn31
             // 
@@ -1752,7 +1778,7 @@
             this.dataGridViewTextBoxColumn31.HeaderText = "ImballaggioNote";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
             this.dataGridViewTextBoxColumn31.Visible = false;
-            this.dataGridViewTextBoxColumn31.Width = 150;
+            this.dataGridViewTextBoxColumn31.Width = 148;
             // 
             // dataGridViewTextBoxColumn32
             // 
@@ -1760,7 +1786,7 @@
             this.dataGridViewTextBoxColumn32.HeaderText = "ImballaggioFoto";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
             this.dataGridViewTextBoxColumn32.Visible = false;
-            this.dataGridViewTextBoxColumn32.Width = 148;
+            this.dataGridViewTextBoxColumn32.Width = 146;
             // 
             // dataGridViewTextBoxColumn33
             // 
@@ -1768,7 +1794,7 @@
             this.dataGridViewTextBoxColumn33.HeaderText = "TempoStampaggio";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             this.dataGridViewTextBoxColumn33.Visible = false;
-            this.dataGridViewTextBoxColumn33.Width = 167;
+            this.dataGridViewTextBoxColumn33.Width = 166;
             // 
             // dataGridViewTextBoxColumn34
             // 
@@ -1776,7 +1802,7 @@
             this.dataGridViewTextBoxColumn34.HeaderText = "PezziOra";
             this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
             this.dataGridViewTextBoxColumn34.Visible = false;
-            this.dataGridViewTextBoxColumn34.Width = 97;
+            this.dataGridViewTextBoxColumn34.Width = 95;
             // 
             // dataGridViewTextBoxColumn35
             // 
@@ -1784,7 +1810,7 @@
             this.dataGridViewTextBoxColumn35.HeaderText = "Allegato";
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
             this.dataGridViewTextBoxColumn35.Visible = false;
-            this.dataGridViewTextBoxColumn35.Width = 92;
+            this.dataGridViewTextBoxColumn35.Width = 91;
             // 
             // dettArticoliBindingSource
             // 
@@ -2112,27 +2138,15 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button9
+            // button11
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(347, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(134, 43);
-            this.button9.TabIndex = 32;
-            this.button9.Text = "Inserisci semilavorato";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(487, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(134, 43);
-            this.button10.TabIndex = 33;
-            this.button10.Text = "Inserisci minuteria";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(668, 6);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(134, 43);
+            this.button11.TabIndex = 34;
+            this.button11.Text = "Elimina l\'elemento selezionato";
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // AnaArticoli
             // 
@@ -2358,6 +2372,8 @@
         private System.Windows.Forms.ComboBox comboBox13;
         private System.Windows.Forms.DataGridView dettArticoliDataGridView;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -2389,7 +2405,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }

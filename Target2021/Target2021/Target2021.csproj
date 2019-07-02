@@ -965,8 +965,14 @@
     <EmbeddedResource Include="SelezAna\SelLav.resx">
       <DependentUpon>SelLav.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SelezAna\SelMinuteria.resx">
+      <DependentUpon>SelMinuteria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelezAna\SelPrime.resx">
       <DependentUpon>SelPrime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelezAna\SelSemilavorato.resx">
+      <DependentUpon>SelSemilavorato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelezAna\SelStampi.resx">
       <DependentUpon>SelStampi.cs</DependentUpon>
