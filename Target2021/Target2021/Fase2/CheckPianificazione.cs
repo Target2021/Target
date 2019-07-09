@@ -192,15 +192,20 @@ namespace Target2021
 
         private void Cancella(object sender, EventArgs e)
         {
-            int percentuale = 0, totperc = 0, nrighe = 100;
+            int percentuale = 0, totperc = 0, nrighe = 100, NLastre=0, TotLastre=0;
+            TotLastre = Convert.ToInt32(textBox4.Text);
             totperc = Convert.ToInt32(textBox3.Text);
             try
             {
-            percentuale = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[7].Value);
-            totperc = totperc - percentuale;
-            textBox3.Text = totperc.ToString();
-            dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-            nrighe = dataGridView1.RowCount;
+                percentuale = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[7].Value);
+                NLastre = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[9].Value);
+                totperc = totperc - percentuale;
+                TotLastre = TotLastre - NLastre;
+                textBox3.Text = totperc.ToString();
+                dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                nrighe = dataGridView1.RowCount;
+                textBox4.Text = TotLastre.ToString();
+                textBox3.Text = totperc.ToString();
             }
             catch
             {

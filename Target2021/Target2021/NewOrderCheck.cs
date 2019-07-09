@@ -27,8 +27,8 @@ namespace Target2021
         private void NewOrderCheck_Load(object sender, EventArgs e)
         {
             this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
-            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
+            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
@@ -877,20 +877,20 @@ namespace Target2021
             for (j=0;j<i;j++)
             {
                 Importa(import[j], date[j]);
-                AggiornaOrdiniImportati(import[j]);
+                AggiornaOrdiniImportati(import[j], date[j]);
                 MessageBox.Show("Importato ordine nr. " + import[j].ToString());
             }
             carica();
         }
 
-        private void AggiornaOrdiniImportati(int nord)
+        private void AggiornaOrdiniImportati(int nord, int dataord)
         {
             //MessageBox.Show("L'articolo "+Cod+" va creato nelle giacenze!");
             Target2021DataSet.OrdiniImportatiRow riga = target2021DataSet.OrdiniImportati.NewOrdiniImportatiRow();
             riga.Anno = Convert.ToInt32(comboBox1.Text);
             riga.Importato = true;
             riga.Numero = nord;
-            riga.Data = DateTime.Today;
+            riga.Data = dataord;
             riga.Articolo = CodiceArt(nord);
             riga.Descrizione = RecuperaDescrizioneArticolo(nord);
             target2021DataSet.OrdiniImportati.Rows.Add(riga);

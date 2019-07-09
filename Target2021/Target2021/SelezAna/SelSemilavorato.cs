@@ -31,7 +31,7 @@ namespace Target2021.SelezAna
             button1.Text = "Solo 08";
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.articoli_semplici'. È possibile spostarla o rimuoverla se necessario.
             this.articoli_sempliciTableAdapter.Fill(this.target2021DataSet.articoli_semplici);
-            filtra(0);
+            //filtra(0);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,7 +82,12 @@ namespace Target2021.SelezAna
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            selezionati.Clear();
+            foreach (DataGridViewRow riga in articoli_sempliciDataGridView.SelectedRows)
+            {
+                selezionati.Add(riga);
+            }
+            this.Close();
         }
     }
 }

@@ -30,14 +30,13 @@ namespace Target2021.Anagrafiche
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniImportati'. È possibile spostarla o rimuoverla se necessario.
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             int Posizione, NumOrd;
-            DateTime DataOrd;
+            int DataOrd;
             DialogResult dialogResult = MessageBox.Show("Sei sicuro di voler eliminare l'importazione  degli ordini selezionati?", "Eliminazione importazione ordine", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -46,7 +45,7 @@ namespace Target2021.Anagrafiche
                     Posizione = row.Index;
                     textBox1.AppendText("Riga: " + Posizione.ToString() + Environment.NewLine);
                     NumOrd = (int)ordiniImportatiDataGridView.Rows[Posizione].Cells[3].Value;
-                    DataOrd = (DateTime)ordiniImportatiDataGridView.Rows[Posizione].Cells[4].Value;
+                    DataOrd = (int)ordiniImportatiDataGridView.Rows[Posizione].Cells[4].Value;
                     textBox1.AppendText("Ordine numero: " + row.Index.ToString() + Environment .NewLine);
                     int risultato;
                     string filtro = "NrCommessa = " + NumOrd;
@@ -78,10 +77,12 @@ namespace Target2021.Anagrafiche
                             R.Delete();
                         }
                         ordiniImportatiTableAdapter.Update(target2021DataSet.OrdiniImportati);
-                        // Poi risetto il flag in ACCESS: DA FARE
-                        int data = DataOrd.Year * 10000 + DataOrd.Month * 100 + DataOrd.Day;
-
+                        // Poi ri-setto il flag in ACCESS
+                        int data = DataOrd;
                         ImpostaPesoCliente(NumOrd, data, 0);
+                        // Poi ri-setto il flag in tabella dettaglio_ordini_multirig in locale su SQL
+
+                        // DA FARE
                         MessageBox.Show("Importazione ordine "+NumOrd .ToString()+" eliminata con successo!");
                     }
                     
@@ -107,6 +108,7 @@ namespace Target2021.Anagrafiche
             }
             catch
             {
+                MessageBox.Show("Errore in Access!");
                 note = null;
             }
             connessione.Close();

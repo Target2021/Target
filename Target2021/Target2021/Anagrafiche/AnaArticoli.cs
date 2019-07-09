@@ -1028,7 +1028,7 @@ namespace Target2021.Anagrafiche
             {
                 MaxProgressivo++;
                 progr = MaxProgressivo.ToString();
-                descr = elemento.Cells[2].Value.ToString();
+                descr = elemento.Cells[1].Value.ToString();
                 cod = elemento.Cells[0].Value.ToString();
                 DataRow riga = target2021DataSet.DettArticoli.NewRow();
 
@@ -1044,7 +1044,6 @@ namespace Target2021.Anagrafiche
                 //this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
                 dettArticoliDataGridView.Refresh();
             }
-
         }
 
         private int RecuperaMassimo(string CodArt)
