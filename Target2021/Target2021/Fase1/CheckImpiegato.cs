@@ -42,7 +42,7 @@ namespace Target2021
             inserimento_iniziale();
             verifica_commesse();
             WindowState = FormWindowState.Maximized;
-            finito = 1;
+            finito = 1;            
         }
 
         private void Colora()
@@ -198,6 +198,7 @@ namespace Target2021
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            dataGridView1.ClearSelection();
             Colora();
         }
     }

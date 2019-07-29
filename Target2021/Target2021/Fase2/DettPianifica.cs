@@ -50,6 +50,7 @@ namespace Target2021.Fase2
         private void dateTimePicker1_DropDown(object sender, EventArgs e)
         {
             dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker1.Update();
             dateTimePicker1.Refresh();
         }
 
@@ -65,7 +66,7 @@ namespace Target2021.Fase2
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            dateTimePicker1.Update();
         }
 
         private void button2_Click(object sender, EventArgs e)

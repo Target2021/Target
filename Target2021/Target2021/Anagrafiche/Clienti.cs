@@ -70,5 +70,10 @@ namespace Target2021
         {
             try { } catch (NoNullAllowedException ex) { MessageBox.Show("La tabella non può essere modificata"); }
         }
+
+        private void clientiDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

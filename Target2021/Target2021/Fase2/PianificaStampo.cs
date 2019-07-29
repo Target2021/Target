@@ -29,6 +29,9 @@ namespace Target2021.Fase2
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             superCommessaBindingSource.Filter = "Stato = 0";
             WindowState = FormWindowState.Maximized;
+            object s = new object();
+            EventArgs ev = new EventArgs();
+            dimensiona(s, ev);
         }
 
         private void AssociaDGV()
@@ -318,6 +321,35 @@ namespace Target2021.Fase2
         private void commesseDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dimensiona(object sender, EventArgs e)
+        {
+            int largh, alt;
+            largh = Convert.ToInt32(this.Width);
+            alt = Convert.ToInt32(this.Height);
+            commesseDataGridView.Width = Convert.ToInt32(largh * 0.4);
+            commesseDataGridView.Height = Convert.ToInt32(alt * 0.83);
+            commesseDataGridView.Location = new Point((Convert.ToInt32(largh * 0.02)), (Convert.ToInt32(alt * 0.10)));
+
+            commesseDataGridView1.Width = Convert.ToInt32(largh * 0.55);
+            commesseDataGridView1.Height = Convert.ToInt32(alt * 0.23);
+            commesseDataGridView1.Location = new Point((Convert.ToInt32(largh * 0.43)), (Convert.ToInt32(alt * 0.10)));
+
+            commesseDataGridView2.Width = Convert.ToInt32(largh * 0.55);
+            commesseDataGridView2.Height = Convert.ToInt32(alt * 0.23);
+            commesseDataGridView2.Location = new Point((Convert.ToInt32(largh * 0.43)), (Convert.ToInt32(alt * 0.40)));
+
+            commesseDataGridView3.Width = Convert.ToInt32(largh * 0.55);
+            commesseDataGridView3.Height = Convert.ToInt32(alt * 0.23);
+            commesseDataGridView3.Location = new Point((Convert.ToInt32(largh * 0.43)), (Convert.ToInt32(alt * 0.70)));
+
+            label1.Location = new Point((Convert.ToInt32(largh * 0.02)), (Convert.ToInt32(alt * 0.02)));
+            label2.Location = new Point((Convert.ToInt32(largh * 0.02)), (Convert.ToInt32(alt * 0.05)));
+            label4.Location = new Point((Convert.ToInt32(largh * 0.43)), (Convert.ToInt32(alt * 0.02)));
+            label3.Location = new Point((Convert.ToInt32(largh * 0.67)), (Convert.ToInt32(alt * 0.05)));
+            label5.Location = new Point((Convert.ToInt32(largh * 0.67)), (Convert.ToInt32(alt * 0.35)));
+            label6.Location = new Point((Convert.ToInt32(largh * 0.67)), (Convert.ToInt32(alt * 0.65)));
         }
     }
 }
