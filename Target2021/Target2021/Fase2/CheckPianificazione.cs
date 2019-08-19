@@ -45,7 +45,7 @@ namespace Target2021
 
         private void carica()
         {
-            commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 2";
+            commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 0";
         }
 
         private void SelezionaRiga(object sender, DataGridViewCellEventArgs e)
@@ -68,7 +68,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int IdSC, percentuale = 0, NrLastre, NuoveLastre;
+            int IdSC, percentuale = 0, NrLastre, NuoveLastre, nrl;
             DateTime DataConsegna, DataInTextBox;
             string Cliente;
             if (textBox1.Text == "")
@@ -77,7 +77,7 @@ namespace Target2021
                 IdSC++;
                 textBox1.Text = IdSC.ToString();
             }    
-            AggiungiRiga();
+            nrl=AggiungiRiga();
             percentuale = Convert.ToInt32(textBox3.Text) + Convert.ToInt32(commesseDataGridView.SelectedRows[0].Cells[16].Value);
             textBox3.Text = percentuale.ToString();
             Colora(sender,e);
@@ -89,7 +89,8 @@ namespace Target2021
             NuoveLastre = Convert.ToInt32(commesseDataGridView.SelectedRows[0].Cells[22].Value);
             // Altra logica
             // if (NrLastre > NuoveLastre) NrLastre = NrLastre; else NrLastre = NuoveLastre;
-            NrLastre = NrLastre + NuoveLastre;
+            //NrLastre = NrLastre + NuoveLastre;
+            NrLastre = NrLastre + nrl;
             textBox4.Text =  NrLastre.ToString();
             Cliente =Convert.ToString(commesseDataGridView.SelectedRows[0].Cells[5].Value);
             textBox5.Text = Cliente;
@@ -99,7 +100,7 @@ namespace Target2021
             }
             if (comboBox2.SelectedIndex == 1)
             {
-                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 2 AND IDMateriaPrima = '" + textBox2.Text + "'";
+                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 0 AND IDMateriaPrima = '" + textBox2.Text + "'";
             }
         }
 
@@ -141,10 +142,10 @@ namespace Target2021
             dataGridView1.Columns[9].Width = 100;
         }
 
-        private void AggiungiRiga()
+        private int AggiungiRiga()
         {
             string CodCommessa, CodArticolo, Lastra, Cliente, Stampo;
-            int IdCommessa, NrPezziDaProdurre, MacchinaStampa, PercentualeLastra, NrLastre;
+            int IdCommessa, NrPezziDaProdurre, MacchinaStampa, PercentualeLastra, NrLastre=0;
             DateTime DataConsegna;
 
             foreach (DataGridViewRow riga in commesseDataGridView.SelectedRows)
@@ -160,9 +161,14 @@ namespace Target2021
                 Lastra = Convert.ToString(riga.Cells[21].Value); 
                 NrLastre = Convert.ToInt32(riga.Cells[22].Value);
                 Stampo = RecuperaStampoCommessa(IdCommessa);
+                if (NrLastre == NrPezziDaProdurre)
+                {
+                    NrLastre = (int)((NrPezziDaProdurre * PercentualeLastra) / 100);
+                }
                 dt.Rows.Add(new object[] { IdCommessa, CodCommessa, Cliente, DataConsegna, NrPezziDaProdurre, CodArticolo, MacchinaStampa, PercentualeLastra, Lastra, NrLastre, Stampo});
                 dataGridView1.DataSource = dt;
             }
+            return NrLastre;
         }
 
         private string RecuperaStampoCommessa(int IdCommessa)
@@ -215,7 +221,7 @@ namespace Target2021
             {
                 textBox2.Text = "";
                 commesseBindingSource.RemoveFilter();
-                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 2";
+                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 0";
             }
             AggiornaData();
         }
@@ -238,7 +244,7 @@ namespace Target2021
             stato = 3;
             CreaSuperCommessa(tipo,stato);
             tipo = 2;
-            stato = 10;
+            stato = 0;
             CreaSuperCommessa(tipo, stato);
             MessageBox.Show("SuperCommessa di stampaggio creata correttamente!");
         }
@@ -417,11 +423,11 @@ namespace Target2021
         {
             if (comboBox2.SelectedIndex == 0)
             {
-                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 2";
+                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 0";
             }
             if (comboBox2.SelectedIndex == 1 && textBox2.Text !="")
             {
-                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 2 AND IDMateriaPrima = '" + textBox2.Text + "'";
+                commesseBindingSource.Filter = "TipoCommessa = 1 AND Stato = 0 AND IDMateriaPrima = '" + textBox2.Text + "'";
             }
         }
     }

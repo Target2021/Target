@@ -75,7 +75,7 @@ namespace Target2021.Fase2
                 IdC = Convert.ToInt32(row.Cells[2].Value);
                 Riga = target2021DataSet.Commesse.FindByIDCommessa(IdC);
                 Riga.BeginEdit();
-                Riga.Stato = 2;
+                Riga.Stato = 0;
                 Riga.InSupercommessa = 0;
                 Riga.EndEdit();
             }

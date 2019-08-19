@@ -78,9 +78,6 @@
             this.ruoliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impiegataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pianificazioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.creaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminaSuperCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pianificazioneTemporaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stampaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.assemblaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,6 +96,9 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.supercommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creaSuperCommessaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminaSuperCommessaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -484,6 +484,7 @@
             // ruoliToolStripMenuItem
             // 
             this.ruoliToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.supercommessaToolStripMenuItem,
             this.impiegataToolStripMenuItem,
             this.pianificazioneToolStripMenuItem,
             this.stampaggioToolStripMenuItem,
@@ -504,35 +505,10 @@
             // 
             // pianificazioneToolStripMenuItem
             // 
-            this.pianificazioneToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.creaSuperCommessaToolStripMenuItem,
-            this.eliminaSuperCommessaToolStripMenuItem,
-            this.pianificazioneTemporaleToolStripMenuItem});
             this.pianificazioneToolStripMenuItem.Name = "pianificazioneToolStripMenuItem";
             this.pianificazioneToolStripMenuItem.Size = new System.Drawing.Size(311, 30);
             this.pianificazioneToolStripMenuItem.Text = "Pianificazione";
             this.pianificazioneToolStripMenuItem.Click += new System.EventHandler(this.pianificazioneToolStripMenuItem_Click);
-            // 
-            // creaSuperCommessaToolStripMenuItem
-            // 
-            this.creaSuperCommessaToolStripMenuItem.Name = "creaSuperCommessaToolStripMenuItem";
-            this.creaSuperCommessaToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
-            this.creaSuperCommessaToolStripMenuItem.Text = "Crea SuperCommessa";
-            this.creaSuperCommessaToolStripMenuItem.Click += new System.EventHandler(this.creaSuperCommessaToolStripMenuItem_Click);
-            // 
-            // eliminaSuperCommessaToolStripMenuItem
-            // 
-            this.eliminaSuperCommessaToolStripMenuItem.Name = "eliminaSuperCommessaToolStripMenuItem";
-            this.eliminaSuperCommessaToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
-            this.eliminaSuperCommessaToolStripMenuItem.Text = "Elimina SuperCommessa";
-            this.eliminaSuperCommessaToolStripMenuItem.Click += new System.EventHandler(this.eliminaSuperCommessaToolStripMenuItem_Click);
-            // 
-            // pianificazioneTemporaleToolStripMenuItem
-            // 
-            this.pianificazioneTemporaleToolStripMenuItem.Name = "pianificazioneTemporaleToolStripMenuItem";
-            this.pianificazioneTemporaleToolStripMenuItem.Size = new System.Drawing.Size(333, 30);
-            this.pianificazioneTemporaleToolStripMenuItem.Text = "Pianificazione temporale";
-            this.pianificazioneTemporaleToolStripMenuItem.Click += new System.EventHandler(this.pianificazioneTemporaleToolStripMenuItem_Click);
             // 
             // stampaggioToolStripMenuItem
             // 
@@ -711,6 +687,29 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
+            // supercommessaToolStripMenuItem
+            // 
+            this.supercommessaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.creaSuperCommessaToolStripMenuItem1,
+            this.eliminaSuperCommessaToolStripMenuItem1});
+            this.supercommessaToolStripMenuItem.Name = "supercommessaToolStripMenuItem";
+            this.supercommessaToolStripMenuItem.Size = new System.Drawing.Size(311, 30);
+            this.supercommessaToolStripMenuItem.Text = "Supercommessa";
+            // 
+            // creaSuperCommessaToolStripMenuItem1
+            // 
+            this.creaSuperCommessaToolStripMenuItem1.Name = "creaSuperCommessaToolStripMenuItem1";
+            this.creaSuperCommessaToolStripMenuItem1.Size = new System.Drawing.Size(333, 30);
+            this.creaSuperCommessaToolStripMenuItem1.Text = "Crea SuperCommessa";
+            this.creaSuperCommessaToolStripMenuItem1.Click += new System.EventHandler(this.creaSuperCommessaToolStripMenuItem1_Click);
+            // 
+            // eliminaSuperCommessaToolStripMenuItem1
+            // 
+            this.eliminaSuperCommessaToolStripMenuItem1.Name = "eliminaSuperCommessaToolStripMenuItem1";
+            this.eliminaSuperCommessaToolStripMenuItem1.Size = new System.Drawing.Size(333, 30);
+            this.eliminaSuperCommessaToolStripMenuItem1.Text = "Elimina SuperCommessa";
+            this.eliminaSuperCommessaToolStripMenuItem1.Click += new System.EventHandler(this.eliminaSuperCommessaToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,9 +789,6 @@
         private System.Windows.Forms.ToolStripMenuItem stampaSchedaCommessaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arrivoMerceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem superCommesseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem creaSuperCommessaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pianificazioneTemporaleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminaSuperCommessaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem valorizzaMagazziniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaOrdiniImportatiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem condizioniFornitoreToolStripMenuItem;
@@ -803,6 +799,9 @@
         private System.Windows.Forms.ToolStripMenuItem riincludiOrdiniEsclusiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allineaDDTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supercommessaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creaSuperCommessaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem eliminaSuperCommessaToolStripMenuItem1;
     }
 }
 

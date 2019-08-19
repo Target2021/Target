@@ -234,9 +234,9 @@ namespace Target2021
 
         private void pianificazioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //CheckPianificazione pianificazione = new CheckPianificazione();
-            //pianificazione.MdiParent = this;
-            //pianificazione.Show();
+            PianificaStampo PS = new PianificaStampo();
+            PS.MdiParent = this;
+            PS.Show();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -519,6 +519,20 @@ namespace Target2021
             Test nok = new Test();
             nok.MdiParent = this;
             nok.Show();
+        }
+
+        private void creaSuperCommessaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CheckPianificazione pianificazione = new CheckPianificazione();
+            pianificazione.MdiParent = this;
+            pianificazione.Show();
+        }
+
+        private void eliminaSuperCommessaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            EliminaSC EliminaSuperCommessa = new EliminaSC();
+            EliminaSuperCommessa.MdiParent = this;
+            EliminaSuperCommessa.Show();
         }
     }
 }

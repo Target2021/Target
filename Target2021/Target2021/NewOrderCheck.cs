@@ -697,7 +697,15 @@ namespace Target2021
             sql = "SELECT data_consegna FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            dtc = DateTime.ParseExact(comando.ExecuteScalar().ToString(), "yyyyMMdd", null);
+            try
+            {
+                dtc = DateTime.ParseExact(comando.ExecuteScalar().ToString(), "yyyyMMdd", null);
+            }
+            catch
+            {
+                int year = DateTime.Now.Year;
+                dtc = new DateTime(year, 1, 1);
+            }
             connessione.Close();
             return dtc;
         }

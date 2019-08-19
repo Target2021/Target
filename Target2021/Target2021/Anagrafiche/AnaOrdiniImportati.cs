@@ -96,7 +96,7 @@ namespace Target2021.Anagrafiche
 
         private void ImpostaPesoCliente(int n, int data, int stato)
         {
-            string stringaconnessione, sql = "", note;
+            string stringaconnessione, sql = "";
             stringaconnessione = Properties.Resources.ConnessioneAccess;
             OleDbConnection connessione = new OleDbConnection(stringaconnessione);
             sql = "UPDATE dettaglio_ordini_multiriga SET peso=" + stato + " WHERE numero_ordine=" + n + " AND data_ordine = " + data;
@@ -104,12 +104,11 @@ namespace Target2021.Anagrafiche
             connessione.Open();
             try
             {
-                note = comando.ExecuteScalar().ToString();
+                comando.ExecuteNonQuery();
             }
             catch
             {
                 MessageBox.Show("Errore in Access!");
-                note = null;
             }
             connessione.Close();
             //MessageBox.Show("Bingo!");
