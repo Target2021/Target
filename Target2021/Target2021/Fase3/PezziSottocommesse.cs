@@ -85,6 +85,7 @@ namespace Target2021.Fase3
             else
             {
                 Salva();
+                this.Close();
             }
         }
     }

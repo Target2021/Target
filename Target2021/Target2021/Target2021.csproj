@@ -241,6 +241,12 @@
     <Compile Include="Anagrafiche\CercaArticolo.Designer.cs">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Commesse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commesse.Designer.cs">
+      <DependentUpon>Commesse.cs</DependentUpon>
+    </Compile>
     <Compile Include="dbddtDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -775,6 +781,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\CercaArticolo.resx">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Commesse.resx">
+      <DependentUpon>Commesse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fase5\CheckAssemblaggio.resx">
       <DependentUpon>CheckAssemblaggio.cs</DependentUpon>

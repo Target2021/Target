@@ -227,17 +227,25 @@ namespace Target2021
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int prosegui = 0;  // 0 = No, 1 = Si
+            int prosegui = 0, errore = 0;  // 0 = No, 1 = Si
             prosegui = MessaggioAvviso();
             if (prosegui == 1)
             {
-                CaricaFiniti();                 // OK
-                ScaricaSemilavorati();          // OK
-                VariaGiacenzaFiniti();          // OK
-                VariaGiacenzaSemilavorati();    // OK
-                ChiudiFase();                   // OK
-                MessageBox.Show("Commessa chiusa!");
-                this.Close();
+                errore=CaricaFiniti();                 // OK
+                if (errore==0)
+                {
+                    ScaricaSemilavorati();          // OK
+                    VariaGiacenzaFiniti();          // OK
+                    VariaGiacenzaSemilavorati();    // OK
+                    ChiudiFase();                   // OK
+                    MessageBox.Show("Commessa chiusa!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Errore nell'anagrafica articolo! Sistemare manualmente i dati di commessa!");
+                    this.Close();
+                }
             }
         }
 
@@ -271,11 +279,11 @@ namespace Target2021
             return 0;
         }
 
-        private void CaricaFiniti()
+        private int CaricaFiniti()
         {
             string tipo;
             char c;
-            int i, lunghezza;
+            int i, lunghezza, err=0;
             tipo = codArtiDopoTaglioTextBox.Text;
             lunghezza = tipo.Length;
             for (i=0;i<lunghezza;i++)
@@ -298,7 +306,9 @@ namespace Target2021
             if (codice!="08" && codice!="09")
             {
                 MessageBox.Show("Anomalia, non è né un codice 08 né un codice 09");
+                err = 1;
             }
+            return err;
         }
 
         private void CaricoMagazzino(string codmag)

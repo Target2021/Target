@@ -87,10 +87,10 @@ namespace Target2021
             DataInTextBox = Convert.ToDateTime(maskedTextBox1.Text);
             if (DataConsegna < DataInTextBox) maskedTextBox1.Text = DataConsegna.ToString();
             NuoveLastre = Convert.ToInt32(commesseDataGridView.SelectedRows[0].Cells[22].Value);
-            // Altra logica
-            // if (NrLastre > NuoveLastre) NrLastre = NrLastre; else NrLastre = NuoveLastre;
-            //NrLastre = NrLastre + NuoveLastre;
-            NrLastre = NrLastre + nrl;
+
+            // NrLastre = NrLastre + nrl; prima era così
+            if (NrLastre < nrl) NrLastre = nrl;
+
             textBox4.Text =  NrLastre.ToString();
             Cliente =Convert.ToString(commesseDataGridView.SelectedRows[0].Cells[5].Value);
             textBox5.Text = Cliente;
@@ -163,7 +163,8 @@ namespace Target2021
                 Stampo = RecuperaStampoCommessa(IdCommessa);
                 if (NrLastre == NrPezziDaProdurre)
                 {
-                    NrLastre = (int)((NrPezziDaProdurre * PercentualeLastra) / 100);
+                    // Se togli commento calcola il nr di lastre come prodotto tra pezzi e percentuale
+                    // NrLastre = (int)((NrPezziDaProdurre * PercentualeLastra) / 100);
                 }
                 dt.Rows.Add(new object[] { IdCommessa, CodCommessa, Cliente, DataConsegna, NrPezziDaProdurre, CodArticolo, MacchinaStampa, PercentualeLastra, Lastra, NrLastre, Stampo});
                 dataGridView1.DataSource = dt;
@@ -206,7 +207,21 @@ namespace Target2021
                 percentuale = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[7].Value);
                 NLastre = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[9].Value);
                 totperc = totperc - percentuale;
-                TotLastre = TotLastre - NLastre;
+                // TotLastre = TotLastre - NLastre; prima era così
+                if (TotLastre == NLastre)
+                {
+                    //trovo il max lastre (delle altre righe) e lo imposto in TotLastre
+                    int max = 0, nl;
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        nl = Convert .ToInt32(row.Cells["Nr. lastre"].Value);
+                        if (row.Index != dataGridView1.SelectedRows[0].Index)
+                        {
+                            if (nl > max) max = nl;
+                        }
+                    }
+                    TotLastre = max;
+                }
                 textBox3.Text = totperc.ToString();
                 dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
                 nrighe = dataGridView1.RowCount;
@@ -241,10 +256,10 @@ namespace Target2021
             CreaAbbinamentoSC();
             AggiornaStatoRiga();
             tipo = 1;
-            stato = 3;
+            stato = 0;
             CreaSuperCommessa(tipo,stato);
             tipo = 2;
-            stato = 0;
+            stato = 10;
             CreaSuperCommessa(tipo, stato);
             MessageBox.Show("SuperCommessa di stampaggio creata correttamente!");
         }
@@ -271,7 +286,7 @@ namespace Target2021
             com.PercentualeUtilizzoLastra = Convert.ToInt32(textBox3.Text);
             com.IDMateriaPrima = textBox2.Text;
             com.NrLastreRichieste = Convert.ToInt32(textBox4.Text);
-            com.Stato = 10;
+            com.Stato = stato;
             com.ImpegnataMatPrima = Convert.ToInt32(textBox4.Text);
             com.ProgStampa =textBox6.Text;   
             InserisciCommessa(com);

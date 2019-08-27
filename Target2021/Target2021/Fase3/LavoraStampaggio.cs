@@ -290,12 +290,12 @@ namespace Target2021
             if (PzLavorati > 0)
             {
                 evasoParzialeCheckBox.Checked = true;
-                statoTextBox.Text = "1";
+                //statoTextBox.Text = "1";
             }             
             else
             {
                 evasoParzialeCheckBox.Checked = false;
-                statoTextBox.Text = "0";
+                //statoTextBox.Text = "0";
             }
             nrPezziCorrettiTextBox.BackColor = Color.White;
         }
@@ -418,6 +418,7 @@ namespace Target2021
                 RiportaPezziStampati(IdS);
                 SottocommessaStampaggioInStato2(IdS);
             }
+            button7.BackColor = Color.Green;
             return;
         }
 

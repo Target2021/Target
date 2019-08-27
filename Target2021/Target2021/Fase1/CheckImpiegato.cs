@@ -135,7 +135,7 @@ namespace Target2021
                 dataTable.Rows[nriga]["Lastre assegnate"] = Impegnati;
                 PezziRichiesti = Convert.ToInt32(riga.Cells[1].Value);
                 //if (giacenza < PezziRichiesti)
-                int mancanti = PezziRichiesti - Impegnati - giacenza - LiberiOrdinati;
+                int mancanti = PezziRichiesti - giacenza - LiberiOrdinati;
                 if (mancanti>0)
                 {
                     richTextBox1.Text = richTextBox1.Text + "PROPOSTA DI ORDINE A FORNITORE";

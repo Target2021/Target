@@ -130,14 +130,19 @@ namespace Target2021.Fase1
         {
             int evento = e.ColumnIndex;  // 8 su magazzino - 9 su ordinato
             int IdCommessa, NumCommessa;
-            int nlastre = 0, nlastreord = 0, nrichieste;
+            int nlastre = 0, nlastreord = 0, nrichieste=0;
             if (e.RowIndex == -1) return;
             disponibili = disponibili + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             impegnate = impegnate - Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
             disponibili_o = disponibili_o + Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
             impegnate_o = impegnate_o - Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
 
-            nrichieste = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+            try
+            {
+                nrichieste = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
+            }
+            catch { }
+
             try
             {
                 if (evento == 8) nlastre = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Quante lastre vuoi impiegare per questa commessa dal MAGAZZINO?", "IMPEGNO LASTRE MAGAZZINO", "0"));

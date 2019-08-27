@@ -81,25 +81,30 @@ namespace Target2021.Fase3
             int chiave,anno=0;
             string IdCommessa;
             DateTime datac;
-
-            IdCommessa = commesseDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            //MessageBox.Show("Vado a tagliare la commessa: " + IdCommessa.ToString());
-            datac= Convert.ToDateTime(commesseDataGridView1.SelectedRows[0].Cells[3].Value);
-            anno = datac.Year;
-            //MessageBox.Show("Vado anno: " + anno.ToString());
-            chiave = Cerca(IdCommessa, anno);
-            //MessageBox.Show("Vado chiave: " + chiave.ToString());
             try
             {
-                macchina = Convert.ToInt32(textBox1.Text);
+
+
+                IdCommessa = commesseDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                //MessageBox.Show("Vado a tagliare la commessa: " + IdCommessa.ToString());
+                datac = Convert.ToDateTime(commesseDataGridView1.SelectedRows[0].Cells[3].Value);
+                anno = datac.Year;
+                //MessageBox.Show("Vado anno: " + anno.ToString());
+                chiave = Cerca(IdCommessa, anno);
+                //MessageBox.Show("Vado chiave: " + chiave.ToString());
+                try
+                {
+                    macchina = Convert.ToInt32(textBox1.Text);
+                }
+                catch
+                {
+                    macchina = 0;
+                }
+                LavoraStampaggio stampa = new LavoraStampaggio(chiave.ToString(), macchina);
+                stampa.ShowDialog();
+                aggiorna();
             }
-            catch
-            {
-                macchina = 0;
-            }
-            LavoraStampaggio stampa = new LavoraStampaggio(chiave.ToString(), macchina);
-            stampa.ShowDialog();
-            aggiorna();
+            catch { }
         }
 
         private int Cerca(string idc, int anno)

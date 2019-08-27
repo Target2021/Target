@@ -534,5 +534,24 @@ namespace Target2021
             EliminaSuperCommessa.MdiParent = this;
             EliminaSuperCommessa.Show();
         }
+
+        private void superCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void riepilogoCommesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RiepilogoCommesse riepilogocommesse = new RiepilogoCommesse();
+            riepilogocommesse.MdiParent = this;
+            riepilogocommesse.Show();
+        }
+
+        private void commesseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Commesse comme = new Commesse();
+            comme.MdiParent = this;
+            comme.Show();
+        }
     }
 }
