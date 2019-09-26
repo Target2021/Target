@@ -52,10 +52,13 @@
             this.modalitàPagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminiPagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spedizioneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.riepilogoCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.commesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controllaNuoviOrdiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaOrdiniImportatiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.riincludiOrdiniEsclusiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaOrdiniImportatiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordiniAFornitoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuovoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,9 +99,7 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.riepilogoCommesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.commesseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mascheraStampaggioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -296,6 +297,29 @@
             this.spedizioneToolStripMenuItem.Text = "Spedizione";
             this.spedizioneToolStripMenuItem.Click += new System.EventHandler(this.spedizioneToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.riepilogoCommesseToolStripMenuItem,
+            this.commesseToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 36);
+            this.toolStripMenuItem1.Text = "Commesse";
+            // 
+            // riepilogoCommesseToolStripMenuItem
+            // 
+            this.riepilogoCommesseToolStripMenuItem.Name = "riepilogoCommesseToolStripMenuItem";
+            this.riepilogoCommesseToolStripMenuItem.Size = new System.Drawing.Size(326, 34);
+            this.riepilogoCommesseToolStripMenuItem.Text = "Riepilogo Commesse";
+            this.riepilogoCommesseToolStripMenuItem.Click += new System.EventHandler(this.riepilogoCommesseToolStripMenuItem_Click);
+            // 
+            // commesseToolStripMenuItem
+            // 
+            this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
+            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(326, 34);
+            this.commesseToolStripMenuItem.Text = "Commesse";
+            this.commesseToolStripMenuItem.Click += new System.EventHandler(this.commesseToolStripMenuItem_Click);
+            // 
             // ordiniToolStripMenuItem
             // 
             this.ordiniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -317,19 +341,19 @@
             this.controllaNuoviOrdiniToolStripMenuItem.Text = "Controlla nuovi ordini";
             this.controllaNuoviOrdiniToolStripMenuItem.Click += new System.EventHandler(this.controllaNuoviOrdiniToolStripMenuItem_Click);
             // 
-            // consultaOrdiniImportatiToolStripMenuItem
-            // 
-            this.consultaOrdiniImportatiToolStripMenuItem.Name = "consultaOrdiniImportatiToolStripMenuItem";
-            this.consultaOrdiniImportatiToolStripMenuItem.Size = new System.Drawing.Size(507, 36);
-            this.consultaOrdiniImportatiToolStripMenuItem.Text = "Consulta/Elimina ordini importati";
-            this.consultaOrdiniImportatiToolStripMenuItem.Click += new System.EventHandler(this.consultaOrdiniImportatiToolStripMenuItem_Click);
-            // 
             // riincludiOrdiniEsclusiToolStripMenuItem
             // 
             this.riincludiOrdiniEsclusiToolStripMenuItem.Name = "riincludiOrdiniEsclusiToolStripMenuItem";
             this.riincludiOrdiniEsclusiToolStripMenuItem.Size = new System.Drawing.Size(507, 36);
             this.riincludiOrdiniEsclusiToolStripMenuItem.Text = "Ri-includi ordini esclusi";
             this.riincludiOrdiniEsclusiToolStripMenuItem.Click += new System.EventHandler(this.riincludiOrdiniEsclusiToolStripMenuItem_Click);
+            // 
+            // consultaOrdiniImportatiToolStripMenuItem
+            // 
+            this.consultaOrdiniImportatiToolStripMenuItem.Name = "consultaOrdiniImportatiToolStripMenuItem";
+            this.consultaOrdiniImportatiToolStripMenuItem.Size = new System.Drawing.Size(507, 36);
+            this.consultaOrdiniImportatiToolStripMenuItem.Text = "Consulta/Elimina ordini importati";
+            this.consultaOrdiniImportatiToolStripMenuItem.Click += new System.EventHandler(this.consultaOrdiniImportatiToolStripMenuItem_Click);
             // 
             // ordiniAFornitoreToolStripMenuItem
             // 
@@ -468,7 +492,8 @@
             this.stampaggioToolStripMenuItem,
             this.taglioToolStripMenuItem,
             this.assemblaggioToolStripMenuItem,
-            this.schermataTaglioToolStripMenuItem});
+            this.schermataTaglioToolStripMenuItem,
+            this.mascheraStampaggioToolStripMenuItem});
             this.ruoliToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ruoliToolStripMenuItem.Name = "ruoliToolStripMenuItem";
             this.ruoliToolStripMenuItem.Size = new System.Drawing.Size(235, 36);
@@ -609,7 +634,7 @@
             // taglioToolStripMenuItem1
             // 
             this.taglioToolStripMenuItem1.Name = "taglioToolStripMenuItem1";
-            this.taglioToolStripMenuItem1.Size = new System.Drawing.Size(216, 36);
+            this.taglioToolStripMenuItem1.Size = new System.Drawing.Size(168, 36);
             this.taglioToolStripMenuItem1.Text = "Taglio";
             this.taglioToolStripMenuItem1.Click += new System.EventHandler(this.taglioToolStripMenuItem1_Click);
             // 
@@ -688,28 +713,12 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // toolStripMenuItem1
+            // mascheraStampaggioToolStripMenuItem
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.riepilogoCommesseToolStripMenuItem,
-            this.commesseToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 36);
-            this.toolStripMenuItem1.Text = "Commesse";
-            // 
-            // riepilogoCommesseToolStripMenuItem
-            // 
-            this.riepilogoCommesseToolStripMenuItem.Name = "riepilogoCommesseToolStripMenuItem";
-            this.riepilogoCommesseToolStripMenuItem.Size = new System.Drawing.Size(326, 34);
-            this.riepilogoCommesseToolStripMenuItem.Text = "Riepilogo Commesse";
-            this.riepilogoCommesseToolStripMenuItem.Click += new System.EventHandler(this.riepilogoCommesseToolStripMenuItem_Click);
-            // 
-            // commesseToolStripMenuItem
-            // 
-            this.commesseToolStripMenuItem.Name = "commesseToolStripMenuItem";
-            this.commesseToolStripMenuItem.Size = new System.Drawing.Size(326, 34);
-            this.commesseToolStripMenuItem.Text = "Commesse";
-            this.commesseToolStripMenuItem.Click += new System.EventHandler(this.commesseToolStripMenuItem_Click);
+            this.mascheraStampaggioToolStripMenuItem.Name = "mascheraStampaggioToolStripMenuItem";
+            this.mascheraStampaggioToolStripMenuItem.Size = new System.Drawing.Size(391, 36);
+            this.mascheraStampaggioToolStripMenuItem.Text = "Maschera Stampaggio";
+            this.mascheraStampaggioToolStripMenuItem.Click += new System.EventHandler(this.mascheraStampaggioToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -721,7 +730,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Target2.0";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -804,6 +813,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem riepilogoCommesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commesseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mascheraStampaggioToolStripMenuItem;
     }
 }
 

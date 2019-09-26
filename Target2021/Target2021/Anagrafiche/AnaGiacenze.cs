@@ -42,5 +42,10 @@ namespace Target2021.Anagrafiche
             if (comboBox1.Text == "Semilavorati") giacenzeMagazziniBindingSource.Filter = "idSemilavorati LIKE '*" + textBox1.Text + "*'";
             if (comboBox1.Text == "Prodotti finiti") giacenzeMagazziniBindingSource.Filter = "idArticoli LIKE '*" + textBox1.Text + "*'";
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

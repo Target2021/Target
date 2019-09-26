@@ -427,7 +427,8 @@ namespace Target2021
         {
             string CodArt = codArtiDopoStampoTextBox.Text;
             int gc, gd;
-            int qta = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+            //int qta = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+            int qta = Convert.ToInt32(textBox1.Text);
 
             // codice contiene gia o 08 o 09
             DataRow[] RigaTrovata = null;

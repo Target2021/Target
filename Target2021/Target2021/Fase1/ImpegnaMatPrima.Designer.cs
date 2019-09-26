@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,13 +60,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.CodCommessa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataCommessaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +73,13 @@
             this.evasoParzialeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Stato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDCommessa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
@@ -300,14 +300,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodCommessa,
@@ -333,6 +333,134 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // CodCommessa
+            // 
+            this.CodCommessa.DataPropertyName = "CodCommessa";
+            this.CodCommessa.HeaderText = "Cod Commessa";
+            this.CodCommessa.Name = "CodCommessa";
+            this.CodCommessa.ReadOnly = true;
+            this.CodCommessa.Width = 196;
+            // 
+            // dataCommessaDataGridViewTextBoxColumn
+            // 
+            this.dataCommessaDataGridViewTextBoxColumn.DataPropertyName = "DataCommessa";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataCommessaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dataCommessaDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataCommessaDataGridViewTextBoxColumn.Name = "dataCommessaDataGridViewTextBoxColumn";
+            this.dataCommessaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataCommessaDataGridViewTextBoxColumn.Width = 91;
+            // 
+            // iDClienteDataGridViewTextBoxColumn
+            // 
+            this.iDClienteDataGridViewTextBoxColumn.DataPropertyName = "IDCliente";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            this.iDClienteDataGridViewTextBoxColumn.HeaderText = "Cliente";
+            this.iDClienteDataGridViewTextBoxColumn.Name = "iDClienteDataGridViewTextBoxColumn";
+            this.iDClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDClienteDataGridViewTextBoxColumn.Width = 118;
+            // 
+            // dataConsegnaDataGridViewTextBoxColumn
+            // 
+            this.dataConsegnaDataGridViewTextBoxColumn.DataPropertyName = "DataConsegna";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataConsegnaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataConsegnaDataGridViewTextBoxColumn.HeaderText = "Consegna";
+            this.dataConsegnaDataGridViewTextBoxColumn.Name = "dataConsegnaDataGridViewTextBoxColumn";
+            this.dataConsegnaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataConsegnaDataGridViewTextBoxColumn.Width = 152;
+            // 
+            // nrPezziDaLavorareDataGridViewTextBoxColumn
+            // 
+            this.nrPezziDaLavorareDataGridViewTextBoxColumn.DataPropertyName = "NrPezziDaLavorare";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nrPezziDaLavorareDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            this.nrPezziDaLavorareDataGridViewTextBoxColumn.HeaderText = "Pezzi";
+            this.nrPezziDaLavorareDataGridViewTextBoxColumn.Name = "nrPezziDaLavorareDataGridViewTextBoxColumn";
+            this.nrPezziDaLavorareDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codArticoloDataGridViewTextBoxColumn
+            // 
+            this.codArticoloDataGridViewTextBoxColumn.DataPropertyName = "CodArticolo";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codArticoloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            this.codArticoloDataGridViewTextBoxColumn.HeaderText = "Articolo";
+            this.codArticoloDataGridViewTextBoxColumn.Name = "codArticoloDataGridViewTextBoxColumn";
+            this.codArticoloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codArticoloDataGridViewTextBoxColumn.Width = 123;
+            // 
+            // descrArticoloDataGridViewTextBoxColumn
+            // 
+            this.descrArticoloDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.descrArticoloDataGridViewTextBoxColumn.DataPropertyName = "DescrArticolo";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.descrArticoloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            this.descrArticoloDataGridViewTextBoxColumn.HeaderText = "Descrizione";
+            this.descrArticoloDataGridViewTextBoxColumn.Name = "descrArticoloDataGridViewTextBoxColumn";
+            this.descrArticoloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descrArticoloDataGridViewTextBoxColumn.Visible = false;
+            this.descrArticoloDataGridViewTextBoxColumn.Width = 400;
+            // 
+            // nrLastreRichiesteDataGridViewTextBoxColumn
+            // 
+            this.nrLastreRichiesteDataGridViewTextBoxColumn.DataPropertyName = "NrLastreRichieste";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.nrLastreRichiesteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            this.nrLastreRichiesteDataGridViewTextBoxColumn.HeaderText = "Lastre richieste";
+            this.nrLastreRichiesteDataGridViewTextBoxColumn.Name = "nrLastreRichiesteDataGridViewTextBoxColumn";
+            this.nrLastreRichiesteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nrLastreRichiesteDataGridViewTextBoxColumn.Width = 187;
+            // 
+            // impegnataMatPrimaDataGridViewTextBoxColumn
+            // 
+            this.impegnataMatPrimaDataGridViewTextBoxColumn.DataPropertyName = "ImpegnataMatPrima";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.impegnataMatPrimaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            this.impegnataMatPrimaDataGridViewTextBoxColumn.HeaderText = "Lastre impegnate su magazzino";
+            this.impegnataMatPrimaDataGridViewTextBoxColumn.Name = "impegnataMatPrimaDataGridViewTextBoxColumn";
+            this.impegnataMatPrimaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.impegnataMatPrimaDataGridViewTextBoxColumn.Width = 241;
+            // 
+            // NrPezziOrdinati
+            // 
+            this.NrPezziOrdinati.DataPropertyName = "NrPezziOrdinati";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.NrPezziOrdinati.DefaultCellStyle = dataGridViewCellStyle20;
+            this.NrPezziOrdinati.HeaderText = "Lastre impegnate su ordinato";
+            this.NrPezziOrdinati.Name = "NrPezziOrdinati";
+            this.NrPezziOrdinati.ReadOnly = true;
+            this.NrPezziOrdinati.Width = 241;
+            // 
+            // evasoParzialeDataGridViewCheckBoxColumn
+            // 
+            this.evasoParzialeDataGridViewCheckBoxColumn.DataPropertyName = "EvasoParziale";
+            this.evasoParzialeDataGridViewCheckBoxColumn.HeaderText = "Evasione Parziale";
+            this.evasoParzialeDataGridViewCheckBoxColumn.Name = "evasoParzialeDataGridViewCheckBoxColumn";
+            this.evasoParzialeDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.evasoParzialeDataGridViewCheckBoxColumn.Visible = false;
+            this.evasoParzialeDataGridViewCheckBoxColumn.Width = 190;
+            // 
+            // Stato
+            // 
+            this.Stato.DataPropertyName = "Stato";
+            this.Stato.HeaderText = "Stato";
+            this.Stato.Name = "Stato";
+            this.Stato.ReadOnly = true;
+            this.Stato.Visible = false;
+            this.Stato.Width = 97;
+            // 
+            // IDCommessa
+            // 
+            this.IDCommessa.DataPropertyName = "IDCommessa";
+            this.IDCommessa.HeaderText = "IDCommessa";
+            this.IDCommessa.Name = "IDCommessa";
+            this.IDCommessa.ReadOnly = true;
+            this.IDCommessa.Visible = false;
+            this.IDCommessa.Width = 187;
             // 
             // commesseBindingSource
             // 
@@ -419,135 +547,8 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Salva le modifiche";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // CodCommessa
-            // 
-            this.CodCommessa.DataPropertyName = "CodCommessa";
-            this.CodCommessa.HeaderText = "Cod Commessa";
-            this.CodCommessa.Name = "CodCommessa";
-            this.CodCommessa.ReadOnly = true;
-            this.CodCommessa.Width = 196;
-            // 
-            // dataCommessaDataGridViewTextBoxColumn
-            // 
-            this.dataCommessaDataGridViewTextBoxColumn.DataPropertyName = "DataCommessa";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataCommessaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataCommessaDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.dataCommessaDataGridViewTextBoxColumn.Name = "dataCommessaDataGridViewTextBoxColumn";
-            this.dataCommessaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataCommessaDataGridViewTextBoxColumn.Width = 91;
-            // 
-            // iDClienteDataGridViewTextBoxColumn
-            // 
-            this.iDClienteDataGridViewTextBoxColumn.DataPropertyName = "IDCliente";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iDClienteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.iDClienteDataGridViewTextBoxColumn.HeaderText = "Cliente";
-            this.iDClienteDataGridViewTextBoxColumn.Name = "iDClienteDataGridViewTextBoxColumn";
-            this.iDClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDClienteDataGridViewTextBoxColumn.Width = 118;
-            // 
-            // dataConsegnaDataGridViewTextBoxColumn
-            // 
-            this.dataConsegnaDataGridViewTextBoxColumn.DataPropertyName = "DataConsegna";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataConsegnaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataConsegnaDataGridViewTextBoxColumn.HeaderText = "Consegna";
-            this.dataConsegnaDataGridViewTextBoxColumn.Name = "dataConsegnaDataGridViewTextBoxColumn";
-            this.dataConsegnaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataConsegnaDataGridViewTextBoxColumn.Width = 152;
-            // 
-            // nrPezziDaLavorareDataGridViewTextBoxColumn
-            // 
-            this.nrPezziDaLavorareDataGridViewTextBoxColumn.DataPropertyName = "NrPezziDaLavorare";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nrPezziDaLavorareDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.nrPezziDaLavorareDataGridViewTextBoxColumn.HeaderText = "Pezzi";
-            this.nrPezziDaLavorareDataGridViewTextBoxColumn.Name = "nrPezziDaLavorareDataGridViewTextBoxColumn";
-            this.nrPezziDaLavorareDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codArticoloDataGridViewTextBoxColumn
-            // 
-            this.codArticoloDataGridViewTextBoxColumn.DataPropertyName = "CodArticolo";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codArticoloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.codArticoloDataGridViewTextBoxColumn.HeaderText = "Articolo";
-            this.codArticoloDataGridViewTextBoxColumn.Name = "codArticoloDataGridViewTextBoxColumn";
-            this.codArticoloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codArticoloDataGridViewTextBoxColumn.Width = 123;
-            // 
-            // descrArticoloDataGridViewTextBoxColumn
-            // 
-            this.descrArticoloDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.descrArticoloDataGridViewTextBoxColumn.DataPropertyName = "DescrArticolo";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.descrArticoloDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.descrArticoloDataGridViewTextBoxColumn.HeaderText = "Descrizione";
-            this.descrArticoloDataGridViewTextBoxColumn.Name = "descrArticoloDataGridViewTextBoxColumn";
-            this.descrArticoloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descrArticoloDataGridViewTextBoxColumn.Visible = false;
-            this.descrArticoloDataGridViewTextBoxColumn.Width = 400;
-            // 
-            // nrLastreRichiesteDataGridViewTextBoxColumn
-            // 
-            this.nrLastreRichiesteDataGridViewTextBoxColumn.DataPropertyName = "NrLastreRichieste";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.nrLastreRichiesteDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.nrLastreRichiesteDataGridViewTextBoxColumn.HeaderText = "Lastre richieste";
-            this.nrLastreRichiesteDataGridViewTextBoxColumn.Name = "nrLastreRichiesteDataGridViewTextBoxColumn";
-            this.nrLastreRichiesteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nrLastreRichiesteDataGridViewTextBoxColumn.Width = 187;
-            // 
-            // impegnataMatPrimaDataGridViewTextBoxColumn
-            // 
-            this.impegnataMatPrimaDataGridViewTextBoxColumn.DataPropertyName = "ImpegnataMatPrima";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.impegnataMatPrimaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.impegnataMatPrimaDataGridViewTextBoxColumn.HeaderText = "Lastre impegnate su magazzino";
-            this.impegnataMatPrimaDataGridViewTextBoxColumn.Name = "impegnataMatPrimaDataGridViewTextBoxColumn";
-            this.impegnataMatPrimaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.impegnataMatPrimaDataGridViewTextBoxColumn.Width = 241;
-            // 
-            // NrPezziOrdinati
-            // 
-            this.NrPezziOrdinati.DataPropertyName = "NrPezziOrdinati";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.NrPezziOrdinati.DefaultCellStyle = dataGridViewCellStyle10;
-            this.NrPezziOrdinati.HeaderText = "Lastre impegnate su ordinato";
-            this.NrPezziOrdinati.Name = "NrPezziOrdinati";
-            this.NrPezziOrdinati.ReadOnly = true;
-            this.NrPezziOrdinati.Width = 241;
-            // 
-            // evasoParzialeDataGridViewCheckBoxColumn
-            // 
-            this.evasoParzialeDataGridViewCheckBoxColumn.DataPropertyName = "EvasoParziale";
-            this.evasoParzialeDataGridViewCheckBoxColumn.HeaderText = "Evasione Parziale";
-            this.evasoParzialeDataGridViewCheckBoxColumn.Name = "evasoParzialeDataGridViewCheckBoxColumn";
-            this.evasoParzialeDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.evasoParzialeDataGridViewCheckBoxColumn.Visible = false;
-            this.evasoParzialeDataGridViewCheckBoxColumn.Width = 190;
-            // 
-            // Stato
-            // 
-            this.Stato.DataPropertyName = "Stato";
-            this.Stato.HeaderText = "Stato";
-            this.Stato.Name = "Stato";
-            this.Stato.ReadOnly = true;
-            this.Stato.Visible = false;
-            this.Stato.Width = 97;
-            // 
-            // IDCommessa
-            // 
-            this.IDCommessa.DataPropertyName = "IDCommessa";
-            this.IDCommessa.HeaderText = "IDCommessa";
-            this.IDCommessa.Name = "IDCommessa";
-            this.IDCommessa.ReadOnly = true;
-            this.IDCommessa.Visible = false;
-            this.IDCommessa.Width = 187;
             // 
             // ImpegnaMatPrima
             // 

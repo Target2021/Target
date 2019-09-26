@@ -85,7 +85,7 @@ namespace Target2021
             dataTable.Columns.Add("Descrizione materia prima", typeof(String));
             dataTable.Columns.Add("Codice fornitore", typeof(String));
             dataTable.Columns.Add("Descrizione fornitore", typeof(String));
-            dataTable.Columns.Add("Lastre assegnate", typeof(Int32));
+            dataTable.Columns.Add("Lastre già impegnate su altre commesse", typeof(Int32));
             BindingSource source = new BindingSource();
             source.DataSource = dataTable;
             dataGridView1.DataSource = source;
@@ -132,7 +132,7 @@ namespace Target2021
                 dataTable.Rows[nriga]["Descrizione materia prima"] = descrizione;
                 dataTable.Rows[nriga]["Codice fornitore"] = cod_for;
                 dataTable.Rows[nriga]["Descrizione fornitore"] = des_for;
-                dataTable.Rows[nriga]["Lastre assegnate"] = Impegnati;
+                dataTable.Rows[nriga]["Lastre già impegnate su altre commesse"] = Impegnati;
                 PezziRichiesti = Convert.ToInt32(riga.Cells[1].Value);
                 //if (giacenza < PezziRichiesti)
                 int mancanti = PezziRichiesti - giacenza - LiberiOrdinati;
@@ -163,7 +163,7 @@ namespace Target2021
             dataTable.Columns.Remove("Descrizione materia prima");
             dataTable.Columns.Remove("Codice fornitore");
             dataTable.Columns.Remove("Descrizione fornitore");
-            dataTable.Columns.Remove("Lastre assegnate");
+            dataTable.Columns.Remove("Lastre già impegnate su altre commesse");
             dataTable.Clear();
             richTextBox1.Text = "";
             inserimento_iniziale();

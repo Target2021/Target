@@ -785,7 +785,7 @@ namespace Target2021
                 NrPezziAStampo = 1;
             }
             conn.Close();
-            if (AbbinamentoStampo == 0)
+            if (true) //(AbbinamentoStampo == 0)
             { 
                 int NrPezziRichiesti, Lastre = 0;
                 NrPezziRichiesti = RecuperaNrPezzi(NrOrd);
@@ -799,24 +799,24 @@ namespace Target2021
                 }
                 return Lastre;
             }
-            else
-            {
-                int NrPezziRichiesti, Lastre = 0, PercLastra;
-                double percentuale;
-                NrPezziRichiesti = RecuperaNrPezzi(NrOrd);
-                PercLastra = RecuperaPercentualeLastra(codart);
-                try
-                {
-                    percentuale = (double)PercLastra / 100;
-                    Lastre = (int)Math.Ceiling(NrPezziRichiesti * percentuale);
-                    Lastre = (int)Math.Ceiling((double)(Lastre / NrPezziAStampo));
-                }
-                catch (DivideByZeroException e)
-                {
-                    MessageBox.Show(e.Message);
-                }
-                return Lastre;
-            }
+            //else
+            //{
+            //    int NrPezziRichiesti, Lastre = 0, PercLastra;
+            //    double percentuale;
+            //    NrPezziRichiesti = RecuperaNrPezzi(NrOrd);
+            //    PercLastra = RecuperaPercentualeLastra(codart);
+            //    try
+            //    {
+            //        percentuale = (double)PercLastra / 100;
+            //        Lastre = (int)Math.Ceiling(NrPezziRichiesti * percentuale);
+            //        Lastre = (int)Math.Ceiling((double)(Lastre / NrPezziAStampo));
+            //    }
+            //    catch (DivideByZeroException e)
+            //    {
+            //        MessageBox.Show(e.Message);
+            //    }
+            //    return Lastre;
+            //}
         }
 
         private int RecuperaAbbinamentoStampo(string codart)

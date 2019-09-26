@@ -553,5 +553,12 @@ namespace Target2021
             comme.MdiParent = this;
             comme.Show();
         }
+
+        private void mascheraStampaggioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CalendarPianificazioneStampaggio dettaglio = new CalendarPianificazioneStampaggio();
+            dettaglio.MdiParent = this;
+            dettaglio.Show();
+        }
     }
 }

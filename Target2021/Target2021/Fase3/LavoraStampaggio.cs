@@ -326,16 +326,20 @@ namespace Target2021
             button6.Visible = true;
             button7.Visible = true;
             button8.Visible = true;
-            int PzDaLavorare = 0, PzLavorati = 0, PzResidui;
-            try
-            {
-                PzDaLavorare = Convert.ToInt32(nrPezziDaLavorareTextBox.Text);
-                PzLavorati = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
-            }
-            catch
-            { }
-            PzResidui = PzDaLavorare - PzLavorati;
+            int PzDaLavorare = 0, PzLavorati = 0, PzResidui=0;
             stato = Convert.ToInt32(statoTextBox.Text);
+            if (stato!=10)
+            {
+                try
+                {
+                    PzDaLavorare = Convert.ToInt32(nrPezziDaLavorareTextBox.Text);
+                    PzLavorati = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+                }
+                catch
+                { }
+                PzResidui = PzDaLavorare - PzLavorati;
+            }
+
             if (PzResidui > 0 && stato!=10)
             {
                 DialogResult dialogResult = MessageBox.Show("Stai chiudendo la fase di stampaggio senza aver stampato tutti i pezzi richiesti! Sei sicuro di voler procedere?", "Sei sicuro?", MessageBoxButtons.YesNo);
@@ -527,14 +531,21 @@ namespace Target2021
 
         private void RiportaPezziStampati(int id)
         {
-            int PezziCorretti, PezziScartati;
+            int PezziCorretti=0, PezziScartati=0;
             string CodArtDopoStampo;
             // Copiare da Fase1
             DataRow riga;
             DataTable TabellaCommesse = target2021DataSet.Tables["Commesse"];
             riga = TabellaCommesse.Rows.Find(id-1);
-            PezziCorretti = Convert.ToInt32(riga["NrPezziCorretti"]);
-            PezziScartati = Convert.ToInt32(riga["NrPezziScartati"]);
+            try
+            {
+                PezziCorretti = Convert.ToInt32(riga["NrPezziCorretti"]);
+                PezziScartati = Convert.ToInt32(riga["NrPezziScartati"]);
+            }
+            catch
+            {
+                MessageBox.Show("Errore nel recupero dei pezzi scartati");
+            }
             CodArtDopoStampo = riga["CodArtiDopoStampo"].ToString();
             // Copiare in Fase2
             DataRow riga1;
@@ -650,23 +661,30 @@ namespace Target2021
 
         private void AggiornaGiacenzeC(int q, string Cod)
         {
-            int numero;
-            string query2;
+            int numero, numeroDisponibili;
+            string query1, query2, query3, query4;
             DateTime ora;
-            SqlCommand comando2;
+            SqlCommand comando1, comando2, comando3, comando4;
             SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
             conn.Open();
-            string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
-            SqlCommand comando1 = new SqlCommand(query1, conn);
-            try
+            // - Del semilavorato aggiorna solo la Giacenza complessiva. Serve aggiornare anche quella disponibile. FATTO - Da Testare
+            query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
+            query3 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
+            comando1 = new SqlCommand(query1, conn);
+            comando3 = new SqlCommand(query3, conn); try
             {
                 numero = (int)comando1.ExecuteScalar();
+                numeroDisponibili = (int)comando3.ExecuteScalar();
                 numero = numero + q;
+                numeroDisponibili = numeroDisponibili + q;
                 // update
                 ora = DateTime.Now;
                 query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idSemilavorati='" + Cod + "'";
+                query4 = "UPDATE GiacenzeMagazzini SET GiacenzaDisponibili = " + numeroDisponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idSemilavorati='" + Cod + "'";
                 comando2 = new SqlCommand(query2, conn);
                 comando2.ExecuteNonQuery();
+                comando4 = new SqlCommand(query4, conn);
+                comando4.ExecuteNonQuery();
                 MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString());
             }
             catch
