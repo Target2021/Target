@@ -14,6 +14,10 @@ namespace Target2021.Anagrafiche
 {
     public partial class AnaArticoli : Form
     {
+        int t1 = 0;
+        int t2 = 0;
+        int t3 = 0;
+
         public AnaArticoli()
         {
             InitializeComponent();
@@ -414,6 +418,9 @@ namespace Target2021.Anagrafiche
             int IdFase1, IdFase2, IdFase3, IdFase4;
             string codice = textBox2.Text;
 
+            // Carica i dati corretti in ciascun TAB prima del salvataggio  
+            ScorriTab();
+
             IdFase1 = RecuperaIdFase(codice, 1);
             IdFase2 = RecuperaIdFase(codice, 2);
             IdFase3 = RecuperaIdFase(codice, 3);
@@ -421,11 +428,16 @@ namespace Target2021.Anagrafiche
 
             SalvaGenerale();
             if (IdFase1 >= 0) SalvaTab1(IdFase1);
-            if (IdFase2 >= 0) SalvaTab2(IdFase2);
-            if (IdFase3 >= 0) SalvaTab3(IdFase3);
+            if (IdFase2 >= 0 && t2==1) SalvaTab2(IdFase2);
+            if (IdFase3 >= 0 && t3==1) SalvaTab3(IdFase3);
             //if (IdFase4 >= 0) SalvaTab4(IdFase4);
             SalvaTab4(0);
             MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
+        }
+
+        private void ScorriTab()
+        {
+
         }
 
         private int RecuperaIdFase(string cod, int fase)
@@ -446,10 +458,21 @@ namespace Target2021.Anagrafiche
             DataGridViewRow riga;
             riga = articoli_sempliciDataGridView.CurrentRow;
             try {
-            string codice = articoli_sempliciDataGridView.Rows[riga.Index].Cells[0].Value.ToString();
-            AggiornaTab(codice);
+                string codice = articoli_sempliciDataGridView.Rows[riga.Index].Cells[0].Value.ToString();
+                AggiornaTab(codice);
             }
-            catch { }
+            catch
+            {
+                MessageBox.Show("Errore recupero codice articolo");
+            }
+            if (tabControl1.SelectedTab.Name == "tabPage2")
+            {
+                t2 = 1;
+            }
+            if (tabControl1.SelectedTab.Name == "tabPage3")
+            {
+                t3 = 1;
+            }
         }
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
@@ -1065,6 +1088,13 @@ namespace Target2021.Anagrafiche
             }
             connessione.Close();
             return NrUltProgressivo;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            int t1 = 0;
+            int t2 = 0;
+            int t3 = 0;
         }
     }
 }

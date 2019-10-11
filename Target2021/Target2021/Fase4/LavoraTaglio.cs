@@ -454,6 +454,31 @@ namespace Target2021
             }
         }
 
+        private void AggiornaGiacenzaSemilavorato(object sender, EventArgs e)
+        {
+            string CodSemilavorato;
+            CodSemilavorato = codArtiDopoStampoTextBox.Text;
+            if (CodSemilavorato.Length>8)
+            {
+                int pezzi = 0;
+                pezzi = RecuperaSemilavoratiDisponibili(CodSemilavorato);
+                textBox5.Text = pezzi.ToString();
+            }
+            else
+            {
+                textBox5.Text = "Errore recupero giacenza";
+            }
+
+        }
+
+        private int RecuperaSemilavoratiDisponibili(string Cod)
+        {
+            int risultato;
+            string filtro = "idSemilavorati = '" + Cod + "'";
+            risultato = (int)target2021DataSet.GiacenzeMagazzini.Compute("MAX(GiacenzaDisponibili)", filtro);
+            return risultato;
+        }
+
         private void ChiudiFase()
         {
             statoTextBox.Text = "2";

@@ -52,6 +52,7 @@
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label progrTaglio1Label;
             System.Windows.Forms.Label progrTaglio2Label;
+            System.Windows.Forms.Label label7;
             this.target2021DataSet = new Target2021.Target2021DataSet();
             this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
@@ -102,6 +103,7 @@
             this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
             this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             codCommessaLabel = new System.Windows.Forms.Label();
             dataCommessaLabel = new System.Windows.Forms.Label();
             iDClienteLabel = new System.Windows.Forms.Label();
@@ -125,6 +127,7 @@
             label1 = new System.Windows.Forms.Label();
             progrTaglio1Label = new System.Windows.Forms.Label();
             progrTaglio2Label = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -189,7 +192,7 @@
             // 
             codArticoloLabel.AutoSize = true;
             codArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codArticoloLabel.Location = new System.Drawing.Point(16, 242);
+            codArticoloLabel.Location = new System.Drawing.Point(16, 278);
             codArticoloLabel.Name = "codArticoloLabel";
             codArticoloLabel.Size = new System.Drawing.Size(84, 16);
             codArticoloLabel.TabIndex = 19;
@@ -199,7 +202,7 @@
             // 
             descrArticoloLabel.AutoSize = true;
             descrArticoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descrArticoloLabel.Location = new System.Drawing.Point(16, 270);
+            descrArticoloLabel.Location = new System.Drawing.Point(16, 306);
             descrArticoloLabel.Name = "descrArticoloLabel";
             descrArticoloLabel.Size = new System.Drawing.Size(95, 16);
             descrArticoloLabel.TabIndex = 21;
@@ -209,7 +212,7 @@
             // 
             noteLabel.AutoSize = true;
             noteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            noteLabel.Location = new System.Drawing.Point(16, 320);
+            noteLabel.Location = new System.Drawing.Point(16, 356);
             noteLabel.Name = "noteLabel";
             noteLabel.Size = new System.Drawing.Size(40, 16);
             noteLabel.TabIndex = 23;
@@ -398,6 +401,7 @@
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ddtTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -415,6 +419,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
             this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
@@ -502,7 +507,7 @@
             this.codArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArticolo", true));
             this.codArticoloTextBox.Enabled = false;
             this.codArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codArticoloTextBox.Location = new System.Drawing.Point(148, 239);
+            this.codArticoloTextBox.Location = new System.Drawing.Point(148, 275);
             this.codArticoloTextBox.Name = "codArticoloTextBox";
             this.codArticoloTextBox.Size = new System.Drawing.Size(186, 22);
             this.codArticoloTextBox.TabIndex = 20;
@@ -513,7 +518,7 @@
             this.descrArticoloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "DescrArticolo", true));
             this.descrArticoloTextBox.Enabled = false;
             this.descrArticoloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descrArticoloTextBox.Location = new System.Drawing.Point(148, 267);
+            this.descrArticoloTextBox.Location = new System.Drawing.Point(148, 303);
             this.descrArticoloTextBox.Multiline = true;
             this.descrArticoloTextBox.Name = "descrArticoloTextBox";
             this.descrArticoloTextBox.Size = new System.Drawing.Size(186, 54);
@@ -524,10 +529,10 @@
             this.noteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "Note", true));
             this.noteTextBox.Enabled = false;
             this.noteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteTextBox.Location = new System.Drawing.Point(148, 327);
+            this.noteTextBox.Location = new System.Drawing.Point(148, 363);
             this.noteTextBox.Multiline = true;
             this.noteTextBox.Name = "noteTextBox";
-            this.noteTextBox.Size = new System.Drawing.Size(186, 132);
+            this.noteTextBox.Size = new System.Drawing.Size(186, 97);
             this.noteTextBox.TabIndex = 24;
             // 
             // fotoTextBox
@@ -550,6 +555,7 @@
             this.codArtiDopoStampoTextBox.Size = new System.Drawing.Size(186, 22);
             this.codArtiDopoStampoTextBox.TabIndex = 36;
             this.codArtiDopoStampoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.codArtiDopoStampoTextBox.TextChanged += new System.EventHandler(this.AggiornaGiacenzaSemilavorato);
             // 
             // iDMachTaglioTextBox
             // 
@@ -867,6 +873,27 @@
             // 
             this.giacenzeMagazziniTableAdapter.ClearBeforeFill = true;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.Location = new System.Drawing.Point(16, 245);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(147, 16);
+            label7.TabIndex = 119;
+            label7.Text = "Giacenza a magazzino:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
+            this.textBox5.Enabled = false;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(169, 242);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(165, 22);
+            this.textBox5.TabIndex = 120;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // LavoraTaglio_cs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -874,6 +901,8 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1148, 485);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -1001,5 +1030,6 @@
         private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
         private System.Windows.Forms.BindingSource giacenzeMagazziniBindingSource;
         private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

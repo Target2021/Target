@@ -374,9 +374,7 @@ namespace Target2021
                 //MessageBox.Show("Chiudere la supercommessa e tutte le commesse sottostanti");
                 PezziSottocommesse ps = new PezziSottocommesse(codCommessaTextBox.Text);
                 ps.ShowDialog();
-                // Chiudi riga SC (Stato=2) (TipoCommessa=2) stampaggio supercommessa
-                RigaStampaStato2();
-                //MessageBox.Show("Fine RigaStampaStato2");
+
                 // Chiudi riga (Stato=2) stampaggio tutte sottocommesse
                 RigaStampaStato2Sottocommesse(nrCommessaTextBox.Text);
                 //MessageBox.Show("RigaStampaStato2Sottocommesse");
@@ -390,6 +388,9 @@ namespace Target2021
                 // Scarico lastre materia prima
                 ScaricoLastre();
                 //MessageBox.Show("ScaricoLastre");
+                // Chiudi riga SC (Stato=2) (TipoCommessa=2) stampaggio supercommessa
+                RigaStampaStato2();
+                //MessageBox.Show("Fine RigaStampaStato2");
             }
         }
 
