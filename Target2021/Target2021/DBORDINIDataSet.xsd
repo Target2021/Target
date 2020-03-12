@@ -152,8 +152,12 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT data_ordine, numero_ordine, progressivo, codice_articolo, descrizione_articolo, tipo_articolo, data_consegna, unita_misura, mis_1, mis_2, mis_3, mis_4, spessore, numero_pezzi, quantita_evasa, costo_a, costo_b, sconto_cliente, totale_riga_ordine_a, totale_riga_ordine_b, aliquota_iva, nota_dettaglio, Flag_Sele, stato_riga_ordine, sw_scarico_magazzino, tipo_scarico_magazzino, sw_scarico_CL, codice_ingresso_articolo_cl, richieste_cliente, documento_cl, peso, note_anomalie, sw_anomalie, tipo_ordine, descrizione_articolo_2, commessa_cliente, configurazione, dettaglio_lavorazione, sw_urgente, sw_tipo_anagrafica_articolo, ubicazione, sconto_cliente_dbl, fase_lav_macchina_principale, lavorazione_principale FROM dettaglio_ordini_multiriga</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     data_ordine, numero_ordine, progressivo, codice_articolo, descrizione_articolo, tipo_articolo, data_consegna, unita_misura, mis_1, mis_2, mis_3, mis_4, spessore, numero_pezzi, quantita_evasa, costo_a, costo_b, sconto_cliente, totale_riga_ordine_a, totale_riga_ordine_b, aliquota_iva, 
+                  nota_dettaglio, Flag_Sele, stato_riga_ordine, sw_scarico_magazzino, tipo_scarico_magazzino, sw_scarico_CL, codice_ingresso_articolo_cl, richieste_cliente, documento_cl, peso, note_anomalie, sw_anomalie, tipo_ordine, descrizione_articolo_2, commessa_cliente, configurazione, 
+                  dettaglio_lavorazione, sw_urgente, sw_tipo_anagrafica_articolo, ubicazione, sconto_cliente_dbl, fase_lav_macchina_principale, lavorazione_principale
+FROM        dettaglio_ordini_multiriga
+WHERE     (numero_ordine &gt; 20200000)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -349,7 +353,7 @@
   <xs:element name="DBORDINIDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DBORDINIDataSet" msprop:Generator_UserDSName="DBORDINIDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dettaglio_ordini_multiriga" msprop:Generator_TableClassName="dettaglio_ordini_multirigaDataTable" msprop:Generator_TableVarName="tabledettaglio_ordini_multiriga" msprop:Generator_TablePropName="dettaglio_ordini_multiriga" msprop:Generator_RowDeletingName="dettaglio_ordini_multirigaRowDeleting" msprop:Generator_RowChangingName="dettaglio_ordini_multirigaRowChanging" msprop:Generator_RowEvHandlerName="dettaglio_ordini_multirigaRowChangeEventHandler" msprop:Generator_RowDeletedName="dettaglio_ordini_multirigaRowDeleted" msprop:Generator_UserTableName="dettaglio_ordini_multiriga" msprop:Generator_RowChangedName="dettaglio_ordini_multirigaRowChanged" msprop:Generator_RowEvArgName="dettaglio_ordini_multirigaRowChangeEvent" msprop:Generator_RowClassName="dettaglio_ordini_multirigaRow">
+        <xs:element name="dettaglio_ordini_multiriga" msprop:Generator_TableClassName="dettaglio_ordini_multirigaDataTable" msprop:Generator_TableVarName="tabledettaglio_ordini_multiriga" msprop:Generator_RowChangedName="dettaglio_ordini_multirigaRowChanged" msprop:Generator_TablePropName="dettaglio_ordini_multiriga" msprop:Generator_RowDeletingName="dettaglio_ordini_multirigaRowDeleting" msprop:Generator_RowChangingName="dettaglio_ordini_multirigaRowChanging" msprop:Generator_RowEvHandlerName="dettaglio_ordini_multirigaRowChangeEventHandler" msprop:Generator_RowDeletedName="dettaglio_ordini_multirigaRowDeleted" msprop:Generator_RowClassName="dettaglio_ordini_multirigaRow" msprop:Generator_UserTableName="dettaglio_ordini_multiriga" msprop:Generator_RowEvArgName="dettaglio_ordini_multirigaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="data_ordine" msprop:Generator_ColumnVarNameInTable="columndata_ordine" msprop:Generator_ColumnPropNameInRow="data_ordine" msprop:Generator_ColumnPropNameInTable="data_ordineColumn" msprop:Generator_UserColumnName="data_ordine" type="xs:int" />

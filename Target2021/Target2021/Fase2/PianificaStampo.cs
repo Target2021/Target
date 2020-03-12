@@ -302,13 +302,16 @@ namespace Target2021.Fase2
             // Controlla se hai fatto click su una supercommessa
             var hti = commesseDataGridView.HitTest(e.X, e.Y);
             commesseDataGridView.ClearSelection();
-            commesseDataGridView.Rows[hti.RowIndex].Selected = true;
-            if (commesseDataGridView.CurrentRow!=null)
+            if (hti.RowIndex > 0)
             {
-                string CodCom = (commesseDataGridView.SelectedRows[0].Cells[1].Value).ToString();
-                //MessageBox.Show(CodCom);
-                TipoCommessa = CodCom.Substring(0, 2);
-                if (TipoCommessa == "SC") MostraCommesse(CodCom);
+                commesseDataGridView.Rows[hti.RowIndex].Selected = true;
+                if (commesseDataGridView.CurrentRow != null)
+                {
+                    string CodCom = (commesseDataGridView.SelectedRows[0].Cells[1].Value).ToString();
+                    //MessageBox.Show(CodCom);
+                    TipoCommessa = CodCom.Substring(0, 2);
+                    if (TipoCommessa == "SC") MostraCommesse(CodCom);
+                }
             }
         }
 

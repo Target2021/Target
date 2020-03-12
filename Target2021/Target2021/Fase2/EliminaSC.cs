@@ -102,9 +102,13 @@ namespace Target2021.Fase2
         private void superCommessaDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Visualizza tutte le Commesse collegate alla SuperCommessa selezionata
-            IDSC = Convert.ToInt32(superCommessaDataGridView.SelectedRows[0].Cells[0].Value);
-            abbinamentiSuperCommesseBindingSource.Filter = "IdSuperCommessa = "+IDSC.ToString();
-            abbinamentiSuperCommesseDataGridView.ClearSelection();
+            try
+            {
+                IDSC = Convert.ToInt32(superCommessaDataGridView.SelectedRows[0].Cells[0].Value);
+                abbinamentiSuperCommesseBindingSource.Filter = "IdSuperCommessa = "+IDSC.ToString();
+                abbinamentiSuperCommesseDataGridView.ClearSelection();
+            }
+            catch { }
         }
 
         private void superCommessaDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

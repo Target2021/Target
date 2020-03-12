@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Target2021.SelezAna;
@@ -93,7 +94,7 @@ namespace Target2021.Anagrafiche
 
         private void CambiataSelezione(int numero)
         {
-            pulisci();
+            //pulisci();
             int NumeroFasi = 0, lottominimo=0;
             string codice = articoli_sempliciDataGridView.Rows[numero].Cells[0].Value.ToString();
             textBox2.Text = codice;
@@ -171,8 +172,11 @@ namespace Target2021.Anagrafiche
         private void AggiornaTab(string codice)
         {
             Tab1(codice);
+            //Thread.Sleep(200);
             Tab2(codice);
+            //Thread.Sleep(200);
             Tab3(codice);
+            //Thread.Sleep(200);
             Tab4(codice);
         }
 
@@ -223,6 +227,7 @@ namespace Target2021.Anagrafiche
             try
             {
                 string filtro = "codice_articolo='" + codice + "' AND lavorazione=2";
+                //target2021DataSet.Tables["DettArticoli"].upda
                 DataRow[] Fase2 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
                 if (Fase2.Length > 0)
                     comboBox5.Text = "Presente";
@@ -239,8 +244,9 @@ namespace Target2021.Anagrafiche
                 textBox10.Refresh();
                 textBox11.Text = Fase2[0].Field<int>("PercentualeLastra").ToString();
                 textBox11.Refresh();
-                comboBox8.Text = Fase2[0].Field<int>("MacPredefStampo").ToString();
-                comboBox8.Refresh();
+                //comboBox8.Text = Fase2[0].Field<int>("MacPredefStampo").ToString();
+                //comboBox8.Refresh();
+                label25.Text= Fase2[0].Field<int>("MacPredefStampo").ToString();
                 try
                 {
                     textBox12.Text = Fase2[0].Field<int>("AbbinamentoStampo").ToString();
@@ -282,14 +288,14 @@ namespace Target2021.Anagrafiche
             catch
             {
                 //comboBox5.Text = "0";
-                comboBox6.Text = "AAA.01.001";
-                comboBox7.Text = "AAA";
-                comboBox8.Text = "0";
-                //label13.Text = "";
-                label15.Text = "";
-                label18.Text = "";
-                label25.Text = "";
-                label26.Text = "";
+                //comboBox6.Text = "AAA.01.001";
+                //comboBox7.Text = "AAA";
+                //comboBox8.Text = "0";
+                ////label13.Text = "";
+                //label15.Text = "";
+                //label18.Text = "";
+                //label25.Text = "";
+                //label26.Text = "";
             }
         }
 
@@ -312,8 +318,9 @@ namespace Target2021.Anagrafiche
                 textBox15.Refresh();
                 textBox16.Text = Fase3[0].Field<string>("CodiceOutput");
                 textBox16.Refresh();
-                comboBox9.Text = Fase3[0].Field<int>("MacPredefTaglio").ToString();
-                comboBox9.Refresh();
+                //comboBox9.Text = Fase3[0].Field<int>("MacPredefTaglio").ToString();
+                //comboBox9.Refresh();
+                label26.Text = Fase3[0].Field<int>("MacPredefTaglio").ToString();
                 textBox13.Text = Fase3[0].Field<string>("ProgrTaglio1").Replace(" ", string.Empty); 
                 textBox13.Refresh();
                 textBox14.Text = Fase3[0].Field<string>("ProgrTaglio2").Replace(" ", string.Empty);
@@ -328,13 +335,13 @@ namespace Target2021.Anagrafiche
             }
             catch
             {
-                comboBox9.Text = "0";
-                comboBox10.Text = "AAA";
-                comboBox11.Text = "AAA.02.001";
-                //comboBox12.Text = "0";
-                label26.Text = "";
-                label32.Text = "";
-                label34.Text = "";
+                //comboBox9.Text = "0";
+                //comboBox10.Text = "AAA";
+                //comboBox11.Text = "AAA.02.001";
+                ////comboBox12.Text = "0";
+                //label26.Text = "";
+                //label32.Text = "";
+                //label34.Text = "";
                 //label37.Text = "";
             }
         }
@@ -391,8 +398,8 @@ namespace Target2021.Anagrafiche
                 //string filtro = "IdStampa='" + comboBox8.SelectedValue + "'";
                 //DataRow[] MPredef = target2021DataSet.Tables["MacchineStampo"].Select(filtro);
                 //label25.Text = MPredef[0].Field<String>("Descrizione");
-                label25.Text = comboBox8.Text;
-                SelectNextControl(ActiveControl, true, true, true, true);
+                label25.Text = comboBox8.SelectedValue.ToString();
+                //SelectNextControl(ActiveControl, true, true, true, true);
             }
             catch { }
         }
@@ -510,8 +517,8 @@ namespace Target2021.Anagrafiche
                 //string filtro = "IDTaglio='" + comboBox9.SelectedValue + "'";
                 //DataRow[] MPredef = target2021DataSet.Tables["MacchineTaglio"].Select(filtro);
                 //label26.Text = MPredef[0].Field<String>("Descrizione");
-                label26.Text = comboBox9.Text;
-                SelectNextControl(ActiveControl, true, true, true, true);
+                label26.Text = comboBox9.SelectedValue.ToString();
+                //SelectNextControl(ActiveControl, true, true, true, true);
             }
             catch (Exception ex) { //MessageBox.Show(ex.Message); 
             }
@@ -644,7 +651,7 @@ namespace Target2021.Anagrafiche
 
             codice = textBox2.Text.Trim();
             ProgrStamp = textBox22.Text.Trim();
-            MachPred = Convert.ToInt32(comboBox8.SelectedValue);
+            MachPred = Convert.ToInt32(label25.Text);
             CodStampo = comboBox6.Text.Trim();
             DescrStampo = label15.Text.Trim();
             CodForn = comboBox7.Text.Trim();
@@ -719,7 +726,7 @@ namespace Target2021.Anagrafiche
             int MachP;
             string CodDima, DescDim, CodIn, CodOut, CodForn, Prog1, Prog2;
 
-            MachP = Convert.ToInt32(comboBox9.SelectedValue);
+            MachP = Convert.ToInt32(label26.Text);
             CodDima = comboBox11.Text;
             DescDim = label34.Text;
             CodForn = comboBox10.Text;

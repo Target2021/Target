@@ -163,4 +163,7 @@
   <data name="ConnessioneAccessDDT" xml:space="preserve">
     <value>Provider=Microsoft.ace.OLEDB.12.0;Data Source=Y:\dbddt.mdb</value>
   </data>
+  <data name="CString" xml:space="preserve">
+    <value>Data Source=DESKTOP-CSQ69NN\SQLEXPRESS;Initial Catalog=Target2021;Integrated Security=True</value>
+  </data>
 </root>

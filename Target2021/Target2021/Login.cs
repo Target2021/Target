@@ -25,7 +25,8 @@ namespace Target2021
             {
                 string stringaconnessione = Properties.Resources.StringaConnessione;
                 SqlConnection con = new SqlConnection(stringaconnessione);
-                string query = "SELECT * FROM Utenti WHERE Nome ='" + textBox1.Text + "' AND Password='" + textBox2.Text + "'";
+                NomeUtente = comboBox1.SelectedValue.ToString();
+                string query = "SELECT * FROM Utenti WHERE Nome ='" + NomeUtente + "' AND Password='" + textBox2.Text + "'";
                 SqlCommand sqlCommand = new SqlCommand(query, con);
                 con.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
@@ -33,8 +34,9 @@ namespace Target2021
                 sqlDataAdapter.Fill(dt);
                 con.Close();
                 if (dt.Rows.Count == 1)
-                {            
-                    NomeUtente = textBox1.Text;
+                {
+                    // NomeUtente = textBox1.Text;
+                    //  NomeUtente = comboBox1.SelectedText;
                     livello =Convert .ToInt32(dt.Rows[0][3]);
                     this.Close();
                 }
@@ -59,6 +61,8 @@ namespace Target2021
 
         private void Login_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Utenti'. È possibile spostarla o rimuoverla se necessario.
+            this.utentiTableAdapter.Fill(this.target2021DataSet.Utenti);
 
         }
 

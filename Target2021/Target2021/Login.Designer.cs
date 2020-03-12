@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.utentiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.utentiTableAdapter = new Target2021.Target2021DataSetTableAdapters.UtentiTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utentiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -49,18 +55,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(157, 7);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 28);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "flavio";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,7 +64,6 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(201, 28);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "fp";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.UseSystemPasswordChar = true;
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
@@ -110,23 +103,51 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.utentiBindingSource;
+            this.comboBox1.DisplayMember = "Nome";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(157, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(201, 32);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.ValueMember = "Nome";
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // utentiBindingSource
+            // 
+            this.utentiBindingSource.DataMember = "Utenti";
+            this.utentiBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // utentiTableAdapter
+            // 
+            this.utentiTableAdapter.ClearBeforeFill = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(642, 435);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utentiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,10 +156,13 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private Target2021DataSet target2021DataSet;
+        private System.Windows.Forms.BindingSource utentiBindingSource;
+        private Target2021DataSetTableAdapters.UtentiTableAdapter utentiTableAdapter;
     }
 }

@@ -33,7 +33,7 @@ namespace Target2021
         private void aggiorna()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT taglio.CodCommessa AS Codice, taglio.NrCommessa AS Numero, taglio.DataCommessa AS Data, taglio.IDCliente, taglio.DescrArticolo, taglio.IDMachTaglio, macchina.Descrizione AS Macchinario, taglio.IDDima " +
+            string query = "SELECT taglio.CodCommessa AS Codice, taglio.NrCommessa AS Numero, taglio.DataCommessa AS Data, taglio.IDCliente AS Cliente, taglio.DescrArticolo AS Articolo, taglio.IDMachTaglio AS Macchina, macchina.Descrizione AS Macchinario, taglio.IDDima AS Dima, taglio.NrPezziDaLavorare AS Pezzi " +
                 "FROM Commesse AS taglio " +
                 "INNER JOIN Commesse AS stampo " +
                 "ON taglio.NrCommessa = stampo.NrCommessa " +

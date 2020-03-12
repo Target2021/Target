@@ -375,6 +375,7 @@ namespace Target2021
                 PezziSottocommesse ps = new PezziSottocommesse(codCommessaTextBox.Text);
                 ps.ShowDialog();
 
+                //MessageBox.Show("IDCOMMEESSAA:" +ps.IDCommesse);
                 // Chiudi riga (Stato=2) stampaggio tutte sottocommesse
                 RigaStampaStato2Sottocommesse(nrCommessaTextBox.Text);
                 //MessageBox.Show("RigaStampaStato2Sottocommesse");
@@ -390,6 +391,8 @@ namespace Target2021
                 //MessageBox.Show("ScaricoLastre");
                 // Chiudi riga SC (Stato=2) (TipoCommessa=2) stampaggio supercommessa
                 RigaStampaStato2();
+
+                //ps.Close();
                 //MessageBox.Show("Fine RigaStampaStato2");
             }
         }
@@ -404,6 +407,7 @@ namespace Target2021
 
         private void RigaStampaStato2Sottocommesse(string IDCom)
         {
+            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             // Chiudi riga (Stato=2) stampaggio (TipoCommessa=2) tutte sottocommesse
             int[] IDSottocommesse = new int[30];
             int i = 0, j, IdS;
@@ -536,12 +540,14 @@ namespace Target2021
             string CodArtDopoStampo;
             // Copiare da Fase1
             DataRow riga;
+            MessageBox.Show("ID Commessa :" + id);
             DataTable TabellaCommesse = target2021DataSet.Tables["Commesse"];
             riga = TabellaCommesse.Rows.Find(id-1);
             try
             {
                 PezziCorretti = Convert.ToInt32(riga["NrPezziCorretti"]);
                 PezziScartati = Convert.ToInt32(riga["NrPezziScartati"]);
+                //PezziCorretti = riga.;
             }
             catch
             {
@@ -740,11 +746,12 @@ namespace Target2021
         private void GiacenzaLastre()
         {
             int qta = Convert.ToInt32(nrLastreUtilizzateTextBox.Text);  //textBox4.Text);
+            int PezzidaLavorare = Convert.ToInt32(nrPezziDaLavorareTextBox.Text);
             string CodArt = iDMateriaPrimaTextBox.Text;
-            AggiornaGiacenzeS(qta, CodArt);
+            AggiornaGiacenzeS(qta, CodArt, PezzidaLavorare);
         }
 
-        private void AggiornaGiacenzeS(int q, string Cod)
+        private void AggiornaGiacenzeS(int q, string Cod, int DaLavorare)
         {
             int numero, impegnati, ImpegnataMateriaPrima, disponibili;
             string query2;
@@ -765,8 +772,10 @@ namespace Target2021
                     comando2 = new SqlCommand(query2, conn);
                     impegnati = (int)comando2.ExecuteScalar();
                     numero = numero - q;
-                    impegnati = impegnati - ImpegnataMateriaPrima;
-                    disponibili = disponibili + ImpegnataMateriaPrima - q;
+                    // impegnati = impegnati - ImpegnataMateriaPrima;   versione precedente
+                    impegnati = impegnati - q + (q-DaLavorare);  // versione 10 marzo 2020
+                    // disponibili = disponibili + ImpegnataMateriaPrima - q;    Versione precedente
+                    disponibili = disponibili - (q-DaLavorare);  // versione 10 marzo 2020
                     // update
                     ora = DateTime.Now;
                     query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaImpegnati = " + impegnati.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";

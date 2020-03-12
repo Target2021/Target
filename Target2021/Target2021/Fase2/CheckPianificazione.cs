@@ -287,7 +287,7 @@ namespace Target2021
             com.IDMateriaPrima = textBox2.Text;
             com.NrLastreRichieste = Convert.ToInt32(textBox4.Text);
             com.Stato = stato;
-            com.ImpegnataMatPrima = Convert.ToInt32(textBox4.Text);
+            com.ImpegnataMatPrima = 0; // prima: Convert.ToInt32(textBox4.Text); adesso: impegnato sempre 0 in partenza
             com.ProgStampa =textBox6.Text;   
             InserisciCommessa(com);
         }

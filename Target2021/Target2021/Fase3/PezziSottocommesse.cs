@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,9 @@ namespace Target2021.Fase3
     public partial class PezziSottocommesse : Form
     {
         private string Cod;
+
+        public List<Int64> IDCommesse= new List<Int64>();
+
 
         public PezziSottocommesse(string C)
         {
@@ -47,11 +51,11 @@ namespace Target2021.Fase3
             catch { return -1; }
         }
 
-        private void Salva()
+        private async Task Salva()
         {
             this.Validate();
             this.commesseBindingSource.EndEdit();
-            commesseTableAdapter.Update(target2021DataSet.Commesse);
+            var result= await Task.Run(()=> commesseTableAdapter.Update(target2021DataSet.Commesse));
             MessageBox.Show("Salvataggio effettuato!");
         }
 
@@ -61,9 +65,12 @@ namespace Target2021.Fase3
             int NrPezziCorretti=0, NrPezziScartati = 0, Corretto = 0;
             foreach (DataGridViewRow row in commesseDataGridView.Rows)
             {
+
+                int IDCommessa = Convert.ToInt32(row.Cells["IDCommessa"].Value);
+
                 try
                 {
-                    NrPezziCorretti = Convert .ToInt32(row.Cells["dataGridViewTextBoxColumn36"].Value);
+                    NrPezziCorretti = Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn36"].Value);
                 }
                 catch
                 {
@@ -79,14 +86,30 @@ namespace Target2021.Fase3
                     NrPezziScartati = -1;
                     Corretto = -1;
                 }
+
+                UpdateRow(IDCommessa, NrPezziCorretti, NrPezziScartati);
             }
 
             if (Corretto == -1) MessageBox.Show("Non tutte le quantità sono state compilate correttamente!");
             else
             {
                 Salva();
-                this.Close();
+                this.Hide();
             }
+        }
+
+        private void UpdateRow(int iDCommessa, int nrPezziCorretti, int nrPezziScartati)
+        {
+            //MessageBox.Show("IDCOMMEESSAA:" + iDCommessa);
+            this.IDCommesse.Add(iDCommessa);
+            //MessageBox.Show("IDCOMMEESSAA:"+ IDCommesse);
+            string sql = " UPDATE dbo.Commesse SET NrPezziCorretti="+nrPezziCorretti+ ", NrPezziScartati="+nrPezziScartati+" WHERE IDCommessa="+iDCommessa+" ";
+            string stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            connessione.Open();
+            SqlCommand cmdSelect = new SqlCommand(sql,connessione );
+            cmdSelect.ExecuteScalar();
+            connessione.Close();
         }
     }
 }

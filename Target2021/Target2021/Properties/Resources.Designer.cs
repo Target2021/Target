@@ -108,6 +108,15 @@ namespace Target2021.Properties {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Data Source=DESKTOP-CSQ69NN\SQLEXPRESS;Initial Catalog=Target2021;Integrated Security=True.
+        /// </summary>
+        internal static string CString {
+            get {
+                return ResourceManager.GetString("CString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap elenco_iscritti_new {

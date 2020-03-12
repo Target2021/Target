@@ -3011,7 +3011,11 @@ namespace Target2021.DBORDINIDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT data_ordine, numero_ordine, progressivo, codice_articolo, descrizione_articolo, tipo_articolo, data_consegna, unita_misura, mis_1, mis_2, mis_3, mis_4, spessore, numero_pezzi, quantita_evasa, costo_a, costo_b, sconto_cliente, totale_riga_ordine_a, totale_riga_ordine_b, aliquota_iva, nota_dettaglio, Flag_Sele, stato_riga_ordine, sw_scarico_magazzino, tipo_scarico_magazzino, sw_scarico_CL, codice_ingresso_articolo_cl, richieste_cliente, documento_cl, peso, note_anomalie, sw_anomalie, tipo_ordine, descrizione_articolo_2, commessa_cliente, configurazione, dettaglio_lavorazione, sw_urgente, sw_tipo_anagrafica_articolo, ubicazione, sconto_cliente_dbl, fase_lav_macchina_principale, lavorazione_principale FROM dettaglio_ordini_multiriga";
+            this._commandCollection[0].CommandText = @"SELECT     data_ordine, numero_ordine, progressivo, codice_articolo, descrizione_articolo, tipo_articolo, data_consegna, unita_misura, mis_1, mis_2, mis_3, mis_4, spessore, numero_pezzi, quantita_evasa, costo_a, costo_b, sconto_cliente, totale_riga_ordine_a, totale_riga_ordine_b, aliquota_iva, 
+                  nota_dettaglio, Flag_Sele, stato_riga_ordine, sw_scarico_magazzino, tipo_scarico_magazzino, sw_scarico_CL, codice_ingresso_articolo_cl, richieste_cliente, documento_cl, peso, note_anomalie, sw_anomalie, tipo_ordine, descrizione_articolo_2, commessa_cliente, configurazione, 
+                  dettaglio_lavorazione, sw_urgente, sw_tipo_anagrafica_articolo, ubicazione, sconto_cliente_dbl, fase_lav_macchina_principale, lavorazione_principale
+FROM        dettaglio_ordini_multiriga
+WHERE     (numero_ordine > 20200000)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

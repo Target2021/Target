@@ -11,6 +11,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Integration;
+using System.Windows.Forms;
+using System.IO;
+using System.Data.SqlClient;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Target2021
 {
@@ -26,6 +32,7 @@ namespace Target2021
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
         {
+            //syncro();   <<-- Flavio: Commentata questa riga per non syncronizzare le commesse
             this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
@@ -33,7 +40,70 @@ namespace Target2021
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             //carica();
+            AggiornaComboBox();
             aggiornaVisualizzazione(comboBox1.Text);
+        }
+
+        private void AggiornaComboBox()
+        {
+            string anno;
+            anno= DateTime.Now.Year.ToString();
+            comboBox1.Text = anno;
+        }
+
+        private void syncro()
+        {
+            // \\192.168.1.203\Pubblica\CopiaAccess.exe
+            try
+            {
+                //Process.Start(@"\\192.168.1.203\Pubblica\CopiaAccess.exe");
+                Avvia();
+            }
+            catch
+            {
+                MessageBox.Show("Errore aggiornamento archivi!");
+            }
+            //Thread.Sleep(6000);
+        }
+
+        private void Avvia()
+        {
+            //Process p = new Process();
+            //p.StartInfo.UseShellExecute = false;
+            //p.StartInfo.RedirectStandardOutput = true;
+            //p.StartInfo.RedirectStandardError = true;
+            //p.StartInfo.RedirectStandardInput = true;
+            //p.StartInfo.FileName = @"C:\temp\PsTools\PsExec.exe";
+            //p.StartInfo.Arguments = @"\\DESKTOP-CSQ69NN -u Admin -p Barilla23 -i C:\Pubblica\CopiaAccess.exe";
+            //p.Start();
+            //string output = p.StandardOutput.ReadToEnd();
+            //MessageBox.Show(output);
+            //string errormessage = p.StandardError.ReadToEnd();
+            //MessageBox.Show(errormessage);
+            //p.WaitForExit();
+
+            //System.Diagnostics.Process process = new System.Diagnostics.Process();
+            //System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            //startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal;
+            //startInfo.FileName = @"C:\temp\PsTools\PsExec.exe"; 
+            //startInfo.Arguments = @"\\DESKTOP-CSQ69NN -u Admin -p Barilla23 -i C:\Pubblica\CopiaAccess.exe";
+            //process.StartInfo = startInfo;
+            //process.Start();
+            //string output = process.StandardOutput.ReadToEnd();
+            //MessageBox.Show(output);
+            //string errormessage = process.StandardError.ReadToEnd();
+            //MessageBox.Show(errormessage);
+            //process.WaitForExit();
+
+            ProcessStartInfo info = new ProcessStartInfo("C:\\temp\\PsTools");
+            info.FileName = @"C:\temp\PsTools\psexec.exe";
+            info.Arguments = @"\\DESKTOP-CSQ69NN -u Admin -p Barilla23 -i C:\Pubblica\CopiaAccess.exe";
+            info.RedirectStandardOutput = true;
+            info.UseShellExecute = false;
+            Process p = Process.Start(info);
+            p.WaitForExit();
+            //string output = p.StandardOutput.ReadToEnd();
+            //MessageBox.Show(output);
         }
 
         private void aggiornaVisualizzazione(string anno)
@@ -151,6 +221,7 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            syncro();
             aggiorna();
         }
 
@@ -540,8 +611,12 @@ namespace Target2021
         {
             int risultato;
             string filtro = "codice_articolo = '" + ca + "'";
-            risultato=(int) target2021DataSet.DettArticoli.Compute("MAX(MacPredefStampo)", filtro);
-            return risultato; ;
+            try
+            {
+                risultato = (int)target2021DataSet.DettArticoli.Compute("MAX(MacPredefStampo)", filtro);
+            }
+            catch { risultato = 0; }
+            return risultato; 
         }
 
         private string RecuperaCodiceArticoloDopoStampo(string Cod)
@@ -580,36 +655,56 @@ namespace Target2021
             sql = "SELECT codice_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine="+numord.ToString()+" AND data_ordine>"+data;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
-            CodArticolo = comando.ExecuteScalar().ToString();
+            try
+            {
+                CodArticolo = comando.ExecuteScalar().ToString();
+            }
+            catch (NullReferenceException ex) {
+
+                CodArticolo = null;
+
+            }
+
             connessione.Close();
             return CodArticolo;
         }
 
         private string RecuperaDescrizioneArticolo(int numord)
         {
-            string stringaconnessione, sql, DesArticolo;
-            stringaconnessione = Properties.Resources.StringaConnessione;
-            SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT descrizione_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
-            SqlCommand comando = new SqlCommand(sql, connessione);
-            connessione.Open();
-            DesArticolo = comando.ExecuteScalar().ToString();
-            connessione.Close();
-            return DesArticolo;
+            if (numord != 0)
+            {
+                string stringaconnessione, sql, DesArticolo="";
+                stringaconnessione = Properties.Resources.StringaConnessione;
+                SqlConnection connessione = new SqlConnection(stringaconnessione);
+                sql = "SELECT descrizione_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
+                SqlCommand comando = new SqlCommand(sql, connessione);
+                connessione.Open();
+                object result= comando.ExecuteScalar();
+                if (result != null) {
+                    DesArticolo = result.ToString();
+                }
+                connessione.Close();
+                return DesArticolo;
+            }
+            return "0";
         }
 
         private int NumeroFasi(string codart)  // Da rivedere
         {
-            string stringaconnessione, sql;
-            int NumFasi;
-            stringaconnessione = Properties.Resources.StringaConnessione;
-            SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT COUNT(codice_articolo) FROM DettArticoli WHERE codice_articolo ='" + codart.ToString()+"'";
-            SqlCommand comando = new SqlCommand(sql, connessione);
-            connessione.Open();
-            NumFasi = Convert.ToInt32(comando.ExecuteScalar());
-            connessione.Close();
-            return NumFasi;
+            if (codart != null)
+            {
+                string stringaconnessione, sql;
+                int NumFasi;
+                stringaconnessione = Properties.Resources.StringaConnessione;
+                SqlConnection connessione = new SqlConnection(stringaconnessione);
+                sql = "SELECT COUNT(codice_articolo) FROM DettArticoli WHERE codice_articolo ='" + codart.ToString() + "'";
+                SqlCommand comando = new SqlCommand(sql, connessione);
+                connessione.Open();
+                NumFasi = Convert.ToInt32(comando.ExecuteScalar());
+                connessione.Close();
+                return NumFasi;
+            }
+            return 0;
         }
 
         private SqlDataReader ControllaFasi(string codart)
@@ -901,8 +996,12 @@ namespace Target2021
             riga.Data = dataord;
             riga.Articolo = CodiceArt(nord);
             riga.Descrizione = RecuperaDescrizioneArticolo(nord);
-            target2021DataSet.OrdiniImportati.Rows.Add(riga);
-            ordiniImportatiTableAdapter.Update(target2021DataSet.OrdiniImportati);
+            if (riga.Articolo != "0" && !DBNull.Value.Equals(riga.Articolo) )
+            {
+                target2021DataSet.OrdiniImportati.Rows.Add(riga);
+                ordiniImportatiTableAdapter.Update(target2021DataSet.OrdiniImportati);
+            } else MessageBox.Show("Errore durante la fase di importazione ordine n: " + nord);
+            
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -1025,5 +1124,84 @@ namespace Target2021
             target2021DataSet.Commesse.Rows.Add(riga); 
             commesseTableAdapter.Update(target2021DataSet.Commesse);
         }
+
+        private void copia()
+        {
+            try
+            {
+                File.Copy("C:\\Dati\\OriginaliGalart\\DBORDINI.MDB", "C:\\Dati\\CopiaGalart\\DBORDINI.MDB", true);
+                File.Copy("C:\\Dati\\OriginaliGalart\\DBANAG.MDB", "C:\\Dati\\CopiaGalart\\DBANAG.MDB", true);
+                File.Copy("C:\\Dati\\OriginaliGalart\\dbddt.MDB", "C:\\Dati\\CopiaGalart\\dbddt.MDB", true);
+                textBox4.Text = textBox4.Text  + DateTime.Now.ToString("h:mm:ss tt");
+                textBox4.Text = textBox4.Text + DateTime.Now.ToString("h:mm:ss tt") + "File copiati in 'CopiaGalart'" + Environment.NewLine;
+            }
+            catch
+            {
+                MessageBox.Show("Errore nella copia dei file MDB");
+            }
+        }
+
+        private void droppa()
+        {
+            string strcon = Properties.Resources.CString;
+            SqlConnection connessione = new SqlConnection(strcon);
+            string sql = "DROP TABLE IF EXISTS testata_ordini_multiriga";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            comando.ExecuteNonQuery();
+            string sql2 = "DROP TABLE IF EXISTS dettaglio_ordini_multiriga";
+            SqlCommand comando2 = new SqlCommand(sql2, connessione);
+            comando2.ExecuteNonQuery();
+            string sql3 = "DROP TABLE IF EXISTS dettaglio_ddt";
+            SqlCommand comando3 = new SqlCommand(sql3, connessione);
+            comando3.ExecuteNonQuery();
+            connessione.Close();
+            textBox4.Text = textBox4.Text + DateTime.Now.ToString("h:mm:ss tt") + "Tabelle Ordini e DDT eliminate nel database SQL." + Environment.NewLine;
+        }
+
+        private void ricopia()
+        {
+            string pkgLocation;
+            Package pkg;
+            Microsoft.SqlServer.Dts.Runtime.Application app;
+            DTSExecResult pkgResults;
+
+            pkgLocation = "C:\\Dati\\ImportaOrdini.dtsx";
+            app = new Microsoft.SqlServer.Dts.Runtime.Application();
+            pkg = app.LoadPackage(pkgLocation, null);
+            pkgResults = pkg.Execute();
+
+            pkgLocation = "C:\\Dati\\Ddt.dtsx";
+            app = new Microsoft.SqlServer.Dts.Runtime.Application();
+            pkg = app.LoadPackage(pkgLocation, null);
+            pkgResults = pkg.Execute();
+
+            textBox4.Text = textBox4.Text + DateTime.Now.ToString("h:mm:ss tt") + " - Ordini e DDT importati in SQL: " + pkgResults.ToString() + Environment.NewLine;
+            textBox4.Text = textBox4.Text + DateTime.Now.ToString("h:mm:ss tt");
+        }
+
+        private void ReimportaDettagli()
+        {
+            string strcon = Properties.Resources.CString;
+            SqlConnection connessione = new SqlConnection(strcon);
+            string sql2 = "DROP TABLE IF EXISTS dettaglio_ordini_multiriga";
+            SqlCommand comando2 = new SqlCommand(sql2, connessione);
+            connessione.Open();
+            comando2.ExecuteNonQuery();
+            connessione.Close();
+            textBox4.Text = textBox4.Text + DateTime.Now.ToString("h:mm:ss tt") + " - Ri-eliminata tabella ordini multiriga." + Environment.NewLine;
+
+            string pkgLocation;
+            Package pkg;
+            Microsoft.SqlServer.Dts.Runtime.Application app;
+            DTSExecResult pkgResults;
+
+            pkgLocation = "C:\\Dati\\ImportaOrdini1.dtsx";
+            app = new Microsoft.SqlServer.Dts.Runtime.Application();
+            pkg = app.LoadPackage(pkgLocation, null);
+            pkgResults = pkg.Execute();
+            textBox4.Text = textBox4.Text + DateTime.Now.ToString("h:mm:ss tt") + " - Re-importata tabella ordini multiriga solo 2019." + Environment.NewLine;
+        }
+
     }
 }

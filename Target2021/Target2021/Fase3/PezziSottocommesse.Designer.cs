@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -111,6 +111,7 @@
             this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn69 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn70 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCommessa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.superCommessaBindingSource)).BeginInit();
@@ -125,7 +126,7 @@
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(15, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(991, 25);
+            this.label1.Size = new System.Drawing.Size(1193, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Inserimento numero pezzi stampati per ciascuna commessa contenuta nella SuperComm" +
     "essa";
@@ -133,18 +134,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(374, 52);
+            this.label2.Location = new System.Drawing.Point(381, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 20);
+            this.label2.Size = new System.Drawing.Size(238, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Codice SuperCommessa:";
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(569, 49);
+            this.textBox1.Location = new System.Drawing.Point(624, 56);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(77, 26);
+            this.textBox1.Size = new System.Drawing.Size(128, 30);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -180,6 +181,7 @@
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ddtTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -197,6 +199,7 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
             this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
@@ -240,14 +243,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.commesseDataGridView.AutoGenerateColumns = false;
             this.commesseDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.commesseDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.commesseDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.commesseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.commesseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
@@ -315,20 +318,21 @@
             this.dataGridViewTextBoxColumn67,
             this.dataGridViewTextBoxColumn68,
             this.dataGridViewTextBoxColumn69,
-            this.dataGridViewTextBoxColumn70});
+            this.dataGridViewTextBoxColumn70,
+            this.IDCommessa});
             this.commesseDataGridView.DataSource = this.commesseBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.commesseDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.commesseDataGridView.DefaultCellStyle = dataGridViewCellStyle12;
             this.commesseDataGridView.Location = new System.Drawing.Point(0, 103);
             this.commesseDataGridView.Name = "commesseDataGridView";
             this.commesseDataGridView.RowHeadersVisible = false;
-            this.commesseDataGridView.Size = new System.Drawing.Size(1018, 282);
+            this.commesseDataGridView.Size = new System.Drawing.Size(1240, 282);
             this.commesseDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn6
@@ -338,7 +342,7 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Visible = false;
-            this.dataGridViewTextBoxColumn6.Width = 131;
+            this.dataGridViewTextBoxColumn6.Width = 112;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -346,7 +350,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Cod Commessa";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 134;
+            this.dataGridViewTextBoxColumn7.Width = 167;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -362,7 +366,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "Data Commessa";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 140;
+            this.dataGridViewTextBoxColumn9.Width = 171;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -378,7 +382,7 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "ID Cliente";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 96;
+            this.dataGridViewTextBoxColumn11.Width = 116;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -402,7 +406,7 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Nr Pezzi Da Lavorare";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 167;
+            this.dataGridViewTextBoxColumn14.Width = 206;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -410,7 +414,7 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "Cod Articolo";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 110;
+            this.dataGridViewTextBoxColumn15.Width = 136;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -575,20 +579,20 @@
             // dataGridViewTextBoxColumn36
             // 
             this.dataGridViewTextBoxColumn36.DataPropertyName = "NrPezziCorretti";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridViewTextBoxColumn36.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridViewTextBoxColumn36.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn36.HeaderText = "Nr Pezzi Corretti";
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.Width = 135;
+            this.dataGridViewTextBoxColumn36.Width = 166;
             // 
             // dataGridViewTextBoxColumn37
             // 
             this.dataGridViewTextBoxColumn37.DataPropertyName = "NrPezziScartati";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.dataGridViewTextBoxColumn37.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.dataGridViewTextBoxColumn37.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn37.HeaderText = "Nr Pezzi Scartati";
             this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.Width = 138;
+            this.dataGridViewTextBoxColumn37.Width = 169;
             // 
             // dataGridViewTextBoxColumn38
             // 
@@ -862,6 +866,15 @@
             this.dataGridViewTextBoxColumn70.Visible = false;
             this.dataGridViewTextBoxColumn70.Width = 153;
             // 
+            // IDCommessa
+            // 
+            this.IDCommessa.DataPropertyName = "IDCommessa";
+            this.IDCommessa.HeaderText = "IDCommessa";
+            this.IDCommessa.Name = "IDCommessa";
+            this.IDCommessa.ReadOnly = true;
+            this.IDCommessa.Visible = false;
+            this.IDCommessa.Width = 131;
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -875,10 +888,10 @@
             // 
             // PezziSottocommesse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1018, 429);
+            this.ClientSize = new System.Drawing.Size(1240, 429);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.commesseDataGridView);
             this.Controls.Add(this.textBox1);
@@ -980,5 +993,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn68;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn69;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn70;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCommessa;
     }
 }

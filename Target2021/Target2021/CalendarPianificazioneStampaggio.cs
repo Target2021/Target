@@ -27,41 +27,42 @@ namespace Target2021
         {
             this.commesseTableAdapter2.Fill(this.target2021DataSet2.Commesse);
             DayOfWeek dow = DateTime.Now.DayOfWeek;
-
+            oggi = DateTime.Today;
+            DateTime giorno;
             if (dow != DayOfWeek.Monday)
             {
                 if (dow != DayOfWeek.Sunday)
                 {
-                    oggi = new DateTime(DateTime.Now.Year, DateTime.Now.Month, Convert.ToInt32(DateTime.Now.Day) - Convert.ToInt32(DateTime.Now.DayOfWeek) - 1);
+                    giorno = oggi.AddDays(-1 * Convert.ToInt32(dow) - 1); 
                 }
                 else
                 {
-                    oggi = new DateTime(DateTime.Now.Year, DateTime.Now.Month, Convert.ToInt32(DateTime.Now.Day) - 6);
+                    giorno = oggi.AddDays(-6);
                 }
 
             }else
             {
-                oggi = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                giorno = oggi;
             }
 
-            for (int i = 1; i <= 5; i++)
+            for (int i = 0; i <= 5; i++)
             {
-                switch (oggi.DayOfWeek)
+                switch (giorno.DayOfWeek)
                 {
                     case DayOfWeek.Friday:
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND SchedData = @Date";
                         visualizzazione(query, dataGridView5);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND SchedData = @Date";
                         visualizzazione(query, dataGridView6);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND SchedData = @Date";
                         visualizzazione(query, dataGridView11);
                         break;
                     case DayOfWeek.Monday:
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND SchedData = @Date";
                         visualizzazione(query, dataGridView1);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND SchedData = @Date";
                         visualizzazione(query, dataGridView10);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND SchedData= @Date";
                         visualizzazione(query, dataGridView15);
                         break;
                     case DayOfWeek.Saturday:
@@ -69,19 +70,19 @@ namespace Target2021
                     case DayOfWeek.Sunday:
                         break;
                     case DayOfWeek.Thursday:
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND SchedData = @Date";
                         visualizzazione(query, dataGridView4);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND SchedData = @Date";
                         visualizzazione(query, dataGridView7);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND SchedData = @Date";
                         visualizzazione(query, dataGridView12);
                         break;
                     case DayOfWeek.Tuesday:
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND SchedData = @Date";
                         visualizzazione(query, dataGridView2);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND SchedData = @Date";
                         visualizzazione(query, dataGridView9);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND SchedData = @Date";
                         visualizzazione(query, dataGridView14);
                         //DataView CPianifM1 = new DataView(target2021DataSet2.Commesse);
                         //string dateFormat = oggi.ToString("yyyy/MM/dd");
@@ -97,15 +98,15 @@ namespace Target2021
 
                         break;
                     case DayOfWeek.Wednesday:
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 1 AND SchedData = @Date";
                         visualizzazione(query, dataGridView3);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 2 AND SchedData = @Date";
                         visualizzazione(query, dataGridView8);
-                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND CONVERT(SchedData, [Date], 103) = @Date";
+                        query = "select * from Commesse where TipoCommessa = 1 AND Stato = 3 AND SchedMach = 3 AND SchedData = @Date";
                         visualizzazione(query, dataGridView13);
                         break;
                 }
-                oggi = oggi.AddDays(1);
+                giorno = giorno.AddDays(1);
             }
         }
 
@@ -113,7 +114,7 @@ namespace Target2021
         {
             SqlConnection connessione = new SqlConnection(stringa_connessione);
             SqlCommand comando2 = new SqlCommand(query, connessione);
-            comando2.Parameters.Add("@Date", SqlDbType.Date).Value = oggi.Date;
+            comando2.Parameters.Add("@Date", SqlDbType.Date).Value = oggi.Date.ToString("yyyy-MM-dd");
             connessione.Open();
             SqlDataAdapter sqlDataAdap = new SqlDataAdapter(comando2);
             DataTable dtRecord = new DataTable();
