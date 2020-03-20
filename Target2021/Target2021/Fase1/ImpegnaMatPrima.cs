@@ -182,11 +182,15 @@ namespace Target2021.Fase1
             }
             if (evento == 9)
             {
-                IdCommessa = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
-                NumCommessa = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-                nlastreord= QualiLastre(textBox1.Text, IdCommessa, NumCommessa);
-                dataGridView1.Rows[e.RowIndex].Cells[9].Value = nlastreord;
-                riga[0]["GiacImpegnSuOrd"] = impegnate_o + nlastreord;
+                try
+                {
+                    IdCommessa = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+                    NumCommessa = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                    nlastreord= QualiLastre(textBox1.Text, IdCommessa, NumCommessa);
+                    dataGridView1.Rows[e.RowIndex].Cells[9].Value = nlastreord;
+                    riga[0]["GiacImpegnSuOrd"] = impegnate_o + nlastreord;
+                }
+                catch { }
             }
             testata();
         }

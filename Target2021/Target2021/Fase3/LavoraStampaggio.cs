@@ -20,6 +20,7 @@ namespace Target2021
         public String stringa = Properties.Resources.StringaConnessione;
         public string IDCommessa;
         public int macchina;
+        public int NumeroLastreUtilizzate;
 
         public LavoraStampaggio(string id, int mac)
         {
@@ -317,6 +318,15 @@ namespace Target2021
         {
             int statoriga, stato = 0;
             statoriga = RecuperaStatoRiga();
+            try
+            {
+                NumeroLastreUtilizzate = Convert.ToInt32(nrLastreUtilizzateTextBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Il numero di lastre utilizzate non è valido. Correggere.");
+                return;
+            }
             if (statoriga == 2)
             {
                 MessageBox.Show("Fase già chiusa!");
@@ -357,6 +367,7 @@ namespace Target2021
             {
                 ChiudiFase();
             }
+            MessageBox.Show("Chiusura fase stampaggio completata!");
         }
 
         private void ChiudiFase()
@@ -403,6 +414,7 @@ namespace Target2021
             statoTextBox.Text = "2";
             Salva();
             button5.BackColor = Color.Green;
+            MessageBox.Show("Button 5 OK");
         }
 
         private void RigaStampaStato2Sottocommesse(string IDCom)
@@ -428,6 +440,7 @@ namespace Target2021
                 SottocommessaStampaggioInStato2(IdS);
             }
             button7.BackColor = Color.Green;
+            MessageBox.Show("Button 7 OK");
             return;
         }
 
@@ -613,6 +626,7 @@ namespace Target2021
             comando.ExecuteNonQuery();
             connessione.Close();
             button6.BackColor = Color.Green;
+            MessageBox.Show("Button 6 OK");
         }
 
         private void CaricoMagazzino()
@@ -655,7 +669,7 @@ namespace Target2021
             }
             catch
             {
-                MessageBox.Show("Aggiornamento movimento di magazzino fallito!");
+                MessageBox.Show("Aggiornamento movimento di magazzino (Carico semilavorati) fallito!");
             }
         }
 
@@ -702,7 +716,7 @@ namespace Target2021
                 query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idSemilavorati, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + numero.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
                 comando2 = new SqlCommand(query2, conn);
                 comando2.ExecuteNonQuery();
-                MessageBox.Show("Semilavorato non presente in magazzino. Creato.");
+                //MessageBox.Show("Semilavorato non presente in magazzino. Creato.");
                 MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString());
             }
             conn.Close();
@@ -715,6 +729,7 @@ namespace Target2021
             MovimentoScaricoLastre();
             GiacenzaLastre();
             button8.BackColor = Color.Green;
+            MessageBox.Show("Button 8 OK");
         }
 
         private void MovimentoScaricoLastre()
@@ -730,22 +745,24 @@ namespace Target2021
                 CodArt = iDMateriaPrimaTextBox.Text;
                 Causale = codCommessaTextBox.Text;
                 CS = "S";
-                qta = Convert.ToInt32(nrLastreUtilizzateTextBox.Text);   //textBox4.Text);
+                //MessageBox.Show("Pre-NrLastreUtilizzate");
+                qta = NumeroLastreUtilizzate;  //Convert.ToInt32(nrLastreUtilizzateTextBox.Text);   //textBox4.Text);
                 BarCode = codCommessaTextBox.Text;
                 NrOrdine = nrCommessaTextBox.Text;
                 datamov = dataTermineDateTimePicker.Value;
+                //MessageBox.Show("Pre-Insert");
                 if (IdMagazzino == 1) movimentiMagazzinoTableAdapter.Insert(IdMagazzino, CodArt, "", "", "", "", CS, qta, BarCode, NrOrdine, datamov, peso, prezzo, Causale,0,0,0);
                 movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
             }
             catch
             {
-                MessageBox.Show("Aggiornamento movimento di magazzino fallito!");
+                MessageBox.Show("Aggiornamento movimento di magazzino (Scarico lastre) fallito!");
             }
         }
 
         private void GiacenzaLastre()
         {
-            int qta = Convert.ToInt32(nrLastreUtilizzateTextBox.Text);  //textBox4.Text);
+            int qta = NumeroLastreUtilizzate; // Convert.ToInt32(nrLastreUtilizzateTextBox.Text);  //textBox4.Text);
             int PezzidaLavorare = Convert.ToInt32(nrPezziDaLavorareTextBox.Text);
             string CodArt = iDMateriaPrimaTextBox.Text;
             AggiornaGiacenzeS(qta, CodArt, PezzidaLavorare);

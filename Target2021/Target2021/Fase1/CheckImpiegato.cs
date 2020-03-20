@@ -100,7 +100,8 @@ namespace Target2021
             BindingSource source = new BindingSource();
             DataGridViewRow riga;
             int Pezzi = 0, PezziRichiesti = 0, nriga = 0, nrighe;
-            nrighe=dataGridView1.RowCount;
+            string des_for;
+            nrighe =dataGridView1.RowCount;
             for (nriga=0;nriga<nrighe;nriga++)
             {
                 riga = dataGridView1.Rows[nriga];
@@ -126,7 +127,14 @@ namespace Target2021
                 string cod_for= comando3.ExecuteScalar().ToString();
                 string query4 = "Select ragione_sociale From Fornitori Where codice='" + cod_for + "'";
                 SqlCommand comando4 = new SqlCommand(query4, conn);
-                string des_for = comando4.ExecuteScalar().ToString();
+                try
+                {
+                    des_for = comando4.ExecuteScalar().ToString();
+                }
+                catch {
+                    MessageBox.Show("Manca il codice fornitore della lastra " + Convert.ToString(riga.Cells[0].Value) +" in anagrafica");
+                    des_for = "Assente";
+                }
                 dataTable.Rows[nriga]["Disponibilità Lastre Magazzino"]=giacenza;
                 dataTable.Rows[nriga]["Disponibilità Lastre Ordinato"] = LiberiOrdinati;
                 dataTable.Rows[nriga]["Descrizione materia prima"] = descrizione;
