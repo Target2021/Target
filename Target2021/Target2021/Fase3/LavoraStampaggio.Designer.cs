@@ -95,19 +95,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button3 = new System.Windows.Forms.Button();
             this.oFSG1DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG1DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG1TextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
             this.oFSG2DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG2DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG2TextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.oSFG3DateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -116,14 +113,12 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
-            this.button10 = new System.Windows.Forms.Button();
             this.oFSG4DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG4DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG4TextBox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
-            this.button11 = new System.Windows.Forms.Button();
             this.oFSG5DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG5DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG5TextBox = new System.Windows.Forms.TextBox();
@@ -860,7 +855,6 @@
             // 
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(oFSG1Label);
             this.groupBox1.Controls.Add(this.oFSG1DateTimePicker);
             this.groupBox1.Controls.Add(oISG1Label);
@@ -894,16 +888,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(71, 20);
             this.dateTimePicker1.TabIndex = 55;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(246, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(71, 20);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "SALVA";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // oFSG1DateTimePicker
             // 
             this.oFSG1DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG1", true));
@@ -936,7 +920,6 @@
             this.groupBox2.Controls.Add(this.dateTimePicker4);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(label3);
-            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(oFSG2Label);
             this.groupBox2.Controls.Add(this.oFSG2DateTimePicker);
             this.groupBox2.Controls.Add(oISG2Label);
@@ -969,16 +952,6 @@
             this.dateTimePicker3.Size = new System.Drawing.Size(71, 20);
             this.dateTimePicker3.TabIndex = 57;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(246, 19);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(71, 19);
-            this.button4.TabIndex = 55;
-            this.button4.Text = "SALVA";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // oFSG2DateTimePicker
             // 
             this.oFSG2DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG2", true));
@@ -1008,7 +981,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.dateTimePicker6);
             this.groupBox3.Controls.Add(this.dateTimePicker5);
             this.groupBox3.Controls.Add(label9);
@@ -1023,16 +995,6 @@
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Giorno 3:";
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(246, 15);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(71, 19);
-            this.button9.TabIndex = 62;
-            this.button9.Text = "SALVA";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // dateTimePicker6
             // 
@@ -1084,7 +1046,6 @@
             // 
             this.groupBox4.Controls.Add(this.dateTimePicker8);
             this.groupBox4.Controls.Add(this.dateTimePicker7);
-            this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(label11);
             this.groupBox4.Controls.Add(label12);
             this.groupBox4.Controls.Add(label7);
@@ -1118,15 +1079,6 @@
             this.dateTimePicker7.Size = new System.Drawing.Size(71, 20);
             this.dateTimePicker7.TabIndex = 64;
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(246, 16);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(71, 19);
-            this.button10.TabIndex = 63;
-            this.button10.Text = "SALVA";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // oFSG4DateTimePicker
             // 
             this.oFSG4DateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.commesseBindingSource, "OFSG4", true));
@@ -1157,7 +1109,6 @@
             // 
             this.groupBox5.Controls.Add(this.dateTimePicker10);
             this.groupBox5.Controls.Add(this.dateTimePicker9);
-            this.groupBox5.Controls.Add(this.button11);
             this.groupBox5.Controls.Add(label13);
             this.groupBox5.Controls.Add(label14);
             this.groupBox5.Controls.Add(label8);
@@ -1190,15 +1141,6 @@
             this.dateTimePicker9.ShowUpDown = true;
             this.dateTimePicker9.Size = new System.Drawing.Size(71, 20);
             this.dateTimePicker9.TabIndex = 64;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(246, 17);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(71, 19);
-            this.button11.TabIndex = 63;
-            this.button11.Text = "SALVA";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // oFSG5DateTimePicker
             // 
@@ -1711,6 +1653,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LavoraStampaggio";
             this.Text = "Fase di lavorazione: stampaggio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LavoraStampaggio_FormClosing);
             this.Load += new System.EventHandler(this.LavoraStampaggio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
@@ -1780,8 +1723,6 @@
         private System.Windows.Forms.TextBox attG2TextBox;
         private System.Windows.Forms.DateTimePicker oFSG2DateTimePicker;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox progStampaTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
@@ -1813,11 +1754,8 @@
         private System.Windows.Forms.DateTimePicker oFSG5DateTimePicker;
         private System.Windows.Forms.DateTimePicker oISG5DateTimePicker;
         private System.Windows.Forms.TextBox attG5TextBox;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.DateTimePicker dateTimePicker8;
         private System.Windows.Forms.DateTimePicker dateTimePicker7;
         private System.Windows.Forms.DateTimePicker dateTimePicker10;

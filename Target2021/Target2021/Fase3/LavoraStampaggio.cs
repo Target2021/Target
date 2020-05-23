@@ -115,7 +115,7 @@ namespace Target2021
         {
             if (gruppo==2)
             {
-                button4.Text = "APRI";
+                //button4.Text = "APRI";
                 attG2TextBox.Enabled = false;
                 oISG2DateTimePicker.Enabled = false;
                 oFSG2DateTimePicker.Enabled = false;
@@ -124,7 +124,7 @@ namespace Target2021
             }
             if (gruppo == 3)
             {
-                button9.Text = "APRI";
+                //button9.Text = "APRI";
                 attG3TextBox.Enabled = false;
                 oISG3DateTimePicker.Enabled = false;
                 oSFG3DateTimePicker.Enabled = false;
@@ -133,7 +133,7 @@ namespace Target2021
             }
             if (gruppo == 4)
             {
-                button10.Text = "APRI";
+                //button10.Text = "APRI";
                 attG4TextBox.Enabled = false;
                 oISG4DateTimePicker.Enabled = false;
                 oFSG4DateTimePicker.Enabled = false;
@@ -142,7 +142,7 @@ namespace Target2021
             }
             if (gruppo == 5)
             {
-                button11.Text = "APRI";
+                //button11.Text = "APRI";
                 attG5TextBox.Enabled = false;
                 oISG5DateTimePicker.Enabled = false;
                 oFSG5DateTimePicker.Enabled = false;
@@ -216,7 +216,72 @@ namespace Target2021
         private void button1_Click(object sender, EventArgs e)
         {
             Salva();
-            SalvaSchedaInAnArticolo();
+        }
+
+        private void LavoraStampaggio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dynamic result = MessageBox.Show("Vuoi salvare i dati inseriti?", "Chiusura Stampaggio", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Salva();
+            }
+            if (result == DialogResult.No)
+            {
+               
+            }
+        }
+
+        private void AggiornaFase1()
+        {
+            int NrPezziGiaStampati;
+            string CodiceCommessaStampaggio, CodiceCommessaOF;
+
+            CodiceCommessaStampaggio = codCommessaTextBox.Text.Trim();
+
+            try
+            {
+                CodiceCommessaOF = CodiceCommessaStampaggio.Replace("S", "OF");
+                NrPezziGiaStampati = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+                string stringaconnessione, sql;
+                stringaconnessione = Properties.Resources.StringaConnessione;
+                SqlConnection connessione = new SqlConnection(stringaconnessione);
+                sql = "UPDATE Commesse SET NrPezziCorretti = "+NrPezziGiaStampati .ToString()+" WHERE CodCommessa = '" + CodiceCommessaOF+"'";
+                SqlCommand comando = new SqlCommand(sql, connessione);
+                connessione.Open();
+                comando.ExecuteNonQuery();
+                connessione.Close();
+            }
+            catch
+            {
+                // errore
+            }
+
+        }
+
+        private void AggiornaFase3()
+        {
+            int NrPezziGiaStampati;
+            string CodiceCommessaStampaggio, CodiceCommessaOF;
+
+            CodiceCommessaStampaggio = codCommessaTextBox.Text.Trim();
+
+            try
+            {
+                CodiceCommessaOF = CodiceCommessaStampaggio.Replace("S", "T");
+                NrPezziGiaStampati = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+                string stringaconnessione, sql;
+                stringaconnessione = Properties.Resources.StringaConnessione;
+                SqlConnection connessione = new SqlConnection(stringaconnessione);
+                sql = "UPDATE Commesse SET NrPezziCorretti = " + NrPezziGiaStampati.ToString() + " WHERE CodCommessa = '" + CodiceCommessaOF + "'";
+                SqlCommand comando = new SqlCommand(sql, connessione);
+                connessione.Open();
+                comando.ExecuteNonQuery();
+                connessione.Close();
+            }
+            catch
+            {
+                // errore
+            }
         }
 
         private void Salva()
@@ -224,6 +289,9 @@ namespace Target2021
             this.Validate();
             this.commesseBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            SalvaSchedaInAnArticolo();
+            AggiornaFase1();    // con il numero dei pezzi provvisoriamente stampati
+            //AggiornaFase3();    // Non va bene, sovrascriverebbe il numero dei pezzi tagliati
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -231,17 +299,17 @@ namespace Target2021
             Salva();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (button4.Text == "APRI")
-            {
-                Abilita(2);
-                button4.Text = "SALVA";
-                oISG2DateTimePicker.Value = DateTime.Now;
-            }
-            else
-                Salva();
-        }
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    if (button4.Text == "APRI")
+        //    {
+        //        Abilita(2);
+        //        button4.Text = "SALVA";
+        //        oISG2DateTimePicker.Value = DateTime.Now;
+        //    }
+        //    else
+        //        Salva();
+        //}
 
         private void Abilita(int gruppo)
         {
@@ -861,17 +929,17 @@ namespace Target2021
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (button9.Text == "APRI")
-            {
-                Abilita(3);
-                button9.Text = "SALVA";
-                oISG3DateTimePicker.Value = DateTime.Now;
-            }
-            else
-                Salva();
-        }
+        //private void button9_Click(object sender, EventArgs e)
+        //{
+        //    if (button9.Text == "APRI")
+        //    {
+        //        Abilita(3);
+        //        button9.Text = "SALVA";
+        //        oISG3DateTimePicker.Value = DateTime.Now;
+        //    }
+        //    else
+        //        Salva();
+        //}
 
         private void iDClienteTextBox_TextChanged(object sender, EventArgs e)
         {

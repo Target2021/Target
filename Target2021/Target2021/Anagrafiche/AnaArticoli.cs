@@ -50,7 +50,11 @@ namespace Target2021.Anagrafiche
             textBox23.Text = textBox24.Text = textBox25.Text = "0";
             textBox19.Text = textBox20.Text = textBox21.Text = "0";
             label25.Text = "";
+            comboBox8.Text = "";
             label26.Text = "";
+            comboBox9.Text = "";
+            textBox13.Text = "";
+            textBox14.Text = "";
         }
 
         private void AnaArticoli_Load(object sender, EventArgs e)
@@ -143,16 +147,7 @@ namespace Target2021.Anagrafiche
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string filtro = "codice='" + comboBox3.SelectedValue + "'";
-                DataRow[] MatPrima = target2021DataSet.Tables["Prime"].Select(filtro);
-                label6.Text = MatPrima[0].Field<String>("descrizione");
-            }
-            catch
-            {
-                label6.Text = " ";
-            }
+            AggiornaContenutoTab1();
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,13 +166,33 @@ namespace Target2021.Anagrafiche
 
         private void AggiornaTab(string codice)
         {
+            // DA AGGIUNGERE CHE SE LA FASE è ASSENTE VUOTA LE CASELLE E LE METTE IN ENABLE = FALSE
             Tab1(codice);
+            Assente(1);
             //Thread.Sleep(200);
             Tab2(codice);
+            Assente(2);
             //Thread.Sleep(200);
             Tab3(codice);
+            Assente(3);
             //Thread.Sleep(200);
             Tab4(codice);
+        }
+
+        private void Assente (int NrTab)
+        {
+            if (NrTab==1 && comboBox2.Text == "Assente")
+            {
+
+            }
+            if (NrTab == 2 && comboBox5.Text == "Assente")
+            {
+
+            }
+            if (NrTab == 3 && comboBox12.Text == "Assente")
+            {
+
+            }
         }
 
         private void articoli_sempliciDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -247,6 +262,7 @@ namespace Target2021.Anagrafiche
                 //comboBox8.Text = Fase2[0].Field<int>("MacPredefStampo").ToString();
                 //comboBox8.Refresh();
                 label25.Text= Fase2[0].Field<int>("MacPredefStampo").ToString();
+                VisualizzaInComboBox8(label25.Text);
                 try
                 {
                     textBox12.Text = Fase2[0].Field<int>("AbbinamentoStampo").ToString();
@@ -299,10 +315,63 @@ namespace Target2021.Anagrafiche
             }
         }
 
+        private void VisualizzaInComboBox8(string machstamp)
+        {
+            int NrMac;
+            NrMac = Convert.ToInt32(machstamp);
+            String DescrMach;
+
+            string stringaconnessione, sql;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "select Descrizione from MacchineStampo WHERE IdStampa = " + NrMac;
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                DescrMach = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                DescrMach = "ERR";
+            }
+            connessione.Close();
+            comboBox8.Text = DescrMach;
+        }
+
+        private void VisualizzaInComboBox9(string machTaglio)
+        {
+            int NrMac;
+            NrMac = Convert.ToInt32(machTaglio);
+            String DescrMach;
+
+            string stringaconnessione, sql;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "select Descrizione from MacchineTaglio WHERE IDTaglio = " + NrMac;
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                DescrMach = comando.ExecuteScalar().ToString();
+            }
+            catch
+            {
+                DescrMach = "ERR";
+            }
+            connessione.Close();
+            comboBox9.Text = DescrMach;
+        }
+
         private void Tab3(string codice)
         {
             try
             {
+                // inserita PF 30 aprile 2020
+                textBox13.Text = "";
+                textBox14.Text = "";
+                // fine modifica PF 30 aprile 2020
+
                 string filtro = "codice_articolo='" + codice + "' AND lavorazione=3";
                 DataRow[] Fase3 = target2021DataSet.Tables["DettArticoli"].Select(filtro);
                 if (Fase3.Length > 0)
@@ -321,6 +390,7 @@ namespace Target2021.Anagrafiche
                 //comboBox9.Text = Fase3[0].Field<int>("MacPredefTaglio").ToString();
                 //comboBox9.Refresh();
                 label26.Text = Fase3[0].Field<int>("MacPredefTaglio").ToString();
+                VisualizzaInComboBox9(label26.Text);
                 textBox13.Text = Fase3[0].Field<string>("ProgrTaglio1").Replace(" ", string.Empty); 
                 textBox13.Refresh();
                 textBox14.Text = Fase3[0].Field<string>("ProgrTaglio2").Replace(" ", string.Empty);
@@ -432,13 +502,20 @@ namespace Target2021.Anagrafiche
             IdFase2 = RecuperaIdFase(codice, 2);
             IdFase3 = RecuperaIdFase(codice, 3);
             IdFase4 = RecuperaIdFase(codice, 4);
+            try
+            {
+                SalvaGenerale();
+                if (IdFase1 >= 0) SalvaTab1(IdFase1);
+                if (IdFase2 >= 0 && t2==1) SalvaTab2(IdFase2);
+                if (IdFase3 >= 0 && t3==1) SalvaTab3(IdFase3);
+                //if (IdFase4 >= 0) SalvaTab4(IdFase4);
+                SalvaTab4(0);
+            }
+            catch
+            {
+                MessageBox.Show("Il salvataggio richiede attenzione: codice 23");
+            }
 
-            SalvaGenerale();
-            if (IdFase1 >= 0) SalvaTab1(IdFase1);
-            if (IdFase2 >= 0 && t2==1) SalvaTab2(IdFase2);
-            if (IdFase3 >= 0 && t3==1) SalvaTab3(IdFase3);
-            //if (IdFase4 >= 0) SalvaTab4(IdFase4);
-            SalvaTab4(0);
             MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
         }
 
@@ -482,11 +559,25 @@ namespace Target2021.Anagrafiche
             }
         }
 
-        private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
+        private void AggiornaContenutoTab1()
         {
             try
             {
-                string filtro = "codice='" + comboBox11.SelectedValue + "'";
+                string filtro = "codice='" + comboBox3.SelectedValue + "'";
+                DataRow[] MatPrima = target2021DataSet.Tables["Prime"].Select(filtro);
+                label6.Text = MatPrima[0].Field<String>("descrizione");
+            }
+            catch
+            {
+                label6.Text = " ";
+            }
+        }
+
+        private void AggiornaContenutoTab3()
+        {
+            try
+            {
+                string filtro = "codice='" + comboBox11.Text + "'";
                 DataRow[] Dima = target2021DataSet.Tables["Dime"].Select(filtro);
                 label34.Text = Dima[0].Field<String>("descrizione");
                 DataRow[] riga;
@@ -495,8 +586,14 @@ namespace Target2021.Anagrafiche
                 textBox24.Text = riga[0]["Campata"].ToString();
                 textBox25.Text = riga[0]["Posizione"].ToString();
             }
-            catch (Exception ex) { //MessageBox.Show(ex.Message); 
+            catch (Exception ex)
+            { //MessageBox.Show(ex.Message); 
             }
+        }
+
+        private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AggiornaContenutoTab3();
         }
 
         private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
@@ -612,8 +709,8 @@ namespace Target2021.Anagrafiche
             CodMateriaPrima  = comboBox3.Text;
             DescrMatPrima = label6.Text;
             CodFornitoreLastra  = comboBox4.Text;
-            CodIn = textBox6.Text;
-            CodOut = textBox7.Text.Replace(" ", string.Empty);
+            CodIn = textBox6.Text.Trim(); 
+            CodOut = textBox7.Text.Trim();
             try
             {
                 LottoMinimo = Convert.ToInt32(textBox8.Text);
@@ -655,9 +752,9 @@ namespace Target2021.Anagrafiche
             CodStampo = comboBox6.Text.Trim();
             DescrStampo = label15.Text.Trim();
             CodForn = comboBox7.Text.Trim();
-            CodIn = textBox9.Text.Replace(" ", string.Empty);
-            CodOut = textBox10.Text.Replace(" ", string.Empty);
-            Allegato = textBox30.Text.Replace(" ", string.Empty);
+            CodIn = textBox9.Text.Trim();
+            CodOut = textBox10.Text.Trim();
+            Allegato = textBox30.Text.Trim();
             try
             {
                 NrImpronte = Convert.ToInt32(textBox26.Text);
@@ -699,9 +796,9 @@ namespace Target2021.Anagrafiche
             riga["codicePrimaStampoDima"] = CodStampo;
             riga["descrizionePrimaStampoDima"] = DescrStampo;
             riga["codice_fornitore"] = CodForn;
-            if (CodIn.Length > 10) riga["CodiceInput"] = CodIn.Substring(0, 10);
+            if (CodIn.Length > 11) riga["CodiceInput"] = CodIn.Substring(0, 11);
             else riga["CodiceInput"] = CodIn;
-            if (CodOut.Length > 10) riga["CodiceOutput"] = CodOut.Substring(0, 10);
+            if (CodOut.Length > 11) riga["CodiceOutput"] = CodOut.Substring(0, 11);
             else riga["CodiceOutput"] = CodOut;
             riga["Percentualelastra"] = PercLastra;
             riga["Allegato"] = Allegato;
@@ -730,11 +827,10 @@ namespace Target2021.Anagrafiche
             CodDima = comboBox11.Text;
             DescDim = label34.Text;
             CodForn = comboBox10.Text;
-            CodIn = textBox15.Text.Replace(" ", string.Empty); 
-            CodOut = textBox16.Text.Replace(" ", string.Empty); 
-            Prog1 = textBox13.Text.Replace(" ", string.Empty); 
-            Prog2 = textBox14.Text.Replace(" ", string.Empty);
-
+            CodIn = textBox15.Text.Trim();
+            CodOut = textBox16.Text.Trim();
+            Prog1 = textBox13.Text.Trim();
+            Prog2 = textBox14.Text.Trim();
             DataRow riga;
             DataTable TArticoli;
             TArticoli = target2021DataSet.Tables["DettArticoli"];
@@ -742,13 +838,13 @@ namespace Target2021.Anagrafiche
             riga = TArticoli.Rows.Find(Id);
             riga.BeginEdit();
             riga["MacPredefTaglio"] = MachP;
-            if (CodDima.Length > 10) riga["codicePrimaStampoDima"] = CodDima.Substring(0, 10);
+            if (CodDima.Length > 11) riga["codicePrimaStampoDima"] = CodDima.Substring(0, 11);
             else riga["codicePrimaStampoDima"] = CodDima;
             riga["descrizionePrimaStampoDima"] = DescDim;
             riga["codice_fornitore"] = CodForn;
-            if (CodIn.Length > 10) riga["CodiceInput"] = CodIn.Substring(0, 10);
+            if (CodIn.Length > 11) riga["CodiceInput"] = CodIn.Substring(0, 11);
             else riga["CodiceInput"] = CodIn;
-            if (CodOut.Length > 10) riga["CodiceOutput"] = CodOut.Substring(0, 10);
+            if (CodOut.Length > 11) riga["CodiceOutput"] = CodOut.Substring(0, 11);
             else riga["CodiceOutput"] = CodOut;
             riga["ProgrTaglio1"] = Prog1;
             riga["ProgrTaglio2"] = Prog2;
@@ -925,6 +1021,7 @@ namespace Target2021.Anagrafiche
                     CreaFase2(textBox2.Text);
                     comboBox5.Text = "Presente";
                     MessageBox.Show("Fase creata!");
+                    return;
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -951,7 +1048,7 @@ namespace Target2021.Anagrafiche
         {
             Target2021DataSet.DettArticoliRow riga = target2021DataSet.DettArticoli.NewDettArticoliRow();
             riga.codice_articolo = CodArt;
-            riga.progressivo = 1;
+            riga.progressivo = 2;
             riga.lavorazione = 2;
             target2021DataSet.DettArticoli.Rows.Add(riga);
             dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
@@ -1003,7 +1100,7 @@ namespace Target2021.Anagrafiche
         {
             Target2021DataSet.DettArticoliRow riga = target2021DataSet.DettArticoli.NewDettArticoliRow();
             riga.codice_articolo = CodArt;
-            riga.progressivo = 1;
+            riga.progressivo = 3;
             riga.lavorazione = 3;
             target2021DataSet.DettArticoli.Rows.Add(riga);
             dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
@@ -1102,6 +1199,51 @@ namespace Target2021.Anagrafiche
             int t1 = 0;
             int t2 = 0;
             int t3 = 0;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Funzionalità in corso di implementazione");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            int IDRiga, esito;
+            DataGridViewRow riga;
+            riga = dettArticoliDataGridView.SelectedRows[0];
+            IDRiga = Convert.ToInt32(riga.Cells["ID"].Value);
+            esito=Cancella(IDRiga);
+            if (esito==0) MessageBox.Show("Componente eliminato con successo");
+            else MessageBox.Show("Problema eliminazione componente");
+        }
+
+        private int Cancella(int NrRiga)
+        {
+            DataRow[] Riga = target2021DataSet.DettArticoli.Select("IDDettaglioArticolo = " + NrRiga.ToString());
+            foreach (DataRow R in Riga)
+            {
+                R.Delete();
+            }
+            try
+            {
+                dettArticoliTableAdapter.Update(target2021DataSet.DettArticoli);
+                return 0;
+            }
+            catch
+            {
+                return 1;
+            }
+            
+        }
+
+        private void comboBox11_TextChanged(object sender, EventArgs e)
+        {
+            AggiornaContenutoTab3();
+        }
+
+        private void comboBox3_TextChanged(object sender, EventArgs e)
+        {
+            AggiornaContenutoTab1();
         }
     }
 }

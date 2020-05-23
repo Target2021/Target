@@ -53,7 +53,7 @@ namespace Target2021.Fase3
         {
             foreach (DataGridViewColumn col in commesseDataGridView1.Columns)
             {
-                if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi";
+                if (col.HeaderText == "NrPezziDaLavorare") col.HeaderText = "Nr Pezzi da stampare";
                 if (col.HeaderText == "CodCommessa") col.HeaderText = "Commessa";
                 if (col.HeaderText == "DataCommessa") col.HeaderText = "Data Commessa";
                 if (col.HeaderText == "SchedData") col.HeaderText = "Data";
@@ -61,7 +61,8 @@ namespace Target2021.Fase3
                 if (col.HeaderText == "Ora") col.DefaultCellStyle.Format = "HH:mm:ss tt";
                 if (col.HeaderText == "SchedDurata") col.HeaderText = "Durata";
                 if (col.HeaderText == "CodArticolo") col.HeaderText = "Articolo";
-                if (col.HeaderText == "Commessa" || col.HeaderText== "Data Commessa" || col.HeaderText == "IDCliente" || col.HeaderText == "Articolo" || col.HeaderText == "Nr Pezzi" || col.HeaderText == "Data" || col.HeaderText == "Ora" || col.HeaderText == "Durata")
+                if (col.HeaderText == "NrPezziCorretti") col.HeaderText = "Nr. pezzi già stampati";
+                if (col.HeaderText == "Commessa" || col.HeaderText== "Data Commessa" || col.HeaderText == "IDCliente" || col.HeaderText == "Articolo" || col.HeaderText == "Nr Pezzi da stampare" || col.HeaderText == "Data" || col.HeaderText == "Ora" || col.HeaderText == "Durata" || col.HeaderText == "Nr. pezzi già stampati")
                     col.Visible = true;
                 else
                     col.Visible = false;
@@ -83,8 +84,6 @@ namespace Target2021.Fase3
             DateTime datac;
             try
             {
-
-
                 IdCommessa = commesseDataGridView1.SelectedRows[0].Cells[1].Value.ToString();
                 //MessageBox.Show("Vado a tagliare la commessa: " + IdCommessa.ToString());
                 datac = Convert.ToDateTime(commesseDataGridView1.SelectedRows[0].Cells[3].Value);

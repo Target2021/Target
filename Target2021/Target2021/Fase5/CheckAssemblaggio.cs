@@ -20,6 +20,8 @@ namespace Target2021.Anagrafiche
 
         private void CheckAssemblaggio_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Fase4'. È possibile spostarla o rimuoverla se necessario.
+            this.fase4TableAdapter.Fill(this.target2021DataSet.Fase4);
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             commesseBindingSource.Filter="TipoCommessa=4";
         }

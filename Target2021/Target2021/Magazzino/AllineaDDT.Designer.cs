@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dettaglio_ddtDataGridView = new System.Windows.Forms.DataGridView();
+            this.Seleziona = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DataDDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumDDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProgrDDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,6 +100,7 @@
             this.dettaglio_ddtDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dettaglio_ddtDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dettaglio_ddtDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Seleziona,
             this.DataDDT,
             this.NumDDT,
             this.ProgrDDT,
@@ -138,7 +140,6 @@
             this.dettaglio_ddtDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dettaglio_ddtDataGridView.Location = new System.Drawing.Point(1, 48);
             this.dettaglio_ddtDataGridView.Name = "dettaglio_ddtDataGridView";
-            this.dettaglio_ddtDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,16 +150,22 @@
             this.dettaglio_ddtDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dettaglio_ddtDataGridView.RowHeadersVisible = false;
             this.dettaglio_ddtDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dettaglio_ddtDataGridView.Size = new System.Drawing.Size(1236, 452);
+            this.dettaglio_ddtDataGridView.Size = new System.Drawing.Size(1294, 452);
             this.dettaglio_ddtDataGridView.TabIndex = 1;
             this.dettaglio_ddtDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dettaglio_ddtDataGridView_DataBindingComplete);
+            // 
+            // Seleziona
+            // 
+            this.Seleziona.HeaderText = "Seleziona";
+            this.Seleziona.Name = "Seleziona";
+            this.Seleziona.ToolTipText = "Seleziona il DDT per importarlo in Target2021";
+            this.Seleziona.Width = 88;
             // 
             // DataDDT
             // 
             this.DataDDT.DataPropertyName = "data_ddt";
             this.DataDDT.HeaderText = "Data DDT";
             this.DataDDT.Name = "DataDDT";
-            this.DataDDT.ReadOnly = true;
             this.DataDDT.Width = 68;
             // 
             // NumDDT
@@ -166,7 +173,6 @@
             this.NumDDT.DataPropertyName = "numero_ddt";
             this.NumDDT.HeaderText = "Numero DDT";
             this.NumDDT.Name = "NumDDT";
-            this.NumDDT.ReadOnly = true;
             this.NumDDT.Width = 121;
             // 
             // ProgrDDT
@@ -174,7 +180,6 @@
             this.ProgrDDT.DataPropertyName = "progressivo";
             this.ProgrDDT.HeaderText = "Progressivo";
             this.ProgrDDT.Name = "ProgrDDT";
-            this.ProgrDDT.ReadOnly = true;
             this.ProgrDDT.Width = 124;
             // 
             // CodArt
@@ -182,7 +187,6 @@
             this.CodArt.DataPropertyName = "codice_articolo";
             this.CodArt.HeaderText = "Codice Articolo";
             this.CodArt.Name = "CodArt";
-            this.CodArt.ReadOnly = true;
             this.CodArt.Width = 136;
             // 
             // Qta
@@ -190,7 +194,6 @@
             this.Qta.DataPropertyName = "quantita_articolo";
             this.Qta.HeaderText = "Quantità";
             this.Qta.Name = "Qta";
-            this.Qta.ReadOnly = true;
             this.Qta.Width = 96;
             // 
             // Prezzo
@@ -198,7 +201,6 @@
             this.Prezzo.DataPropertyName = "prezzo_articolo";
             this.Prezzo.HeaderText = "Prezzo";
             this.Prezzo.Name = "Prezzo";
-            this.Prezzo.ReadOnly = true;
             this.Prezzo.Width = 87;
             // 
             // dataGridViewTextBoxColumn7
@@ -206,7 +208,6 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "desc_aggiuntiva_articolo";
             this.dataGridViewTextBoxColumn7.HeaderText = "Descrizione";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 123;
             // 
             // Importato
@@ -214,7 +215,6 @@
             this.Importato.DataPropertyName = "data_preventivo_prov";
             this.Importato.HeaderText = "Importato";
             this.Importato.Name = "Importato";
-            this.Importato.ReadOnly = true;
             this.Importato.Width = 105;
             // 
             // dataGridViewTextBoxColumn9
@@ -222,7 +222,6 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "numero_preventivo_prov";
             this.dataGridViewTextBoxColumn9.HeaderText = "numero_preventivo_prov";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Visible = false;
             this.dataGridViewTextBoxColumn9.Width = 218;
             // 
@@ -231,7 +230,6 @@
             this.dataGridViewTextBoxColumn10.DataPropertyName = "riga_preventivo_prov";
             this.dataGridViewTextBoxColumn10.HeaderText = "riga_preventivo_prov";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Visible = false;
             this.dataGridViewTextBoxColumn10.Width = 189;
             // 
@@ -240,7 +238,6 @@
             this.dataGridViewTextBoxColumn11.DataPropertyName = "magazzino_art";
             this.dataGridViewTextBoxColumn11.HeaderText = "magazzino_art";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Visible = false;
             this.dataGridViewTextBoxColumn11.Width = 144;
             // 
@@ -249,7 +246,6 @@
             this.dataGridViewTextBoxColumn12.DataPropertyName = "progressivo_mag_bc";
             this.dataGridViewTextBoxColumn12.HeaderText = "progressivo_mag_bc";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Visible = false;
             this.dataGridViewTextBoxColumn12.Width = 190;
             // 
@@ -258,7 +254,6 @@
             this.dataGridViewTextBoxColumn13.DataPropertyName = "unita_misura";
             this.dataGridViewTextBoxColumn13.HeaderText = "unita_misura";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             this.dataGridViewTextBoxColumn13.Visible = false;
             this.dataGridViewTextBoxColumn13.Width = 129;
             // 
@@ -267,7 +262,6 @@
             this.NrOrdine.DataPropertyName = "nr_ordine";
             this.NrOrdine.HeaderText = "Nr. ordine";
             this.NrOrdine.Name = "NrOrdine";
-            this.NrOrdine.ReadOnly = true;
             this.NrOrdine.Width = 99;
             // 
             // dataGridViewTextBoxColumn15
@@ -275,7 +269,6 @@
             this.dataGridViewTextBoxColumn15.DataPropertyName = "data_ordine_prov";
             this.dataGridViewTextBoxColumn15.HeaderText = "data_ordine_prov";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Visible = false;
             this.dataGridViewTextBoxColumn15.Width = 163;
             // 
@@ -284,7 +277,6 @@
             this.dataGridViewTextBoxColumn16.DataPropertyName = "numero_ordine_prov";
             this.dataGridViewTextBoxColumn16.HeaderText = "numero_ordine_prov";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Visible = false;
             this.dataGridViewTextBoxColumn16.Width = 188;
             // 
@@ -293,7 +285,6 @@
             this.dataGridViewTextBoxColumn17.DataPropertyName = "riga_ordine_prov";
             this.dataGridViewTextBoxColumn17.HeaderText = "riga_ordine_prov";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
             this.dataGridViewTextBoxColumn17.Visible = false;
             this.dataGridViewTextBoxColumn17.Width = 159;
             // 
@@ -302,7 +293,6 @@
             this.dataGridViewTextBoxColumn18.DataPropertyName = "tipo_ordine_prov";
             this.dataGridViewTextBoxColumn18.HeaderText = "tipo_ordine_prov";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
             this.dataGridViewTextBoxColumn18.Visible = false;
             this.dataGridViewTextBoxColumn18.Width = 159;
             // 
@@ -311,7 +301,6 @@
             this.dataGridViewTextBoxColumn19.DataPropertyName = "numero_doc_cl_prov";
             this.dataGridViewTextBoxColumn19.HeaderText = "numero_doc_cl_prov";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
             this.dataGridViewTextBoxColumn19.Visible = false;
             this.dataGridViewTextBoxColumn19.Width = 191;
             // 
@@ -320,7 +309,6 @@
             this.dataGridViewTextBoxColumn20.DataPropertyName = "data_doc_cl_prov";
             this.dataGridViewTextBoxColumn20.HeaderText = "data_doc_cl_prov";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
             this.dataGridViewTextBoxColumn20.Visible = false;
             this.dataGridViewTextBoxColumn20.Width = 166;
             // 
@@ -329,7 +317,6 @@
             this.dataGridViewTextBoxColumn21.DataPropertyName = "denom_doc_cl_prov";
             this.dataGridViewTextBoxColumn21.HeaderText = "denom_doc_cl_prov";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
             this.dataGridViewTextBoxColumn21.Visible = false;
             this.dataGridViewTextBoxColumn21.Width = 185;
             // 
@@ -338,7 +325,6 @@
             this.dataGridViewTextBoxColumn22.DataPropertyName = "tipo_riga";
             this.dataGridViewTextBoxColumn22.HeaderText = "tipo_riga";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
             this.dataGridViewTextBoxColumn22.Visible = false;
             this.dataGridViewTextBoxColumn22.Width = 98;
             // 
@@ -347,7 +333,6 @@
             this.dataGridViewTextBoxColumn23.DataPropertyName = "sconto_articolo";
             this.dataGridViewTextBoxColumn23.HeaderText = "sconto_articolo";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
             this.dataGridViewTextBoxColumn23.Visible = false;
             this.dataGridViewTextBoxColumn23.Width = 151;
             // 
@@ -356,7 +341,6 @@
             this.dataGridViewTextBoxColumn24.DataPropertyName = "tipo_art_cl";
             this.dataGridViewTextBoxColumn24.HeaderText = "tipo_art_cl";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
             this.dataGridViewTextBoxColumn24.Visible = false;
             this.dataGridViewTextBoxColumn24.Width = 112;
             // 
@@ -365,7 +349,6 @@
             this.dataGridViewTextBoxColumn25.DataPropertyName = "codice_articolo_lavorato";
             this.dataGridViewTextBoxColumn25.HeaderText = "codice_articolo_lavorato";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
             this.dataGridViewTextBoxColumn25.Visible = false;
             this.dataGridViewTextBoxColumn25.Width = 219;
             // 
@@ -374,7 +357,6 @@
             this.dataGridViewTextBoxColumn26.DataPropertyName = "tipo_ordine_prov_ric";
             this.dataGridViewTextBoxColumn26.HeaderText = "tipo_ordine_prov_ric";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
             this.dataGridViewTextBoxColumn26.Visible = false;
             this.dataGridViewTextBoxColumn26.Width = 187;
             // 
@@ -383,7 +365,6 @@
             this.dataGridViewTextBoxColumn27.DataPropertyName = "commessa_cliente";
             this.dataGridViewTextBoxColumn27.HeaderText = "commessa_cliente";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
             this.dataGridViewTextBoxColumn27.Visible = false;
             this.dataGridViewTextBoxColumn27.Width = 174;
             // 
@@ -392,7 +373,6 @@
             this.dataGridViewTextBoxColumn28.DataPropertyName = "progr_cl_prov";
             this.dataGridViewTextBoxColumn28.HeaderText = "progr_cl_prov";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
             this.dataGridViewTextBoxColumn28.Visible = false;
             this.dataGridViewTextBoxColumn28.Width = 137;
             // 
@@ -453,9 +433,9 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(368, 506);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(420, 34);
+            this.button1.Size = new System.Drawing.Size(478, 34);
             this.button1.TabIndex = 5;
-            this.button1.Text = "ALLINEA";
+            this.button1.Text = "ALLINEA I DDT SELEZIONATI";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -539,7 +519,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1239, 552);
+            this.ClientSize = new System.Drawing.Size(1297, 552);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -569,6 +549,11 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource movimentiMagazzinoBindingSource;
+        private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
+        private System.Windows.Forms.BindingSource giacenzeMagazziniBindingSource;
+        private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleziona;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataDDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumDDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProgrDDT;
@@ -597,9 +582,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.BindingSource movimentiMagazzinoBindingSource;
-        private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
-        private System.Windows.Forms.BindingSource giacenzeMagazziniBindingSource;
-        private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
     }
 }

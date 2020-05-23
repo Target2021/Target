@@ -140,7 +140,7 @@
             this.ordiniImportatiDataGridView.Name = "ordiniImportatiDataGridView";
             this.ordiniImportatiDataGridView.ReadOnly = true;
             this.ordiniImportatiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ordiniImportatiDataGridView.Size = new System.Drawing.Size(607, 346);
+            this.ordiniImportatiDataGridView.Size = new System.Drawing.Size(599, 384);
             this.ordiniImportatiDataGridView.TabIndex = 1;
             this.ordiniImportatiDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.ordiniImportatiDataGridView_DataBindingComplete);
             // 
@@ -216,7 +216,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(633, 66);
+            this.button1.Location = new System.Drawing.Point(625, 66);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(192, 76);
             this.button1.TabIndex = 3;
@@ -229,7 +229,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(638, 155);
+            this.label2.Location = new System.Drawing.Point(630, 155);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 85);
             this.label2.TabIndex = 4;
@@ -241,10 +241,10 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(639, 252);
+            this.textBox1.Location = new System.Drawing.Point(631, 252);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 159);
+            this.textBox1.Size = new System.Drawing.Size(185, 197);
             this.textBox1.TabIndex = 5;
             // 
             // commesseBindingSource
@@ -265,7 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(859, 414);
+            this.ClientSize = new System.Drawing.Size(851, 452);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);

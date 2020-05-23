@@ -12,18 +12,19 @@ namespace Target2021.Fase2
 {
     public partial class DettPianifica : Form
     {
-        public DateTime data= new DateTime(2019, 1, 1,0,0,0);
-        public DateTime dataf = new DateTime(2019, 1, 1,0,0,0);
-        public DateTime ora = new DateTime(2019, 1, 1,0,0,0);
-        public DateTime oraf = new DateTime(2019, 1, 1,0,0,0);
+        // Modificare facendo partire le date dal primo del mese corrente
+        public DateTime datai;
+        public DateTime dataf;
+        public DateTime orai = new DateTime(2020, 1, 1,0,0,0);
+        public DateTime oraf = new DateTime(2020, 1, 1,0,0,0);
         public int durata;
         public int elimina = 0;
 
         public DettPianifica(DateTime d, DateTime o, int du)
         {
             InitializeComponent();
-            data = d;
-            ora = o;
+            datai = d;
+            orai = o;
             durata = du;
         }
 
@@ -37,27 +38,29 @@ namespace Target2021.Fase2
 
         private void DettPianifica_Load(object sender, EventArgs e)
         {
+            datai = DateTime.Today;
+            dataf = DateTime.Today;
             imposta();
         }
 
         private void imposta()
         {
-            dateTimePicker1.Value = data;
-            dateTimePicker4.Value = ora;
+            dateTimePicker1.Value = datai;
+            dateTimePicker4.Value = orai;
             textBox1.Text = durata.ToString();
         }
 
         private void dateTimePicker1_DropDown(object sender, EventArgs e)
         {
-            dateTimePicker1.Value = DateTime.Today;
-            dateTimePicker1.Update();
-            dateTimePicker1.Refresh();
+            //dateTimePicker1.Value = DateTime.Today;
+            //dateTimePicker1.Update();
+            //dateTimePicker1.Refresh();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            data = dateTimePicker1.Value;
-            ora = dateTimePicker4.Value;
+            datai = dateTimePicker1.Value;
+            orai = dateTimePicker4.Value;
             durata = Convert.ToInt32(textBox1.Text);
             dataf = dateTimePicker2.Value;
             oraf = dateTimePicker3.Value;

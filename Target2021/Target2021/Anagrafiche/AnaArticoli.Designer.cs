@@ -149,9 +149,9 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.dettArticoliDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Progressivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -223,6 +223,7 @@
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button7 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             allegatoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.articoli_sempliciBindingSource)).BeginInit();
@@ -531,7 +532,7 @@
             this.tabPage1.Controls.Add(this.comboBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(808, 236);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Fase 1";
@@ -671,6 +672,7 @@
             this.comboBox3.TabIndex = 3;
             this.comboBox3.ValueMember = "codice";
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.comboBox3.TextChanged += new System.EventHandler(this.comboBox3_TextChanged);
             // 
             // primeBindingSource
             // 
@@ -754,7 +756,7 @@
             this.tabPage2.Controls.Add(this.comboBox5);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(808, 236);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Fase 2";
@@ -927,7 +929,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(729, 18);
+            this.label25.Location = new System.Drawing.Point(742, 18);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(54, 18);
             this.label25.TabIndex = 25;
@@ -969,9 +971,9 @@
             this.comboBox8.DisplayMember = "Descrizione";
             this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(648, 15);
+            this.comboBox8.Location = new System.Drawing.Point(629, 15);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(75, 26);
+            this.comboBox8.Size = new System.Drawing.Size(107, 26);
             this.comboBox8.TabIndex = 21;
             this.comboBox8.ValueMember = "IdStampa";
             this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
@@ -987,9 +989,9 @@
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(518, 18);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(125, 18);
+            this.label23.Size = new System.Drawing.Size(110, 18);
             this.label23.TabIndex = 20;
-            this.label23.Text = "Macchina predef.:";
+            this.label23.Text = "Macch. predef.:";
             // 
             // textBox11
             // 
@@ -1277,7 +1279,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(642, 20);
+            this.label26.Location = new System.Drawing.Point(742, 20);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(54, 18);
             this.label26.TabIndex = 46;
@@ -1291,7 +1293,7 @@
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Location = new System.Drawing.Point(555, 17);
             this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(81, 26);
+            this.comboBox9.Size = new System.Drawing.Size(181, 26);
             this.comboBox9.TabIndex = 42;
             this.comboBox9.ValueMember = "IDTaglio";
             this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
@@ -1409,6 +1411,7 @@
             this.comboBox11.TabIndex = 30;
             this.comboBox11.ValueMember = "codice";
             this.comboBox11.SelectedIndexChanged += new System.EventHandler(this.comboBox11_SelectedIndexChanged);
+            this.comboBox11.TextChanged += new System.EventHandler(this.comboBox11_TextChanged);
             // 
             // dimeBindingSource1
             // 
@@ -1475,7 +1478,7 @@
             this.tabPage4.Controls.Add(this.comboBox13);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(808, 236);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Fase 4";
@@ -1490,6 +1493,7 @@
             this.button11.TabIndex = 34;
             this.button11.Text = "Elimina l\'elemento selezionato";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -1529,9 +1533,9 @@
             this.dettArticoliDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dettArticoliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dettArticoliDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
+            this.ID,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
+            this.Progressivo,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
@@ -1570,19 +1574,21 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dettArticoliDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.dettArticoliDataGridView.Location = new System.Drawing.Point(6, 52);
+            this.dettArticoliDataGridView.MultiSelect = false;
             this.dettArticoliDataGridView.Name = "dettArticoliDataGridView";
             this.dettArticoliDataGridView.RowHeadersVisible = false;
+            this.dettArticoliDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dettArticoliDataGridView.Size = new System.Drawing.Size(796, 178);
             this.dettArticoliDataGridView.TabIndex = 31;
             // 
-            // dataGridViewTextBoxColumn3
+            // ID
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "IDDettaglioArticolo";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            this.dataGridViewTextBoxColumn3.Width = 29;
+            this.ID.DataPropertyName = "IDDettaglioArticolo";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 29;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -1592,12 +1598,12 @@
             this.dataGridViewTextBoxColumn5.Visible = false;
             this.dataGridViewTextBoxColumn5.Width = 121;
             // 
-            // dataGridViewTextBoxColumn6
+            // Progressivo
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "progressivo";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Progressivo";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 117;
+            this.Progressivo.DataPropertyName = "progressivo";
+            this.Progressivo.HeaderText = "Progressivo";
+            this.Progressivo.Name = "Progressivo";
+            this.Progressivo.Width = 117;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -1849,12 +1855,14 @@
             // 
             // comboBox13
             // 
+            this.comboBox13.Enabled = false;
             this.comboBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox13.FormattingEnabled = true;
             this.comboBox13.Location = new System.Drawing.Point(74, 11);
             this.comboBox13.Name = "comboBox13";
             this.comboBox13.Size = new System.Drawing.Size(112, 26);
             this.comboBox13.TabIndex = 29;
+            this.toolTip1.SetToolTip(this.comboBox13, "Per creare questa fase crea una riga con semilavorato o componentistica");
             this.comboBox13.SelectedIndexChanged += new System.EventHandler(this.comboBox13_SelectedIndexChanged);
             // 
             // fasiBindingSource
@@ -1899,7 +1907,7 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1009, 490);
+            this.button1.Location = new System.Drawing.Point(1100, 490);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(82, 58);
             this.button1.TabIndex = 5;
@@ -1911,7 +1919,7 @@
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(828, 490);
+            this.button3.Location = new System.Drawing.Point(919, 490);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 58);
             this.button3.TabIndex = 7;
@@ -2030,7 +2038,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(828, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(410, 456);
+            this.pictureBox1.Size = new System.Drawing.Size(470, 456);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -2039,7 +2047,7 @@
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(919, 490);
+            this.button4.Location = new System.Drawing.Point(1010, 490);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 58);
             this.button4.TabIndex = 16;
@@ -2142,7 +2150,7 @@
             // 
             this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(1097, 490);
+            this.button7.Location = new System.Drawing.Point(1188, 490);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(82, 58);
             this.button7.TabIndex = 25;
@@ -2150,12 +2158,26 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(828, 490);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(85, 58);
+            this.button12.TabIndex = 26;
+            this.button12.Text = "Modifica";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Visible = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // AnaArticoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1244, 563);
+            this.ClientSize = new System.Drawing.Size(1304, 563);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox28);
             this.Controls.Add(this.label47);
@@ -2376,9 +2398,11 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Progressivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -2407,6 +2431,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-        private System.Windows.Forms.Button button11;
     }
 }

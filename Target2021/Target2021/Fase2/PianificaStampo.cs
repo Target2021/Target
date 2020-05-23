@@ -224,8 +224,8 @@ namespace Target2021.Fase2
 
                 DettPianifica DP = new DettPianifica(data, ora, durata);
                 DP.ShowDialog();
-                Griglia.SelectedCells[57].Value = DP.data;
-                Griglia.SelectedCells[58].Value = DP.ora;
+                Griglia.SelectedCells[57].Value = DP.datai;
+                Griglia.SelectedCells[58].Value = DP.orai;
                 Griglia.SelectedCells[59].Value = DP.durata;
                 Griglia.SelectedCells[61].Value = DP.dataf;
                 Griglia.SelectedCells[62].Value = DP.oraf;

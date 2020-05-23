@@ -36,7 +36,7 @@ namespace Target2021
             this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-            this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
+            this.dettaglio_ordini_multirigaTableAdapter.FillBy(this.target2021DataSet.dettaglio_ordini_multiriga);
             this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             //carica();
@@ -241,7 +241,7 @@ namespace Target2021
             {
                 label4.Text = "Ci sono " + neworder.ToString() + " ordini ancora da importare!";
             }
-            this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
+            this.dettaglio_ordini_multirigaTableAdapter.FillBy(this.target2021DataSet.dettaglio_ordini_multiriga);
             dataGridView5.Refresh();
         }
 
@@ -272,7 +272,7 @@ namespace Target2021
             string stringaconnessione, sql;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT MAX(numero_ordine) FROM testata_ordini_multiriga WHERE data_ordine>20190000";
+            sql = "SELECT MAX(numero_ordine) FROM testata_ordini_multiriga WHERE data_ordine>20200000";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             try
@@ -293,7 +293,7 @@ namespace Target2021
             string stringaconnessione, sql;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT MAX(numero_ordine) FROM dettaglio_ordini_multiriga WHERE data_ordine>20190000";
+            sql = "SELECT MAX(numero_ordine) FROM dettaglio_ordini_multiriga WHERE data_ordine>20200000";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             try
@@ -676,7 +676,7 @@ namespace Target2021
                 string stringaconnessione, sql, DesArticolo="";
                 stringaconnessione = Properties.Resources.StringaConnessione;
                 SqlConnection connessione = new SqlConnection(stringaconnessione);
-                sql = "SELECT descrizione_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
+                sql = "SELECT descrizione_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
                 SqlCommand comando = new SqlCommand(sql, connessione);
                 connessione.Open();
                 object result= comando.ExecuteScalar();
@@ -749,7 +749,7 @@ namespace Target2021
             DateTime dto;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT data_ordine FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
+            sql = "SELECT data_ordine FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             dto = DateTime.ParseExact(comando.ExecuteScalar().ToString(), "yyyyMMdd", null);
@@ -762,7 +762,7 @@ namespace Target2021
             string stringaconnessione, sql, idc;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT codice_cliente FROM testata_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
+            sql = "SELECT codice_cliente FROM testata_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             idc = comando.ExecuteScalar().ToString();
@@ -775,7 +775,7 @@ namespace Target2021
             string stringaconnessione, sql, noc;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT numero_ordine_cliente FROM testata_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
+            sql = "SELECT numero_ordine_cliente FROM testata_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             noc = comando.ExecuteScalar().ToString();
@@ -789,7 +789,7 @@ namespace Target2021
             DateTime dtc;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT data_consegna FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
+            sql = "SELECT data_consegna FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             try
@@ -811,7 +811,7 @@ namespace Target2021
             int NumeroPezzi;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT numero_pezzi FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20190000";
+            sql = "SELECT numero_pezzi FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             NumeroPezzi = Convert.ToInt32(comando.ExecuteScalar());    
@@ -1081,6 +1081,8 @@ namespace Target2021
         {
             Target2021DataSet.CommesseRow riga = target2021DataSet.Commesse.NewCommesseRow();
 
+            try
+            {
             riga.CodCommessa = com.CodCommessa;
             riga.NrCommessa = com.NrCommessa;
             riga.DataCommessa = com.DataCommessa;
@@ -1092,9 +1094,9 @@ namespace Target2021
             riga.CodArticolo = com.CodArticolo;
             riga.DescrArticolo = com.DescrArticolo;
             riga.IDFornitore = com.IDFornitore;
-            riga.IDStampo = com.IDMateriaPrima;
-            riga.IDDima = com.IDMateriaPrima;
-            riga.IDMateriaPrima = IDPrima;
+            riga.IDStampo = com.IDMateriaPrima.Trim();
+            riga.IDDima = com.IDMateriaPrima.Trim();
+            if (IDPrima != null) riga.IDMateriaPrima = IDPrima.Trim();
             riga.NrLastreRichieste = com.NrLastreRichieste;
             riga.NrPezziOrdinati = 0;
             riga.NrOrdine = "N";
@@ -1109,8 +1111,8 @@ namespace Target2021
             riga.ProgStampa = com.ProgStampa;
             riga.PezziOra = com.PezziOra;
             riga.Foto = com.Foto;
-            riga.CodArtiDopoStampo = com.CodArtiDopoStampo;
-            riga.CodArtiDopoTaglio = com.CodArtiDopoTaglio;
+            riga.CodArtiDopoStampo = com.CodArtiDopoStampo.Trim();
+            riga.CodArtiDopoTaglio = com.CodArtiDopoTaglio.Trim();
             riga.AttG1 = 0;
             riga.AttG2 = 0;
             riga.AttG3 = 0;
@@ -1123,6 +1125,12 @@ namespace Target2021
 
             target2021DataSet.Commesse.Rows.Add(riga); 
             commesseTableAdapter.Update(target2021DataSet.Commesse);
+            }
+
+            catch
+            {
+                MessageBox.Show("Errore nell'importazione della commessa " + com.NrCommessa.ToString());
+            }
         }
 
         private void copia()
@@ -1157,6 +1165,19 @@ namespace Target2021
             comando3.ExecuteNonQuery();
             connessione.Close();
             textBox4.Text = textBox4.Text + DateTime.Now.ToString("h:mm:ss tt") + "Tabelle Ordini e DDT eliminate nel database SQL." + Environment.NewLine;
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.dettaglio_ordini_multirigaTableAdapter.FillBy(this.target2021DataSet.dettaglio_ordini_multiriga);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void ricopia()

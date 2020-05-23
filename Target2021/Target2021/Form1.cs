@@ -560,5 +560,12 @@ namespace Target2021
             dettaglio.MdiParent = this;
             dettaglio.Show();
         }
+
+        private void modificaLastraCommessaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LastraCommessa LC = new LastraCommessa();
+            LC.MdiParent = this;
+            LC.Show();
+        }
     }
 }

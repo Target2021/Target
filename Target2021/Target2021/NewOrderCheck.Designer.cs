@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,7 +70,6 @@
             this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn69 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn70 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn71 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn72 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn73 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn74 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,7 +98,14 @@
             this.dataGridViewTextBoxColumn97 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dettaglioordinimultirigaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.dettaglioordinimultirigaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.annoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.articoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordiniEsclusiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,7 +123,6 @@
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,7 +150,7 @@
             this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dettaglio_ordini_multirigaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordiniEsclusiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dettaglioordinimultirigaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dettArticoliTableAdapter = new Target2021.Target2021DataSetTableAdapters.DettArticoliTableAdapter();
@@ -155,13 +160,6 @@
             this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
             this.ordiniEsclusiTableAdapter = new Target2021.Target2021DataSetTableAdapters.OrdiniEsclusiTableAdapter();
             this.ordiniImportatiTableAdapter = new Target2021.Target2021DataSetTableAdapters.OrdiniImportatiTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.annoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.articoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarAdv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaDataGridView)).BeginInit();
@@ -169,9 +167,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniEsclusiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniImportatiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
@@ -270,7 +268,7 @@
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(422, 161);
+            this.textBox4.Size = new System.Drawing.Size(442, 178);
             this.textBox4.TabIndex = 9;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -279,26 +277,26 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Location = new System.Drawing.Point(633, 163);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(422, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(442, 348);
             this.dataGridView1.TabIndex = 10;
             // 
             // comboBox1
@@ -306,19 +304,16 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "2019",
             "2020",
             "2021",
             "2022",
             "2023",
-            "2024",
-            "2025",
-            "2026"});
+            "2024"});
             this.comboBox1.Location = new System.Drawing.Point(62, 16);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(70, 32);
             this.comboBox1.TabIndex = 14;
-            this.comboBox1.Text = "2019";
+            this.comboBox1.Text = "2020";
             // 
             // label5
             // 
@@ -374,7 +369,7 @@
         System.Drawing.Color.Empty};
             this.progressBarAdv1.Name = "progressBarAdv1";
             this.progressBarAdv1.SegmentWidth = 12;
-            this.progressBarAdv1.Size = new System.Drawing.Size(402, 33);
+            this.progressBarAdv1.Size = new System.Drawing.Size(442, 33);
             this.progressBarAdv1.TabIndex = 20;
             this.progressBarAdv1.Text = "progressBarAdv1";
             this.progressBarAdv1.ThemesEnabled = false;
@@ -427,7 +422,6 @@
             this.dataGridViewTextBoxColumn22,
             this.dataGridViewTextBoxColumn23,
             this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26,
             this.dataGridViewTextBoxColumn27,
             this.dataGridViewTextBoxColumn28,
@@ -511,7 +505,6 @@
             this.dataGridViewTextBoxColumn68,
             this.dataGridViewTextBoxColumn69,
             this.dataGridViewTextBoxColumn70,
-            this.dataGridViewTextBoxColumn71,
             this.dataGridViewTextBoxColumn72,
             this.dataGridViewTextBoxColumn73,
             this.dataGridViewTextBoxColumn74,
@@ -682,14 +675,6 @@
             this.dataGridViewTextBoxColumn70.Name = "dataGridViewTextBoxColumn70";
             this.dataGridViewTextBoxColumn70.Visible = false;
             this.dataGridViewTextBoxColumn70.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn71
-            // 
-            this.dataGridViewTextBoxColumn71.DataPropertyName = "sconto_cliente";
-            this.dataGridViewTextBoxColumn71.HeaderText = "sconto_cliente";
-            this.dataGridViewTextBoxColumn71.Name = "dataGridViewTextBoxColumn71";
-            this.dataGridViewTextBoxColumn71.Visible = false;
-            this.dataGridViewTextBoxColumn71.Width = 101;
             // 
             // dataGridViewTextBoxColumn72
             // 
@@ -909,10 +894,66 @@
             this.target2021DataSet.DataSetName = "Target2021DataSet";
             this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dettaglioordinimultirigaBindingSource1
+            // idDataGridViewTextBoxColumn
             // 
-            this.dettaglioordinimultirigaBindingSource1.DataMember = "dettaglio_ordini_multiriga";
-            this.dettaglioordinimultirigaBindingSource1.DataSource = this.target2021DataSet;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 41;
+            // 
+            // annoDataGridViewTextBoxColumn
+            // 
+            this.annoDataGridViewTextBoxColumn.DataPropertyName = "Anno";
+            this.annoDataGridViewTextBoxColumn.HeaderText = "Anno";
+            this.annoDataGridViewTextBoxColumn.Name = "annoDataGridViewTextBoxColumn";
+            this.annoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.annoDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // statoDataGridViewTextBoxColumn
+            // 
+            this.statoDataGridViewTextBoxColumn.DataPropertyName = "Stato";
+            this.statoDataGridViewTextBoxColumn.HeaderText = "Stato";
+            this.statoDataGridViewTextBoxColumn.Name = "statoDataGridViewTextBoxColumn";
+            this.statoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.statoDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // numeroDataGridViewTextBoxColumn
+            // 
+            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
+            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
+            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
+            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeroDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // articoloDataGridViewTextBoxColumn
+            // 
+            this.articoloDataGridViewTextBoxColumn.DataPropertyName = "Articolo";
+            this.articoloDataGridViewTextBoxColumn.HeaderText = "Articolo";
+            this.articoloDataGridViewTextBoxColumn.Name = "articoloDataGridViewTextBoxColumn";
+            this.articoloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.articoloDataGridViewTextBoxColumn.Width = 67;
+            // 
+            // descrizioneDataGridViewTextBoxColumn
+            // 
+            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
+            this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descrizioneDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // ordiniEsclusiBindingSource
+            // 
+            this.ordiniEsclusiBindingSource.DataMember = "OrdiniEsclusi";
+            this.ordiniEsclusiBindingSource.DataSource = this.target2021DataSet;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -1062,15 +1103,6 @@
             this.dataGridViewTextBoxColumn24.ReadOnly = true;
             this.dataGridViewTextBoxColumn24.Visible = false;
             this.dataGridViewTextBoxColumn24.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "sconto_cliente";
-            this.dataGridViewTextBoxColumn25.HeaderText = "sconto_cliente";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            this.dataGridViewTextBoxColumn25.Visible = false;
-            this.dataGridViewTextBoxColumn25.Width = 101;
             // 
             // dataGridViewTextBoxColumn26
             // 
@@ -1311,10 +1343,10 @@
             this.dettaglio_ordini_multirigaBindingSource.DataMember = "dettaglio_ordini_multiriga";
             this.dettaglio_ordini_multirigaBindingSource.DataSource = this.target2021DataSet;
             // 
-            // ordiniEsclusiBindingSource
+            // dettaglioordinimultirigaBindingSource1
             // 
-            this.ordiniEsclusiBindingSource.DataMember = "OrdiniEsclusi";
-            this.ordiniEsclusiBindingSource.DataSource = this.target2021DataSet;
+            this.dettaglioordinimultirigaBindingSource1.DataMember = "dettaglio_ordini_multiriga";
+            this.dettaglioordinimultirigaBindingSource1.DataSource = this.target2021DataSet;
             // 
             // tableAdapterManager
             // 
@@ -1405,69 +1437,13 @@
             // 
             this.ordiniImportatiTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 41;
-            // 
-            // annoDataGridViewTextBoxColumn
-            // 
-            this.annoDataGridViewTextBoxColumn.DataPropertyName = "Anno";
-            this.annoDataGridViewTextBoxColumn.HeaderText = "Anno";
-            this.annoDataGridViewTextBoxColumn.Name = "annoDataGridViewTextBoxColumn";
-            this.annoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.annoDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // statoDataGridViewTextBoxColumn
-            // 
-            this.statoDataGridViewTextBoxColumn.DataPropertyName = "Stato";
-            this.statoDataGridViewTextBoxColumn.HeaderText = "Stato";
-            this.statoDataGridViewTextBoxColumn.Name = "statoDataGridViewTextBoxColumn";
-            this.statoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.statoDataGridViewTextBoxColumn.Width = 57;
-            // 
-            // numeroDataGridViewTextBoxColumn
-            // 
-            this.numeroDataGridViewTextBoxColumn.DataPropertyName = "Numero";
-            this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
-            this.numeroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numeroDataGridViewTextBoxColumn.Width = 69;
-            // 
-            // dataDataGridViewTextBoxColumn
-            // 
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
-            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // articoloDataGridViewTextBoxColumn
-            // 
-            this.articoloDataGridViewTextBoxColumn.DataPropertyName = "Articolo";
-            this.articoloDataGridViewTextBoxColumn.HeaderText = "Articolo";
-            this.articoloDataGridViewTextBoxColumn.Name = "articoloDataGridViewTextBoxColumn";
-            this.articoloDataGridViewTextBoxColumn.ReadOnly = true;
-            this.articoloDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // descrizioneDataGridViewTextBoxColumn
-            // 
-            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
-            this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descrizioneDataGridViewTextBoxColumn.Width = 87;
-            // 
             // NewOrderCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1055, 681);
+            this.ClientSize = new System.Drawing.Size(1075, 698);
             this.Controls.Add(this.dataGridView5);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.dettaglio_ordini_multirigaDataGridView);
@@ -1499,9 +1475,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniEsclusiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettaglio_ordini_multirigaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dettaglioordinimultirigaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dettArticoliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordiniImportatiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();

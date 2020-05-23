@@ -43,7 +43,7 @@ namespace Target2021.Magazzino
         private void filtra()
         {
             dettaglio_ddtBindingSource.Filter = "data_ddt > '" + comboBox1.Text + "0000'";
-            dettaglio_ddtDataGridView.Sort(dettaglio_ddtDataGridView.Columns[0], ListSortDirection.Descending);
+            dettaglio_ddtDataGridView.Sort(dettaglio_ddtDataGridView.Columns[1], ListSortDirection.Descending);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,13 +53,24 @@ namespace Target2021.Magazzino
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int importato = 0, esito = 0, ContaImportati = 0, ContaModificati=0;
+            int importato = 0, esito = 0, ContaImportati = 0, ContaModificati=0, elaborati=0;
             int DataDDT, NumDDT, ProgrDDT, Qta, ContaAgGiac=0;
+            bool Selezionato;
             Double Prezzo;
             string CodArt, Causale;
             // Controlla Le nuove importazioni (per ogni riga)
             foreach (DataGridViewRow riga in dettaglio_ddtDataGridView.Rows)
             {
+                try
+                {
+                    Selezionato = (bool)riga.Cells["Seleziona"].Value;
+                }
+                catch
+                {
+                    Selezionato = false;
+                }
+                if (Selezionato == false) continue;
+                else elaborati++;
                 // Se importato: data_preventivo_prov = 1 altrimenti = 0
                 importato = Convert.ToInt32(riga.Cells["Importato"].Value);
                 if (importato == 0)   // Non è già stato importato in precedenza
@@ -71,7 +82,7 @@ namespace Target2021.Magazzino
                     if (CodArt == "") continue;
                     Qta = Convert.ToInt32(riga.Cells["Qta"].Value);
                     Prezzo = Convert.ToDouble(riga.Cells["Prezzo"].Value);
-                    Causale = "Ordine cliente nr: " + riga.Cells["NrOrdine"].Value.ToString();
+                    Causale = "DDT Numero: "+NumDDT.ToString()+" Del " +DataDDT.ToString() + " - Ordine cliente nr: " + riga.Cells["NrOrdine"].Value.ToString();
                     // Crea: A) Moviemento di Scarico in 'MovimentiMagazzino' valorizzando Data, Numero e progressivo DDT
                     esito = InserisciMovimento(DataDDT, NumDDT, ProgrDDT, CodArt, Qta, Prezzo, Causale);
                     //       B) Aggiorna GiacenzeMagazzino (se non esiste lo crea)
@@ -128,7 +139,7 @@ namespace Target2021.Magazzino
             }
             this.dettaglio_ddtTableAdapter.Fill(this.target2021DataSet.dettaglio_ddt);
             dettaglio_ddtDataGridView.Refresh();
-            MessageBox.Show("Finito. Importate " + ContaImportati + " righe di DDT. Modificate "+ContaModificati +" righe");
+            MessageBox.Show("Finito. Elaborate "+elaborati.ToString()+" righe. Importate " + ContaImportati + " righe di DDT. Modificate "+ContaModificati +" righe");
             // Visualizza in un messagebox info su attività di importazione effettuate
         }
 
@@ -234,6 +245,7 @@ namespace Target2021.Magazzino
                     riga["GiacenzaComplessiva"] = GComp;
                     GDisp = GDisp - Qta;
                     riga["GiacenzaDisponibili"] = GDisp;
+                    riga["DataUltimoMovimento"] = DateTime.Today;    // Non ancora testata questa riga
                     riga.EndEdit();
                     giacenzeMagazziniTableAdapter.Update(target2021DataSet.GiacenzeMagazzini);
                     // Aggiornata giacenza se articolo già presente

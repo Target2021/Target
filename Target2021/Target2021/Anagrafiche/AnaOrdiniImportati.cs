@@ -48,7 +48,7 @@ namespace Target2021.Anagrafiche
                     DataOrd = (int)ordiniImportatiDataGridView.Rows[Posizione].Cells[4].Value;
                     textBox1.AppendText("Ordine numero: " + row.Index.ToString() + Environment .NewLine);
                     int risultato;
-                    string filtro = "NrCommessa = " + NumOrd;
+                    string filtro = "NrCommessa = " + NumOrd + " AND DataCommessa = " + DataOrd;
                     try
                     {
                         risultato = (int)target2021DataSet.Commesse.Compute("MAX(Stato)", filtro);
@@ -64,7 +64,7 @@ namespace Target2021.Anagrafiche
                     else
                     {
                         // Prima elimino le righe della tabella Commesse
-                        DataRow[] Riga = target2021DataSet.Commesse.Select("NrCommessa = " + NumOrd.ToString());
+                        DataRow[] Riga = target2021DataSet.Commesse.Select("NrCommessa = " + NumOrd.ToString() + " AND DataCommessa = "+DataOrd);
                         foreach (DataRow R in Riga)
                         {
                             R.Delete();

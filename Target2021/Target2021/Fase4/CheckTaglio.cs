@@ -33,7 +33,7 @@ namespace Target2021
         private void aggiorna()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT taglio.CodCommessa AS Codice, taglio.NrCommessa AS Numero, taglio.DataCommessa AS Data, taglio.IDCliente AS Cliente, taglio.DescrArticolo AS Articolo, taglio.IDMachTaglio AS Macchina, macchina.Descrizione AS Macchinario, taglio.IDDima AS Dima, taglio.NrPezziDaLavorare AS Pezzi " +
+            string query = "SELECT taglio.CodCommessa AS Codice, taglio.NrCommessa AS Numero, taglio.DataCommessa AS Data, taglio.IDCliente AS Cliente, taglio.DescrArticolo AS Articolo, taglio.IDMachTaglio AS Macchina, macchina.Descrizione AS Macchinario, taglio.IDDima AS Dima, taglio.NrPezziDaLavorare AS Pezzi, taglio.NrPezziCorretti AS GiàTagliati " +
                 "FROM Commesse AS taglio " +
                 "INNER JOIN Commesse AS stampo " +
                 "ON taglio.NrCommessa = stampo.NrCommessa " +
@@ -79,7 +79,7 @@ namespace Target2021
             dataGridView1 .Update();
         }
 
-        private int ControllaStatoStampo(int NC)
+        private int ControllaStatoStampo(int NC)    // oltre a colorare potrebbe valorizzare la colonna (da creare) con il nr dei pezzi stampati
         {
             string stringaconnessione, sql;
             int StatoStampo;

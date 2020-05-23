@@ -253,6 +253,12 @@
     <Compile Include="CalendarPianificazioneStampaggio.Designer.cs">
       <DependentUpon>CalendarPianificazioneStampaggio.cs</DependentUpon>
     </Compile>
+    <Compile Include="CambiaLastra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiaLastra.Designer.cs">
+      <DependentUpon>CambiaLastra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Commesse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -517,6 +523,12 @@
     <Compile Include="Fase4\LavoraTaglio.Designer.cs">
       <DependentUpon>LavoraTaglio.cs</DependentUpon>
     </Compile>
+    <Compile Include="LastraCommessa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LastraCommessa.Designer.cs">
+      <DependentUpon>LastraCommessa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -726,6 +738,9 @@
     <Compile Include="RegistraUtenti.Designer.cs">
       <DependentUpon>RegistraUtenti.cs</DependentUpon>
     </Compile>
+    <Compile Include="Target2021DataSet.cs">
+      <DependentUpon>Target2021DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Target2021DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -796,6 +811,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CalendarPianificazioneStampaggio.resx">
       <DependentUpon>CalendarPianificazioneStampaggio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiaLastra.resx">
+      <DependentUpon>CambiaLastra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Commesse.resx">
       <DependentUpon>Commesse.cs</DependentUpon>
@@ -922,6 +940,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fase4\LavoraTaglio.resx">
       <DependentUpon>LavoraTaglio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LastraCommessa.resx">
+      <DependentUpon>LastraCommessa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

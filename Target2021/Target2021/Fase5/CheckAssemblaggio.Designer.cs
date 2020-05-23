@@ -31,13 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
-            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.commesseDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,9 +102,23 @@
             this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
+            this.commesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
+            this.commesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.CommesseTableAdapter();
+            this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
+            this.fase4BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fase4TableAdapter = new Target2021.Target2021DataSetTableAdapters.Fase4TableAdapter();
+            this.nrCommessaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.componentiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.articoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrPezziDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fase4BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,79 +135,13 @@
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1113, 345);
+            this.button1.Location = new System.Drawing.Point(1113, 419);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 44);
             this.button1.TabIndex = 4;
             this.button1.Text = "Aggiorna";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // commesseBindingSource
-            // 
-            this.commesseBindingSource.DataMember = "Commesse";
-            this.commesseBindingSource.DataSource = this.target2021DataSet;
-            // 
-            // commesseTableAdapter
-            // 
-            this.commesseTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
-            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
-            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
-            this.tableAdapterManager.ArtFornTableAdapter = null;
-            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
-            this.tableAdapterManager.ArticoliBCTableAdapter = null;
-            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.clientiTableAdapter = null;
-            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
-            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
-            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
-            this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
-            this.tableAdapterManager.CompatibStampaTableAdapter = null;
-            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
-            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
-            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.DettArticoliTableAdapter = null;
-            this.tableAdapterManager.dimensioniTableAdapter = null;
-            this.tableAdapterManager.DimeTableAdapter = null;
-            this.tableAdapterManager.FasiTableAdapter = null;
-            this.tableAdapterManager.FornitoriTableAdapter = null;
-            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
-            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
-            this.tableAdapterManager.LavorazioniTableAdapter = null;
-            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
-            this.tableAdapterManager.MacchineStampoTableAdapter = null;
-            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
-            this.tableAdapterManager.MinuterieTableAdapter = null;
-            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
-            this.tableAdapterManager.OrdFornDettTableAdapter = null;
-            this.tableAdapterManager.OrdFornTestTableAdapter = null;
-            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
-            this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
-            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
-            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
-            this.tableAdapterManager.PrimeTableAdapter = null;
-            this.tableAdapterManager.SchedulazioneTableAdapter = null;
-            this.tableAdapterManager.StampiTableAdapter = null;
-            this.tableAdapterManager.SuperCommessaTableAdapter = null;
-            this.tableAdapterManager.sysdiagramsTableAdapter = null;
-            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
-            this.tableAdapterManager.TempStampTableAdapter = null;
-            this.tableAdapterManager.TempTableAdapter = null;
-            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
-            this.tableAdapterManager.TipoCommessaTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UtentiTableAdapter = null;
             // 
             // commesseDataGridView
             // 
@@ -294,8 +240,39 @@
             this.commesseDataGridView.Location = new System.Drawing.Point(3, 32);
             this.commesseDataGridView.Name = "commesseDataGridView";
             this.commesseDataGridView.ReadOnly = true;
-            this.commesseDataGridView.Size = new System.Drawing.Size(1243, 307);
+            this.commesseDataGridView.Size = new System.Drawing.Size(1243, 238);
             this.commesseDataGridView.TabIndex = 5;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nrCommessaDataGridViewTextBoxColumn,
+            this.componentiDataGridViewTextBoxColumn,
+            this.clienteDataGridViewTextBoxColumn,
+            this.dataDataGridViewTextBoxColumn,
+            this.articoloDataGridViewTextBoxColumn,
+            this.nrPezziDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.fase4BindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 289);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1073, 212);
+            this.dataGridView1.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -878,21 +855,148 @@
             this.dataGridViewTextBoxColumn65.Visible = false;
             this.dataGridViewTextBoxColumn65.Width = 147;
             // 
+            // commesseBindingSource
+            // 
+            this.commesseBindingSource.DataMember = "Commesse";
+            this.commesseBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // commesseTableAdapter
+            // 
+            this.commesseTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AbbinamentiArticoliTableAdapter = null;
+            this.tableAdapterManager.AbbinamentiSuperCommesseTableAdapter = null;
+            this.tableAdapterManager.AnaMagazziniTableAdapter = null;
+            this.tableAdapterManager.ArtFornTableAdapter = null;
+            this.tableAdapterManager.articoli_sempliciTableAdapter = null;
+            this.tableAdapterManager.ArticoliBCTableAdapter = null;
+            this.tableAdapterManager.AvvisiAbbinamentiTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.clientiTableAdapter = null;
+            this.tableAdapterManager.CodModPagamentoTableAdapter = null;
+            this.tableAdapterManager.CodSpedizioniTableAdapter = null;
+            this.tableAdapterManager.CodTermPagamentoTableAdapter = null;
+            this.tableAdapterManager.CommesseTableAdapter = this.commesseTableAdapter;
+            this.tableAdapterManager.CompatibStampaTableAdapter = null;
+            this.tableAdapterManager.CompatibTaglioTableAdapter = null;
+            this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ddtTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.DettArticoliTableAdapter = null;
+            this.tableAdapterManager.dimensioniTableAdapter = null;
+            this.tableAdapterManager.DimeTableAdapter = null;
+            this.tableAdapterManager.FasiTableAdapter = null;
+            this.tableAdapterManager.FornitoriTableAdapter = null;
+            this.tableAdapterManager.GiacenzeMagazziniTableAdapter = null;
+            this.tableAdapterManager.ImpegnateOrdinatoTableAdapter = null;
+            this.tableAdapterManager.LavorazioniTableAdapter = null;
+            this.tableAdapterManager.LivelliUtenzaTableAdapter = null;
+            this.tableAdapterManager.MacchineStampoTableAdapter = null;
+            this.tableAdapterManager.MacchineTaglioTableAdapter = null;
+            this.tableAdapterManager.MinuterieTableAdapter = null;
+            this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
+            this.tableAdapterManager.OrdFornDettTableAdapter = null;
+            this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
+            this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
+            this.tableAdapterManager.PesiSpecificiTableAdapter = null;
+            this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
+            this.tableAdapterManager.PrimeTableAdapter = null;
+            this.tableAdapterManager.SchedulazioneTableAdapter = null;
+            this.tableAdapterManager.StampiTableAdapter = null;
+            this.tableAdapterManager.SuperCommessaTableAdapter = null;
+            this.tableAdapterManager.sysdiagramsTableAdapter = null;
+            this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.TempStampTableAdapter = null;
+            this.tableAdapterManager.TempTableAdapter = null;
+            this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
+            this.tableAdapterManager.TipoCommessaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UtentiTableAdapter = null;
+            // 
+            // fase4BindingSource
+            // 
+            this.fase4BindingSource.DataMember = "Fase4";
+            this.fase4BindingSource.DataSource = this.target2021DataSet;
+            // 
+            // fase4TableAdapter
+            // 
+            this.fase4TableAdapter.ClearBeforeFill = true;
+            // 
+            // nrCommessaDataGridViewTextBoxColumn
+            // 
+            this.nrCommessaDataGridViewTextBoxColumn.DataPropertyName = "NrCommessa";
+            this.nrCommessaDataGridViewTextBoxColumn.HeaderText = "NrCommessa";
+            this.nrCommessaDataGridViewTextBoxColumn.Name = "nrCommessaDataGridViewTextBoxColumn";
+            this.nrCommessaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nrCommessaDataGridViewTextBoxColumn.Width = 117;
+            // 
+            // componentiDataGridViewTextBoxColumn
+            // 
+            this.componentiDataGridViewTextBoxColumn.DataPropertyName = "Componenti";
+            this.componentiDataGridViewTextBoxColumn.HeaderText = "Componenti";
+            this.componentiDataGridViewTextBoxColumn.Name = "componentiDataGridViewTextBoxColumn";
+            this.componentiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.componentiDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // clienteDataGridViewTextBoxColumn
+            // 
+            this.clienteDataGridViewTextBoxColumn.DataPropertyName = "Cliente";
+            this.clienteDataGridViewTextBoxColumn.HeaderText = "Cliente";
+            this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
+            this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clienteDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // articoloDataGridViewTextBoxColumn
+            // 
+            this.articoloDataGridViewTextBoxColumn.DataPropertyName = "Articolo";
+            this.articoloDataGridViewTextBoxColumn.HeaderText = "Articolo";
+            this.articoloDataGridViewTextBoxColumn.Name = "articoloDataGridViewTextBoxColumn";
+            this.articoloDataGridViewTextBoxColumn.ReadOnly = true;
+            this.articoloDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // nrPezziDataGridViewTextBoxColumn
+            // 
+            this.nrPezziDataGridViewTextBoxColumn.DataPropertyName = "NrPezzi";
+            this.nrPezziDataGridViewTextBoxColumn.HeaderText = "NrPezzi";
+            this.nrPezziDataGridViewTextBoxColumn.Name = "nrPezziDataGridViewTextBoxColumn";
+            this.nrPezziDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nrPezziDataGridViewTextBoxColumn.Width = 82;
+            // 
             // CheckAssemblaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1247, 439);
+            this.ClientSize = new System.Drawing.Size(1247, 513);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.commesseDataGridView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "CheckAssemblaggio";
             this.Text = "Check assemblaggio";
             this.Load += new System.EventHandler(this.CheckAssemblaggio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fase4BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -972,5 +1076,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn64;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn65;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource fase4BindingSource;
+        private Target2021DataSetTableAdapters.Fase4TableAdapter fase4TableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nrCommessaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn componentiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn articoloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nrPezziDataGridViewTextBoxColumn;
     }
 }
