@@ -275,6 +275,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBORDINIDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Fase4\NewCheckTaglio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fase4\NewCheckTaglio.Designer.cs">
+      <DependentUpon>NewCheckTaglio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fase5\CheckAssemblaggio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -817,6 +823,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Commesse.resx">
       <DependentUpon>Commesse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fase4\NewCheckTaglio.resx">
+      <DependentUpon>NewCheckTaglio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fase5\CheckAssemblaggio.resx">
       <DependentUpon>CheckAssemblaggio.cs</DependentUpon>

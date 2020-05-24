@@ -32,6 +32,8 @@ namespace Target2021
 
         private void NewOrderCheck_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniEsclusi'. È possibile spostarla o rimuoverla se necessario.
+            this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
             //syncro();   <<-- Flavio: Commentata questa riga per non syncronizzare le commesse
             this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
             this.ordiniImportatiTableAdapter.Fill(this.target2021DataSet.OrdiniImportati);
@@ -109,17 +111,20 @@ namespace Target2021
         private void aggiornaVisualizzazione(string anno)
         {
             anno = anno + "0000";
-            dettaglio_ordini_multirigaBindingSource.Filter = "peso = 1 ";
+            //dettaglio_ordini_multirigaBindingSource.Filter = "peso = 1 ";
             dettaglioordinimultirigaBindingSource.Filter = "peso = 0";
             dettaglioordinimultirigaBindingSource1.Filter = "peso = 2 AND data_ordine > '"+anno+"'";
             try
             {
-                dettaglio_ordini_multirigaDataGridView.Sort(dettaglio_ordini_multirigaDataGridView.Columns["dataGridViewTextBoxColumn9"], ListSortDirection.Descending);
                 dataGridView5.Sort(dataGridView5.Columns["Numero"], ListSortDirection.Descending);
-                dataGridView4.Sort(dataGridView4.Columns["dataGridViewTextBoxColumn99"], ListSortDirection.Descending);
+                dataGridView2.Sort(dataGridView2.Columns["numeroDataGridViewTextBoxColumn1"], ListSortDirection.Descending);
+                dataGridView4.Sort(dataGridView4.Columns["numeroDataGridViewTextBoxColumn"], ListSortDirection.Descending);
+
             }
-            catch
-            { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void carica()
@@ -343,84 +348,102 @@ namespace Target2021
             }   
             else
             {
-                fasi = ControllaFasi(CodiceArticolo);
-                SorgenteDati.DataSource = fasi;
-                dataGridView1.DataSource = SorgenteDati;
-                for (i = 1; i <= NumFasi; i++)
+                try
                 {
-                    textBox4.Text = textBox4.Text + "Fase numero: " + i + "\r\n";
-                    Commessa com = new Commessa(IDOrdine);
-                    progressivo = RecuperaFaseLavorazione(CodiceArticolo, i);
-                    if (progressivo == 1)
+                    fasi = ControllaFasi(CodiceArticolo);
+                    SorgenteDati.DataSource = fasi;
+                    dataGridView1.DataSource = SorgenteDati;
+                    for (i = 1; i <= NumFasi; i++)
                     {
-                        com.CodCommessa = "OF" + IDOrdine;
-                        com.TipoCommessa = 1;
+                        textBox4.Text = textBox4.Text + "Fase numero: " + i + "\r\n";
+                        Commessa com = new Commessa(IDOrdine);
+                        progressivo = RecuperaFaseLavorazione(CodiceArticolo, i);
+                        if (progressivo == 1)
+                        {
+                            com.CodCommessa = "OF" + IDOrdine;
+                            com.TipoCommessa = 1;
+                        }
+                        if (progressivo == 2)
+                        {
+                            com.CodCommessa = "S" + IDOrdine;
+                            com.TipoCommessa = 2;
+                        }
+                        if (progressivo == 3)
+                        {
+                            com.CodCommessa = "T" + IDOrdine;
+                            com.TipoCommessa = 3;
+                        }
+                        if (progressivo == 4)
+                        {
+                            com.CodCommessa = "ASS" + IDOrdine;
+                            com.TipoCommessa = 4;
+                        }
+                        com.NrCommessa = IDOrdine;
+                        DataOrdine = RecuperaDataOrdine(IDOrdine);
+                        com.DataCommessa = DataOrdine;
+                        textBox4.Text = textBox4.Text + "CodCommessa: " + com.CodCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "NrCommessa: " + com.NrCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "Data Commessa: " + com.DataCommessa + "\r\n";
+                        textBox4.Text = textBox4.Text + "Tipo Commessa: " + com.TipoCommessa + "\r\n";
+                        IDCliente = RecuperaIDCliente(IDOrdine);
+                        com.IDCliente = IDCliente;
+                        OrdineCliente = RecuperaOrdineCliente(IDOrdine);
+                        com.OrdCliente = OrdineCliente;
+                        DataConsegna = RecuperaDataConsegna(IDOrdine);
+                        com.DataConsegna = DataConsegna;
+                        NrPezzi = RecuperaNrPezzi(IDOrdine);
+                        com.NrPezziDaLavorare = NrPezzi;
+                        com.CodArticolo = CodiceArticolo;
+                        DescrArticolo = RecuperaDescrizioneArticolo(IDOrdine);
+                        com.DescrArticolo = DescrArticolo;
+                        IdFornitore = RecuperaIdFornitore(CodiceArticolo, i);
+                        com.IDFornitore = IdFornitore;
+                        IDMatPrima = RecuperaIDMatPri(CodiceArticolo, i);
+                        com.IDMateriaPrima = IDMatPrima;
+                        if (progressivo == 1) IDPrima = IDMatPrima;
+                        NrLastreRichieste = RecuperaNrLasRic(CodiceArticolo, i, IDOrdine);
+                        com.NrLastreRichieste = NrLastreRichieste;
+                        PT1 = RecuperaProgTaglio(CodiceArticolo, i, 1);
+                        com.ProgrTaglio1 = PT1;
+                        PT2 = RecuperaProgTaglio(CodiceArticolo, i, 2);
+                        com.ProgrTaglio2 = PT2;
+                        percentuale = RecuperaPercentualeLastra(CodiceArticolo);
+                        com.PercentualeUtilizzoLastra = percentuale;
+                        MachStamp = RecuperaMacchinaStampa(CodiceArticolo);
+                        com.Mps = MachStamp;
+                        com.ProgStampa = RecuperaProgrammaStampaggio(CodiceArticolo);
+                        com.PezziOra = RecuperaNumeroPezziStampatiOra(CodiceArticolo);
+                        com.Foto = RecuperaFoto(CodiceArticolo);
+                        com.CodArtiDopoStampo = RecuperaCodiceArticoloDopoStampo(CodiceArticolo);
+                        com.CodArtiDopoTaglio = RecuperaCodiceArticoloDopoTaglio(CodiceArticolo);
+                        com.IDMachStampa = RecuperaMacchinaStampaPredefinita(CodiceArticolo);
+                        com.Note = RecuperaNote(CodiceArticolo);
+                        com.IDMachTaglio = RecuperaMacchinaTaglio(CodiceArticolo);
+                        com.IDMinuteria = RecuperaMinuteria(CodiceArticolo, i);
+                        com.Qtaminuteria = RecuperaQtaMinuteria(CodiceArticolo, i);
+                        InserisciCommessa1(com);
                     }
-                    if (progressivo == 2)
-                    {
-                        com.CodCommessa = "S" + IDOrdine;
-                        com.TipoCommessa = 2;
-                    }
-                    if (progressivo == 3)
-                    {
-                        com.CodCommessa = "T" + IDOrdine;
-                        com.TipoCommessa = 3;
-                    }
-                    if (progressivo == 4)
-                    {
-                        com.CodCommessa = "ASS" + IDOrdine;
-                        com.TipoCommessa = 4;
-                    }
-                    com.NrCommessa = IDOrdine;
-                    DataOrdine = RecuperaDataOrdine(IDOrdine);
-                    com.DataCommessa = DataOrdine;
-                    textBox4.Text = textBox4.Text + "CodCommessa: " + com.CodCommessa + "\r\n";
-                    textBox4.Text = textBox4.Text + "NrCommessa: " + com.NrCommessa + "\r\n";
-                    textBox4.Text = textBox4.Text + "Data Commessa: " + com.DataCommessa + "\r\n";
-                    textBox4.Text = textBox4.Text + "Tipo Commessa: " + com.TipoCommessa + "\r\n";
-                    IDCliente = RecuperaIDCliente(IDOrdine);
-                    com.IDCliente = IDCliente;
-                    OrdineCliente = RecuperaOrdineCliente(IDOrdine);
-                    com.OrdCliente = OrdineCliente;
-                    DataConsegna = RecuperaDataConsegna(IDOrdine);
-                    com.DataConsegna = DataConsegna;
-                    NrPezzi = RecuperaNrPezzi(IDOrdine);
-                    com.NrPezziDaLavorare = NrPezzi;
-                    com.CodArticolo = CodiceArticolo;
-                    DescrArticolo = RecuperaDescrizioneArticolo(IDOrdine);
-                    com.DescrArticolo = DescrArticolo;
-                    IdFornitore = RecuperaIdFornitore(CodiceArticolo, i);
-                    com.IDFornitore = IdFornitore;
-                    IDMatPrima = RecuperaIDMatPri(CodiceArticolo, i);
-                    com.IDMateriaPrima = IDMatPrima;
-                    if (progressivo == 1) IDPrima = IDMatPrima;
-                    NrLastreRichieste = RecuperaNrLasRic(CodiceArticolo, i, IDOrdine);
-                    com.NrLastreRichieste = NrLastreRichieste;
-                    PT1 = RecuperaProgTaglio(CodiceArticolo, i, 1);
-                    com.ProgrTaglio1 = PT1;
-                    PT2 = RecuperaProgTaglio(CodiceArticolo, i, 2);
-                    com.ProgrTaglio2 = PT2;
-                    percentuale = RecuperaPercentualeLastra(CodiceArticolo);
-                    com.PercentualeUtilizzoLastra = percentuale;
-                    MachStamp = RecuperaMacchinaStampa(CodiceArticolo);
-                    com.Mps = MachStamp;
-                    com.ProgStampa = RecuperaProgrammaStampaggio(CodiceArticolo);
-                    com.PezziOra = RecuperaNumeroPezziStampatiOra(CodiceArticolo);
-                    com.Foto = RecuperaFoto(CodiceArticolo);
-                    com.CodArtiDopoStampo = RecuperaCodiceArticoloDopoStampo(CodiceArticolo);
-                    com.CodArtiDopoTaglio = RecuperaCodiceArticoloDopoTaglio(CodiceArticolo);
-                    com.IDMachStampa = RecuperaMacchinaStampaPredefinita(CodiceArticolo);
-                    com.Note = RecuperaNote(CodiceArticolo);
-                    com.IDMachTaglio = RecuperaMacchinaTaglio(CodiceArticolo);
-                    com.IDMinuteria = RecuperaMinuteria(CodiceArticolo, i);
-                    com.Qtaminuteria = RecuperaQtaMinuteria(CodiceArticolo, i);
-                    InserisciCommessa1(com);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Qualcosa nell'importazione è andato storto: " + e.Message);
+                    CancellaCommessa(IDOrdine, DataOrdine);
                 }
                 AggiornaUltimoOrdine(IDOrdine, DataOrdine);
                 ImpostaPesoCliente(n, data,1);  // usa il campo peso per settare stato ordine (0=da importare, 1=importato, 2=scontato)
                 AggiornaStatoTemporaneo(n, data,1);  // Aggiorno anche la tabella locale
                 return 0;
             }
+        }
+
+        private void CancellaCommessa(int NrCommessa, DateTime DataCommessa)
+        {
+            DataRow[] Riga = target2021DataSet.Commesse.Select("NrCommessa = " + NrCommessa.ToString() + " AND DataCommessa = '" + DataCommessa.ToShortDateString() + "'");
+            foreach (DataRow R in Riga)
+            {
+                R.Delete();
+            }
+            commesseTableAdapter.Update(target2021DataSet.Commesse);
         }
 
         private void AggiornaStatoTemporaneo(int n, int data, int stato)
@@ -1032,7 +1055,7 @@ namespace Target2021
             }
             for (j = 0; j < i; j++)
             {
-                //AggiornaOrdiniEsclusi(esclusi[j]);
+                AggiornaOrdiniEsclusi(esclusi[j], data[j]);
                 ImpostaPesoCliente(esclusi[j], data[j], 2);  // usa il campo peso per settare stato ordine (0=da importare, 1=importato, 2=scontato)
                 AggiornaStatoTemporaneo(esclusi[j], data[j], 2);  // Aggiorno anche la tabella locale
 
@@ -1042,19 +1065,19 @@ namespace Target2021
             //this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
         }
 
-        private void AggiornaOrdiniEsclusi(int nord)
+        private void AggiornaOrdiniEsclusi(int nord, int DataOrd)
         {
             //MessageBox.Show("L'articolo "+Cod+" va creato nelle giacenze!");
             Target2021DataSet.OrdiniEsclusiRow riga = target2021DataSet.OrdiniEsclusi.NewOrdiniEsclusiRow();
             riga.Anno = Convert.ToInt32(comboBox1.Text);
             riga.Stato = 2;  // 2 = escluso
             riga.Numero = nord;
-            riga.Data = DateTime.Today;  // Data nel quale è stato escluso
+            riga.Data = DataOrd;  // Data nel quale è stato escluso
             riga.Articolo = CodiceArt(nord);
             riga.Descrizione = RecuperaDescrizioneArticolo(nord);
             target2021DataSet.OrdiniEsclusi.Rows.Add(riga);
             ordiniEsclusiTableAdapter.Update(target2021DataSet.OrdiniEsclusi);
-            ImpostaAliquotaIva2(Convert.ToInt32(comboBox1.Text), nord);
+            //ImpostaAliquotaIva2(Convert.ToInt32(comboBox1.Text), nord);
         }
 
         private void ImpostaAliquotaIva2(int anno,int num)

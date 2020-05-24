@@ -45,7 +45,11 @@ namespace Target2021
                 DateTime DataCommessa = (DateTime) riga.Cells[3].Value;
                 string CodiceLastra = riga.Cells[22].Value.ToString();
                 CambiaLastra Cambia = new CambiaLastra(NrCommessa, DataCommessa, CodiceLastra);
-                Cambia.Show();
+                Cambia.ShowDialog();
+                this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
+                commesseBindingSource.Filter = "Stato=0 AND TipoCommessa=1";
+                commesseDataGridView.Update();
+                commesseDataGridView.Refresh();
             }
         }
 

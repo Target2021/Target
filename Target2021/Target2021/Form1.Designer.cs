@@ -76,6 +76,7 @@
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ruoliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificaLastraCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supercommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creaSuperCommessaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminaSuperCommessaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,7 +101,7 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.modificaLastraCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCheckTaglioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -501,6 +502,13 @@
             this.ruoliToolStripMenuItem.Size = new System.Drawing.Size(182, 30);
             this.ruoliToolStripMenuItem.Text = "Fasi lavorazione";
             // 
+            // modificaLastraCommessaToolStripMenuItem
+            // 
+            this.modificaLastraCommessaToolStripMenuItem.Name = "modificaLastraCommessaToolStripMenuItem";
+            this.modificaLastraCommessaToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
+            this.modificaLastraCommessaToolStripMenuItem.Text = "Modifica Lastra Commessa";
+            this.modificaLastraCommessaToolStripMenuItem.Click += new System.EventHandler(this.modificaLastraCommessaToolStripMenuItem_Click);
+            // 
             // supercommessaToolStripMenuItem
             // 
             this.supercommessaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -578,7 +586,8 @@
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.etichetteToolStripMenuItem,
             this.caricoProdottiFinitiToolStripMenuItem,
-            this.stampaSchedaCommessaToolStripMenuItem});
+            this.stampaSchedaCommessaToolStripMenuItem,
+            this.newCheckTaglioToolStripMenuItem});
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(97, 30);
@@ -722,12 +731,12 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // modificaLastraCommessaToolStripMenuItem
+            // newCheckTaglioToolStripMenuItem
             // 
-            this.modificaLastraCommessaToolStripMenuItem.Name = "modificaLastraCommessaToolStripMenuItem";
-            this.modificaLastraCommessaToolStripMenuItem.Size = new System.Drawing.Size(349, 30);
-            this.modificaLastraCommessaToolStripMenuItem.Text = "Modifica Lastra Commessa";
-            this.modificaLastraCommessaToolStripMenuItem.Click += new System.EventHandler(this.modificaLastraCommessaToolStripMenuItem_Click);
+            this.newCheckTaglioToolStripMenuItem.Name = "newCheckTaglioToolStripMenuItem";
+            this.newCheckTaglioToolStripMenuItem.Size = new System.Drawing.Size(342, 30);
+            this.newCheckTaglioToolStripMenuItem.Text = "NewCheckTaglio";
+            this.newCheckTaglioToolStripMenuItem.Click += new System.EventHandler(this.newCheckTaglioToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -823,6 +832,7 @@
         private System.Windows.Forms.ToolStripMenuItem commesseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mascheraStampaggioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificaLastraCommessaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newCheckTaglioToolStripMenuItem;
     }
 }
 

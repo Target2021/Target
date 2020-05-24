@@ -22,7 +22,11 @@ namespace Target2021.Anagrafiche
 
         private void AnaOrdiniEsclusi_Load(object sender, EventArgs e)
         {
-            string anno="";
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniEsclusi'. È possibile spostarla o rimuoverla se necessario.
+            this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.OrdiniEsclusi'. È possibile spostarla o rimuoverla se necessario.
+            this.ordiniEsclusiTableAdapter.Fill(this.target2021DataSet.OrdiniEsclusi);
+            string anno ="";
             comboBox1.Text = DateTime.Now.Year.ToString();
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.dettaglio_ordini_multiriga'. È possibile spostarla o rimuoverla se necessario.
             this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
@@ -44,8 +48,22 @@ namespace Target2021.Anagrafiche
                 int DataOrd = Convert.ToInt32(dettaglio_ordini_multirigaDataGridView.Rows[Posizione].Cells[0].Value);
                 ImpostaPesoCliente(NumOrd, DataOrd, 0);  // usa il campo peso per settare stato ordine (0=da importare, 1=importato, 2=scontato)
                 AggiornaStatoTemporaneo(NumOrd, DataOrd, 0);  // Aggiorno anche la tabella locale
+                AggiornaTabellaOrdiniEsclusi(NumOrd, DataOrd);
                 MessageBox.Show("Ri-incluso l'ordine " + NumOrd + " del " + DataOrd);
+                this.dettaglio_ordini_multirigaTableAdapter.Fill(this.target2021DataSet.dettaglio_ordini_multiriga);
+                dettaglio_ordini_multirigaDataGridView.Update();
+                dettaglio_ordini_multirigaDataGridView.Refresh();
             }
+        }
+
+        private void AggiornaTabellaOrdiniEsclusi(int NumOrd, int DataOrd)
+        {
+            DataRow[] Riga = target2021DataSet.OrdiniEsclusi.Select("Numero = " + NumOrd.ToString() + " AND Data = " + DataOrd.ToString());
+            foreach (DataRow R in Riga)
+            {
+                R.Delete();
+            }
+            ordiniEsclusiTableAdapter.Update(target2021DataSet.OrdiniEsclusi);
         }
 
         private void AggiornaStatoTemporaneo(int n, int data, int stato)

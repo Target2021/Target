@@ -15,6 +15,7 @@ using Target2021.Fornitori;
 using Target2021.Anagrafiche.Fornitore;
 using Target2021.Fase2;
 using Target2021.Magazzino;
+using Target2021.Fase4;
 
 namespace Target2021
 {
@@ -566,6 +567,13 @@ namespace Target2021
             LastraCommessa LC = new LastraCommessa();
             LC.MdiParent = this;
             LC.Show();
+        }
+
+        private void newCheckTaglioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewCheckTaglio Taglio = new NewCheckTaglio();
+            Taglio.MdiParent = this;
+            Taglio.Show();
         }
     }
 }
