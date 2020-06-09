@@ -1199,6 +1199,7 @@ namespace Target2021.Anagrafiche
             int t1 = 0;
             int t2 = 0;
             int t3 = 0;
+            AggiornaTab(textBox2.Text);
         }
 
         private void button12_Click(object sender, EventArgs e)

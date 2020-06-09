@@ -13,7 +13,7 @@ namespace Target2021
     public partial class Login : Form
     {
         public string NomeUtente;
-        public int livello;    // 1 = admin 2=stampa
+        public int livello;    // 1 = admin 2=stampaggio 3=taglio
         public Login()
         {
             InitializeComponent();

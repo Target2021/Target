@@ -104,6 +104,7 @@
             this.giacenzeMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.iDCommessaTextBox = new System.Windows.Forms.TextBox();
             codCommessaLabel = new System.Windows.Forms.Label();
             dataCommessaLabel = new System.Windows.Forms.Label();
             iDClienteLabel = new System.Windows.Forms.Label();
@@ -368,6 +369,16 @@
             progrTaglio2Label.Size = new System.Drawing.Size(93, 16);
             progrTaglio2Label.TabIndex = 113;
             progrTaglio2Label.Text = "Progr Taglio2:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.Location = new System.Drawing.Point(16, 245);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(147, 16);
+            label7.TabIndex = 119;
+            label7.Text = "Giacenza a magazzino:";
             // 
             // target2021DataSet
             // 
@@ -873,19 +884,8 @@
             // 
             this.giacenzeMagazziniTableAdapter.ClearBeforeFill = true;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(16, 245);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(147, 16);
-            label7.TabIndex = 119;
-            label7.Text = "Giacenza a magazzino:";
-            // 
             // textBox5
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "CodArtiDopoStampo", true));
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(169, 242);
@@ -894,6 +894,15 @@
             this.textBox5.TabIndex = 120;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // iDCommessaTextBox
+            // 
+            this.iDCommessaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.commesseBindingSource, "IDCommessa", true));
+            this.iDCommessaTextBox.Enabled = false;
+            this.iDCommessaTextBox.Location = new System.Drawing.Point(245, 79);
+            this.iDCommessaTextBox.Name = "iDCommessaTextBox";
+            this.iDCommessaTextBox.Size = new System.Drawing.Size(89, 20);
+            this.iDCommessaTextBox.TabIndex = 121;
+            // 
             // LavoraTaglio_cs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -901,6 +910,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1148, 485);
+            this.Controls.Add(this.iDCommessaTextBox);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(label7);
             this.Controls.Add(this.button3);
@@ -1031,5 +1041,6 @@
         private System.Windows.Forms.BindingSource giacenzeMagazziniBindingSource;
         private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox iDCommessaTextBox;
     }
 }

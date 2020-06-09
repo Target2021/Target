@@ -38,8 +38,8 @@
             this.commesseDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NrCommessa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCommessa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +102,7 @@
             this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PezziGiaStampati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commesseDataGridView)).BeginInit();
@@ -195,8 +196,8 @@
             this.commesseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
+            this.NrCommessa,
+            this.DataCommessa,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
@@ -258,7 +259,8 @@
             this.dataGridViewTextBoxColumn62,
             this.dataGridViewTextBoxColumn63,
             this.dataGridViewTextBoxColumn64,
-            this.dataGridViewTextBoxColumn65});
+            this.dataGridViewTextBoxColumn65,
+            this.PezziGiaStampati});
             this.commesseDataGridView.DataSource = this.commesseBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -274,8 +276,9 @@
             this.commesseDataGridView.ReadOnly = true;
             this.commesseDataGridView.RowHeadersVisible = false;
             this.commesseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.commesseDataGridView.Size = new System.Drawing.Size(1255, 554);
+            this.commesseDataGridView.Size = new System.Drawing.Size(1497, 554);
             this.commesseDataGridView.TabIndex = 1;
+            this.commesseDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.commesseDataGridView_DataBindingComplete);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -294,22 +297,22 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 149;
             // 
-            // dataGridViewTextBoxColumn3
+            // NrCommessa
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NrCommessa";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NrCommessa";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Visible = false;
-            this.dataGridViewTextBoxColumn3.Width = 126;
+            this.NrCommessa.DataPropertyName = "NrCommessa";
+            this.NrCommessa.HeaderText = "NrCommessa";
+            this.NrCommessa.Name = "NrCommessa";
+            this.NrCommessa.ReadOnly = true;
+            this.NrCommessa.Visible = false;
+            this.NrCommessa.Width = 126;
             // 
-            // dataGridViewTextBoxColumn4
+            // DataCommessa
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DataCommessa";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Data Commessa";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 134;
+            this.DataCommessa.DataPropertyName = "DataCommessa";
+            this.DataCommessa.HeaderText = "Data Commessa";
+            this.DataCommessa.Name = "DataCommessa";
+            this.DataCommessa.ReadOnly = true;
+            this.DataCommessa.Width = 134;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -858,11 +861,18 @@
             this.dataGridViewTextBoxColumn65.Visible = false;
             this.dataGridViewTextBoxColumn65.Width = 155;
             // 
+            // PezziGiaStampati
+            // 
+            this.PezziGiaStampati.HeaderText = "Nr Pezzi già stampati";
+            this.PezziGiaStampati.Name = "PezziGiaStampati";
+            this.PezziGiaStampati.ReadOnly = true;
+            this.PezziGiaStampati.Width = 163;
+            // 
             // NewCheckTaglio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 631);
+            this.ClientSize = new System.Drawing.Size(1512, 631);
             this.Controls.Add(this.commesseDataGridView);
             this.Name = "NewCheckTaglio";
             this.Text = "NewCheckTaglio";
@@ -883,8 +893,8 @@
         private System.Windows.Forms.DataGridView commesseDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NrCommessa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataCommessa;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
@@ -947,5 +957,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn64;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn65;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PezziGiaStampati;
     }
 }

@@ -93,30 +93,35 @@
             this.nrPezziCorrettiTextBox = new System.Windows.Forms.TextBox();
             this.nrPezziScartatiTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.oFSG1DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG1DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG1TextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.oFSG2DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG2DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG2TextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.oSFG3DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG3DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG3TextBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
             this.oFSG4DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.oISG4DateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.attG4TextBox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.dateTimePicker10 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
             this.oFSG5DateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -154,7 +159,6 @@
             this.macchineStampoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.macchineStampoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MacchineStampoTableAdapter();
             this.movimentiMagazzinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
             this.clientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientiTableAdapter = new Target2021.Target2021DataSetTableAdapters.clientiTableAdapter();
             this.dettArticoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -165,6 +169,7 @@
             this.giacenzeMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter();
             this.abbinamentiSuperCommesseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.abbinamentiSuperCommesseTableAdapter = new Target2021.Target2021DataSetTableAdapters.AbbinamentiSuperCommesseTableAdapter();
+            this.movimentiMagazzinoTableAdapter = new Target2021.Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter();
             iDCommessaLabel = new System.Windows.Forms.Label();
             codCommessaLabel = new System.Windows.Forms.Label();
             nrCommessaLabel = new System.Windows.Forms.Label();
@@ -853,6 +858,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(oFSG1Label);
@@ -867,6 +873,15 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Giorno 1:";
+            // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(246, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(71, 21);
+            this.button3.TabIndex = 57;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
@@ -895,6 +910,7 @@
             this.oFSG1DateTimePicker.Name = "oFSG1DateTimePicker";
             this.oFSG1DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oFSG1DateTimePicker.TabIndex = 5;
+            this.oFSG1DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // oISG1DateTimePicker
             // 
@@ -903,6 +919,7 @@
             this.oISG1DateTimePicker.Name = "oISG1DateTimePicker";
             this.oISG1DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oISG1DateTimePicker.TabIndex = 3;
+            this.oISG1DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // attG1TextBox
             // 
@@ -917,6 +934,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.dateTimePicker4);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(label3);
@@ -931,6 +949,15 @@
             this.groupBox2.TabIndex = 42;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giorno 2:";
+            // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(246, 18);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(71, 21);
+            this.button4.TabIndex = 79;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker4
             // 
@@ -959,6 +986,7 @@
             this.oFSG2DateTimePicker.Name = "oFSG2DateTimePicker";
             this.oFSG2DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oFSG2DateTimePicker.TabIndex = 5;
+            this.oFSG2DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // oISG2DateTimePicker
             // 
@@ -967,6 +995,7 @@
             this.oISG2DateTimePicker.Name = "oISG2DateTimePicker";
             this.oISG2DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oISG2DateTimePicker.TabIndex = 3;
+            this.oISG2DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // attG2TextBox
             // 
@@ -981,6 +1010,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.dateTimePicker6);
             this.groupBox3.Controls.Add(this.dateTimePicker5);
             this.groupBox3.Controls.Add(label9);
@@ -995,6 +1025,15 @@
             this.groupBox3.TabIndex = 43;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Giorno 3:";
+            // 
+            // button9
+            // 
+            this.button9.Enabled = false;
+            this.button9.Location = new System.Drawing.Point(246, 14);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(71, 21);
+            this.button9.TabIndex = 79;
+            this.button9.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker6
             // 
@@ -1023,6 +1062,7 @@
             this.oSFG3DateTimePicker.Name = "oSFG3DateTimePicker";
             this.oSFG3DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oSFG3DateTimePicker.TabIndex = 5;
+            this.oSFG3DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // oISG3DateTimePicker
             // 
@@ -1031,6 +1071,7 @@
             this.oISG3DateTimePicker.Name = "oISG3DateTimePicker";
             this.oISG3DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oISG3DateTimePicker.TabIndex = 3;
+            this.oISG3DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // attG3TextBox
             // 
@@ -1044,6 +1085,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.dateTimePicker8);
             this.groupBox4.Controls.Add(this.dateTimePicker7);
             this.groupBox4.Controls.Add(label11);
@@ -1058,6 +1100,15 @@
             this.groupBox4.TabIndex = 44;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Giorno 4:";
+            // 
+            // button10
+            // 
+            this.button10.Enabled = false;
+            this.button10.Location = new System.Drawing.Point(246, 15);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(71, 21);
+            this.button10.TabIndex = 79;
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker8
             // 
@@ -1086,6 +1137,7 @@
             this.oFSG4DateTimePicker.Name = "oFSG4DateTimePicker";
             this.oFSG4DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oFSG4DateTimePicker.TabIndex = 5;
+            this.oFSG4DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // oISG4DateTimePicker
             // 
@@ -1094,6 +1146,7 @@
             this.oISG4DateTimePicker.Name = "oISG4DateTimePicker";
             this.oISG4DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oISG4DateTimePicker.TabIndex = 3;
+            this.oISG4DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // attG4TextBox
             // 
@@ -1107,6 +1160,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button11);
             this.groupBox5.Controls.Add(this.dateTimePicker10);
             this.groupBox5.Controls.Add(this.dateTimePicker9);
             this.groupBox5.Controls.Add(label13);
@@ -1121,6 +1175,15 @@
             this.groupBox5.TabIndex = 45;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Giorno 5:";
+            // 
+            // button11
+            // 
+            this.button11.Enabled = false;
+            this.button11.Location = new System.Drawing.Point(246, 16);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(71, 21);
+            this.button11.TabIndex = 79;
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker10
             // 
@@ -1149,6 +1212,7 @@
             this.oFSG5DateTimePicker.Name = "oFSG5DateTimePicker";
             this.oFSG5DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oFSG5DateTimePicker.TabIndex = 5;
+            this.oFSG5DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // oISG5DateTimePicker
             // 
@@ -1157,6 +1221,7 @@
             this.oISG5DateTimePicker.Name = "oISG5DateTimePicker";
             this.oISG5DateTimePicker.Size = new System.Drawing.Size(185, 20);
             this.oISG5DateTimePicker.TabIndex = 3;
+            this.oISG5DateTimePicker.Leave += new System.EventHandler(this.Salvar);
             // 
             // attG5TextBox
             // 
@@ -1504,10 +1569,6 @@
             this.movimentiMagazzinoBindingSource.DataMember = "MovimentiMagazzino";
             this.movimentiMagazzinoBindingSource.DataSource = this.target2021DataSet;
             // 
-            // movimentiMagazzinoTableAdapter
-            // 
-            this.movimentiMagazzinoTableAdapter.ClearBeforeFill = true;
-            // 
             // clientiBindingSource
             // 
             this.clientiBindingSource.DataMember = "clienti";
@@ -1567,12 +1628,16 @@
             // 
             this.abbinamentiSuperCommesseTableAdapter.ClearBeforeFill = true;
             // 
+            // movimentiMagazzinoTableAdapter
+            // 
+            this.movimentiMagazzinoTableAdapter.ClearBeforeFill = true;
+            // 
             // LavoraStampaggio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1036, 615);
+            this.ClientSize = new System.Drawing.Size(1036, 603);
             this.Controls.Add(this.button15);
             this.Controls.Add(nrLastreUtilizzateLabel);
             this.Controls.Add(this.nrLastreUtilizzateTextBox);
@@ -1740,7 +1805,6 @@
         private System.Windows.Forms.TextBox nrPezziResiduiTextBox;
         private System.Windows.Forms.TextBox codArtiDopoStampoTextBox;
         private System.Windows.Forms.BindingSource movimentiMagazzinoBindingSource;
-        private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
@@ -1776,5 +1840,11 @@
         private Target2021DataSetTableAdapters.GiacenzeMagazziniTableAdapter giacenzeMagazziniTableAdapter;
         private System.Windows.Forms.BindingSource abbinamentiSuperCommesseBindingSource;
         private Target2021DataSetTableAdapters.AbbinamentiSuperCommesseTableAdapter abbinamentiSuperCommesseTableAdapter;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private Target2021DataSetTableAdapters.MovimentiMagazzinoTableAdapter movimentiMagazzinoTableAdapter;
     }
 }

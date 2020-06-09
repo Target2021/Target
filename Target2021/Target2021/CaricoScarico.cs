@@ -146,14 +146,14 @@ namespace Target2021
                     movimentiMagazzinoTableAdapter.Fill(this.target2021DataSet.MovimentiMagazzino);
                     if (CS=="C")
                     {
-                        AggiornaGiacenzeC(qta, CodArt, CS);
+                        AggiornaGiacenzeC(qta, CodArt, CS, IdMagazzino);
                         MessageBox.Show("Movimento registrato correttamente!");
                         Pulisci();
                     }
 
                     if (CS == "S" && qta <= AMagazzino)
                     {
-                        AggiornaGiacenzeS(qta, CodArt, CS);
+                        AggiornaGiacenzeS(qta, CodArt, CS, IdMagazzino);
                         MessageBox.Show("Movimento registrato correttamente!");
                         Pulisci();
                     }
@@ -207,27 +207,39 @@ namespace Target2021
             this.giacenzeMagazziniTableAdapter.Fill(this.target2021DataSet.GiacenzeMagazzini);
         }
 
-        private void AggiornaGiacenzeC(int q, string Cod, string cs)
+        private void AggiornaGiacenzeC(int q, string Cod, string cs, int IdMagazzino)
         {
             int numero, disponibili;
-            string query2;
+            string query1="", query2="";
             DateTime ora;
             SqlCommand comando2;
             SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
             conn.Open();
-            string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+            if (IdMagazzino == 1) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+            if (IdMagazzino == 2) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idStampi='" + Cod + "'";
+            if (IdMagazzino == 3) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idDime='" + Cod + "'";
+            if (IdMagazzino == 4) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
+            if (IdMagazzino == 5) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idArticoli='" + Cod + "'";
             SqlCommand comando1 = new SqlCommand(query1, conn);
             try
             {
                 numero = (int) comando1.ExecuteScalar();
-                query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+                if (IdMagazzino == 1) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+                if (IdMagazzino == 2) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idStampi='" + Cod + "'";
+                if (IdMagazzino == 3) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idDime='" + Cod + "'";
+                if (IdMagazzino == 4) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
+                if (IdMagazzino == 5) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idArticoli='" + Cod + "'";
                 comando2 = new SqlCommand(query2, conn);
                 disponibili = (int)comando2.ExecuteScalar();
                 numero = numero + q;
                 disponibili = disponibili + q;
                 // update
                 ora = DateTime.Now;
-                query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = "+numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '"+ora.ToString()+"' WHERE idPrime='" + Cod + "'";
+                if (IdMagazzino == 1) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = "+numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '"+ora.ToString()+"' WHERE idPrime='" + Cod + "'";
+                if (IdMagazzino == 2) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idStampi='" + Cod + "'";
+                if (IdMagazzino == 3) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idDime='" + Cod + "'";
+                if (IdMagazzino == 4) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idSemilavorati='" + Cod + "'";
+                if (IdMagazzino == 5) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idArticoli='" + Cod + "'";
                 comando2 = new SqlCommand(query2, conn);
                 comando2.ExecuteNonQuery();
                 MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
@@ -247,29 +259,41 @@ namespace Target2021
             conn.Close();
         }
 
-        private void AggiornaGiacenzeS(int q, string Cod, string cs)
+        private void AggiornaGiacenzeS(int q, string Cod, string cs, int IdMagazzino)
         {
             int numero, disponibili;
-            string query2;
+            string query1="", query2="";
             DateTime ora;
             SqlCommand comando2;
             SqlConnection conn = new SqlConnection(Properties.Resources.StringaConnessione);
             conn.Open();
-            string query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+            if (IdMagazzino == 1) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+            if (IdMagazzino == 2) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idStampi='" + Cod + "'";
+            if (IdMagazzino == 3) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idDime='" + Cod + "'";
+            if (IdMagazzino == 4) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
+            if (IdMagazzino == 5) query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idArticoli='" + Cod + "'";
             SqlCommand comando1 = new SqlCommand(query1, conn);
             try
             {
                 numero = (int)comando1.ExecuteScalar();
                 if (numero > 0)   // articolo già presente nelle giacenze
                 {
-                    query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+                    if (IdMagazzino == 1) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idPrime='" + Cod + "'";
+                    if (IdMagazzino == 2) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idStampi='" + Cod + "'";
+                    if (IdMagazzino == 3) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idDime='" + Cod + "'";
+                    if (IdMagazzino == 4) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
+                    if (IdMagazzino == 5) query2 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idArticoli='" + Cod + "'";
                     comando2 = new SqlCommand(query2, conn);
                     disponibili = (int)comando2.ExecuteScalar();
                     numero = numero - q;
                     disponibili = disponibili - q;
                     // update
                     ora = DateTime.Now;
-                    query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";
+                    if (IdMagazzino == 1) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idPrime='" + Cod + "'";
+                    if (IdMagazzino == 2) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idStampi='" + Cod + "'";
+                    if (IdMagazzino == 3) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idDime='" + Cod + "'";
+                    if (IdMagazzino == 4) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idSemilavorati='" + Cod + "'";
+                    if (IdMagazzino == 5) query2 = "UPDATE GiacenzeMagazzini SET GiacenzaComplessiva = " + numero.ToString() + ", GiacenzaDisponibili = " + disponibili.ToString() + ", DataUltimoMovimento = '" + ora.ToString() + "' WHERE idArticoli='" + Cod + "'";
                     comando2 = new SqlCommand(query2, conn);
                     comando2.ExecuteNonQuery();
                     MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());

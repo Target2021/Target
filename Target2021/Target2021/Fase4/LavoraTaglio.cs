@@ -117,9 +117,65 @@ namespace Target2021
 
         private void Salva()
         {
-            this.Validate();
-            this.commesseBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+            //this.Validate();
+            //this.commesseBindingSource.EndEdit();
+            //this.commesseTableAdapter.Update(target2021DataSet.Commesse);
+            ////tableAdapterManager.UpdateAll(this.target2021DataSet);
+            int IDCommessa, NrPezziCorretti, NrPezziScartati, SecondiCicloTaglio, MinutiAttrezzaggio;
+            try
+            {
+                NrPezziCorretti = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+            }
+            catch
+            {
+                NrPezziCorretti = 0;
+            }
+
+            try
+            {
+                NrPezziScartati = Convert.ToInt32(nrPezziScartatiTextBox.Text);
+            }
+            catch
+            {
+                NrPezziScartati = 0;
+            }
+
+            try
+            {
+                SecondiCicloTaglio = Convert.ToInt32(secondiCicloTaglioTextBox.Text);
+            }
+            catch
+            {
+                SecondiCicloTaglio = 0;
+            }
+
+            try
+            {
+                MinutiAttrezzaggio = Convert.ToInt32(minutiAttrezzaggioTextBox.Text);
+            }
+            catch
+            {
+                MinutiAttrezzaggio = 0;
+            }
+
+            IDCommessa = Convert.ToInt32(iDCommessaTextBox.Text);
+
+            DataRow riga;
+            DataTable Commesse;
+            Commesse = target2021DataSet.Tables["Commesse"];
+
+            riga = Commesse.Rows.Find(IDCommessa);
+
+            riga.BeginEdit();
+            riga["NrPezziCorretti"] = NrPezziCorretti;
+            riga["NrPezziScartati"] = NrPezziScartati;
+            riga["SecondiCicloTaglio"] = SecondiCicloTaglio;
+            riga["MinutiAttrezzaggio"] = MinutiAttrezzaggio;
+            riga["Stato"] = statoTextBox.Text;
+            riga.EndEdit();
+
+            commesseTableAdapter.Update(target2021DataSet);
+
         }
 
         private void codCommessaTextBox_TextChanged(object sender, EventArgs e)

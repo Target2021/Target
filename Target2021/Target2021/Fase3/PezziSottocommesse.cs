@@ -56,7 +56,7 @@ namespace Target2021.Fase3
             this.Validate();
             this.commesseBindingSource.EndEdit();
             var result= await Task.Run(()=> commesseTableAdapter.Update(target2021DataSet.Commesse));
-            MessageBox.Show("Salvataggio effettuato!");
+            //MessageBox.Show("Salvataggio effettuato!");
         }
 
         private void button1_Click(object sender, EventArgs e)

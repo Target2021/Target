@@ -49,6 +49,68 @@ namespace Target2021
             ControllaDate();
             schedMachTextBox.Text = macchina.ToString();
             ImpostaSchedaLavorazione();
+            ColoraBottoni();
+        }
+
+        private void ColoraBottoni()
+        {
+            int IdCommessa, i1, i2, i3, i4, i5;
+            DateTime Data;
+            IdCommessa = Convert.ToInt32(iDCommessaTextBox.Text);
+            DataRow riga;
+            DataTable TabellaCommesse = target2021DataSet.Tables["Commesse"];
+            riga = TabellaCommesse.Rows.Find(IdCommessa);
+            try
+            {
+                Data = (DateTime) riga["OISG1"];
+                i1 = 1;
+            }
+            catch
+            {
+                i1 = 0;
+            }
+            try
+            {
+                Data = (DateTime)riga["OISG2"];
+                i2 = 1;
+            }
+            catch
+            {
+                i2 = 0;
+            }
+            try
+            {
+                Data = (DateTime)riga["OISG3"];
+                i3 = 1;
+            }
+            catch
+            {
+                i3 = 0;
+            }
+            try
+            {
+                Data = (DateTime)riga["OISG4"];
+                i4 = 1;
+            }
+            catch
+            {
+                i4 = 0;
+            }
+            try
+            {
+                Data = (DateTime)riga["OISG5"];
+                i5 = 1;
+            }
+            catch
+            {
+                i5 = 0;
+            }
+
+            if (i1 == 0) button3.BackColor = Color.Red; else button3.BackColor = Color.Green;
+            if (i2 == 0) button4.BackColor = Color.Red; else button4.BackColor = Color.Green;
+            if (i3 == 0) button9.BackColor = Color.Red; else button9.BackColor = Color.Green;
+            if (i4 == 0) button10.BackColor = Color.Red; else button10.BackColor = Color.Green;
+            if (i5 == 0) button11.BackColor = Color.Red; else button11.BackColor = Color.Green;
         }
 
         private void ImpostaSchedaLavorazione()
@@ -284,6 +346,13 @@ namespace Target2021
             }
         }
 
+        private void SalvaRidotto()
+        {
+            this.Validate();
+            this.commesseBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.target2021DataSet);
+        }
+
         private void Salva()
         {
             this.Validate();
@@ -291,6 +360,7 @@ namespace Target2021
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
             SalvaSchedaInAnArticolo();
             AggiornaFase1();    // con il numero dei pezzi provvisoriamente stampati
+            ColoraBottoni();
             //AggiornaFase3();    // Non va bene, sovrascriverebbe il numero dei pezzi tagliati
         }
 
@@ -760,7 +830,8 @@ namespace Target2021
             query1 = "SELECT SUM(GiacenzaComplessiva) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
             query3 = "SELECT SUM(GiacenzaDisponibili) FROM GiacenzeMagazzini WHERE idSemilavorati='" + Cod + "'";
             comando1 = new SqlCommand(query1, conn);
-            comando3 = new SqlCommand(query3, conn); try
+            comando3 = new SqlCommand(query3, conn);
+            try
             {
                 numero = (int)comando1.ExecuteScalar();
                 numeroDisponibili = (int)comando3.ExecuteScalar();
@@ -1037,6 +1108,11 @@ namespace Target2021
         {
             ElencoCommesseInSC elenco = new ElencoCommesseInSC(codCommessaTextBox.Text);
             elenco.ShowDialog();
+        }
+
+        private void Salvar(object sender, EventArgs e)
+        {
+            SalvaRidotto();
         }
     }
 }
