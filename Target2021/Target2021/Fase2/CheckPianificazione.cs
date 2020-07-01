@@ -31,6 +31,8 @@ namespace Target2021
             this.abbinamentiSuperCommesseTableAdapter.Fill(this.target2021DataSet.AbbinamentiSuperCommesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AbbinamentiSuperCommesse'. È possibile spostarla o rimuoverla se necessario.
             this.abbinamentiSuperCommesseTableAdapter.Fill(this.target2021DataSet.AbbinamentiSuperCommesse);
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.AbbinamentiSuperCommesse'. È possibile spostarla o rimuoverla se necessario.
+            this.abbinamentiSuperCommesseTableAdapter.Fill(this.target2021DataSet.AbbinamentiSuperCommesse);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.MacchineStampo'. È possibile spostarla o rimuoverla se necessario.
             this.macchineStampoTableAdapter.Fill(this.target2021DataSet.MacchineStampo);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.SuperCommessa'. È possibile spostarla o rimuoverla se necessario.
@@ -379,6 +381,7 @@ namespace Target2021
                 Riga.NrLastre= Convert.ToInt32(textBox4.Text);
                 Riga.CodLastra= textBox2.Text;
                 Riga.Stampo = row.Cells["Stampo"].Value.ToString();
+                Riga.CodCommessa = row.Cells[1].Value.ToString().Trim();
                 target2021DataSet.AbbinamentiSuperCommesse.Rows.Add(Riga);
             }
             abbinamentiSuperCommesseTableAdapter.Update(target2021DataSet.AbbinamentiSuperCommesse);

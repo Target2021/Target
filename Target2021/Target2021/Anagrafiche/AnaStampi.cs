@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Target2021.NuovePagine;
 
 namespace Target2021.Anagrafiche
 {
@@ -64,6 +65,13 @@ namespace Target2021.Anagrafiche
             {
                 MessageBox.Show("Il Codice dello Stampo è già presente!");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NuovoStampo NS = new NuovoStampo();
+            NS.ShowDialog();
+            this.stampiTableAdapter.Fill(this.target2021DataSet.Stampi);
         }
     }
 }

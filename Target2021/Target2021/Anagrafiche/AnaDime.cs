@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Target2021.NuovePagine;
 
 namespace Target2021.Anagrafiche
 {
@@ -46,6 +47,13 @@ namespace Target2021.Anagrafiche
             this.dimeBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.target2021DataSet);
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            NuovaDima ND = new NuovaDima();
+            ND.ShowDialog();
+            this.dimeTableAdapter.Fill(this.target2021DataSet.Dime);
         }
     }
 }

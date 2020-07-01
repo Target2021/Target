@@ -565,6 +565,18 @@
     <Compile Include="NewOrderCheck.Designer.cs">
       <DependentUpon>NewOrderCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuovePagine\NuovaDima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuovePagine\NuovaDima.Designer.cs">
+      <DependentUpon>NuovaDima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NuovePagine\NuovoStampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuovePagine\NuovoStampo.Designer.cs">
+      <DependentUpon>NuovoStampo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pianificazione.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -967,6 +979,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrderCheck.resx">
       <DependentUpon>NewOrderCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuovePagine\NuovaDima.resx">
+      <DependentUpon>NuovaDima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuovePagine\NuovoStampo.resx">
+      <DependentUpon>NuovoStampo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pianificazione.resx">
       <DependentUpon>Pianificazione.cs</DependentUpon>

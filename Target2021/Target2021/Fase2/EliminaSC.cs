@@ -72,7 +72,7 @@ namespace Target2021.Fase2
             Target2021DataSet.CommesseRow Riga;
             foreach (DataGridViewRow row in abbinamentiSuperCommesseDataGridView.Rows)
             {
-                IdC = Convert.ToInt32(row.Cells[2].Value);
+                IdC = Convert.ToInt32(row.Cells[3].Value);
                 Riga = target2021DataSet.Commesse.FindByIDCommessa(IdC);
                 Riga.BeginEdit();
                 Riga.Stato = 0;

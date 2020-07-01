@@ -511,9 +511,9 @@ namespace Target2021.Anagrafiche
                 //if (IdFase4 >= 0) SalvaTab4(IdFase4);
                 SalvaTab4(0);
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Il salvataggio richiede attenzione: codice 23");
+                MessageBox.Show("Il salvataggio richiede attenzione: " + ex.Message);
             }
 
             MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
@@ -815,7 +815,7 @@ namespace Target2021.Anagrafiche
                 p3 = 0;
                 MessageBox.Show("Posizione stampo non corretta!");
             }
-            AggiornaPosizioneStampo(CodStampo, textBox19.Text, textBox20.Text, p3);
+            AggiornaPosizioneStampo(CodStampo, textBox19.Text.Trim(), textBox20.Text.Trim(), p3);
         }
 
         private void SalvaTab3(int Id)
