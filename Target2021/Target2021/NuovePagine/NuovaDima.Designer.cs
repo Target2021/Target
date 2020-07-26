@@ -44,6 +44,8 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -54,15 +56,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.target2021DataSet = new Target2021.Target2021DataSet();
             this.dimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dimeTableAdapter = new Target2021.Target2021DataSetTableAdapters.DimeTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -202,6 +202,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.DataSource = this.fornitoriBindingSource;
             this.comboBox1.DisplayMember = "codice";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -212,6 +214,18 @@
             this.comboBox1.TabIndex = 56;
             this.comboBox1.ValueMember = "ragione_sociale";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Leave += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Validated += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // fornitoriBindingSource
+            // 
+            this.fornitoriBindingSource.DataMember = "Fornitori";
+            this.fornitoriBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label6
             // 
@@ -313,11 +327,6 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Inserimento nuova Dima in anagrafica";
             // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dimeBindingSource
             // 
             this.dimeBindingSource.DataMember = "Dime";
@@ -380,11 +389,6 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // fornitoriBindingSource
-            // 
-            this.fornitoriBindingSource.DataMember = "Fornitori";
-            this.fornitoriBindingSource.DataSource = this.target2021DataSet;
-            // 
             // fornitoriTableAdapter
             // 
             this.fornitoriTableAdapter.ClearBeforeFill = true;
@@ -423,9 +427,9 @@
             this.Name = "NuovaDima";
             this.Text = "Nuova Dima";
             this.Load += new System.EventHandler(this.NuovaDima_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dimeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -152,9 +152,14 @@ namespace Target2021.Anagrafiche
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
+            AggiornaFornitorePrima();
+        }
+
+        private void AggiornaFornitorePrima()
+        {
             try
             {
-                string filtro = "codice='" + comboBox4.SelectedValue + "'";
+                string filtro = "codice='" + comboBox4.Text + "'";
                 DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
                 label7.Text = Fornitore[0].Field<String>("ragione_sociale");
             }
@@ -446,19 +451,26 @@ namespace Target2021.Anagrafiche
                 textBox19.Text = riga[0]["Corsia"].ToString();
                 textBox20.Text = riga[0]["Campata"].ToString();
                 textBox21.Text = riga[0]["Posizione"].ToString();
+                comboBox7.Text = riga[0]["codice_fornitore"].ToString();
+                AggiornaAnaFornitore();
+            }
+            catch { }
+        }
+
+        private void AggiornaAnaFornitore()
+        {
+            try
+            {
+                string filtro = "codice='" + comboBox7.Text.Trim() + "'";
+                DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
+                label18.Text = Fornitore[0].Field<String>("ragione_sociale");
             }
             catch { }
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string filtro = "codice='" + comboBox7.SelectedValue + "'";
-                DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
-                label18.Text = Fornitore[0].Field<String>("ragione_sociale");
-            }
-            catch { }
+            AggiornaAnaFornitore();
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
@@ -566,6 +578,8 @@ namespace Target2021.Anagrafiche
                 string filtro = "codice='" + comboBox3.SelectedValue + "'";
                 DataRow[] MatPrima = target2021DataSet.Tables["Prime"].Select(filtro);
                 label6.Text = MatPrima[0].Field<String>("descrizione");
+                comboBox4.Text = MatPrima[0].Field<String>("codice_fornitore");
+                AggiornaFornitorePrima();
             }
             catch
             {
@@ -585,10 +599,23 @@ namespace Target2021.Anagrafiche
                 textBox23.Text = riga[0]["Corsia"].ToString();
                 textBox24.Text = riga[0]["Campata"].ToString();
                 textBox25.Text = riga[0]["Posizione"].ToString();
+                comboBox10.Text = riga[0]["codice_fornitore"].ToString();
+                AggiornaFornitoreDima();
             }
             catch (Exception ex)
             { //MessageBox.Show(ex.Message); 
             }
+        }
+
+        private void AggiornaFornitoreDima()
+        {
+            try
+            {
+                string filtro = "codice='" + comboBox10.Text.Trim() + "'";
+                DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
+                label32.Text = Fornitore[0].Field<String>("ragione_sociale");
+            }
+            catch { }
         }
 
         private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
@@ -598,13 +625,7 @@ namespace Target2021.Anagrafiche
 
         private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string filtro = "codice='" + comboBox10.SelectedValue + "'";
-                DataRow[] Fornitore = target2021DataSet.Tables["Fornitori"].Select(filtro);
-                label32.Text = Fornitore[0].Field<String>("ragione_sociale");
-            }
-            catch { }
+            AggiornaFornitoreDima();
         }
 
         private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)

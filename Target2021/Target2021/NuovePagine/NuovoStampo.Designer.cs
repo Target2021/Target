@@ -40,6 +40,8 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.target2021DataSet = new Target2021.Target2021DataSet();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,14 +56,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.target2021DataSet = new Target2021.Target2021DataSet();
-            this.fornitoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fornitoriTableAdapter = new Target2021.Target2021DataSetTableAdapters.FornitoriTableAdapter();
             this.stampiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,6 +167,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.DataSource = this.fornitoriBindingSource;
             this.comboBox1.DisplayMember = "codice";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,6 +179,16 @@
             this.comboBox1.TabIndex = 10;
             this.comboBox1.ValueMember = "ragione_sociale";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // fornitoriBindingSource
+            // 
+            this.fornitoriBindingSource.DataMember = "Fornitori";
+            this.fornitoriBindingSource.DataSource = this.target2021DataSet;
+            // 
+            // target2021DataSet
+            // 
+            this.target2021DataSet.DataSetName = "Target2021DataSet";
+            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label7
             // 
@@ -313,16 +325,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // target2021DataSet
-            // 
-            this.target2021DataSet.DataSetName = "Target2021DataSet";
-            this.target2021DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fornitoriBindingSource
-            // 
-            this.fornitoriBindingSource.DataMember = "Fornitori";
-            this.fornitoriBindingSource.DataSource = this.target2021DataSet;
-            // 
             // fornitoriTableAdapter
             // 
             this.fornitoriTableAdapter.ClearBeforeFill = true;
@@ -423,8 +425,8 @@
             this.Name = "NuovoStampo";
             this.Text = "Nuovo Stampo";
             this.Load += new System.EventHandler(this.NuovoStampo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fornitoriBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stampiBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
