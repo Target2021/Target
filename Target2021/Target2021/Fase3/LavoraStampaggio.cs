@@ -295,29 +295,36 @@ namespace Target2021
 
         private void AggiornaFase1()
         {
-            int NrPezziGiaStampati;
+            int NrPezziGiaStampati, stato=0;
             string CodiceCommessaStampaggio, CodiceCommessaOF;
 
-            CodiceCommessaStampaggio = codCommessaTextBox.Text.Trim();
-
-            try
+            stato = Convert.ToInt32(statoTextBox.Text);
+            if (stato == 10)
             {
-                CodiceCommessaOF = CodiceCommessaStampaggio.Replace("S", "OF");
-                NrPezziGiaStampati = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
-                string stringaconnessione, sql;
-                stringaconnessione = Properties.Resources.StringaConnessione;
-                SqlConnection connessione = new SqlConnection(stringaconnessione);
-                sql = "UPDATE Commesse SET NrPezziCorretti = "+NrPezziGiaStampati .ToString()+" WHERE CodCommessa = '" + CodiceCommessaOF+"'";
-                SqlCommand comando = new SqlCommand(sql, connessione);
-                connessione.Open();
-                comando.ExecuteNonQuery();
-                connessione.Close();
+                SalvaProgressivoSC psc = new SalvaProgressivoSC(codCommessaTextBox.Text);
+                psc.ShowDialog();
             }
-            catch
+            else
             {
-                // errore
+                CodiceCommessaStampaggio = codCommessaTextBox.Text.Trim();
+                try
+                {
+                    CodiceCommessaOF = CodiceCommessaStampaggio.Replace("S", "OF");
+                    NrPezziGiaStampati = Convert.ToInt32(nrPezziCorrettiTextBox.Text);
+                    string stringaconnessione, sql;
+                    stringaconnessione = Properties.Resources.StringaConnessione;
+                    SqlConnection connessione = new SqlConnection(stringaconnessione);
+                    sql = "UPDATE Commesse SET NrPezziCorretti = "+NrPezziGiaStampati .ToString()+" WHERE CodCommessa = '" + CodiceCommessaOF+"'";
+                    SqlCommand comando = new SqlCommand(sql, connessione);
+                    connessione.Open();
+                    comando.ExecuteNonQuery();
+                    connessione.Close();
+                }
+                catch
+                {
+                    // errore
+                }
             }
-
         }
 
         private void AggiornaFase3()
