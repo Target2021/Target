@@ -270,13 +270,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.commesseDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.commesseDataGridView.Location = new System.Drawing.Point(12, 73);
+            this.commesseDataGridView.Location = new System.Drawing.Point(4, 82);
+            this.commesseDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.commesseDataGridView.MultiSelect = false;
             this.commesseDataGridView.Name = "commesseDataGridView";
             this.commesseDataGridView.ReadOnly = true;
             this.commesseDataGridView.RowHeadersVisible = false;
             this.commesseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.commesseDataGridView.Size = new System.Drawing.Size(1497, 554);
+            this.commesseDataGridView.Size = new System.Drawing.Size(1907, 682);
             this.commesseDataGridView.TabIndex = 1;
             this.commesseDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.commesseDataGridView_DataBindingComplete);
             // 
@@ -295,7 +296,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Codice Commessa";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 149;
+            this.dataGridViewTextBoxColumn2.Width = 178;
             // 
             // NrCommessa
             // 
@@ -312,7 +313,7 @@
             this.DataCommessa.HeaderText = "Data Commessa";
             this.DataCommessa.Name = "DataCommessa";
             this.DataCommessa.ReadOnly = true;
-            this.DataCommessa.Width = 134;
+            this.DataCommessa.Width = 162;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -329,7 +330,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Cliente";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 81;
+            this.dataGridViewTextBoxColumn6.Width = 97;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -346,7 +347,7 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Data Consegna";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 128;
+            this.dataGridViewTextBoxColumn8.Width = 153;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -354,7 +355,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "Nr Pezzi Da Lavorare";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 164;
+            this.dataGridViewTextBoxColumn9.Width = 201;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -362,7 +363,7 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "Articolo finale";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 117;
+            this.dataGridViewTextBoxColumn10.Width = 142;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -370,7 +371,7 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Descrizione Articolo";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 157;
+            this.dataGridViewTextBoxColumn11.Width = 191;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -441,7 +442,7 @@
             this.dataGridViewTextBoxColumn19.HeaderText = "Articolo in Ingresso";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Width = 151;
+            this.dataGridViewTextBoxColumn19.Width = 184;
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -449,7 +450,7 @@
             this.dataGridViewTextBoxColumn20.HeaderText = "Macchina di taglio";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            this.dataGridViewTextBoxColumn20.Width = 110;
+            this.dataGridViewTextBoxColumn20.Width = 133;
             // 
             // dataGridViewTextBoxColumn21
             // 
@@ -457,7 +458,7 @@
             this.dataGridViewTextBoxColumn21.HeaderText = "Dima";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Width = 69;
+            this.dataGridViewTextBoxColumn21.Width = 82;
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -465,7 +466,7 @@
             this.dataGridViewTextBoxColumn22.HeaderText = "Articolo in Uscita";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Width = 97;
+            this.dataGridViewTextBoxColumn22.Width = 119;
             // 
             // dataGridViewTextBoxColumn23
             // 
@@ -545,7 +546,7 @@
             this.dataGridViewTextBoxColumn31.HeaderText = "Nr Pezzi già tagliati";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
             this.dataGridViewTextBoxColumn31.ReadOnly = true;
-            this.dataGridViewTextBoxColumn31.Width = 110;
+            this.dataGridViewTextBoxColumn31.Width = 136;
             // 
             // dataGridViewTextBoxColumn32
             // 
@@ -697,7 +698,7 @@
             this.dataGridViewTextBoxColumn48.HeaderText = "Secondi Ciclo Taglio";
             this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
             this.dataGridViewTextBoxColumn48.ReadOnly = true;
-            this.dataGridViewTextBoxColumn48.Width = 122;
+            this.dataGridViewTextBoxColumn48.Width = 146;
             // 
             // dataGridViewTextBoxColumn49
             // 
@@ -866,14 +867,15 @@
             this.PezziGiaStampati.HeaderText = "Nr Pezzi già stampati";
             this.PezziGiaStampati.Name = "PezziGiaStampati";
             this.PezziGiaStampati.ReadOnly = true;
-            this.PezziGiaStampati.Width = 163;
+            this.PezziGiaStampati.Width = 200;
             // 
             // NewCheckTaglio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1512, 631);
+            this.ClientSize = new System.Drawing.Size(1924, 777);
             this.Controls.Add(this.commesseDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NewCheckTaglio";
             this.Text = "NewCheckTaglio";
             this.Load += new System.EventHandler(this.NewCheckTaglio_Load);

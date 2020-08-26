@@ -38,7 +38,6 @@
             this.stampiTableAdapter = new Target2021.Target2021DataSetTableAdapters.StampiTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
             this.stampiBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -75,7 +74,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(888, 75);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 41);
             this.button1.TabIndex = 8;
@@ -90,7 +89,7 @@
             "Codice",
             "Descrizione"});
             this.comboBox1.Location = new System.Drawing.Point(204, 76);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(301, 37);
             this.comboBox1.TabIndex = 7;
@@ -175,7 +174,7 @@
             // 
             // stampiBindingNavigator
             // 
-            this.stampiBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.stampiBindingNavigator.AddNewItem = null;
             this.stampiBindingNavigator.BindingSource = this.stampiBindingSource;
             this.stampiBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.stampiBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -191,7 +190,6 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.stampiBindingNavigatorSaveItem});
             this.stampiBindingNavigator.Location = new System.Drawing.Point(0, 545);
@@ -204,15 +202,6 @@
             this.stampiBindingNavigator.Size = new System.Drawing.Size(1249, 27);
             this.stampiBindingNavigator.TabIndex = 9;
             this.stampiBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Aggiungi nuovo";
             // 
             // bindingNavigatorCountItem
             // 
@@ -320,7 +309,7 @@
             this.dataGridViewTextBoxColumn8});
             this.stampiDataGridView.DataSource = this.stampiBindingSource;
             this.stampiDataGridView.Location = new System.Drawing.Point(0, 138);
-            this.stampiDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.stampiDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.stampiDataGridView.Name = "stampiDataGridView";
             this.stampiDataGridView.Size = new System.Drawing.Size(1249, 400);
             this.stampiDataGridView.TabIndex = 9;
@@ -400,7 +389,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(532, 76);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(331, 34);
             this.textBox1.TabIndex = 10;
@@ -442,7 +431,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaStampi";
             this.Text = "Anagrafica Stampi";
             this.Load += new System.EventHandler(this.AnaStampi_Load);
@@ -466,7 +455,6 @@
         private Target2021DataSetTableAdapters.StampiTableAdapter stampiTableAdapter;
         private Target2021DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator stampiBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;

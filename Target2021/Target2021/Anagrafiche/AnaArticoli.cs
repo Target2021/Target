@@ -88,6 +88,7 @@ namespace Target2021.Anagrafiche
             pulisci();
             this.ActiveControl = textBox1;
             WindowState = FormWindowState.Maximized;
+            RendiDisable();
         }
 
         private void Filtra(object sender, EventArgs e)
@@ -172,6 +173,7 @@ namespace Target2021.Anagrafiche
         private void AggiornaTab(string codice)
         {
             // DA AGGIUNGERE CHE SE LA FASE è ASSENTE VUOTA LE CASELLE E LE METTE IN ENABLE = FALSE
+            // ------------------------------------------------------------------------------------
             Tab1(codice);
             Assente(1);
             //Thread.Sleep(200);
@@ -529,6 +531,7 @@ namespace Target2021.Anagrafiche
             }
 
             MessageBox.Show("Il salvataggio è stato effettuato correttamente!");
+            RendiDisable();
         }
 
         private void ScorriTab()
@@ -1225,7 +1228,130 @@ namespace Target2021.Anagrafiche
 
         private void button12_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funzionalità in corso di implementazione");
+            if (button12.Text == "Modifica")
+            {
+                RendiEnable();
+                button12.Text = "Chiudi Modifica";
+                return;
+            }
+            if (button12.Text == "Chiudi Modifica")
+            {
+                RendiDisable();
+                button12.Text = "Modifica";
+                return;
+            }
+        }
+
+        private void RendiEnable()
+        {
+            textBox2.Enabled = false;   // Codice - SEMPRE in sola lettura
+            textBox4.Enabled = true;    // Costo di produzione
+            textBox17.Enabled = true;   // Prezzo di vendita
+            textBox5.Enabled = false;   // Nr. di fasi - SEMPRE in sola lettura
+            textBox28.Enabled = true;   // Lotto minimo di produzione
+            textBox18.Enabled = true;   // Imballaggio
+            button4.Enabled = true;     // Bottone cambio immagine del pezzo
+            // TAB 1
+            comboBox2.Enabled = true;   // Presente/Assente fase 1
+            comboBox3.Enabled = true;   // Codice materia prima
+            comboBox4.Enabled = true;   // Codice fornitore lastra
+            textBox6.Enabled = false;   // Codice input - Sempre Disabilitato
+            textBox7.Enabled = true;    // Codice di output
+            textBox8.Enabled = true;    // Lotto minimo di riordino
+            // TAB 2 
+            comboBox5.Enabled = true;   // Presente/Assente fase 2
+            textBox22.Enabled = true;   // Programma di stampaggio
+            comboBox8.Enabled = true;   // Macchina predefinita di stampaggio
+            comboBox6.Enabled = true;   // Codice stampo
+            textBox19.Enabled = true;   // Posizione a magazzino
+            textBox20.Enabled = true;   // Posizione a magazzino
+            textBox21.Enabled = true;   // Posizione a magazzino
+            comboBox7.Enabled = true;   // Codice fornitore stampo
+            textBox12.Enabled = true;   // Abbinamento stampo ?
+            button2.Enabled = true;     // Bottone di abbinamento stampo
+            textBox9.Enabled = true;    // Codice input
+            textBox10.Enabled = true;   // Codice output
+            textBox11.Enabled = true;   // Percentuale utilizzo lastra
+            textBox26.Enabled = true;   // Numero pezzi per stampo
+            textBox27.Enabled = true;   // Tempo di stampaggio in secondi
+            textBox29.Enabled = true;   // Pezzi all'ora
+            textBox30.Enabled = true;   // Percorso dell'allegato
+            button6.Enabled = true;     // Gestione dell'allegato
+            button5.Enabled = true;     // Gestione dell'allegato
+            button8.Enabled = true;     // Gestione dell'allegato
+            // TAB 3
+            comboBox12.Enabled = true;  // Presente/Assente Fase 3
+            comboBox9.Enabled = true;   // Codice macchina di taglio
+            comboBox11.Enabled = true;  // Codice dima
+            textBox23.Enabled = true;   // Posizione a magazzino
+            textBox24.Enabled = true;   // Posizione a magazzino
+            textBox25.Enabled = true;   // Posizione a magazzino
+            comboBox10.Enabled = true;  // Codice fornitore Dima
+            textBox15.Enabled = true;   // Codice Input
+            textBox16.Enabled = true;   // Codice Output
+            textBox13.Enabled = true;   // Programma di taglio 1
+            textBox14.Enabled = true;   // Programma di taglio 2
+            // TAB 4
+            comboBox13.Enabled = true;
+            button9.Enabled = true;
+            button10.Enabled = true;
+            button11.Enabled = true;
+        }
+
+        private void RendiDisable()
+        {
+            textBox2.Enabled = false;   // Codice - SEMPRE in sola lettura
+            textBox4.Enabled = false;    // Costo di produzione
+            textBox17.Enabled = false;   // Prezzo di vendita
+            textBox5.Enabled = false;   // Nr. di fasi - SEMPRE in sola lettura
+            textBox28.Enabled = false;   // Lotto minimo di produzione
+            textBox18.Enabled = false;   // Imballaggio
+            button4.Enabled = false;     // Bottone cambio immagine del pezzo
+            // TAB 1
+            comboBox2.Enabled = false;   // Presente/Assente fase 1
+            comboBox3.Enabled = false;   // Codice materia prima
+            comboBox4.Enabled = false;   // Codice fornitore lastra
+            textBox6.Enabled = false;   // Codice input - Sempre Disabilitato
+            textBox7.Enabled = false;    // Codice di output
+            textBox8.Enabled = false;    // Lotto minimo di riordino
+            // TAB 2 
+            comboBox5.Enabled = false;   // Presente/Assente fase 2
+            textBox22.Enabled = false;   // Programma di stampaggio
+            comboBox8.Enabled = false;   // Macchina predefinita di stampaggio
+            comboBox6.Enabled = false;   // Codice stampo
+            textBox19.Enabled = false;   // Posizione a magazzino
+            textBox20.Enabled = false;   // Posizione a magazzino
+            textBox21.Enabled = false;   // Posizione a magazzino
+            comboBox7.Enabled = false;   // Codice fornitore stampo
+            textBox12.Enabled = false;   // Abbinamento stampo ?
+            button2.Enabled = false;     // Bottone di abbinamento stampo
+            textBox9.Enabled = false;    // Codice input
+            textBox10.Enabled = false;   // Codice output
+            textBox11.Enabled = false;   // Percentuale utilizzo lastra
+            textBox26.Enabled = false;   // Numero pezzi per stampo
+            textBox27.Enabled = false;   // Tempo di stampaggio in secondi
+            textBox29.Enabled = false;   // Pezzi all'ora
+            textBox30.Enabled = false;   // Percorso dell'allegato
+            button6.Enabled = false;     // Gestione dell'allegato
+            button5.Enabled = false;     // Gestione dell'allegato
+            button8.Enabled = false;     // Gestione dell'allegato
+            // TAB 3
+            comboBox12.Enabled = false;  // Presente/Assente Fase 3
+            comboBox9.Enabled = false;   // Codice macchina di taglio
+            comboBox11.Enabled = false;  // Codice dima
+            textBox23.Enabled = false;   // Posizione a magazzino
+            textBox24.Enabled = false;   // Posizione a magazzino
+            textBox25.Enabled = false;   // Posizione a magazzino
+            comboBox10.Enabled = false;  // Codice fornitore Dima
+            textBox15.Enabled = false;   // Codice Input
+            textBox16.Enabled = false;   // Codice Output
+            textBox13.Enabled = false;   // Programma di taglio 1
+            textBox14.Enabled = false;   // Programma di taglio 2
+            // TAB 4
+            comboBox13.Enabled = false;
+            button9.Enabled = false;
+            button10.Enabled = false;
+            button11.Enabled = false;
         }
 
         private void button11_Click(object sender, EventArgs e)

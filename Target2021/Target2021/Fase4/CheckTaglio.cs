@@ -33,7 +33,7 @@ namespace Target2021
         private void aggiorna()
         {
             String stringa = Properties.Resources.StringaConnessione;
-            string query = "SELECT taglio.CodCommessa AS Codice, taglio.NrCommessa AS Numero, taglio.DataCommessa AS Data, taglio.IDCliente AS Cliente, taglio.DescrArticolo AS Articolo, taglio.IDMachTaglio AS Macchina, macchina.Descrizione AS Macchinario, taglio.IDDima AS Dima, taglio.NrPezziDaLavorare AS Pezzi, taglio.NrPezziCorretti AS GiàTagliati " +
+            string query = "SELECT taglio.CodCommessa AS Codice, taglio.NrCommessa AS Numero, taglio.DataCommessa AS Data, taglio.IDCliente AS Cliente, taglio.DescrArticolo AS Articolo, taglio.IDMachTaglio AS Macchina, macchina.Descrizione AS Macchinario, taglio.IDDima AS Dima, taglio.NrPezziDaLavorare AS Pezzi, taglio.NrPezziCorretti AS GiàTagliati, stampo.NrPezziCorretti AS GiàStampati " +
                 "FROM Commesse AS taglio " +
                 "INNER JOIN Commesse AS stampo " +
                 "ON taglio.NrCommessa = stampo.NrCommessa " +
@@ -57,12 +57,13 @@ namespace Target2021
 
         private void colora()
         {
-            int numcom, stato;
+            int numcom, stato, NrPezziStampati=0;
 
             foreach (DataGridViewRow riga in dataGridView1.Rows)
             {
                 numcom = Convert.ToInt32(riga.Cells["Numero"].Value);
                 stato=ControllaStatoStampo(numcom);
+                NrPezziStampati = RecuperaPzStampati(numcom);
                 if (stato == 0)
                 {
                     riga.DefaultCellStyle.BackColor = Color.Orange;
@@ -76,7 +77,13 @@ namespace Target2021
                     riga.DefaultCellStyle.BackColor = Color.LightGreen;
                 }
             }
-            dataGridView1 .Update();
+            dataGridView1.Update();
+        }
+
+        private int RecuperaPzStampati(int NCom)
+        {
+
+            return 0;
         }
 
         private int ControllaStatoStampo(int NC)    // oltre a colorare potrebbe valorizzare la colonna (da creare) con il nr dei pezzi stampati
@@ -107,11 +114,18 @@ namespace Target2021
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string idcommessa;
-            idcommessa = dataGridView1.Rows[e.RowIndex].Cells["Codice"].Value.ToString();
+            try
+            {
+                idcommessa = dataGridView1.Rows[e.RowIndex].Cells["Codice"].Value.ToString();
 
-            LavoraTaglio_cs LavTag = new LavoraTaglio_cs(idcommessa);
-            LavTag.ShowDialog();
-            aggiorna();
+                LavoraTaglio_cs LavTag = new LavoraTaglio_cs(idcommessa);
+                LavTag.ShowDialog();
+                aggiorna();
+            }
+            catch (Exception Errore)
+            {
+
+            }
         }
     }
 }
