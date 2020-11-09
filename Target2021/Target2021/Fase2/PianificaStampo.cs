@@ -276,16 +276,6 @@ namespace Target2021.Fase2
             }
         }
 
-        private void commesseDataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void commesseDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void commesseDataGridView4_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
@@ -319,11 +309,6 @@ namespace Target2021.Fase2
         {
             ElencoCommesseInSC elenco = new ElencoCommesseInSC(Cod);
             elenco.ShowDialog();
-        }
-
-        private void commesseDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dimensiona(object sender, EventArgs e)

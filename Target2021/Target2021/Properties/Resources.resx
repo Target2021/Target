@@ -158,10 +158,10 @@
     <value>..\immagini\question-mark.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ConnessioneAccess" xml:space="preserve">
-    <value>Provider=Microsoft.ace.OLEDB.12.0;Data Source=Y:\DBORDINI.MDB</value>
+    <value>Provider=Microsoft.ace.OLEDB.12.0;Data Source=W:\DATI\DBORDINI.MDB</value>
   </data>
   <data name="ConnessioneAccessDDT" xml:space="preserve">
-    <value>Provider=Microsoft.ace.OLEDB.12.0;Data Source=Y:\dbddt.mdb</value>
+    <value>Provider=Microsoft.ace.OLEDB.12.0;Data Source=W:\DATI\dbddt.mdb</value>
   </data>
   <data name="CString" xml:space="preserve">
     <value>Data Source=DESKTOP-CSQ69NN\SQLEXPRESS;Initial Catalog=Target2021;Integrated Security=True</value>

@@ -107,7 +107,6 @@
             this.commesseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.commesseDataGridView.Size = new System.Drawing.Size(565, 527);
             this.commesseDataGridView.TabIndex = 3;
-            this.commesseDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView_CellContentClick);
             this.commesseDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.commesseDataGridView_DataBindingComplete);
             this.commesseDataGridView.DragEnter += new System.Windows.Forms.DragEventHandler(this.Effetto);
             this.commesseDataGridView.DragOver += new System.Windows.Forms.DragEventHandler(this.Effetto);
@@ -239,7 +238,6 @@
             this.commesseDataGridView1.Size = new System.Drawing.Size(781, 157);
             this.commesseDataGridView1.TabIndex = 7;
             this.commesseDataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView1_CellClick);
-            this.commesseDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView1_CellContentClick);
             this.commesseDataGridView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView1_DragDrop);
             this.commesseDataGridView1.DragEnter += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView1_DragEnter);
             // 
@@ -303,7 +301,6 @@
             this.commesseDataGridView2.Size = new System.Drawing.Size(781, 162);
             this.commesseDataGridView2.TabIndex = 10;
             this.commesseDataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView2_CellClick);
-            this.commesseDataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.commesseDataGridView2_CellContentClick);
             this.commesseDataGridView2.DragDrop += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView2_DragDrop);
             this.commesseDataGridView2.DragEnter += new System.Windows.Forms.DragEventHandler(this.commesseDataGridView2_DragEnter);
             // 
