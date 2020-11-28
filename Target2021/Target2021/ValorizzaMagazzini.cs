@@ -44,36 +44,103 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int magazzino=0; // Magazzino: 1=lastre, 4=semilavorati, 5=finiti
+            double Totale=0;
+
+            if (comboBox1.SelectedIndex == 0) magazzino = 1;
+            if (comboBox1.SelectedIndex == 1) magazzino = 4;
+            if (comboBox1.SelectedIndex == 2) magazzino = 5;
+            if (comboBox1.SelectedIndex == -1) return;
+
+            if (magazzino == 1) Totale = CalcolaLastre();
+            if (magazzino == 4) Totale = CalcolaSemilavorati();
+            if (magazzino == 5) Totale = CalcolaFiniti();
+
+            textBox1.Text = Totale.ToString("#.##")+" €";
+        }
+
+        private double CalcolaLastre()
+        {
+            double Totale = 0, ValoreLastra, ValoreTotale;
             string CodiceLastraGiacente;
-            int Giacenza;
-            double ValoreLastra, ValoreTotale, Totale=0;
+            int Giacenza, NrMagazzino=0;
 
             foreach (DataGridViewRow row in giacenzeMagazziniDataGridView.Rows)
             {
                 try
                 {
-                    CodiceLastraGiacente = row.Cells[2].Value.ToString();
-                    Giacenza = Convert.ToInt32(row.Cells[7].Value);
-                    DataRow[] RigaTrovata;
-                    RigaTrovata = target2021DataSet.Tables["Prime"].Select("codice = '" + CodiceLastraGiacente + "'");
-                    try
+                    NrMagazzino = Convert .ToInt32(row.Cells[1].Value);
+                    if (NrMagazzino == 1)
                     {
-                        ValoreLastra =Convert.ToDouble(RigaTrovata[0][3]);
+                        CodiceLastraGiacente = row.Cells[2].Value.ToString();
+                        Giacenza = Convert.ToInt32(row.Cells[7].Value);
+                        DataRow[] RigaTrovata;
+                        RigaTrovata = target2021DataSet.Tables["Prime"].Select("codice = '" + CodiceLastraGiacente + "'");
+                        try
+                        {
+                            ValoreLastra = Convert.ToDouble(RigaTrovata[0][3]);
+                        }
+                        catch
+                        {
+                            ValoreLastra = 0;
+                        }
+                        //MessageBox.Show("Lastra: " + CodiceLastraGiacente + " - Valore: " + ValoreLastra.ToString());
+                        ValoreTotale = ValoreLastra * Giacenza;
+                        Totale = Totale + ValoreTotale;
+                        this.dataGridView1.Rows.Add(CodiceLastraGiacente, ValoreLastra.ToString(), Giacenza.ToString(), ValoreTotale);
                     }
-                    catch
-                    {
-                        ValoreLastra = 0;
-                    }
-                    //MessageBox.Show("Lastra: " + CodiceLastraGiacente + " - Valore: " + ValoreLastra.ToString());
-                    ValoreTotale = ValoreLastra * Giacenza;
-                    Totale = Totale + ValoreTotale;
-                    this.dataGridView1.Rows.Add(CodiceLastraGiacente, ValoreLastra.ToString(), Giacenza.ToString(), ValoreTotale);
                 }
                 catch { }
             }
             dataGridView1.Columns[3].DefaultCellStyle.Format = "0.##";
             dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            textBox1.Text = Totale.ToString("#.##")+" €";
+
+            return Totale;
+        }
+
+        private double CalcolaSemilavorati()
+        {
+            double Totale = 0, ValoreLastra, ValoreTotale;
+            string CodiceLastraGiacente;
+            int Giacenza, NrMagazzino = 0;
+
+            foreach (DataGridViewRow row in giacenzeMagazziniDataGridView.Rows)
+            {
+                try
+                {
+                    NrMagazzino = Convert.ToInt32(row.Cells[1].Value);
+                    if (NrMagazzino == 4)
+                    {
+                        CodiceLastraGiacente = row.Cells[5].Value.ToString();
+                        Giacenza = Convert.ToInt32(row.Cells[7].Value);
+                        DataRow[] RigaTrovata;
+                        RigaTrovata = target2021DataSet.Tables["articoli_semplici"].Select("codice = '" + CodiceLastraGiacente + "'");
+                        try
+                        {
+                            ValoreLastra = Convert.ToDouble(RigaTrovata[0][18]);
+                        }
+                        catch
+                        {
+                            ValoreLastra = 0;
+                        }
+                        //MessageBox.Show("Lastra: " + CodiceLastraGiacente + " - Valore: " + ValoreLastra.ToString());
+                        ValoreTotale = ValoreLastra * Giacenza;
+                        Totale = Totale + ValoreTotale;
+                        this.dataGridView1.Rows.Add(CodiceLastraGiacente, ValoreLastra.ToString(), Giacenza.ToString(), ValoreTotale);
+                    }
+                }
+                catch { }
+            }
+            dataGridView1.Columns[3].DefaultCellStyle.Format = "0.##";
+            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            return Totale;
+        }
+
+        private double CalcolaFiniti()
+        {
+            double Totale = 0;
+            return Totale;
         }
     }
 }

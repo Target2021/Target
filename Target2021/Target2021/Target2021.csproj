@@ -556,6 +556,18 @@
     <Compile Include="Magazzino\AllineaDDT.Designer.cs">
       <DependentUpon>AllineaDDT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Magazzino\GiacenzaLastre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Magazzino\GiacenzaLastre.Designer.cs">
+      <DependentUpon>GiacenzaLastre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Magazzino\GiacenzeSemilavoratiArticoli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Magazzino\GiacenzeSemilavoratiArticoli.Designer.cs">
+      <DependentUpon>GiacenzeSemilavoratiArticoli.cs</DependentUpon>
+    </Compile>
     <Compile Include="MascheraTaglio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -989,6 +1001,12 @@
     <EmbeddedResource Include="Magazzino\AllineaDDT.resx">
       <DependentUpon>AllineaDDT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Magazzino\GiacenzaLastre.resx">
+      <DependentUpon>GiacenzaLastre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Magazzino\GiacenzeSemilavoratiArticoli.resx">
+      <DependentUpon>GiacenzeSemilavoratiArticoli.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MascheraTaglio.resx">
       <DependentUpon>MascheraTaglio.cs</DependentUpon>
     </EmbeddedResource>
@@ -1168,6 +1186,7 @@
   <ItemGroup>
     <Content Include="3dlb-3d-Vol2-Target.ico" />
     <Content Include="Immagini\allegaFile.png" />
+    <None Include="Resources\Logo.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

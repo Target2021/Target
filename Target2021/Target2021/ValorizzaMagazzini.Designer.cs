@@ -77,6 +77,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giacenzeMagazziniDataGridView)).BeginInit();
@@ -117,6 +119,7 @@
             this.tableAdapterManager.CompatibStampaTableAdapter = null;
             this.tableAdapterManager.CompatibTaglioTableAdapter = null;
             this.tableAdapterManager.ConfigurazioneTableAdapter = null;
+            this.tableAdapterManager.dettaglio_ddtTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_acquistoTableAdapter = null;
             this.tableAdapterManager.dettaglio_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.DettArticoliTableAdapter = null;
@@ -134,6 +137,8 @@
             this.tableAdapterManager.MovimentiMagazzinoTableAdapter = null;
             this.tableAdapterManager.OrdFornDettTableAdapter = null;
             this.tableAdapterManager.OrdFornTestTableAdapter = null;
+            this.tableAdapterManager.OrdiniEsclusiTableAdapter = null;
+            this.tableAdapterManager.OrdiniImportatiTableAdapter = null;
             this.tableAdapterManager.PesiSpecificiTableAdapter = null;
             this.tableAdapterManager.PosizioniDimeStampiTableAdapter = null;
             this.tableAdapterManager.PrimeTableAdapter = this.primeTableAdapter;
@@ -142,6 +147,8 @@
             this.tableAdapterManager.SuperCommessaTableAdapter = null;
             this.tableAdapterManager.sysdiagramsTableAdapter = null;
             this.tableAdapterManager.TaglioOnLineTableAdapter = null;
+            this.tableAdapterManager.TempStampTableAdapter = null;
+            this.tableAdapterManager.TempTableAdapter = null;
             this.tableAdapterManager.testata_ordini_multirigaTableAdapter = null;
             this.tableAdapterManager.TipoCommessaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -175,9 +182,10 @@
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17});
             this.giacenzeMagazziniDataGridView.DataSource = this.giacenzeMagazziniBindingSource;
-            this.giacenzeMagazziniDataGridView.Location = new System.Drawing.Point(586, 265);
+            this.giacenzeMagazziniDataGridView.Location = new System.Drawing.Point(786, 326);
+            this.giacenzeMagazziniDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.giacenzeMagazziniDataGridView.Name = "giacenzeMagazziniDataGridView";
-            this.giacenzeMagazziniDataGridView.Size = new System.Drawing.Size(200, 50);
+            this.giacenzeMagazziniDataGridView.Size = new System.Drawing.Size(267, 62);
             this.giacenzeMagazziniDataGridView.TabIndex = 1;
             this.giacenzeMagazziniDataGridView.Visible = false;
             // 
@@ -313,9 +321,10 @@
             this.dataGridViewTextBoxColumn33,
             this.dataGridViewTextBoxColumn34});
             this.primeDataGridView.DataSource = this.primeBindingSource;
-            this.primeDataGridView.Location = new System.Drawing.Point(586, 321);
+            this.primeDataGridView.Location = new System.Drawing.Point(786, 395);
+            this.primeDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.primeDataGridView.Name = "primeDataGridView";
-            this.primeDataGridView.Size = new System.Drawing.Size(201, 67);
+            this.primeDataGridView.Size = new System.Drawing.Size(268, 82);
             this.primeDataGridView.TabIndex = 1;
             this.primeDataGridView.Visible = false;
             // 
@@ -425,9 +434,10 @@
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(610, 128);
+            this.button1.Location = new System.Drawing.Point(821, 178);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 42);
+            this.button1.Size = new System.Drawing.Size(197, 52);
             this.button1.TabIndex = 2;
             this.button1.Text = "VALORIZZA";
             this.button1.UseVisualStyleBackColor = true;
@@ -449,10 +459,11 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(16, 96);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(568, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(762, 382);
             this.dataGridView1.TabIndex = 3;
             // 
             // label1
@@ -460,9 +471,10 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(588, 184);
+            this.label1.Location = new System.Drawing.Point(797, 243);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 24);
+            this.label1.Size = new System.Drawing.Size(249, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Valore complessivo:";
             // 
@@ -471,9 +483,10 @@
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(586, 224);
+            this.textBox1.Location = new System.Drawing.Point(786, 276);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 35);
+            this.textBox1.Size = new System.Drawing.Size(265, 41);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -482,18 +495,44 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(149, 19);
+            this.label2.Location = new System.Drawing.Point(202, 23);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(526, 45);
+            this.label2.Size = new System.Drawing.Size(665, 56);
             this.label2.TabIndex = 6;
             this.label2.Text = "Valorizzazione giacenze di magazzino";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(792, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(241, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Seleziona il magazzino:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Lastre",
+            "Semilavorati",
+            "Articoli finali"});
+            this.comboBox1.Location = new System.Drawing.Point(797, 131);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(235, 33);
+            this.comboBox1.TabIndex = 8;
+            // 
             // ValorizzaMagazzini
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(799, 400);
+            this.ClientSize = new System.Drawing.Size(1070, 492);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -501,6 +540,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.primeDataGridView);
             this.Controls.Add(this.giacenzeMagazziniDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ValorizzaMagazzini";
             this.Text = "Valorizzazione giacenze di magazzino";
             this.Load += new System.EventHandler(this.ValorizzaMagazzini_Load);
@@ -564,5 +604,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

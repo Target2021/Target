@@ -12,7 +12,10 @@ namespace Target2021.Fase2
 {
     public partial class ElencoCommesseInSC : Form
     {
-        private string Cod;
+        private string Cod, CodArt, CodCom, DesCom;
+        public string CCommessa {get; set;}
+        public string CArticolo { get; set; }
+        public string DArticolo { get; set; }
 
         public ElencoCommesseInSC(string Codice)
         {
@@ -36,6 +39,23 @@ namespace Target2021.Fase2
             vistaSuperCommesseBindingSource.Filter = "IdSuperCommessa = " + risultato.ToString(); 
         }
 
+        private void vistaSuperCommesseDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void vistaSuperCommesseDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // recupera il codice articolo della riga selezionata
+            CodArt = vistaSuperCommesseDataGridView.Rows[e.RowIndex].Cells["CodArtiDopoStampo"].Value.ToString();
+            CodCom = vistaSuperCommesseDataGridView.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn6"].Value.ToString();
+            DesCom = vistaSuperCommesseDataGridView.Rows[e.RowIndex].Cells["DescrArticolo"].Value.ToString();
+            this.CArticolo = CodArt;
+            this.CCommessa = CodCom;
+            this.DArticolo = DesCom;
+            this.Close();
+        }
+
         private void superCommessaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -44,9 +64,16 @@ namespace Target2021.Fase2
 
         }
 
-        private void vistaSuperCommesseDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void vistaSuperCommesseDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // recupera il codice articolo della riga selezionata
+            CodArt = vistaSuperCommesseDataGridView.Rows[e.RowIndex].Cells["CodArtiDopoStampo"].Value.ToString();
+            CodCom = vistaSuperCommesseDataGridView.Rows[e.RowIndex].Cells["dataGridViewTextBoxColumn6"].Value.ToString();
+            DesCom = vistaSuperCommesseDataGridView.Rows[e.RowIndex].Cells["DescrArticolo"].Value.ToString();
+            this.CArticolo = CodArt;
+            this.CCommessa = CodCom;
+            this.DArticolo = DesCom;
+            this.Close();
         }
     }
 }

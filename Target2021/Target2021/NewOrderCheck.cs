@@ -104,8 +104,10 @@ namespace Target2021
             info.UseShellExecute = false;
             Process p = Process.Start(info);
             p.WaitForExit();
-            //string output = p.StandardOutput.ReadToEnd();
-            //MessageBox.Show(output);
+            string output = p.StandardOutput.ReadToEnd();
+            MessageBox.Show(output);
+
+
         }
 
         private void aggiornaVisualizzazione(string anno)

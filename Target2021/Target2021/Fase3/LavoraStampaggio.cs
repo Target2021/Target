@@ -859,7 +859,7 @@ namespace Target2021
                 numero = q;
                 // insert
                 ora = DateTime.Now;
-                query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idSemilavorati, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + numero.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idSemilavorati, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (4, '" + Cod + "', " + numero.ToString() + ", " + numero.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
                 comando2 = new SqlCommand(query2, conn);
                 comando2.ExecuteNonQuery();
                 //MessageBox.Show("Semilavorato non presente in magazzino. Creato.");
@@ -1079,14 +1079,31 @@ namespace Target2021
 
         private void button14_Click(object sender, EventArgs e)
         {
+            string CodCommessa = "";
+            string CodArticolo = "";
+            string DescArticolo = "";
             // Formato A4
             // CodCommessa (ad es. S55)
             // CodArticolo uscita fase stampaggio (ad es. ITA.04.033) (+ grande)
             // Descrizione articolo -> (ad es. pinco pallino)
             // Quantità -> far inserire manualmente all'operatore (>0) + grande)
-            string CodCommessa = codCommessaTextBox.Text;
-            string CodArticolo = codArtiDopoStampoTextBox.Text;
-            string DescArticolo = descrArticoloTextBox.Text;
+            int stato = Convert.ToInt32(statoTextBox.Text);
+            if (stato == 10)
+            {
+                // Scegli quale commessa (della supercommessa) stampare
+                ElencoCommesseInSC elenco = new ElencoCommesseInSC(codCommessaTextBox.Text);
+                var risultato = elenco.ShowDialog();
+                CodCommessa = elenco.CCommessa;
+                CodArticolo = elenco.CArticolo;
+                DescArticolo = elenco.DArticolo;
+            }
+            else
+            {
+                CodCommessa = codCommessaTextBox.Text;
+                CodArticolo = codArtiDopoStampoTextBox.Text;
+                DescArticolo = descrArticoloTextBox.Text;
+            }
+
             //string Qta = nrPezziCorrettiTextBox.Text;
             string Qta = Microsoft.VisualBasic.Interaction.InputBox("Quantità pezzi sul bancale?", "NUMERO PEZZI", "1", -1, -1);
             SSemilavorati stampa = new SSemilavorati(CodCommessa, CodArticolo, DescArticolo, Qta);

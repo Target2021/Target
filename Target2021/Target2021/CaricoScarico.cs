@@ -122,12 +122,14 @@ namespace Target2021
                 {
                     int IdMagazzino, qta, AMagazzino=0;
                     double peso=0, prezzo=0;
+                    DialogResult risultato=DialogResult.OK;
                     string CodArt, CS="X", BarCode, NrOrdine, Causale;
                     DateTime datamov;
 
                     IdMagazzino = Convert.ToInt32(comboBox1.SelectedValue);
                     CodArt = textBox1.Text;
-                    if (IdMagazzino == 1) AnaLastre(CodArt);
+                    if (IdMagazzino == 1) risultato=AnaLastre(CodArt);
+                    if (risultato == DialogResult.Cancel) return;
                     Causale = textBox8.Text;
                     if (radioButton1.Checked == true) CS = "C";
                     if (radioButton2.Checked == true) CS = "S";
@@ -167,10 +169,11 @@ namespace Target2021
             }
         }
         
-        private void AnaLastre(string CodArt)
+        private DialogResult AnaLastre(string CodArt)
         {
             string stringaconnessione, sql;
             int num;
+            DialogResult risultato = DialogResult.OK;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
             sql = "SELECT COUNT(codice) FROM Prime WHERE codice ='" + CodArt + "'";
@@ -189,8 +192,9 @@ namespace Target2021
             {
                 string nuovo = "-1";
                 SelPrime selez = new SelPrime(nuovo);
-                selez.ShowDialog();
+                risultato=selez.ShowDialog();
             }
+            return risultato;
         }
 
         private void Pulisci()
@@ -250,10 +254,15 @@ namespace Target2021
                 disponibili = q;
                 // insert
                 ora = DateTime.Now;
-                query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idPrime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";   
+                if (IdMagazzino == 1) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idPrime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 2) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idStampi, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 3) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idDime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 4) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idSemilavorati, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 5) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idArticoli, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+
                 comando2 = new SqlCommand(query2, conn);
                 comando2.ExecuteNonQuery();
-                MessageBox.Show("Materia prima non presente in magazzino. Creata.");
+                MessageBox.Show("Articolo non presente in magazzino. Creato.");
                 MessageBox.Show("Articolo: " + Cod + " - Giacenza: " + numero.ToString() + " - Disponibili: " + disponibili.ToString());
             }
             conn.Close();
@@ -305,7 +314,12 @@ namespace Target2021
                 disponibili = 0;
                 // insert
                 ora = DateTime.Now;
-                query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idPrime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 1) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idPrime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 2) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idStampi, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 3) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idDime, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 4) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idSemilavorati, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+                if (IdMagazzino == 5) query2 = "INSERT INTO GiacenzeMagazzini (idMagazzino, idArticoli, GiacenzaComplessiva, GiacenzaDisponibili, GiacenzaImpegnati, DataUltimoMovimento, GiacenzaOrdinati, GiacImpegnSuOrd) VALUES (1, '" + Cod + "', " + numero.ToString() + ", " + disponibili.ToString() + ", 0, '" + ora.ToString() + "',0 ,0)";
+
                 comando2 = new SqlCommand(query2, conn);
                 comando2.ExecuteNonQuery();
                 MessageBox.Show("Materia prima non presente in magazzino. Creata. Scarico = 0!");

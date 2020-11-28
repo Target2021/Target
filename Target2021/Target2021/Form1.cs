@@ -575,5 +575,19 @@ namespace Target2021
             Taglio.MdiParent = this;
             Taglio.Show();
         }
+
+        private void giacenzaLastreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GiacenzaLastre giacenze = new GiacenzaLastre();
+            giacenze.MdiParent = this;
+            giacenze.Show();
+        }
+
+        private void giacenzeSemilavoratiEFinitiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GiacenzeSemilavoratiArticoli giacenze = new GiacenzeSemilavoratiArticoli();
+            giacenze.MdiParent = this;
+            giacenze.Show();
+        }
     }
 }
