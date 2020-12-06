@@ -250,6 +250,12 @@
     <Compile Include="Anagrafiche\CercaArticolo.Designer.cs">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Anagrafiche\CopiaArticolo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anagrafiche\CopiaArticolo.Designer.cs">
+      <DependentUpon>CopiaArticolo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CalendarPianificazioneStampaggio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -853,6 +859,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Anagrafiche\CercaArticolo.resx">
       <DependentUpon>CercaArticolo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anagrafiche\CopiaArticolo.resx">
+      <DependentUpon>CopiaArticolo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CalendarPianificazioneStampaggio.resx">
       <DependentUpon>CalendarPianificazioneStampaggio.cs</DependentUpon>

@@ -27,6 +27,8 @@ namespace Target2021
 
         private void ValorizzaMagazzini_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.articoli_semplici'. È possibile spostarla o rimuoverla se necessario.
+            this.articoli_sempliciTableAdapter.Fill(this.target2021DataSet.articoli_semplici);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.GiacenzeMagazzini'. È possibile spostarla o rimuoverla se necessario.
@@ -139,7 +141,40 @@ namespace Target2021
 
         private double CalcolaFiniti()
         {
-            double Totale = 0;
+            double Totale = 0, ValoreLastra, ValoreTotale;
+            string CodiceLastraGiacente;
+            int Giacenza, NrMagazzino = 0;
+
+            foreach (DataGridViewRow row in giacenzeMagazziniDataGridView.Rows)
+            {
+                try
+                {
+                    NrMagazzino = Convert.ToInt32(row.Cells[1].Value);
+                    if (NrMagazzino == 5)
+                    {
+                        CodiceLastraGiacente = row.Cells[6].Value.ToString();
+                        Giacenza = Convert.ToInt32(row.Cells[7].Value);
+                        DataRow[] RigaTrovata;
+                        RigaTrovata = target2021DataSet.Tables["articoli_semplici"].Select("codice = '" + CodiceLastraGiacente + "'");
+                        try
+                        {
+                            ValoreLastra = Convert.ToDouble(RigaTrovata[0][18]);
+                        }
+                        catch
+                        {
+                            ValoreLastra = 0;
+                        }
+                        //MessageBox.Show("Lastra: " + CodiceLastraGiacente + " - Valore: " + ValoreLastra.ToString());
+                        ValoreTotale = ValoreLastra * Giacenza;
+                        Totale = Totale + ValoreTotale;
+                        this.dataGridView1.Rows.Add(CodiceLastraGiacente, ValoreLastra.ToString(), Giacenza.ToString(), ValoreTotale);
+                    }
+                }
+                catch { }
+            }
+            dataGridView1.Columns[3].DefaultCellStyle.Format = "0.##";
+            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             return Totale;
         }
     }

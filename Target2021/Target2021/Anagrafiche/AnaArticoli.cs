@@ -1393,5 +1393,13 @@ namespace Target2021.Anagrafiche
         {
             AggiornaContenutoTab1();
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            CopiaArticolo Copia = new CopiaArticolo(textBox2.Text);
+            Copia.ShowDialog();
+            this.articoli_sempliciTableAdapter.Fill(this.target2021DataSet.articoli_semplici);
+            this.dettArticoliTableAdapter.Fill(this.target2021DataSet.DettArticoli);
+        }
     }
 }
