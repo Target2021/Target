@@ -33,6 +33,7 @@ namespace Target2021
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Prime'. È possibile spostarla o rimuoverla se necessario.
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             MostraPercentualeLastra(C, D);
+            textBox5.Text = textBox4.Text;
         }
 
         private void MostraPercentualeLastra(string CodiceCommessa, DateTime DataCommessa)

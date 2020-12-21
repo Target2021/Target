@@ -845,9 +845,29 @@ namespace Target2021.Anagrafiche
         private void SalvaTab3(int Id)
         {
             int MachP;
-            string CodDima, DescDim, CodIn, CodOut, CodForn, Prog1, Prog2;
+            string CodDima, DescDim, CodIn, CodOut, CodForn, Prog1, Prog2, DesMach;
 
-            MachP = Convert.ToInt32(label26.Text);
+            // Va cambiata la logica: deve recuperare il contenuto del ComboBox9 e recuperare l'ID del valore
+            // MachP = Convert.ToInt32(label26.Text);
+            // FP 21.12.2020
+            DesMach = comboBox9.Text;
+            string stringaconnessione, sql;
+            stringaconnessione = Properties.Resources.StringaConnessione;
+            SqlConnection connessione = new SqlConnection(stringaconnessione);
+            sql = "SELECT IDTaglio FROM MacchineTaglio WHERE Descrizione = '"+DesMach+"'";
+            SqlCommand comando = new SqlCommand(sql, connessione);
+            connessione.Open();
+            try
+            {
+                MachP = Convert.ToInt32(comando.ExecuteScalar());
+            }
+            catch
+            {
+                MessageBox.Show("Errore nel recupero del codice macchina di taglio");
+                MachP = 0;
+            }
+            connessione.Close();
+            // Fine FP 21.12.2020
             CodDima = comboBox11.Text;
             DescDim = label34.Text;
             CodForn = comboBox10.Text;
