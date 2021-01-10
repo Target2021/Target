@@ -24,6 +24,7 @@ namespace Target2021
     {
         private int NumOrd, NumTest, percentuale;
         private string IDPrima;
+        private string Anno;
 
         public NewOrderCheck()
         {
@@ -59,7 +60,7 @@ namespace Target2021
             try
             {
                 //Process.Start(@"\\192.168.1.203\Pubblica\CopiaAccess.exe");
-                Avvia();
+                //Avvia();
             }
             catch
             {
@@ -114,7 +115,7 @@ namespace Target2021
         {
             anno = anno + "0000";
             //dettaglio_ordini_multirigaBindingSource.Filter = "peso = 1 ";
-            dettaglioordinimultirigaBindingSource.Filter = "peso = 0";
+            dettaglioordinimultirigaBindingSource.Filter = "peso = 0 AND data_ordine > '" + anno + "'";
             dettaglioordinimultirigaBindingSource1.Filter = "peso = 2 AND data_ordine > '"+anno+"'";
             try
             {
@@ -228,8 +229,11 @@ namespace Target2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Anno = comboBox1.Text+"0000";
             syncro();
             aggiorna();
+            //AggiornaComboBox();
+            aggiornaVisualizzazione(comboBox1.Text);
         }
 
         private void aggiorna()
@@ -279,7 +283,7 @@ namespace Target2021
             string stringaconnessione, sql;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT MAX(numero_ordine) FROM testata_ordini_multiriga WHERE data_ordine>20200000";
+            sql = "SELECT MAX(numero_ordine) FROM testata_ordini_multiriga WHERE data_ordine>"+Anno;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             try
@@ -300,7 +304,7 @@ namespace Target2021
             string stringaconnessione, sql;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT MAX(numero_ordine) FROM dettaglio_ordini_multiriga WHERE data_ordine>20200000";
+            sql = "SELECT MAX(numero_ordine) FROM dettaglio_ordini_multiriga WHERE data_ordine>" + Anno;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             try
@@ -701,7 +705,10 @@ namespace Target2021
                 string stringaconnessione, sql, DesArticolo="";
                 stringaconnessione = Properties.Resources.StringaConnessione;
                 SqlConnection connessione = new SqlConnection(stringaconnessione);
-                sql = "SELECT descrizione_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
+                sql = "SELECT descrizione_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>" + Anno;
+                // ******************************************** TEST
+                MessageBox.Show(sql);
+                // ******************************************** TEST
                 SqlCommand comando = new SqlCommand(sql, connessione);
                 connessione.Open();
                 object result= comando.ExecuteScalar();
@@ -774,7 +781,7 @@ namespace Target2021
             DateTime dto;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT data_ordine FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
+            sql = "SELECT data_ordine FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>" + Anno;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             dto = DateTime.ParseExact(comando.ExecuteScalar().ToString(), "yyyyMMdd", null);
@@ -787,7 +794,7 @@ namespace Target2021
             string stringaconnessione, sql, idc;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT codice_cliente FROM testata_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
+            sql = "SELECT codice_cliente FROM testata_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>" + Anno;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             idc = comando.ExecuteScalar().ToString();
@@ -800,7 +807,7 @@ namespace Target2021
             string stringaconnessione, sql, noc;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT numero_ordine_cliente FROM testata_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
+            sql = "SELECT numero_ordine_cliente FROM testata_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>" + Anno;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             noc = comando.ExecuteScalar().ToString();
@@ -814,7 +821,7 @@ namespace Target2021
             DateTime dtc;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT data_consegna FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
+            sql = "SELECT data_consegna FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>" + Anno;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             try
@@ -836,7 +843,7 @@ namespace Target2021
             int NumeroPezzi;
             stringaconnessione = Properties.Resources.StringaConnessione;
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT numero_pezzi FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>20200000";
+            sql = "SELECT numero_pezzi FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>" + Anno;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             NumeroPezzi = Convert.ToInt32(comando.ExecuteScalar());    

@@ -73,6 +73,7 @@
             this.valorizzaMagazziniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allineaDDTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giacenzaLastreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.giacenzeSemilavoratiEFinitiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contatoriAziendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registraUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,7 +104,7 @@
             this.anaMagazziniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anaMagazziniTableAdapter = new Target2021.Target2021DataSetTableAdapters.AnaMagazziniTableAdapter();
             this.tableAdapterManager = new Target2021.Target2021DataSetTableAdapters.TableAdapterManager();
-            this.giacenzeSemilavoratiEFinitiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splittaCommessaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.target2021DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anaMagazziniBindingSource)).BeginInit();
@@ -472,6 +473,13 @@
             this.giacenzaLastreToolStripMenuItem.Text = "Giacenza Lastre";
             this.giacenzaLastreToolStripMenuItem.Click += new System.EventHandler(this.giacenzaLastreToolStripMenuItem_Click);
             // 
+            // giacenzeSemilavoratiEFinitiToolStripMenuItem
+            // 
+            this.giacenzeSemilavoratiEFinitiToolStripMenuItem.Name = "giacenzeSemilavoratiEFinitiToolStripMenuItem";
+            this.giacenzeSemilavoratiEFinitiToolStripMenuItem.Size = new System.Drawing.Size(474, 36);
+            this.giacenzeSemilavoratiEFinitiToolStripMenuItem.Text = "Giacenze Semilavorati e Finiti";
+            this.giacenzeSemilavoratiEFinitiToolStripMenuItem.Click += new System.EventHandler(this.giacenzeSemilavoratiEFinitiToolStripMenuItem_Click);
+            // 
             // impostazioniToolStripMenuItem
             // 
             this.impostazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -500,6 +508,7 @@
             // 
             this.ruoliToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modificaLastraCommessaToolStripMenuItem,
+            this.splittaCommessaToolStripMenuItem,
             this.supercommessaToolStripMenuItem,
             this.impiegataToolStripMenuItem,
             this.pianificazioneToolStripMenuItem,
@@ -749,12 +758,12 @@
             this.tableAdapterManager.UpdateOrder = Target2021.Target2021DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UtentiTableAdapter = null;
             // 
-            // giacenzeSemilavoratiEFinitiToolStripMenuItem
+            // splittaCommessaToolStripMenuItem
             // 
-            this.giacenzeSemilavoratiEFinitiToolStripMenuItem.Name = "giacenzeSemilavoratiEFinitiToolStripMenuItem";
-            this.giacenzeSemilavoratiEFinitiToolStripMenuItem.Size = new System.Drawing.Size(474, 36);
-            this.giacenzeSemilavoratiEFinitiToolStripMenuItem.Text = "Giacenze Semilavorati e Finiti";
-            this.giacenzeSemilavoratiEFinitiToolStripMenuItem.Click += new System.EventHandler(this.giacenzeSemilavoratiEFinitiToolStripMenuItem_Click);
+            this.splittaCommessaToolStripMenuItem.Name = "splittaCommessaToolStripMenuItem";
+            this.splittaCommessaToolStripMenuItem.Size = new System.Drawing.Size(438, 36);
+            this.splittaCommessaToolStripMenuItem.Text = "Splitta commessa";
+            this.splittaCommessaToolStripMenuItem.Click += new System.EventHandler(this.splittaCommessaToolStripMenuItem_Click_1);
             // 
             // Form1
             // 
@@ -856,6 +865,7 @@
         private System.Windows.Forms.ToolStripMenuItem newCheckTaglioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giacenzaLastreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giacenzeSemilavoratiEFinitiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem splittaCommessaToolStripMenuItem;
     }
 }
 

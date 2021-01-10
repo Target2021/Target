@@ -34,6 +34,8 @@ namespace Target2021
             this.primeTableAdapter.Fill(this.target2021DataSet.Prime);
             MostraPercentualeLastra(C, D);
             textBox5.Text = textBox4.Text;
+            // Prendere TextBox3 e metterlo in ComboBox1 - FP 24.12.2020
+            comboBox1.Text = textBox3.Text;
         }
 
         private void MostraPercentualeLastra(string CodiceCommessa, DateTime DataCommessa)
@@ -65,7 +67,9 @@ namespace Target2021
 
             NrCommessa = textBox1.Text.Trim();
             DataCommessa = textBox2.Text;
+            // Prendere i testo del ComboBox e non l'elemento selezionato
             NuovaLastra = comboBox1.GetItemText(comboBox1.SelectedItem);
+            // Fine modifica (da fare)
             NuovaPercentuale = Convert.ToInt32(textBox5.Text);
             try
             {

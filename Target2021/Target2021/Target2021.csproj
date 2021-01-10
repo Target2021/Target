@@ -119,10 +119,12 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Syncfusion.Core.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Data.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.DataSource.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Base, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Windows, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.GridCommon.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.SfInput.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.SfListView.WinForms, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Shared.Base, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -752,6 +754,18 @@
       <DependentUpon>SelezionaTerminiPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Split\SpliCommessa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Split\SpliCommessa.Designer.cs">
+      <DependentUpon>SpliCommessa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Split\Splitta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Split\Splitta.Designer.cs">
+      <DependentUpon>Splitta.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="stampacommessa.cs">
       <SubType>Form</SubType>
@@ -1120,6 +1134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Selezioni\SelezionaTerminiPagamento.resx">
       <DependentUpon>SelezionaTerminiPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Split\SpliCommessa.resx">
+      <DependentUpon>SpliCommessa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Split\Splitta.resx">
+      <DependentUpon>Splitta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="stampacommessa.resx">
       <DependentUpon>stampacommessa.cs</DependentUpon>

@@ -16,6 +16,7 @@ using Target2021.Anagrafiche.Fornitore;
 using Target2021.Fase2;
 using Target2021.Magazzino;
 using Target2021.Fase4;
+using Target2021.Split;
 
 namespace Target2021
 {
@@ -588,6 +589,13 @@ namespace Target2021
             GiacenzeSemilavoratiArticoli giacenze = new GiacenzeSemilavoratiArticoli();
             giacenze.MdiParent = this;
             giacenze.Show();
+        }
+
+        private void splittaCommessaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            SpliCommessa Split = new SpliCommessa();
+            Split.MdiParent = this;
+            Split.Show();
         }
     }
 }
