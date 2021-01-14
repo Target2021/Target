@@ -141,6 +141,8 @@ namespace Target2021.Magazzino
             dettaglio_ddtDataGridView.Refresh();
             MessageBox.Show("Finito. Elaborate "+elaborati.ToString()+" righe. Importate " + ContaImportati + " righe di DDT. Modificate "+ContaModificati +" righe");
             // Visualizza in un messagebox info su attività di importazione effettuate
+            this.dettaglio_ddtTableAdapter.Fill(this.target2021DataSet.dettaglio_ddt);
+            filtra();
         }
 
         private int AggiornaMovimentoMagazzino(int DataDDT, int NumDDT, int ProgrDDT, int Qta)

@@ -676,12 +676,10 @@ namespace Target2021
 
         private string CodiceArt(int numord)
         {
-            string stringaconnessione, sql, CodArticolo, data;
+            string stringaconnessione, sql, CodArticolo;
             stringaconnessione = Properties.Resources.StringaConnessione;
-            data = comboBox1.Text;
-            data = data + "0000";
             SqlConnection connessione = new SqlConnection(stringaconnessione);
-            sql = "SELECT codice_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine="+numord.ToString()+" AND data_ordine>"+data;
+            sql = "SELECT codice_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine="+numord.ToString()+" AND data_ordine>"+Anno;
             SqlCommand comando = new SqlCommand(sql, connessione);
             connessione.Open();
             try
@@ -707,7 +705,7 @@ namespace Target2021
                 SqlConnection connessione = new SqlConnection(stringaconnessione);
                 sql = "SELECT descrizione_articolo FROM dettaglio_ordini_multiriga WHERE numero_ordine=" + numord.ToString() + " AND data_ordine>" + Anno;
                 // ******************************************** TEST
-                MessageBox.Show(sql);
+                //MessageBox.Show(sql);
                 // ******************************************** TEST
                 SqlCommand comando = new SqlCommand(sql, connessione);
                 connessione.Open();
@@ -990,6 +988,7 @@ namespace Target2021
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Anno = comboBox1.Text + "0000";
             int[] import = new int[100];
             int[] date = new int[100];
             int i = 0, j,x=0;

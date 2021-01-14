@@ -131,6 +131,13 @@
             this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -146,7 +153,7 @@
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(240, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 38);
+            this.label1.Size = new System.Drawing.Size(342, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "SPLIT di commessa";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,7 +174,7 @@
             this.textBox1.Location = new System.Drawing.Point(332, 88);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(269, 27);
+            this.textBox1.Size = new System.Drawing.Size(136, 27);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -193,6 +200,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.textBox4);
@@ -209,10 +218,10 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(614, 75);
+            this.textBox6.Location = new System.Drawing.Point(259, 69);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(127, 27);
+            this.textBox6.Size = new System.Drawing.Size(119, 27);
             this.textBox6.TabIndex = 10;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -220,7 +229,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(389, 78);
+            this.label8.Location = new System.Drawing.Point(34, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(221, 20);
             this.label8.TabIndex = 9;
@@ -321,6 +330,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox15);
+            this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.textBox9);
@@ -337,10 +348,10 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(614, 75);
+            this.textBox8.Location = new System.Drawing.Point(259, 69);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(127, 27);
+            this.textBox8.Size = new System.Drawing.Size(119, 27);
             this.textBox8.TabIndex = 10;
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -348,7 +359,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(389, 78);
+            this.label2.Location = new System.Drawing.Point(32, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(221, 20);
             this.label2.TabIndex = 9;
@@ -398,6 +409,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.textBox16);
+            this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.textBox11);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.textBox12);
@@ -414,10 +427,10 @@
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(614, 75);
+            this.textBox11.Location = new System.Drawing.Point(259, 69);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(127, 27);
+            this.textBox11.Size = new System.Drawing.Size(119, 27);
             this.textBox11.TabIndex = 10;
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -425,7 +438,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(389, 78);
+            this.label12.Location = new System.Drawing.Point(34, 72);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(221, 20);
             this.label12.TabIndex = 9;
@@ -1016,12 +1029,83 @@
             this.dataGridViewTextBoxColumn65.HeaderText = "NrLastreUtilizzate";
             this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
             // 
+            // textBox14
+            // 
+            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox14.Location = new System.Drawing.Point(614, 69);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
+            this.textBox14.Size = new System.Drawing.Size(127, 27);
+            this.textBox14.TabIndex = 12;
+            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(404, 72);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(204, 20);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Codice sottocommessa 1:";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox15.Location = new System.Drawing.Point(614, 69);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
+            this.textBox15.Size = new System.Drawing.Size(127, 27);
+            this.textBox15.TabIndex = 12;
+            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(404, 72);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(204, 20);
+            this.label16.TabIndex = 11;
+            this.label16.Text = "Codice sottocommessa 2:";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox16.Location = new System.Drawing.Point(614, 69);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
+            this.textBox16.Size = new System.Drawing.Size(127, 27);
+            this.textBox16.TabIndex = 12;
+            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(404, 72);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(204, 20);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "Codice sottocommessa 3:";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox17.Location = new System.Drawing.Point(474, 88);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
+            this.textBox17.Size = new System.Drawing.Size(127, 27);
+            this.textBox17.TabIndex = 14;
+            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Splitta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(775, 636);
+            this.Controls.Add(this.textBox17);
             this.Controls.Add(this.commesseDataGridView);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -1157,5 +1241,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn64;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn65;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox17;
     }
 }

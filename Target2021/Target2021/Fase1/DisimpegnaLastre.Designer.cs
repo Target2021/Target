@@ -286,7 +286,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.commesseDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.commesseDataGridView.Location = new System.Drawing.Point(16, 126);
-            this.commesseDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.commesseDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.commesseDataGridView.Name = "commesseDataGridView";
             this.commesseDataGridView.ReadOnly = true;
             this.commesseDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -312,7 +312,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(380, 426);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(703, 70);
             this.button1.TabIndex = 3;
@@ -341,11 +341,10 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "CodCommessa";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CodCommessa";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Codice Commessa";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            this.dataGridViewTextBoxColumn2.Width = 142;
+            this.dataGridViewTextBoxColumn2.Width = 154;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -353,6 +352,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Nr";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Visible = false;
             this.dataGridViewTextBoxColumn3.Width = 54;
             // 
             // dataGridViewTextBoxColumn4
@@ -912,7 +912,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.commesseDataGridView);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DisimpegnaLastre";
             this.Text = "Disimpegna Lastre";
             this.Load += new System.EventHandler(this.DisimpegnaLastre_Load);

@@ -21,8 +21,6 @@ namespace Target2021.Split
         {
             // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
             this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
-            // TODO: questa riga di codice carica i dati nella tabella 'target2021DataSet.Commesse'. È possibile spostarla o rimuoverla se necessario.
-            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
             commesseBindingSource.Filter = "TipoCommessa = 2 AND Stato=0";
         }
 
@@ -34,7 +32,9 @@ namespace Target2021.Split
             var pippo = target2021DataSet.Commesse.AsEnumerable().Where(dr => dr.Field<int>("IDCommessa") == IDCommessa);
             r = pippo.First();
             Splitta sp = new Splitta(r);
-            sp.Show();
+            sp.ShowDialog();
+            this.commesseTableAdapter.Fill(this.target2021DataSet.Commesse);
+            commesseBindingSource.Filter = "TipoCommessa = 2 AND Stato=0";
         }
     }
 }
